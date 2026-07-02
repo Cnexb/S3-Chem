@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v8"
+QUIZ_ASSET_VERSION = "20260702v9"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -1544,12 +1544,13 @@ def mc_to_item(q: dict) -> dict | None:
     return item
 
 
-def attach_image(item: dict, image_map: dict) -> dict:
+def attach_image(item: dict, image_map: dict, locale: str = "en") -> dict:
     f = item.pop("_imageFile", None) or image_map.get(item["id"], {}).get("file")
     if f:
         info = image_map.get(item["id"], {})
+        prefix = "../assets/" if locale == "zh-hk" else "./assets/"
         item["image"] = {
-            "src": f"../assets/{f}",
+            "src": f"{prefix}{f}",
             "alt": info.get("alt", item.get("stem", "")[:80]),
             "caption": info.get("caption", info.get("alt", "Diagram")),
         }
@@ -1637,7 +1638,7 @@ def write_quiz_data(locale: str, items: list, image_map: dict):
         if q.get("_needsImage") and not image_map.get(q["id"], {}).get("file"):
             q.pop("_needsImage", None)
         else:
-            attach_image(q, image_map)
+            attach_image(q, image_map, locale)
         q.pop("_needsImage", None)
         out_items.append(q)
     js = (
