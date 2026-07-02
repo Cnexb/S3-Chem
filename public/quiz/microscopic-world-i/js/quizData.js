@@ -2578,7 +2578,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "An ion X²⁺ consists of 22 neutrons and 18 electrons. What is the mass number of X₂+?",
+    "stem": "An ion X²⁺ consists of 22 neutrons and 18 electrons. What is the mass number of X²⁺?",
     "options": [
       {
         "key": "A",
@@ -2841,7 +2841,7 @@ export const QUIZ_ITEMS = [
           "2, 8, 5"
         ],
         [
-          "Y₂",
+          "Y²⁻",
           "2, 8, 8"
         ],
         [
@@ -3221,23 +3221,23 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "What is the net charge on Cr in [Cr(NH₃)₄SO₄]+?",
+    "stem": "What is the net charge on Cr in [Cr(NH₃)₄SO₄]⁺?",
     "options": [
       {
         "key": "A",
-        "text": "¹⁺"
+        "text": "1+"
       },
       {
         "key": "B",
-        "text": "²⁺"
+        "text": "2+"
       },
       {
         "key": "C",
-        "text": "³⁺"
+        "text": "3+"
       },
       {
         "key": "D",
-        "text": "⁵⁺"
+        "text": "5+"
       }
     ],
     "answer": "C",
@@ -4065,7 +4065,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Consider the set-up shown in the diagram below. electrode Xelectrode Ydrops of CrCl₃(aq)₁₂ V d.c. supplyfilter paper soaked with NaNO₃(aq)electrode Xelectrode Ydrops of CrCl₃(aq)₁₂ V d.c. supplyfilter paper soaked with NaNO₃(aq) electrode X electrode Y drops of CrCl₃(aq) 12 V d.c. supply filter paper soaked with NaNO₃(aq) electrode X electrode Y drops of CrCl₃(aq) 12 V d.c. supply filter paper soaked with NaNO₃(aq) When the circuit is closed for some time, a coloured spot moves towards electrode X. Which of the following statements concerning the experiment are correct?\n(1) The filter paper is soaked with NaNO₃(aq) to increase its electrical conductivity.\n(2) The coloured spot is green in colour.\n(3) Electrode X is the negative electrode.",
+    "stem": "Consider the set-up shown in the diagram below. electrode X electrode Y drops of CrCl₃(aq) 12 V d.c. supply filter paper soaked with NaNO₃(aq) When the circuit is closed for some time, a coloured spot moves towards electrode X. Which of the following statements concerning the experiment are correct?\n(1) The filter paper is soaked with NaNO₃(aq) to increase its electrical conductivity.\n(2) The coloured spot is green in colour.\n(3) Electrode X is the negative electrode.",
     "options": [
       {
         "key": "A",
@@ -4089,7 +4089,7 @@ export const QUIZ_ITEMS = [
     "sourceRef": "ChemMCQ07064",
     "image": {
       "src": "./assets/mc-media-rId36.jpeg",
-      "alt": "Consider the set-up shown in the diagram below. electrode Xelectrode Ydrops of CrCl3(aq)12 V d.c. su",
+      "alt": "Consider the set-up shown in the diagram below. electrode X electrode Y drops of CrCl3(aq) 12 V d.c.",
       "caption": "Fig - ChemMCQ07064"
     }
   },

@@ -3293,7 +3293,7 @@
     "chapter": 7,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The following table shows the electronic arrangements of three species. Species Electronic arrangement X 2, 8, 5 Y2 2, 8, 8 Z+ 2, 8 Which of the following elements belong to the same period of the Periodic Table? (1)X (2)Y (3)Z",
+    "stem": "The following table shows the electronic arrangements of three species. Species Electronic arrangement X 2, 8, 5 Y2- 2, 8, 8 Z+ 2, 8 Which of the following elements belong to the same period of the Periodic Table? (1)X (2)Y (3)Z",
     "options": [
       {
         "key": "A",
@@ -4685,7 +4685,7 @@
     "chapter": 7,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Consider the set-up shown in the diagram below. electrode Xelectrode Ydrops of CrCl3(aq)12 V d.c. supplyfilter paper soaked with NaNO3(aq)electrode Xelectrode Ydrops of CrCl3(aq)12 V d.c. supplyfilter paper soaked with NaNO3(aq) electrode X electrode Y drops of CrCl3(aq) 12 V d.c. supply filter paper soaked with NaNO3(aq) electrode X electrode Y drops of CrCl3(aq) 12 V d.c. supply filter paper soaked with NaNO3(aq) When the circuit is closed for some time, a coloured spot moves towards electrode X. Which of the following statements concerning the experiment are correct? (1)The filter paper is soaked with NaNO3(aq) to increase its electrical conductivity. (2)The coloured spot is green in colour. (3)Electrode X is the negative electrode.",
+    "stem": "Consider the set-up shown in the diagram below. electrode X electrode Y drops of CrCl3(aq) 12 V d.c. supply filter paper soaked with NaNO3(aq) When the circuit is closed for some time, a coloured spot moves towards electrode X. Which of the following statements concerning the experiment are correct? (1)The filter paper is soaked with NaNO3(aq) to increase its electrical conductivity. (2)The coloured spot is green in colour. (3)Electrode X is the negative electrode.",
     "options": [
       {
         "key": "A",

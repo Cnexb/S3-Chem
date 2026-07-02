@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v15"
+QUIZ_ASSET_VERSION = "20260702v16"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -273,12 +273,13 @@ ISO_TOPE_ROW = re.compile(
 SUPERSCRIPT = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹")
 SUBSCRIPT = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
 CHEMISTRY_SECTIONS = frozenset({"ionic-bond", "covalent-bond", "structure-properties"})
-CHARGE_LOOKAHEAD = r"(?=[\s,;.)\]]|$|/|\(|$)"
+CHARGE_LOOKAHEAD = r"(?=[\s,;.)\]]|$|/|\(|\?|!)"
+MCQ_PLAIN_CHARGE_OPTIONS = frozenset({"mc-07036"})
 
 
 def format_formula_subscripts(text: str) -> str:
     return re.sub(
-        r"(?<=[A-Za-z)])(\d+)",
+        r"(?<=[A-Za-z)])(\d+)(?!\s*V\b)",
         lambda m: m.group(0).translate(SUBSCRIPT),
         text,
     )
@@ -335,6 +336,11 @@ def format_ion_charges(text: str) -> str:
     text = re.sub(
         rf"\b(\d{{1,2}})([+-]){CHARGE_LOOKAHEAD}",
         lambda m: _ion_charge_superscript(m.group(1), m.group(2)),
+        text,
+    )
+    text = re.sub(
+        r"\]([+-])",
+        lambda m: "]" + _ion_charge_superscript("", m.group(1)),
         text,
     )
     return text
@@ -1693,6 +1699,7 @@ def mc_to_item(q: dict) -> dict | None:
     raw_options = q["options"]
     section = q.get("section", "")
     chemical = section in CHEMISTRY_SECTIONS
+    plain_charge_options = q["id"] in MCQ_PLAIN_CHARGE_OPTIONS
     stem_table = None
     if is_combination_table_mcq(raw_stem, raw_options):
         ncol = _infer_combination_ncol(raw_options, KNOWN_COMBINATION_PHRASES)
@@ -1705,7 +1712,7 @@ def mc_to_item(q: dict) -> dict | None:
                 "text": format_mcq_display_text(
                     format_combination_option(o.get("text", ""), ncol),
                     formula_subscripts=ncol < 4 and not chemical,
-                    chemical_formula=chemical,
+                    chemical_formula=chemical and not plain_charge_options,
                 ),
             })
     else:
@@ -1714,7 +1721,8 @@ def mc_to_item(q: dict) -> dict | None:
             {
                 "key": o["key"],
                 "text": format_mcq_display_text(
-                    o.get("text", ""), chemical_formula=chemical
+                    o.get("text", ""),
+                    chemical_formula=chemical and not plain_charge_options,
                 ),
             }
             for o in raw_options
