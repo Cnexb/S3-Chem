@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v11"
+QUIZ_ASSET_VERSION = "20260702v12"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -292,6 +292,42 @@ def format_isotope_notation(text: str) -> str:
     )
 
 
+def _neg_superscript(num: str) -> str:
+    return "⁻" + num.translate(SUPERSCRIPT)
+
+
+def format_unit_superscripts(text: str) -> str:
+    if not text:
+        return text
+    text = re.sub(
+        r"\b(g|kg)\s+(cm|dm|m)-?(\d+)\b",
+        lambda m: f"{m.group(1)} {m.group(2)}{_neg_superscript(m.group(3))}",
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r"\b(g|J|kJ)\s+mol-?(\d+)\b",
+        lambda m: f"{m.group(1)} mol{_neg_superscript(m.group(2))}",
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r"\bmol\s+dm-?(\d+)\b",
+        lambda m: f"mol dm{_neg_superscript(m.group(1))}",
+        text,
+        flags=re.I,
+    )
+    return text
+
+
+def format_mcq_display_text(text: str, *, formula_subscripts: bool = False) -> str:
+    text = format_isotope_notation(text or "")
+    text = format_unit_superscripts(text)
+    if formula_subscripts:
+        text = format_formula_subscripts(text)
+    return clean_mcq_option_text(text)
+
+
 def clean_mcq_option_text(text: str) -> str:
     text = " ".join(text.split()).strip()
     if text.endswith("."):
@@ -369,11 +405,11 @@ def _table_result(
 
 
 def _format_table_notation(table: dict) -> dict:
+    def fmt(cell: str) -> str:
+        return format_unit_superscripts(format_isotope_notation(cell))
     return {
-        "headers": [format_isotope_notation(h) for h in table.get("headers", [])],
-        "rows": [
-            [format_isotope_notation(c) for c in row] for row in table.get("rows", [])
-        ],
+        "headers": [fmt(h) for h in table.get("headers", [])],
+        "rows": [[fmt(c) for c in row] for row in table.get("rows", [])],
     }
 
 
@@ -1070,6 +1106,7 @@ def format_stem_pipeline(stem: str) -> tuple[str, dict | None]:
     combined = "\n\n".join(parts)
     combined = format_stem_for_display(combined)
     combined = format_isotope_notation(combined)
+    combined = format_unit_superscripts(combined)
     combined = format_formula_subscripts(combined)
     if table:
         table = _format_table_notation(table)
@@ -1547,18 +1584,19 @@ def mc_to_item(q: dict) -> dict | None:
         stem, stem_table = format_stem_pipeline(combo_stem)
         options = []
         for o in raw_options:
-            opt_text = format_isotope_notation(
-                format_combination_option(o.get("text", ""), ncol)
-            )
-            if ncol < 4:
-                opt_text = format_formula_subscripts(opt_text)
-            options.append({"key": o["key"], "text": clean_mcq_option_text(opt_text)})
+            options.append({
+                "key": o["key"],
+                "text": format_mcq_display_text(
+                    format_combination_option(o.get("text", ""), ncol),
+                    formula_subscripts=ncol < 4,
+                ),
+            })
     else:
         stem, stem_table = format_stem_pipeline(raw_stem)
         options = [
             {
                 "key": o["key"],
-                "text": clean_mcq_option_text(format_isotope_notation(o.get("text", ""))),
+                "text": format_mcq_display_text(o.get("text", "")),
             }
             for o in raw_options
         ]
@@ -1570,7 +1608,7 @@ def mc_to_item(q: dict) -> dict | None:
         "stem": stem,
         "options": options,
         "answer": q["answer"],
-        "hint": q.get("hint") or "Review your notes.",
+        "hint": format_unit_superscripts(format_isotope_notation(q.get("hint") or "Review your notes.")),
         "sourceRef": q.get("sourceRef", q["id"]),
     }
     if stem_table:

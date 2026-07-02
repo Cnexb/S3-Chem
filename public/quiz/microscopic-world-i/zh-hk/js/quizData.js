@@ -452,7 +452,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "The relative atomic mass of an element is the weighted average of the relative isotopic masses of all its naturally occurring isotopes on the 12C = 12.00 scale.",
+    "hint": "The relative atomic mass of an element is the weighted average of the relative isotopic masses of all its naturally occurring isotopes on the ¹²C = 12.00 scale.",
     "sourceRef": "ChemMCQ05016"
   },
   {
@@ -476,7 +476,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "The density of ¹²C is 12 g cm3"
+        "text": "The density of ¹²C is 12 g cm⁻³"
       }
     ],
     "answer": "C",
@@ -508,7 +508,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "D",
-    "hint": "The relative mass of a  isotope is roughly equal to A (its mass number) on the 12C = 12.00 scale.",
+    "hint": "The relative mass of a  isotope is roughly equal to A (its mass number) on the ¹²C = 12.00 scale.",
     "sourceRef": "ChemMCQ05018"
   },
   {
@@ -536,7 +536,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "(B): The relative atomic mass of Br (79.9) is close to the average of the relative isotopic mass of 79Br and that of 81Br. Hence, the relative abundances of the two isotopes should be very close. (C): 79Br and 81Br have the same number of electrons. They have the same chemical properties, i.e. there is no difference in their reactivity. (D): The two isotopes have slightly different physical properties. Hence, they can be separated by physical methods.",
+    "hint": "(B): The relative atomic mass of Br (79.9) is close to the average of the relative isotopic mass of ⁷⁹Br and that of ⁸¹Br. Hence, the relative abundances of the two isotopes should be very close. (C): ⁷⁹Br and ⁸¹Br have the same number of electrons. They have the same chemical properties, i.e. there is no difference in their reactivity. (D): The two isotopes have slightly different physical properties. Hence, they can be separated by physical methods.",
     "sourceRef": "ChemMCQ05019"
   },
   {
@@ -696,7 +696,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "Relative abundance of 24Mg = (100  10.00  11.01)% = 78.99% Relative atomic mass of Mg = 24 × 78.99% + 25 × 10.00% + 26 × 11.01% = 24.32",
+    "hint": "Relative abundance of ²⁴Mg = (100  10.00  11.01)% = 78.99% Relative atomic mass of Mg = 24 × 78.99% + 25 × 10.00% + 26 × 11.01% = 24.32",
     "sourceRef": "ChemMCQ05023"
   },
   {
@@ -724,7 +724,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "Let the relative abundance of 107M be y%. 109 × (100  y)% + 107 × y% = 107.9 y = 55",
+    "hint": "Let the relative abundance of ¹⁰⁷M be y%. 109 × (100  y)% + 107 × y% = 107.9 y = 55",
     "sourceRef": "ChemMCQ05024"
   },
   {
@@ -785,7 +785,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "Let the relative abundance of 71Ga be x%. 69 × (100  x)% + 71 × x% = 69.7 x = 35",
+    "hint": "Let the relative abundance of ⁷¹Ga be x%. 69 × (100  x)% + 71 × x% = 69.7 x = 35",
     "sourceRef": "ChemMCQ05026"
   },
   {
@@ -813,7 +813,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "Let the relative abundance of 185Re be x%. 185 × x% + 187 × (1  x%) = 186.2 x = 40 Ratio of 185Re to 187Re = 40% : 60% = 2 : 3",
+    "hint": "Let the relative abundance of ¹⁸⁵Re be x%. 185 × x% + 187 × (1  x%) = 186.2 x = 40 Ratio of ¹⁸⁵Re to ¹⁸⁷Re = 40% : 60% = 2 : 3",
     "sourceRef": "ChemMCQ05027"
   },
   {
@@ -874,7 +874,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "14C has a larger relative isotopic mass than 12C.",
+    "hint": "¹⁴C has a larger relative isotopic mass than ¹²C.",
     "sourceRef": "ChemMCQ05029"
   },
   {
@@ -3480,7 +3480,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "The formulae of magnesium nitrate, ammonium chloride and sodium carbonate are Mg(NO3)2, NH4Cl and Na2CO3 respectively.",
+    "hint": "The formulae of magnesium nitrate, ammonium chloride and sodium carbonate are Mg(NO3)2, NH⁴Cl and Na2CO3 respectively.",
     "sourceRef": "ChemMCQ07044"
   },
   {
@@ -3788,7 +3788,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "D",
-    "hint": "Let the charge on the ion of M be x+. ax  3b = 0 x = Formula of the oxide of M = M2Ox = M2 = M2aO3b",
+    "hint": "Let the charge on the ion of M be x+. ax  3b = 0 x = Formula of the oxide of M = M²Ox = M2 = M2aO3b",
     "sourceRef": "ChemMCQ07055"
   },
   {
@@ -3844,7 +3844,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "Since an atom of P forms ions with a charge of 2, P should be a Group VI element. As an atom of Q has three more proton than P, Q should be a Group I element. P and Q form an ionic compound with a formula Q2P.",
+    "hint": "Since an atom of P forms ions with a charge of 2, P should be a Group VI element. As an atom of Q has three more proton than P, Q should be a Group I element. P and Q form an ionic compound with a formula Q²P.",
     "sourceRef": "ChemMCQ07057"
   },
   {
@@ -4235,7 +4235,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "D",
-    "hint": "Both NO2 and Cl2O have three atoms in their molecules.",
+    "hint": "Both NO2 and Cl²O have three atoms in their molecules.",
     "sourceRef": "ChemMCQ08004"
   },
   {
@@ -4319,7 +4319,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "The electron diagrams of CS2, H2O, HCl and N2 are shown below.",
+    "hint": "The electron diagrams of CS2, H²O, HCl and N2 are shown below.",
     "sourceRef": "ChemMCQ08007"
   },
   {
@@ -4483,7 +4483,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "A water molecule (H2O) has 10 electrons.",
+    "hint": "A water molecule (H²O) has 10 electrons.",
     "sourceRef": "ChemMCQ08012"
   },
   {
@@ -4694,7 +4694,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "The electronic arrangement of S is 2, 8, 6. Together with the two electrons from the two H atoms, the total number of electrons in the molecule (H2S) is 18.",
+    "hint": "The electronic arrangement of S is 2, 8, 6. Together with the two electrons from the two H atoms, the total number of electrons in the molecule (H²S) is 18.",
     "sourceRef": "ChemMCQ08021"
   },
   {
@@ -4750,7 +4750,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "E is probably oxygen which forms a stable cation H3O+.",
+    "hint": "E is probably oxygen which forms a stable cation H³O+.",
     "sourceRef": "ChemMCQ08024"
   },
   {
@@ -4877,7 +4877,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "D",
-    "hint": "The electron diagrams of H3O+, NH4+ and CO are shown below.",
+    "hint": "The electron diagrams of H³O+, NH4+ and CO are shown below.",
     "sourceRef": "ChemMCQ08028"
   },
   {
@@ -5007,7 +5007,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following statements concerning relative molecular mass are correct?\n(1) It is also called molecular mass.\n(2) It is the sum of the relative atomic masses of all atoms present in a molecule of the element or compound.\n(3) Its unit is g mol₁.",
+    "stem": "Which of the following statements concerning relative molecular mass are correct?\n(1) It is also called molecular mass.\n(2) It is the sum of the relative atomic masses of all atoms present in a molecule of the element or compound.\n(3) Its unit is g mol⁻¹.",
     "options": [
       {
         "key": "A",
@@ -5055,7 +5055,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "Consider different combinations of MgCl2. Constituent atoms Formula mass 24Mg, 35Cl and 35Cl 24 + 35 + 35 = 94 24Mg, 35Cl and 37Cl 24 + 35 + 37 = 96 24Mg, 37Cl and 37Cl 24 + 37 + 37 = 98 25Mg, 35Cl and 35Cl 25 + 35 + 35 = 95 25Mg, 35Cl and 37Cl 25 + 35 + 37 = 97 25Mg, 37Cl and 37Cl 25 + 37 + 37 = 99 26Mg, 35Cl and 35Cl 26 + 35 + 35 = 96 26Mg, 35Cl and 37Cl 26 + 35 + 37 = 98 26Mg, 37Cl and 37Cl 26 + 37 + 37 = 100 Hence, there are seven possible formula masses of magnesium chloride.",
+    "hint": "Consider different combinations of MgCl2. Constituent atoms Formula mass ²⁴Mg, ³⁵Cl and ³⁵Cl 24 + 35 + 35 = 94 ²⁴Mg, ³⁵Cl and ³⁷Cl 24 + 35 + 37 = 96 ²⁴Mg, ³⁷Cl and ³⁷Cl 24 + 37 + 37 = 98 ²⁵Mg, ³⁵Cl and ³⁵Cl 25 + 35 + 35 = 95 ²⁵Mg, ³⁵Cl and ³⁷Cl 25 + 35 + 37 = 97 ²⁵Mg, ³⁷Cl and ³⁷Cl 25 + 37 + 37 = 99 ²⁶Mg, ³⁵Cl and ³⁵Cl 26 + 35 + 35 = 96 ²⁶Mg, ³⁵Cl and ³⁷Cl 26 + 35 + 37 = 98 ²⁶Mg, ³⁷Cl and ³⁷Cl 26 + 37 + 37 = 100 Hence, there are seven possible formula masses of magnesium chloride.",
     "sourceRef": "ChemMCQ08034"
   },
   {
@@ -5111,7 +5111,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "D",
-    "hint": "(A): Relative molecular mass of D2O = 2.0 × 2 + 16.0 = 20.0 (B): Relative molecular mass of CD4 = 12.0 + 2.0 × 4 = 20.0 (C): Relative molecular mass of BD3 = 10.8 + 2.0 × 3 = 16.8 (D): Relative molecular mass of DF = 2.0 + 19.0 = 21.0",
+    "hint": "(A): Relative molecular mass of D²O = 2.0 × 2 + 16.0 = 20.0 (B): Relative molecular mass of CD4 = 12.0 + 2.0 × 4 = 20.0 (C): Relative molecular mass of BD3 = 10.8 + 2.0 × 3 = 16.8 (D): Relative molecular mass of DF = 2.0 + 19.0 = 21.0",
     "sourceRef": "ChemMCQ08036"
   },
   {
@@ -5139,7 +5139,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "CO2 consists of two C=O covalent bonds whereas NH4Cl, NaOH and K2CO3 consist of both ionic bonds and covalent bonds.",
+    "hint": "CO2 consists of two C=O covalent bonds whereas NH⁴Cl, NaOH and K2CO3 consist of both ionic bonds and covalent bonds.",
     "sourceRef": "ChemMCQ08037"
   },
   {
@@ -6836,7 +6836,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "N2H4 and SiCl4 exist as simple molecules. Sodium amalgam (Na/Hg) is an alloy of sodium and mercury. It has a giant metallic structure. K3Fe(CN)6 consists of K+ ions and Fe(CN)63 ions.",
+    "hint": "N2H4 and SiCl4 exist as simple molecules. Sodium amalgam (Na/Hg) is an alloy of sodium and mercury. It has a giant metallic structure. K³Fe(CN)6 consists of K+ ions and Fe(CN)63 ions.",
     "sourceRef": "ChemMCQ09050"
   },
   {
@@ -7037,7 +7037,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "A and B are potassium and sulphur respectively. The compound formed is potassium sulphide (K2S), which is an ionic compound.",
+    "hint": "A and B are potassium and sulphur respectively. The compound formed is potassium sulphide (K²S), which is an ionic compound.",
     "sourceRef": "ChemMCQ09057"
   },
   {
@@ -7521,7 +7521,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "NaCl is a solid at 800C. It cannot conduct electricity in the solid state. PCl3 should have a simple molecular structure as it has a low melting point.",
+    "hint": "NaCl is a solid at ⁸⁰⁰C. It cannot conduct electricity in the solid state. PCl3 should have a simple molecular structure as it has a low melting point.",
     "sourceRef": "ChemMCQ09070",
     "stemTable": {
       "headers": [
@@ -7641,7 +7641,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "The formula of sodium fluoride and potassium sulphide are NaF and K2S respectively. Silicon dioxide (SiO2) is insoluble in water.",
+    "hint": "The formula of sodium fluoride and potassium sulphide are NaF and K²S respectively. Silicon dioxide (SiO2) is insoluble in water.",
     "sourceRef": "ChemMCQ09073"
   },
   {
