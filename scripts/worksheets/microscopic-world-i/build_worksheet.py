@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v4"
+QUIZ_ASSET_VERSION = "20260702v5"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -99,6 +99,12 @@ IONIC_BOND_KEEP_FILL = re.compile(
 COVALENT_BOND_KEEP_FILL = re.compile(
     r"^Write down the chemical formula of magnesium azide\.\s*$|"
     r"^Calculate the formula mass of magnesium azide\.\s*",
+    re.I,
+)
+STRUCTURE_PROPERTIES_KEEP_FILL = re.compile(
+    r"^Explain why CsCl\(s\) cannot NOT conduct electricity\.\s*$|"
+    r"^With reference to the structure and particles, explain why electrode is made of graphite, but NOT diamond\s*$|"
+    r"^What is the number of neighbouring chloride ions directly attached to each sodium ion in crystalline sodium chloride\?\s*$",
     re.I,
 )
 EXPLICIT_SOURCE_EXCLUDE = re.compile(
@@ -1435,8 +1441,8 @@ def classify_lq(item: dict) -> tuple[str, str]:
         return "exclude", "ionic bond fill not in keep list"
     if item.get("section") == "covalent-bond" and not COVALENT_BOND_KEEP_FILL.search(stem.strip()):
         return "exclude", "covalent bond fill not in keep list"
-    if item.get("section") == "structure-properties":
-        return "exclude", "structure and properties fill removed"
+    if item.get("section") == "structure-properties" and not STRUCTURE_PROPERTIES_KEEP_FILL.search(stem.strip()):
+        return "exclude", "structure and properties fill not in keep list"
     if not item.get("hasAnswer") or not ans:
         return "exclude", "no answer"
     if DRAW_EX.search(sl):

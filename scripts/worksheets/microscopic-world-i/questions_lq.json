@@ -6509,7 +6509,7 @@
     ],
     "marks": 1,
     "stem": "Explain why CsCl(s) cannot NOT conduct electricity.",
-    "answer": "(d) Caesium. Reactivity of Group I elements increases down the group",
+    "answer": "Ions are held in fixed positions in the crystal lattice and cannot move",
     "sourceRef": "Part 5 Q4(a)(ii)",
     "hasAnswer": true
   },
@@ -7547,7 +7547,7 @@
     ],
     "marks": 1,
     "stem": "What is the number of neighbouring chloride ions directly attached to each sodium ion in crystalline sodium chloride?",
-    "answer": "When force is applied, layers of ions can slide over one another. Non-directional metallic bonds continue to hold the metal ions and therefore the sodium metal does not break",
+    "answer": "6",
     "sourceRef": "Part 5 Q32(a)(ii)",
     "hasAnswer": true
   },
