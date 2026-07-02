@@ -1427,6 +1427,8 @@ def classify_lq(item: dict) -> tuple[str, str]:
         return "exclude", "broken or context-dependent ionic bond stem"
     if item.get("section") == "ionic-bond" and not IONIC_BOND_KEEP_FILL.search(stem.strip()):
         return "exclude", "ionic bond fill not in keep list"
+    if item.get("section") == "covalent-bond":
+        return "exclude", "covalent bond fill removed"
     if not item.get("hasAnswer") or not ans:
         return "exclude", "no answer"
     if DRAW_EX.search(sl):
