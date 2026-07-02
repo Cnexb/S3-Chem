@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v9"
+QUIZ_ASSET_VERSION = "20260702v10"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -1093,6 +1093,19 @@ COMBINATION_STEM_RE = re.compile(
 )
 COMBINATION_III_OPTION_RE = re.compile(r"^\(\d\)")
 NAME_FORMULA_OPTION_RE = re.compile(r"^(.+?)\s+([A-Z][A-Za-z0-9()+\-²³⁰-⁹]+)$")
+FORMULA_MASS_OPTION_RE = re.compile(
+    r"^([A-Z][A-Za-z0-9()+\-/]*)\s+([\d.]+(?:\s*g)?)$",
+    re.I,
+)
+FORMULA_BONDING_OPTION_RE = re.compile(
+    r"^([A-Z][A-Za-z0-9]*)\s+(Ionic|Covalent|Metallic)\b",
+    re.I,
+)
+FORMULA_STRUCTURE_OPTION_RE = re.compile(
+    r"^(.+?)\s+(Simple molecular structure|Giant covalent structure|"
+    r"Giant metallic structure|Giant ionic structure)$",
+    re.I,
+)
 
 KNOWN_COMBINATION_HEADERS = [
     "Number of neutrons",
@@ -1175,6 +1188,10 @@ KNOWN_COMBINATION_PHRASES = KNOWN_COMBINATION_HEADERS + [
     "Number of protons",
     "Number of neutrons",
     "Number of electrons",
+    "Simple molecular structure",
+    "Giant covalent structure",
+    "Giant metallic structure",
+    "Giant ionic structure",
 ]
 
 
@@ -1238,6 +1255,17 @@ def _split_combination_columns(text: str, ncol: int | None, phrases: list[str]) 
     if parts and (ncol is None or len(parts) == ncol):
         return parts
 
+    if ncol in (None, 2):
+        m = FORMULA_MASS_OPTION_RE.match(text)
+        if m:
+            return [m.group(1).strip(), m.group(2).strip()]
+        m = FORMULA_BONDING_OPTION_RE.match(text)
+        if m:
+            return [m.group(1).strip(), m.group(2).strip()]
+        m = FORMULA_STRUCTURE_OPTION_RE.match(text)
+        if m:
+            return [m.group(1).strip(), m.group(2).strip()]
+
     if ncol == 2:
         m = NAME_FORMULA_OPTION_RE.match(text)
         if m:
@@ -1274,7 +1302,7 @@ def _infer_combination_ncol(options: list, phrases: list[str]) -> int:
             counts.append(len(parts))
     if not counts:
         return 0
-    return max(set(counts), key=counts.count)
+    return max(set(counts), key=lambda n: (counts.count(n), n))
 
 
 def extract_combination_header_suffix(stem: str) -> str:
@@ -1510,15 +1538,14 @@ def mc_to_item(q: dict) -> dict | None:
         ncol = _infer_combination_ncol(raw_options, KNOWN_COMBINATION_PHRASES)
         combo_stem = format_combination_stem(raw_stem, ncol)
         stem, stem_table = format_stem_pipeline(combo_stem)
-        options = [
-            {
-                "key": o["key"],
-                "text": format_isotope_notation(
-                    format_combination_option(o.get("text", ""), ncol)
-                ),
-            }
-            for o in raw_options
-        ]
+        options = []
+        for o in raw_options:
+            opt_text = format_isotope_notation(
+                format_combination_option(o.get("text", ""), ncol)
+            )
+            if ncol < 4:
+                opt_text = format_formula_subscripts(opt_text)
+            options.append({"key": o["key"], "text": opt_text})
     else:
         stem, stem_table = format_stem_pipeline(raw_stem)
         options = [

@@ -3464,11 +3464,11 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Magnesium nitrate, MgNO3"
+        "text": "Magnesium nitrate, MgNO₃"
       },
       {
         "key": "B",
-        "text": "Aluminium oxide, Al2O3"
+        "text": "Aluminium oxide, Al₂O₃"
       },
       {
         "key": "C",
@@ -3476,7 +3476,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "Sodium carbonate, NaCO3"
+        "text": "Sodium carbonate, NaCO₃"
       }
     ],
     "answer": "B",
@@ -3832,7 +3832,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "B",
-        "text": "Ionic, QP2"
+        "text": "Ionic, QP₂"
       },
       {
         "key": "C",
@@ -3840,7 +3840,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "Covalent, QP2"
+        "text": "Covalent, QP₂"
       }
     ],
     "answer": "A",
@@ -4979,23 +4979,23 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following combinations about the molecular formula and the relative molecular mass of sulphur trioxide is correct? (Relative atomic masses: O = 16.0, S = 32.1) Molecular formula Relative molecular mass",
+    "stem": "Which of the following combinations about the molecular formula and the relative molecular mass of sulphur trioxide is correct? (Relative atomic masses: O = 16.0, S = 32.1)\nMolecular formula, Relative molecular mass",
     "options": [
       {
         "key": "A",
-        "text": "SO2 64.1"
+        "text": "SO₂, 64.1"
       },
       {
         "key": "B",
-        "text": "SO2 64.1 g"
+        "text": "SO₂, 64.1 g"
       },
       {
         "key": "C",
-        "text": "SO3 80.1"
+        "text": "SO₃, 80.1"
       },
       {
         "key": "D",
-        "text": "SO3 80.1 g"
+        "text": "SO₃, 80.1 g"
       }
     ],
     "answer": "C",
@@ -5259,23 +5259,23 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Elements X and Y are in Group V and Group VII of the Periodic Table respectively. Which of the following combinations about the compound formed by X and Y is correct? Chemical formula Type of bonding",
+    "stem": "Elements X and Y are in Group V and Group VII of the Periodic Table respectively. Which of the following combinations about the compound formed by X and Y is correct?\nChemical formula, Type of bonding",
     "options": [
       {
         "key": "A",
-        "text": "X³Y Ionic"
+        "text": "X³Y, Ionic"
       },
       {
         "key": "B",
-        "text": "XY3 Covalent"
+        "text": "XY₃, Covalent"
       },
       {
         "key": "C",
-        "text": "X³Y Covalent"
+        "text": "X³Y, Covalent"
       },
       {
         "key": "D",
-        "text": "XY3 Ionic"
+        "text": "XY₃, Ionic"
       }
     ],
     "answer": "B",
@@ -6548,15 +6548,15 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "H2SO4 NaBr, P4"
+        "text": "H₂SO₄ NaBr, P₄"
       },
       {
         "key": "B",
-        "text": "NaBr P, H2SO4"
+        "text": "NaBr P, H₂SO₄"
       },
       {
         "key": "C",
-        "text": "H2SO4 NaBr, Pb"
+        "text": "H₂SO₄ NaBr, Pb"
       },
       {
         "key": "D",
@@ -6816,15 +6816,15 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following combinations about the structures of substances is INCORRECT? Substance Structure",
+    "stem": "Which of the following combinations about the structures of substances is INCORRECT?\nSubstance, Structure",
     "options": [
       {
         "key": "A",
-        "text": "N2H4 Simple molecular structure"
+        "text": "N₂H₄, Simple molecular structure"
       },
       {
         "key": "B",
-        "text": "SiCl4 Giant covalent structure"
+        "text": "SiCl₄, Giant covalent structure"
       },
       {
         "key": "C",
@@ -6832,7 +6832,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "K³Fe(CN)6 Giant ionic structure"
+        "text": "K³Fe(CN)₆, Giant ionic structure"
       }
     ],
     "answer": "B",
