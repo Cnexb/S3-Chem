@@ -11,6 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
+QUIZ_ASSET_VERSION = "20260702v2"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -1727,6 +1728,10 @@ export function renderStemTableHtml(table) {
 
 def patch_quiz_app(text: str, locale: str) -> str:
     text = text.replace(
+        'from "./quizData.js"',
+        f'from "./quizData.js?v={QUIZ_ASSET_VERSION}"',
+    )
+    text = text.replace(
         """  function setHint(text) {
     const msg = text || t("empty");
     if (els.hintText) els.hintText.textContent = msg;
@@ -1899,6 +1904,16 @@ def patch_quiz_html(html: str, locale: str) -> str:
         html = html.replace("CH · CHAPTER LABEL", "課題二 · 微觀世界 I")
         html = html.replace('data-i18n="hSettings">Worksheet settings', 'data-i18n="hSettings">工作紙設定')
         html = html.replace('data-i18n="btnGenerate">Generate questions', 'data-i18n="btnGenerate">生成題目')
+    html = html.replace(
+        '<script type="module" src="./js/quizApp.js"></script>',
+        f'<script type="module" src="./js/quizApp.js?v={QUIZ_ASSET_VERSION}"></script>',
+    )
+    if 'http-equiv="Cache-Control"' not in html:
+        html = html.replace(
+            '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>',
+            '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>\n'
+            '<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>',
+        )
     return html
 
 
