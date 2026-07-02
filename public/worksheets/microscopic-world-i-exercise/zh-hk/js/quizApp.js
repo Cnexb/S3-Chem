@@ -1,4 +1,4 @@
-import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v13";
+import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v14";
 import { sectionLabel, renderSessionSummary } from "./quizSummary.js";
 import { downloadWord, printSheet } from "./quizExport.js";
 import {

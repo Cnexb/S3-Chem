@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v13"
+QUIZ_ASSET_VERSION = "20260702v14"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -1136,6 +1136,7 @@ COMBINATION_STEM_RE = re.compile(
     re.I,
 )
 COMBINATION_III_OPTION_RE = re.compile(r"^\(\d\)")
+ROMAN_NUMERAL_RE = re.compile(r"^[IVX]+$", re.I)
 NAME_FORMULA_OPTION_RE = re.compile(r"^(.+?)\s+([A-Z][A-Za-z0-9()+\-²³⁰-⁹]+)$")
 FORMULA_MASS_OPTION_RE = re.compile(
     r"^([A-Z][A-Za-z0-9()+\-/]*)\s+([\d.]+(?:\s*g)?)$",
@@ -1172,6 +1173,8 @@ KNOWN_COMBINATION_HEADERS = [
     "Boiling point",
     "Pure substance",
     "Group name",
+    "Group",
+    "Period",
     "Element X",
     "Element Y",
     "Element P",
@@ -1280,7 +1283,12 @@ def _is_simple_token_column(text: str) -> bool:
         return False
     if all(re.fullmatch(r"\d+", t) for t in tokens):
         return True
-    if all(re.fullmatch(r"\d+", t) or re.fullmatch(r"[A-Z][a-z]*", t) for t in tokens):
+    if all(
+        re.fullmatch(r"\d+", t)
+        or re.fullmatch(r"[A-Z][a-z]*", t)
+        or ROMAN_NUMERAL_RE.fullmatch(t)
+        for t in tokens
+    ):
         if any(re.fullmatch(r"\d+", t) for t in tokens):
             return True
         if all(re.fullmatch(r"[A-Z][a-z]*", t) for t in tokens):
@@ -1351,28 +1359,56 @@ def _infer_combination_ncol(options: list, phrases: list[str]) -> int:
 
 def extract_combination_header_suffix(stem: str) -> str:
     m = re.search(r"\bcombinations?\b", stem, re.I)
-    if not m:
-        return ""
-    tail = stem[m.start() :]
-    qm = re.search(r"\?", tail)
+    if m:
+        tail = stem[m.start() :]
+        qm = re.search(r"\?", tail)
+        if not qm:
+            return ""
+        rest = tail[qm.end() :].strip()
+        rest = re.sub(r"^\([^)]+\)\s*", "", rest).strip()
+        if re.search(r"\(1\).*\(2\)", rest):
+            return ""
+        return rest
+
+    qm = list(re.finditer(r"\?", stem))
     if not qm:
         return ""
-    rest = tail[qm.end() :].strip()
-    rest = re.sub(r"^\([^)]+\)\s*", "", rest).strip()
-    if re.search(r"\(1\).*\(2\)", rest):
+    rest = stem[qm[-1].end() :].strip()
+    if not rest or re.search(r"\(1\)", rest):
+        return ""
+    if len(rest) > 80:
         return ""
     return rest
 
 
-def is_combination_table_mcq(stem: str, options: list) -> bool:
-    if not COMBINATION_STEM_RE.search(stem):
+def _header_suffix_splits_cleanly(stem: str, options: list) -> bool:
+    ncol = _infer_combination_ncol(options, KNOWN_COMBINATION_PHRASES)
+    if ncol < 2:
         return False
+    headers = parse_combination_headers(stem, ncol)
+    if len(headers) < 2:
+        return False
+    for opt in options:
+        text = opt.get("text", "").strip()
+        if not text:
+            return False
+        parts = _split_combination_columns(text, ncol, KNOWN_COMBINATION_PHRASES)
+        if len(parts) != ncol:
+            return False
+    return True
+
+
+def is_combination_table_mcq(stem: str, options: list) -> bool:
     texts = [o.get("text", "").strip() for o in options]
     if not texts:
         return False
     if all(COMBINATION_III_OPTION_RE.match(t) for t in texts):
         return False
-    return any(len(t.split()) >= 2 for t in texts)
+    if not any(len(t.split()) >= 2 for t in texts):
+        return False
+    if COMBINATION_STEM_RE.search(stem):
+        return True
+    return _header_suffix_splits_cleanly(stem, options)
 
 
 def parse_combination_headers(stem: str, ncol: int) -> list[str]:

@@ -1564,23 +1564,23 @@ export const QUIZ_ITEMS = [
     "section": "periodic-table",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The electron diagram of an atom of element X is shown below. In which group and period of the Periodic Table should X be placed? Group Period",
+    "stem": "The electron diagram of an atom of element X is shown below. In which group and period of the Periodic Table should X be placed?\nGroup, Period",
     "options": [
       {
         "key": "A",
-        "text": "V 5"
+        "text": "V, 5"
       },
       {
         "key": "B",
-        "text": "II 5"
+        "text": "II, 5"
       },
       {
         "key": "C",
-        "text": "II 2"
+        "text": "II, 2"
       },
       {
         "key": "D",
-        "text": "I 2"
+        "text": "I, 2"
       }
     ],
     "answer": "B",
@@ -3141,23 +3141,23 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The atomic symbol of osmium-192 is . What is the number of neutrons and the number of electrons in an osmium(III) ion formed from osmium-192? Number of neutrons Number of electrons",
+    "stem": "The atomic symbol of osmium-192 is . What is the number of neutrons and the number of electrons in an osmium(III) ion formed from osmium-192?\nNumber of neutrons, Number of electrons",
     "options": [
       {
         "key": "A",
-        "text": "116 73"
+        "text": "116, 73"
       },
       {
         "key": "B",
-        "text": "114 73"
+        "text": "114, 73"
       },
       {
         "key": "C",
-        "text": "118 76"
+        "text": "118, 76"
       },
       {
         "key": "D",
-        "text": "116 76"
+        "text": "116, 76"
       }
     ],
     "answer": "A",
@@ -3427,23 +3427,23 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The electron diagram of a compound formed from elements S and T is shown below (only the outermost shell electrons are shown). How many electrons are there in the outermost shell of an S atom and a T atom? S T",
+    "stem": "The electron diagram of a compound formed from elements S and T is shown below (only the outermost shell electrons are shown). How many electrons are there in the outermost shell of an S atom and a T atom?\nS, T",
     "options": [
       {
         "key": "A",
-        "text": "2 3"
+        "text": "2, 3"
       },
       {
         "key": "B",
-        "text": "3 2"
+        "text": "3, 2"
       },
       {
         "key": "C",
-        "text": "3 6"
+        "text": "3, 6"
       },
       {
         "key": "D",
-        "text": "2 8"
+        "text": "2, 8"
       }
     ],
     "answer": "C",
@@ -4608,23 +4608,23 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "X and Y are two elements in different periods of the Periodic Table. The electron diagram of a compound formed between X and Y is shown below (only the outermost shell electrons are shown). Which of the following is the probable combination of X and Y? X Y",
+    "stem": "X and Y are two elements in different periods of the Periodic Table. The electron diagram of a compound formed between X and Y is shown below (only the outermost shell electrons are shown). Which of the following is the probable combination of X and Y?\nX, Y",
     "options": [
       {
         "key": "A",
-        "text": "Sulphur Silicon"
+        "text": "Sulphur, Silicon"
       },
       {
         "key": "B",
-        "text": "Sulphur Carbon"
+        "text": "Sulphur, Carbon"
       },
       {
         "key": "C",
-        "text": "Oxygen Sulphur"
+        "text": "Oxygen, Sulphur"
       },
       {
         "key": "D",
-        "text": "Oxygen Carbon"
+        "text": "Oxygen, Carbon"
       }
     ],
     "answer": "B",
