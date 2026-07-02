@@ -8021,7 +8021,9 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "(d) Halogens are toxic"
+              "Halogens, halogens",
+              "Halogens",
+              "halogens"
             ]
           }
         ]
@@ -8046,7 +8048,11 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "(d) Filling advertising signs"
+              "Noble gas, noble gas, Noble gases, noble gases",
+              "Noble gas",
+              "noble gas",
+              "Noble gases",
+              "noble gases"
             ]
           }
         ]
@@ -8054,62 +8060,6 @@ export const QUIZ_ITEMS = [
     ],
     "hint": "See Part 2 Q31(a). (1 mark)",
     "sourceRef": "Part 2 Q31(a)"
-  },
-  {
-    "id": "pt-06-b",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "The position of an element in the Periodic Table can be used to predict its properties.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(d) It is a shiny solid at room temperature and pressure / It is hard and strong / It is malleable and ductile / It is a conductor of heat and electricity.",
-              "(d) It is a shiny solid at room temperature and pressure / It is hard and strong / It is malleable and ductile / It is a conductor of heat and electricity",
-              "(d) It is a shiny solid at room temperature",
-              "pressure / It is hard",
-              "strong / It is malleable",
-              "ductile / It is a conductor of heat",
-              "electricity"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q6(b). (1 mark)",
-    "sourceRef": "Part 2 Q6(b)"
-  },
-  {
-    "id": "pt-48-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Standard",
-    "stem": "State the number of protons and electrons in a lead(II) ion.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Different atoms of the same element with same no. of protons but different no. of neutrons"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q48(a)(i). (2 marks)",
-    "sourceRef": "Part 2 Q48(a)(i)"
   },
   {
     "id": "pt-53-a-i",
@@ -8127,7 +8077,7 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "= 79.9"
+              "79.9"
             ]
           }
         ]
@@ -8152,8 +8102,7 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "(d) Both Br and I have 7 outermost shell electrons. They have similar chemical properties",
-              "(d) Both Br"
+              "46"
             ]
           }
         ]
