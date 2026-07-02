@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v12"
+QUIZ_ASSET_VERSION = "20260702v13"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},

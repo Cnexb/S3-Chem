@@ -1909,7 +1909,7 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "a 2"
+        "text": "a + 2"
       },
       {
         "key": "B",
@@ -1921,7 +1921,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "a 16"
+        "text": "a + 16"
       }
     ],
     "answer": "B",
