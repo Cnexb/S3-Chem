@@ -7968,11 +7968,10 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "(iii) It has the same number of protons and electrons.",
-              "(iii) It has the same number of protons and electrons",
-              "(iii) it has the same number of protons and electrons",
-              "(iii) It has the same number of protons",
-              "electrons"
+              "2, 8, 2",
+              "2,8,2",
+              "2.8.2",
+              "2 8 2"
             ]
           }
         ]
