@@ -84,6 +84,10 @@ EXPLICIT_EXCLUDE_IDS = {
     "pt-52-a-ii",
     "pt-54-a-i",
     "pt-54-a-ii",
+    # Broken / context-dependent ionic-bond items (screenshot review 2026-07)
+    "ib-01-a",
+    "ib-04-a",
+    "ib-06-a",
 }
 EXPLICIT_SOURCE_EXCLUDE = re.compile(
     r"Part 3 Q25\(a\)$|Part 5 Q12\(a\)\(i\)$|Part 5 Q32\(a\)\(i\)$",
@@ -140,6 +144,44 @@ BROKEN_PT_STEM = re.compile(
     r"^Write the word equation for the reaction between lithium and water\.\s*$|"
     r"^State TWO properties of metals\.\s*$|"
     r"^Describe a test which can be used to show that the gas evolved is hydrogen\.\s*$",
+    re.I,
+)
+BROKEN_IB_STEM = re.compile(
+    r"^In set-up A, a blue colour can be observed\b|"
+    r"^Write the chemical formula of copernicium fluoride\.\s*$|"
+    r"^State the purpose of soaking the filter paper with K2SO4\(aq\)\.\s*$|"
+    r"^\(1\) In terms of electron transfer, describe how .* ion is formed from .* atom\.\s*$|"
+    r"^Complete the following table Species\b|"
+    r"^Give the chemical formula of iron\(III\) nitrate\s*$|"
+    r"^Ammonium dichromate\s*$|"
+    r"^Which of the particles in the above table is / are cations\?\s*$|"
+    r"^Which of the particles in the above table is / are anions\?\s*$|"
+    r"^Sodium chloride\s*$|"
+    r"^If the relative atomic mass of this sample of neon is 20\.176\b|"
+    r"^Complete the following table: Particle Proton Neutron Electron\b|"
+    r"^What is the function of dilute sulphuric acid\?\s*$|"
+    r"^Give the mass number of F\.\s*$|"
+    r"^Iron\(II\) chloride\s*$|"
+    r"^Briefly describe the formation of ionic bond when calcium reacts with oxygen\b|"
+    r"^Neon atom 20 2, 8\s*$|"
+    r"^Predict whether Mg or element A has a higher reactivity towards chlorine\b|"
+    r"^Complete the following table Particle Atomic number Mass number Proton\b|"
+    r"^Describe how copernicium atoms and fluorine atoms form\b|"
+    r"^Calcium hydrogencarbonate\s*$|"
+    r"^How many protons are there in an atom of copernicium\?\s*$|"
+    r"^Explain why the filter paper cannot be moistened with ethanol\.\s*$|"
+    r"^Beryllium atom 4 5\s*$|"
+    r"^Calcium oxide\s*$|"
+    r"^Describe how an atom is changed to a cation\.\s*$|"
+    r"^Describe how an atom is changed to an anion\.\s*$|"
+    r"^State ONE difference between 20Ne and 22Ne\s*$|"
+    r"^Why is the filter paper soaked with sodium sulphate solution instead of water\?\s*$|"
+    r"^Suggest what W and X are\.\s*$|"
+    r"^Sodium and Chlorine\s*$|"
+    r"^Complete Table 1 by giving the missing information\b|"
+    r"^What is the colour of the patch\?\s*$|"
+    r"^Potassium ion 19 39 \(vi\) Nitride ion 2, 8 7\s*$|"
+    r"^Describe the formation of strontium chloride from atoms of strontium and chlorine\b",
     re.I,
 )
 DRAW_EX = re.compile(
@@ -1365,6 +1407,8 @@ def classify_lq(item: dict) -> tuple[str, str]:
         return "exclude", "drawing or on-figure answer"
     if BROKEN_PT_STEM.search(stem.strip()):
         return "exclude", "broken or context-dependent stem"
+    if item.get("section") == "ionic-bond" and BROKEN_IB_STEM.search(stem.strip()):
+        return "exclude", "broken or context-dependent ionic bond stem"
     if not item.get("hasAnswer") or not ans:
         return "exclude", "no answer"
     if DRAW_EX.search(sl):
