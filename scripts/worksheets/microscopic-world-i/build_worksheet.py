@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v10"
+QUIZ_ASSET_VERSION = "20260702v11"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -290,6 +290,13 @@ def format_isotope_notation(text: str) -> str:
         repl,
         text,
     )
+
+
+def clean_mcq_option_text(text: str) -> str:
+    text = " ".join(text.split()).strip()
+    if text.endswith("."):
+        text = text[:-1].rstrip()
+    return text
 
 
 def _split_trailing_question(text: str) -> tuple[str, str]:
@@ -1545,11 +1552,14 @@ def mc_to_item(q: dict) -> dict | None:
             )
             if ncol < 4:
                 opt_text = format_formula_subscripts(opt_text)
-            options.append({"key": o["key"], "text": opt_text})
+            options.append({"key": o["key"], "text": clean_mcq_option_text(opt_text)})
     else:
         stem, stem_table = format_stem_pipeline(raw_stem)
         options = [
-            {"key": o["key"], "text": format_isotope_notation(o.get("text", ""))}
+            {
+                "key": o["key"],
+                "text": clean_mcq_option_text(format_isotope_notation(o.get("text", ""))),
+            }
             for o in raw_options
         ]
     item = {

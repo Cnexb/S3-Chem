@@ -38,19 +38,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Neutrons are electrically neutral."
+        "text": "Neutrons are electrically neutral"
       },
       {
         "key": "B",
-        "text": "A proton and a neutron have about the same mass."
+        "text": "A proton and a neutron have about the same mass"
       },
       {
         "key": "C",
-        "text": "All atoms are made up of protons, neutrons and electrons."
+        "text": "All atoms are made up of protons, neutrons and electrons"
       },
       {
         "key": "D",
-        "text": "The mass of an atom is concentrated in the nucleus."
+        "text": "The mass of an atom is concentrated in the nucleus"
       }
     ],
     "answer": "C",
@@ -66,19 +66,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "The nucleus contains neutrons and electrons."
+        "text": "The nucleus contains neutrons and electrons"
       },
       {
         "key": "B",
-        "text": "Most of the space in an atom is empty."
+        "text": "Most of the space in an atom is empty"
       },
       {
         "key": "C",
-        "text": "Electrons move very fast around the nucleus."
+        "text": "Electrons move very fast around the nucleus"
       },
       {
         "key": "D",
-        "text": "Neutrons and protons are much heavier than electrons."
+        "text": "Neutrons and protons are much heavier than electrons"
       }
     ],
     "answer": "A",
@@ -94,19 +94,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "the mass of an atom is extremely small."
+        "text": "the mass of an atom is extremely small"
       },
       {
         "key": "B",
-        "text": "all the subatomic particles in an atom have no charge."
+        "text": "all the subatomic particles in an atom have no charge"
       },
       {
         "key": "C",
-        "text": "the nucleus of an atom contains electrically neutral subatomic particles."
+        "text": "the nucleus of an atom contains electrically neutral subatomic particles"
       },
       {
         "key": "D",
-        "text": "the number of positively charged subatomic particles is equal to the number of negatively charged subatomic particles."
+        "text": "the number of positively charged subatomic particles is equal to the number of negatively charged subatomic particles"
       }
     ],
     "answer": "D",
@@ -150,19 +150,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "16 electrons, 16 protons and 15 neutrons."
+        "text": "16 electrons, 16 protons and 15 neutrons"
       },
       {
         "key": "B",
-        "text": "15 electrons, 16 protons and 15 neutrons."
+        "text": "15 electrons, 16 protons and 15 neutrons"
       },
       {
         "key": "C",
-        "text": "16 electrons, 15 protons and 16 neutrons."
+        "text": "16 electrons, 15 protons and 16 neutrons"
       },
       {
         "key": "D",
-        "text": "15 electrons, 15 protons and 16 neutrons."
+        "text": "15 electrons, 15 protons and 16 neutrons"
       }
     ],
     "answer": "D",
@@ -436,19 +436,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "atoms of the same element have different atomic numbers."
+        "text": "atoms of the same element have different atomic numbers"
       },
       {
         "key": "B",
-        "text": "atoms of the same element have different masses."
+        "text": "atoms of the same element have different masses"
       },
       {
         "key": "C",
-        "text": "atoms of the same element have different numbers of electrons."
+        "text": "atoms of the same element have different numbers of electrons"
       },
       {
         "key": "D",
-        "text": "atoms of some elements can form ions."
+        "text": "atoms of some elements can form ions"
       }
     ],
     "answer": "B",
@@ -464,19 +464,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Each ¹²C atom weighs 12 g."
+        "text": "Each ¹²C atom weighs 12 g"
       },
       {
         "key": "B",
-        "text": "Each ¹²C atom contains 12 protons."
+        "text": "Each ¹²C atom contains 12 protons"
       },
       {
         "key": "C",
-        "text": "It is determined on the ¹²C = 12.00 scale."
+        "text": "It is determined on the ¹²C = 12.00 scale"
       },
       {
         "key": "D",
-        "text": "The density of ¹²C is 12 g cm3."
+        "text": "The density of ¹²C is 12 g cm3"
       }
     ],
     "answer": "C",
@@ -492,19 +492,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "The relative mass of a  isotope is roughly equal to Z on the ¹²C = 12.00 scale."
+        "text": "The relative mass of a isotope is roughly equal to Z on the ¹²C = 12.00 scale"
       },
       {
         "key": "B",
-        "text": "The relative mass of an isotope of an element is equal to  of the mass of a ¹²C atom."
+        "text": "The relative mass of an isotope of an element is equal to of the mass of a ¹²C atom"
       },
       {
         "key": "C",
-        "text": "They have more neutrons than protons."
+        "text": "They have more neutrons than protons"
       },
       {
         "key": "D",
-        "text": "They have the same electronic arrangement."
+        "text": "They have the same electronic arrangement"
       }
     ],
     "answer": "D",
@@ -520,19 +520,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "On the ¹²C = 12.00 scale, the relative isotopic mass of ⁷⁹Br is roughly equal to 79."
+        "text": "On the ¹²C = 12.00 scale, the relative isotopic mass of ⁷⁹Br is roughly equal to 79"
       },
       {
         "key": "B",
-        "text": "The relative abundances of the two isotopes are very close."
+        "text": "The relative abundances of the two isotopes are very close"
       },
       {
         "key": "C",
-        "text": "81Br2 is more reactive than 79Br2."
+        "text": "81Br2 is more reactive than 79Br2"
       },
       {
         "key": "D",
-        "text": "The two isotopes can be separated by physical methods."
+        "text": "The two isotopes can be separated by physical methods"
       }
     ],
     "answer": "C",
@@ -886,19 +886,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "They have the same number of occupied electron shells."
+        "text": "They have the same number of occupied electron shells"
       },
       {
         "key": "B",
-        "text": "They have the same number of protons."
+        "text": "They have the same number of protons"
       },
       {
         "key": "C",
-        "text": "They have the same number of electrons."
+        "text": "They have the same number of electrons"
       },
       {
         "key": "D",
-        "text": "They are a pair of isotopes."
+        "text": "They are a pair of isotopes"
       }
     ],
     "answer": "A",
@@ -998,19 +998,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "6."
+        "text": "6"
       },
       {
         "key": "B",
-        "text": "8."
+        "text": "8"
       },
       {
         "key": "C",
-        "text": "14."
+        "text": "14"
       },
       {
         "key": "D",
-        "text": "18."
+        "text": "18"
       }
     ],
     "answer": "B",
@@ -1176,19 +1176,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "All metals are hard."
+        "text": "All metals are hard"
       },
       {
         "key": "B",
-        "text": "All metals are good thermal conductors."
+        "text": "All metals are good thermal conductors"
       },
       {
         "key": "C",
-        "text": "All non-metals are soft."
+        "text": "All non-metals are soft"
       },
       {
         "key": "D",
-        "text": "All non-metals are electrical insulators."
+        "text": "All non-metals are electrical insulators"
       }
     ],
     "answer": "B",
@@ -1204,19 +1204,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Aluminium is a semi-metal."
+        "text": "Aluminium is a semi-metal"
       },
       {
         "key": "B",
-        "text": "Semi-metals are good conductors of electricity under room conditions."
+        "text": "Semi-metals are good conductors of electricity under room conditions"
       },
       {
         "key": "C",
-        "text": "Semi-metals are widely used in making computer chips."
+        "text": "Semi-metals are widely used in making computer chips"
       },
       {
         "key": "D",
-        "text": "Semi-metals exist as solids or gases under room conditions."
+        "text": "Semi-metals exist as solids or gases under room conditions"
       }
     ],
     "answer": "C",
@@ -1232,19 +1232,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "similar chemical properties."
+        "text": "similar chemical properties"
       },
       {
         "key": "B",
-        "text": "similar physical properties."
+        "text": "similar physical properties"
       },
       {
         "key": "C",
-        "text": "the same number of occupied electron shells in their atoms."
+        "text": "the same number of occupied electron shells in their atoms"
       },
       {
         "key": "D",
-        "text": "the same number of electrons in the outermost shell in their atoms."
+        "text": "the same number of electrons in the outermost shell in their atoms"
       }
     ],
     "answer": "C",
@@ -1400,19 +1400,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "They have the same number of outermost shell electrons in their atoms."
+        "text": "They have the same number of outermost shell electrons in their atoms"
       },
       {
         "key": "B",
-        "text": "They have the same atomic number."
+        "text": "They have the same atomic number"
       },
       {
         "key": "C",
-        "text": "They have similar physical properties."
+        "text": "They have similar physical properties"
       },
       {
         "key": "D",
-        "text": "They have the same number of occupied electron shells in their atoms."
+        "text": "They have the same number of occupied electron shells in their atoms"
       }
     ],
     "answer": "D",
@@ -1428,19 +1428,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Group I elements."
+        "text": "Group I elements"
       },
       {
         "key": "B",
-        "text": "Period 3 elements."
+        "text": "Period 3 elements"
       },
       {
         "key": "C",
-        "text": "alkali metals."
+        "text": "alkali metals"
       },
       {
         "key": "D",
-        "text": "alkaline earth metals."
+        "text": "alkaline earth metals"
       }
     ],
     "answer": "B",
@@ -1484,19 +1484,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "electronic arrangement."
+        "text": "electronic arrangement"
       },
       {
         "key": "B",
-        "text": "atomic structure."
+        "text": "atomic structure"
       },
       {
         "key": "C",
-        "text": "number of electron shells."
+        "text": "number of electron shells"
       },
       {
         "key": "D",
-        "text": "number of outermost shell electrons."
+        "text": "number of outermost shell electrons"
       }
     ],
     "answer": "D",
@@ -1512,19 +1512,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Atoms of the same element have the same mass number."
+        "text": "Atoms of the same element have the same mass number"
       },
       {
         "key": "B",
-        "text": "Only metal elements can conduct electricity under room conditions."
+        "text": "Only metal elements can conduct electricity under room conditions"
       },
       {
         "key": "C",
-        "text": "The first element in the Periodic Table belongs to Group I."
+        "text": "The first element in the Periodic Table belongs to Group I"
       },
       {
         "key": "D",
-        "text": "Different elements have different atomic numbers."
+        "text": "Different elements have different atomic numbers"
       }
     ],
     "answer": "D",
@@ -1540,19 +1540,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "The number of protons and the number of neutrons are the same."
+        "text": "The number of protons and the number of neutrons are the same"
       },
       {
         "key": "B",
-        "text": "The relative isotopic mass of  is 13."
+        "text": "The relative isotopic mass of is 13"
       },
       {
         "key": "C",
-        "text": "X is placed in Group III of the Periodic Table."
+        "text": "X is placed in Group III of the Periodic Table"
       },
       {
         "key": "D",
-        "text": "The atom has two occupied electron shells."
+        "text": "The atom has two occupied electron shells"
       }
     ],
     "answer": "C",
@@ -1568,19 +1568,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": " V 5"
+        "text": "V 5"
       },
       {
         "key": "B",
-        "text": " II 5"
+        "text": "II 5"
       },
       {
         "key": "C",
-        "text": " II 2"
+        "text": "II 2"
       },
       {
         "key": "D",
-        "text": " I 2"
+        "text": "I 2"
       }
     ],
     "answer": "B",
@@ -1601,19 +1601,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "X and Y are in the same period of the Periodic Table."
+        "text": "X and Y are in the same period of the Periodic Table"
       },
       {
         "key": "B",
-        "text": "X and Y are in the same group of the Periodic Table."
+        "text": "X and Y are in the same group of the Periodic Table"
       },
       {
         "key": "C",
-        "text": "X is more reactive than Y."
+        "text": "X is more reactive than Y"
       },
       {
         "key": "D",
-        "text": "X is less reactive than Y."
+        "text": "X is less reactive than Y"
       }
     ],
     "answer": "B",
@@ -1629,19 +1629,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "They are in the same period of the Periodic Table."
+        "text": "They are in the same period of the Periodic Table"
       },
       {
         "key": "B",
-        "text": "They burn with the same flame colour."
+        "text": "They burn with the same flame colour"
       },
       {
         "key": "C",
-        "text": "They have the same reactivity."
+        "text": "They have the same reactivity"
       },
       {
         "key": "D",
-        "text": "They react similarly with water."
+        "text": "They react similarly with water"
       }
     ],
     "answer": "D",
@@ -1741,19 +1741,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Both of them should be stored under paraffin oil."
+        "text": "Both of them should be stored under paraffin oil"
       },
       {
         "key": "B",
-        "text": "Both of them form an ionic compound with chlorine."
+        "text": "Both of them form an ionic compound with chlorine"
       },
       {
         "key": "C",
-        "text": "They react with water in the same way."
+        "text": "They react with water in the same way"
       },
       {
         "key": "D",
-        "text": "A rubidium atom is larger than a sodium atom."
+        "text": "A rubidium atom is larger than a sodium atom"
       }
     ],
     "answer": "C",
@@ -1825,19 +1825,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "They have the same colour."
+        "text": "They have the same colour"
       },
       {
         "key": "B",
-        "text": "They have the same physical state under room conditions."
+        "text": "They have the same physical state under room conditions"
       },
       {
         "key": "C",
-        "text": "Their reactivity increases down the group."
+        "text": "Their reactivity increases down the group"
       },
       {
         "key": "D",
-        "text": "They react with metals to form ionic compounds."
+        "text": "They react with metals to form ionic compounds"
       }
     ],
     "answer": "D",
@@ -1881,19 +1881,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It is a black solid under room conditions."
+        "text": "It is a black solid under room conditions"
       },
       {
         "key": "B",
-        "text": "It sublimes when heated."
+        "text": "It sublimes when heated"
       },
       {
         "key": "C",
-        "text": "It conducts electricity."
+        "text": "It conducts electricity"
       },
       {
         "key": "D",
-        "text": "It is less reactive than bromine."
+        "text": "It is less reactive than bromine"
       }
     ],
     "answer": "C",
@@ -1909,19 +1909,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "a  2."
+        "text": "a 2"
       },
       {
         "key": "B",
-        "text": "a + 8."
+        "text": "a + 8"
       },
       {
         "key": "C",
-        "text": "a + 10."
+        "text": "a + 10"
       },
       {
         "key": "D",
-        "text": "a  16."
+        "text": "a 16"
       }
     ],
     "answer": "B",
@@ -1965,19 +1965,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It is less dense than air."
+        "text": "It is less dense than air"
       },
       {
         "key": "B",
-        "text": "It belongs to Group 0 of the Periodic Table."
+        "text": "It belongs to Group 0 of the Periodic Table"
       },
       {
         "key": "C",
-        "text": "Its atom has an octet structure."
+        "text": "Its atom has an octet structure"
       },
       {
         "key": "D",
-        "text": "It does not burn in air."
+        "text": "It does not burn in air"
       }
     ],
     "answer": "C",
@@ -1993,19 +1993,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "argon has a higher density than air."
+        "text": "argon has a higher density than air"
       },
       {
         "key": "B",
-        "text": "argon can increase the brightness of the light bulb."
+        "text": "argon can increase the brightness of the light bulb"
       },
       {
         "key": "C",
-        "text": "argon is cheaper than air."
+        "text": "argon is cheaper than air"
       },
       {
         "key": "D",
-        "text": "argon does not react with the metal filament in the light bulb."
+        "text": "argon does not react with the metal filament in the light bulb"
       }
     ],
     "answer": "D",
@@ -2077,19 +2077,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Elements are arranged in order of increasing mass number."
+        "text": "Elements are arranged in order of increasing mass number"
       },
       {
         "key": "B",
-        "text": "Calcium is a transition metal."
+        "text": "Calcium is a transition metal"
       },
       {
         "key": "C",
-        "text": "All Group 0 elements have an octet structure."
+        "text": "All Group 0 elements have an octet structure"
       },
       {
         "key": "D",
-        "text": "Group I elements should be stored under paraffin oil."
+        "text": "Group I elements should be stored under paraffin oil"
       }
     ],
     "answer": "D",
@@ -2138,19 +2138,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It is a silvery solid."
+        "text": "It is a silvery solid"
       },
       {
         "key": "B",
-        "text": "It conducts electricity."
+        "text": "It conducts electricity"
       },
       {
         "key": "C",
-        "text": "It is less reactive than sodium."
+        "text": "It is less reactive than sodium"
       },
       {
         "key": "D",
-        "text": "It reacts explosively with water."
+        "text": "It reacts explosively with water"
       }
     ],
     "answer": "C",
@@ -2306,19 +2306,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Both of them have 12 protons in the nucleus."
+        "text": "Both of them have 12 protons in the nucleus"
       },
       {
         "key": "B",
-        "text": "Both of them have the same chemical properties."
+        "text": "Both of them have the same chemical properties"
       },
       {
         "key": "C",
-        "text": "Both of them have two outermost shell electrons."
+        "text": "Both of them have two outermost shell electrons"
       },
       {
         "key": "D",
-        "text": "Both of them have the same physical properties."
+        "text": "Both of them have the same physical properties"
       }
     ],
     "answer": "A",
@@ -2334,19 +2334,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "a sodium ion."
+        "text": "a sodium ion"
       },
       {
         "key": "B",
-        "text": "a magnesium ion."
+        "text": "a magnesium ion"
       },
       {
         "key": "C",
-        "text": "a calcium ion."
+        "text": "a calcium ion"
       },
       {
         "key": "D",
-        "text": "a neon atom."
+        "text": "a neon atom"
       }
     ],
     "answer": "C",
@@ -2362,19 +2362,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "10 protons and 10 electrons."
+        "text": "10 protons and 10 electrons"
       },
       {
         "key": "B",
-        "text": "10 protons and 12 electrons."
+        "text": "10 protons and 12 electrons"
       },
       {
         "key": "C",
-        "text": "12 protons and 10 electrons."
+        "text": "12 protons and 10 electrons"
       },
       {
         "key": "D",
-        "text": "12 protons and 12 electrons."
+        "text": "12 protons and 12 electrons"
       }
     ],
     "answer": "C",
@@ -2446,19 +2446,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "The number of protons and the number of neutrons in the ion are the same."
+        "text": "The number of protons and the number of neutrons in the ion are the same"
       },
       {
         "key": "B",
-        "text": "The number of protons and the number of electrons in the ion are different."
+        "text": "The number of protons and the number of electrons in the ion are different"
       },
       {
         "key": "C",
-        "text": "The mass number of the ion is 32."
+        "text": "The mass number of the ion is 32"
       },
       {
         "key": "D",
-        "text": "The atomic number of the ion is 18."
+        "text": "The atomic number of the ion is 18"
       }
     ],
     "answer": "B",
@@ -3028,19 +3028,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It forms by the transfer of electrons from metal atoms to non-metal atoms."
+        "text": "It forms by the transfer of electrons from metal atoms to non-metal atoms"
       },
       {
         "key": "B",
-        "text": "It is the electrostatic attraction between ammonium ions and chloride ions."
+        "text": "It is the electrostatic attraction between ammonium ions and chloride ions"
       },
       {
         "key": "C",
-        "text": "It forms by the sharing of electrons between nitrogen atoms and chlorine atoms."
+        "text": "It forms by the sharing of electrons between nitrogen atoms and chlorine atoms"
       },
       {
         "key": "D",
-        "text": "It is directional."
+        "text": "It is directional"
       }
     ],
     "answer": "B",
@@ -3145,19 +3145,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": " 116 73"
+        "text": "116 73"
       },
       {
         "key": "B",
-        "text": " 114 73"
+        "text": "114 73"
       },
       {
         "key": "C",
-        "text": " 118 76"
+        "text": "118 76"
       },
       {
         "key": "D",
-        "text": " 116 76"
+        "text": "116 76"
       }
     ],
     "answer": "A",
@@ -3281,19 +3281,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Each atom of X needs one more electron to attain an octet electronic arrangement."
+        "text": "Each atom of X needs one more electron to attain an octet electronic arrangement"
       },
       {
         "key": "B",
-        "text": "Atoms of X form cations when X reacts with metals."
+        "text": "Atoms of X form cations when X reacts with metals"
       },
       {
         "key": "C",
-        "text": "Atoms of X form polyatomic ions when X reacts with metals."
+        "text": "Atoms of X form polyatomic ions when X reacts with metals"
       },
       {
         "key": "D",
-        "text": "It is a gas under room conditions."
+        "text": "It is a gas under room conditions"
       }
     ],
     "answer": "A",
@@ -3431,19 +3431,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": " 2 3"
+        "text": "2 3"
       },
       {
         "key": "B",
-        "text": " 3 2"
+        "text": "3 2"
       },
       {
         "key": "C",
-        "text": " 3 6"
+        "text": "3 6"
       },
       {
         "key": "D",
-        "text": " 2 8"
+        "text": "2 8"
       }
     ],
     "answer": "C",
@@ -3604,19 +3604,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "dichlorine monoxide."
+        "text": "dichlorine monoxide"
       },
       {
         "key": "B",
-        "text": "sodium sulphide."
+        "text": "sodium sulphide"
       },
       {
         "key": "C",
-        "text": "potassium sulphide."
+        "text": "potassium sulphide"
       },
       {
         "key": "D",
-        "text": "magnesium oxide."
+        "text": "magnesium oxide"
       }
     ],
     "answer": "C",
@@ -3632,19 +3632,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "calcium chloride."
+        "text": "calcium chloride"
       },
       {
         "key": "B",
-        "text": "carbon dioxide."
+        "text": "carbon dioxide"
       },
       {
         "key": "C",
-        "text": "magnesium bromide."
+        "text": "magnesium bromide"
       },
       {
         "key": "D",
-        "text": "sodium fluoride."
+        "text": "sodium fluoride"
       }
     ],
     "answer": "A",
@@ -3688,19 +3688,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "L2SO3."
+        "text": "L2SO3"
       },
       {
         "key": "B",
-        "text": "L(SO4)2."
+        "text": "L(SO4)2"
       },
       {
         "key": "C",
-        "text": "LSO4."
+        "text": "LSO4"
       },
       {
         "key": "D",
-        "text": "L2(SO4)3."
+        "text": "L2(SO4)3"
       }
     ],
     "answer": "C",
@@ -3716,19 +3716,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Y2NO3."
+        "text": "Y2NO3"
       },
       {
         "key": "B",
-        "text": "Y(NO3)3."
+        "text": "Y(NO3)3"
       },
       {
         "key": "C",
-        "text": "Y3NO3."
+        "text": "Y3NO3"
       },
       {
         "key": "D",
-        "text": "YNO3."
+        "text": "YNO3"
       }
     ],
     "answer": "B",
@@ -3772,19 +3772,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "MbOa."
+        "text": "MbOa"
       },
       {
         "key": "B",
-        "text": "M2bOa."
+        "text": "M2bOa"
       },
       {
         "key": "C",
-        "text": "M3bO2a."
+        "text": "M3bO2a"
       },
       {
         "key": "D",
-        "text": "M2aO3b."
+        "text": "M2aO3b"
       }
     ],
     "answer": "D",
@@ -3912,19 +3912,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "There is one outermost shell electron in a rubidium atom."
+        "text": "There is one outermost shell electron in a rubidium atom"
       },
       {
         "key": "B",
-        "text": "Metallic bond is present in rubidium."
+        "text": "Metallic bond is present in rubidium"
       },
       {
         "key": "C",
-        "text": "It reacts vigorously with water."
+        "text": "It reacts vigorously with water"
       },
       {
         "key": "D",
-        "text": "It forms coloured ions in aqueous solution."
+        "text": "It forms coloured ions in aqueous solution"
       }
     ],
     "answer": "D",
@@ -4036,19 +4036,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "A purple spot moves towards electrode A."
+        "text": "A purple spot moves towards electrode A"
       },
       {
         "key": "B",
-        "text": "A blue spot moves towards electrode B."
+        "text": "A blue spot moves towards electrode B"
       },
       {
         "key": "C",
-        "text": "An orange spot moves towards electrode B."
+        "text": "An orange spot moves towards electrode B"
       },
       {
         "key": "D",
-        "text": "There is no observable change."
+        "text": "There is no observable change"
       }
     ],
     "answer": "B",
@@ -4135,19 +4135,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It is the attraction between the shared electrons and the two nuclei of the bonded atoms."
+        "text": "It is the attraction between the shared electrons and the two nuclei of the bonded atoms"
       },
       {
         "key": "B",
-        "text": "It is the attraction between the lone pair of electrons and the nuclei of hydrogen atoms."
+        "text": "It is the attraction between the lone pair of electrons and the nuclei of hydrogen atoms"
       },
       {
         "key": "C",
-        "text": "It is the attraction between cations and anions."
+        "text": "It is the attraction between cations and anions"
       },
       {
         "key": "D",
-        "text": "It is the attraction between cations and delocalized electrons."
+        "text": "It is the attraction between cations and delocalized electrons"
       }
     ],
     "answer": "A",
@@ -4275,19 +4275,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It exists as diatomic molecules."
+        "text": "It exists as diatomic molecules"
       },
       {
         "key": "B",
-        "text": "It is a liquid."
+        "text": "It is a liquid"
       },
       {
         "key": "C",
-        "text": "It is reddish brown in colour."
+        "text": "It is reddish brown in colour"
       },
       {
         "key": "D",
-        "text": "Its molecule contains a double covalent bond."
+        "text": "Its molecule contains a double covalent bond"
       }
     ],
     "answer": "D",
@@ -4612,19 +4612,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": " Sulphur Silicon"
+        "text": "Sulphur Silicon"
       },
       {
         "key": "B",
-        "text": " Sulphur Carbon"
+        "text": "Sulphur Carbon"
       },
       {
         "key": "C",
-        "text": " Oxygen Sulphur"
+        "text": "Oxygen Sulphur"
       },
       {
         "key": "D",
-        "text": " Oxygen Carbon"
+        "text": "Oxygen Carbon"
       }
     ],
     "answer": "B",
@@ -4795,19 +4795,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "This is the structural formula of but-1-ene."
+        "text": "This is the structural formula of but-1-ene"
       },
       {
         "key": "B",
-        "text": "There is one double covalent bond in a but-1-ene molecule."
+        "text": "There is one double covalent bond in a but-1-ene molecule"
       },
       {
         "key": "C",
-        "text": "There are eight single covalent bonds in a but-1-ene molecule."
+        "text": "There are eight single covalent bonds in a but-1-ene molecule"
       },
       {
         "key": "D",
-        "text": "There are four carbon atoms and eight hydrogen atoms in a but-1-ene molecule."
+        "text": "There are four carbon atoms and eight hydrogen atoms in a but-1-ene molecule"
       }
     ],
     "answer": "C",
@@ -4828,19 +4828,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": " Group I Group III Group V Group VI"
+        "text": "Group I Group III Group V Group VI"
       },
       {
         "key": "B",
-        "text": " Group VII Group IV Group III Group VI"
+        "text": "Group VII Group IV Group III Group VI"
       },
       {
         "key": "C",
-        "text": " Group I Group III Group V Group II"
+        "text": "Group I Group III Group V Group II"
       },
       {
         "key": "D",
-        "text": " Group VII Group IV Group V Group VI"
+        "text": "Group VII Group IV Group V Group VI"
       }
     ],
     "answer": "D",
@@ -4889,19 +4889,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "An atom of X has five outermost shell electrons."
+        "text": "An atom of X has five outermost shell electrons"
       },
       {
         "key": "B",
-        "text": "An atom of Y has one outermost shell electron."
+        "text": "An atom of Y has one outermost shell electron"
       },
       {
         "key": "C",
-        "text": "There is one lone pair of electrons in the ion."
+        "text": "There is one lone pair of electrons in the ion"
       },
       {
         "key": "D",
-        "text": "There is a dative covalent bond in the ion."
+        "text": "There is a dative covalent bond in the ion"
       }
     ],
     "answer": "C",
@@ -5207,19 +5207,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "There are 14 electrons in the molecule."
+        "text": "There are 14 electrons in the molecule"
       },
       {
         "key": "B",
-        "text": "A triple covalent bond forms between the atoms."
+        "text": "A triple covalent bond forms between the atoms"
       },
       {
         "key": "C",
-        "text": "There is one lone pair of electrons in the molecule."
+        "text": "There is one lone pair of electrons in the molecule"
       },
       {
         "key": "D",
-        "text": "The relative molecular mass of the molecule is 28.0."
+        "text": "The relative molecular mass of the molecule is 28.0"
       }
     ],
     "answer": "C",
@@ -5366,19 +5366,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Y is a Group III element."
+        "text": "Y is a Group III element"
       },
       {
         "key": "B",
-        "text": "Y loses three outermost shell electrons when forming a compound with fluorine."
+        "text": "Y loses three outermost shell electrons when forming a compound with fluorine"
       },
       {
         "key": "C",
-        "text": "The chemical formula of the chloride of Y is YCl3."
+        "text": "The chemical formula of the chloride of Y is YCl3"
       },
       {
         "key": "D",
-        "text": "The oxide of Y is an ionic compound."
+        "text": "The oxide of Y is an ionic compound"
       }
     ],
     "answer": "C",
@@ -5427,19 +5427,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "the metal ions in the metal lattice are mobile."
+        "text": "the metal ions in the metal lattice are mobile"
       },
       {
         "key": "B",
-        "text": "the metal atoms in the metal lattice are mobile."
+        "text": "the metal atoms in the metal lattice are mobile"
       },
       {
         "key": "C",
-        "text": "the outermost shell electrons of metal atoms are delocalized."
+        "text": "the outermost shell electrons of metal atoms are delocalized"
       },
       {
         "key": "D",
-        "text": "all the electrons in the metal lattice are delocalized."
+        "text": "all the electrons in the metal lattice are delocalized"
       }
     ],
     "answer": "C",
@@ -5483,19 +5483,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Zinc atoms lose electrons to form zinc compounds."
+        "text": "Zinc atoms lose electrons to form zinc compounds"
       },
       {
         "key": "B",
-        "text": "The piece of zinc cannot conduct electricity in the molten state."
+        "text": "The piece of zinc cannot conduct electricity in the molten state"
       },
       {
         "key": "C",
-        "text": "The piece of zinc conducts electricity when the delocalized electrons collide with their neighbouring electrons."
+        "text": "The piece of zinc conducts electricity when the delocalized electrons collide with their neighbouring electrons"
       },
       {
         "key": "D",
-        "text": "The delocalized electrons flow towards the positive terminal of the power supply."
+        "text": "The delocalized electrons flow towards the positive terminal of the power supply"
       }
     ],
     "answer": "D",
@@ -5511,19 +5511,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "they are good conductors of heat."
+        "text": "they are good conductors of heat"
       },
       {
         "key": "B",
-        "text": "most of them are solids at room temperature."
+        "text": "most of them are solids at room temperature"
       },
       {
         "key": "C",
-        "text": "metallic bonds are usually strong."
+        "text": "metallic bonds are usually strong"
       },
       {
         "key": "D",
-        "text": "metallic bonds are non-directional."
+        "text": "metallic bonds are non-directional"
       }
     ],
     "answer": "C",
@@ -5703,19 +5703,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "it contains sodium metal."
+        "text": "it contains sodium metal"
       },
       {
         "key": "B",
-        "text": "it contains mobile ions."
+        "text": "it contains mobile ions"
       },
       {
         "key": "C",
-        "text": "it contains free chlorine."
+        "text": "it contains free chlorine"
       },
       {
         "key": "D",
-        "text": "it contains delocalized electrons."
+        "text": "it contains delocalized electrons"
       }
     ],
     "answer": "B",
@@ -5787,19 +5787,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It is a solid at room temperature."
+        "text": "It is a solid at room temperature"
       },
       {
         "key": "B",
-        "text": "It has different chemical properties from those of iodine."
+        "text": "It has different chemical properties from those of iodine"
       },
       {
         "key": "C",
-        "text": "It is soluble in water."
+        "text": "It is soluble in water"
       },
       {
         "key": "D",
-        "text": "It conducts electricity in the solid state."
+        "text": "It conducts electricity in the solid state"
       }
     ],
     "answer": "D",
@@ -5815,19 +5815,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "it is very hard."
+        "text": "it is very hard"
       },
       {
         "key": "B",
-        "text": "rubidium ions and iodide ions are held together by strong ionic bonds."
+        "text": "rubidium ions and iodide ions are held together by strong ionic bonds"
       },
       {
         "key": "C",
-        "text": "rubidium is a Group I metal."
+        "text": "rubidium is a Group I metal"
       },
       {
         "key": "D",
-        "text": "rubidium and iodine are in the same period of the Periodic Table."
+        "text": "rubidium and iodine are in the same period of the Periodic Table"
       }
     ],
     "answer": "B",
@@ -5843,19 +5843,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "The compound is an electrolyte."
+        "text": "The compound is an electrolyte"
       },
       {
         "key": "B",
-        "text": "The compound is electrically neutral."
+        "text": "The compound is electrically neutral"
       },
       {
         "key": "C",
-        "text": "The particles formed from X are anions."
+        "text": "The particles formed from X are anions"
       },
       {
         "key": "D",
-        "text": "Each particle formed from X is surrounded by four particles formed from Y."
+        "text": "Each particle formed from X is surrounded by four particles formed from Y"
       }
     ],
     "answer": "C",
@@ -5904,19 +5904,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "chlorine is reactive."
+        "text": "chlorine is reactive"
       },
       {
         "key": "B",
-        "text": "the intermolecular forces between chlorine molecules are weak."
+        "text": "the intermolecular forces between chlorine molecules are weak"
       },
       {
         "key": "C",
-        "text": "the intermolecular forces between chlorine atoms are weak."
+        "text": "the intermolecular forces between chlorine atoms are weak"
       },
       {
         "key": "D",
-        "text": "chlorine molecules are diatomic."
+        "text": "chlorine molecules are diatomic"
       }
     ],
     "answer": "B",
@@ -5932,19 +5932,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "a helium atom has a duplet electronic arrangement."
+        "text": "a helium atom has a duplet electronic arrangement"
       },
       {
         "key": "B",
-        "text": "the relative atomic mass of helium is small."
+        "text": "the relative atomic mass of helium is small"
       },
       {
         "key": "C",
-        "text": "the van der Waals’ forces between the helium atoms are weak."
+        "text": "the van der Waals’ forces between the helium atoms are weak"
       },
       {
         "key": "D",
-        "text": "helium is a noble gas."
+        "text": "helium is a noble gas"
       }
     ],
     "answer": "C",
@@ -5960,19 +5960,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "it is a Group 0 element."
+        "text": "it is a Group 0 element"
       },
       {
         "key": "B",
-        "text": "it exists as monatomic molecules."
+        "text": "it exists as monatomic molecules"
       },
       {
         "key": "C",
-        "text": "an argon atom has an octet electronic arrangement."
+        "text": "an argon atom has an octet electronic arrangement"
       },
       {
         "key": "D",
-        "text": "the intermolecular forces between the argon molecules are weak."
+        "text": "the intermolecular forces between the argon molecules are weak"
       }
     ],
     "answer": "D",
@@ -6072,19 +6072,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It is a halogen."
+        "text": "It is a halogen"
       },
       {
         "key": "B",
-        "text": "It is a solid under room conditions."
+        "text": "It is a solid under room conditions"
       },
       {
         "key": "C",
-        "text": "It reacts with sodium to form an ionic compound."
+        "text": "It reacts with sodium to form an ionic compound"
       },
       {
         "key": "D",
-        "text": "It has a giant covalent structure."
+        "text": "It has a giant covalent structure"
       }
     ],
     "answer": "D",
@@ -6100,19 +6100,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It has a giant covalent structure."
+        "text": "It has a giant covalent structure"
       },
       {
         "key": "B",
-        "text": "It has a high melting point."
+        "text": "It has a high melting point"
       },
       {
         "key": "C",
-        "text": "It dissolves in water to give a colourless solution."
+        "text": "It dissolves in water to give a colourless solution"
       },
       {
         "key": "D",
-        "text": "It does not dissolve in hexane."
+        "text": "It does not dissolve in hexane"
       }
     ],
     "answer": "C",
@@ -6128,19 +6128,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Iodine is a solid at room temperature and pressure."
+        "text": "Iodine is a solid at room temperature and pressure"
       },
       {
         "key": "B",
-        "text": "Iodine has a higher boiling point than helium."
+        "text": "Iodine has a higher boiling point than helium"
       },
       {
         "key": "C",
-        "text": "Diamond has a high melting point."
+        "text": "Diamond has a high melting point"
       },
       {
         "key": "D",
-        "text": "Diamond cannot conduct electricity."
+        "text": "Diamond cannot conduct electricity"
       }
     ],
     "answer": "C",
@@ -6156,19 +6156,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It consists of delocalized electrons and silicon cations."
+        "text": "It consists of delocalized electrons and silicon cations"
       },
       {
         "key": "B",
-        "text": "It consists of discrete molecules."
+        "text": "It consists of discrete molecules"
       },
       {
         "key": "C",
-        "text": "It consists of cations and anions."
+        "text": "It consists of cations and anions"
       },
       {
         "key": "D",
-        "text": "It is a semi-conductor."
+        "text": "It is a semi-conductor"
       }
     ],
     "answer": "D",
@@ -6184,19 +6184,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It is a covalent compound."
+        "text": "It is a covalent compound"
       },
       {
         "key": "B",
-        "text": "Intermolecular forces are present within a layer of graphite."
+        "text": "Intermolecular forces are present within a layer of graphite"
       },
       {
         "key": "C",
-        "text": "It is hard."
+        "text": "It is hard"
       },
       {
         "key": "D",
-        "text": "It is a good conductor of electricity."
+        "text": "It is a good conductor of electricity"
       }
     ],
     "answer": "D",
@@ -6212,19 +6212,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "They have the same relative atomic mass."
+        "text": "They have the same relative atomic mass"
       },
       {
         "key": "B",
-        "text": "They have the same hardness."
+        "text": "They have the same hardness"
       },
       {
         "key": "C",
-        "text": "They have the same electrical conductivity."
+        "text": "They have the same electrical conductivity"
       },
       {
         "key": "D",
-        "text": "They have the same boiling point and melting point."
+        "text": "They have the same boiling point and melting point"
       }
     ],
     "answer": "A",
@@ -6268,19 +6268,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "there are strong ionic bonds within the structure."
+        "text": "there are strong ionic bonds within the structure"
       },
       {
         "key": "B",
-        "text": "there are strong covalent bonds joining the atoms throughout the giant network."
+        "text": "there are strong covalent bonds joining the atoms throughout the giant network"
       },
       {
         "key": "C",
-        "text": "there is strong attraction between the ions and the delocalized electrons."
+        "text": "there is strong attraction between the ions and the delocalized electrons"
       },
       {
         "key": "D",
-        "text": "there are strong intermolecular forces between the molecules."
+        "text": "there are strong intermolecular forces between the molecules"
       }
     ],
     "answer": "B",
@@ -6324,19 +6324,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Both of them have simple molecular structures."
+        "text": "Both of them have simple molecular structures"
       },
       {
         "key": "B",
-        "text": "Both of them have high melting points."
+        "text": "Both of them have high melting points"
       },
       {
         "key": "C",
-        "text": "Both of them are covalent compounds."
+        "text": "Both of them are covalent compounds"
       },
       {
         "key": "D",
-        "text": "Both of them are soluble in water."
+        "text": "Both of them are soluble in water"
       }
     ],
     "answer": "C",
@@ -6596,19 +6596,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "They have a giant metallic structure."
+        "text": "They have a giant metallic structure"
       },
       {
         "key": "B",
-        "text": "They conduct electricity in the liquid state."
+        "text": "They conduct electricity in the liquid state"
       },
       {
         "key": "C",
-        "text": "They are electrolytes."
+        "text": "They are electrolytes"
       },
       {
         "key": "D",
-        "text": "They are malleable."
+        "text": "They are malleable"
       }
     ],
     "answer": "B",
@@ -6965,19 +6965,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It has a giant structure."
+        "text": "It has a giant structure"
       },
       {
         "key": "B",
-        "text": "It has a high melting point."
+        "text": "It has a high melting point"
       },
       {
         "key": "C",
-        "text": "It is insoluble in water."
+        "text": "It is insoluble in water"
       },
       {
         "key": "D",
-        "text": "It conducts electricity in the molten state."
+        "text": "It conducts electricity in the molten state"
       }
     ],
     "answer": "C",
@@ -6993,19 +6993,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It is an ionic compound."
+        "text": "It is an ionic compound"
       },
       {
         "key": "B",
-        "text": "It has a very high melting point."
+        "text": "It has a very high melting point"
       },
       {
         "key": "C",
-        "text": "It has a chemical formula of QR4."
+        "text": "It has a chemical formula of QR4"
       },
       {
         "key": "D",
-        "text": "It can conduct electricity."
+        "text": "It can conduct electricity"
       }
     ],
     "answer": "C",
@@ -7021,19 +7021,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "has a formula of A²B."
+        "text": "has a formula of A²B"
       },
       {
         "key": "B",
-        "text": "conducts electricity under room conditions."
+        "text": "conducts electricity under room conditions"
       },
       {
         "key": "C",
-        "text": "is a liquid under room conditions."
+        "text": "is a liquid under room conditions"
       },
       {
         "key": "D",
-        "text": "is insoluble in water."
+        "text": "is insoluble in water"
       }
     ],
     "answer": "A",
@@ -7049,19 +7049,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "is a gas at room temperature."
+        "text": "is a gas at room temperature"
       },
       {
         "key": "B",
-        "text": "is not an electrolyte."
+        "text": "is not an electrolyte"
       },
       {
         "key": "C",
-        "text": "is brittle."
+        "text": "is brittle"
       },
       {
         "key": "D",
-        "text": "is insoluble in water."
+        "text": "is insoluble in water"
       }
     ],
     "answer": "C",
@@ -7077,19 +7077,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "It has a giant structure."
+        "text": "It has a giant structure"
       },
       {
         "key": "B",
-        "text": "It has a high melting point."
+        "text": "It has a high melting point"
       },
       {
         "key": "C",
-        "text": "It is a white solid."
+        "text": "It is a white solid"
       },
       {
         "key": "D",
-        "text": "It is a good electrical conductor at room temperature."
+        "text": "It is a good electrical conductor at room temperature"
       }
     ],
     "answer": "D",
@@ -7105,19 +7105,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "X, Y and Z are in the same period of the Periodic Table."
+        "text": "X, Y and Z are in the same period of the Periodic Table"
       },
       {
         "key": "B",
-        "text": "X exists as monoatomic molecules under room conditions."
+        "text": "X exists as monoatomic molecules under room conditions"
       },
       {
         "key": "C",
-        "text": "Y is a coloured substance under room conditions."
+        "text": "Y is a coloured substance under room conditions"
       },
       {
         "key": "D",
-        "text": "Z reacts with water vigorously."
+        "text": "Z reacts with water vigorously"
       }
     ],
     "answer": "D",
@@ -7303,19 +7303,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "giant covalent structure."
+        "text": "giant covalent structure"
       },
       {
         "key": "B",
-        "text": "simple molecular structure."
+        "text": "simple molecular structure"
       },
       {
         "key": "C",
-        "text": "giant ionic structure."
+        "text": "giant ionic structure"
       },
       {
         "key": "D",
-        "text": "giant metallic structure."
+        "text": "giant metallic structure"
       }
     ],
     "answer": "C",
@@ -7331,19 +7331,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "silicon dioxide."
+        "text": "silicon dioxide"
       },
       {
         "key": "B",
-        "text": "graphite."
+        "text": "graphite"
       },
       {
         "key": "C",
-        "text": "gold."
+        "text": "gold"
       },
       {
         "key": "D",
-        "text": "magnesium bromide."
+        "text": "magnesium bromide"
       }
     ],
     "answer": "D",
@@ -7477,19 +7477,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "The chloride of X is a liquid at room temperature."
+        "text": "The chloride of X is a liquid at room temperature"
       },
       {
         "key": "B",
-        "text": "The chlorides of Y and Z have the same type of structure."
+        "text": "The chlorides of Y and Z have the same type of structure"
       },
       {
         "key": "C",
-        "text": "The chloride of Y conducts electricity in aqueous solution."
+        "text": "The chloride of Y conducts electricity in aqueous solution"
       },
       {
         "key": "D",
-        "text": "X is not a metal."
+        "text": "X is not a metal"
       }
     ],
     "answer": "D",
@@ -7553,19 +7553,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Both X and Y are metals."
+        "text": "Both X and Y are metals"
       },
       {
         "key": "B",
-        "text": "The chloride of X can conduct electricity in the molten state."
+        "text": "The chloride of X can conduct electricity in the molten state"
       },
       {
         "key": "C",
-        "text": "The chloride of X has a giant covalent structure."
+        "text": "The chloride of X has a giant covalent structure"
       },
       {
         "key": "D",
-        "text": "The chloride of Y can conduct electricity at 1000C."
+        "text": "The chloride of Y can conduct electricity at 1000C"
       }
     ],
     "answer": "D",
@@ -7597,19 +7597,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "a giant covalent structure."
+        "text": "a giant covalent structure"
       },
       {
         "key": "B",
-        "text": "a giant ionic structure."
+        "text": "a giant ionic structure"
       },
       {
         "key": "C",
-        "text": "a simple molecular structure."
+        "text": "a simple molecular structure"
       },
       {
         "key": "D",
-        "text": "a giant metallic structure."
+        "text": "a giant metallic structure"
       }
     ],
     "answer": "B",
@@ -7738,19 +7738,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "W has a simple molecular structure."
+        "text": "W has a simple molecular structure"
       },
       {
         "key": "B",
-        "text": "X is a solid metal at room temperature and pressure."
+        "text": "X is a solid metal at room temperature and pressure"
       },
       {
         "key": "C",
-        "text": "The particles in Y are held together by intermolecular forces."
+        "text": "The particles in Y are held together by intermolecular forces"
       },
       {
         "key": "D",
-        "text": "Z consists of oppositely charged ions."
+        "text": "Z consists of oppositely charged ions"
       }
     ],
     "answer": "A",
