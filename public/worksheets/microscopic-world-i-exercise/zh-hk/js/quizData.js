@@ -8230,58 +8230,6 @@ export const QUIZ_ITEMS = [
     "sourceRef": "Part 4 Q21(a)(ii)"
   },
   {
-    "id": "sp-04-a-ii",
-    "section": "structure-properties",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Explain why CsCl(s) cannot NOT conduct electricity.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Ions are held in fixed positions in the crystal lattice and cannot move",
-              "Ions are held in fixed positions in the crystal lattice",
-              "cannot move"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 5 Q4(a)(ii). (1 mark)",
-    "sourceRef": "Part 5 Q4(a)(ii)"
-  },
-  {
-    "id": "sp-12-a-ii",
-    "section": "structure-properties",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "With reference to the structure and particles, explain why electrode is made of graphite, but NOT diamond",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Only graphite contains delocalized electrons for conducting electricity"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 5 Q12(a)(ii). (1 mark)",
-    "sourceRef": "Part 5 Q12(a)(ii)"
-  },
-  {
     "id": "sp-32-a-ii",
     "section": "structure-properties",
     "format": "fill",

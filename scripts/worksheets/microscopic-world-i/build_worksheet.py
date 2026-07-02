@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v5"
+QUIZ_ASSET_VERSION = "20260702v6"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -102,8 +102,6 @@ COVALENT_BOND_KEEP_FILL = re.compile(
     re.I,
 )
 STRUCTURE_PROPERTIES_KEEP_FILL = re.compile(
-    r"^Explain why CsCl\(s\) cannot NOT conduct electricity\.\s*$|"
-    r"^With reference to the structure and particles, explain why electrode is made of graphite, but NOT diamond\s*$|"
     r"^What is the number of neighbouring chloride ions directly attached to each sodium ion in crystalline sodium chloride\?\s*$",
     re.I,
 )
