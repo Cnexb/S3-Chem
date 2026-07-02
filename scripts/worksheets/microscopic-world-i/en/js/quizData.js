@@ -4890,7 +4890,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following processes involve the formation of a dative covalent bond?\n(1) HCl + H₂O  H₃O⁺ + Cl\n(2) H⁺ + OH  H₂O\n(3) NH₃ + H⁺  NH⁴⁺",
+    "stem": "Which of the following processes involve the formation of a dative covalent bond?\n(1) HCl + H₂O → H₃O⁺ + Cl⁻\n(2) H⁺ + OH⁻ → H₂O\n(3) NH₃ + H⁺ → NH₄⁺",
     "options": [
       {
         "key": "A",
@@ -5007,7 +5007,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Magnesium has three isotopes: 24Mg, 25Mg and 26Mg and chlorine has two isotopes: 35Cl and 37Cl. How many possible formula masses of magnesium chloride are there?",
+    "stem": "Magnesium has three isotopes: ²⁴Mg, ²⁵Mg and ²⁶Mg and chlorine has two isotopes: ³⁵Cl and ³⁷Cl. How many possible formula masses of magnesium chloride are there?",
     "options": [
       {
         "key": "A",

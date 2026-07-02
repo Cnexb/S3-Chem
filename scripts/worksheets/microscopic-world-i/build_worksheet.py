@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v20"
+QUIZ_ASSET_VERSION = "20260702v21"
 
 
 def patch_quiz_module_imports(text: str) -> str:
@@ -1206,10 +1206,10 @@ def format_stem_pipeline(stem: str, *, chemical: bool = False) -> tuple[str, dic
     parts = [p for p in (intro, suffix) if p]
     combined = "\n\n".join(parts)
     combined = format_stem_for_display(combined)
+    combined = format_isotope_notation(combined)
     if chemical:
         combined = format_chemical_notation(combined)
     else:
-        combined = format_isotope_notation(combined)
         combined = format_unit_superscripts(combined)
         combined = format_formula_subscripts(combined)
     if table:

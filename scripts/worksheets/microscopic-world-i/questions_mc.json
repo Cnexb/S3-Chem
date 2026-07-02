@@ -5834,7 +5834,7 @@
     "chapter": 8,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following processes involve the formation of a dative covalent bond? (1)HCl + H2O  H3O+ + Cl (2)H+ + OH  H2O (3)NH3 + H+  NH4+",
+    "stem": "Which of the following processes involve the formation of a dative covalent bond? (1)HCl + H2O → H3O+ + Cl- (2)H+ + OH- → H2O (3)NH3 + H+ → NH4+",
     "options": [
       {
         "key": "A",
