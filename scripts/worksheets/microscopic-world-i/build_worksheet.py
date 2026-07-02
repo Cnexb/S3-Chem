@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v7"
+QUIZ_ASSET_VERSION = "20260702v8"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -1400,9 +1400,13 @@ def answer_variants(ans: str) -> list[str]:
     out = [ans]
     short = re.sub(r"[.,;:]$", "", ans)
     if short not in out: out.append(short)
-    for part in re.split(r"\s*[,;]\s*|\s+and\s+", short):
-        p = part.strip()
-        if 0 < len(p) < 60 and p not in out: out.append(p)
+    low = short.lower()
+    if low not in out: out.append(low)
+    # Keep multi-bond phrases intact (e.g. "Ionic bond and covalent bond").
+    if not re.search(r"\bbond\b.*\band\b.*\bbond\b", short, re.I):
+        for part in re.split(r"\s*[,;]\s*|\s+and\s+", short):
+            p = part.strip()
+            if 0 < len(p) < 60 and p not in out: out.append(p)
     if re.fullmatch(r"-?\d+(\.\d+)?", short):
         if "." in short:
             out.append(str(float(short)))

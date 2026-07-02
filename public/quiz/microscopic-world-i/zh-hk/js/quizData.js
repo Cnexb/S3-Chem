@@ -7970,6 +7970,7 @@ export const QUIZ_ITEMS = [
             "accept": [
               "(iii) It has the same number of protons and electrons.",
               "(iii) It has the same number of protons and electrons",
+              "(iii) it has the same number of protons and electrons",
               "(iii) It has the same number of protons",
               "electrons"
             ]
@@ -8022,6 +8023,7 @@ export const QUIZ_ITEMS = [
             "type": "blank",
             "accept": [
               "Halogens, halogens",
+              "halogens, halogens",
               "Halogens",
               "halogens"
             ]
@@ -8049,6 +8051,7 @@ export const QUIZ_ITEMS = [
             "type": "blank",
             "accept": [
               "Noble gas, noble gas, Noble gases, noble gases",
+              "noble gas, noble gas, noble gases, noble gases",
               "Noble gas",
               "noble gas",
               "Noble gases",
@@ -8127,7 +8130,8 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "Fe2(SO4)3"
+              "Fe2(SO4)3",
+              "fe2(so4)3"
             ]
           }
         ]
@@ -8153,6 +8157,7 @@ export const QUIZ_ITEMS = [
             "type": "blank",
             "accept": [
               "sodium dichromate, Sodium dichromate",
+              "sodium dichromate, sodium dichromate",
               "sodium dichromate",
               "Sodium dichromate"
             ]
@@ -8169,6 +8174,7 @@ export const QUIZ_ITEMS = [
             "type": "blank",
             "accept": [
               "potassium permanganate, Potassium permanganate",
+              "potassium permanganate, potassium permanganate",
               "potassium permanganate",
               "Potassium permanganate"
             ]
@@ -8195,7 +8201,8 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "Mg(N3)2"
+              "Mg(N3)2",
+              "mg(n3)2"
             ]
           }
         ]
@@ -8245,7 +8252,8 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "O=C=O"
+              "O=C=O",
+              "o=c=o"
             ]
           }
         ]
@@ -8271,8 +8279,7 @@ export const QUIZ_ITEMS = [
             "type": "blank",
             "accept": [
               "Ionic bond and covalent bond",
-              "Ionic bond",
-              "covalent bond"
+              "ionic bond and covalent bond"
             ]
           }
         ]
@@ -8286,7 +8293,8 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "Covalent bond"
+              "Covalent bond",
+              "covalent bond"
             ]
           }
         ]
@@ -8300,7 +8308,8 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "Metallic bond"
+              "Metallic bond",
+              "metallic bond"
             ]
           }
         ]
