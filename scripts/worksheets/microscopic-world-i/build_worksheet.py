@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v14"
+QUIZ_ASSET_VERSION = "20260702v15"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -272,6 +272,8 @@ ISO_TOPE_ROW = re.compile(
 )
 SUPERSCRIPT = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹")
 SUBSCRIPT = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+CHEMISTRY_SECTIONS = frozenset({"ionic-bond", "covalent-bond", "structure-properties"})
+CHARGE_LOOKAHEAD = r"(?=[\s,;.)\]]|$|/|\(|$)"
 
 
 def format_formula_subscripts(text: str) -> str:
@@ -280,6 +282,72 @@ def format_formula_subscripts(text: str) -> str:
         lambda m: m.group(0).translate(SUBSCRIPT),
         text,
     )
+
+
+def _ion_charge_superscript(num: str, sign: str) -> str:
+    n = num.translate(SUPERSCRIPT) if num else ""
+    return n + ("⁺" if sign == "+" else "⁻")
+
+
+def format_ion_charges(text: str) -> str:
+    if not text:
+        return text
+
+    def paren_ion(m: re.Match) -> str:
+        inner = format_formula_subscripts(m.group(1))
+        return f"({inner}){_ion_charge_superscript(m.group(2), m.group(3))}"
+
+    text = re.sub(
+        rf"\(([A-Za-z0-9]+)\)(\d{{1,2}})([+-]){CHARGE_LOOKAHEAD}",
+        paren_ion,
+        text,
+    )
+
+    def single_ion(m: re.Match) -> str:
+        return f"{m.group(1)}{_ion_charge_superscript(m.group(2), m.group(3))}"
+
+    text = re.sub(
+        rf"\b([A-Z][a-z]?)(\d{{1,2}})([+-]){CHARGE_LOOKAHEAD}",
+        single_ion,
+        text,
+    )
+
+    def multi_ion(m: re.Match) -> str:
+        body = format_formula_subscripts(m.group(1))
+        return f"{body}{_ion_charge_superscript(m.group(2), m.group(3))}"
+
+    text = re.sub(
+        rf"\b([A-Z][a-z]?(?:\d*[A-Z][a-z]?\d*)+)(\d{{1,2}})([+-]){CHARGE_LOOKAHEAD}",
+        multi_ion,
+        text,
+    )
+
+    def tail_ion(m: re.Match) -> str:
+        body = format_formula_subscripts(m.group(1))
+        return f"{body}{_ion_charge_superscript('', m.group(2))}"
+
+    text = re.sub(
+        rf"\b([A-Z][A-Za-z0-9]*)([+-]){CHARGE_LOOKAHEAD}",
+        tail_ion,
+        text,
+    )
+
+    text = re.sub(
+        rf"\b(\d{{1,2}})([+-]){CHARGE_LOOKAHEAD}",
+        lambda m: _ion_charge_superscript(m.group(1), m.group(2)),
+        text,
+    )
+    return text
+
+
+def format_chemical_notation(text: str) -> str:
+    if not text:
+        return text
+    text = format_unit_superscripts(text)
+    text = re.sub(r"\bCr2O72(?![\-])", "Cr2O72-", text)
+    text = re.sub(r"\bSO42(?![\-])", "SO42-", text)
+    text = format_ion_charges(text)
+    return format_formula_subscripts(text)
 
 
 def format_isotope_notation(text: str) -> str:
@@ -320,11 +388,16 @@ def format_unit_superscripts(text: str) -> str:
     return text
 
 
-def format_mcq_display_text(text: str, *, formula_subscripts: bool = False) -> str:
-    text = format_isotope_notation(text or "")
-    text = format_unit_superscripts(text)
-    if formula_subscripts:
-        text = format_formula_subscripts(text)
+def format_mcq_display_text(
+    text: str, *, formula_subscripts: bool = False, chemical_formula: bool = False
+) -> str:
+    if chemical_formula:
+        text = format_chemical_notation(text or "")
+    else:
+        text = format_isotope_notation(text or "")
+        text = format_unit_superscripts(text)
+        if formula_subscripts:
+            text = format_formula_subscripts(text)
     return clean_mcq_option_text(text)
 
 
@@ -404,8 +477,10 @@ def _table_result(
     return prefix, suffix, table
 
 
-def _format_table_notation(table: dict) -> dict:
+def _format_table_notation(table: dict, *, chemical: bool = False) -> dict:
     def fmt(cell: str) -> str:
+        if chemical:
+            return format_chemical_notation(cell)
         return format_unit_superscripts(format_isotope_notation(cell))
     return {
         "headers": [fmt(h) for h in table.get("headers", [])],
@@ -1099,17 +1174,20 @@ def cleanup_graph_stem_noise(stem: str) -> str:
     return f"{prefix}\n\n{cleaned}".strip() if cleaned else prefix
 
 
-def format_stem_pipeline(stem: str) -> tuple[str, dict | None]:
+def format_stem_pipeline(stem: str, *, chemical: bool = False) -> tuple[str, dict | None]:
     stem = cleanup_graph_stem_noise(stem)
     intro, suffix, table = extract_stem_table(stem)
     parts = [p for p in (intro, suffix) if p]
     combined = "\n\n".join(parts)
     combined = format_stem_for_display(combined)
-    combined = format_isotope_notation(combined)
-    combined = format_unit_superscripts(combined)
-    combined = format_formula_subscripts(combined)
+    if chemical:
+        combined = format_chemical_notation(combined)
+    else:
+        combined = format_isotope_notation(combined)
+        combined = format_unit_superscripts(combined)
+        combined = format_formula_subscripts(combined)
     if table:
-        table = _format_table_notation(table)
+        table = _format_table_notation(table, chemical=chemical)
     return combined, table
 
 
@@ -1613,38 +1691,48 @@ def mc_to_item(q: dict) -> dict | None:
         return None
     raw_stem = q["stem"]
     raw_options = q["options"]
+    section = q.get("section", "")
+    chemical = section in CHEMISTRY_SECTIONS
     stem_table = None
     if is_combination_table_mcq(raw_stem, raw_options):
         ncol = _infer_combination_ncol(raw_options, KNOWN_COMBINATION_PHRASES)
         combo_stem = format_combination_stem(raw_stem, ncol)
-        stem, stem_table = format_stem_pipeline(combo_stem)
+        stem, stem_table = format_stem_pipeline(combo_stem, chemical=chemical)
         options = []
         for o in raw_options:
             options.append({
                 "key": o["key"],
                 "text": format_mcq_display_text(
                     format_combination_option(o.get("text", ""), ncol),
-                    formula_subscripts=ncol < 4,
+                    formula_subscripts=ncol < 4 and not chemical,
+                    chemical_formula=chemical,
                 ),
             })
     else:
-        stem, stem_table = format_stem_pipeline(raw_stem)
+        stem, stem_table = format_stem_pipeline(raw_stem, chemical=chemical)
         options = [
             {
                 "key": o["key"],
-                "text": format_mcq_display_text(o.get("text", "")),
+                "text": format_mcq_display_text(
+                    o.get("text", ""), chemical_formula=chemical
+                ),
             }
             for o in raw_options
         ]
+    hint_raw = q.get("hint") or "Review your notes."
+    if chemical:
+        hint = format_chemical_notation(hint_raw)
+    else:
+        hint = format_unit_superscripts(format_isotope_notation(hint_raw))
     item = {
         "id": q["id"],
-        "section": q["section"],
+        "section": section,
         "format": "mcq",
         "difficulty": q.get("difficulty", "Standard"),
         "stem": stem,
         "options": options,
         "answer": q["answer"],
-        "hint": format_unit_superscripts(format_isotope_notation(q.get("hint") or "Review your notes.")),
+        "hint": hint,
         "sourceRef": q.get("sourceRef", q["id"]),
     }
     if stem_table:

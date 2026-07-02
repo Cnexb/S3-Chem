@@ -3113,7 +3113,7 @@
     "chapter": 7,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following ions have the same number of electrons as an argon atom? (1)F (2)Ca2+ (3)S2",
+    "stem": "Which of the following ions have the same number of electrons as an argon atom? (1)F (2)Ca2+ (3)S2-",
     "options": [
       {
         "key": "A",
@@ -3133,7 +3133,7 @@
       }
     ],
     "answer": "C",
-    "hint": "Ar, Ca2+ and S2 all have 18 electrons while F has 10 electrons.",
+    "hint": "Ar, Ca2+ and S2- all have 18 electrons while F has 10 electrons.",
     "sourceRef": "ChemMCQ07016"
   },
   {
@@ -3151,7 +3151,7 @@
       },
       {
         "key": "B",
-        "text": "Ca2+ and O2"
+        "text": "Ca2+ and O2-"
       },
       {
         "key": "C",
@@ -3159,11 +3159,11 @@
       },
       {
         "key": "D",
-        "text": "S2 and F"
+        "text": "S2- and F"
       }
     ],
     "answer": "C",
-    "hint": "(A): Na+ has 10 electrons while Cl has 17 electrons. (B): Ca2+ has 18 electrons while O2 has 10 electrons. (C): Both Al3+ and Ne have 10 electrons. (D): S2 has 18 electrons while F has 10 electrons.",
+    "hint": "(A): Na+ has 10 electrons while Cl has 17 electrons. (B): Ca2+ has 18 electrons while O2- has 10 electrons. (C): Both Al3+ and Ne have 10 electrons. (D): S2- has 18 electrons while F has 10 electrons.",
     "sourceRef": "ChemMCQ07017"
   },
   {
@@ -4521,7 +4521,7 @@
     "chapter": 7,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following ions are coloured? (1)Cu2+(aq) (2)Cr2O72(aq) (3)K+(aq)",
+    "stem": "Which of the following ions are coloured? (1)Cu2+(aq) (2)Cr2O72-(aq) (3)K+(aq)",
     "options": [
       {
         "key": "A",
@@ -4581,7 +4581,7 @@
     "chapter": 7,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the colours of the aqueous solutions of three compounds. Compound Colour of the aqueous solution PQ blue RS orange RQ colourless Which of the following combinations about the ions involved is likely to be correct? P2+(aq) Q2(aq) R2+(aq) S2(aq)",
+    "stem": "The table below shows the colours of the aqueous solutions of three compounds. Compound Colour of the aqueous solution PQ blue RS orange RQ colourless Which of the following combinations about the ions involved is likely to be correct? P2+(aq) Q2-(aq) R2+(aq) S2-(aq)",
     "options": [
       {
         "key": "A",
@@ -4601,7 +4601,7 @@
       }
     ],
     "answer": "C",
-    "hint": "Since RQ is colourless, R2+(aq) and Q2(aq) are both colourless. As RS is orange in colour, S2(aq) is orange in colour, which can be Cr2O72(aq). As PQ is blue in colour, P2+(aq) is blue in colour, which can be Cu2+(aq).",
+    "hint": "Since RQ is colourless, R2+(aq) and Q2-(aq) are both colourless. As RS is orange in colour, S2-(aq) is orange in colour, which can be Cr2O72-(aq). As PQ is blue in colour, P2+(aq) is blue in colour, which can be Cu2+(aq).",
     "sourceRef": "ChemMCQ07061"
   },
   {

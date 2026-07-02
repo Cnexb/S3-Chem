@@ -2294,7 +2294,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "(2): A hydrogen ion (H+) does not have any electrons. (3): Ions of isotopes of an element have different mass numbers.",
+    "hint": "(2): A hydrogen ion (H⁺) does not have any electrons. (3): Ions of isotopes of an element have different mass numbers.",
     "sourceRef": "ChemMCQ07002"
   },
   {
@@ -2322,7 +2322,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "An atom and its ion have different physical and chemical properties. A Mg atom has two outermost shell electrons while a Mg2+ ion has eight outermost shell electrons.",
+    "hint": "An atom and its ion have different physical and chemical properties. A Mg atom has two outermost shell electrons while a Mg²⁺ ion has eight outermost shell electrons.",
     "sourceRef": "ChemMCQ07003"
   },
   {
@@ -2350,7 +2350,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "The electronic arrangement of K+ is 2, 8, 8, which is the same as that of Ca2+.",
+    "hint": "The electronic arrangement of K⁺ is 2, 8, 8, which is the same as that of Ca²⁺.",
     "sourceRef": "ChemMCQ07004"
   },
   {
@@ -2414,7 +2414,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Atom W has 12 electrons and its mass number is 24. Which of the following combinations about the number of protons and that of neutrons in a W₂+ ion is correct?\nNumber of protons, Number of neutrons",
+    "stem": "Atom W has 12 electrons and its mass number is 24. Which of the following combinations about the number of protons and that of neutrons in a W²⁺ ion is correct?\nNumber of protons, Number of neutrons",
     "options": [
       {
         "key": "A",
@@ -2434,7 +2434,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "The number of protons and number of neutrons in atom W and ion W2+ are the same. The number of protons is equal to the number of electrons (i.e. 12). Number of neutrons = mass number  number of protons = 24  12 = 12.",
+    "hint": "The number of protons and number of neutrons in atom W and ion W²⁺ are the same. The number of protons is equal to the number of electrons (i.e. 12). Number of neutrons = mass number  number of protons = 24  12 = 12.",
     "sourceRef": "ChemMCQ07008"
   },
   {
@@ -2470,7 +2470,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following particles have an octet electronic arrangement?\n(1) H+\n(2) K+\n(3) P₃",
+    "stem": "Which of the following particles have an octet electronic arrangement?\n(1) H⁺\n(2) K⁺\n(3) P₃",
     "options": [
       {
         "key": "A",
@@ -2518,7 +2518,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "Atom R with 19 protons (atomic number = number of protons) has 19 electrons. Its electronic arrangement is 2, 8, 8, 1. It can attain a stable octet electronic arrangement by losing one electron to form an ion with a charge of 1+.",
+    "hint": "Atom R with 19 protons (atomic number = number of protons) has 19 electrons. Its electronic arrangement is 2, 8, 8, 1. It can attain a stable octet electronic arrangement by losing one electron to form an ion with a charge of ¹⁺.",
     "sourceRef": "ChemMCQ07011",
     "stemTable": {
       "headers": [
@@ -2578,7 +2578,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "An ion X₂+ consists of 22 neutrons and 18 electrons. What is the mass number of X₂+?",
+    "stem": "An ion X²⁺ consists of 22 neutrons and 18 electrons. What is the mass number of X₂+?",
     "options": [
       {
         "key": "A",
@@ -2598,7 +2598,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "The number of electrons in an atom of X is 18 + 2 = 20 and hence it has 20 protons. Mass number of X2+ = number of protons + number of neutrons = 20 + 22 = 42",
+    "hint": "The number of electrons in an atom of X is 18 + 2 = 20 and hence it has 20 protons. Mass number of X²⁺ = number of protons + number of neutrons = 20 + 22 = 42",
     "sourceRef": "ChemMCQ07015"
   },
   {
@@ -2606,7 +2606,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following ions have the same number of electrons as an argon atom?\n(1) F\n(2) Ca₂+\n(3) S₂",
+    "stem": "Which of the following ions have the same number of electrons as an argon atom?\n(1) F\n(2) Ca²⁺\n(3) S²⁻",
     "options": [
       {
         "key": "A",
@@ -2626,7 +2626,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "Ar, Ca2+ and S2 all have 18 electrons while F has 10 electrons.",
+    "hint": "Ar, Ca²⁺ and S²⁻ all have 18 electrons while F has 10 electrons.",
     "sourceRef": "ChemMCQ07016"
   },
   {
@@ -2638,23 +2638,23 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Na+ and Cl"
+        "text": "Na⁺ and Cl"
       },
       {
         "key": "B",
-        "text": "Ca2+ and O2"
+        "text": "Ca²⁺ and O²⁻"
       },
       {
         "key": "C",
-        "text": "Al3+ and Ne"
+        "text": "Al³⁺ and Ne"
       },
       {
         "key": "D",
-        "text": "S2 and F"
+        "text": "S²⁻ and F"
       }
     ],
     "answer": "C",
-    "hint": "(A): Na+ has 10 electrons while Cl has 17 electrons. (B): Ca2+ has 18 electrons while O2 has 10 electrons. (C): Both Al3+ and Ne have 10 electrons. (D): S2 has 18 electrons while F has 10 electrons.",
+    "hint": "(A): Na⁺ has 10 electrons while Cl has 17 electrons. (B): Ca²⁺ has 18 electrons while O²⁻ has 10 electrons. (C): Both Al³⁺ and Ne have 10 electrons. (D): S²⁻ has 18 electrons while F has 10 electrons.",
     "sourceRef": "ChemMCQ07017"
   },
   {
@@ -2670,7 +2670,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "B",
-        "text": "Li+ and Be2+"
+        "text": "Li⁺ and Be²⁺"
       },
       {
         "key": "C",
@@ -2678,11 +2678,11 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "Na+ and Cl"
+        "text": "Na⁺ and Cl"
       }
     ],
     "answer": "D",
-    "hint": "(A): Both Ne and F have 10 electrons. (B): Both Li+ and Be2+ have 2 electrons. (C): Both Cl and Ar have 18 electrons. (D): Na+ has 10 electrons while Cl has 18 electrons.",
+    "hint": "(A): Both Ne and F have 10 electrons. (B): Both Li⁺ and Be²⁺ have 2 electrons. (C): Both Cl and Ar have 18 electrons. (D): Na⁺ has 10 electrons while Cl has 18 electrons.",
     "sourceRef": "ChemMCQ07018"
   },
   {
@@ -2690,7 +2690,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following species has the electronic arrangement of 2, 8?\n(1) Ne\n(2) F\n(3) Al₃+",
+    "stem": "Which of the following species has the electronic arrangement of 2, 8?\n(1) Ne\n(2) F\n(3) Al³⁺",
     "options": [
       {
         "key": "A",
@@ -2758,17 +2758,17 @@ export const QUIZ_ITEMS = [
           "6"
         ],
         [
-          "Z2+",
+          "Z²⁺",
           "12",
           "10"
         ],
         [
-          "Q2",
+          "Q₂",
           "9",
           "10"
         ],
         [
-          "R+",
+          "R⁺",
           "12",
           "10"
         ]
@@ -2788,11 +2788,11 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "B",
-        "text": "N3"
+        "text": "N₃"
       },
       {
         "key": "C",
-        "text": "Al3+"
+        "text": "Al³⁺"
       },
       {
         "key": "D",
@@ -2800,7 +2800,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "Number of protons in NH4+ = sum of the number of protons in its constituent atoms = 7 + 1 × 4 = 11",
+    "hint": "Number of protons in NH⁴⁺ = sum of the number of protons in its constituent atoms = 7 + 1 × 4 = 11",
     "sourceRef": "ChemMCQ07021"
   },
   {
@@ -2841,11 +2841,11 @@ export const QUIZ_ITEMS = [
           "2, 8, 5"
         ],
         [
-          "Y2",
+          "Y₂",
           "2, 8, 8"
         ],
         [
-          "Z+",
+          "Z⁺",
           "2, 8"
         ]
       ]
@@ -3100,7 +3100,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "Lithium is in Period 2 and Group I of the Periodic Table. Li+ has a duplet elctronic arrangement.",
+    "hint": "Lithium is in Period 2 and Group I of the Periodic Table. Li⁺ has a duplet elctronic arrangement.",
     "sourceRef": "ChemMCQ07032",
     "image": {
       "src": "./assets/mc-media-rId30.png",
@@ -3225,19 +3225,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "1+"
+        "text": "¹⁺"
       },
       {
         "key": "B",
-        "text": "2+"
+        "text": "²⁺"
       },
       {
         "key": "C",
-        "text": "3+"
+        "text": "³⁺"
       },
       {
         "key": "D",
-        "text": "5+"
+        "text": "⁵⁺"
       }
     ],
     "answer": "C",
@@ -3325,7 +3325,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "D",
-    "hint": "A magnesium ion has a charge of 2+ and a chloride ion has a charge of 1.",
+    "hint": "A magnesium ion has a charge of ²⁺ and a chloride ion has a charge of 1.",
     "sourceRef": "ChemMCQ07039",
     "image": {
       "src": "./assets/mc-media-rId31.jpeg",
@@ -3472,7 +3472,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "C",
-        "text": "Ammonium chloride, NH³Cl"
+        "text": "Ammonium chloride, NH₃Cl"
       },
       {
         "key": "D",
@@ -3480,7 +3480,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "The formulae of magnesium nitrate, ammonium chloride and sodium carbonate are Mg(NO3)2, NH⁴Cl and Na2CO3 respectively.",
+    "hint": "The formulae of magnesium nitrate, ammonium chloride and sodium carbonate are Mg(NO₃)₂, NH₄Cl and Na₂CO₃ respectively.",
     "sourceRef": "ChemMCQ07044"
   },
   {
@@ -3508,7 +3508,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "Based on the formula Y2O3, Y should either belong to Group III or Group V.",
+    "hint": "Based on the formula Y₂O₃, Y should either belong to Group III or Group V.",
     "sourceRef": "ChemMCQ07045"
   },
   {
@@ -3524,15 +3524,15 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "B",
-        "text": "Ca²L"
+        "text": "Ca₂L"
       },
       {
         "key": "C",
-        "text": "Ca3L2"
+        "text": "Ca₃L₂"
       },
       {
         "key": "D",
-        "text": "Ca2L3"
+        "text": "Ca₂L₃"
       }
     ],
     "answer": "C",
@@ -3544,7 +3544,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Elements X and Y form an ionic compound with the formula Y³X. If the electronic arrangement of Y is 2, 8, 8, 1, to which group of the Periodic Table does X belong?",
+    "stem": "Elements X and Y form an ionic compound with the formula Y₃X. If the electronic arrangement of Y is 2, 8, 8, 1, to which group of the Periodic Table does X belong?",
     "options": [
       {
         "key": "A",
@@ -3580,15 +3580,15 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "B",
-        "text": "Z²A"
+        "text": "Z₂A"
       },
       {
         "key": "C",
-        "text": "Z2A3"
+        "text": "Z₂A₃"
       },
       {
         "key": "D",
-        "text": "Z3A2"
+        "text": "Z₃A₂"
       }
     ],
     "answer": "D",
@@ -3600,7 +3600,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Ionic compound Y has the formula L²X, where L and X represent the cation and anion respectively. If L and X have the same electronic arrangement, Y may be",
+    "stem": "Ionic compound Y has the formula L₂X, where L and X represent the cation and anion respectively. If L and X have the same electronic arrangement, Y may be",
     "options": [
       {
         "key": "A",
@@ -3648,7 +3648,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "The electronic arrangements of Ca2+ and Cl are both 2, 8, 8.",
+    "hint": "The electronic arrangements of Ca²⁺ and Cl are both 2, 8, 8.",
     "sourceRef": "ChemMCQ07050"
   },
   {
@@ -3660,23 +3660,23 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "X³Y"
+        "text": "X₃Y"
       },
       {
         "key": "B",
-        "text": "X3Y2"
+        "text": "X₃Y₂"
       },
       {
         "key": "C",
-        "text": "XY3"
+        "text": "XY₃"
       },
       {
         "key": "D",
-        "text": "X2Y3"
+        "text": "X₂Y₃"
       }
     ],
     "answer": "D",
-    "hint": "The electronic arrangements of X and Y are 2, 8, 3 and 2, 6 respectively. To attain a stable octet electronic arrangement, an X atom loses three electrons and a Y atom gains two electrons. Hence, six electrons are transferred from two X atoms to three Y atoms to form a stable compound, X2Y3.",
+    "hint": "The electronic arrangements of X and Y are 2, 8, 3 and 2, 6 respectively. To attain a stable octet electronic arrangement, an X atom loses three electrons and a Y atom gains two electrons. Hence, six electrons are transferred from two X atoms to three Y atoms to form a stable compound, X₂Y₃.",
     "sourceRef": "ChemMCQ07051"
   },
   {
@@ -3688,19 +3688,19 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "L2SO3"
+        "text": "L₂SO₃"
       },
       {
         "key": "B",
-        "text": "L(SO4)2"
+        "text": "L(SO₄)₂"
       },
       {
         "key": "C",
-        "text": "LSO4"
+        "text": "LSO₄"
       },
       {
         "key": "D",
-        "text": "L2(SO4)3"
+        "text": "L₂(SO₄)₃"
       }
     ],
     "answer": "C",
@@ -3716,23 +3716,23 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Y2NO3"
+        "text": "Y₂NO₃"
       },
       {
         "key": "B",
-        "text": "Y(NO3)3"
+        "text": "Y(NO₃)₃"
       },
       {
         "key": "C",
-        "text": "Y3NO3"
+        "text": "Y₃NO₃"
       },
       {
         "key": "D",
-        "text": "YNO3"
+        "text": "YNO₃"
       }
     ],
     "answer": "B",
-    "hint": "The charge of a sulphide ion is 2. Hence, the charge of a Y ion is 3+.",
+    "hint": "The charge of a sulphide ion is 2. Hence, the charge of a Y ion is ³⁺.",
     "sourceRef": "ChemMCQ07053"
   },
   {
@@ -3740,23 +3740,23 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The formula of the oxide of caesium is Cs²O. Which of the following is the formula of caesium hydrogencarbonate?",
+    "stem": "The formula of the oxide of caesium is Cs₂O. Which of the following is the formula of caesium hydrogencarbonate?",
     "options": [
       {
         "key": "A",
-        "text": "HCO³Cs"
+        "text": "HCO₃Cs"
       },
       {
         "key": "B",
-        "text": "CsHCO3"
+        "text": "CsHCO₃"
       },
       {
         "key": "C",
-        "text": "Cs2HCO3"
+        "text": "Cs₂HCO₃"
       },
       {
         "key": "D",
-        "text": "Cs(HCO3)2"
+        "text": "Cs(HCO₃)₂"
       }
     ],
     "answer": "B",
@@ -3776,19 +3776,19 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "B",
-        "text": "M2bOa"
+        "text": "M₂bOa"
       },
       {
         "key": "C",
-        "text": "M3bO2a"
+        "text": "M₃bO₂a"
       },
       {
         "key": "D",
-        "text": "M2aO3b"
+        "text": "M₂aO₃b"
       }
     ],
     "answer": "D",
-    "hint": "Let the charge on the ion of M be x+. ax  3b = 0 x = Formula of the oxide of M = M²Ox = M2 = M2aO3b",
+    "hint": "Let the charge on the ion of M be x+. ax  3b = 0 x = Formula of the oxide of M = M₂Ox = M₂ = M₂aO₃b",
     "sourceRef": "ChemMCQ07055"
   },
   {
@@ -3828,7 +3828,7 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Ionic, Q²P"
+        "text": "Ionic, Q₂P"
       },
       {
         "key": "B",
@@ -3836,7 +3836,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "C",
-        "text": "Covalent, Q²P"
+        "text": "Covalent, Q₂P"
       },
       {
         "key": "D",
@@ -3844,7 +3844,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "Since an atom of P forms ions with a charge of 2, P should be a Group VI element. As an atom of Q has three more proton than P, Q should be a Group I element. P and Q form an ionic compound with a formula Q²P.",
+    "hint": "Since an atom of P forms ions with a charge of 2, P should be a Group VI element. As an atom of Q has three more proton than P, Q should be a Group I element. P and Q form an ionic compound with a formula Q₂P.",
     "sourceRef": "ChemMCQ07057"
   },
   {
@@ -3880,7 +3880,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following ions are coloured?\n(1) Cu₂+(aq)\n(2) Cr₂O₇₂(aq)\n(3) K+(aq)",
+    "stem": "Which of the following ions are coloured?\n(1) Cu²⁺(aq)\n(2) Cr₂O₇²⁻(aq)\n(3) K⁺(aq)",
     "options": [
       {
         "key": "A",
@@ -3940,23 +3940,23 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "Co2+, SO42, Fe2+, Cr2O72"
+        "text": "Co²⁺, SO₄²⁻, Fe²⁺, Cr₂O₇²⁻"
       },
       {
         "key": "B",
-        "text": "Co2+, SO42, Mg2+, Cr2O72"
+        "text": "Co²⁺, SO₄²⁻, Mg²⁺, Cr₂O₇²⁻"
       },
       {
         "key": "C",
-        "text": "Cu2+, SO42, Mg2+, Cr2O72"
+        "text": "Cu²⁺, SO₄²⁻, Mg²⁺, Cr₂O₇²⁻"
       },
       {
         "key": "D",
-        "text": "Cu2+, Cr2O72, Fe2+, SO42"
+        "text": "Cu²⁺, Cr₂O₇²⁻, Fe²⁺, SO₄²⁻"
       }
     ],
     "answer": "C",
-    "hint": "Since RQ is colourless, R2+(aq) and Q2(aq) are both colourless. As RS is orange in colour, S2(aq) is orange in colour, which can be Cr2O72(aq). As PQ is blue in colour, P2+(aq) is blue in colour, which can be Cu2+(aq).",
+    "hint": "Since RQ is colourless, R²⁺(aq) and Q²⁻(aq) are both colourless. As RS is orange in colour, S²⁻(aq) is orange in colour, which can be Cr₂O₇²⁻(aq). As PQ is blue in colour, P²⁺(aq) is blue in colour, which can be Cu²⁺(aq).",
     "sourceRef": "ChemMCQ07061",
     "stemTable": {
       "headers": [
@@ -4004,7 +4004,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "As CB(aq) is colourless, both C2+(aq) and B2(aq) are colourless. As CD(aq) is yellow in colour and C2+(aq) is colourless, D2(aq) is yellow in colour.",
+    "hint": "As CB(aq) is colourless, both C²⁺(aq) and B₂(aq) are colourless. As CD(aq) is yellow in colour and C²⁺(aq) is colourless, D₂(aq) is yellow in colour.",
     "sourceRef": "ChemMCQ07062",
     "stemTable": {
       "headers": [
@@ -4085,7 +4085,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "D",
-    "hint": "Cr3+(aq) is green in colour. When the circuit is closed, Cr3+(aq) ions are attracted to the negative electrode.",
+    "hint": "Cr³⁺(aq) is green in colour. When the circuit is closed, Cr³⁺(aq) ions are attracted to the negative electrode.",
     "sourceRef": "ChemMCQ07064",
     "image": {
       "src": "./assets/mc-media-rId36.jpeg",
@@ -4207,7 +4207,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "Ammonium nitrate is an ionic compound consisting of NH4+ and NO3 ions.",
+    "hint": "Ammonium nitrate is an ionic compound consisting of NH⁴⁺ and NO₃ ions.",
     "sourceRef": "ChemMCQ08003"
   },
   {
@@ -4219,23 +4219,23 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "CH4 and NCl3"
+        "text": "CH₄ and NCl₃"
       },
       {
         "key": "B",
-        "text": "CO2 and BF3"
+        "text": "CO₂ and BF₃"
       },
       {
         "key": "C",
-        "text": "HCl and O3"
+        "text": "HCl and O₃"
       },
       {
         "key": "D",
-        "text": "NO2 and Cl²O"
+        "text": "NO₂ and Cl₂O"
       }
     ],
     "answer": "D",
-    "hint": "Both NO2 and Cl²O have three atoms in their molecules.",
+    "hint": "Both NO₂ and Cl₂O have three atoms in their molecules.",
     "sourceRef": "ChemMCQ08004"
   },
   {
@@ -4303,11 +4303,11 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "CS2"
+        "text": "CS₂"
       },
       {
         "key": "B",
-        "text": "H²O"
+        "text": "H₂O"
       },
       {
         "key": "C",
@@ -4315,11 +4315,11 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "N2"
+        "text": "N₂"
       }
     ],
     "answer": "A",
-    "hint": "The electron diagrams of CS2, H²O, HCl and N2 are shown below.",
+    "hint": "The electron diagrams of CS₂, H₂O, HCl and N₂ are shown below.",
     "sourceRef": "ChemMCQ08007"
   },
   {
@@ -4347,7 +4347,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "The electron diagrams of N2, C2H2 and N2F2 are shown below.",
+    "hint": "The electron diagrams of N₂, C₂H₂ and N₂F₂ are shown below.",
     "sourceRef": "ChemMCQ08008"
   },
   {
@@ -4483,7 +4483,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "A water molecule (H²O) has 10 electrons.",
+    "hint": "A water molecule (H₂O) has 10 electrons.",
     "sourceRef": "ChemMCQ08012"
   },
   {
@@ -4539,7 +4539,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "The electron diagrams of N2, PCl3 and C2H4 are shown below. A C2H4 molecule contains 12 bonding electrons.",
+    "hint": "The electron diagrams of N₂, PCl₃ and C₂H₄ are shown below. A C₂H₄ molecule contains 12 bonding electrons.",
     "sourceRef": "ChemMCQ08014"
   },
   {
@@ -4567,7 +4567,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "In H2, C(diamond) and S8, the atoms are held together by single covalent bonds. In CO2, the C and O atoms are held together by double covalent bonds. Double covalent bonds are usually stronger than single covalent bonds.",
+    "hint": "In H₂, C(diamond) and S₈, the atoms are held together by single covalent bonds. In CO₂, the C and O atoms are held together by double covalent bonds. Double covalent bonds are usually stronger than single covalent bonds.",
     "sourceRef": "ChemMCQ08015"
   },
   {
@@ -4694,7 +4694,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "The electronic arrangement of S is 2, 8, 6. Together with the two electrons from the two H atoms, the total number of electrons in the molecule (H²S) is 18.",
+    "hint": "The electronic arrangement of S is 2, 8, 6. Together with the two electrons from the two H atoms, the total number of electrons in the molecule (H₂S) is 18.",
     "sourceRef": "ChemMCQ08021"
   },
   {
@@ -4722,7 +4722,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "In the compound YX3, atom X should have 1 or 7 outermost shell electrons and atom Y should have 3 or 5 outermost shell electrons. Thus, the electronic arrangements of atom X and atom Y are probably 1 and 2, 8, 5 respectively.",
+    "hint": "In the compound YX₃, atom X should have 1 or 7 outermost shell electrons and atom Y should have 3 or 5 outermost shell electrons. Thus, the electronic arrangements of atom X and atom Y are probably 1 and 2, 8, 5 respectively.",
     "sourceRef": "ChemMCQ08023"
   },
   {
@@ -4730,7 +4730,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Element E is in Period 2 of the Periodic Table. It forms a stable cation H³E+. To which group of the Periodic Table does E belong?",
+    "stem": "Element E is in Period 2 of the Periodic Table. It forms a stable cation H₃E⁺. To which group of the Periodic Table does E belong?",
     "options": [
       {
         "key": "A",
@@ -4750,7 +4750,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "E is probably oxygen which forms a stable cation H³O+.",
+    "hint": "E is probably oxygen which forms a stable cation H₃O⁺.",
     "sourceRef": "ChemMCQ08024"
   },
   {
@@ -4857,7 +4857,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following species possess a dative covalent bond?\n(1) H³O+\n(2) NH₄+\n(3) CO",
+    "stem": "Which of the following species possess a dative covalent bond?\n(1) H₃O⁺\n(2) NH⁴⁺\n(3) CO",
     "options": [
       {
         "key": "A",
@@ -4877,7 +4877,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "D",
-    "hint": "The electron diagrams of H³O+, NH4+ and CO are shown below.",
+    "hint": "The electron diagrams of H₃O⁺, NH⁴⁺ and CO are shown below.",
     "sourceRef": "ChemMCQ08028"
   },
   {
@@ -4918,7 +4918,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following processes involve the formation of a dative covalent bond?\n(1) HCl + H²O  H³O+ + Cl\n(2) H+ + OH  H²O\n(3) NH₃ + H+  NH₄+",
+    "stem": "Which of the following processes involve the formation of a dative covalent bond?\n(1) HCl + H₂O  H₃O⁺ + Cl\n(2) H⁺ + OH  H₂O\n(3) NH₃ + H⁺  NH⁴⁺",
     "options": [
       {
         "key": "A",
@@ -4954,15 +4954,15 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "B",
-        "text": "Ca²L"
+        "text": "Ca₂L"
       },
       {
         "key": "C",
-        "text": "CaL2"
+        "text": "CaL₂"
       },
       {
         "key": "D",
-        "text": "Ca3L2"
+        "text": "Ca₃L₂"
       }
     ],
     "answer": "A",
@@ -4999,7 +4999,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "Relative molecular mass of sulphur trioxide (SO3) = 32.1 + 16.0 × 3 = 80.1",
+    "hint": "Relative molecular mass of sulphur trioxide (SO₃) = 32.1 + 16.0 × 3 = 80.1",
     "sourceRef": "ChemMCQ08032"
   },
   {
@@ -5035,7 +5035,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Magnesium has three isotopes: ²⁴Mg, ²⁵Mg and ²⁶Mg and chlorine has two isotopes: ³⁵Cl and ³⁷Cl. How many possible formula masses of magnesium chloride are there?",
+    "stem": "Magnesium has three isotopes: 24Mg, 25Mg and 26Mg and chlorine has two isotopes: 35Cl and 37Cl. How many possible formula masses of magnesium chloride are there?",
     "options": [
       {
         "key": "A",
@@ -5055,7 +5055,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "Consider different combinations of MgCl2. Constituent atoms Formula mass ²⁴Mg, ³⁵Cl and ³⁵Cl 24 + 35 + 35 = 94 ²⁴Mg, ³⁵Cl and ³⁷Cl 24 + 35 + 37 = 96 ²⁴Mg, ³⁷Cl and ³⁷Cl 24 + 37 + 37 = 98 ²⁵Mg, ³⁵Cl and ³⁵Cl 25 + 35 + 35 = 95 ²⁵Mg, ³⁵Cl and ³⁷Cl 25 + 35 + 37 = 97 ²⁵Mg, ³⁷Cl and ³⁷Cl 25 + 37 + 37 = 99 ²⁶Mg, ³⁵Cl and ³⁵Cl 26 + 35 + 35 = 96 ²⁶Mg, ³⁵Cl and ³⁷Cl 26 + 35 + 37 = 98 ²⁶Mg, ³⁷Cl and ³⁷Cl 26 + 37 + 37 = 100 Hence, there are seven possible formula masses of magnesium chloride.",
+    "hint": "Consider different combinations of MgCl₂. Constituent atoms Formula mass 24Mg, 35Cl and 35Cl 24 + 35 + 35 = 94 24Mg, 35Cl and 37Cl 24 + 35 + 37 = 96 24Mg, 37Cl and 37Cl 24 + 37 + 37 = 98 25Mg, 35Cl and 35Cl 25 + 35 + 35 = 95 25Mg, 35Cl and 37Cl 25 + 35 + 37 = 97 25Mg, 37Cl and 37Cl 25 + 37 + 37 = 99 26Mg, 35Cl and 35Cl 26 + 35 + 35 = 96 26Mg, 35Cl and 37Cl 26 + 35 + 37 = 98 26Mg, 37Cl and 37Cl 26 + 37 + 37 = 100 Hence, there are seven possible formula masses of magnesium chloride.",
     "sourceRef": "ChemMCQ08034"
   },
   {
@@ -5063,7 +5063,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following combinations about the name of the compound is correct?\nBa(NO₃)₂, Cl²O",
+    "stem": "Which of the following combinations about the name of the compound is correct?\nBa(NO₃)₂, Cl₂O",
     "options": [
       {
         "key": "A",
@@ -5095,15 +5095,15 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "D²O"
+        "text": "D₂O"
       },
       {
         "key": "B",
-        "text": "CD4"
+        "text": "CD₄"
       },
       {
         "key": "C",
-        "text": "BD3"
+        "text": "BD₃"
       },
       {
         "key": "D",
@@ -5111,7 +5111,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "D",
-    "hint": "(A): Relative molecular mass of D²O = 2.0 × 2 + 16.0 = 20.0 (B): Relative molecular mass of CD4 = 12.0 + 2.0 × 4 = 20.0 (C): Relative molecular mass of BD3 = 10.8 + 2.0 × 3 = 16.8 (D): Relative molecular mass of DF = 2.0 + 19.0 = 21.0",
+    "hint": "(A): Relative molecular mass of D₂O = 2.0 × 2 + 16.0 = 20.0 (B): Relative molecular mass of CD₄ = 12.0 + 2.0 × 4 = 20.0 (C): Relative molecular mass of BD₃ = 10.8 + 2.0 × 3 = 16.8 (D): Relative molecular mass of DF = 2.0 + 19.0 = 21.0",
     "sourceRef": "ChemMCQ08036"
   },
   {
@@ -5123,11 +5123,11 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "NH⁴Cl"
+        "text": "NH₄Cl"
       },
       {
         "key": "B",
-        "text": "CO2"
+        "text": "CO₂"
       },
       {
         "key": "C",
@@ -5135,11 +5135,11 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "K2CO3"
+        "text": "K₂CO₃"
       }
     ],
     "answer": "B",
-    "hint": "CO2 consists of two C=O covalent bonds whereas NH⁴Cl, NaOH and K2CO3 consist of both ionic bonds and covalent bonds.",
+    "hint": "CO₂ consists of two C=O covalent bonds whereas NH₄Cl, NaOH and K₂CO₃ consist of both ionic bonds and covalent bonds.",
     "sourceRef": "ChemMCQ08037"
   },
   {
@@ -5251,7 +5251,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "Both M and Q are non-metals and so they form covalent bonds. An atom of M has four outermost shell electrons while an atom of Q has six outermost shell electrons. The chemical formula of the compound is MQ2.",
+    "hint": "Both M and Q are non-metals and so they form covalent bonds. An atom of M has four outermost shell electrons while an atom of Q has six outermost shell electrons. The chemical formula of the compound is MQ₂.",
     "sourceRef": "ChemMCQ08041"
   },
   {
@@ -5263,7 +5263,7 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "X³Y, Ionic"
+        "text": "X₃Y, Ionic"
       },
       {
         "key": "B",
@@ -5271,7 +5271,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "C",
-        "text": "X³Y, Covalent"
+        "text": "X₃Y, Covalent"
       },
       {
         "key": "D",
@@ -5279,7 +5279,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "X and Y are non-metals and so they form covalent bonds. To attain a stable octet electronic arrangement, an X atom needs three more electrons while a Y atom needs one. Hence, one X atom shares electrons with three Y atoms. The compound formed has a formula of XY3.",
+    "hint": "X and Y are non-metals and so they form covalent bonds. To attain a stable octet electronic arrangement, an X atom needs three more electrons while a Y atom needs one. Hence, one X atom shares electrons with three Y atoms. The compound formed has a formula of XY₃.",
     "sourceRef": "ChemMCQ08042"
   },
   {
@@ -5287,7 +5287,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The electronic arrangement of a R₂+ ion is 2, 8, 8. Which of the following statements concerning the carbonate of R is/are correct? (Relative atomic masses: C = 12.0, O = 16.0, R = 40.1)\n(1) Its formula mass is 140.2.\n(2) It is insoluble in water.\n(3) It gives a golden yellow flame in the flame test.",
+    "stem": "The electronic arrangement of a R²⁺ ion is 2, 8, 8. Which of the following statements concerning the carbonate of R is/are correct? (Relative atomic masses: C = 12.0, O = 16.0, R = 40.1)\n(1) Its formula mass is 140.2.\n(2) It is insoluble in water.\n(3) It gives a golden yellow flame in the flame test.",
     "options": [
       {
         "key": "A",
@@ -5307,7 +5307,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "R is calcium. The formula mass of CaCO3 is 40.1 + 12.0 + 16.0 × 3 = 100.1. Calcium compounds give a brick-red flame in a flame test.",
+    "hint": "R is calcium. The formula mass of CaCO₃ is 40.1 + 12.0 + 16.0 × 3 = 100.1. Calcium compounds give a brick-red flame in a flame test.",
     "sourceRef": "ChemMCQ08043"
   },
   {
@@ -5335,7 +5335,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "The electronic arrangements of M and N are 2, 8, 7 and 2, 8, 8, 2 respectively. The formula of the compound formed between M and N is NM2. Its formula mass is 40.1 + 35.5 × 2 = 111.1.",
+    "hint": "The electronic arrangements of M and N are 2, 8, 7 and 2, 8, 8, 2 respectively. The formula of the compound formed between M and N is NM₂. Its formula mass is 40.1 + 35.5 × 2 = 111.1.",
     "sourceRef": "ChemMCQ08044",
     "stemTable": {
       "headers": [
@@ -5374,7 +5374,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "C",
-        "text": "The chemical formula of the chloride of Y is YCl3"
+        "text": "The chemical formula of the chloride of Y is YCl₃"
       },
       {
         "key": "D",
@@ -5395,7 +5395,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "P, Q and R are three consecutive elements in the Periodic Table. R forms a stable cation R+ while the oxide of P is a covalent compound. Which of the following statements concerning P, Q and R are correct?\n(1) R is an alkali metal.\n(2) The formula of the oxide of P can be P²O.\n(3) P and Q belong to the same period of the Periodic Table.",
+    "stem": "P, Q and R are three consecutive elements in the Periodic Table. R forms a stable cation R⁺ while the oxide of P is a covalent compound. Which of the following statements concerning P, Q and R are correct?\n(1) R is an alkali metal.\n(2) The formula of the oxide of P can be P₂O.\n(3) P and Q belong to the same period of the Periodic Table.",
     "options": [
       {
         "key": "A",
@@ -6312,7 +6312,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "Covalent compounds with a giant covalent structure do not consist of discrete molecules. Some covalent compounds (e.g. HCl and NH3) are electrolytes.",
+    "hint": "Covalent compounds with a giant covalent structure do not consist of discrete molecules. Some covalent compounds (e.g. HCl and NH₃) are electrolytes.",
     "sourceRef": "ChemMCQ09032"
   },
   {
@@ -6340,7 +6340,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "CO2 has a simple molecular structure while SiO2 has a giant covalent structure. CO2 has a low melting point and it is slightly soluble in water. However, SiO2 is insoluble in water.",
+    "hint": "CO₂ has a simple molecular structure while SiO₂ has a giant covalent structure. CO₂ has a low melting point and it is slightly soluble in water. However, SiO₂ is insoluble in water.",
     "sourceRef": "ChemMCQ09033"
   },
   {
@@ -6368,7 +6368,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "At room temperature and pressure, SiO2 is a solid while NO2 is a gas.",
+    "hint": "At room temperature and pressure, SiO₂ is a solid while NO₂ is a gas.",
     "sourceRef": "ChemMCQ09034"
   },
   {
@@ -6396,7 +6396,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": "(A): Hydrogen exists as H2 molecules. (C): SiO2 has a giant covalent structure. No molecules can be found in SiO2. (D): Iron consists of iron(II) ions and delocalized electrons.",
+    "hint": "(A): Hydrogen exists as H₂ molecules. (C): SiO₂ has a giant covalent structure. No molecules can be found in SiO₂. (D): Iron consists of iron(II) ions and delocalized electrons.",
     "sourceRef": "ChemMCQ09035"
   },
   {
@@ -6496,7 +6496,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "B",
-        "text": "Br2(l)"
+        "text": "Br₂(l)"
       },
       {
         "key": "C",
@@ -6504,7 +6504,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "CH3CH2OH(l)"
+        "text": "CH₃CH₂OH(l)"
       }
     ],
     "answer": "C",
@@ -6564,7 +6564,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "H2SO4 is a covalent compound. When it dissolves in water, it ionizes to give mobile ions and so its aqueous solution can conduct electricity. NaBr is an ionic compound. Its ions become mobile when molten or in aqueous solution. Pb is a metal.",
+    "hint": "H₂SO₄ is a covalent compound. When it dissolves in water, it ionizes to give mobile ions and so its aqueous solution can conduct electricity. NaBr is an ionic compound. Its ions become mobile when molten or in aqueous solution. Pb is a metal.",
     "sourceRef": "ChemMCQ09041",
     "stemTable": {
       "headers": [
@@ -6684,7 +6684,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "B",
-        "text": "HNO3(aq)"
+        "text": "HNO₃(aq)"
       },
       {
         "key": "C",
@@ -6692,11 +6692,11 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "CH3OH(l)"
+        "text": "CH₃OH(l)"
       }
     ],
     "answer": "D",
-    "hint": "CH3OH has a simple molecular structure. It does not contain any mobile ions or delocalized electrons to conduct electricity. HNO3(aq) contains hydrogen ions and nitrate ions.",
+    "hint": "CH₃OH has a simple molecular structure. It does not contain any mobile ions or delocalized electrons to conduct electricity. HNO₃(aq) contains hydrogen ions and nitrate ions.",
     "sourceRef": "ChemMCQ09045"
   },
   {
@@ -6724,7 +6724,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "CO2 and SO2 have simple molecular structures. SiO2 has a giant covalent structure.",
+    "hint": "CO₂ and SO₂ have simple molecular structures. SiO₂ has a giant covalent structure.",
     "sourceRef": "ChemMCQ09046"
   },
   {
@@ -6792,23 +6792,23 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "HCl, NaCl, CCl4"
+        "text": "HCl, NaCl, CCl₄"
       },
       {
         "key": "B",
-        "text": "NaCl, CCl4, HCl"
+        "text": "NaCl, CCl₄, HCl"
       },
       {
         "key": "C",
-        "text": "HCl, CCl4, NaCl"
+        "text": "HCl, CCl₄, NaCl"
       },
       {
         "key": "D",
-        "text": "CCl4, HCl, NaCl"
+        "text": "CCl₄, HCl, NaCl"
       }
     ],
     "answer": "C",
-    "hint": "Both HCl and CCl4 have simple molecular structures. As CCl4 has a larger molecular size than HCl, the melting point of CCl4 is higher. NaCl has a giant ionic structure. The ions are held together by strong ionic bonds and so it has the highest melting point.",
+    "hint": "Both HCl and CCl₄ have simple molecular structures. As CCl₄ has a larger molecular size than HCl, the melting point of CCl₄ is higher. NaCl has a giant ionic structure. The ions are held together by strong ionic bonds and so it has the highest melting point.",
     "sourceRef": "ChemMCQ09049"
   },
   {
@@ -6832,11 +6832,11 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "K³Fe(CN)₆, Giant ionic structure"
+        "text": "K₃Fe(CN)₆, Giant ionic structure"
       }
     ],
     "answer": "B",
-    "hint": "N2H4 and SiCl4 exist as simple molecules. Sodium amalgam (Na/Hg) is an alloy of sodium and mercury. It has a giant metallic structure. K³Fe(CN)6 consists of K+ ions and Fe(CN)63 ions.",
+    "hint": "N₂H₄ and SiCl₄ exist as simple molecules. Sodium amalgam (Na/Hg) is an alloy of sodium and mercury. It has a giant metallic structure. K₃Fe(CN)₆ consists of K⁺ ions and Fe(CN)₆₃ ions.",
     "sourceRef": "ChemMCQ09050"
   },
   {
@@ -6892,7 +6892,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "An atom of P shares electrons with three atoms of Q to form a covalent compound with a formula of PQ3. R has a simple molecular structure.",
+    "hint": "An atom of P shares electrons with three atoms of Q to form a covalent compound with a formula of PQ₃. R has a simple molecular structure.",
     "sourceRef": "ChemMCQ09052",
     "image": {
       "src": "./assets/mc-media-rId71.png",
@@ -7001,7 +7001,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "C",
-        "text": "It has a chemical formula of QR4"
+        "text": "It has a chemical formula of QR₄"
       },
       {
         "key": "D",
@@ -7009,7 +7009,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "Q and R are non-metals. An atom of Q shares electrons with four atoms of R to form a covalent compound with a chemical formula of QR4.",
+    "hint": "Q and R are non-metals. An atom of Q shares electrons with four atoms of R to form a covalent compound with a chemical formula of QR₄.",
     "sourceRef": "ChemMCQ09056"
   },
   {
@@ -7021,7 +7021,7 @@ export const QUIZ_ITEMS = [
     "options": [
       {
         "key": "A",
-        "text": "has a formula of A²B"
+        "text": "has a formula of A₂B"
       },
       {
         "key": "B",
@@ -7037,7 +7037,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "A and B are potassium and sulphur respectively. The compound formed is potassium sulphide (K²S), which is an ionic compound.",
+    "hint": "A and B are potassium and sulphur respectively. The compound formed is potassium sulphide (K₂S), which is an ionic compound.",
     "sourceRef": "ChemMCQ09057"
   },
   {
@@ -7173,7 +7173,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "D",
-    "hint": "From the given information, S should be argon and so P, Q and R should be fluorine, sulphur and chlorine respectively. Argon is unreactive and so it does not react with other elements. The compound of sulphur and chlorine (SCl2) has a simple molecular structure.",
+    "hint": "From the given information, S should be argon and so P, Q and R should be fluorine, sulphur and chlorine respectively. Argon is unreactive and so it does not react with other elements. The compound of sulphur and chlorine (SCl₂) has a simple molecular structure.",
     "sourceRef": "ChemMCQ09061"
   },
   {
@@ -7271,7 +7271,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "X is a non-conductor of electricity. It melts at ³C and boils at ⁴⁴C. Which of the following statements concerning X must be correct?\n(1) X is a solid at room temperature.\n(2) The particles in X are held together by weak intermolecular forces.\n(3) X has a giant covalent structure.",
+    "stem": "X is a non-conductor of electricity. It melts at 3C and boils at 44C. Which of the following statements concerning X must be correct?\n(1) X is a solid at room temperature.\n(2) The particles in X are held together by weak intermolecular forces.\n(3) X has a giant covalent structure.",
     "options": [
       {
         "key": "A",
@@ -7501,7 +7501,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The melting points of some chlorides are given in the table below.\n\nWhich of the following can be deduced from the above data?\n(1) NaCl cannot conduct electricity at ⁸⁰⁰C.\n(2) SiCl₄ is a covalent compound with a simple molecular structure.\n(3) PCl₃ is a covalent compound with a giant covalent structure.",
+    "stem": "The melting points of some chlorides are given in the table below.\n\nWhich of the following can be deduced from the above data?\n(1) NaCl cannot conduct electricity at 800C.\n(2) SiCl₄ is a covalent compound with a simple molecular structure.\n(3) PCl₃ is a covalent compound with a giant covalent structure.",
     "options": [
       {
         "key": "A",
@@ -7521,7 +7521,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "NaCl is a solid at ⁸⁰⁰C. It cannot conduct electricity in the solid state. PCl3 should have a simple molecular structure as it has a low melting point.",
+    "hint": "NaCl is a solid at 800C. It cannot conduct electricity in the solid state. PCl₃ should have a simple molecular structure as it has a low melting point.",
     "sourceRef": "ChemMCQ09070",
     "stemTable": {
       "headers": [
@@ -7534,11 +7534,11 @@ export const QUIZ_ITEMS = [
           "801"
         ],
         [
-          "SiCl4",
+          "SiCl₄",
           "70"
         ],
         [
-          "PCl3",
+          "PCl₃",
           "92"
         ]
       ]
@@ -7593,7 +7593,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The melting point and boiling point of J are ⁸⁰¹C and 1465C respectively. In the molten state, J conducts electricity with decomposition. J probably has",
+    "stem": "The melting point and boiling point of J are 801C and 1465C respectively. In the molten state, J conducts electricity with decomposition. J probably has",
     "options": [
       {
         "key": "A",
@@ -7641,7 +7641,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "The formula of sodium fluoride and potassium sulphide are NaF and K²S respectively. Silicon dioxide (SiO2) is insoluble in water.",
+    "hint": "The formula of sodium fluoride and potassium sulphide are NaF and K₂S respectively. Silicon dioxide (SiO₂) is insoluble in water.",
     "sourceRef": "ChemMCQ09073"
   },
   {
