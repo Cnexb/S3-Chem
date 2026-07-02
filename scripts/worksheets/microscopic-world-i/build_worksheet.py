@@ -11,7 +11,14 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v17"
+QUIZ_ASSET_VERSION = "20260702v18"
+
+
+def patch_quiz_module_imports(text: str) -> str:
+    def repl(m: re.Match) -> str:
+        path = m.group(1)
+        return f'from "{path}?v={QUIZ_ASSET_VERSION}"'
+    return re.sub(r'from "(\./[^"?]+\.js)(?:\?v=[^"]*)?"', repl, text)
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -1952,10 +1959,7 @@ export function renderStemTableHtml(table) {
 
 
 def patch_quiz_app(text: str, locale: str) -> str:
-    text = text.replace(
-        'from "./quizData.js"',
-        f'from "./quizData.js?v={QUIZ_ASSET_VERSION}"',
-    )
+    text = patch_quiz_module_imports(text)
     text = text.replace(
         """  function setHint(text) {
     const msg = text || t("empty");
@@ -2158,6 +2162,8 @@ def clone_ui():
                 src_text = patch_quiz_utils(src_text)
             if name == "quizApp.js":
                 src_text = patch_quiz_app(src_text, locale)
+            elif name in ("quizSummary.js", "quizExport.js"):
+                src_text = patch_quiz_module_imports(src_text)
             if name == "quizEffects.js":
                 src_text = patch_quiz_effects(src_text)
             (dest_js / name).write_text(src_text, encoding="utf-8")

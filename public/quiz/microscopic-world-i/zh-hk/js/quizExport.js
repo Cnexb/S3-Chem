@@ -5,7 +5,7 @@ import {
   modelAnswerText,
   questionFormat,
   getFillLines,
-} from "./quizUtils.js";
+} from "./quizUtils.js?v=20260702v18";
 
 function fillLineExportHtml(line, answersMode) {
   let html = "";

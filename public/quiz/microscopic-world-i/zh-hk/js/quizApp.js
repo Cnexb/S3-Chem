@@ -1,6 +1,6 @@
-import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v17";
-import { sectionLabel, renderSessionSummary } from "./quizSummary.js";
-import { downloadWord, printSheet } from "./quizExport.js";
+import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v18";
+import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260702v18";
+import { downloadWord, printSheet } from "./quizExport.js?v=20260702v18";
 import {
   DIFFICULTY_LEVELS,
   difficultyLevel,
@@ -21,14 +21,14 @@ import {
   splitStemText,
   parsePipeTableFromStem,
   renderStemTableHtml,
-} from "./quizUtils.js";
+} from "./quizUtils.js?v=20260702v18";
 import {
   animateSplitText,
   bindMagnets,
   bindTrueFocus,
   revealQuestionBlocks,
   initSettingsToggle,
-} from "./quizEffects.js";
+} from "./quizEffects.js?v=20260702v18";
 
 const UI = {
   en: {
