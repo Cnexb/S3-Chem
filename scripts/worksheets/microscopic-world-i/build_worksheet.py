@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v2"
+QUIZ_ASSET_VERSION = "20260702v3"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -94,6 +94,11 @@ EXPLICIT_EXCLUDE_IDS = {
 IONIC_BOND_KEEP_FILL = re.compile(
     r"^Write the chemical formula of iron\(III\) sulphate\s*$|"
     r"^Give the chemical names of Na2Cr2O7 and KMnO4\s*$",
+    re.I,
+)
+COVALENT_BOND_KEEP_FILL = re.compile(
+    r"^Write down the chemical formula of magnesium azide\.\s*$|"
+    r"^Calculate the formula mass of magnesium azide\.\s*",
     re.I,
 )
 EXPLICIT_SOURCE_EXCLUDE = re.compile(
@@ -1428,8 +1433,8 @@ def classify_lq(item: dict) -> tuple[str, str]:
         return "exclude", "broken or context-dependent ionic bond stem"
     if item.get("section") == "ionic-bond" and not IONIC_BOND_KEEP_FILL.search(stem.strip()):
         return "exclude", "ionic bond fill not in keep list"
-    if item.get("section") == "covalent-bond":
-        return "exclude", "covalent bond fill removed"
+    if item.get("section") == "covalent-bond" and not COVALENT_BOND_KEEP_FILL.search(stem.strip()):
+        return "exclude", "covalent bond fill not in keep list"
     if not item.get("hasAnswer") or not ans:
         return "exclude", "no answer"
     if DRAW_EX.search(sl):

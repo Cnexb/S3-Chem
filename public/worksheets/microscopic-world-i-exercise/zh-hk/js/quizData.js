@@ -8180,6 +8180,56 @@ export const QUIZ_ITEMS = [
     "sourceRef": "Part 3 Q45(a)(i)"
   },
   {
+    "id": "cb-21-a-i",
+    "section": "covalent-bond",
+    "format": "fill",
+    "difficulty": "Foundation",
+    "stem": "Write down the chemical formula of magnesium azide.",
+    "lines": [
+      {
+        "segments": [
+          {
+            "type": "text",
+            "value": "Answer: "
+          },
+          {
+            "type": "blank",
+            "accept": [
+              "Mg(N3)2"
+            ]
+          }
+        ]
+      }
+    ],
+    "hint": "See Part 4 Q21(a)(i). (1 mark)",
+    "sourceRef": "Part 4 Q21(a)(i)"
+  },
+  {
+    "id": "cb-21-a-ii",
+    "section": "covalent-bond",
+    "format": "fill",
+    "difficulty": "Foundation",
+    "stem": "Calculate the formula mass of magnesium azide. (Relative atomic masses: N = 14.0, Mg = 24.3)",
+    "lines": [
+      {
+        "segments": [
+          {
+            "type": "text",
+            "value": "Answer: "
+          },
+          {
+            "type": "blank",
+            "accept": [
+              "108.3"
+            ]
+          }
+        ]
+      }
+    ],
+    "hint": "See Part 4 Q21(a)(ii). (1 mark)",
+    "sourceRef": "Part 4 Q21(a)(ii)"
+  },
+  {
     "id": "sp-04-a-ii",
     "section": "structure-properties",
     "format": "fill",

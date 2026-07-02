@@ -5329,7 +5329,7 @@
     ],
     "marks": 1,
     "stem": "Calculate the formula mass of magnesium azide. (Relative atomic masses: N = 14.0, Mg = 24.3)",
-    "answer": "24.3 + 14x6 = 108.3",
+    "answer": "108.3",
     "sourceRef": "Part 4 Q21(a)(ii)",
     "hasAnswer": true
   },
