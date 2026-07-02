@@ -2884,7 +2884,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The electronic arrangement of an ion E₂ is 2, 8, 8. What is the atomic number of E?",
+    "stem": "The electronic arrangement of an ion E²⁻ is 2, 8, 8. What is the atomic number of E?",
     "options": [
       {
         "key": "A",
@@ -2906,34 +2906,6 @@ export const QUIZ_ITEMS = [
     "answer": "A",
     "hint": "Atomic number of an atom = number of protons in the atom = number of electrons in the atom Number of electrons in an atom of E = 2 + 8 + 8  2 = 16",
     "sourceRef": "ChemMCQ07024"
-  },
-  {
-    "id": "mc-07025",
-    "section": "ionic-bond",
-    "format": "mcq",
-    "difficulty": "Standard",
-    "stem": "The following equation represents a reaction that occurs in the universe. (g) + (g)  (g) + (g) Which of the following combinations about the number of subatomic particles in a  ion is correct?\nNumber of protons, Number of neutrons, Number of electrons",
-    "options": [
-      {
-        "key": "A",
-        "text": "2, 1, 1"
-      },
-      {
-        "key": "B",
-        "text": "2, 1, 2"
-      },
-      {
-        "key": "C",
-        "text": "3, 0, 1"
-      },
-      {
-        "key": "D",
-        "text": "3, 0, 2"
-      }
-    ],
-    "answer": "D",
-    "hint": "Number of protons in  = 3 × 1 = 3 Number of neutrons in  = 3 × 0 = 0 Number of electrons in  = 3 × 1  1 = 2",
-    "sourceRef": "ChemMCQ07025"
   },
   {
     "id": "mc-07026",
@@ -3768,23 +3740,23 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "M is a metal that forms a phosphate with the formula Ma(PO₄)b. The formula of the oxide of M is",
+    "stem": "M is a metal that forms a phosphate with the formula Mₐ(PO₄)ᵦ. The formula of the oxide of M is",
     "options": [
       {
         "key": "A",
-        "text": "MbOa"
+        "text": "MᵦOₐ"
       },
       {
         "key": "B",
-        "text": "M₂bOa"
+        "text": "M₂ᵦOₐ"
       },
       {
         "key": "C",
-        "text": "M₃bO₂a"
+        "text": "M₃ᵦO₂ₐ"
       },
       {
         "key": "D",
-        "text": "M₂aO₃b"
+        "text": "M₂ₐO₃ᵦ"
       }
     ],
     "answer": "D",
@@ -3936,7 +3908,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the colours of the aqueous solutions of three compounds.",
+    "stem": "The table below shows the colours of the aqueous solutions of three compounds.\n\nWhich of the following combinations about the ions involved is likely to be correct?\nP²⁺(aq), Q²⁻(aq), R²⁺(aq), S²⁻(aq)",
     "options": [
       {
         "key": "A",
@@ -3984,7 +3956,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The colours of the aqueous solutions of three ionic compounds are tabulated below.",
+    "stem": "The colours of the aqueous solutions of three ionic compounds are tabulated below.\n\nWhich of the following ions is/are likely colourless?\n(1) C²⁺(aq)\n(2) D²⁻(aq)\n(3) B²⁻(aq)",
     "options": [
       {
         "key": "A",

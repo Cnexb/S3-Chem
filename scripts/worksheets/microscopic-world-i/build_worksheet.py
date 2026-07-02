@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v18"
+QUIZ_ASSET_VERSION = "20260702v20"
 
 
 def patch_quiz_module_imports(text: str) -> str:
@@ -41,6 +41,7 @@ EXPLICIT_EXCLUDE_IDS = {
     "as-11-a-i",
     "mc-05032",
     "mc-05033",
+    "mc-07025",
     # Broken / context-dependent periodic-table items (screenshot review 2026-06 / 2026-07)
     "pt-01-a-i",
     "pt-01-a-ii",
@@ -279,6 +280,7 @@ ISO_TOPE_ROW = re.compile(
 )
 SUPERSCRIPT = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹")
 SUBSCRIPT = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+LETTER_SUBSCRIPT = {"a": "ₐ", "b": "ᵦ"}
 CHEMISTRY_SECTIONS = frozenset({"ionic-bond", "covalent-bond", "structure-properties"})
 CHARGE_LOOKAHEAD = r"(?=[\s,;.)\]]|$|/|\(|\?|!)"
 MCQ_PLAIN_CHARGE_OPTIONS = frozenset({"mc-07036"})
@@ -290,6 +292,16 @@ def format_formula_subscripts(text: str) -> str:
         lambda m: m.group(0).translate(SUBSCRIPT),
         text,
     )
+
+
+def format_variable_subscripts(text: str) -> str:
+    def repl(m: re.Match) -> str:
+        return m.group(1) + LETTER_SUBSCRIPT.get(m.group(2), m.group(2))
+
+    text = re.sub(r"\bM([ab])(?=[(\s]|O|$)", repl, text)
+    text = re.sub(r"(?<=\))([ab])\b", repl, text)
+    text = re.sub(r"(?<=[O₀₁₂₃₄₅₆₇₈₉])([ab])\b", repl, text)
+    return text
 
 
 def _ion_charge_superscript(num: str, sign: str) -> str:
@@ -360,7 +372,8 @@ def format_chemical_notation(text: str) -> str:
     text = re.sub(r"\bCr2O72(?![\-])", "Cr2O72-", text)
     text = re.sub(r"\bSO42(?![\-])", "SO42-", text)
     text = format_ion_charges(text)
-    return format_formula_subscripts(text)
+    text = format_formula_subscripts(text)
+    return format_variable_subscripts(text)
 
 
 def format_isotope_notation(text: str) -> str:

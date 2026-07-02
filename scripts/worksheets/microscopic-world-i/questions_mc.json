@@ -3353,7 +3353,7 @@
     "chapter": 7,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The electronic arrangement of an ion E2 is 2, 8, 8. What is the atomic number of E?",
+    "stem": "The electronic arrangement of an ion E2- is 2, 8, 8. What is the atomic number of E?",
     "options": [
       {
         "key": "A",
@@ -4405,19 +4405,19 @@
     "options": [
       {
         "key": "A",
-        "text": "MbOa."
+        "text": " MbOa."
       },
       {
         "key": "B",
-        "text": "M2bOa."
+        "text": " M2bOa."
       },
       {
         "key": "C",
-        "text": "M3bO2a."
+        "text": " M3bO2a."
       },
       {
         "key": "D",
-        "text": "M2aO3b."
+        "text": " M2aO3b."
       }
     ],
     "answer": "D",
