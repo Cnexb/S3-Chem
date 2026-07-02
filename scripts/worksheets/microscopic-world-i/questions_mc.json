@@ -5722,23 +5722,23 @@
     "chapter": 8,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The following diagram shows the structural formula of a compound. All the atoms in the compound have attained a stable electronic arrangement of a noble gas. To which group of the Periodic Table do elements S, T, U and V belong? S T U V",
+    "stem": "The following diagram shows the structural formula of a compound. All the atoms in the compound have attained a stable electronic arrangement of a noble gas. To which group of the Periodic Table do elements S, T, U and V belong?\n\nS, T, U, V",
     "options": [
       {
         "key": "A",
-        "text": " Group I Group III Group V Group VI"
+        "text": "Group I, Group III, Group V, Group VI"
       },
       {
         "key": "B",
-        "text": " Group VII Group IV Group III Group VI"
+        "text": "Group VII, Group IV, Group III, Group VI"
       },
       {
         "key": "C",
-        "text": " Group I Group III Group V Group II"
+        "text": "Group I, Group III, Group V, Group II"
       },
       {
         "key": "D",
-        "text": " Group VII Group IV Group V Group VI"
+        "text": "Group VII, Group IV, Group V, Group VI"
       }
     ],
     "answer": "D",

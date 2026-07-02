@@ -566,6 +566,12 @@ export function initQuiz() {
           intro = parsed.intro;
           suffix = parsed.suffix;
           table = parsed.table;
+        } else {
+          const split = splitStemText(q.stem);
+          if (split.suffix) {
+            intro = split.intro;
+            suffix = split.suffix;
+          }
         }
       }
       appendStemParagraph(intro);
