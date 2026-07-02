@@ -2414,7 +2414,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Atom W has 12 electrons and its mass number is 24. Which of the following combinations about the number of protons and that of neutrons in a W2+ ion is correct?\nNumber of protons, Number of neutrons",
+    "stem": "Atom W has 12 electrons and its mass number is 24. Which of the following combinations about the number of protons and that of neutrons in a W₂+ ion is correct?\nNumber of protons, Number of neutrons",
     "options": [
       {
         "key": "A",
@@ -2470,7 +2470,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following particles have an octet electronic arrangement?\n(1) H+\n(2) K+\n(3) P3",
+    "stem": "Which of the following particles have an octet electronic arrangement?\n(1) H+\n(2) K+\n(3) P₃",
     "options": [
       {
         "key": "A",
@@ -2578,7 +2578,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "An ion X2+ consists of 22 neutrons and 18 electrons. What is the mass number of X2+?",
+    "stem": "An ion X₂+ consists of 22 neutrons and 18 electrons. What is the mass number of X₂+?",
     "options": [
       {
         "key": "A",
@@ -2606,7 +2606,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following ions have the same number of electrons as an argon atom?\n(1) F\n(2) Ca2+\n(3) S2",
+    "stem": "Which of the following ions have the same number of electrons as an argon atom?\n(1) F\n(2) Ca₂+\n(3) S₂",
     "options": [
       {
         "key": "A",
@@ -2690,7 +2690,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following species has the electronic arrangement of 2, 8?\n(1) Ne\n(2) F\n(3) Al3+",
+    "stem": "Which of the following species has the electronic arrangement of 2, 8?\n(1) Ne\n(2) F\n(3) Al₃+",
     "options": [
       {
         "key": "A",
@@ -2884,7 +2884,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The electronic arrangement of an ion E2 is 2, 8, 8. What is the atomic number of E?",
+    "stem": "The electronic arrangement of an ion E₂ is 2, 8, 8. What is the atomic number of E?",
     "options": [
       {
         "key": "A",
@@ -3221,7 +3221,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "What is the net charge on Cr in [Cr(NH3)4SO4]+?",
+    "stem": "What is the net charge on Cr in [Cr(NH₃)₄SO₄]+?",
     "options": [
       {
         "key": "A",
@@ -3488,7 +3488,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Element Y combines with oxygen to form an oxide with the formula Y2O3. To which group of the Periodic Table does Y belong?",
+    "stem": "Element Y combines with oxygen to form an oxide with the formula Y₂O₃. To which group of the Periodic Table does Y belong?",
     "options": [
       {
         "key": "A",
@@ -3628,7 +3628,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "MQ2 is the formula of ionic compound X. The ion of M and the ion of Q have the same electronic arrangement in the compound. X may be",
+    "stem": "MQ₂ is the formula of ionic compound X. The ion of M and the ion of Q have the same electronic arrangement in the compound. X may be",
     "options": [
       {
         "key": "A",
@@ -3684,7 +3684,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "L is an element in Period 3 of the Periodic Table. L forms a chloride with the formula LCl2. The formula of the sulphate of L is",
+    "stem": "L is an element in Period 3 of the Periodic Table. L forms a chloride with the formula LCl₂. The formula of the sulphate of L is",
     "options": [
       {
         "key": "A",
@@ -3712,7 +3712,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Y and sulphur forms an ionic compound with the formula Y2S3. The formula of the nitrate of Y is",
+    "stem": "Y and sulphur forms an ionic compound with the formula Y₂S₃. The formula of the nitrate of Y is",
     "options": [
       {
         "key": "A",
@@ -3768,7 +3768,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "M is a metal that forms a phosphate with the formula Ma(PO4)b. The formula of the oxide of M is",
+    "stem": "M is a metal that forms a phosphate with the formula Ma(PO₄)b. The formula of the oxide of M is",
     "options": [
       {
         "key": "A",
@@ -3796,7 +3796,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "L is an element. It forms an anion L2 which has an electronic arrangement 2, 8. Which of the following statements concerning L is/are correct?\n(1) L is a liquid at room temperature and pressure.\n(2) Magnesium burns in L with a very bright white flame.\n(3) L is in Period 2 of the Periodic Table.",
+    "stem": "L is an element. It forms an anion L₂ which has an electronic arrangement 2, 8. Which of the following statements concerning L is/are correct?\n(1) L is a liquid at room temperature and pressure.\n(2) Magnesium burns in L with a very bright white flame.\n(3) L is in Period 2 of the Periodic Table.",
     "options": [
       {
         "key": "A",
@@ -3880,7 +3880,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following ions are coloured?\n(1) Cu2+(aq)\n(2) Cr2O72(aq)\n(3) K+(aq)",
+    "stem": "Which of the following ions are coloured?\n(1) Cu₂+(aq)\n(2) Cr₂O₇₂(aq)\n(3) K+(aq)",
     "options": [
       {
         "key": "A",
@@ -4032,7 +4032,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Consider the following set-up about the migration of ions. electrode Aelectrode Ba small crystal of copper(II) dichromatefilter paper moistened with KNO3(aq)electrode Aelectrode Ba small crystal of copper(II) dichromatefilter paper moistened with KNO3(aq) electrode A electrode B a small crystal of copper(II) dichromate filter paper moistened with KNO3(aq) electrode A electrode B a small crystal of copper(II) dichromate filter paper moistened with KNO3(aq) Which of the following observations can be made?",
+    "stem": "Consider the following set-up about the migration of ions. electrode Aelectrode Ba small crystal of copper(II) dichromatefilter paper moistened with KNO₃(aq)electrode Aelectrode Ba small crystal of copper(II) dichromatefilter paper moistened with KNO₃(aq) electrode A electrode B a small crystal of copper(II) dichromate filter paper moistened with KNO₃(aq) electrode A electrode B a small crystal of copper(II) dichromate filter paper moistened with KNO₃(aq) Which of the following observations can be made?",
     "options": [
       {
         "key": "A",
@@ -4065,7 +4065,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Consider the set-up shown in the diagram below. electrode Xelectrode Ydrops of CrCl3(aq)12 V d.c. supplyfilter paper soaked with NaNO3(aq)electrode Xelectrode Ydrops of CrCl3(aq)12 V d.c. supplyfilter paper soaked with NaNO3(aq) electrode X electrode Y drops of CrCl3(aq) 12 V d.c. supply filter paper soaked with NaNO3(aq) electrode X electrode Y drops of CrCl3(aq) 12 V d.c. supply filter paper soaked with NaNO3(aq) When the circuit is closed for some time, a coloured spot moves towards electrode X. Which of the following statements concerning the experiment are correct?\n(1) The filter paper is soaked with NaNO3(aq) to increase its electrical conductivity.\n(2) The coloured spot is green in colour.\n(3) Electrode X is the negative electrode.",
+    "stem": "Consider the set-up shown in the diagram below. electrode Xelectrode Ydrops of CrCl₃(aq)₁₂ V d.c. supplyfilter paper soaked with NaNO₃(aq)electrode Xelectrode Ydrops of CrCl₃(aq)₁₂ V d.c. supplyfilter paper soaked with NaNO₃(aq) electrode X electrode Y drops of CrCl₃(aq) 12 V d.c. supply filter paper soaked with NaNO₃(aq) electrode X electrode Y drops of CrCl₃(aq) 12 V d.c. supply filter paper soaked with NaNO₃(aq) When the circuit is closed for some time, a coloured spot moves towards electrode X. Which of the following statements concerning the experiment are correct?\n(1) The filter paper is soaked with NaNO₃(aq) to increase its electrical conductivity.\n(2) The coloured spot is green in colour.\n(3) Electrode X is the negative electrode.",
     "options": [
       {
         "key": "A",
@@ -4327,7 +4327,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following molecules has a triple bond?\n(1) N2\n(2) C2H2\n(3) N2F2",
+    "stem": "Which of the following molecules has a triple bond?\n(1) N₂\n(2) C₂H₂\n(3) N₂F₂",
     "options": [
       {
         "key": "A",
@@ -4519,7 +4519,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following molecules contain six bonding electrons?\n(1) N2\n(2) PCl3\n(3) C2H4",
+    "stem": "Which of the following molecules contain six bonding electrons?\n(1) N₂\n(2) PCl₃\n(3) C₂H₄",
     "options": [
       {
         "key": "A",
@@ -4702,7 +4702,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Elements X and Y form a covalent compound with the formula YX3. Which of the following combinations about the electronic arrangements of atom X and atom Y is correct?\nAtom, X, Atom, Y",
+    "stem": "Elements X and Y form a covalent compound with the formula YX₃. Which of the following combinations about the electronic arrangements of atom X and atom Y is correct?\nAtom, X, Atom, Y",
     "options": [
       {
         "key": "A",
@@ -4758,7 +4758,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Consider the following photo of a model of a molecule. A white ball represents a hydrogen atom and a black ball represents a carbon atom. Which of the following statements are correct?\n(1) This is a space-filling model.\n(2) This model represents a methane molecule.\n(3) The molecular formula of the molecule is CH4.",
+    "stem": "Consider the following photo of a model of a molecule. A white ball represents a hydrogen atom and a black ball represents a carbon atom. Which of the following statements are correct?\n(1) This is a space-filling model.\n(2) This model represents a methane molecule.\n(3) The molecular formula of the molecule is CH₄.",
     "options": [
       {
         "key": "A",
@@ -4857,7 +4857,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following species possess a dative covalent bond?\n(1) H³O+\n(2) NH4+\n(3) CO",
+    "stem": "Which of the following species possess a dative covalent bond?\n(1) H³O+\n(2) NH₄+\n(3) CO",
     "options": [
       {
         "key": "A",
@@ -4918,7 +4918,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following processes involve the formation of a dative covalent bond?\n(1) HCl + H²O  H³O+ + Cl\n(2) H+ + OH  H²O\n(3) NH3 + H+  NH4+",
+    "stem": "Which of the following processes involve the formation of a dative covalent bond?\n(1) HCl + H²O  H³O+ + Cl\n(2) H+ + OH  H²O\n(3) NH₃ + H+  NH₄+",
     "options": [
       {
         "key": "A",
@@ -5007,7 +5007,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following statements concerning relative molecular mass are correct?\n(1) It is also called molecular mass.\n(2) It is the sum of the relative atomic masses of all atoms present in a molecule of the element or compound.\n(3) Its unit is g mol1.",
+    "stem": "Which of the following statements concerning relative molecular mass are correct?\n(1) It is also called molecular mass.\n(2) It is the sum of the relative atomic masses of all atoms present in a molecule of the element or compound.\n(3) Its unit is g mol₁.",
     "options": [
       {
         "key": "A",
@@ -5063,7 +5063,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following combinations about the name of the compound is correct?\nBa(NO3)2, Cl²O",
+    "stem": "Which of the following combinations about the name of the compound is correct?\nBa(NO₃)₂, Cl²O",
     "options": [
       {
         "key": "A",
@@ -5203,7 +5203,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Element X forms an anion X3 which has 10 electrons. Two atoms of X form a molecule. Which of the following statements about the molecule is INCORRECT?",
+    "stem": "Element X forms an anion X₃ which has 10 electrons. Two atoms of X form a molecule. Which of the following statements about the molecule is INCORRECT?",
     "options": [
       {
         "key": "A",
@@ -5287,7 +5287,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The electronic arrangement of a R2+ ion is 2, 8, 8. Which of the following statements concerning the carbonate of R is/are correct? (Relative atomic masses: C = 12.0, O = 16.0, R = 40.1)\n(1) Its formula mass is 140.2.\n(2) It is insoluble in water.\n(3) It gives a golden yellow flame in the flame test.",
+    "stem": "The electronic arrangement of a R₂+ ion is 2, 8, 8. Which of the following statements concerning the carbonate of R is/are correct? (Relative atomic masses: C = 12.0, O = 16.0, R = 40.1)\n(1) Its formula mass is 140.2.\n(2) It is insoluble in water.\n(3) It gives a golden yellow flame in the flame test.",
     "options": [
       {
         "key": "A",
@@ -6872,7 +6872,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The electron diagrams of an atom of P and an atom of Q are shown below. P and Q combine to form compound R. Which of the following statements concerning R are correct?\n(1) R has a giant covalent structure.\n(2) The formula of R is PQ3.\n(3) R cannot conduct electricity in the solid state.",
+    "stem": "The electron diagrams of an atom of P and an atom of Q are shown below. P and Q combine to form compound R. Which of the following statements concerning R are correct?\n(1) R has a giant covalent structure.\n(2) The formula of R is PQ₃.\n(3) R cannot conduct electricity in the solid state.",
     "options": [
       {
         "key": "A",
@@ -7501,7 +7501,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The melting points of some chlorides are given in the table below.\n\nWhich of the following can be deduced from the above data?\n(1) NaCl cannot conduct electricity at ⁸⁰⁰C.\n(2) SiCl4 is a covalent compound with a simple molecular structure.\n(3) PCl3 is a covalent compound with a giant covalent structure.",
+    "stem": "The melting points of some chlorides are given in the table below.\n\nWhich of the following can be deduced from the above data?\n(1) NaCl cannot conduct electricity at ⁸⁰⁰C.\n(2) SiCl₄ is a covalent compound with a simple molecular structure.\n(3) PCl₃ is a covalent compound with a giant covalent structure.",
     "options": [
       {
         "key": "A",
@@ -7621,7 +7621,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "A compound is a solid with a chemical formula XY2. It has a high melting point and conducts electricity in aqueous solution. Which of the following may the compound be?",
+    "stem": "A compound is a solid with a chemical formula XY₂. It has a high melting point and conducts electricity in aqueous solution. Which of the following may the compound be?",
     "options": [
       {
         "key": "A",
@@ -8112,31 +8112,6 @@ export const QUIZ_ITEMS = [
     "sourceRef": "Part 2 Q53(a)(ii)"
   },
   {
-    "id": "ib-31-a",
-    "section": "ionic-bond",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Silver nitrate",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Silver nitrate AgNO3 (b) Sodium hydroxide NaOH (c) Potassium sulphate K2SO4 (d) Calcium oxide CaO (e) Sodium sulphite K2SO3 (f) Calcium hydroxide Ca(OH)2 (g) Iron(III) nitrate Fe(NO3)3 (h) Magnesium sulphide MgS"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 3 Q31(a). (1 mark)",
-    "sourceRef": "Part 3 Q31(a)"
-  },
-  {
     "id": "ib-41-a",
     "section": "ionic-bond",
     "format": "fill",
@@ -8152,10 +8127,7 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "It also slows down the migration of Cu2+(aq) and Cr2O72–(aq) ions to make the results more easily observed.",
-              "It also slows down the migration of Cu2+(aq) and Cr2O72–(aq) ions to make the results more easily observed",
-              "It also slows down the migration of Cu2+(aq)",
-              "Cr2O72–(aq) ions to make the results more easily observed"
+              "Fe2(SO4)3"
             ]
           }
         ]
@@ -8169,7 +8141,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "fill",
     "difficulty": "Standard",
-    "stem": "Give the chemical names of Na2Cr2O7 and KMnO4",
+    "stem": "Give the chemical names of Na₂Cr₂O₇ and KMnO₄",
     "lines": [
       {
         "segments": [
@@ -8180,7 +8152,9 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "sodium dichromate"
+              "sodium dichromate, Sodium dichromate",
+              "sodium dichromate",
+              "Sodium dichromate"
             ]
           }
         ]
@@ -8194,7 +8168,9 @@ export const QUIZ_ITEMS = [
           {
             "type": "blank",
             "accept": [
-              "potassium permanganate"
+              "potassium permanganate, Potassium permanganate",
+              "potassium permanganate",
+              "Potassium permanganate"
             ]
           }
         ]
@@ -8233,7 +8209,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "fill",
     "difficulty": "Foundation",
-    "stem": "Cyanogen chloride (CNCl) (iii) Dioxygen difluoride (O2F2) (iv) Dichloroacetylene (C2Cl2)",
+    "stem": "Cyanogen chloride (CNCl) (iii) Dioxygen difluoride (O₂F₂) (iv) Dichloroacetylene (C₂Cl₂)",
     "lines": [
       {
         "segments": [
@@ -8258,7 +8234,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "fill",
     "difficulty": "Foundation",
-    "stem": "H2O2 (vi) N2H2 (vii) C2Cl2 (viii) NOCl (ix) COCl2",
+    "stem": "H₂O₂ (vi) N₂H₂ (vii) C₂Cl₂ (viii) NOCl (ix) COCl₂",
     "lines": [
       {
         "segments": [
@@ -8743,7 +8719,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "fill",
     "difficulty": "Foundation",
-    "stem": "Describe the formation of dative covalent bond using NH4+ as an example.",
+    "stem": "Describe the formation of dative covalent bond using NH₄+ as an example.",
     "lines": [
       {
         "segments": [
@@ -8768,7 +8744,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "fill",
     "difficulty": "Foundation",
-    "stem": "Describe the formation of dative covalent bond using BF4- as an example.",
+    "stem": "Describe the formation of dative covalent bond using BF₄- as an example.",
     "lines": [
       {
         "segments": [

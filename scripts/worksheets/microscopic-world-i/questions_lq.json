@@ -4477,7 +4477,7 @@
     ],
     "marks": 1,
     "stem": "Write the chemical formula of iron(III) sulphate",
-    "answer": "It also slows down the migration of Cu2+(aq) and Cr2O72–(aq) ions to make the results more easily observed.",
+    "answer": "Fe2(SO4)3",
     "sourceRef": "Part 3 Q41(a)",
     "hasAnswer": true
   },
@@ -4744,7 +4744,7 @@
     ],
     "marks": 2,
     "stem": "Give the chemical names of Na2Cr2O7 and KMnO4",
-    "answer": "Na2Cr2O7 = sodium dichromate, KMnO4 = potassium permanganate",
+    "answer": "sodium dichromate, Sodium dichromate; potassium permanganate, Potassium permanganate",
     "sourceRef": "Part 3 Q45(a)(i)",
     "hasAnswer": true
   },

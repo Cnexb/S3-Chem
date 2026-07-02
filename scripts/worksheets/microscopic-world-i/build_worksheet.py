@@ -88,7 +88,13 @@ EXPLICIT_EXCLUDE_IDS = {
     "ib-01-a",
     "ib-04-a",
     "ib-06-a",
+    "ib-31-a",
 }
+IONIC_BOND_KEEP_FILL = re.compile(
+    r"^Write the chemical formula of iron\(III\) sulphate\s*$|"
+    r"^Give the chemical names of Na2Cr2O7 and KMnO4\s*$",
+    re.I,
+)
 EXPLICIT_SOURCE_EXCLUDE = re.compile(
     r"Part 3 Q25\(a\)$|Part 5 Q12\(a\)\(i\)$|Part 5 Q32\(a\)\(i\)$",
 )
@@ -253,6 +259,15 @@ ISO_TOPE_ROW = re.compile(
     re.I,
 )
 SUPERSCRIPT = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹")
+SUBSCRIPT = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+
+
+def format_formula_subscripts(text: str) -> str:
+    return re.sub(
+        r"(?<=[A-Za-z)])(\d+)",
+        lambda m: m.group(0).translate(SUBSCRIPT),
+        text,
+    )
 
 
 def format_isotope_notation(text: str) -> str:
@@ -1036,6 +1051,7 @@ def format_stem_pipeline(stem: str) -> tuple[str, dict | None]:
     combined = "\n\n".join(parts)
     combined = format_stem_for_display(combined)
     combined = format_isotope_notation(combined)
+    combined = format_formula_subscripts(combined)
     if table:
         table = _format_table_notation(table)
     return combined, table
@@ -1409,6 +1425,8 @@ def classify_lq(item: dict) -> tuple[str, str]:
         return "exclude", "broken or context-dependent stem"
     if item.get("section") == "ionic-bond" and BROKEN_IB_STEM.search(stem.strip()):
         return "exclude", "broken or context-dependent ionic bond stem"
+    if item.get("section") == "ionic-bond" and not IONIC_BOND_KEEP_FILL.search(stem.strip()):
+        return "exclude", "ionic bond fill not in keep list"
     if not item.get("hasAnswer") or not ans:
         return "exclude", "no answer"
     if DRAW_EX.search(sl):
