@@ -8230,6 +8230,106 @@ export const QUIZ_ITEMS = [
     "sourceRef": "Part 4 Q21(a)(ii)"
   },
   {
+    "id": "sp-15-a",
+    "section": "structure-properties",
+    "format": "fill",
+    "difficulty": "Foundation",
+    "stem": "Write the structural formula of carbon dioxide.",
+    "lines": [
+      {
+        "segments": [
+          {
+            "type": "text",
+            "value": "Answer: "
+          },
+          {
+            "type": "blank",
+            "accept": [
+              "O=C=O"
+            ]
+          }
+        ]
+      }
+    ],
+    "hint": "See Part 5 Q15(a). (1 mark)",
+    "sourceRef": "Part 5 Q15(a)"
+  },
+  {
+    "id": "sp-20-a",
+    "section": "structure-properties",
+    "format": "fill",
+    "difficulty": "Foundation",
+    "stem": "",
+    "lines": [
+      {
+        "segments": [
+          {
+            "type": "text",
+            "value": "(1) "
+          },
+          {
+            "type": "blank",
+            "accept": [
+              "Ionic bond and covalent bond",
+              "Ionic bond",
+              "covalent bond"
+            ]
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "type": "text",
+            "value": "(2) "
+          },
+          {
+            "type": "blank",
+            "accept": [
+              "Covalent bond"
+            ]
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "type": "text",
+            "value": "(3) "
+          },
+          {
+            "type": "blank",
+            "accept": [
+              "Metallic bond"
+            ]
+          }
+        ]
+      }
+    ],
+    "hint": "See Part 5 Q20(a). (1 mark)",
+    "sourceRef": "Part 5 Q20(a)",
+    "stemTable": {
+      "headers": [
+        "Substance",
+        "Type(s) of chemical bonding"
+      ],
+      "rows": [
+        [
+          "Ammonium chloride",
+          ""
+        ],
+        [
+          "Methane",
+          ""
+        ],
+        [
+          "Potassium",
+          ""
+        ]
+      ]
+    }
+  },
+  {
     "id": "sp-32-a-ii",
     "section": "structure-properties",
     "format": "fill",

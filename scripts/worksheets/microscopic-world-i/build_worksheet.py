@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v6"
+QUIZ_ASSET_VERSION = "20260702v7"
 
 SECTIONS = [
     {"id": "atomic-structure", "label": "Atomic Structure", "labelZh": "原子結構"},
@@ -102,6 +102,8 @@ COVALENT_BOND_KEEP_FILL = re.compile(
     re.I,
 )
 STRUCTURE_PROPERTIES_KEEP_FILL = re.compile(
+    r"^Write the structural formula of carbon dioxide\.\s*$|"
+    r"^Complete the following table\.\s+Ammonium chloride Methane Potassium Type\(s\) of chemical bonding\s*$|"
     r"^What is the number of neighbouring chloride ions directly attached to each sodium ion in crystalline sodium chloride\?\s*$",
     re.I,
 )
