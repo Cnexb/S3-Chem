@@ -258,7 +258,7 @@ export const QUIZ_ITEMS = [
     "section": "atomic-structure",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The following table shows the\n\nnumber of neutrons, number of electrons and the mass number of four atoms (W, X, Y and Z). Atom Number of neutrons Number of electrons Mass number W 8 8 X 10 20 Y 9 19 Z 9 17\n\nWhich of the following pairs of atoms are isotopes?",
+    "stem": "The following table shows the number of neutrons, number of electrons and the mass number of four atoms (W, X, Y and Z).\n\nWhich of the following pairs of atoms are isotopes?",
     "options": [
       {
         "key": "A",
@@ -279,14 +279,48 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "C",
     "hint": "For an electrically neutral atom, the number of electrons is equal to the number of protons. W and Z have the same number of protons but different numbers of neutrons.",
-    "sourceRef": "ChemMCQ05012"
+    "sourceRef": "ChemMCQ05012",
+    "stemTable": {
+      "headers": [
+        "Atom",
+        "Neutrons",
+        "Electrons",
+        "Mass number"
+      ],
+      "rows": [
+        [
+          "W",
+          "8",
+          "8",
+          "16"
+        ],
+        [
+          "X",
+          "10",
+          "10",
+          "20"
+        ],
+        [
+          "Y",
+          "9",
+          "10",
+          "19"
+        ],
+        [
+          "Z",
+          "9",
+          "8",
+          "17"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-05014",
     "section": "atomic-structure",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Consider the following information about three particles P, Q and R. Particle Number of protons Number of neutrons Number of electrons P 18 22 18 Q 19 20 18 R 19 22 18 Which of the following statements concerning these three particles is/are correct?\n(1) P has the smallest mass.\n(2) Q is a charged particle.\n(3) P and R are derived from the same element.",
+    "stem": "Consider the following information about three particles P, Q and R.\n\nWhich of the following statements concerning these three particles is/are correct?\n(1) P has the smallest mass.\n(2) Q is a charged particle.\n(3) P and R are derived from the same element.",
     "options": [
       {
         "key": "A",
@@ -307,14 +341,42 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "B",
     "hint": "(1): The mass numbers (sum of the number of protons and the number of neutrons) of P, Q and R are 40, 39 and 41 respectively. (2): Q has 19 protons and 18 electrons, so it has a charge of 1+. (3): P and R are derived from different elements as they have different numbers of protons.",
-    "sourceRef": "ChemMCQ05014"
+    "sourceRef": "ChemMCQ05014",
+    "stemTable": {
+      "headers": [
+        "Particle",
+        "Protons",
+        "Neutrons",
+        "Electrons"
+      ],
+      "rows": [
+        [
+          "P",
+          "18",
+          "22",
+          "18"
+        ],
+        [
+          "Q",
+          "19",
+          "20",
+          "18"
+        ],
+        [
+          "R",
+          "19",
+          "22",
+          "18"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-05015",
     "section": "atomic-structure",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The following table shows the number of subatomic particles in particles X, Y and Z.\n\n | X | Y | Z\nProtons | 35 | 35 | 35\nNeutrons | 46 | 45 | 46\nElectrons | 35 | 35 | 36\n\nWhich of the following statements concerning the three particles is/are correct?\n(1) Y is electrically neutral.\n(2) X and Y have the same mass number.\n(3) X and Z are isotopes.",
+    "stem": "The following table shows the number of subatomic particles in particles X, Y and Z.\n\nWhich of the following statements concerning the three particles is/are correct?\n(1) Y is electrically neutral.\n(2) X and Y have the same mass number.\n(3) X and Z are isotopes.",
     "options": [
       {
         "key": "A",
@@ -335,7 +397,35 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "A",
     "hint": "X and Y have different mass numbers because they have different numbers of neutrons. Z is the anion of X.",
-    "sourceRef": "ChemMCQ05015"
+    "sourceRef": "ChemMCQ05015",
+    "stemTable": {
+      "headers": [
+        "",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "rows": [
+        [
+          "Protons",
+          "35",
+          "35",
+          "35"
+        ],
+        [
+          "Neutrons",
+          "46",
+          "45",
+          "46"
+        ],
+        [
+          "Electrons",
+          "35",
+          "35",
+          "36"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-05016",
@@ -482,7 +572,7 @@ export const QUIZ_ITEMS = [
     "section": "atomic-structure",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Element Y has three naturally occurring isotopes. The number of protons, number of neutrons and the relative abundances of the three isotopes are shown in the following table.\n\nProtons | Neutrons | Abundance %\nIsotope 1: 10 | 10 | 90.48\nIsotope 2: 10 | 11 | 0.27\nIsotope 3: 10 | 12 | 9.25\n\nWhat is the relative atomic mass of Y?",
+    "stem": "Element Y has three naturally occurring isotopes. The number of protons, number of neutrons and the relative abundances of the three isotopes are shown in the following table.\n\nWhat is the relative atomic mass of Y?",
     "options": [
       {
         "key": "A",
@@ -503,14 +593,42 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "D",
     "hint": "Relative atomic mass of Y = (10 + 10) × 90.48% + (10 + 11) × 0.27% + (10 + 12) × 9.25% = 20.2",
-    "sourceRef": "ChemMCQ05021"
+    "sourceRef": "ChemMCQ05021",
+    "stemTable": {
+      "headers": [
+        "Isotope",
+        "Protons",
+        "Neutrons",
+        "Abundance %"
+      ],
+      "rows": [
+        [
+          "Isotope 1",
+          "10",
+          "10",
+          "90.48"
+        ],
+        [
+          "Isotope 2",
+          "10",
+          "11",
+          "0.27"
+        ],
+        [
+          "Isotope 3",
+          "10",
+          "12",
+          "9.25"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-05022",
     "section": "atomic-structure",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Silicon has three naturally occurring isotopes. The table below shows the relative abundances of these isotopes.\n\nIsotope Relative abundance / % ²⁸Si 92.2 ²⁹Si 4.7 ³⁰Si 3.1\n\nWhat is the relative atomic mass of silicon?",
+    "stem": "Silicon has three naturally occurring isotopes. The table below shows the relative abundances of these isotopes.\n\nWhat is the relative atomic mass of silicon?",
     "options": [
       {
         "key": "A",
@@ -531,7 +649,27 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "B",
     "hint": "Relative atomic mass of silicon = 28 × 92.2% + 29 × 4.7% + 30 × 3.1% = 28.1",
-    "sourceRef": "ChemMCQ05022"
+    "sourceRef": "ChemMCQ05022",
+    "stemTable": {
+      "headers": [
+        "Isotope",
+        "Relative abundance / %"
+      ],
+      "rows": [
+        [
+          "²⁸Si",
+          "92.2"
+        ],
+        [
+          "²⁹Si",
+          "4.7"
+        ],
+        [
+          "³⁰Si",
+          "3.1"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-05023",
@@ -617,7 +755,7 @@ export const QUIZ_ITEMS = [
     "hint": "Relative atomic mass of A = 110 × 13.0% + 111 × 13.0% + 112 × 24.0% + 113 × 13.0% + 114 × 29.0% + 116 × 8.0% = 112.6",
     "sourceRef": "ChemMCQ05025",
     "image": {
-      "src": "./assets/mc-media-rId6.png",
+      "src": "../assets/mc-media-rId6.png",
       "alt": "Element A has six naturally occurring isotopes, 110A, 111A, 112A, 113A, 114A and 116A. The graph bel",
       "caption": "Fig - ChemMCQ05025"
     }
@@ -706,7 +844,7 @@ export const QUIZ_ITEMS = [
     "hint": "Relative atomic mass of M = 24 × 79% + 25 × 10% + 26 × 11% = 24.3",
     "sourceRef": "ChemMCQ05028",
     "image": {
-      "src": "./assets/mc-media-rId8.jpeg",
+      "src": "../assets/mc-media-rId8.jpeg",
       "alt": "Element M has three isotopes in nature: 24M, 25M and 26M. The graph below shows the relative abundan",
       "caption": "Fig - ChemMCQ05028"
     }
@@ -796,62 +934,6 @@ export const QUIZ_ITEMS = [
     "sourceRef": "ChemMCQ05031"
   },
   {
-    "id": "mc-05032",
-    "section": "atomic-structure",
-    "format": "mcq",
-    "difficulty": "Standard",
-    "stem": "Which of the following pairs of atoms have the same number of outermost shell electrons?",
-    "options": [
-      {
-        "key": "A",
-        "text": ","
-      },
-      {
-        "key": "B",
-        "text": ","
-      },
-      {
-        "key": "C",
-        "text": ","
-      },
-      {
-        "key": "D",
-        "text": ","
-      }
-    ],
-    "answer": "C",
-    "hint": "(A): The electronic arrangements of a  atom and that of a  atom are 2, 3 and 2, 8, 6 respectively. (B): The electronic arrangements of a  atom and that of a  atom are 2, 1 and 2, 6 respectively. (C): The electronic arrangements of a  atom and that of a  atom are 2, 2 and 2, 8, 2 respectively. (D): The electronic arrangements of a  atom and that of a  atom are 2, 3 and 2, 8, 7 respectively.",
-    "sourceRef": "ChemMCQ05032"
-  },
-  {
-    "id": "mc-05033",
-    "section": "atomic-structure",
-    "format": "mcq",
-    "difficulty": "Standard",
-    "stem": "The electronic arrangement of the atom  is",
-    "options": [
-      {
-        "key": "A",
-        "text": "15, 31."
-      },
-      {
-        "key": "B",
-        "text": "2, 8, 5."
-      },
-      {
-        "key": "C",
-        "text": "2, 8, 6."
-      },
-      {
-        "key": "D",
-        "text": "2, 8, 18, 3."
-      }
-    ],
-    "answer": "B",
-    "hint": "The atomic number of Y is 15 and hence the number of electrons in the atom  is also 15. The electronic arrangement of the atom is 2, 8, 5.",
-    "sourceRef": "ChemMCQ05033"
-  },
-  {
     "id": "mc-05034",
     "section": "atomic-structure",
     "format": "mcq",
@@ -935,7 +1017,7 @@ export const QUIZ_ITEMS = [
     "hint": "The electronic arrangement of an atom of L can be 2, 6 or 2, 8, 6. The atomic number of L can be 8 or 16.",
     "sourceRef": "ChemMCQ05036",
     "image": {
-      "src": "./assets/mc-media-rId10.jpeg",
+      "src": "../assets/mc-media-rId10.jpeg",
       "alt": "The electron diagram of an atom of element L is shown below (only electrons in the outermost shell a",
       "caption": "Fig - ChemMCQ05036"
     }
@@ -968,7 +1050,7 @@ export const QUIZ_ITEMS = [
     "hint": "Review your notes.",
     "sourceRef": "ChemMCQ05038",
     "image": {
-      "src": "./assets/mc-media-rId14.png",
+      "src": "../assets/mc-media-rId14.png",
       "alt": "The following electron diagram of a potassium atom is incorrectly drawn. (p = number of protons; n =",
       "caption": "Fig - ChemMCQ05038"
     }
@@ -1505,7 +1587,7 @@ export const QUIZ_ITEMS = [
     "hint": "The atom has five occupied electron shells (period number) and two outermost shell electrons (group number).",
     "sourceRef": "ChemMCQ06022",
     "image": {
-      "src": "./assets/mc-media-rId15.png",
+      "src": "../assets/mc-media-rId15.png",
       "alt": "The electron diagram of an atom of element X is shown below. In which group and period of the Period",
       "caption": "Fig - ChemMCQ06022"
     }
@@ -2042,7 +2124,7 @@ export const QUIZ_ITEMS = [
     "hint": "Consider the electron arrangements of the atoms of the four elements. W: 2, 1 X: 2, 8, 1 Y: 2, 8, 8 Z: 2, 8, 8, 1 Thus, Y is a noble gas, which is the most unreactive. W, X and Z are Group I elements. The element with more occupied electron shells in its atom is at a lower position in the group. Reactivity of Group I elements increases down the group.",
     "sourceRef": "ChemMCQ06041",
     "image": {
-      "src": "./assets/mc-media-rId16.png",
+      "src": "../assets/mc-media-rId16.png",
       "alt": "The electron diagrams of the atoms of four elements W, X, Y and Z are shown below. Which of the foll",
       "caption": "Fig - ChemMCQ06041"
     }
@@ -2416,7 +2498,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the atomic numbers of four elements.\n\nElement Atomic number P 17 Q 18 R 19 S 20 Which of the above atoms of elements forms a stable ion with a charge of 1+?",
+    "stem": "The table below shows the atomic numbers of four elements.",
     "options": [
       {
         "key": "A",
@@ -2437,7 +2519,31 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "C",
     "hint": "Atom R with 19 protons (atomic number = number of protons) has 19 electrons. Its electronic arrangement is 2, 8, 8, 1. It can attain a stable octet electronic arrangement by losing one electron to form an ion with a charge of 1+.",
-    "sourceRef": "ChemMCQ07011"
+    "sourceRef": "ChemMCQ07011",
+    "stemTable": {
+      "headers": [
+        "Element",
+        "Atomic number"
+      ],
+      "rows": [
+        [
+          "P",
+          "17"
+        ],
+        [
+          "Q",
+          "18"
+        ],
+        [
+          "R",
+          "19"
+        ],
+        [
+          "S",
+          "20"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-07014",
@@ -2612,7 +2718,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the\n\nnumber of neutrons and the number of electrons in five atoms/ions. Atom/ion Number of neutrons Number of electrons X 8 8 Y 8 6 Z2+ 12 10 Q2 9 10 R+ 12 10\n\nWhich of the following atoms is an isotope of X?",
+    "stem": "The table below shows the number of neutrons and the number of electrons in five atoms/ions.\n\nWhich of the following atoms is an isotope of X?",
     "options": [
       {
         "key": "A",
@@ -2633,7 +2739,41 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "C",
     "hint": "An atom of Q has 10  2 = 8 protons, which is the same as that in an atom of X.",
-    "sourceRef": "ChemMCQ07020"
+    "sourceRef": "ChemMCQ07020",
+    "stemTable": {
+      "headers": [
+        "Atom/ion",
+        "Neutrons",
+        "Electrons"
+      ],
+      "rows": [
+        [
+          "X",
+          "8",
+          "8"
+        ],
+        [
+          "Y",
+          "8",
+          "6"
+        ],
+        [
+          "Z2+",
+          "12",
+          "10"
+        ],
+        [
+          "Q2",
+          "9",
+          "10"
+        ],
+        [
+          "R+",
+          "12",
+          "10"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-07021",
@@ -2668,7 +2808,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The following table shows the electronic arrangements of three species.\n\nSpecies | Electronic arrangement\nX | 2,\n\nWhich of the following elements belong to the same period of the Periodic Table?\n(1) X\n(2) Y\n(3) Z",
+    "stem": "The following table shows the electronic arrangements of three species.\n\nWhich of the following elements belong to the same period of the Periodic Table?\n(1) X\n(2) Y\n(3) Z",
     "options": [
       {
         "key": "A",
@@ -2689,7 +2829,27 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "D",
     "hint": "The electronic arrangements of the atoms of Y and Z are 2, 8, 6 and 2, 8, 1 respectively. X, Y and Z have the same number of occupied electron shells in their atoms.",
-    "sourceRef": "ChemMCQ07022"
+    "sourceRef": "ChemMCQ07022",
+    "stemTable": {
+      "headers": [
+        "Species",
+        "Electronic"
+      ],
+      "rows": [
+        [
+          "X",
+          "2, 8, 5"
+        ],
+        [
+          "Y2",
+          "2, 8, 8"
+        ],
+        [
+          "Z+",
+          "2, 8"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-07023",
@@ -2943,7 +3103,7 @@ export const QUIZ_ITEMS = [
     "hint": "Lithium is in Period 2 and Group I of the Periodic Table. Li+ has a duplet elctronic arrangement.",
     "sourceRef": "ChemMCQ07032",
     "image": {
-      "src": "./assets/mc-media-rId30.png",
+      "src": "../assets/mc-media-rId30.png",
       "alt": "Below is the electron diagram of lithium oxide. Which of the following statements are correct? (1)Tw",
       "caption": "Fig - ChemMCQ07032"
     }
@@ -3009,7 +3169,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the electronic arrangements of the atoms of four elements.\n\nElement Electronic arrangement W 2, 8, 8, 1 X 2, 8, 7 Y 2, 8 Z 2, 4 Which of the above elements can form an ionic compound with bromine?",
+    "stem": "The table below shows the electronic arrangements of the atoms of four elements.",
     "options": [
       {
         "key": "A",
@@ -3030,7 +3190,31 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "A",
     "hint": "Metals can form ionic compounds with bromine. Element W is a Group I metal.",
-    "sourceRef": "ChemMCQ07035"
+    "sourceRef": "ChemMCQ07035",
+    "stemTable": {
+      "headers": [
+        "Element",
+        "Electronic arrangement"
+      ],
+      "rows": [
+        [
+          "W",
+          "2, 8, 8, 1"
+        ],
+        [
+          "X",
+          "2, 8, 7"
+        ],
+        [
+          "Y",
+          "2, 8"
+        ],
+        [
+          "Z",
+          "2, 4"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-07036",
@@ -3144,7 +3328,7 @@ export const QUIZ_ITEMS = [
     "hint": "A magnesium ion has a charge of 2+ and a chloride ion has a charge of 1.",
     "sourceRef": "ChemMCQ07039",
     "image": {
-      "src": "./assets/mc-media-rId31.jpeg",
+      "src": "../assets/mc-media-rId31.jpeg",
       "alt": "The diagram below shows the electron diagram of a compound formed from elements X and Y (only the ou",
       "caption": "Fig - ChemMCQ07039"
     }
@@ -3177,7 +3361,7 @@ export const QUIZ_ITEMS = [
     "hint": "P is a Group II element while Q is a Group VI element.",
     "sourceRef": "ChemMCQ07040",
     "image": {
-      "src": "./assets/mc-media-rId32.jpeg",
+      "src": "../assets/mc-media-rId32.jpeg",
       "alt": "Elements P and Q react to form a compound with the following electron diagram (only the outermost sh",
       "caption": "Fig - ChemMCQ07040"
     }
@@ -3266,7 +3450,7 @@ export const QUIZ_ITEMS = [
     "hint": "An atom of S loses three electrons when forming an ion. Hence, an atom of S has three outermost shell electrons. An atom of T gains two electrons when forming an ion. Hence, an atom of T has six outermost shell electrons.",
     "sourceRef": "ChemMCQ07043",
     "image": {
-      "src": "./assets/mc-media-rId33.jpeg",
+      "src": "../assets/mc-media-rId33.jpeg",
       "alt": "The electron diagram of a compound formed from elements S and T is shown below (only the outermost s",
       "caption": "Fig - ChemMCQ07043"
     }
@@ -3752,7 +3936,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the colours of the aqueous solutions of three compounds. Compound Colour of the aqueous solution PQ blue RS orange RQ colourless Which of the following combinations about the ions involved is likely to be correct?\nP2+(aq), Q2(aq), R2+(aq), S2(aq)",
+    "stem": "The table below shows the colours of the aqueous solutions of three compounds.",
     "options": [
       {
         "key": "A",
@@ -3773,14 +3957,34 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "C",
     "hint": "Since RQ is colourless, R2+(aq) and Q2(aq) are both colourless. As RS is orange in colour, S2(aq) is orange in colour, which can be Cr2O72(aq). As PQ is blue in colour, P2+(aq) is blue in colour, which can be Cu2+(aq).",
-    "sourceRef": "ChemMCQ07061"
+    "sourceRef": "ChemMCQ07061",
+    "stemTable": {
+      "headers": [
+        "Compound",
+        "Colour of the aqueous solution"
+      ],
+      "rows": [
+        [
+          "PQ",
+          "blue"
+        ],
+        [
+          "RS",
+          "orange"
+        ],
+        [
+          "RQ",
+          "colourless"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-07062",
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The colours of the aqueous solutions of three ionic compounds are tabulated below. Compound Colour of the aqueous solution AB blue CD yellow CB colourless Which of the following ions is/are likely colourless?\n(1) C2+(aq)\n(2) D2(aq)\n(3) B2(aq)",
+    "stem": "The colours of the aqueous solutions of three ionic compounds are tabulated below.",
     "options": [
       {
         "key": "A",
@@ -3801,7 +4005,27 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "C",
     "hint": "As CB(aq) is colourless, both C2+(aq) and B2(aq) are colourless. As CD(aq) is yellow in colour and C2+(aq) is colourless, D2(aq) is yellow in colour.",
-    "sourceRef": "ChemMCQ07062"
+    "sourceRef": "ChemMCQ07062",
+    "stemTable": {
+      "headers": [
+        "Compound",
+        "Colour of the aqueous solution"
+      ],
+      "rows": [
+        [
+          "AB",
+          "blue"
+        ],
+        [
+          "CD",
+          "yellow"
+        ],
+        [
+          "CB",
+          "colourless"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-07063",
@@ -3831,7 +4055,7 @@ export const QUIZ_ITEMS = [
     "hint": "Copper(II) ions are blue in colour and positively charged, which move towards the negative electrode (electrode B).",
     "sourceRef": "ChemMCQ07063",
     "image": {
-      "src": "./assets/mc-media-rId34.jpeg",
+      "src": "../assets/mc-media-rId34.jpeg",
       "alt": "Consider the following set-up about the migration of ions. electrode Aelectrode Ba small crystal of ",
       "caption": "Fig - ChemMCQ07063"
     }
@@ -3864,7 +4088,7 @@ export const QUIZ_ITEMS = [
     "hint": "Cr3+(aq) is green in colour. When the circuit is closed, Cr3+(aq) ions are attracted to the negative electrode.",
     "sourceRef": "ChemMCQ07064",
     "image": {
-      "src": "./assets/mc-media-rId36.jpeg",
+      "src": "../assets/mc-media-rId36.jpeg",
       "alt": "Consider the set-up shown in the diagram below. electrode Xelectrode Ydrops of CrCl3(aq)12 V d.c. su",
       "caption": "Fig - ChemMCQ07064"
     }
@@ -3897,7 +4121,7 @@ export const QUIZ_ITEMS = [
     "hint": "(2): A yellow colour gradually appears around graphite electrode B as iron(III) ions are attracted to the negative electrode. (3): Since distilled water does not conduct electricity, it cannot be used to replace dilute hydrochloric acid.",
     "sourceRef": "ChemMCQ07065",
     "image": {
-      "src": "./assets/mc-media-rId38.jpeg",
+      "src": "../assets/mc-media-rId38.jpeg",
       "alt": "Consider the set-up shown in the diagram below. graphite electrode Adilute hydrochloric acida gel co",
       "caption": "Fig - ChemMCQ07065"
     }
@@ -4131,7 +4355,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the electronic arrangements of four atoms.\n\nAtom Electronic arrangement P 2, 5 Q 2, 6 R 2, 7 S 2, 8\n\nWhich of the following atoms is the most probable to form a single bond in the molecule of its element?",
+    "stem": "The table below shows the electronic arrangements of four atoms.\n\nWhich of the following atoms is the most probable to form a single bond in the molecule of its element?",
     "options": [
       {
         "key": "A",
@@ -4152,7 +4376,31 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "C",
     "hint": "Atom R has seven outermost shell electrons. It shares one of its outermost shell electrons with another atom R to attain a stable octet.",
-    "sourceRef": "ChemMCQ08009"
+    "sourceRef": "ChemMCQ08009",
+    "stemTable": {
+      "headers": [
+        "Atom",
+        "Electronic arrangement"
+      ],
+      "rows": [
+        [
+          "P",
+          "2, 5"
+        ],
+        [
+          "Q",
+          "2, 6"
+        ],
+        [
+          "R",
+          "2, 7"
+        ],
+        [
+          "S",
+          "2, 8"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-08010",
@@ -4350,7 +4598,7 @@ export const QUIZ_ITEMS = [
     "hint": "An X atom has four outermost shell electrons while a Y atom has seven.",
     "sourceRef": "ChemMCQ08016",
     "image": {
-      "src": "./assets/mc-media-rId40.jpeg",
+      "src": "../assets/mc-media-rId40.jpeg",
       "alt": "The following is the electron diagram of a compound formed between elements X and Y (only the outerm",
       "caption": "Fig - ChemMCQ08016"
     }
@@ -4383,7 +4631,7 @@ export const QUIZ_ITEMS = [
     "hint": "From the electron diagram, an X atom has six outermost shell electrons while a Y atom has four outermost shell electrons. Sulphur and silicon are both in Period 3 while carbon and oxygen are both in Period 2. Thus, (A) and (D) are incorrect.",
     "sourceRef": "ChemMCQ08017",
     "image": {
-      "src": "./assets/mc-media-rId41.jpeg",
+      "src": "../assets/mc-media-rId41.jpeg",
       "alt": "X and Y are two elements in different periods of the Periodic Table. The electron diagram of a compo",
       "caption": "Fig - ChemMCQ08017"
     }
@@ -4416,7 +4664,7 @@ export const QUIZ_ITEMS = [
     "hint": "A belongs to Group IV while B belongs to Group VI. C is hydrogen.",
     "sourceRef": "ChemMCQ08018",
     "image": {
-      "src": "./assets/mc-media-rId42.jpeg",
+      "src": "../assets/mc-media-rId42.jpeg",
       "alt": "The electron diagram of a compound formed between elements A, B and C is shown below (only the outer",
       "caption": "Fig - ChemMCQ08018"
     }
@@ -4533,7 +4781,7 @@ export const QUIZ_ITEMS = [
     "hint": "This is a ball-and-stick model of a methane molecule.",
     "sourceRef": "ChemMCQ08025",
     "image": {
-      "src": "./assets/mc-media-rId55.png",
+      "src": "../assets/mc-media-rId55.png",
       "alt": "Consider the following photo of a model of a molecule. A white ball represents a hydrogen atom and a",
       "caption": "Fig - ChemMCQ08025"
     }
@@ -4566,7 +4814,7 @@ export const QUIZ_ITEMS = [
     "hint": "There are 10 single covalent bonds in a but-1-ene molecule.",
     "sourceRef": "ChemMCQ08026",
     "image": {
-      "src": "./assets/mc-media-rId56.jpeg",
+      "src": "../assets/mc-media-rId56.jpeg",
       "alt": "The following diagram shows the structure of a but-1-ene molecule. Which of the following statements",
       "caption": "Fig - ChemMCQ08026"
     }
@@ -4599,7 +4847,7 @@ export const QUIZ_ITEMS = [
     "hint": "S is a Group I or Group VII element as it forms one covalent bond with other elements. T is a Group IV element as it forms four covalent bonds with other elements. U is a Group V element as it forms three covalent bonds with other elements. V is a Group VI element as it forms two covalent bonds with T.",
     "sourceRef": "ChemMCQ08027",
     "image": {
-      "src": "./assets/mc-media-rId57.png",
+      "src": "../assets/mc-media-rId57.png",
       "alt": "The following diagram shows the structural formula of a compound. All the atoms in the compound have",
       "caption": "Fig - ChemMCQ08027"
     }
@@ -4660,7 +4908,7 @@ export const QUIZ_ITEMS = [
     "hint": "Review your notes.",
     "sourceRef": "ChemMCQ08029",
     "image": {
-      "src": "./assets/mc-media-rId58.jpeg",
+      "src": "../assets/mc-media-rId58.jpeg",
       "alt": "The electron diagram of an ion formed by elements X and Y is shown below (only the outermost shell e",
       "caption": "Fig - ChemMCQ08029"
     }
@@ -4721,7 +4969,7 @@ export const QUIZ_ITEMS = [
     "hint": "L forms two single covalent bonds with two bromine atoms and so L is a Group VI element.",
     "sourceRef": "ChemMCQ08031",
     "image": {
-      "src": "./assets/mc-media-rId59.jpeg",
+      "src": "../assets/mc-media-rId59.jpeg",
       "alt": "The electron diagram of a compound formed between element L and bromine is shown below (only the out",
       "caption": "Fig - ChemMCQ08031"
     }
@@ -5067,7 +5315,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below lists some information about two elements M and N.\n\nElement Atomic number Relative atomic mass M 17 35.5 N 20 40.1\n\nWhat is the formula mass of the compound formed between M and N?",
+    "stem": "The table below lists some information about two elements M and N.\n\nWhat is the formula mass of the compound formed between M and N?",
     "options": [
       {
         "key": "A",
@@ -5088,7 +5336,26 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "B",
     "hint": "The electronic arrangements of M and N are 2, 8, 7 and 2, 8, 8, 2 respectively. The formula of the compound formed between M and N is NM2. Its formula mass is 40.1 + 35.5 × 2 = 111.1.",
-    "sourceRef": "ChemMCQ08044"
+    "sourceRef": "ChemMCQ08044",
+    "stemTable": {
+      "headers": [
+        "Element",
+        "Atomic number",
+        "Relative atomic mass"
+      ],
+      "rows": [
+        [
+          "M",
+          "17",
+          "35.5"
+        ],
+        [
+          "N",
+          "20",
+          "40.1"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-08045",
@@ -5118,7 +5385,7 @@ export const QUIZ_ITEMS = [
     "hint": "Y is a Group V element. It shares its outermost shell electrons when forming a compound with fluorine. The oxide of a non-metal is a covalent compound.",
     "sourceRef": "ChemMCQ08045",
     "image": {
-      "src": "./assets/mc-media-rId60.png",
+      "src": "../assets/mc-media-rId60.png",
       "alt": "The electron diagram of the chloride of Y is shown below (only the outermost shell electrons are sho",
       "caption": "Fig - ChemMCQ08045"
     }
@@ -5268,7 +5535,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below lists the melting points and boiling points of five metals. Metal Melting point / C Boiling point / C Aluminium 660 2470 Copper 1083 2595 Iron 1535 3000 At 2500C, which of the following combinations about the states of metals is correct?\nAluminium, Copper, Iron",
+    "stem": "The table below lists the melting points and boiling points of five metals.\n\nwhich of the following combinations about the states of metals is correct?\nAluminium, Copper, Iron",
     "options": [
       {
         "key": "A",
@@ -5289,7 +5556,31 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "A",
     "hint": "Review your notes.",
-    "sourceRef": "ChemMCQ09005"
+    "sourceRef": "ChemMCQ09005",
+    "stemTable": {
+      "headers": [
+        "Metal",
+        "Melting point / °C",
+        "Boiling point / °C"
+      ],
+      "rows": [
+        [
+          "Aluminium",
+          "660",
+          "2470"
+        ],
+        [
+          "Copper",
+          "1083",
+          "2595"
+        ],
+        [
+          "Iron",
+          "1535",
+          "3000"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09006",
@@ -5571,7 +5862,7 @@ export const QUIZ_ITEMS = [
     "hint": "The compound is an ionic compound. The particles formed from metal X are cations.",
     "sourceRef": "ChemMCQ09016",
     "image": {
-      "src": "./assets/mc-media-rId65.jpeg",
+      "src": "../assets/mc-media-rId65.jpeg",
       "alt": "The diagram below shows the structure of a compound formed from metal X and non-metal Y. particle fo",
       "caption": "Fig - ChemMCQ09016"
     }
@@ -6253,7 +6544,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the electrical conductivity of three substances.\n\nSubstance Electrical conductivity X Conducts only in aqueous solution Y Conducts\n\nwhen molten or in aqueous solution Z Conducts when molten or in the solid state Which of the following combinations is correct?",
+    "stem": "The table below shows the electrical conductivity of three substances.\n\nWhich of the following combinations is correct?\nX, Y, Z",
     "options": [
       {
         "key": "A",
@@ -6274,7 +6565,27 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "C",
     "hint": "H2SO4 is a covalent compound. When it dissolves in water, it ionizes to give mobile ions and so its aqueous solution can conduct electricity. NaBr is an ionic compound. Its ions become mobile when molten or in aqueous solution. Pb is a metal.",
-    "sourceRef": "ChemMCQ09041"
+    "sourceRef": "ChemMCQ09041",
+    "stemTable": {
+      "headers": [
+        "Substance",
+        "Electrical conductivity"
+      ],
+      "rows": [
+        [
+          "X",
+          "Conducts only in aqueous solution"
+        ],
+        [
+          "Y",
+          "Conducts when molten or in aqueous solution"
+        ],
+        [
+          "Z",
+          "Conducts when molten or in the solid state"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09042",
@@ -6584,7 +6895,7 @@ export const QUIZ_ITEMS = [
     "hint": "An atom of P shares electrons with three atoms of Q to form a covalent compound with a formula of PQ3. R has a simple molecular structure.",
     "sourceRef": "ChemMCQ09052",
     "image": {
-      "src": "./assets/mc-media-rId71.png",
+      "src": "../assets/mc-media-rId71.png",
       "alt": "The electron diagrams of an atom of P and an atom of Q are shown below. P and Q combine to form comp",
       "caption": "Fig - ChemMCQ09052"
     }
@@ -6790,7 +7101,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "X, Y, and Z are three consecutive elements in the Periodic Table. The following table shows the information about the products of the reactions of the elements with iodine.\n\nElement Chemical formula of the product Structure of the product X IX Simple molecular structure Y No product forms / Z ZI Giant ionic structure\n\nWhich of the following statements concerning X, Y and Z is correct?",
+    "stem": "X, Y, and Z are three consecutive elements in the Periodic Table. The following table shows the information about the products of the reactions of the elements with iodine.\n\nWhich of the following statements concerning X, Y and Z is correct?",
     "options": [
       {
         "key": "A",
@@ -6811,7 +7122,31 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "D",
     "hint": "(A): X, Y and Z are Group VII, Group 0 and Group I elements respectively. Among them, X and Y belong to the same period. (B): X (a halogen) exists as diatomic molecules under room conditions. (C): Y (a noble gas) is colourless.",
-    "sourceRef": "ChemMCQ09060"
+    "sourceRef": "ChemMCQ09060",
+    "stemTable": {
+      "headers": [
+        "Element",
+        "Chemical formula of the product",
+        "Structure of the product"
+      ],
+      "rows": [
+        [
+          "X",
+          "IX",
+          "Simple molecular structure"
+        ],
+        [
+          "Y",
+          "—",
+          "No product forms /"
+        ],
+        [
+          "Z",
+          "ZI",
+          "Giant ionic structure"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09061",
@@ -6869,7 +7204,7 @@ export const QUIZ_ITEMS = [
     "hint": "The carbon atoms in graphene are joined together by covalent bonds. Hence, it is difficult to separate the atoms.",
     "sourceRef": "ChemMCQ09062",
     "image": {
-      "src": "./assets/mc-media-rId73.png",
+      "src": "../assets/mc-media-rId73.png",
       "alt": "Graphene is a single layer of graphite. A part of the structure of graphene is shown below. Each bla",
       "caption": "Fig - ChemMCQ09062"
     }
@@ -6879,7 +7214,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The following table shows the properties of four substances.\n\nSubstance Physical state at room temperature Solubility in water A Solid Soluble B Solid Insoluble C Gas Insoluble D Liquid Insoluble\n\nWhich of the following substances probably have a giant covalent structure?",
+    "stem": "The following table shows the properties of four substances.\n\nWhich of the following substances probably have a giant covalent structure?",
     "options": [
       {
         "key": "A",
@@ -6900,7 +7235,36 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "B",
     "hint": "Substances with a giant covalent structure are all solids at room temperature and are insoluble in water.",
-    "sourceRef": "ChemMCQ09063"
+    "sourceRef": "ChemMCQ09063",
+    "stemTable": {
+      "headers": [
+        "Substance",
+        "Physical state at room temperature",
+        "Solubility in water"
+      ],
+      "rows": [
+        [
+          "A",
+          "Solid",
+          "Soluble"
+        ],
+        [
+          "B",
+          "Solid",
+          "Insoluble"
+        ],
+        [
+          "C",
+          "Gas",
+          "Insoluble"
+        ],
+        [
+          "D",
+          "Liquid",
+          "Insoluble"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09064",
@@ -6991,7 +7355,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The following table shows the properties of four substances.\n\nSubstance Physical state under room conditions Does it conduct electricity? Solid state Molten state A Solid No Yes B Solid Yes Yes C Solid No No D Liquid Yes\n\nWhich of the following substances probably have a giant ionic structure?",
+    "stem": "The following table shows the properties of four substances.\n\nWhich of the following substances probably have a giant ionic structure?",
     "options": [
       {
         "key": "A",
@@ -7012,14 +7376,47 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "A",
     "hint": "Ionic compounds conduct electricity when molten or in aqueous solution.",
-    "sourceRef": "ChemMCQ09067"
+    "sourceRef": "ChemMCQ09067",
+    "stemTable": {
+      "headers": [
+        "Substance",
+        "Physical state under room conditions",
+        "Does it conduct electricity?",
+        "Col 3"
+      ],
+      "rows": [
+        [
+          "A",
+          "Solid",
+          "No",
+          "Yes"
+        ],
+        [
+          "B",
+          "Solid",
+          "Yes",
+          "Yes"
+        ],
+        [
+          "C",
+          "Solid",
+          "No",
+          "No"
+        ],
+        [
+          "D",
+          "Liquid",
+          "Yes"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09068",
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Consider the information listed in the table below.\n\nSubstance Melting point / C Electrical conductivity W 1610 Poor in the solid state X 872 Good\n\nwhen in aqueous solution Y 45 Poor in any states Z 180 Good in the solid and liquid states Which of the following substances would probably have a giant covalent structure?",
+    "stem": "Consider the information listed in the table below.\n\nWhich of the following substances would probably have a giant covalent structure?",
     "options": [
       {
         "key": "A",
@@ -7040,7 +7437,36 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "A",
     "hint": "Substances with a giant covalent structure have very high melting points and cannot conduct electricity (except graphite).",
-    "sourceRef": "ChemMCQ09068"
+    "sourceRef": "ChemMCQ09068",
+    "stemTable": {
+      "headers": [
+        "Substance",
+        "Melting point / C",
+        "Electrical conductivity"
+      ],
+      "rows": [
+        [
+          "W",
+          "1610",
+          "Poor in the solid state"
+        ],
+        [
+          "X",
+          "872",
+          "Good when in aqueous solution"
+        ],
+        [
+          "Y",
+          "45",
+          "Poor in any states"
+        ],
+        [
+          "Z",
+          "180",
+          "Good in the solid and liquid states"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09069",
@@ -7075,7 +7501,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The melting points of some chlorides are given in the table below. Chloride NaCl SiCl4 PCl3 Melting point / C 801 70 92 Which of the following can be deduced from the above data?\n(1) NaCl cannot conduct electricity at ⁸⁰⁰C.\n(2) SiCl4 is a covalent compound with a simple molecular structure.\n(3) PCl3 is a covalent compound with a giant covalent structure.",
+    "stem": "The melting points of some chlorides are given in the table below.\n\nWhich of the following can be deduced from the above data?\n(1) NaCl cannot conduct electricity at ⁸⁰⁰C.\n(2) SiCl4 is a covalent compound with a simple molecular structure.\n(3) PCl3 is a covalent compound with a giant covalent structure.",
     "options": [
       {
         "key": "A",
@@ -7096,14 +7522,34 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "A",
     "hint": "NaCl is a solid at 800C. It cannot conduct electricity in the solid state. PCl3 should have a simple molecular structure as it has a low melting point.",
-    "sourceRef": "ChemMCQ09070"
+    "sourceRef": "ChemMCQ09070",
+    "stemTable": {
+      "headers": [
+        "Chloride",
+        "Melting point / °C"
+      ],
+      "rows": [
+        [
+          "NaCl",
+          "801"
+        ],
+        [
+          "SiCl4",
+          "70"
+        ],
+        [
+          "PCl3",
+          "92"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09071",
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the melting points of two chlorides. Melting point / C Chloride of X 50 Chloride of Y 1000 Which of the following statements is correct?",
+    "stem": "The table below shows the melting points of two chlorides. Melting point / C\n\nWhich of the following statements is correct?",
     "options": [
       {
         "key": "A",
@@ -7124,7 +7570,23 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "D",
     "hint": "The low melting point of the chloride of X indicates that it has a simple molecular structure. X should be a non-metal forming a covalent compound with chlorine. No ions or delocalized electrons are present in the chloride of X. The chloride of Y should be an ionic compound and the ions become mobile when it melts.",
-    "sourceRef": "ChemMCQ09071"
+    "sourceRef": "ChemMCQ09071",
+    "stemTable": {
+      "headers": [
+        "Chloride",
+        "Melting point / °C"
+      ],
+      "rows": [
+        [
+          "Chloride of X",
+          "50"
+        ],
+        [
+          "Chloride of Y",
+          "1000"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09072",
@@ -7215,7 +7677,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Consider the following information about four substances P, Q, R and S. Substance Melting point / C Electrical conductivity at room temperature P 7 Poor Q 39 Good R 801 Poor S 660 Good Which of the following substances has a giant metallic structure and is a solid at room temperature?",
+    "stem": "Consider the following information about four substances P, Q, R and S.\n\nWhich of the following substances has a giant metallic structure and is a solid at room temperature?",
     "options": [
       {
         "key": "A",
@@ -7236,14 +7698,43 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "D",
     "hint": "Substances with a giant metallic structure can conduct of electricity at room temperature. Q is not a solid at room temperature.",
-    "sourceRef": "ChemMCQ09075"
+    "sourceRef": "ChemMCQ09075",
+    "stemTable": {
+      "headers": [
+        "Substance",
+        "Melting point / C",
+        "Electrical conductivity"
+      ],
+      "rows": [
+        [
+          "P",
+          "7",
+          "Poor"
+        ],
+        [
+          "Q",
+          "39",
+          "Good"
+        ],
+        [
+          "R",
+          "801",
+          "Poor"
+        ],
+        [
+          "S",
+          "660",
+          "Good"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09076",
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below gives some information on four substances.\n\nSubstance Melting point / C Electrical conductivity in the solid state Electrical conductivity in the liquid state Solubility in water W 17 Poor Poor Soluble X 455 Poor Good Soluble Y 1064 Good Good Insoluble Z 3550 Poor Poor Insoluble\n\nWhich of the following deductions is correct?",
+    "stem": "The table below gives some information on four substances.\n\nWhich of the following deductions is correct?",
     "options": [
       {
         "key": "A",
@@ -7264,14 +7755,53 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "A",
     "hint": "(B): X is not a metal as it is a poor conductor of electricity in the solid state. (C): Y should have a giant metallic structure. There are no discrete molecules in Y. (D): Z is not an ionic compound. Ionic compounds can conduct electricity in the liquid state.",
-    "sourceRef": "ChemMCQ09076"
+    "sourceRef": "ChemMCQ09076",
+    "stemTable": {
+      "headers": [
+        "Substance",
+        "Melting point / C",
+        "Electrical conductivity",
+        "Col 3",
+        "Col 4"
+      ],
+      "rows": [
+        [
+          "W",
+          "17",
+          "Poor",
+          "Poor",
+          "Soluble"
+        ],
+        [
+          "X",
+          "455",
+          "Poor",
+          "Good",
+          "Soluble"
+        ],
+        [
+          "Y",
+          "1064",
+          "Good",
+          "Good",
+          "Insoluble"
+        ],
+        [
+          "Z",
+          "3550",
+          "Poor",
+          "Poor",
+          "Insoluble"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09077",
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the electrical conductivities of four substances W, X, Y and Z at different states. In the table, ‘’ and ‘’ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.\n\nSubstance Solid state Liquid state Aqueous solution W Insoluble in water X Insoluble in water Y Z\n\nWhich of the following substances is likely to be wax?",
+    "stem": "The table below shows the electrical conductivities of four substances W, X, Y and Z at different states. In the table, ‘’ and ‘’ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.\n\nWhich of the following substances is likely to be wax?",
     "options": [
       {
         "key": "A",
@@ -7292,7 +7822,41 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "B",
     "hint": "Wax has a simple molecular structure. It does not contain mobile ions in the solid or liquid states and it is insoluble in water.",
-    "sourceRef": "ChemMCQ09077"
+    "sourceRef": "ChemMCQ09077",
+    "stemTable": {
+      "headers": [
+        "Substance",
+        "Solid state",
+        "Liquid state",
+        "Aqueous solution"
+      ],
+      "rows": [
+        [
+          "W",
+          "—",
+          "—",
+          "Insoluble in water"
+        ],
+        [
+          "X",
+          "—",
+          "—",
+          "Insoluble in water"
+        ],
+        [
+          "Y",
+          "Z",
+          "",
+          ""
+        ],
+        [
+          "Z",
+          "—",
+          "—",
+          "—"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09078",
@@ -7322,7 +7886,7 @@ export const QUIZ_ITEMS = [
     "hint": "Van der Waals’ forces are present between the layers of atoms in the structure of hexagonal boron nitride.",
     "sourceRef": "ChemMCQ09078",
     "image": {
-      "src": "./assets/mc-media-rId74.jpeg",
+      "src": "../assets/mc-media-rId74.jpeg",
       "alt": "Boron nitride is a compound of boron and nitrogen. The structure and bonding of a type of boron nitr",
       "caption": "Fig - ChemMCQ09078"
     }
@@ -7383,92 +7947,10 @@ export const QUIZ_ITEMS = [
     "hint": "The structure of cubic boron nitride is similar to that of diamond. The boron and nitrogen atoms are held together by strong covalent bonds and so it is hard. It cannot conduct electricity as there are no delocalized electrons in its structure.",
     "sourceRef": "ChemMCQ09080",
     "image": {
-      "src": "./assets/mc-media-rId76.jpeg",
+      "src": "../assets/mc-media-rId76.jpeg",
       "alt": "Cubic boron nitride is widely used as an abrasive. The diagram below shows the arrangement of atoms ",
       "caption": "Fig - ChemMCQ09080"
     }
-  },
-  {
-    "id": "as-01-a",
-    "section": "atomic-structure",
-    "format": "fill",
-    "difficulty": "Applied",
-    "stem": "Complete the following table:\n\nAtomic number Mass number No: 1 | 2 | 2 | 2 | 3 | 6 | 4 | 5 | 5 | 11\nof proton No: 6 | 8 | 7 | 15 | 8 | 9 | 9 | 19 | 10 | 11\nof neutron No: 11 | 23 | 12 | 13 | 13 | 27 | 14 | 15 | 15 | 31\nof electron Name of element Full atomic symbol: 16 | 18 | 17 | 37 | 18 | 22 | 19 | 41 | 20 | 24",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Calcium 44Ca (b) Oxygen, silicon aluminium, iron",
-              "Calcium 44Ca (b) Oxygen",
-              "silicon aluminium",
-              "iron"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 1 Q1(a). (20 marks)",
-    "sourceRef": "Part 1 Q1(a)"
-  },
-  {
-    "id": "as-02-a-i",
-    "section": "atomic-structure",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "With reference to the Periodic Table, write down the symbol of element that atom X belongs to.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "C"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 1 Q2(a)(i). (1 mark)",
-    "sourceRef": "Part 1 Q2(a)(i)"
-  },
-  {
-    "id": "as-04-a",
-    "section": "atomic-structure",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Does the atom carry any net charges? Suggest why.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Besides, the masses of protons and neutrons are relatively much larger than that of electrons.",
-              "Besides, the masses of protons and neutrons are relatively much larger than that of electrons",
-              "Besides",
-              "the masses of protons",
-              "neutrons are relatively much larger than that of electrons"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 1 Q4(a). (1 mark)",
-    "sourceRef": "Part 1 Q4(a)"
   },
   {
     "id": "as-07-a-ii",
@@ -7499,82 +7981,6 @@ export const QUIZ_ITEMS = [
     "sourceRef": "Part 1 Q7(a)(ii)"
   },
   {
-    "id": "as-08-a-i",
-    "section": "atomic-structure",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "What type of subatomic particle does the black dot represent?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Neutron"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 1 Q8(a)(i). (1 mark)",
-    "sourceRef": "Part 1 Q8(a)(i)"
-  },
-  {
-    "id": "as-08-a-ii",
-    "section": "atomic-structure",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "State the charge of the black dot.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(c) 𝐹"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 1 Q8(a)(ii). (1 mark)",
-    "sourceRef": "Part 1 Q8(a)(ii)"
-  },
-  {
-    "id": "as-11-a-i",
-    "section": "atomic-structure",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Which types of subatomic particle does n 0 1 represent?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Different atoms of an element with same no. of protons but different no, of neutrons",
-              "of neutrons"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 1 Q11(a)(i). (1 mark)",
-    "sourceRef": "Part 1 Q11(a)(i)"
-  },
-  {
     "id": "as-17-a-ii",
     "section": "atomic-structure",
     "format": "fill",
@@ -7600,642 +8006,6 @@ export const QUIZ_ITEMS = [
     "sourceRef": "Part 1 Q17(a)(ii)"
   },
   {
-    "id": "pt-01-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Which of the above elements are metals?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "B, C, E",
-              "B",
-              "C",
-              "E"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q1(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q1(a)(i)"
-  },
-  {
-    "id": "pt-01-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Standard",
-    "stem": "State TWO properties of metals.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(iii) Wrong. Graphite is a non-metal which can conduct electricity"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q1(a)(ii). (2 marks)",
-    "sourceRef": "Part 2 Q1(a)(ii)"
-  },
-  {
-    "id": "pt-03-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Applied",
-    "stem": "If the atomic\n\nnumber of an element is known, its electronic arrangement, period number and group number can be written.\n\nComplete the following table without referring to the Periodic Table. (P, Q, R, S, T and U are NOT the symbols of the elements.) Element Atomic number Electronic arrangement Period number Group number P 5 Q 8 R 10 S 11 T 14 U 20",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "II (b)"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q3(a). (6 marks)",
-    "sourceRef": "Part 2 Q3(a)"
-  },
-  {
-    "id": "pt-05-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Which of the above substances exist as a liquid at -90 °C and 1 atmosphere?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(b) Non-conductor of electricity / low density / dull if solid / brittle if solid / poor conductor of heat / gain electrons 4 (c)"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q5(a). (1 mark)",
-    "sourceRef": "Part 2 Q5(a)"
-  },
-  {
-    "id": "pt-07-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "What is the atomic number of element X?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "It has 7 outermost shell electrons"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q7(a). (1 mark)",
-    "sourceRef": "Part 2 Q7(a)"
-  },
-  {
-    "id": "pt-08-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Explain which group of the Periodic Table element X belongs to.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "(1) "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "0.75",
-              "0.8"
-            ]
-          }
-        ]
-      },
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "(2) "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "4.25",
-              "4.2"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q8(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q8(a)(ii)"
-  },
-  {
-    "id": "pt-09-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Element B is in Group I. How can you tell?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Neutron"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q9(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q9(a)(i)"
-  },
-  {
-    "id": "pt-09-a-i-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Standard",
-    "stem": "Complete the table to show the relative charge and relative mass of a neutron. Relative charge Relative mass Proton +1 1 Neutron",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Neutron"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q9(a)(i). (2 marks)",
-    "sourceRef": "Part 2 Q9(a)(i)"
-  },
-  {
-    "id": "pt-10-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Complete the following table:\n\nFull Atomic symbol Proton Neutron Electron Mass number Atomic number Electronic arrangement Name of element: 18 | 39 | 21 | 11 | 23 | 23 | 10 | 22 | 22 | 62 | 2 | 8\nSilicon: 18 | 18 | 1 | 119 | 2 | 8 | 18 | 32 | 18 | 2 | 116 | 2\nPhosphorus: 8 | 18 | 32 | 17 | 1 | 133 | 2 | 8 | 18 | 18 | 8 | 1\nHelium: 204 | 2 | 8 | 18 | 32 | 18 | 4 | 197 | 2 | 8 | 18 | 32 | 18 | 1",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "2,8,18,32,18,1 Gold (b)",
-              "2",
-              "8",
-              "18",
-              "32",
-              "1 Gold (b)"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q10(a). (1 mark)",
-    "sourceRef": "Part 2 Q10(a)"
-  },
-  {
-    "id": "pt-10-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Alkali metals?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Li, K, Na, Cs",
-              "Li",
-              "K",
-              "Na",
-              "Cs"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q10(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q10(a)(i)"
-  },
-  {
-    "id": "pt-10-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Alkaline earth metals?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(iv) He, Ar, Ne",
-              "(iv) He",
-              "Ar",
-              "Ne"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q10(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q10(a)(ii)"
-  },
-  {
-    "id": "pt-11-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Which of the above elements are metals?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(e) Noble gases"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q11(a). (1 mark)",
-    "sourceRef": "Part 2 Q11(a)"
-  },
-  {
-    "id": "pt-13-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Which element(s) is/are semi-metal(s)?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "D and G have same no. of outermost shell electrons",
-              "D",
-              "G have same no. of outermost shell electrons"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q13(a). (1 mark)",
-    "sourceRef": "Part 2 Q13(a)"
-  },
-  {
-    "id": "pt-14-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Give the letter from the diagram that represents a noble gas.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(c) Since the elements in the Periodic Table are arranged in increasing atomic number, the atomic number of R is 33 1 R should have 33 protons. In an atom, the number of protons and electrons are always the same. Therefore, an atom of R should have 33 electrons",
-              "the number of protons",
-              "electrons are always the same. Therefore",
-              "an atom of R should have 33 electrons"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q14(a). (1 mark)",
-    "sourceRef": "Part 2 Q14(a)"
-  },
-  {
-    "id": "pt-17-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Applied",
-    "stem": "Complete the above table.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "x = 11"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q17(a). (5 marks)",
-    "sourceRef": "Part 2 Q17(a)"
-  },
-  {
-    "id": "pt-18-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "What is the name commonly given to this group of elements?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Rubidium-87"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q18(a). (1 mark)",
-    "sourceRef": "Part 2 Q18(a)"
-  },
-  {
-    "id": "pt-20-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "What is the special name of Group I element?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Potassium hydroxide formed is an alkali"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q20(a). (1 mark)",
-    "sourceRef": "Part 2 Q20(a)"
-  },
-  {
-    "id": "pt-21-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "State whether rubidium is more reactive than potassium.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Rubidium is more reactive"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q21(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q21(a)(i)"
-  },
-  {
-    "id": "pt-21-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Suggest how rubidium can be stored safely in the laboratory.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(iii) Wear safety gloves"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q21(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q21(a)(ii)"
-  },
-  {
-    "id": "pt-23-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Describe a test which can be used to show that the gas evolved is hydrogen.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "It gives ‘pop’ sound with burning splint"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q23(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q23(a)(i)"
-  },
-  {
-    "id": "pt-24-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Suggest a potential hazard when a piece of barium is added to water.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Sodium gives golden yellow flame while potassium gives lilac flame"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q24(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q24(a)(i)"
-  },
-  {
-    "id": "pt-24-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Explain why Ba and Ca react with water similarly.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Potassium melts at a lower temperature"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q24(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q24(a)(ii)"
-  },
-  {
-    "id": "pt-24-a-i-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Heating them strongly by non-luminous flame",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Sodium gives golden yellow flame while potassium gives lilac flame"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q24(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q24(a)(i)"
-  },
-  {
-    "id": "pt-24-a-ii-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Measuring the melting point",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Potassium melts at a lower temperature"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q24(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q24(a)(ii)"
-  },
-  {
     "id": "pt-25-a",
     "section": "periodic-table",
     "format": "fill",
@@ -8259,31 +8029,6 @@ export const QUIZ_ITEMS = [
     ],
     "hint": "See Part 2 Q25(a). (1 mark)",
     "sourceRef": "Part 2 Q25(a)"
-  },
-  {
-    "id": "pt-28-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Write a word equation for the displacement reaction suggested in (ii).",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Fluorine + Sodium bromide ➔ Bromine + Sodium fluoride"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q28(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q28(a)(ii)"
   },
   {
     "id": "pt-31-a",
@@ -8342,561 +8087,6 @@ export const QUIZ_ITEMS = [
     "sourceRef": "Part 2 Q6(b)"
   },
   {
-    "id": "pt-34-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Across a period, the elements demonstrate a gradual change in some of their physical properties. State ONE such property.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(b) (i) Their atoms have different number of occupied electron shells.",
-              "(b) (i) Their atoms have different number of occupied electron shells"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q34(a). (1 mark)",
-    "sourceRef": "Part 2 Q34(a)"
-  },
-  {
-    "id": "pt-34-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "similar to each other?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Sodium melts to form a silvery ball while magnesium shows no reaction"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q34(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q34(a)(ii)"
-  },
-  {
-    "id": "pt-37-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "the same group.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "lithium + water ➔ lithium hydroxide + hydrogen"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q37(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q37(a)(i)"
-  },
-  {
-    "id": "pt-37-a-i-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Write the word equation for the reaction between lithium and water.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "lithium + water ➔ lithium hydroxide + hydrogen"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q37(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q37(a)(i)"
-  },
-  {
-    "id": "pt-38-b",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Standard",
-    "stem": "Three elements belong to the same group. State the Group number.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(h) Br and I",
-              "(h) Br",
-              "I"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q38(b). (2 marks)",
-    "sourceRef": "Part 2 Q38(b)"
-  },
-  {
-    "id": "pt-39-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Standard",
-    "stem": "Sodium and potassium",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Rubidium as reactivity of Group I elements increases down the group"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q39(a)(i). (2 marks)",
-    "sourceRef": "Part 2 Q39(a)(i)"
-  },
-  {
-    "id": "pt-39-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Chlorine and fluorine",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "In paraffin oil"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q39(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q39(a)(ii)"
-  },
-  {
-    "id": "pt-39-a-i-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Suggest whether rubidium or potassium is more reactive.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Rubidium as reactivity of Group I elements increases down the group"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q39(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q39(a)(i)"
-  },
-  {
-    "id": "pt-40-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "similar to each other?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "They have the same number of outermost shell electrons.",
-              "They have the same number of outermost shell electrons"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q40(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q40(a)(i)"
-  },
-  {
-    "id": "pt-40-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "different from each other?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "There is a gradual change in the intensity of the colour of the elements.",
-              "There is a gradual change in the intensity of the colour of the elements"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q40(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q40(a)(ii)"
-  },
-  {
-    "id": "pt-41-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Which is the most reactive metal in the above table?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "K"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q41(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q41(a)(i)"
-  },
-  {
-    "id": "pt-42-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Give the symbol of ALL element(s) from the diagram that is / are gas under room conditions.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Similarity: Effervesce / melt / turn into a sphere / move on surface / universal indicator turns blue or purple 1 Difference: Potassium gives a lilac flame while sodium gives a golden yellow flame / potassium moves faster / potassium effervesces faster"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q42(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q42(a)(ii)"
-  },
-  {
-    "id": "pt-43-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Explain why e and k react with sodium sulphite solution similarly",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "e"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q43(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q43(a)(i)"
-  },
-  {
-    "id": "pt-43-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Which element (e or k) reacts with sodium sulphite more vigorously? Explain your answer.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(h) In fume cupboard. As k is toxic"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q43(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q43(a)(ii)"
-  },
-  {
-    "id": "pt-43-a-i-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "is the most reactive non-metal?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "e"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q43(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q43(a)(i)"
-  },
-  {
-    "id": "pt-43-a-ii-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "is the most reactive metal?",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(h) In fume cupboard. As k is toxic"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q43(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q43(a)(ii)"
-  },
-  {
-    "id": "pt-45-a",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Applied",
-    "stem": "Complete the above table",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(h) A B C"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q45(a). (7 marks)",
-    "sourceRef": "Part 2 Q45(a)"
-  },
-  {
-    "id": "pt-47-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Do you agree with his claim? Explain your answer.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(iv) Number of protons = Number of electrons in W"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q47(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q47(a)(ii)"
-  },
-  {
-    "id": "pt-47-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Predict which atom will react with water more vigorously.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "𝐴𝑟"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q47(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q47(a)(i)"
-  },
-  {
-    "id": "pt-47-a-ii-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Explain why element of Y and element of Z have similar chemical properties.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(iv) Number of protons = Number of electrons in W"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q47(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q47(a)(ii)"
-  },
-  {
-    "id": "pt-47-a-i-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Write a full atomic symbol of atom W.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "𝐴𝑟"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q47(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q47(a)(i)"
-  },
-  {
-    "id": "pt-47-a-ii-3",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "State the electronic arrangement of atom W.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(iv) Number of protons = Number of electrons in W"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q47(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q47(a)(ii)"
-  },
-  {
     "id": "pt-48-a-i",
     "section": "periodic-table",
     "format": "fill",
@@ -8920,345 +8110,6 @@ export const QUIZ_ITEMS = [
     ],
     "hint": "See Part 2 Q48(a)(i). (2 marks)",
     "sourceRef": "Part 2 Q48(a)(i)"
-  },
-  {
-    "id": "pt-49-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Explain why these metals are placed in the same group.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Halogens"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q49(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q49(a)(i)"
-  },
-  {
-    "id": "pt-49-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Explain why they are described as ‘alkali’.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(iv) They can be decolorized by sodium sulphite solution / react with metal to form a salt"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q49(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q49(a)(ii)"
-  },
-  {
-    "id": "pt-49-a-v",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Suggest one safety precaution that should be taken when handling potassium.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(vi) 2,8,18,7",
-              "(vi) 2",
-              "8",
-              "18",
-              "7"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q49(a)(v). (1 mark)",
-    "sourceRef": "Part 2 Q49(a)(v)"
-  },
-  {
-    "id": "pt-49-a-i-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Name the group that chlorine, bromine and iodine belong to.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Halogens"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q49(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q49(a)(i)"
-  },
-  {
-    "id": "pt-49-a-ii-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Arrange the above 3 elements in ascending order of reactivity",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(iv) They can be decolorized by sodium sulphite solution / react with metal to form a salt"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q49(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q49(a)(ii)"
-  },
-  {
-    "id": "pt-50-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "State the number of protons, neutrons and electrons in a ²⁵Mg atom.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "X. Reactivity of metals increases down the group.",
-              "X. Reactivity of metals increases down the group"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q50(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q50(a)(i)"
-  },
-  {
-    "id": "pt-50-a-i-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "State the number of protons, neutrons and electrons in a ³⁷Cl atom.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "X. Reactivity of metals increases down the group.",
-              "X. Reactivity of metals increases down the group"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q50(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q50(a)(i)"
-  },
-  {
-    "id": "pt-52-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Explain why the relative atomic mass of Li is NOT an integer",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Both Li and Rb have 1 outermost shell electron. They have similar chemical properties.",
-              "Both Li and Rb have 1 outermost shell electron. They have similar chemical properties",
-              "Both Li"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q52(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q52(a)(i)"
-  },
-  {
-    "id": "pt-52-a-i-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Standard",
-    "stem": "Given that the abundance of ⁸⁵Rb is 72.2%. Calculate the value of a in aRb.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Both Li and Rb have 1 outermost shell electron. They have similar chemical properties.",
-              "Both Li and Rb have 1 outermost shell electron. They have similar chemical properties",
-              "Both Li"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q52(a)(i). (2 marks)",
-    "sourceRef": "Part 2 Q52(a)(i)"
-  },
-  {
-    "id": "pt-52-a-i-3",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Lithium atom",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Both Li and Rb have 1 outermost shell electron. They have similar chemical properties.",
-              "Both Li and Rb have 1 outermost shell electron. They have similar chemical properties",
-              "Both Li"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q52(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q52(a)(i)"
-  },
-  {
-    "id": "pt-52-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Rubidium atom (Hint: Electronic arrangement of ³⁶Kr = 2,8,18,8)",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Rb. Reactivity of Group I elements increases down the group"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q52(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q52(a)(ii)"
-  },
-  {
-    "id": "pt-52-a-i-4",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "With reference to your answer in (c), explain why rubidium also reacts with water to give metal hydroxide and hydrogen gas.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Both Li and Rb have 1 outermost shell electron. They have similar chemical properties.",
-              "Both Li and Rb have 1 outermost shell electron. They have similar chemical properties",
-              "Both Li"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q52(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q52(a)(i)"
-  },
-  {
-    "id": "pt-52-a-ii-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Which metal reacts with water more vigorously? Explain your answer.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "Rb. Reactivity of Group I elements increases down the group"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q52(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q52(a)(ii)"
   },
   {
     "id": "pt-53-a-i",
@@ -9312,148 +8163,11 @@ export const QUIZ_ITEMS = [
     "sourceRef": "Part 2 Q53(a)(ii)"
   },
   {
-    "id": "pt-54-a-ii",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Calculate the value of x in the above table.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(g) Making computer chips"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q54(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q54(a)(ii)"
-  },
-  {
-    "id": "pt-54-a-i",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Explain why silicon is classified as a semi-metal",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "2, 8, 18, 4",
-              "2",
-              "8",
-              "18",
-              "4"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q54(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q54(a)(i)"
-  },
-  {
-    "id": "pt-54-a-ii-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Suggest another semi-metal with atomic number less than 20.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "(g) Making computer chips"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q54(a)(ii). (1 mark)",
-    "sourceRef": "Part 2 Q54(a)(ii)"
-  },
-  {
-    "id": "pt-54-a-i-2",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Given that Ge is a Period 4 element. State the electronic arrangement of Ge.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "2, 8, 18, 4",
-              "2",
-              "8",
-              "18",
-              "4"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q54(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q54(a)(i)"
-  },
-  {
-    "id": "pt-54-a-i-3",
-    "section": "periodic-table",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Explain why Si and Ge have similar chemical properties.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "2, 8, 18, 4",
-              "2",
-              "8",
-              "18",
-              "4"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 2 Q54(a)(i). (1 mark)",
-    "sourceRef": "Part 2 Q54(a)(i)"
-  },
-  {
     "id": "ib-01-a",
     "section": "ionic-bond",
     "format": "fill",
     "difficulty": "Applied",
-    "stem": "Complete the following table: Particle Proton Neutron Electron Mass number Atomic number Electronic arrangement A 6 8 6 B 13 14 10 C 11 12 10 D 10 12 2,8 E 35 46 2,8,18,8 F 82 125 2,8,18,32,18,2 G 7 15 2,8 H 17 37 2,8,7 I 19 41 2,8,8 J 5 2 4 K 8 10 7 L 16 18 15 M 130 56 2,8,18,18,8,2 N 127 53 2,8,18,18,8 O 64 30 2,8,18,2 P 3 7 3 Q 18 34 16 R 20 41 20",
+    "stem": "",
     "lines": [
       {
         "segments": [
@@ -9474,7 +8188,125 @@ export const QUIZ_ITEMS = [
       }
     ],
     "hint": "See Part 3 Q1(a). (18 marks)",
-    "sourceRef": "Part 3 Q1(a)"
+    "sourceRef": "Part 3 Q1(a)",
+    "stemTable": {
+      "headers": [
+        "Particle",
+        "Proton",
+        "Neutron",
+        "Electron"
+      ],
+      "rows": [
+        [
+          "A",
+          "6",
+          "8",
+          "6"
+        ],
+        [
+          "B",
+          "13",
+          "14",
+          "10"
+        ],
+        [
+          "C",
+          "11",
+          "12",
+          "10"
+        ],
+        [
+          "D",
+          "10",
+          "12",
+          ""
+        ],
+        [
+          "E",
+          "35",
+          "46",
+          ""
+        ],
+        [
+          "F",
+          "82",
+          "125",
+          ""
+        ],
+        [
+          "G",
+          "7",
+          "15",
+          ""
+        ],
+        [
+          "H",
+          "17",
+          "37",
+          ""
+        ],
+        [
+          "I",
+          "19",
+          "41",
+          ""
+        ],
+        [
+          "J",
+          "5",
+          "2",
+          "4"
+        ],
+        [
+          "K",
+          "8",
+          "10",
+          "7"
+        ],
+        [
+          "L",
+          "16",
+          "18",
+          "15"
+        ],
+        [
+          "M",
+          "130",
+          "56",
+          ""
+        ],
+        [
+          "N",
+          "127",
+          "53",
+          ""
+        ],
+        [
+          "O",
+          "64",
+          "30",
+          ""
+        ],
+        [
+          "P",
+          "3",
+          "7",
+          "3"
+        ],
+        [
+          "Q",
+          "18",
+          "34",
+          "16"
+        ],
+        [
+          "R",
+          "20",
+          "41",
+          ""
+        ]
+      ]
+    }
   },
   {
     "id": "ib-01-a-i",
@@ -9675,7 +8507,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "fill",
     "difficulty": "Applied",
-    "stem": "Complete the following table Particle Atomic number Mass number Proton Neutron Electron Electronic arrangement Li 6 Li+ 7 N 7 N3- 8 K 39 K+ 41 Mg 13 Mg2+ 14 S 32 S2- 34 F 9 F- 10 Al 26 Al3+ 27 Ca 20 Ca2+ 23 Cl 35 Cl- 37 Na 12 Na+ 13",
+    "stem": "",
     "lines": [
       {
         "segments": [
@@ -9695,14 +8527,207 @@ export const QUIZ_ITEMS = [
       }
     ],
     "hint": "See Part 3 Q4(a). (20 marks)",
-    "sourceRef": "Part 3 Q4(a)"
+    "sourceRef": "Part 3 Q4(a)",
+    "stemTable": {
+      "headers": [
+        "Particle",
+        "Atomic number",
+        "Mass number",
+        "Proton",
+        "Neutron",
+        "Electron",
+        "Electronic arrangement"
+      ],
+      "rows": [
+        [
+          "Li",
+          "6",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Li+",
+          "7",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "N",
+          "7",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "N3-",
+          "8",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "K",
+          "39",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "K+",
+          "41",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Mg",
+          "13",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Mg2+",
+          "14",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "S",
+          "32",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "S2-",
+          "34",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "F",
+          "9",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "F-",
+          "10",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Al",
+          "26",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Al3+",
+          "27",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Ca",
+          "20",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Ca2+",
+          "23",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Cl",
+          "35",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Cl-",
+          "37",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Na",
+          "12",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Na+",
+          "13",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    }
   },
   {
     "id": "ib-06-a",
     "section": "ionic-bond",
     "format": "fill",
     "difficulty": "Foundation",
-    "stem": "Complete the following table\n\nSpecies Atomic number Mass number Electronic arrangement Number of Protons Neutrons Electrons",
+    "stem": "Complete the following table",
     "lines": [
       {
         "segments": [
@@ -9720,7 +8745,19 @@ export const QUIZ_ITEMS = [
       }
     ],
     "hint": "See Part 3 Q6(a). (1 mark)",
-    "sourceRef": "Part 3 Q6(a)"
+    "sourceRef": "Part 3 Q6(a)",
+    "stemTable": {
+      "headers": [
+        "Species",
+        "Atomic number",
+        "Mass number",
+        "Electronic arrangement",
+        "Protons",
+        "Neutrons",
+        "Electrons"
+      ],
+      "rows": []
+    }
   },
   {
     "id": "ib-06-a-i",
@@ -9829,31 +8866,6 @@ export const QUIZ_ITEMS = [
     "sourceRef": "Part 3 Q7(a)(i)"
   },
   {
-    "id": "ib-07-a-ii",
-    "section": "ionic-bond",
-    "format": "fill",
-    "difficulty": "Foundation",
-    "stem": "Give the name of the part of the atom containing protons and neutrons.",
-    "lines": [
-      {
-        "segments": [
-          {
-            "type": "text",
-            "value": "Answer: "
-          },
-          {
-            "type": "blank",
-            "accept": [
-              "x = 0.912 (The abundance of 20Ne is 91.2%)"
-            ]
-          }
-        ]
-      }
-    ],
-    "hint": "See Part 3 Q7(a)(ii). (1 mark)",
-    "sourceRef": "Part 3 Q7(a)(ii)"
-  },
-  {
     "id": "ib-07-a-i-2",
     "section": "ionic-bond",
     "format": "fill",
@@ -9879,7 +8891,7 @@ export const QUIZ_ITEMS = [
     "sourceRef": "Part 3 Q7(a)(i)"
   },
   {
-    "id": "ib-07-a-ii-2",
+    "id": "ib-07-a-ii",
     "section": "ionic-bond",
     "format": "fill",
     "difficulty": "Standard",
@@ -11517,7 +10529,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "fill",
     "difficulty": "Foundation",
-    "stem": "Complete the following table. Ammonium chloride Methane Potassium Type(s) of chemical bonding",
+    "stem": "",
     "lines": [
       {
         "segments": [
@@ -11535,7 +10547,27 @@ export const QUIZ_ITEMS = [
       }
     ],
     "hint": "See Part 5 Q20(a). (1 mark)",
-    "sourceRef": "Part 5 Q20(a)"
+    "sourceRef": "Part 5 Q20(a)",
+    "stemTable": {
+      "headers": [
+        "Substance",
+        "Type(s) of chemical bonding"
+      ],
+      "rows": [
+        [
+          "Ammonium chloride",
+          ""
+        ],
+        [
+          "Methane",
+          ""
+        ],
+        [
+          "Potassium",
+          ""
+        ]
+      ]
+    }
   },
   {
     "id": "sp-21-a-i",

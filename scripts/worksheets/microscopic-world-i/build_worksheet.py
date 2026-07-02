@@ -33,37 +33,55 @@ EXPLICIT_EXCLUDE_IDS = {
     "as-11-a-i",
     "mc-05032",
     "mc-05033",
-    # Broken / context-dependent periodic-table items (screenshot review 2026-06)
+    # Broken / context-dependent periodic-table items (screenshot review 2026-06 / 2026-07)
     "pt-01-a-i",
+    "pt-01-a-ii",
+    "pt-03-a",
     "pt-05-a",
     "pt-07-a",
+    "pt-08-a-ii",
     "pt-09-a-i",
     "pt-10-a",
+    "pt-10-a-i",
     "pt-10-a-ii",
     "pt-11-a",
     "pt-13-a",
     "pt-14-a",
+    "pt-18-a",
     "pt-20-a",
     "pt-21-a-i",
     "pt-21-a-ii",
+    "pt-23-a-i",
     "pt-24-a-i",
+    "pt-24-a-ii",
     "pt-28-a-ii",
     "pt-34-a",
+    "pt-34-a-i",
     "pt-34-a-ii",
+    "pt-37-a-i",
+    "pt-38-b",
+    "pt-39-a-i",
     "pt-39-a-i-2",
     "pt-39-a-ii",
     "pt-40-a-i",
+    "pt-40-a-ii",
     "pt-41-a-i",
+    "pt-42-a-ii",
     "pt-43-a-i",
     "pt-43-a-i-2",
+    "pt-43-a-ii",
     "pt-43-a-ii-2",
     "pt-45-a",
+    "pt-47-a-i",
+    "pt-47-a-ii",
     "pt-49-a-i",
     "pt-49-a-ii",
+    "pt-49-a-v",
     "pt-50-a-i",
-    "pt-52-a-i-3",
-    "pt-52-a-i-4",
+    "pt-52-a-i",
     "pt-52-a-ii",
+    "pt-54-a-i",
+    "pt-54-a-ii",
 }
 EXPLICIT_SOURCE_EXCLUDE = re.compile(
     r"Part 3 Q25\(a\)$|Part 5 Q12\(a\)\(i\)$|Part 5 Q32\(a\)\(i\)$",
@@ -95,7 +113,31 @@ BROKEN_PT_STEM = re.compile(
     r"^Explain why e and k react with sodium sulphite solution similarly\s*$|"
     r"^Which of the above substances exist as a liquid at -90\b|"
     r"^Suggest whether rubidium or potassium is more reactive\.\s*$|"
-    r"^With reference to your answer in \(c\), explain why rubidium also reacts with water\b",
+    r"^With reference to your answer in \(c\), explain why rubidium also reacts with water\b|"
+    r"^Alkali metals\?\s*$|"
+    r"^Measuring the melting point\s*$|"
+    r"^different from each other\?\s*$|"
+    r"^the same group\.\s*$|"
+    r"^Sodium and potassium\s*$|"
+    r"^Do you agree with his claim\b|"
+    r"^Predict which atom will react with water more vigorously\.\s*$|"
+    r"^What is the name commonly given to this group of elements\?\s*$|"
+    r"^Write a full atomic symbol of atom W\.\s*$|"
+    r"^State the electronic arrangement of atom W\.\s*$|"
+    r"^Explain why element of Y and element of Z have similar chemical properties\.\s*$|"
+    r"^Calculate the value of x in the above table\.\s*$|"
+    r"^Explain why silicon is classified as a semi-metal\s*$|"
+    r"^Suggest another semi-metal with atomic number less than 20\.\s*$|"
+    r"^Explain which group of the Periodic Table element X belongs to\.\s*$|"
+    r"^Explain why the relative atomic mass of Li is NOT an integer\s*$|"
+    r"^Given that the abundance of \d+Rb is\b|"
+    r"^Which element \(e or k\) reacts with sodium sulphite more vigorously\b|"
+    r"^Suggest one safety precaution that should be taken when handling potassium\.\s*$|"
+    r"^Give the symbol of ALL element\(s\) from the diagram\b|"
+    r"^Three elements belong to the same group\. State the Group number\.\s*$|"
+    r"^Write the word equation for the reaction between lithium and water\.\s*$|"
+    r"^State TWO properties of metals\.\s*$|"
+    r"^Describe a test which can be used to show that the gas evolved is hydrogen\.\s*$",
     re.I,
 )
 DRAW_EX = re.compile(
