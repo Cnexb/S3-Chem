@@ -460,7 +460,7 @@ export const QUIZ_ITEMS = [
     "section": "atomic-structure",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The relative isotopic mass of ¹²C is 12. Which of the following statements is correct?",
+    "stem": "The relative isotopic mass of 12°C is 12. Which of the following statements is correct?",
     "options": [
       {
         "key": "A",
@@ -476,7 +476,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "The density of ¹²C is 12 g cm⁻³"
+        "text": "The density of 12°C is 12 g cm⁻³"
       }
     ],
     "answer": "C",
@@ -854,7 +854,7 @@ export const QUIZ_ITEMS = [
     "section": "atomic-structure",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following statements about a ¹²C atom and a ¹⁴C atom are correct?\n(1) They have the same number of electrons in their outermost shells.\n(2) They have different numbers of neutrons.\n(3)¹⁴C has a larger relative atomic mass than ¹²C.",
+    "stem": "Which of the following statements about a ¹²C atom and a ¹⁴C atom are correct?\n(1) They have the same number of electrons in their outermost shells.\n(2) They have different numbers of neutrons.\n(3)₁₄°C has a larger relative atomic mass than ¹²C.",
     "options": [
       {
         "key": "A",
@@ -874,7 +874,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "¹⁴C has a larger relative isotopic mass than ¹²C.",
+    "hint": "14°C has a larger relative isotopic mass than ¹²C.",
     "sourceRef": "ChemMCQ05029"
   },
   {
@@ -3516,7 +3516,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Elements X and Y form an ionic compound with the formula Y₃X. If the electronic arrangement of Y is 2, 8, 8, 1, to which group of the Periodic Table does X belong?",
+    "stem": "Elements X and Y form an ionic compound with the formula Y³X. If the electronic arrangement of Y is 2, 8, 8, 1, to which group of the Periodic Table does X belong?",
     "options": [
       {
         "key": "A",
@@ -3572,7 +3572,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Ionic compound Y has the formula L₂X, where L and X represent the cation and anion respectively. If L and X have the same electronic arrangement, Y may be",
+    "stem": "Ionic compound Y has the formula L²X, where L and X represent the cation and anion respectively. If L and X have the same electronic arrangement, Y may be",
     "options": [
       {
         "key": "A",
@@ -3712,7 +3712,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The formula of the oxide of caesium is Cs₂O. Which of the following is the formula of caesium hydrogencarbonate?",
+    "stem": "The formula of the oxide of caesium is Cs²O. Which of the following is the formula of caesium hydrogencarbonate?",
     "options": [
       {
         "key": "A",
@@ -3748,19 +3748,19 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "B",
-        "text": "M₂ᵦOₐ"
+        "text": "M₂bOₐ"
       },
       {
         "key": "C",
-        "text": "M₃ᵦO₂ₐ"
+        "text": "M₃bO₂ₐ"
       },
       {
         "key": "D",
-        "text": "M₂ₐO₃ᵦ"
+        "text": "M₂aO₃ᵦ"
       }
     ],
     "answer": "D",
-    "hint": "Let the charge on the ion of M be x+. ax  3b = 0 x = Formula of the oxide of M = M₂Ox = M₂ = M₂aO₃b",
+    "hint": "Let the charge on the ion of M be x+. ax  3b = 0 x = Formula of the oxide of M = M₂Ox = M₂ = M₂aO₃ᵦ",
     "sourceRef": "ChemMCQ07055"
   },
   {
@@ -3908,7 +3908,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the colours of the aqueous solutions of three compounds.\n\nWhich of the following combinations about the ions involved is likely to be correct?\nP²⁺(aq), Q²⁻(aq), R²⁺(aq), S²⁻(aq)",
+    "stem": "The table below shows the colours of the aqueous solutions of three compounds.",
     "options": [
       {
         "key": "A",
@@ -3956,7 +3956,7 @@ export const QUIZ_ITEMS = [
     "section": "ionic-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The colours of the aqueous solutions of three ionic compounds are tabulated below.\n\nWhich of the following ions is/are likely colourless?\n(1) C²⁺(aq)\n(2) D²⁻(aq)\n(3) B²⁻(aq)",
+    "stem": "The colours of the aqueous solutions of three ionic compounds are tabulated below.",
     "options": [
       {
         "key": "A",
@@ -4702,7 +4702,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Element E is in Period 2 of the Periodic Table. It forms a stable cation H₃E⁺. To which group of the Periodic Table does E belong?",
+    "stem": "Element E is in Period 2 of the Periodic Table. It forms a stable cation H³E+. To which group of the Periodic Table does E belong?",
     "options": [
       {
         "key": "A",
@@ -4829,7 +4829,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following species possess a dative covalent bond?\n(1) H₃O⁺\n(2) NH⁴⁺\n(3) CO",
+    "stem": "Which of the following species possess a dative covalent bond?\n(1) H³O+\n(2) NH⁴⁺\n(3) CO",
     "options": [
       {
         "key": "A",
@@ -4890,7 +4890,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following processes involve the formation of a dative covalent bond?\n(1) HCl + H₂O → H₃O⁺ + Cl⁻\n(2) H⁺ + OH⁻ → H₂O\n(3) NH₃ + H⁺ → NH₄⁺",
+    "stem": "Which of the following processes involve the formation of a dative covalent bond?\n(1) HCl + H²O → H³O+ + Cl⁻\n(2) H⁺ + OH⁻ → H²O\n(3) NH₃ + H⁺ → NH⁴⁺",
     "options": [
       {
         "key": "A",
@@ -5035,7 +5035,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following combinations about the name of the compound is correct?\nBa(NO₃)₂, Cl₂O",
+    "stem": "Which of the following combinations about the name of the compound is correct?\nBa(NO₃)₂, Cl²O",
     "options": [
       {
         "key": "A",
@@ -5367,7 +5367,7 @@ export const QUIZ_ITEMS = [
     "section": "covalent-bond",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "P, Q and R are three consecutive elements in the Periodic Table. R forms a stable cation R⁺ while the oxide of P is a covalent compound. Which of the following statements concerning P, Q and R are correct?\n(1) R is an alkali metal.\n(2) The formula of the oxide of P can be P₂O.\n(3) P and Q belong to the same period of the Periodic Table.",
+    "stem": "P, Q and R are three consecutive elements in the Periodic Table. R forms a stable cation R⁺ while the oxide of P is a covalent compound. Which of the following statements concerning P, Q and R are correct?\n(1) R is an alkali metal.\n(2) The formula of the oxide of P can be P²O.\n(3) P and Q belong to the same period of the Periodic Table.",
     "options": [
       {
         "key": "A",
@@ -5805,39 +5805,6 @@ export const QUIZ_ITEMS = [
     "answer": "B",
     "hint": "Review your notes.",
     "sourceRef": "ChemMCQ09015"
-  },
-  {
-    "id": "mc-09016",
-    "section": "structure-properties",
-    "format": "mcq",
-    "difficulty": "Standard",
-    "stem": "The diagram below shows the structure of a compound formed from metal X and non-metal Y. particle formed from Xparticle formed from Yparticle formed from Xparticle formed from Y particle formed from X particle formed from Y particle formed from X particle formed from Y Which of the following statements is INCORRECT?",
-    "options": [
-      {
-        "key": "A",
-        "text": "The compound is an electrolyte"
-      },
-      {
-        "key": "B",
-        "text": "The compound is electrically neutral"
-      },
-      {
-        "key": "C",
-        "text": "The particles formed from X are anions"
-      },
-      {
-        "key": "D",
-        "text": "Each particle formed from X is surrounded by four particles formed from Y"
-      }
-    ],
-    "answer": "C",
-    "hint": "The compound is an ionic compound. The particles formed from metal X are cations.",
-    "sourceRef": "ChemMCQ09016",
-    "image": {
-      "src": "../assets/mc-media-rId65.jpeg",
-      "alt": "The diagram below shows the structure of a compound formed from metal X and non-metal Y. particle fo",
-      "caption": "Fig - ChemMCQ09016"
-    }
   },
   {
     "id": "mc-09017",
@@ -7109,8 +7076,8 @@ export const QUIZ_ITEMS = [
         ],
         [
           "Y",
-          "—",
-          "No product forms /"
+          "No product forms",
+          ""
         ],
         [
           "Z",
@@ -7243,7 +7210,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "X is a non-conductor of electricity. It melts at 3C and boils at 44C. Which of the following statements concerning X must be correct?\n(1) X is a solid at room temperature.\n(2) The particles in X are held together by weak intermolecular forces.\n(3) X has a giant covalent structure.",
+    "stem": "X is a non-conductor of electricity. It melts at 3°C and boils at 44°C. Which of the following statements concerning X must be correct?\n(1) X is a solid at room temperature.\n(2) The particles in X are held together by weak intermolecular forces.\n(3) X has a giant covalent structure.",
     "options": [
       {
         "key": "A",
@@ -7353,8 +7320,8 @@ export const QUIZ_ITEMS = [
       "headers": [
         "Substance",
         "Physical state under room conditions",
-        "Does it conduct electricity?",
-        "Col 3"
+        "Does it conduct electricity in solid state?",
+        "Does it conduct electricity in molten state?"
       ],
       "rows": [
         [
@@ -7413,7 +7380,7 @@ export const QUIZ_ITEMS = [
     "stemTable": {
       "headers": [
         "Substance",
-        "Melting point / C",
+        "Melting point / °C",
         "Electrical conductivity"
       ],
       "rows": [
@@ -7445,7 +7412,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "X, Y and Z are three elements and the properties of their chlorides are given below. Melting point / C Electrical conductivity in the molten state Chloride of X 4 Poor Chloride of Y 873 Good Chloride of Z 677 Poor Which of the following statements must be correct?",
+    "stem": "X, Y and Z are three elements and the properties of their chlorides are given below. Melting point / °C Electrical conductivity in the molten state Chloride of X 4 Poor Chloride of Y 873 Good Chloride of Z 677 Poor Which of the following statements must be correct?",
     "options": [
       {
         "key": "A",
@@ -7473,7 +7440,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The melting points of some chlorides are given in the table below.\n\nWhich of the following can be deduced from the above data?\n(1) NaCl cannot conduct electricity at 800C.\n(2) SiCl₄ is a covalent compound with a simple molecular structure.\n(3) PCl₃ is a covalent compound with a giant covalent structure.",
+    "stem": "The melting points of some chlorides are given in the table below.\n\nWhich of the following can be deduced from the above data?\n(1) NaCl cannot conduct electricity at 800°C.\n(2) SiCl₄ is a covalent compound with a simple molecular structure.\n(3) PCl₃ is a covalent compound with a giant covalent structure.",
     "options": [
       {
         "key": "A",
@@ -7493,7 +7460,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "NaCl is a solid at 800C. It cannot conduct electricity in the solid state. PCl₃ should have a simple molecular structure as it has a low melting point.",
+    "hint": "NaCl is a solid at 800°C. It cannot conduct electricity in the solid state. PCl₃ should have a simple molecular structure as it has a low melting point.",
     "sourceRef": "ChemMCQ09070",
     "stemTable": {
       "headers": [
@@ -7521,7 +7488,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The table below shows the melting points of two chlorides. Melting point / C\n\nWhich of the following statements is correct?",
+    "stem": "The table below shows the melting points of two chlorides. Melting point / °C\n\nWhich of the following statements is correct?",
     "options": [
       {
         "key": "A",
@@ -7537,7 +7504,7 @@ export const QUIZ_ITEMS = [
       },
       {
         "key": "D",
-        "text": "The chloride of Y can conduct electricity at 1000C"
+        "text": "The chloride of Y can conduct electricity at 1000°C"
       }
     ],
     "answer": "D",
@@ -7565,7 +7532,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The melting point and boiling point of J are 801C and 1465C respectively. In the molten state, J conducts electricity with decomposition. J probably has",
+    "stem": "The melting point and boiling point of J are 801°C and 1465°C respectively. In the molten state, J conducts electricity with decomposition. J probably has",
     "options": [
       {
         "key": "A",
@@ -7674,8 +7641,8 @@ export const QUIZ_ITEMS = [
     "stemTable": {
       "headers": [
         "Substance",
-        "Melting point / C",
-        "Electrical conductivity"
+        "Melting point / °C",
+        "Electrical conductivity at room temperature"
       ],
       "rows": [
         [
@@ -7731,10 +7698,10 @@ export const QUIZ_ITEMS = [
     "stemTable": {
       "headers": [
         "Substance",
-        "Melting point / C",
-        "Electrical conductivity",
-        "Col 3",
-        "Col 4"
+        "Melting point / °C",
+        "Electrical conductivity in the solid state",
+        "Electrical conductivity in the liquid state",
+        "Solubility in water"
       ],
       "rows": [
         [
@@ -7764,68 +7731,6 @@ export const QUIZ_ITEMS = [
           "Poor",
           "Poor",
           "Insoluble"
-        ]
-      ]
-    }
-  },
-  {
-    "id": "mc-09077",
-    "section": "structure-properties",
-    "format": "mcq",
-    "difficulty": "Standard",
-    "stem": "The table below shows the electrical conductivities of four substances W, X, Y and Z at different states. In the table, ‘’ and ‘’ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.\n\nWhich of the following substances is likely to be wax?",
-    "options": [
-      {
-        "key": "A",
-        "text": "W"
-      },
-      {
-        "key": "B",
-        "text": "X"
-      },
-      {
-        "key": "C",
-        "text": "Y"
-      },
-      {
-        "key": "D",
-        "text": "Z"
-      }
-    ],
-    "answer": "B",
-    "hint": "Wax has a simple molecular structure. It does not contain mobile ions in the solid or liquid states and it is insoluble in water.",
-    "sourceRef": "ChemMCQ09077",
-    "stemTable": {
-      "headers": [
-        "Substance",
-        "Solid state",
-        "Liquid state",
-        "Aqueous solution"
-      ],
-      "rows": [
-        [
-          "W",
-          "—",
-          "—",
-          "Insoluble in water"
-        ],
-        [
-          "X",
-          "—",
-          "—",
-          "Insoluble in water"
-        ],
-        [
-          "Y",
-          "Z",
-          "",
-          ""
-        ],
-        [
-          "Z",
-          "—",
-          "—",
-          "—"
         ]
       ]
     }
@@ -7941,9 +7846,8 @@ export const QUIZ_ITEMS = [
             "type": "blank",
             "accept": [
               "2, 8, 2",
-              "2,8,2",
-              "2.8.2",
-              "2 8 2"
+              "2",
+              "8"
             ]
           }
         ]

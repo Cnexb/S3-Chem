@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v21"
+QUIZ_ASSET_VERSION = "20260702v22"
 
 
 def patch_quiz_module_imports(text: str) -> str:
@@ -42,6 +42,9 @@ EXPLICIT_EXCLUDE_IDS = {
     "mc-05032",
     "mc-05033",
     "mc-07025",
+    # Broken structure-properties items (screenshot review 2026-07)
+    "mc-09016",
+    "mc-09077",
     # Broken / context-dependent periodic-table items (screenshot review 2026-06 / 2026-07)
     "pt-01-a-i",
     "pt-01-a-ii",
@@ -295,12 +298,15 @@ def format_formula_subscripts(text: str) -> str:
 
 
 def format_variable_subscripts(text: str) -> str:
-    def repl(m: re.Match) -> str:
-        return m.group(1) + LETTER_SUBSCRIPT.get(m.group(2), m.group(2))
+    def m_sub(m: re.Match) -> str:
+        return "M" + LETTER_SUBSCRIPT.get(m.group(1), m.group(1))
 
-    text = re.sub(r"\bM([ab])(?=[(\s]|O|$)", repl, text)
-    text = re.sub(r"(?<=\))([ab])\b", repl, text)
-    text = re.sub(r"(?<=[O₀₁₂₃₄₅₆₇₈₉])([ab])\b", repl, text)
+    def letter_sub(m: re.Match) -> str:
+        return LETTER_SUBSCRIPT.get(m.group(1), m.group(1))
+
+    text = re.sub(r"\bM([ab])(?=[(\s]|O|$)", m_sub, text)
+    text = re.sub(r"(?<=\))([ab])\b", letter_sub, text)
+    text = re.sub(r"(?<=[O₀₁₂₃₄₅₆₇₈₉])([ab])\b", letter_sub, text)
     return text
 
 
@@ -390,6 +396,27 @@ def _neg_superscript(num: str) -> str:
     return "⁻" + num.translate(SUPERSCRIPT)
 
 
+def format_degree_celsius(text: str) -> str:
+    if not text:
+        return text
+    text = re.sub(
+        r"(Melting point|Boiling point)\s*/\s*C\b",
+        r"\1 / °C",
+        text,
+        flags=re.I,
+    )
+
+    def repl(m: re.Match) -> str:
+        num = m.group(1)
+        if num in ("12", "13", "14"):
+            tail = text[m.end() : m.end() + 12]
+            if re.match(r"\s*(?:atom|=|scale|\)|\.|,)", tail, re.I):
+                return m.group(0)
+        return f"{num}°C"
+
+    return re.sub(r"(?<![A-Za-z./])(\d+)C\b", repl, text)
+
+
 def format_unit_superscripts(text: str) -> str:
     if not text:
         return text
@@ -418,9 +445,11 @@ def format_mcq_display_text(
     text: str, *, formula_subscripts: bool = False, chemical_formula: bool = False
 ) -> str:
     if chemical_formula:
-        text = format_chemical_notation(text or "")
+        text = format_degree_celsius(text or "")
+        text = format_chemical_notation(text)
     else:
-        text = format_isotope_notation(text or "")
+        text = format_degree_celsius(text or "")
+        text = format_isotope_notation(text)
         text = format_unit_superscripts(text)
         if formula_subscripts:
             text = format_formula_subscripts(text)
@@ -485,6 +514,9 @@ KNOWN_TABLE_HEADERS = [
     "Chemical formula of the product",
     "Structure of the product",
     "Does it conduct electricity?",
+    "Does it conduct electricity in solid state?",
+    "Does it conduct electricity in molten state?",
+    "Electrical conductivity at room temperature",
     "Solid state",
     "Liquid state",
     "Aqueous solution",
@@ -764,7 +796,10 @@ def _extract_substance_property_table(stem: str) -> tuple[str, str, dict] | None
     m = re.search(
         r"Substance\s+"
         r"(Physical state at room temperature\s+Solubility in water|"
+        r"Physical state under room conditions\s+Does it conduct electricity in solid state\?\s+Does it conduct electricity in molten state\?|"
         r"Physical state under room conditions\s+Does it conduct electricity\?|"
+        r"Melting point\s*/?\s*C\s+Electrical conductivity in the solid state\s+Electrical conductivity in the liquid state\s+Solubility in water|"
+        r"Melting point\s*/?\s*C\s+Electrical conductivity at room temperature|"
         r"Melting point\s*/?\s*C\s+Electrical conductivity|"
         r"Electrical conductivity)\s+"
         r"(.+?)"
@@ -778,7 +813,10 @@ def _extract_substance_property_table(stem: str) -> tuple[str, str, dict] | None
     data = m.group(2).strip()
     header_parts = re.split(
         r"(Physical state at room temperature|Physical state under room conditions|"
+        r"Does it conduct electricity in solid state\?|"
+        r"Does it conduct electricity in molten state\?|"
         r"Does it conduct electricity\?|Melting point\s*/?\s*C|"
+        r"Electrical conductivity at room temperature|"
         r"Electrical conductivity in the solid state|"
         r"Electrical conductivity in the liquid state|"
         r"Solubility in water|Electrical conductivity)",
@@ -851,9 +889,9 @@ def _extract_element_product_table(stem: str) -> tuple[str, str, dict] | None:
     xm = re.search(r"X\s+(\S+)\s+(Simple molecular structure)", data, re.I)
     if xm:
         rows.append(["X", xm.group(1), xm.group(2)])
-    ym = re.search(r"Y\s+(No product forms\s*/?)", data, re.I)
+    ym = re.search(r"Y\s+(No product forms)\s*/?", data, re.I)
     if ym:
-        rows.append(["Y", "—", ym.group(1).strip()])
+        rows.append(["Y", ym.group(1).strip(), ""])
     zm = re.search(r"Z\s+(\S+)\s+(Giant ionic structure)", data, re.I)
     if zm:
         rows.append(["Z", zm.group(1), zm.group(2)])
@@ -1206,6 +1244,7 @@ def format_stem_pipeline(stem: str, *, chemical: bool = False) -> tuple[str, dic
     parts = [p for p in (intro, suffix) if p]
     combined = "\n\n".join(parts)
     combined = format_stem_for_display(combined)
+    combined = format_degree_celsius(combined)
     combined = format_isotope_notation(combined)
     if chemical:
         combined = format_chemical_notation(combined)
@@ -1214,6 +1253,10 @@ def format_stem_pipeline(stem: str, *, chemical: bool = False) -> tuple[str, dic
         combined = format_formula_subscripts(combined)
     if table:
         table = _format_table_notation(table, chemical=chemical)
+        table["headers"] = [format_degree_celsius(h) for h in table.get("headers", [])]
+        table["rows"] = [
+            [format_degree_celsius(c) for c in row] for row in table.get("rows", [])
+        ]
     return combined, table
 
 
@@ -1560,6 +1603,8 @@ def calc_missing_data(stem: str) -> bool:
 
 
 def validate_mc_item(q: dict) -> bool:
+    if q.get("id") in EXPLICIT_EXCLUDE_IDS:
+        return False
     if q.get("answerMissing") or not q.get("answer"):
         return False
     stem = q.get("stem", "")
@@ -1748,6 +1793,7 @@ def mc_to_item(q: dict) -> dict | None:
             for o in raw_options
         ]
     hint_raw = q.get("hint") or "Review your notes."
+    hint_raw = format_degree_celsius(hint_raw)
     if chemical:
         hint = format_chemical_notation(hint_raw)
     else:

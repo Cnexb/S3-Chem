@@ -8232,7 +8232,7 @@
     "chapter": 9,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "X, Y, and Z are three consecutive elements in the Periodic Table. The following table shows the information about the products of the reactions of the elements with iodine. Element Chemical formula of the product Structure of the product X IX Simple molecular structure Y No product forms / Z ZI Giant ionic structure Which of the following statements concerning X, Y and Z is correct?",
+    "stem": "X, Y, and Z are three consecutive elements in the Periodic Table. The following table shows the information about the products of the reactions of the elements with iodine. Element Chemical formula of the product Structure of the product X IX Simple molecular structure Y No product forms Z ZI Giant ionic structure Which of the following statements concerning X, Y and Z is correct?",
     "options": [
       {
         "key": "A",
@@ -8453,7 +8453,7 @@
     "chapter": 9,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The following table shows the properties of four substances. Substance Physical state under room conditions Does it conduct electricity? Solid state Molten state A Solid No Yes B Solid Yes Yes C Solid No No D Liquid Yes Which of the following substances probably have a giant ionic structure?",
+    "stem": "The following table shows the properties of four substances. Substance Physical state under room conditions Does it conduct electricity in solid state? Does it conduct electricity in molten state? A Solid No Yes B Solid Yes Yes C Solid No No D Liquid Yes Which of the following substances probably have a giant ionic structure?",
     "options": [
       {
         "key": "A",
