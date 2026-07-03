@@ -145,6 +145,45 @@
   z-index: 200;
 }
 
+#feature-modal-content > .modal-top-buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 200;
+}
+
+#feature-modal.feature-modal--embed-chrome > .modal-top-buttons {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top, 0px));
+  right: max(12px, env(safe-area-inset-right, 0px));
+  z-index: 12050;
+}
+
+#feature-modal.feature-modal--embed-chrome > .modal-top-buttons .modal-close,
+#feature-modal.feature-modal--embed-chrome > .modal-top-buttons .modal-fullscreen-btn {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #1e293b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#feature-modal.feature-modal--embed-chrome > .modal-top-buttons .modal-close:hover,
+#feature-modal.feature-modal--embed-chrome > .modal-top-buttons .modal-fullscreen-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  transform: none;
+}
+
+#feature-modal.feature-modal--embed-chrome > .modal-top-buttons .modal-close:hover {
+  transform: rotate(90deg);
+}
+
+#feature-modal.feature-modal--tool-fullscreen > .modal-top-buttons {
+  z-index: 100002;
+}
+
 .modal-close {
   width: 40px;
   height: 40px;

@@ -44,13 +44,17 @@ function notifyIframeResize(stage) {
   });
 }
 
-export function createToolFullscreenController({ stage, button, getLabel }) {
+export function createToolFullscreenController({ stage, modal, button, getLabel }) {
   let overlayMode = false;
   let overlayBackdrop = null;
   let destroyed = false;
 
   const enterIcon = button?.querySelector(".modal-fullscreen-icon--enter");
   const exitIcon = button?.querySelector(".modal-fullscreen-icon--exit");
+
+  const setToolFullscreenClass = (active) => {
+    modal?.classList.toggle("feature-modal--tool-fullscreen", active);
+  };
 
   const updateButton = (active) => {
     if (!button) return;
@@ -71,6 +75,7 @@ export function createToolFullscreenController({ stage, button, getLabel }) {
     stage?.classList.remove("feature-modal-content--overlay-fullscreen");
     document.body.style.overflow = "";
     overlayMode = false;
+    setToolFullscreenClass(false);
   };
 
   const clearStageStyles = () => {
@@ -121,6 +126,7 @@ export function createToolFullscreenController({ stage, button, getLabel }) {
     stage.style.margin = "0";
 
     overlayMode = true;
+    setToolFullscreenClass(true);
     updateButton(true);
     requestAnimationFrame(() => notifyIframeResize(stage));
 
@@ -146,6 +152,7 @@ export function createToolFullscreenController({ stage, button, getLabel }) {
         return;
       }
       updateButton(true);
+      setToolFullscreenClass(true);
       requestAnimationFrame(() => notifyIframeResize(stage));
     } catch {
       stage.classList.remove("feature-modal-content--fullscreen");
@@ -159,6 +166,7 @@ export function createToolFullscreenController({ stage, button, getLabel }) {
       clearOverlay();
       clearStageStyles();
     }
+    setToolFullscreenClass(active);
     updateButton(active);
     if (active) {
       requestAnimationFrame(() => notifyIframeResize(stage));

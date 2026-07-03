@@ -42,6 +42,7 @@ export function createToolsModalController(options = {}) {
     return {
       modal: document.getElementById("feature-modal"),
       stage: document.getElementById("feature-modal-content"),
+      topButtons: document.getElementById("feature-modal-top-buttons"),
       closeButton: document.getElementById("feature-modal-close"),
       fullscreenButton: document.getElementById("feature-modal-fullscreen"),
       helpButton: document.getElementById("feature-modal-help"),
@@ -50,6 +51,36 @@ export function createToolsModalController(options = {}) {
       helpContent: document.querySelector("#feature-help-overlay .help-content"),
       body: document.getElementById("feature-modal-body"),
     };
+  }
+
+  function setModalChromeMode(toolType) {
+    const { modal, stage, topButtons } = getModalElements();
+    if (!modal || !stage || !topButtons) return;
+
+    const isEmbed = isEmbedFullscreenToolType(toolType);
+    modal.classList.toggle("feature-modal--embed-chrome", isEmbed);
+
+    if (isEmbed) {
+      if (topButtons.parentElement !== modal) {
+        modal.insertBefore(topButtons, modal.firstChild);
+      }
+      return;
+    }
+
+    if (topButtons.parentElement !== stage) {
+      stage.insertBefore(topButtons, stage.firstChild);
+    }
+  }
+
+  function resetModalChromeMode() {
+    const { modal, stage, topButtons } = getModalElements();
+    if (!modal || !stage || !topButtons) return;
+
+    modal.classList.remove("feature-modal--embed-chrome");
+    modal.classList.remove("feature-modal--tool-fullscreen");
+    if (topButtons.parentElement !== modal) {
+      modal.insertBefore(topButtons, modal.firstChild);
+    }
   }
 
   function setFullscreenButtonVisible(visible) {
@@ -65,6 +96,7 @@ export function createToolsModalController(options = {}) {
 
     fullscreenController = createToolFullscreenController({
       stage,
+      modal: getModalElements().modal,
       button: fullscreenButton,
       getLabel: t,
     });
@@ -101,6 +133,7 @@ export function createToolsModalController(options = {}) {
     openRequestToken += 1;
     fullscreenController?.exitFullscreen();
     setFullscreenButtonVisible(false);
+    resetModalChromeMode();
     activeToolType = null;
     modal.classList.remove("active");
     document.body.classList.remove("hide-nav");
@@ -194,6 +227,7 @@ export function createToolsModalController(options = {}) {
     if (helpButton) {
       helpButton.hidden = toolType === "atomic-arcade";
     }
+    setModalChromeMode(toolType);
     setFullscreenButtonVisible(isEmbedFullscreenToolType(toolType));
     setToolHelpContent(toolType);
     body.innerHTML = `<div class="tool-modal-loading">${t("toolModal.loading")}</div>`;
