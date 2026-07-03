@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v23"
+QUIZ_ASSET_VERSION = "20260702v24"
 
 
 def patch_quiz_module_imports(text: str) -> str:
@@ -1857,19 +1857,45 @@ def mc_to_item(q: dict) -> dict | None:
         item["stemTable"] = stem_table
     files = q.get("imageFiles") or []
     if files:
-        item["_imageFile"] = files[0]
+        seen = []
+        for f in files:
+            if f not in seen:
+                seen.append(f)
+        item["_imageFiles"] = seen
+        item["_imageFile"] = seen[0]
     return item
 
 
 def attach_image(item: dict, image_map: dict, locale: str = "en") -> dict:
-    f = item.pop("_imageFile", None) or image_map.get(item["id"], {}).get("file")
-    if f:
-        info = image_map.get(item["id"], {})
-        prefix = "../assets/" if locale == "zh-hk" else "./assets/"
+    info = image_map.get(item["id"], {})
+    files = item.pop("_imageFiles", None)
+    legacy = item.pop("_imageFile", None)
+    if not files:
+        if legacy:
+            files = [legacy]
+        elif info.get("files"):
+            files = info["files"]
+        elif info.get("file"):
+            files = [info["file"]]
+    if not files:
+        return item
+    prefix = "../assets/" if locale == "zh-hk" else "./assets/"
+    caption = info.get("caption", f"Fig - {item.get('sourceRef', '')}")
+    alt = info.get("alt", item.get("stem", "")[:80])
+    if len(files) == 1:
         item["image"] = {
-            "src": f"{prefix}{f}",
-            "alt": info.get("alt", item.get("stem", "")[:80]),
-            "caption": info.get("caption", info.get("alt", "Diagram")),
+            "src": f"{prefix}{files[0]}",
+            "alt": alt,
+            "caption": caption,
+        }
+    else:
+        item["images"] = [
+            {"src": f"{prefix}{f}", "alt": alt} for f in files
+        ]
+        item["image"] = {
+            "src": f"{prefix}{files[0]}",
+            "alt": alt,
+            "caption": caption,
         }
     return item
 
@@ -1879,8 +1905,13 @@ def build_image_map(mc_raw: list, lq_included: list) -> dict:
     for q in mc_raw:
         files = q.get("imageFiles") or []
         if files and not q.get("answerMissing"):
+            unique = []
+            for f in files:
+                if f not in unique:
+                    unique.append(f)
             m[q["id"]] = {
-                "file": files[0],
+                "file": unique[0],
+                "files": unique,
                 "alt": q["stem"][:100],
                 "caption": f"Fig - {q['sourceRef']}",
             }

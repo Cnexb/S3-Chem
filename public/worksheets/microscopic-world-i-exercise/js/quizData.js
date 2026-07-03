@@ -2123,6 +2123,24 @@ export const QUIZ_ITEMS = [
     "answer": "C",
     "hint": "Consider the electron arrangements of the atoms of the four elements. W: 2, 1 X: 2, 8, 1 Y: 2, 8, 8 Z: 2, 8, 8, 1 Thus, Y is a noble gas, which is the most unreactive. W, X and Z are Group I elements. The element with more occupied electron shells in its atom is at a lower position in the group. Reactivity of Group I elements increases down the group.",
     "sourceRef": "ChemMCQ06041",
+    "images": [
+      {
+        "src": "./assets/mc-media-rId16.png",
+        "alt": "The electron diagrams of the atoms of four elements W, X, Y and Z are shown below. Which of the foll"
+      },
+      {
+        "src": "./assets/mc-media-rId17.png",
+        "alt": "The electron diagrams of the atoms of four elements W, X, Y and Z are shown below. Which of the foll"
+      },
+      {
+        "src": "./assets/mc-media-rId18.png",
+        "alt": "The electron diagrams of the atoms of four elements W, X, Y and Z are shown below. Which of the foll"
+      },
+      {
+        "src": "./assets/mc-media-rId19.png",
+        "alt": "The electron diagrams of the atoms of four elements W, X, Y and Z are shown below. Which of the foll"
+      }
+    ],
     "image": {
       "src": "./assets/mc-media-rId16.png",
       "alt": "The electron diagrams of the atoms of four elements W, X, Y and Z are shown below. Which of the foll",
@@ -6833,6 +6851,16 @@ export const QUIZ_ITEMS = [
     "answer": "C",
     "hint": "An atom of P shares electrons with three atoms of Q to form a covalent compound with a formula of PQ₃. R has a simple molecular structure.",
     "sourceRef": "ChemMCQ09052",
+    "images": [
+      {
+        "src": "./assets/mc-media-rId71.png",
+        "alt": "The electron diagrams of an atom of P and an atom of Q are shown below. P and Q combine to form comp"
+      },
+      {
+        "src": "./assets/mc-media-rId72.png",
+        "alt": "The electron diagrams of an atom of P and an atom of Q are shown below. P and Q combine to form comp"
+      }
+    ],
     "image": {
       "src": "./assets/mc-media-rId71.png",
       "alt": "The electron diagrams of an atom of P and an atom of Q are shown below. P and Q combine to form comp",
@@ -7115,7 +7143,7 @@ export const QUIZ_ITEMS = [
     "hint": "From the given information, S should be argon and so P, Q and R should be fluorine, sulphur and chlorine respectively. Argon is unreactive and so it does not react with other elements. The compound of sulphur and chlorine (SCl₂) has a simple molecular structure.",
     "sourceRef": "ChemMCQ09061",
     "image": {
-      "src": "./assets/mc-media-rId72.png",
+      "src": "./assets/mc-media-rId73.png",
       "alt": "P, Q, R and S are among the first 20 elements in the Periodic Table. Their relative positions in the",
       "caption": "Fig - ChemMCQ09061"
     }

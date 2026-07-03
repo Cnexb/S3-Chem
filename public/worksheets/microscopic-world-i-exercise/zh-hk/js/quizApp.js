@@ -1,4 +1,4 @@
-import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v23";
+import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v24";
 import { sectionLabel, renderSessionSummary } from "./quizSummary.js";
 import { downloadWord, printSheet } from "./quizExport.js";
 import {
@@ -534,7 +534,21 @@ export function initQuiz() {
         q.difficulty.toUpperCase();
       wrap.appendChild(head);
 
-      if (q.image?.src) {
+      if (q.images?.length) {
+        const fig = document.createElement("figure");
+        fig.className = "quiz-fig mb-4 flex flex-wrap gap-4 items-start";
+        fig.innerHTML = q.images
+          .map(
+            (img) =>
+              `<img src="${escHtml(img.src)}" alt="${escHtml(img.alt || "")}" loading="lazy" class="max-h-48 w-auto" />`,
+          )
+          .join("");
+        const cap = document.createElement("figcaption");
+        cap.className = "text-body-sm text-on-surface-variant mt-2 w-full";
+        cap.textContent = q.image?.caption || "";
+        fig.appendChild(cap);
+        wrap.appendChild(fig);
+      } else if (q.image?.src) {
         const fig = document.createElement("figure");
         fig.className = "quiz-fig mb-4";
         fig.innerHTML = `<img src="${escHtml(q.image.src)}" alt="${escHtml(q.image.alt || "")}" loading="lazy" />
