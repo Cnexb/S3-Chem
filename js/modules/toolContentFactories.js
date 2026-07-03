@@ -2130,7 +2130,7 @@ function generateCovalentBondPuzzleToolContent() {
 
 function generateCovalentPropertiesSandboxToolContent() {
   return generateInteractiveLabIframeContent(
-    "public/tools/covalent-properties-sandbox/index.html?v=20260628sandbox22",
+    "public/tools/covalent-properties-sandbox/index.html?v=20260703sandbox23",
     "lab.sandboxName",
   );
 }
