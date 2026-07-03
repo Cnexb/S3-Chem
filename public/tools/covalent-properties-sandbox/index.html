@@ -2725,11 +2725,13 @@
         }
 
         function getMetalLayerCompressY(layer) {
-            if (layer === 0) return 0;
+            const topLayer = sbMetalLayerCount - 1;
+            if (layer === 0 || topLayer <= 0) return 0;
             const slipP = sbMetalSlipAnim && sbMetalSlipAnim.started ? easeOutCubic(getMetalSlipProgress()) : 0;
             const hammerP = sbHammerAnimating ? Math.min(1, sbHammerOffset / 20) : 0;
             const t = Math.max(slipP * 0.65, hammerP * 0.35);
-            return -layer * 2 * t;
+            const depthFactor = layer / topLayer;
+            return -depthFactor * 8 * t;
         }
 
         function expandMetalElectronBounds(extraMaxX) {
@@ -2744,9 +2746,11 @@
         function startMetalSlipAnimation() {
             const slipStep = sbMetalSlipStep;
             const fromOffsets = [...sbMetalLayerOffsets];
+            const topLayer = sbMetalLayerCount - 1;
             const toOffsets = fromOffsets.map((x, layer) => {
-                if (layer === 0) return x;
-                return layer % 2 === 1 ? x + slipStep : x;
+                if (layer === 0 || topLayer <= 0) return x;
+                const factor = layer / topLayer;
+                return x + slipStep * factor;
             });
             sbMetalSlipAnim = {
                 fromOffsets,
