@@ -928,12 +928,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "CS₂ contains double covalent bonds (see electron diagrams in the source).",
-    "image": {
-      "src": "./assets/cov-3.png",
-      "alt": "Electron diagrams of CS₂, H₂O, HCl and N₂",
-      "caption": "Electron diagrams of CS₂, H₂O, HCl and N₂"
-    }
+    "hint": "CS₂ contains double covalent bonds."
   },
   {
     "id": "cov-4",
@@ -960,12 +955,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "N₂ and C₂H₂ contain triple bonds; N₂F₂ does not.",
-    "image": {
-      "src": "./assets/cov-4.png",
-      "alt": "Electron diagrams of N₂, C₂H₂ and N₂F₂",
-      "caption": "Electron diagrams of N₂, C₂H₂ and N₂F₂"
-    }
+    "hint": "N₂ and C₂H₂ contain triple bonds; N₂F₂ does not."
   },
   {
     "id": "cov-5",
@@ -1100,12 +1090,7 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "The diagram matches a Group IV element bonded to Group VII elements.",
-    "image": {
-      "src": "./assets/cov-9.png",
-      "alt": "Electron diagram of a compound from elements X and Y",
-      "caption": "Electron diagram of a compound from elements X and Y"
-    }
+    "hint": "The diagram matches a Group IV element bonded to Group VII elements."
   },
   {
     "id": "cov-10",
@@ -1132,11 +1117,6 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "A belongs to Group IV, B to Group VI, and C is hydrogen.",
-    "image": {
-      "src": "./assets/cov-10.png",
-      "alt": "Electron diagram of a compound from elements A, B and C",
-      "caption": "Electron diagram of a compound from elements A, B and C"
-    }
+    "hint": "A belongs to Group IV, B to Group VI, and C is hydrogen."
   }
 ];

@@ -1,7 +1,6 @@
-﻿import json
+import json
+import shutil
 from pathlib import Path
-
-import fitz
 
 ROOT = Path(__file__).resolve().parent
 REPO_ROOT = ROOT.parents[2]
@@ -9,6 +8,7 @@ PUBLIC_QUIZ = REPO_ROOT / "public" / "quiz" / "microscopic-world-i"
 SCRIPTS = ROOT
 PDF = ROOT / "sources" / "microscopic-world-i-mcq.pdf"
 QUESTIONS_JSON = SCRIPTS / "questions.json"
+FIGURES_DIR = ROOT / "figures"
 
 CHAPTER_META = {
     5: ("atom-isotopes", "Atom and Isotopes", "原子與同位素", "atom"),
@@ -17,29 +17,21 @@ CHAPTER_META = {
     8: ("covalent-bond", "Covalent Bond", "共價鍵", "cov"),
 }
 
-IMAGE_CLIPS = {
-    "ionic-7": (8, (180, 45, 420, 115)),
-    "ionic-9": (9, (175, 60, 425, 135)),
-    "ionic-10": (9, (200, 310, 400, 395)),
-    "cov-3": (10, (25, 435, 400, 515)),
-    "cov-4": (10, (25, 685, 340, 755)),
-    "cov-9": (12, (240, 310, 360, 425)),
-    "cov-10": (13, (220, 75, 380, 210)),
+FIGURE_FILES = {
+    "ionic-7": "ionic-7.png",
+    "ionic-9": "ionic-9.png",
+    "ionic-10": "ionic-10.png",
 }
 
 IMAGE_CAPTIONS = {
     "ionic-7": "Electron diagram of lithium oxide",
     "ionic-9": "Electron diagram of a compound from elements X and Y",
     "ionic-10": "Electron diagram of a compound from elements S and T",
-    "cov-3": "Electron diagrams of CS₂, H₂O, HCl and N₂",
-    "cov-4": "Electron diagrams of N₂, C₂H₂ and N₂F₂",
-    "cov-9": "Electron diagram of a compound from elements X and Y",
-    "cov-10": "Electron diagram of a compound from elements A, B and C",
 }
 
 
 def ensure_dirs():
-    for sub in ("sources", "extracted", "draft"):
+    for sub in ("sources", "extracted", "draft", "figures"):
         (ROOT / sub).mkdir(parents=True, exist_ok=True)
     (PUBLIC_QUIZ / "js").mkdir(parents=True, exist_ok=True)
     (PUBLIC_QUIZ / "assets").mkdir(parents=True, exist_ok=True)
@@ -56,45 +48,48 @@ def item_id(ch, n):
     return f"{CHAPTER_META[ch][3]}-{n}"
 
 
-def extract_images():
+def copy_figures(questions):
     assets = PUBLIC_QUIZ / "assets"
     assets.mkdir(parents=True, exist_ok=True)
+
+    referenced_keys = {q["image"] for q in questions if "image" in q}
     image_map = {}
-    if not PDF.is_file():
-        raise FileNotFoundError(f"PDF not found: {PDF}")
-    doc = fitz.open(PDF)
-    try:
-        for img_id, (page_idx, rect) in IMAGE_CLIPS.items():
-            if page_idx >= len(doc):
-                raise ValueError(f"Page {page_idx} out of range for {img_id}")
-            page = doc[page_idx]
-            clip = fitz.Rect(*rect)
-            pix = page.get_pixmap(clip=clip, matrix=fitz.Matrix(2, 2), alpha=False)
-            fname = f"{img_id}.png"
-            out_path = assets / fname
-            pix.save(out_path)
-            image_map[img_id] = {
-                "file": fname,
-                "alt": IMAGE_CAPTIONS.get(img_id, img_id),
-                "caption": IMAGE_CAPTIONS.get(img_id, img_id),
-            }
-    finally:
-        doc.close()
+
+    for img_id in sorted(referenced_keys):
+        fname = FIGURE_FILES.get(img_id)
+        if not fname:
+            raise KeyError(f"No figure file configured for image key: {img_id}")
+        src = FIGURES_DIR / fname
+        if not src.is_file():
+            raise FileNotFoundError(f"Figure not found: {src}")
+        out_path = assets / fname
+        shutil.copy2(src, out_path)
+        image_map[img_id] = {
+            "file": fname,
+            "alt": IMAGE_CAPTIONS.get(img_id, img_id),
+            "caption": IMAGE_CAPTIONS.get(img_id, img_id),
+        }
+
+    for stale in assets.glob("cov-*.png"):
+        stale.unlink()
+
     return image_map
 
 
 def write_manifest(questions):
+    image_ids = sorted({q["image"] for q in questions if "image" in q})
     manifest = {
         "title": "Microscopic World I MCQ Quiz",
         "titleZh": "微觀世界 I 多項選擇題",
         "sourcePdf": str(PDF),
         "questionsFile": str(QUESTIONS_JSON),
+        "figuresDir": str(FIGURES_DIR),
         "questionCount": len(questions),
         "chapters": [
             {"ch": ch, "sectionId": meta[0], "label": meta[1], "labelZh": meta[2], "count": 10}
             for ch, meta in sorted(CHAPTER_META.items())
         ],
-        "imageIds": list(IMAGE_CLIPS.keys()),
+        "imageIds": image_ids,
     }
     (ROOT / "sources" / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
@@ -138,6 +133,7 @@ def write_extraction_review(questions):
         "",
         f"- **Source PDF:** `{PDF}`",
         f"- **Questions file:** `{QUESTIONS_JSON}`",
+        f"- **Figures dir:** `{FIGURES_DIR}`",
         f"- **Total MCQ:** {len(questions)}",
         "",
         "## By chapter",
@@ -236,7 +232,7 @@ def write_quiz_data(questions, image_map):
 def main():
     ensure_dirs()
     questions = load_questions()
-    image_map = extract_images()
+    image_map = copy_figures(questions)
     write_manifest(questions)
     write_sections()
     write_content_map(questions)

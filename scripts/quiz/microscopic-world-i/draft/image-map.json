@@ -1,0 +1,17 @@
+{
+  "ionic-10": {
+    "file": "ionic-10.png",
+    "alt": "Electron diagram of a compound from elements S and T",
+    "caption": "Electron diagram of a compound from elements S and T"
+  },
+  "ionic-7": {
+    "file": "ionic-7.png",
+    "alt": "Electron diagram of lithium oxide",
+    "caption": "Electron diagram of lithium oxide"
+  },
+  "ionic-9": {
+    "file": "ionic-9.png",
+    "alt": "Electron diagram of a compound from elements X and Y",
+    "caption": "Electron diagram of a compound from elements X and Y"
+  }
+}

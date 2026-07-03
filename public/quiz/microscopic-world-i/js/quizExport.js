@@ -7,7 +7,7 @@ import {
   questionStem,
   formatStemHtml,
   getFillLines,
-} from "./quizUtils.js?v=20260702v19";
+} from "./quizUtils.js?v=20260703v20";
 
 function fillLineExportHtml(line, answersMode) {
   let html = "";

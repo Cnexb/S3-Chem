@@ -462,8 +462,7 @@
       "N₂"
     ],
     "answer": "A",
-    "hint": "CS₂ contains double covalent bonds (see electron diagrams in the source).",
-    "image": "cov-3"
+    "hint": "CS₂ contains double covalent bonds."
   },
   {
     "ch": 8,
@@ -477,8 +476,7 @@
       "(1), (2) and (3)"
     ],
     "answer": "A",
-    "hint": "N₂ and C₂H₂ contain triple bonds; N₂F₂ does not.",
-    "image": "cov-4"
+    "hint": "N₂ and C₂H₂ contain triple bonds; N₂F₂ does not."
   },
   {
     "ch": 8,
@@ -548,8 +546,7 @@
       "Element X: Group IV; Element Y: Group VI"
     ],
     "answer": "A",
-    "hint": "The diagram matches a Group IV element bonded to Group VII elements.",
-    "image": "cov-9"
+    "hint": "The diagram matches a Group IV element bonded to Group VII elements."
   },
   {
     "ch": 8,
@@ -563,7 +560,6 @@
       "A: C; B: S; C: F"
     ],
     "answer": "C",
-    "hint": "A belongs to Group IV, B to Group VI, and C is hydrogen.",
-    "image": "cov-10"
+    "hint": "A belongs to Group IV, B to Group VI, and C is hydrogen."
   }
 ]

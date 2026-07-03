@@ -1,0 +1,43 @@
+{
+  "title": "Microscopic World I MCQ Quiz",
+  "titleZh": "微觀世界 I 多項選擇題",
+  "sourcePdf": "C:\\Users\\UniplusUser02\\S3-Chem\\scripts\\quiz\\microscopic-world-i\\sources\\microscopic-world-i-mcq.pdf",
+  "questionsFile": "C:\\Users\\UniplusUser02\\S3-Chem\\scripts\\quiz\\microscopic-world-i\\questions.json",
+  "figuresDir": "C:\\Users\\UniplusUser02\\S3-Chem\\scripts\\quiz\\microscopic-world-i\\figures",
+  "questionCount": 40,
+  "chapters": [
+    {
+      "ch": 5,
+      "sectionId": "atom-isotopes",
+      "label": "Atom and Isotopes",
+      "labelZh": "原子與同位素",
+      "count": 10
+    },
+    {
+      "ch": 6,
+      "sectionId": "periodic-table",
+      "label": "Periodic Table",
+      "labelZh": "週期表",
+      "count": 10
+    },
+    {
+      "ch": 7,
+      "sectionId": "ionic-bond",
+      "label": "Ionic Bond",
+      "labelZh": "離子鍵",
+      "count": 10
+    },
+    {
+      "ch": 8,
+      "sectionId": "covalent-bond",
+      "label": "Covalent Bond",
+      "labelZh": "共價鍵",
+      "count": 10
+    }
+  ],
+  "imageIds": [
+    "ionic-10",
+    "ionic-7",
+    "ionic-9"
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "atom-isotopes",
+    "label": "Atom and Isotopes",
+    "labelZh": "原子與同位素"
+  },
+  {
+    "id": "periodic-table",
+    "label": "Periodic Table",
+    "labelZh": "週期表"
+  },
+  {
+    "id": "ionic-bond",
+    "label": "Ionic Bond",
+    "labelZh": "離子鍵"
+  },
+  {
+    "id": "covalent-bond",
+    "label": "Covalent Bond",
+    "labelZh": "共價鍵"
+  }
+]
