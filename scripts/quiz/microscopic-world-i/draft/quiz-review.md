@@ -40,7 +40,7 @@
 | 36 | cov-6 | covalent-bond | B | — | Which of the following pairs of elements can form a covalent… |
 | 37 | cov-7 | covalent-bond | A | — | Which of the following substances has the same number of ele… |
 | 38 | cov-8 | covalent-bond | D | — | Which of the following molecules has the least number of lon… |
-| 39 | cov-9 | covalent-bond | A | — | The following is the electron diagram of a compound formed b… |
-| 40 | cov-10 | covalent-bond | C | — | The electron diagram of a compound formed between elements A… |
+| 39 | cov-9 | covalent-bond | A | cov-9 | The following is the electron diagram of a compound formed b… |
+| 40 | cov-10 | covalent-bond | C | cov-10 | The electron diagram of a compound formed between elements A… |
 
 **Total:** 40 questions

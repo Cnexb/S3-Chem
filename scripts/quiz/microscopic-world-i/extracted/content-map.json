@@ -347,8 +347,8 @@
     "sectionId": "covalent-bond",
     "questionNumber": 9,
     "answer": "A",
-    "hasImage": false,
-    "imageKey": null
+    "hasImage": true,
+    "imageKey": "cov-9"
   },
   {
     "id": "cov-10",
@@ -356,7 +356,7 @@
     "sectionId": "covalent-bond",
     "questionNumber": 10,
     "answer": "C",
-    "hasImage": false,
-    "imageKey": null
+    "hasImage": true,
+    "imageKey": "cov-10"
   }
 ]

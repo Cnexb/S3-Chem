@@ -21,3 +21,5 @@
 | ionic-7 | ionic-7 |
 | ionic-9 | ionic-9 |
 | ionic-10 | ionic-10 |
+| cov-9 | cov-9 |
+| cov-10 | cov-10 |

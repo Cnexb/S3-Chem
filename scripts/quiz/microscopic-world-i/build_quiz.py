@@ -21,12 +21,16 @@ FIGURE_FILES = {
     "ionic-7": "ionic-7.png",
     "ionic-9": "ionic-9.png",
     "ionic-10": "ionic-10.png",
+    "cov-9": "cov-9.png",
+    "cov-10": "cov-10.png",
 }
 
 IMAGE_CAPTIONS = {
     "ionic-7": "Electron diagram of lithium oxide",
     "ionic-9": "Electron diagram of a compound from elements X and Y",
     "ionic-10": "Electron diagram of a compound from elements S and T",
+    "cov-9": "Electron diagram of a compound from elements X and Y",
+    "cov-10": "Electron diagram of a compound from elements A, B and C",
 }
 
 
@@ -70,8 +74,11 @@ def copy_figures(questions):
             "caption": IMAGE_CAPTIONS.get(img_id, img_id),
         }
 
-    for stale in assets.glob("cov-*.png"):
-        stale.unlink()
+    referenced_files = {FIGURE_FILES[k] for k in referenced_keys}
+    for pattern in ("cov-*.png", "ionic-*.png"):
+        for stale in assets.glob(pattern):
+            if stale.name not in referenced_files:
+                stale.unlink()
 
     return image_map
 

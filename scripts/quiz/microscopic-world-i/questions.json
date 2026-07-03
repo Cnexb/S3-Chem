@@ -546,7 +546,8 @@
       "Element X: Group IV; Element Y: Group VI"
     ],
     "answer": "A",
-    "hint": "The diagram matches a Group IV element bonded to Group VII elements."
+    "hint": "The diagram matches a Group IV element bonded to Group VII elements.",
+    "image": "cov-9"
   },
   {
     "ch": 8,
@@ -560,6 +561,7 @@
       "A: C; B: S; C: F"
     ],
     "answer": "C",
-    "hint": "A belongs to Group IV, B to Group VI, and C is hydrogen."
+    "hint": "A belongs to Group IV, B to Group VI, and C is hydrogen.",
+    "image": "cov-10"
   }
 ]

@@ -1,4 +1,14 @@
 {
+  "cov-10": {
+    "file": "cov-10.png",
+    "alt": "Electron diagram of a compound from elements A, B and C",
+    "caption": "Electron diagram of a compound from elements A, B and C"
+  },
+  "cov-9": {
+    "file": "cov-9.png",
+    "alt": "Electron diagram of a compound from elements X and Y",
+    "caption": "Electron diagram of a compound from elements X and Y"
+  },
   "ionic-10": {
     "file": "ionic-10.png",
     "alt": "Electron diagram of a compound from elements S and T",

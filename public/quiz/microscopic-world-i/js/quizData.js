@@ -1090,7 +1090,12 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": "The diagram matches a Group IV element bonded to Group VII elements."
+    "hint": "The diagram matches a Group IV element bonded to Group VII elements.",
+    "image": {
+      "src": "./assets/cov-9.png",
+      "alt": "Electron diagram of a compound from elements X and Y",
+      "caption": "Electron diagram of a compound from elements X and Y"
+    }
   },
   {
     "id": "cov-10",
@@ -1117,6 +1122,11 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "C",
-    "hint": "A belongs to Group IV, B to Group VI, and C is hydrogen."
+    "hint": "A belongs to Group IV, B to Group VI, and C is hydrogen.",
+    "image": {
+      "src": "./assets/cov-10.png",
+      "alt": "Electron diagram of a compound from elements A, B and C",
+      "caption": "Electron diagram of a compound from elements A, B and C"
+    }
   }
 ];
