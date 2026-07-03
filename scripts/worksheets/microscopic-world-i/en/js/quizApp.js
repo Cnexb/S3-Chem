@@ -1,6 +1,6 @@
-import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v16";
-import { sectionLabel, renderSessionSummary } from "./quizSummary.js";
-import { downloadWord, printSheet } from "./quizExport.js";
+import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v25";
+import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260702v25";
+import { downloadWord, printSheet } from "./quizExport.js?v=20260702v25";
 import {
   DIFFICULTY_LEVELS,
   difficultyLevel,
@@ -18,17 +18,14 @@ import {
   formatFilterLabel,
   buildQuizBankStats,
   filterQuizPool,
-  splitStemText,
-  parsePipeTableFromStem,
-  renderStemTableHtml,
-} from "./quizUtils.js";
+} from "./quizUtils.js?v=20260702v25";
 import {
   animateSplitText,
   bindMagnets,
   bindTrueFocus,
   revealQuestionBlocks,
   initSettingsToggle,
-} from "./quizEffects.js";
+} from "./quizEffects.js?v=20260702v25";
 
 const UI = {
   en: {
@@ -42,7 +39,7 @@ const UI = {
     bankByType: "By question type",
     bankMatrix: "Topic × type",
     bankNone: "Select at least one topic and one question type.",
-    lblCount: "Number of questions (1–50)",
+    lblCount: "Number of questions (1–100)",
     lblDiff: "Difficulty",
     lblSeed: "Random seed (optional)",
     btnGenerate: "Generate questions",
@@ -439,7 +436,7 @@ export function initQuiz() {
       alert(t("alertNoFormats"));
       return;
     }
-    const count = Math.min(50, Math.max(1, Number(els.numCount?.value) || 10));
+    const count = Math.min(100, Math.max(1, Number(els.numCount?.value) || 10));
     const diffFilter = els.selDiff?.value || "all";
     const seed = els.txtSeed?.value || "";
 
@@ -566,6 +563,12 @@ export function initQuiz() {
           intro = parsed.intro;
           suffix = parsed.suffix;
           table = parsed.table;
+        } else {
+          const split = splitStemText(q.stem);
+          if (split.suffix) {
+            intro = split.intro;
+            suffix = split.suffix;
+          }
         }
       }
       appendStemParagraph(intro);

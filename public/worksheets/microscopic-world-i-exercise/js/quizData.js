@@ -7143,7 +7143,7 @@ export const QUIZ_ITEMS = [
     "hint": "From the given information, S should be argon and so P, Q and R should be fluorine, sulphur and chlorine respectively. Argon is unreactive and so it does not react with other elements. The compound of sulphur and chlorine (SCl₂) has a simple molecular structure.",
     "sourceRef": "ChemMCQ09061",
     "image": {
-      "src": "./assets/mc-media-rId73.png",
+      "src": "./assets/ChemMCQ09061.png",
       "alt": "P, Q, R and S are among the first 20 elements in the Periodic Table. Their relative positions in the",
       "caption": "Fig - ChemMCQ09061"
     }
@@ -7882,7 +7882,7 @@ export const QUIZ_ITEMS = [
     "hint": "The structure of cubic boron nitride is similar to that of diamond. The boron and nitrogen atoms are held together by strong covalent bonds and so it is hard. It cannot conduct electricity as there are no delocalized electrons in its structure.",
     "sourceRef": "ChemMCQ09080",
     "image": {
-      "src": "./assets/mc-media-rId76.jpeg",
+      "src": "./assets/ChemMCQ09080.png",
       "alt": "Cubic boron nitride is widely used as an abrasive. The diagram below shows the arrangement of atoms ",
       "caption": "Fig - ChemMCQ09080"
     }
