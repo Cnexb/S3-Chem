@@ -854,8 +854,8 @@
         var sbMetalLayerYValues = [];
         var sbMetalLayerCount = 0;
         var sbMetalSlipAnim = null;
-        var sbMetalSlipStep = 13.5;
-        var sbMetalBaseMaxX = 0;
+        var sbMetalSlipStep = 38;
+        var sbMetalLayerScreenRank = [];
         var sbNaClCleaved = false;
         var sbNaClRightBlockOffset = { x: 0, y: 0 };
         var sbNaClCleaveAnim = null;
@@ -1947,8 +1947,7 @@
                 }
                 spawnMetalSeaElectrons(sbParticles, 45);
                 assignMetalLayers(sbParticles);
-                sbMetalSlipStep = scale * 0.45;
-                sbMetalBaseMaxX = Math.max(...sbParticles.map(p => p.ox3d));
+                sbMetalSlipStep = 38;
             }
 
             // Update legend overlay dynamically
@@ -2678,8 +2677,8 @@
             sbMetalLayerYValues = [];
             sbMetalLayerCount = 0;
             sbMetalSlipAnim = null;
-            sbMetalSlipStep = 13.5;
-            sbMetalBaseMaxX = 0;
+            sbMetalSlipStep = 38;
+            sbMetalLayerScreenRank = [];
         }
 
         function assignMetalLayers(particles) {
@@ -2713,14 +2712,37 @@
             return Math.min(1, elapsed / sbMetalSlipAnim.duration);
         }
 
-        // Lower oy3d index = visually upper on screen at default view (same as graphite).
-        function getMetalLayerTopFactor(layer) {
-            const topLayer = sbMetalLayerCount - 1;
-            if (topLayer <= 0) return 0;
-            return (topLayer - layer) / topLayer;
+        function updateMetalLayerScreenRanks(w, canvasH, zoom) {
+            if (sbMetalLayerCount <= 0) {
+                sbMetalLayerScreenRank = [];
+                return;
+            }
+            const avgY = new Array(sbMetalLayerCount).fill(0);
+            const counts = new Array(sbMetalLayerCount).fill(0);
+            sbParticles.forEach(p => {
+                const base = project3DTo2D(p.ox3d, p.oy3d, p.oz3d, w, canvasH, zoom);
+                const layer = p.metalLayer || 0;
+                avgY[layer] += base.y;
+                counts[layer]++;
+            });
+            const ranked = avgY.map((sum, layer) => ({
+                layer,
+                y: counts[layer] ? sum / counts[layer] : Infinity
+            })).sort((a, b) => a.y - b.y);
+            sbMetalLayerScreenRank = new Array(sbMetalLayerCount).fill(0);
+            ranked.forEach((entry, rank) => {
+                sbMetalLayerScreenRank[entry.layer] = rank;
+            });
         }
 
-        function getMetalLayerShiftX(layer) {
+        function getMetalLayerVisualTopFactor(layer) {
+            const maxRank = sbMetalLayerCount - 1;
+            if (maxRank <= 0) return 0;
+            const rank = sbMetalLayerScreenRank[layer] ?? 0;
+            return (maxRank - rank) / maxRank;
+        }
+
+        function getMetalLayerScreenShiftX(layer) {
             let x = sbMetalLayerOffsets[layer] || 0;
             if (sbMetalSlipAnim && sbMetalSlipAnim.started) {
                 const t = easeOutCubic(getMetalSlipProgress());
@@ -2731,32 +2753,26 @@
             return x;
         }
 
-        function getMetalLayerCompressY(layer) {
-            const topLayer = sbMetalLayerCount - 1;
-            if (layer === topLayer || topLayer <= 0) return 0;
+        function getMetalLayerScreenCompressY(layer) {
+            if (getMetalLayerVisualTopFactor(layer) === 0) return 0;
             const slipP = sbMetalSlipAnim && sbMetalSlipAnim.started ? easeOutCubic(getMetalSlipProgress()) : 0;
             const hammerP = sbHammerAnimating ? Math.min(1, sbHammerOffset / 20) : 0;
             const t = Math.max(slipP * 0.65, hammerP * 0.35);
-            const depthFactor = getMetalLayerTopFactor(layer);
-            return -depthFactor * 8 * t;
-        }
-
-        function expandMetalElectronBounds(extraMaxX) {
-            const pad = 6;
-            sbDelocalizedElectrons.forEach(e => {
-                if (e.bounds) {
-                    e.bounds.maxX = Math.max(e.bounds.maxX, sbMetalBaseMaxX + extraMaxX + pad);
-                }
-            });
+            const depthFactor = getMetalLayerVisualTopFactor(layer);
+            return depthFactor * 6 * t;
         }
 
         function startMetalSlipAnimation() {
-            const slipStep = sbMetalSlipStep;
+            const w = sandboxCanvas.width;
+            const canvasH = sandboxCanvas.height;
+            const zoom = getSandbox3DZoom();
+            updateMetalLayerScreenRanks(w, canvasH, zoom);
+            const slipStepPx = sbMetalSlipStep;
             const fromOffsets = [...sbMetalLayerOffsets];
-            const topLayer = sbMetalLayerCount - 1;
             const toOffsets = fromOffsets.map((x, layer) => {
-                if (layer === topLayer || topLayer <= 0) return x;
-                return x + slipStep * getMetalLayerTopFactor(layer);
+                const factor = getMetalLayerVisualTopFactor(layer);
+                if (factor === 0) return x;
+                return x + slipStepPx * factor;
             });
             sbMetalSlipAnim = {
                 fromOffsets,
@@ -2779,8 +2795,6 @@
 
             if (getMetalSlipProgress() >= 1) {
                 sbMetalLayerOffsets = [...sbMetalSlipAnim.toOffsets];
-                const maxOffset = Math.max(...sbMetalLayerOffsets, 0);
-                expandMetalElectronBounds(maxOffset);
                 sbMetalSlipAnim = null;
             }
         }
@@ -3827,22 +3841,21 @@
             const canvasH = sandboxCanvas.height;
             const zoom = getSandbox3DZoom();
 
+            updateMetalLayerScreenRanks(w, canvasH, zoom);
             updateMetalSlipAnim();
 
-            if (!window.sbUserInteracted || !window.sbUserInteracted()) {
+            if ((!window.sbUserInteracted || !window.sbUserInteracted()) && !sbHammerAnimating && !sbMetalSlipAnim) {
                 sbRotationTheta += 0.003 * vFactor * dt * 0.06;
             }
             sbParticles.forEach(p => {
                 const layer = p.metalLayer || 0;
-                const shiftX = getMetalLayerShiftX(layer);
-                const compressY = getMetalLayerCompressY(layer);
                 const vx = Math.sin(sbTimeAccumulator * 0.2 + p.id) * vFactor * 2.5;
                 const vy = Math.cos(sbTimeAccumulator * 0.18 + p.id) * vFactor * 2.5;
                 const vz = Math.sin(sbTimeAccumulator * 0.16 + p.id) * vFactor * 2.5;
-                const proj = project3DTo2D(p.ox3d + shiftX + vx, p.oy3d + compressY + vy, p.oz3d + vz, w, canvasH, zoom);
-                p.x = proj.x;
-                p.y = proj.y;
-                p.z = proj.z;
+                const base = project3DTo2D(p.ox3d + vx, p.oy3d + vy, p.oz3d + vz, w, canvasH, zoom);
+                p.x = base.x + getMetalLayerScreenShiftX(layer);
+                p.y = base.y + getMetalLayerScreenCompressY(layer);
+                p.z = base.z;
             });
 
             if (sbParticles.length > 0) {
@@ -3885,11 +3898,14 @@
                     e.oz3d = Math.max(b.minZ, Math.min(b.maxZ, e.oz3d));
                 }
                 const eLayer = getMetalLayerForPosition(e.oy3d);
-                const eShiftX = getMetalLayerShiftX(eLayer);
-                const eCompressY = getMetalLayerCompressY(eLayer);
                 const driftX = sbConductivityEnabled ? 0.8 * dt : 0;
-                const proj = project3DTo2D(e.ox3d + eShiftX + driftX, e.oy3d + eCompressY, e.oz3d, w, canvasH, zoom);
-                electronProjected.push({ x: proj.x, y: proj.y, z: proj.z, idx });
+                const base = project3DTo2D(e.ox3d + driftX, e.oy3d, e.oz3d, w, canvasH, zoom);
+                electronProjected.push({
+                    x: base.x + getMetalLayerScreenShiftX(eLayer),
+                    y: base.y + getMetalLayerScreenCompressY(eLayer),
+                    z: base.z,
+                    idx
+                });
             });
 
             electronProjected.sort((a, b) => a.z - b.z);
