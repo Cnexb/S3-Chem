@@ -4752,6 +4752,9 @@ window.clearLabWorkspace = clearLabWorkspace; // export
 
 const DIAGRAM_SVG_NS = "http://www.w3.org/2000/svg";
 const VALENCE_SHELL_R = 52;
+const DIAGRAM_VIEW_W = 200;
+const DIAGRAM_VIEW_H = 130;
+const ELECTRON_BOND_RADIUS = 78;
 
 function getAtomBondOrderSum(atomId, bondList) {
     return bondList.reduce((sum, b) => {
@@ -4894,45 +4897,116 @@ function initWorkspaceZoomWheel() {
     });
 }
 
+function getLayoutBounds(nodes, extras = []) {
+    let minX = Infinity;
+    let maxX = -Infinity;
+    let minY = Infinity;
+    let maxY = -Infinity;
+    const points = nodes.map(n => ({ x: n.x, y: n.y }));
+    extras.forEach(e => {
+        if (e.x !== undefined && e.y !== undefined) points.push({ x: e.x, y: e.y });
+    });
+    if (!points.length) return { minX: 0, maxX: 0, minY: 0, maxY: 0 };
+    points.forEach(p => {
+        minX = Math.min(minX, p.x);
+        maxX = Math.max(maxX, p.x);
+        minY = Math.min(minY, p.y);
+        maxY = Math.max(maxY, p.y);
+    });
+    return { minX, maxX, minY, maxY };
+}
+
+function centerLayoutInViewBox(nodes, extras, viewW, viewH, padding = 10) {
+    const bounds = getLayoutBounds(nodes, extras);
+    const contentW = bounds.maxX - bounds.minX || 1;
+    const contentH = bounds.maxY - bounds.minY || 1;
+    const maxW = viewW - padding * 2;
+    const maxH = viewH - padding * 2;
+    const scale = Math.min(1, maxW / contentW, maxH / contentH);
+    const cx = (bounds.minX + bounds.maxX) / 2;
+    const cy = (bounds.minY + bounds.maxY) / 2;
+    const targetCx = viewW / 2;
+    const targetCy = viewH / 2;
+    nodes.forEach(n => {
+        n.x = targetCx + (n.x - cx) * scale;
+        n.y = targetCy + (n.y - cy) * scale;
+    });
+    extras.forEach(e => {
+        if (e.x !== undefined && e.y !== undefined) {
+            e.x = targetCx + (e.x - cx) * scale;
+            e.y = targetCy + (e.y - cy) * scale;
+        }
+    });
+}
+
 function applyPyramidalTextbookLayout(level, nodes, bondStyles, lonePairs) {
     const center = findCentralAtomIndex(level);
     const cx = 100;
+    const cy = 75;
     const setPos = (idx, x, y) => { nodes[idx].x = x; nodes[idx].y = y; };
     const setStyle = (a0, a1, style) => { bondStyles[bondStyleKey(a0, a1)] = style; };
+    const r = ELECTRON_BOND_RADIUS * 0.92;
 
-    setPos(center, cx, 86);
-    lonePairs.push({ x: cx, y: 56, angle: -Math.PI / 2 });
+    setPos(center, cx, cy);
+    lonePairs.push({ x: cx, y: cy - 12, angle: -Math.PI / 2 });
 
     const nbrs = getLevelNeighbors(level, center).slice().sort((a, b) => a - b);
-    if (nbrs.length >= 1) setPos(nbrs[0], 52, 118);
-    if (nbrs.length >= 2) { setPos(nbrs[1], 148, 108); setStyle(center, nbrs[1], 'wedge'); }
-    if (nbrs.length >= 3) { setPos(nbrs[2], 148, 122); setStyle(center, nbrs[2], 'hash'); }
+    if (nbrs.length >= 1) setPos(nbrs[0], cx - r * 0.85, cy + 38);
+    if (nbrs.length >= 2) { setPos(nbrs[1], cx + r * 0.85, cy + 28); setStyle(center, nbrs[1], 'wedge'); }
+    if (nbrs.length >= 3) { setPos(nbrs[2], cx + r * 0.85, cy + 42); setStyle(center, nbrs[2], 'hash'); }
 }
 
 // Topic 2 flat electron-diagram layout (no wedge/hash, no 3D projection)
 function applyPyramidalElectronLayout(level, nodes) {
     const center = findCentralAtomIndex(level);
     const cx = 100;
-    const cy = 82;
+    const cy = 65;
+    const r = ELECTRON_BOND_RADIUS;
     const setPos = (idx, x, y) => { nodes[idx].x = x; nodes[idx].y = y; };
     setPos(center, cx, cy);
     const nbrs = getLevelNeighbors(level, center).slice().sort((a, b) => a - b);
-    if (nbrs.length >= 1) setPos(nbrs[0], 46, cy);
-    if (nbrs.length >= 2) setPos(nbrs[1], 154, cy);
-    if (nbrs.length >= 3) setPos(nbrs[2], cx, 122);
+    if (nbrs.length >= 1) setPos(nbrs[0], cx - r, cy);
+    if (nbrs.length >= 2) setPos(nbrs[1], cx + r, cy);
+    if (nbrs.length >= 3) setPos(nbrs[2], cx, cy + 68);
 }
 
 function applyTetrahedralElectronLayout(level, nodes) {
     const center = findCentralAtomIndex(level);
     const cx = 100;
-    const cy = 78;
+    const cy = 65;
+    const r = 58;
     const setPos = (idx, x, y) => { nodes[idx].x = x; nodes[idx].y = y; };
     setPos(center, cx, cy);
     const nbrs = getLevelNeighbors(level, center).slice().sort((a, b) => a - b);
-    if (nbrs.length >= 1) setPos(nbrs[0], cx, 34);
-    if (nbrs.length >= 2) setPos(nbrs[1], 48, 92);
-    if (nbrs.length >= 3) setPos(nbrs[2], 152, 92);
-    if (nbrs.length >= 4) setPos(nbrs[3], cx, 118);
+    if (nbrs.length >= 1) setPos(nbrs[0], cx, cy - r);
+    if (nbrs.length >= 2) setPos(nbrs[1], cx - r * 0.866, cy + r * 0.5);
+    if (nbrs.length >= 3) setPos(nbrs[2], cx + r * 0.866, cy + r * 0.5);
+    if (nbrs.length >= 4) setPos(nbrs[3], cx, cy + r * 0.866);
+}
+
+function applyTrigonalPlanarElectronLayout(level, nodes) {
+    const center = findCentralAtomIndex(level);
+    const cx = 100;
+    const cy = 65;
+    const r = 75;
+    const setPos = (idx, x, y) => { nodes[idx].x = x; nodes[idx].y = y; };
+    setPos(center, cx, cy);
+    const nbrs = getLevelNeighbors(level, center).slice().sort((a, b) => a - b);
+    if (nbrs.length >= 1) setPos(nbrs[0], cx, cy - r);
+    if (nbrs.length >= 2) setPos(nbrs[1], cx - r * 0.866, cy + r * 0.5);
+    if (nbrs.length >= 3) setPos(nbrs[2], cx + r * 0.866, cy + r * 0.5);
+}
+
+function applyBentElectronLayout(level, nodes) {
+    const center = findCentralAtomIndex(level);
+    const cx = 100;
+    const cy = 58;
+    const r = ELECTRON_BOND_RADIUS;
+    const setPos = (idx, x, y) => { nodes[idx].x = x; nodes[idx].y = y; };
+    setPos(center, cx, cy);
+    const nbrs = getLevelNeighbors(level, center).slice().sort((a, b) => a - b);
+    if (nbrs.length >= 1) setPos(nbrs[0], cx - r, cy + 40);
+    if (nbrs.length >= 2) setPos(nbrs[1], cx + r, cy + 40);
 }
 
 function areAllAtomsSatisfied(atomList, bondList) {
@@ -4947,17 +5021,33 @@ function areAllAtomsSatisfied(atomList, bondList) {
 }
 
 function scaleNotesLayoutToContainer(layout, width, height) {
-    const srcW = 200;
-    const srcH = 130;
+    const srcW = DIAGRAM_VIEW_W;
+    const srcH = DIAGRAM_VIEW_H;
     const margin = 60;
     const scale = Math.min((width - margin) / srcW, (height - margin) / srcH, 1.8);
     const offsetX = (width - srcW * scale) / 2;
     const offsetY = (height - srcH * scale) / 2;
-    return layout.nodes.map(n => ({
+    const scaled = layout.nodes.map(n => ({
         idx: n.idx,
         x: offsetX + n.x * scale,
         y: offsetY + n.y * scale
     }));
+    if (!scaled.length) return scaled;
+    let minX = Infinity;
+    let maxX = -Infinity;
+    let minY = Infinity;
+    let maxY = -Infinity;
+    scaled.forEach(n => {
+        minX = Math.min(minX, n.x);
+        maxX = Math.max(maxX, n.x);
+        minY = Math.min(minY, n.y);
+        maxY = Math.max(maxY, n.y);
+    });
+    const cx = (minX + maxX) / 2;
+    const cy = (minY + maxY) / 2;
+    const dx = width / 2 - cx;
+    const dy = height / 2 - cy;
+    return scaled.map(n => ({ ...n, x: n.x + dx, y: n.y + dy }));
 }
 
 function applyNotesLayoutToWorkspace(atomList, bondList, containerId, mode, match) {
@@ -4987,51 +5077,41 @@ function buildElectronDiagramLayout(level) {
     const n = level.atoms.length;
     const geom = level.geometry;
     const cx = 100;
-    const cy = 72;
+    const cy = 65;
     const nodes = level.atoms.map((sym, idx) => ({ idx, sym, x: cx, y: cy }));
     const center = findCentralAtomIndex(level);
     const setPos = (idx, x, y) => { nodes[idx].x = x; nodes[idx].y = y; };
 
     if (level.formula === 'BF_3') {
-        setPos(0, 100, 82);
-        setPos(1, 100, 28);
-        setPos(2, 48, 118);
-        setPos(3, 152, 118);
+        applyTrigonalPlanarElectronLayout(level, nodes);
     } else if (level.formula === 'NH_3' || level.formula === 'NF_3' || geom === 'pyramidal') {
         applyPyramidalElectronLayout(level, nodes);
     } else if (geom === 'linear' || geom === 'linear_planar') {
-        const spacing = n <= 2 ? 90 : (160 / Math.max(1, n - 1));
+        const spacing = n <= 2 ? 100 : (170 / Math.max(1, n - 1));
         for (let i = 0; i < n; i++) {
-            setPos(i, 30 + i * spacing, cy);
+            setPos(i, 15 + i * spacing, cy);
         }
     } else if (geom === 'trigonal_planar') {
-        setPos(center, cx, 78);
-        const nbrs = getLevelNeighbors(level, center).slice().sort((a, b) => a - b);
-        if (nbrs[0] !== undefined) setPos(nbrs[0], cx, 28);
-        if (nbrs[1] !== undefined) setPos(nbrs[1], 52, 112);
-        if (nbrs[2] !== undefined) setPos(nbrs[2], 148, 112);
+        applyTrigonalPlanarElectronLayout(level, nodes);
     } else if (geom === 'tetrahedral') {
         applyTetrahedralElectronLayout(level, nodes);
     } else if (geom === 'bent_water' || geom === 'bent' || geom === 'bent_wide') {
-        setPos(center, cx, 82);
-        const nbrs = getLevelNeighbors(level, center).slice().sort((a, b) => a - b);
-        if (nbrs[0] !== undefined) setPos(nbrs[0], 58, 112);
-        if (nbrs[1] !== undefined) setPos(nbrs[1], 142, 112);
+        applyBentElectronLayout(level, nodes);
     } else if (geom === 'trigonal_bipyramidal' && n === 6) {
-        setPos(0, cx, 72);
-        setPos(1, cx, 22);
-        setPos(2, cx, 122);
-        setPos(3, 42, 72);
-        setPos(4, 158, 58);
-        setPos(5, 158, 86);
+        setPos(0, cx, cy);
+        setPos(1, cx, cy - 50);
+        setPos(2, cx, cy + 50);
+        setPos(3, cx - 72, cy);
+        setPos(4, cx + 72, cy - 12);
+        setPos(5, cx + 72, cy + 12);
     } else if (geom === 'octahedral' && n === 7) {
-        setPos(0, cx, 72);
-        setPos(1, cx, 18);
-        setPos(2, cx, 125);
-        setPos(3, 38, 72);
-        setPos(4, 162, 72);
-        setPos(5, 85, 98);
-        setPos(6, 115, 98);
+        setPos(0, cx, cy);
+        setPos(1, cx, cy - 52);
+        setPos(2, cx, cy + 52);
+        setPos(3, cx - 72, cy);
+        setPos(4, cx + 72, cy);
+        setPos(5, cx - 36, cy + 36);
+        setPos(6, cx + 36, cy + 36);
     } else if (geom === 'planar' && n === 6) {
         setPos(1, cx - 35, cy);
         setPos(4, cx + 35, cy);
@@ -5040,12 +5120,12 @@ function buildElectronDiagramLayout(level) {
         setPos(3, cx + 70, cy - 28);
         setPos(5, cx + 70, cy + 28);
     } else if (geom === 'peroxide_gauche' && n === 4) {
-        setPos(0, 48, 95);
-        setPos(1, 82, 72);
-        setPos(2, 118, 72);
-        setPos(3, 152, 95);
+        setPos(0, 30, cy + 30);
+        setPos(1, 70, cy);
+        setPos(2, 130, cy);
+        setPos(3, 170, cy + 30);
     } else {
-        const radius = 42;
+        const radius = 58;
         for (let i = 0; i < n; i++) {
             const angle = (2 * Math.PI * i / n) - Math.PI / 2;
             setPos(i, cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
@@ -5059,7 +5139,7 @@ function buildStructuralLayout(level) {
     const n = level.atoms.length;
     const geom = level.geometry;
     const cx = 100;
-    const cy = 72;
+    const cy = 65;
     const nodes = level.atoms.map((sym, idx) => ({ idx, sym, x: cx, y: cy }));
     const bondStyles = {};
     level.target_bonds.forEach(b => { bondStyles[bondStyleKey(b.a0, b.a1)] = 'line'; });
@@ -5070,19 +5150,19 @@ function buildStructuralLayout(level) {
 
     // Topic 6 textbook overrides (fixed 2D positions)
     if (level.formula === 'BF_3') {
-        setPos(0, 100, 82);
-        setPos(1, 100, 28);
-        setPos(2, 48, 118);
-        setPos(3, 152, 118);
+        setPos(center, cx, cy);
+        setPos(1, cx, cy - 75);
+        setPos(2, cx - 65, cy + 43);
+        setPos(3, cx + 65, cy + 43);
     } else if (level.formula === 'NH_3' || level.formula === 'NF_3' || geom === 'pyramidal') {
         applyPyramidalTextbookLayout(level, nodes, bondStyles, lonePairs);
     } else if (geom === 'linear' || geom === 'linear_planar') {
-        const spacing = n <= 2 ? 90 : (160 / Math.max(1, n - 1));
+        const spacing = n <= 2 ? 100 : (170 / Math.max(1, n - 1));
         for (let i = 0; i < n; i++) {
-            setPos(i, 30 + i * spacing, cy);
+            setPos(i, 15 + i * spacing, cy);
         }
     } else if (geom === 'trigonal_planar') {
-        setPos(center, cx, 78);
+        setPos(center, cx, cy);
         const nbrs = getLevelNeighbors(level, center);
         let upIdx = nbrs[0];
         for (const nb of nbrs) {
@@ -5091,48 +5171,49 @@ function buildStructuralLayout(level) {
             );
             if (bond && bond.order >= 2) { upIdx = nb; break; }
         }
-        setPos(upIdx, cx, 28);
+        setPos(upIdx, cx, cy - 75);
         const others = nbrs.filter(i => i !== upIdx);
-        if (others[0] !== undefined) setPos(others[0], 52, 112);
-        if (others[1] !== undefined) setPos(others[1], 148, 112);
+        if (others[0] !== undefined) setPos(others[0], cx - 65, cy + 43);
+        if (others[1] !== undefined) setPos(others[1], cx + 65, cy + 43);
     } else if (geom === 'tetrahedral') {
-        setPos(center, cx, 72);
+        const r = 58;
+        setPos(center, cx, cy);
         const nbrs = getLevelNeighbors(level, center);
-        if (nbrs[0] !== undefined) setPos(nbrs[0], cx, 28);
-        if (nbrs[1] !== undefined) setPos(nbrs[1], 48, 92);
-        if (nbrs[2] !== undefined) { setPos(nbrs[2], 152, 98); setStyle(center, nbrs[2], 'wedge'); }
-        if (nbrs[3] !== undefined) { setPos(nbrs[3], 152, 82); setStyle(center, nbrs[3], 'hash'); }
+        if (nbrs[0] !== undefined) setPos(nbrs[0], cx, cy - r);
+        if (nbrs[1] !== undefined) setPos(nbrs[1], cx - r * 0.866, cy + r * 0.5);
+        if (nbrs[2] !== undefined) { setPos(nbrs[2], cx + r * 0.866, cy + r * 0.5); setStyle(center, nbrs[2], 'wedge'); }
+        if (nbrs[3] !== undefined) { setPos(nbrs[3], cx, cy + r * 0.866); setStyle(center, nbrs[3], 'hash'); }
     } else if (geom === 'bent_water' || geom === 'bent' || geom === 'bent_wide') {
-        setPos(center, cx, 82);
+        setPos(center, cx, cy);
         const nbrs = getLevelNeighbors(level, center);
-        if (nbrs[0] !== undefined) setPos(nbrs[0], 58, 112);
+        if (nbrs[0] !== undefined) setPos(nbrs[0], cx - ELECTRON_BOND_RADIUS, cy + 40);
         if (nbrs[1] !== undefined) {
-            setPos(nbrs[1], 142, 112);
+            setPos(nbrs[1], cx + ELECTRON_BOND_RADIUS, cy + 40);
             if (geom === 'bent_wide') setStyle(center, nbrs[1], 'hash');
         }
         const lpCount = Math.max(0, Math.floor((DB_ELEMENTS[level.atoms[center]].val -
             level.target_bonds.reduce((s, b) => s + ((b.a0 === center || b.a1 === center) ? b.order : 0), 0)) / 2));
-        if (lpCount >= 1) lonePairs.push({ x: cx - 14, y: cy - 22, angle: -2.4 });
-        if (lpCount >= 2) lonePairs.push({ x: cx + 14, y: cy - 18, angle: -0.7 });
+        if (lpCount >= 1) lonePairs.push({ x: cx - 12, y: cy - 14, angle: -2.4 });
+        if (lpCount >= 2) lonePairs.push({ x: cx + 12, y: cy - 12, angle: -0.7 });
     } else if (geom === 'trigonal_bipyramidal' && n === 6) {
-        setPos(0, cx, 72);
-        setPos(1, cx, 22);
-        setPos(2, cx, 122);
-        setPos(3, 42, 72);
+        setPos(0, cx, cy);
+        setPos(1, cx, cy - 50);
+        setPos(2, cx, cy + 50);
+        setPos(3, cx - 72, cy);
         setStyle(0, 4, 'wedge');
         setStyle(0, 5, 'hash');
-        setPos(4, 158, 78);
-        setPos(5, 158, 66);
+        setPos(4, cx + 72, cy - 12);
+        setPos(5, cx + 72, cy + 12);
     } else if (geom === 'octahedral' && n === 7) {
-        setPos(0, cx, 72);
-        setPos(1, cx, 18);
-        setPos(2, cx, 125);
-        setPos(3, 38, 72);
-        setPos(4, 162, 76);
+        setPos(0, cx, cy);
+        setPos(1, cx, cy - 52);
+        setPos(2, cx, cy + 52);
+        setPos(3, cx - 72, cy);
+        setPos(4, cx + 72, cy);
         setStyle(0, 4, 'wedge');
-        setPos(5, 145, 98);
+        setPos(5, cx - 36, cy + 36);
         setStyle(0, 5, 'wedge');
-        setPos(6, 55, 98);
+        setPos(6, cx + 36, cy + 36);
         setStyle(0, 6, 'hash');
     } else if (geom === 'planar' && n === 6) {
         setPos(1, cx - 35, cy);
@@ -5147,12 +5228,14 @@ function buildStructuralLayout(level) {
         setPos(2, 118, 72);
         setPos(3, 152, 95);
     } else {
-        const radius = 42;
+        const radius = 58;
         for (let i = 0; i < n; i++) {
             const angle = (2 * Math.PI * i / n) - Math.PI / 2;
             setPos(i, cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
         }
     }
+
+    centerLayoutInViewBox(nodes, lonePairs, DIAGRAM_VIEW_W, DIAGRAM_VIEW_H, 10);
 
     const bonds = level.target_bonds.map(b => ({
         a0: b.a0,
@@ -5239,7 +5322,7 @@ function drawLonePairLobe(svg, x, y, angle) {
     lobe.setAttribute('cx', x);
     lobe.setAttribute('cy', y);
     lobe.setAttribute('rx', 10);
-    lobe.setAttribute('ry', 14);
+    lobe.setAttribute('ry', 11);
     lobe.setAttribute('transform', `rotate(${(angle * 180) / Math.PI}, ${x}, ${y})`);
     lobe.setAttribute('fill', 'rgba(163, 230, 53, 0.12)');
     lobe.setAttribute('stroke', 'rgba(163, 230, 53, 0.35)');
@@ -5410,12 +5493,13 @@ function renderElectronDiagram(atomList, bondList, svg) {
             const t = pairCount > 1 ? (k - (pairCount - 1) / 2) * 9 : 0;
             const ex = midX + perpX * t;
             const ey = midY + perpY * t;
+            const pairOffset = Math.max(10, dist * 0.14);
             if (dotOnA1) {
-                drawFilledElectron(svg, ex - ux * 5, ey - uy * 5, '#00f0ff');
-                drawOpenElectron(svg, ex + ux * 5, ey + uy * 5, '#f59e0b');
+                drawFilledElectron(svg, ex - ux * pairOffset, ey - uy * pairOffset, '#00f0ff');
+                drawOpenElectron(svg, ex + ux * pairOffset, ey + uy * pairOffset, '#f59e0b');
             } else {
-                drawOpenElectron(svg, ex - ux * 5, ey - uy * 5, '#f59e0b');
-                drawFilledElectron(svg, ex + ux * 5, ey + uy * 5, '#00f0ff');
+                drawOpenElectron(svg, ex - ux * pairOffset, ey - uy * pairOffset, '#f59e0b');
+                drawFilledElectron(svg, ex + ux * pairOffset, ey + uy * pairOffset, '#00f0ff');
             }
         }
     });
@@ -5453,7 +5537,7 @@ function drawInteractiveBondLines(atomList, bondList, svg, mode) {
         const ox = -uy;
         const oy = ux;
         const lineSpacing = 7;
-        const offset = Math.min(24, dist * 0.4);
+        const offset = Math.min(32, dist * 0.32);
         const x1_eff = a1.x + ux * offset;
         const y1_eff = a1.y + uy * offset;
         const x2_eff = a2.x - ux * offset;
@@ -5644,8 +5728,8 @@ function generateLabStructuralFormula() {
     }
 
     const svgNS = DIAGRAM_SVG_NS;
-    const width = 200;
-    const height = 130;
+    const width = DIAGRAM_VIEW_W;
+    const height = DIAGRAM_VIEW_H;
     const svg = document.createElementNS(svgNS, "svg");
     svg.setAttribute("width", "100%");
     svg.setAttribute("height", "100%");
