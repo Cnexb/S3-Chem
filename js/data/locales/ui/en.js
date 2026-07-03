@@ -384,7 +384,9 @@ export const enUI = {
     "balancerHelpRule1": "Write Fe + O2, not Fe+O2, if you want clearer separation.",
     "balancerHelpRule2": "Write Fe2O3, not Fe2 O3 or Fe 2O3.",
     "balancerHelpRule3": "You can also paste an arrow form such as H2 + O2 → H2O.",
-    "balancerHelpExample": "Example: Fe + O2 → Fe2O3"
+    "balancerHelpExample": "Example: Fe + O2 → Fe2O3",
+    "enterFullscreen": "Fullscreen",
+    "exitFullscreen": "Exit fullscreen"
   },
   "settingsCtrl": {
     "suggSent": "Sent! Thanks for your feedback.",

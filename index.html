@@ -910,6 +910,16 @@
     <div id="feature-modal" class="modal-overlay">
         <div class="modal-content" id="feature-modal-content">
             <div class="modal-top-buttons">
+                <button type="button" id="feature-modal-fullscreen" class="modal-fullscreen-btn" hidden
+                    aria-label="Fullscreen" aria-pressed="false"
+                    data-i18n-aria-label="toolModal.enterFullscreen">
+                    <svg class="modal-fullscreen-icon modal-fullscreen-icon--enter" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                        <path fill="currentColor" d="M5 5h5V3H3v7h2V5zm14 0v5h2V3h-7v2h5zM5 19v-5H3v7h7v-2H5zm14 0h-5v2h7v-7h-2v5z"/>
+                    </svg>
+                    <svg class="modal-fullscreen-icon modal-fullscreen-icon--exit" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" hidden>
+                        <path fill="currentColor" d="M14 19h2v-7h7v-2h-9v9zM5 19v-5H3v7h7v-2H5zm14-14h-5V3h7v7h-2V5zM10 5H5v5H3V3h7v2z"/>
+                    </svg>
+                </button>
                 <button class="modal-close" id="feature-modal-close" aria-label="Close tool dialog" data-i18n-aria-label="aria.closeToolDialog">&times;</button>
             </div>
             <button class="modal-help-btn" id="feature-modal-help" aria-label="Help" data-i18n-aria-label="aria.openToolHelp">?</button>

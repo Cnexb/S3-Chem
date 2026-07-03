@@ -166,6 +166,83 @@
   transform: rotate(90deg);
 }
 
+.modal-fullscreen-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 50%;
+  color: #4f5d75;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.modal-fullscreen-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+}
+
+.modal-fullscreen-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.tool-modal-fullscreen-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+#feature-modal-content.feature-modal-content--fullscreen,
+#feature-modal-content:fullscreen,
+#feature-modal-content:-webkit-full-screen {
+  width: 100dvw !important;
+  height: 100dvh !important;
+  max-width: none !important;
+  max-height: none !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+#feature-modal-content.feature-modal-content--fullscreen .feature-modal-body,
+#feature-modal-content:fullscreen .feature-modal-body,
+#feature-modal-content:-webkit-full-screen .feature-modal-body {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+#feature-modal-content.feature-modal-content--fullscreen .tool-modal-content,
+#feature-modal-content:fullscreen .tool-modal-content,
+#feature-modal-content:-webkit-full-screen .tool-modal-content {
+  margin-top: 0 !important;
+  min-height: 0;
+  flex: 1;
+}
+
+#feature-modal-content.feature-modal-content--fullscreen iframe,
+#feature-modal-content:fullscreen iframe,
+#feature-modal-content:-webkit-full-screen iframe {
+  border-radius: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#feature-modal-content.feature-modal-content--fullscreen .modal-help-btn,
+#feature-modal-content:fullscreen .modal-help-btn,
+#feature-modal-content:-webkit-full-screen .modal-help-btn {
+  display: none;
+}
+
+#feature-modal-content.feature-modal-content--overlay-fullscreen {
+  z-index: 100001;
+}
+
 /* Help Button (?) */
 .modal-help-btn {
   position: absolute;

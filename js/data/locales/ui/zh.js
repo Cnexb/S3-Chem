@@ -384,7 +384,9 @@ export const zhUI = {
     "balancerHelpRule1": "想要更清楚地分隔时，请写 Fe + O2，不要写 Fe+O2。",
     "balancerHelpRule2": "请写 Fe2O3，不要写 Fe2 O3 或 Fe 2O3。",
     "balancerHelpRule3": "也可以直接粘贴带箭头的形式，例如 H2 + O2 → H2O。",
-    "balancerHelpExample": "示例：Fe + O2 → Fe2O3"
+    "balancerHelpExample": "示例：Fe + O2 → Fe2O3",
+    "enterFullscreen": "全屏",
+    "exitFullscreen": "退出全屏"
   },
   "settingsCtrl": {
     "suggSent": "已发送！感谢您的反馈。",

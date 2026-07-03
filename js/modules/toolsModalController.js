@@ -4,6 +4,10 @@
 
 import { onLangChange, t, getLang } from "./langController.js";
 import { applyLabLangToIframe, isLabToolType } from "./labLangBridge.js";
+import {
+  createToolFullscreenController,
+  isEmbedFullscreenToolType,
+} from "./toolFullscreenController.js";
 
 function getToolHelpMarkup(toolType) {
   if (toolType === "balancer") {
@@ -32,17 +36,40 @@ export function createToolsModalController(options = {}) {
   const toolContentCache = new Map();
   let openRequestToken = 0;
   let activeToolType = null;
+  let fullscreenController = null;
 
   function getModalElements() {
     return {
       modal: document.getElementById("feature-modal"),
+      stage: document.getElementById("feature-modal-content"),
       closeButton: document.getElementById("feature-modal-close"),
+      fullscreenButton: document.getElementById("feature-modal-fullscreen"),
       helpButton: document.getElementById("feature-modal-help"),
       helpOverlay: document.getElementById("feature-help-overlay"),
       helpCloseButton: document.getElementById("feature-help-close"),
       helpContent: document.querySelector("#feature-help-overlay .help-content"),
       body: document.getElementById("feature-modal-body"),
     };
+  }
+
+  function setFullscreenButtonVisible(visible) {
+    const { fullscreenButton } = getModalElements();
+    if (fullscreenButton) fullscreenButton.hidden = !visible;
+  }
+
+  function ensureFullscreenController() {
+    if (fullscreenController) return fullscreenController;
+
+    const { stage, fullscreenButton } = getModalElements();
+    if (!stage || !fullscreenButton) return null;
+
+    fullscreenController = createToolFullscreenController({
+      stage,
+      button: fullscreenButton,
+      getLabel: t,
+    });
+
+    return fullscreenController;
   }
 
   function setToolHelpContent(toolType) {
@@ -72,6 +99,8 @@ export function createToolsModalController(options = {}) {
     const { modal, helpOverlay, helpButton, body } = getModalElements();
     if (!modal) return;
     openRequestToken += 1;
+    fullscreenController?.exitFullscreen();
+    setFullscreenButtonVisible(false);
     activeToolType = null;
     modal.classList.remove("active");
     document.body.classList.remove("hide-nav");
@@ -132,7 +161,24 @@ export function createToolsModalController(options = {}) {
       });
     }
 
+    ensureFullscreenController();
     modalHandlersInitialized = true;
+  }
+
+  function notifyEmbedIframeResize(body) {
+    if (!fullscreenController?.isActive()) return;
+    requestAnimationFrame(() => {
+      fullscreenController.notifyResize();
+    });
+  }
+
+  function bindEmbedIframeResize(body) {
+    const iframe = body?.querySelector("iframe");
+    if (!iframe) return;
+
+    iframe.addEventListener("load", () => {
+      notifyEmbedIframeResize(body);
+    }, { once: true });
   }
 
   async function openToolModal(toolType) {
@@ -148,6 +194,7 @@ export function createToolsModalController(options = {}) {
     if (helpButton) {
       helpButton.hidden = toolType === "atomic-arcade";
     }
+    setFullscreenButtonVisible(isEmbedFullscreenToolType(toolType));
     setToolHelpContent(toolType);
     body.innerHTML = `<div class="tool-modal-loading">${t("toolModal.loading")}</div>`;
 
@@ -168,8 +215,11 @@ export function createToolsModalController(options = {}) {
             if (iframe) {
               iframe.addEventListener("load", () => {
                 applyLabLangToIframe(iframe, getLang());
+                notifyEmbedIframeResize(body);
               }, { once: true });
             }
+          } else if (isEmbedFullscreenToolType(toolType)) {
+            bindEmbedIframeResize(body);
           }
           
           if (toolType === "balancer") {
@@ -245,6 +295,7 @@ export function createToolsModalController(options = {}) {
       } else {
         setToolHelpContent(activeToolType);
       }
+      fullscreenController?.updateLabels();
     });
   }
 
