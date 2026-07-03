@@ -1920,6 +1920,7 @@ class Molecule3DViewer {
         this.isDragging = false;
         this.lastMouseX = 0;
         this.lastMouseY = 0;
+        this.autoRotateEnabled = false;
 
         // 3D Builder State
         this.isCustomBuilt = false;
@@ -2479,9 +2480,8 @@ class Molecule3DViewer {
         if (!this.canvas) return;
         const now = Date.now();
 
-        // Slow idle rotation when not dragging
-        // Only run idle rotation on 'lab-canvas-3d' and 'quest-canvas-3d' to avoid double-spinning the modal viewer
-        if (!this.isDragging && this.canvas.id !== 'modal-canvas-3d') {
+        // Slow idle rotation when not dragging (only after geometry optimization)
+        if (this.autoRotateEnabled && !this.isDragging && this.canvas.id !== 'modal-canvas-3d') {
             this.angleY += 0.0015; // slow horizontal rotation
         }
 
@@ -3224,6 +3224,7 @@ function optimizeLab3DGeometry() {
     // Keep 2D electron diagram independent of 3D VSEPR optimization
     sfx.playLink();
     updateLab3DProjection();
+    if (lab3DViewer) lab3DViewer.autoRotateEnabled = true;
     showToast('立體幾何結構優化完成 (VSEPR)！', '3D Geometry optimized successfully (VSEPR)!');
 }
 
@@ -3579,6 +3580,7 @@ function optimizeQuest3DGeometry() {
     // Keep 2D electron diagram independent of 3D VSEPR optimization
     sfx.playLink();
     updateQuest3DProjection();
+    if (quest3DViewer) quest3DViewer.autoRotateEnabled = true;
     showToast('立體幾何結構優化完成 (VSEPR)！', '3D Geometry optimized successfully (VSEPR)!');
 }
 
@@ -4738,6 +4740,7 @@ function clearLabWorkspace() {
     if (lab3DViewer) {
         lab3DViewer.isCustomBuilt = false;
         lab3DViewer.selectedAtomId = null;
+        lab3DViewer.autoRotateEnabled = false;
         setLab3DMode('view');
     }
 
@@ -4978,6 +4981,25 @@ function applyOctahedralTextbookLayout(level, nodes, bondStyles) {
     setStyle(0, 6, 'wedge');
 }
 
+function applyTrigonalBipyramidalTextbookLayout(level, nodes, bondStyles) {
+    const cx = 100;
+    const cy = 65;
+    const axialR = 50;
+    const eqX = 65;
+    const eqY = 22;
+    const setPos = (idx, x, y) => { nodes[idx].x = x; nodes[idx].y = y; };
+    const setStyle = (a0, a1, style) => { bondStyles[bondStyleKey(a0, a1)] = style; };
+
+    setPos(0, cx, cy);
+    setPos(1, cx, cy - axialR);
+    setPos(2, cx, cy + axialR);
+    setPos(3, cx + eqX, cy);
+    setPos(4, cx - eqX, cy - eqY);
+    setPos(5, cx - eqX, cy + eqY);
+    setStyle(0, 4, 'hash');
+    setStyle(0, 5, 'wedge');
+}
+
 // Topic 2 flat electron-diagram layout (no wedge/hash, no 3D projection)
 function applyPyramidalElectronLayout(level, nodes) {
     const center = findCentralAtomIndex(level);
@@ -5046,6 +5068,22 @@ function applyOctahedralElectronLayout(level, nodes) {
     setPos(4, cx + eqX, cy - eqY);
     setPos(5, cx - eqX, cy + eqY);
     setPos(6, cx + eqX, cy + eqY);
+}
+
+function applyTrigonalBipyramidalElectronLayout(level, nodes) {
+    const cx = 100;
+    const cy = 65;
+    const axialR = 50;
+    const eqX = 65;
+    const eqY = 22;
+    const setPos = (idx, x, y) => { nodes[idx].x = x; nodes[idx].y = y; };
+
+    setPos(0, cx, cy);
+    setPos(1, cx, cy - axialR);
+    setPos(2, cx, cy + axialR);
+    setPos(3, cx + eqX, cy);
+    setPos(4, cx - eqX, cy - eqY);
+    setPos(5, cx - eqX, cy + eqY);
 }
 
 function areAllAtomsSatisfied(atomList, bondList) {
@@ -5137,12 +5175,7 @@ function buildElectronDiagramLayout(level) {
     } else if (geom === 'bent_water' || geom === 'bent' || geom === 'bent_wide') {
         applyBentElectronLayout(level, nodes);
     } else if (geom === 'trigonal_bipyramidal' && n === 6) {
-        setPos(0, cx, cy);
-        setPos(1, cx, cy - 50);
-        setPos(2, cx, cy + 50);
-        setPos(3, cx - 72, cy);
-        setPos(4, cx + 72, cy - 12);
-        setPos(5, cx + 72, cy + 12);
+        applyTrigonalBipyramidalElectronLayout(level, nodes);
     } else if (geom === 'octahedral' && n === 7) {
         applyOctahedralElectronLayout(level, nodes);
     } else if (geom === 'planar' && n === 6) {
@@ -5229,14 +5262,7 @@ function buildStructuralLayout(level) {
         if (lpCount >= 1) lonePairs.push({ x: cx - 12, y: cy - 14, angle: -2.4 });
         if (lpCount >= 2) lonePairs.push({ x: cx + 12, y: cy - 12, angle: -0.7 });
     } else if (geom === 'trigonal_bipyramidal' && n === 6) {
-        setPos(0, cx, cy);
-        setPos(1, cx, cy - 50);
-        setPos(2, cx, cy + 50);
-        setPos(3, cx - 72, cy);
-        setStyle(0, 4, 'wedge');
-        setStyle(0, 5, 'hash');
-        setPos(4, cx + 72, cy - 12);
-        setPos(5, cx + 72, cy + 12);
+        applyTrigonalBipyramidalTextbookLayout(level, nodes, bondStyles);
     } else if (geom === 'octahedral' && n === 7) {
         applyOctahedralTextbookLayout(level, nodes, bondStyles);
     } else if (geom === 'planar' && n === 6) {
@@ -5814,6 +5840,7 @@ function updateLab3DProjection() {
     if (!lab3DViewer) return;
 
     if (labAtoms.length === 0) {
+        if (lab3DViewer) lab3DViewer.autoRotateEnabled = false;
         lab3DViewer.setMolecule([], []);
         return;
     }
@@ -5911,6 +5938,7 @@ function updateQuest3DProjection() {
     if (!quest3DViewer) return;
 
     if (questAtoms.length === 0) {
+        quest3DViewer.autoRotateEnabled = false;
         quest3DViewer.setMolecule([], []);
         return;
     }
@@ -6143,6 +6171,7 @@ function resetQuestCurrent() {
     if (quest3DViewer) {
         quest3DViewer.isCustomBuilt = false;
         quest3DViewer.selectedAtomId = null;
+        quest3DViewer.autoRotateEnabled = false;
     }
 
     redrawQuestWorkspace();
