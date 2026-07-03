@@ -4956,6 +4956,28 @@ function applyPyramidalTextbookLayout(level, nodes, bondStyles, lonePairs) {
     if (nbrs.length >= 3) { setPos(nbrs[2], cx + r * 0.85, cy + 42); setStyle(center, nbrs[2], 'hash'); }
 }
 
+function applyOctahedralTextbookLayout(level, nodes, bondStyles) {
+    const cx = 100;
+    const cy = 65;
+    const axialR = 52;
+    const eqX = 65;
+    const eqY = 22;
+    const setPos = (idx, x, y) => { nodes[idx].x = x; nodes[idx].y = y; };
+    const setStyle = (a0, a1, style) => { bondStyles[bondStyleKey(a0, a1)] = style; };
+
+    setPos(0, cx, cy);
+    setPos(1, cx, cy - axialR);
+    setPos(2, cx, cy + axialR);
+    setPos(3, cx - eqX, cy - eqY);
+    setPos(4, cx + eqX, cy - eqY);
+    setStyle(0, 3, 'hash');
+    setStyle(0, 4, 'hash');
+    setPos(5, cx - eqX, cy + eqY);
+    setPos(6, cx + eqX, cy + eqY);
+    setStyle(0, 5, 'wedge');
+    setStyle(0, 6, 'wedge');
+}
+
 // Topic 2 flat electron-diagram layout (no wedge/hash, no 3D projection)
 function applyPyramidalElectronLayout(level, nodes) {
     const center = findCentralAtomIndex(level);
@@ -5007,6 +5029,23 @@ function applyBentElectronLayout(level, nodes) {
     const nbrs = getLevelNeighbors(level, center).slice().sort((a, b) => a - b);
     if (nbrs.length >= 1) setPos(nbrs[0], cx - r, cy + 40);
     if (nbrs.length >= 2) setPos(nbrs[1], cx + r, cy + 40);
+}
+
+function applyOctahedralElectronLayout(level, nodes) {
+    const cx = 100;
+    const cy = 65;
+    const axialR = 52;
+    const eqX = 65;
+    const eqY = 22;
+    const setPos = (idx, x, y) => { nodes[idx].x = x; nodes[idx].y = y; };
+
+    setPos(0, cx, cy);
+    setPos(1, cx, cy - axialR);
+    setPos(2, cx, cy + axialR);
+    setPos(3, cx - eqX, cy - eqY);
+    setPos(4, cx + eqX, cy - eqY);
+    setPos(5, cx - eqX, cy + eqY);
+    setPos(6, cx + eqX, cy + eqY);
 }
 
 function areAllAtomsSatisfied(atomList, bondList) {
@@ -5105,13 +5144,7 @@ function buildElectronDiagramLayout(level) {
         setPos(4, cx + 72, cy - 12);
         setPos(5, cx + 72, cy + 12);
     } else if (geom === 'octahedral' && n === 7) {
-        setPos(0, cx, cy);
-        setPos(1, cx, cy - 52);
-        setPos(2, cx, cy + 52);
-        setPos(3, cx - 72, cy);
-        setPos(4, cx + 72, cy);
-        setPos(5, cx - 36, cy + 36);
-        setPos(6, cx + 36, cy + 36);
+        applyOctahedralElectronLayout(level, nodes);
     } else if (geom === 'planar' && n === 6) {
         setPos(1, cx - 35, cy);
         setPos(4, cx + 35, cy);
@@ -5205,16 +5238,7 @@ function buildStructuralLayout(level) {
         setPos(4, cx + 72, cy - 12);
         setPos(5, cx + 72, cy + 12);
     } else if (geom === 'octahedral' && n === 7) {
-        setPos(0, cx, cy);
-        setPos(1, cx, cy - 52);
-        setPos(2, cx, cy + 52);
-        setPos(3, cx - 72, cy);
-        setPos(4, cx + 72, cy);
-        setStyle(0, 4, 'wedge');
-        setPos(5, cx - 36, cy + 36);
-        setStyle(0, 5, 'wedge');
-        setPos(6, cx + 36, cy + 36);
-        setStyle(0, 6, 'hash');
+        applyOctahedralTextbookLayout(level, nodes, bondStyles);
     } else if (geom === 'planar' && n === 6) {
         setPos(1, cx - 35, cy);
         setPos(4, cx + 35, cy);
