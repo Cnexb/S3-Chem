@@ -1,4 +1,4 @@
-import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v22";
+import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v23";
 import { sectionLabel, renderSessionSummary } from "./quizSummary.js";
 import { downloadWord, printSheet } from "./quizExport.js";
 import {
@@ -42,7 +42,7 @@ const UI = {
     bankByType: "By question type",
     bankMatrix: "Topic × type",
     bankNone: "Select at least one topic and one question type.",
-    lblCount: "Number of questions (1–50)",
+    lblCount: "Number of questions (1–100)",
     lblDiff: "Difficulty",
     lblSeed: "Random seed (optional)",
     btnGenerate: "Generate questions",
@@ -106,7 +106,7 @@ const UI = {
     bankByType: "按题型",
     bankMatrix: "课题 × 题型",
     bankNone: "请至少选择一个课题和一种题型。",
-    lblCount: "题数（1–50）",
+    lblCount: "题数（1–100）",
     lblDiff: "难度",
     lblSeed: "随机种子（可留空）",
     btnGenerate: "生成题目",
@@ -168,7 +168,7 @@ const UI = {
     bankByType: "按題型",
     bankMatrix: "課題 × 題型",
     bankNone: "請至少選擇一個課題和一種題型。",
-    lblCount: "題數（1–50）",
+    lblCount: "題數（1–100）",
     lblDiff: "難度",
     lblSeed: "隨機種子（可留空）",
     btnGenerate: "產生題目",
@@ -439,7 +439,7 @@ export function initQuiz() {
       alert(t("alertNoFormats"));
       return;
     }
-    const count = Math.min(50, Math.max(1, Number(els.numCount?.value) || 10));
+    const count = Math.min(100, Math.max(1, Number(els.numCount?.value) || 10));
     const diffFilter = els.selDiff?.value || "all";
     const seed = els.txtSeed?.value || "";
 

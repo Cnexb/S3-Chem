@@ -11,7 +11,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v22"
+QUIZ_ASSET_VERSION = "20260702v23"
 
 
 def patch_quiz_module_imports(text: str) -> str:
@@ -833,15 +833,58 @@ def _extract_substance_property_table(stem: str) -> tuple[str, str, dict] | None
     rows = []
     for rm in row_re.finditer(data):
         label = rm.group(1)
-        vals = re.split(r"\s{2,}|\s+(?=[A-Z][a-z])", rm.group(2).strip())
-        vals = [v.strip() for v in vals if v.strip()]
+        val_text = rm.group(2).strip()
+        if re.search(r"\s+(?:—|-)\s+", val_text):
+            parts = re.split(r"\s+(?:—|-)\s+", val_text, maxsplit=1)
+            vals = [parts[0].strip()]
+            if len(parts) == 2:
+                vals.extend(["", parts[1].strip()])
+            else:
+                vals.append("")
+        else:
+            vals = re.split(r"\s{2,}|\s+(?=[A-Z][a-z])", val_text)
+            vals = [v.strip() for v in vals if v.strip()]
         if vals:
             rows.append([label, *vals])
     if len(rows) < 2:
         return None
-    while len(col_headers) < len(rows[0]):
+    max_cols = max(len(col_headers), max(len(r) for r in rows))
+    col_headers = col_headers[:max_cols]
+    while len(col_headers) < max_cols:
         col_headers.append(f"Col {len(col_headers)}")
-    table = _make_table(col_headers[: len(rows[0])], rows)
+    norm_rows = []
+    for row in rows:
+        padded = row[:max_cols]
+        while len(padded) < max_cols:
+            padded.append("")
+        norm_rows.append(padded)
+    table = _make_table(col_headers, norm_rows)
+    return _table_result(stem, m.start(), m.end(), table)
+
+
+def _extract_chloride_molten_properties_table(stem: str) -> tuple[str, str, dict] | None:
+    m = re.search(
+        r"Melting point\s*/?\s*°?C\s+Electrical conductivity in the molten state\s+"
+        r"(.+?)(?=Which of the following)",
+        stem,
+        re.I,
+    )
+    if not m:
+        return None
+    data = m.group(1).strip()
+    rows: list[list[str]] = []
+    for rm in re.finditer(
+        r"Chloride of\s+([A-Z])\s+(\d+)\s+(Poor|Good)",
+        data,
+        re.I,
+    ):
+        rows.append([f"Chloride of {rm.group(1)}", rm.group(2), rm.group(3).title()])
+    if len(rows) < 2:
+        return None
+    table = _make_table(
+        ["", "Melting point / °C", "Electrical conductivity in the molten state"],
+        rows,
+    )
     return _table_result(stem, m.start(), m.end(), table)
 
 
@@ -1200,6 +1243,7 @@ def extract_stem_table(stem: str) -> tuple[str, str, dict | None]:
         _extract_metal_mp_bp_table,
         _extract_substance_states_table,
         _extract_substance_property_table,
+        _extract_chloride_molten_properties_table,
         _extract_chloride_mp_table,
         _extract_element_product_table,
         _extract_conductivity_table,
@@ -2019,6 +2063,9 @@ export function renderStemTableHtml(table) {
 
 def patch_quiz_app(text: str, locale: str) -> str:
     text = patch_quiz_module_imports(text)
+    text = text.replace("(1–50)", "(1–100)")
+    text = text.replace("(1-50)", "(1-100)")
+    text = text.replace("Math.min(50,", "Math.min(100,")
     text = text.replace(
         """  function setHint(text) {
     const msg = text || t("empty");
@@ -2149,9 +2196,11 @@ def patch_quiz_effects(text: str) -> str:
 
 
 def patch_quiz_html(html: str, locale: str) -> str:
+    html = html.replace('max="50"', 'max="100"')
+    html = html.replace("(1–50)", "(1–100)")
     html = html.replace(
-        'id="quiz-num-count" max="50" min="1" type="number" value="9"',
-        'id="quiz-num-count" max="50" min="1" type="number" value="10"',
+        'id="quiz-num-count" max="100" min="1" type="number" value="9"',
+        'id="quiz-num-count" max="100" min="1" type="number" value="10"',
     )
     html = re.sub(
         r'<div class="grid grid-cols-1 xl:grid-cols-\[minmax\(220px,260px\)_1fr\] gap-6 items-start">\s*'

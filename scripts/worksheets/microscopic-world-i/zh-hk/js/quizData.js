@@ -7092,7 +7092,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "P, Q, R and S are among the first 20 elements in the Periodic Table. Their relative positions in the Periodic Table are shown as follows. P Q R S It is known that S exists as monoatomic molecules under room conditions. Which of the following statements concerning these elements and their compounds are correct?\n(1) All these elements are non-metals.\n(2) P and S do not react even at a high temperature.\n(3) The compound formed between Q and R has a simple molecular structure.",
+    "stem": "P, Q, R and S are among the first 20 elements in the Periodic Table. Their relative positions in the Periodic Table are shown as follows. It is known that S exists as monoatomic molecules under room conditions. Which of the following statements concerning these elements and their compounds are correct?\n(1) All these elements are non-metals.\n(2) P and S do not react even at a high temperature.\n(3) The compound formed between Q and R has a simple molecular structure.",
     "options": [
       {
         "key": "A",
@@ -7113,7 +7113,12 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "D",
     "hint": "From the given information, S should be argon and so P, Q and R should be fluorine, sulphur and chlorine respectively. Argon is unreactive and so it does not react with other elements. The compound of sulphur and chlorine (SCl₂) has a simple molecular structure.",
-    "sourceRef": "ChemMCQ09061"
+    "sourceRef": "ChemMCQ09061",
+    "image": {
+      "src": "../assets/mc-media-rId72.png",
+      "alt": "P, Q, R and S are among the first 20 elements in the Periodic Table. Their relative positions in the",
+      "caption": "Fig - ChemMCQ09061"
+    }
   },
   {
     "id": "mc-09062",
@@ -7345,6 +7350,7 @@ export const QUIZ_ITEMS = [
         [
           "D",
           "Liquid",
+          "",
           "Yes"
         ]
       ]
@@ -7412,7 +7418,7 @@ export const QUIZ_ITEMS = [
     "section": "structure-properties",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "X, Y and Z are three elements and the properties of their chlorides are given below. Melting point / °C Electrical conductivity in the molten state Chloride of X 4 Poor Chloride of Y 873 Good Chloride of Z 677 Poor Which of the following statements must be correct?",
+    "stem": "X, Y and Z are three elements and the properties of their chlorides are given below.\n\nWhich of the following statements must be correct?",
     "options": [
       {
         "key": "A",
@@ -7433,7 +7439,31 @@ export const QUIZ_ITEMS = [
     ],
     "answer": "D",
     "hint": "(A): The physical state of the chloride of X not only depends on its melting point, but also its boiling point. If its boiling point is lower than room temperature, it is a gas at room temperature. (B): Since the chlorides of Y and Z have different electrical conductivities in the molten state, they probably have different types of structure. (C): If the chloride of Y is insoluble in water, the mixture of the chloride of Y and water does not conduct electricity. (D): Since the chloride of X has a low melting point, it probably has a simple molecular structure. It may be a compound of a non-metal (or a semi-metal) and chlorine.",
-    "sourceRef": "ChemMCQ09069"
+    "sourceRef": "ChemMCQ09069",
+    "stemTable": {
+      "headers": [
+        "",
+        "Melting point / °C",
+        "Electrical conductivity in the molten state"
+      ],
+      "rows": [
+        [
+          "Chloride of X",
+          "4",
+          "Poor"
+        ],
+        [
+          "Chloride of Y",
+          "873",
+          "Good"
+        ],
+        [
+          "Chloride of Z",
+          "677",
+          "Poor"
+        ]
+      ]
+    }
   },
   {
     "id": "mc-09070",

@@ -8262,7 +8262,7 @@
     "chapter": 9,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "P, Q, R and S are among the first 20 elements in the Periodic Table. Their relative positions in the Periodic Table are shown as follows. P Q R S It is known that S exists as monoatomic molecules under room conditions. Which of the following statements concerning these elements and their compounds are correct? (1)All these elements are non-metals. (2)P and S do not react even at a high temperature. (3)The compound formed between Q and R has a simple molecular structure.",
+    "stem": "P, Q, R and S are among the first 20 elements in the Periodic Table. Their relative positions in the Periodic Table are shown as follows. It is known that S exists as monoatomic molecules under room conditions. Which of the following statements concerning these elements and their compounds are correct? (1)All these elements are non-metals. (2)P and S do not react even at a high temperature. (3)The compound formed between Q and R has a simple molecular structure.",
     "options": [
       {
         "key": "A",
@@ -8283,7 +8283,10 @@
     ],
     "answer": "D",
     "hint": "From the given information, S should be argon and so P, Q and R should be fluorine, sulphur and chlorine respectively. Argon is unreactive and so it does not react with other elements. The compound of sulphur and chlorine (SCl2) has a simple molecular structure.",
-    "sourceRef": "ChemMCQ09061"
+    "sourceRef": "ChemMCQ09061",
+    "imageFiles": [
+      "mc-media-rId72.png"
+    ]
   },
   {
     "id": "mc-09062",
@@ -8453,7 +8456,7 @@
     "chapter": 9,
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "The following table shows the properties of four substances. Substance Physical state under room conditions Does it conduct electricity in solid state? Does it conduct electricity in molten state? A Solid No Yes B Solid Yes Yes C Solid No No D Liquid Yes Which of the following substances probably have a giant ionic structure?",
+    "stem": "The following table shows the properties of four substances. Substance Physical state under room conditions Does it conduct electricity in solid state? Does it conduct electricity in molten state? A Solid No Yes B Solid Yes Yes C Solid No No D Liquid — Yes Which of the following substances probably have a giant ionic structure?",
     "options": [
       {
         "key": "A",
