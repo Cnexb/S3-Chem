@@ -9,8 +9,9 @@ import {
   getFillLines,
   prefetchExportImages,
   buildFiguresExportHtml,
+  waitForExportImages,
   EXPORT_TABLE_STYLE,
-} from "./quizUtils.js?v=20260704v2";
+} from "./quizUtils.js?v=20260704v3";
 
 const EXPORT_Q_STYLE = "page-break-inside:avoid;break-inside:avoid;margin-bottom:1rem";
 const EXPORT_HEAD_STYLE =
@@ -32,14 +33,14 @@ function fillLineExportHtml(line, answersMode) {
   return html;
 }
 
-function buildDocBody(questions, answersMode, lang, imageCache) {
+function buildDocBody(questions, answersMode, lang, imageCache, imageMode = "embed") {
   let body = "";
   questions.forEach((q, i) => {
     const fmt = questionFormat(q);
     body += `<div class="export-q" style="${EXPORT_Q_STYLE}">`;
     body += `<h2>Q${i + 1} · ${escHtml(q.section)} · ${escHtml(q.difficulty)} · ${escHtml(fmt.toUpperCase())}</h2>`;
     body += formatStemHtml(questionStem(q, lang));
-    body += buildFiguresExportHtml(q, imageCache);
+    body += buildFiguresExportHtml(q, imageCache, imageMode);
     if (!answersMode) {
       if (fmt === "fill" && getFillLines(q).length) {
         if (q.wordBank?.length) {
@@ -104,9 +105,9 @@ export async function printSheet(questions, answersMode, lang) {
     : "Microscopic World I (Ch5–8) — Questions";
   const titleZh = answersMode ? "微觀世界 I（第五至八章）— 答案" : "微觀世界 I（第五至八章）— 試題";
   const docTitle = isChineseUI(lang) ? titleZh : titleEn;
-  const imageCache = await prefetchExportImages(questions);
   let html = `<h1>${escHtml(docTitle)}</h1>`;
-  html += buildDocBody(questions, answersMode, lang, imageCache);
+  html += buildDocBody(questions, answersMode, lang, null, "direct");
   sheet.innerHTML = html;
+  await waitForExportImages(sheet);
   window.print();
 }

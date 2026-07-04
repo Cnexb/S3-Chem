@@ -1,6 +1,6 @@
 import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v25";
 import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260702v25";
-import { downloadWord, printSheet } from "./quizExport.js?v=20260704v2";
+import { downloadWord, printSheet } from "./quizExport.js?v=20260704v3";
 import {
   DIFFICULTY_LEVELS,
   difficultyLevel,

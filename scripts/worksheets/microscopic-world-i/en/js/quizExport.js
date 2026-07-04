@@ -8,8 +8,9 @@ import {
   buildStemExportHtml,
   prefetchExportImages,
   buildFiguresExportHtml,
+  waitForExportImages,
   EXPORT_TABLE_STYLE,
-} from "./quizUtils.js";
+} from "./quizUtils.js?v=20260704v3";
 
 const EXPORT_Q_STYLE = "page-break-inside:avoid;break-inside:avoid;margin-bottom:1rem";
 const EXPORT_HEAD_STYLE =
@@ -31,14 +32,14 @@ function fillLineExportHtml(line, answersMode) {
   return html;
 }
 
-function buildDocBody(questions, answersMode, imageCache) {
+function buildDocBody(questions, answersMode, imageCache, imageMode = "embed") {
   let body = "";
   questions.forEach((q, i) => {
     const fmt = questionFormat(q);
     body += `<div class="export-q" style="${EXPORT_Q_STYLE}">`;
     body += `<h2>Q${i + 1} · ${escHtml(q.section)} · ${escHtml(q.difficulty)} · ${escHtml(fmt.toUpperCase())}</h2>`;
     body += buildStemExportHtml(q);
-    body += buildFiguresExportHtml(q, imageCache);
+    body += buildFiguresExportHtml(q, imageCache, imageMode);
     if (!answersMode) {
       if (fmt === "fill" && getFillLines(q).length) {
         if (q.wordBank?.length) {
@@ -103,9 +104,9 @@ export async function printSheet(questions, answersMode, lang) {
   const titleEn = answersMode
     ? "Ch 3.7 Refraction (Answers)"
     : "Ch 3.7 Refraction (Questions)";
-  const imageCache = await prefetchExportImages(questions);
   let html = `<h1>${escHtml(titleEn)}</h1>`;
-  html += buildDocBody(questions, answersMode, imageCache);
+  html += buildDocBody(questions, answersMode, null, "direct");
   sheet.innerHTML = html;
+  await waitForExportImages(sheet);
   window.print();
 }
