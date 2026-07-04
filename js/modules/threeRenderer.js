@@ -71,7 +71,7 @@ function bindVisibilityPause() {
   });
 }
 
-// ===== Quality profile (segment counts only — trails are always 10) =====
+// ===== Quality profile (segment counts + trail length) =====
 function getQualityProfile(atomicNumber) {
   const dm =
     typeof navigator !== "undefined" && navigator.deviceMemory
@@ -79,12 +79,14 @@ function getQualityProfile(atomicNumber) {
       : 0;
   const low = dm > 0 && dm <= 4;
   const heavy = atomicNumber >= 37 || low;
+  const veryHeavy = atomicNumber >= 73 || low;
   return {
     nucleusSegments: heavy ? 14 : 24,
     electronSegments: heavy ? 10 : 20,
     orbitTubularSegments: heavy ? 44 : 80,
     hitTubularSegments: heavy ? 20 : 32,
-    settleIterations: (atomicNumber >= 73 || low) ? 1 : heavy ? 2 : 4,
+    settleIterations: veryHeavy ? 1 : heavy ? 2 : 4,
+    trailLength: veryHeavy ? 3 : heavy ? 5 : 10,
   };
 }
 
@@ -157,6 +159,23 @@ function ensureSharedMaterials() {
     hitMat: new THREE.MeshBasicMaterial({ visible: false }),
   };
   return sharedMaterials;
+}
+
+let trailMaterials = null;
+
+function getTrailMaterials() {
+  if (trailMaterials) return trailMaterials;
+  trailMaterials = [];
+  for (let t = 0; t < 10; t++) {
+    trailMaterials.push(
+      new THREE.MeshBasicMaterial({
+        color: 0x0000ff,
+        transparent: true,
+        opacity: 0.3 - t * 0.03,
+      }),
+    );
+  }
+  return trailMaterials;
 }
 
 /** Works on GitHub Pages (public/three.min.js) and Vite dist (same path via copy step). */
@@ -484,41 +503,6 @@ export function updateAtomStructure(element) {
     nucleusGroup.add(mesh);
   }
 
-  // --- Helper: Volumetric Cloud Layers ---
-  const buildCloudLayer = (cloudRadius, layers, maxOpacity) => {
-    const cloudGeo = getSphereGeometry(cloudRadius, 32); 
-    const cloudGroup = new THREE.Group();
-    cloudGroup.userData = { isCloud: true };
-    for (let i = 0; i < layers; i++) {
-       // Smooth spacing from 1.0 (outer) down to 0.08 (core focus)
-       const scale = 1.0 - (i / layers) * 0.92; 
-       
-       const x = i / layers; 
-       // Gaussian density profile approximation: core is densest
-       const intensity = Math.exp(-Math.pow((1.0 - x) * 3.0, 2));
-       
-       // Distribute opacity to prevent solid clipping on many layers
-       const layerOpacity = (0.02 + intensity) * maxOpacity * (8.0 / layers);
-       
-       const r = 0.0 + intensity * 0.2;
-       const g = 0.3 + intensity * 0.5;
-       const b = 0.9 + intensity * 0.1;
-       
-       const shellMat = new THREE.MeshBasicMaterial({
-         color: new THREE.Color(r, g, b),
-         transparent: true,
-         opacity: Math.min(layerOpacity, 1.0),
-         blending: THREE.NormalBlending, 
-         depthWrite: false,
-         side: THREE.DoubleSide
-       });
-       const shell = new THREE.Mesh(cloudGeo, shellMat);
-       shell.scale.set(scale, scale, scale);
-       cloudGroup.add(shell);
-    }
-    return cloudGroup;
-  };
-
   // --- Electron shells (principal quantum numbers from elementsData) ---
   const shellCounts = getShellArrangementByZ(atomicNumber);
   const shells = shellCounts.length ? shellCounts : [atomicNumber];
@@ -552,13 +536,10 @@ export function updateAtomStructure(element) {
     wobbleGroup.add(hitMesh);
     orbitHitTargets.push(hitMesh);
 
-    // Electron geometry + trail geometries
+    // Electron geometry + shared trail assets
     const elGeo = getSphereGeometry(0.3, quality.electronSegments);
-    const TRAIL_LENGTH = 10;
-    const trailGeos = [];
-    for (let t = 0; t < TRAIL_LENGTH; t++) {
-      trailGeos.push(new THREE.SphereGeometry(0.2 - t * 0.015, 8, 8));
-    }
+    const TRAIL_LENGTH = quality.trailLength;
+    const trailMats = getTrailMaterials();
 
     for (let e = 0; e < count; e++) {
       const elMesh = new THREE.Mesh(elGeo, mats.electronMat);
@@ -573,12 +554,8 @@ export function updateAtomStructure(element) {
       elMesh.position.z = radius * Math.sin(angleOffset);
 
       for (let t = 0; t < TRAIL_LENGTH; t++) {
-        const tMat = new THREE.MeshBasicMaterial({
-          color: 0x0000ff,
-          transparent: true,
-          opacity: 0.3 - t * 0.03,
-        });
-        const tMesh = new THREE.Mesh(trailGeos[t], tMat);
+        const trailGeo = getSphereGeometry(0.2 - t * 0.015, 8);
+        const tMesh = new THREE.Mesh(trailGeo, trailMats[t]);
         tMesh.position.copy(elMesh.position);
         wobbleGroup.add(tMesh);
         elMesh.userData.trails.push(tMesh);
