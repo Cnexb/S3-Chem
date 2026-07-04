@@ -155,6 +155,17 @@ async function ensureFlashcardsEmbedReady() {
   return flashcardsEmbedPromise;
 }
 
+let quizEmbedPromise = null;
+
+async function ensureQuizEmbedReady() {
+  if (!quizEmbedPromise) {
+    quizEmbedPromise = import("./js/modules/quizEmbed.js").then((mod) => {
+      mod.initQuizEmbed();
+    });
+  }
+  return quizEmbedPromise;
+}
+
 function scheduleIdleDeferredModules() {
   const run = () => {
     void import("./js/modules/chapterDrawOverlay.js").then((m) => m.initChapterDrawOverlays());
@@ -573,6 +584,10 @@ function initMainApp() {
     },
     onFlashcardsPageShown: () => {
       void ensureFlashcardsEmbedReady().catch((e) => console.error("Flashcards embed init error:", e));
+    },
+    onQuizPageShown: () => {
+      void ensureQuizEmbedReady().catch((e) => console.error("Quiz embed init error:", e));
+      if (tableContainer) syncEitMobileMount(tableContainer, eitController);
     },
   });
 

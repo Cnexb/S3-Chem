@@ -56,6 +56,11 @@ jobs:
           grep -q 'data-page="quiz"' dist/index.html
           test -f dist/public/quiz/microscopic-world-i/quiz.html
           test -f dist/public/quiz/microscopic-world-i/js/quizApp.js
+          test -f dist/public/quiz/metals/quiz.html
+          test -f dist/public/quiz/metals/js/quizData.js
+          grep -q 'quiz-embed-topic-metals' dist/index.html
+          test -f dist/public/worksheets/topic-3-metals-exercise/quiz.html
+          grep -q 'topic-3-metals-exercise' dist/index.html
           test -f dist/public/tools/flame-test-fireworks/assets/backgrounds/city-skyline-3.jpg
           test -f dist/public/three.min.js
 

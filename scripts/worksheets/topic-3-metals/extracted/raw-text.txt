@@ -1,0 +1,536 @@
+1 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Uses of metals
+Metal Uses Reason
+Iron Construction, Car / ship bodies Hard, strong, malleable, cheap
+Magnet Magnetic
+Copper Electric wire Good electrical conductor, ductile
+Water pipe Corrosion resistant, non-toxic
+Cooking utensil Good heat conductor, non-toxic, corrosion resistant
+Aluminium Overhead power cable Good electrical conductor, ductile
+Aircraft bodies Strong, corrosion resistant, low density
+Kitchen foil Non-toxic, corrosion resistant, malleable
+Soft drink can Non-toxic, corrosion resistant
+Window frame Strong, corrosion resistant
+Titanium Supersonic aircraft bodies Low density, strong, high melting point
+Metal implants in human body Low density, corrosion resistant, biocompatible
+Gold Jewellery Corrosion resistant, attractive appearance
+Mercury Thermometer Expand on heating, liquid at room conditions
+Silver Jewellery Corrosion resistant, attractive appearance
+Electronic component Best electrical conductor, ductile, corrosion resistant
+Extraction of iron
+Step 1 Hot air is blasted near the bottom of the furnace. Coke (carbon)
+will react with oxygen in air
+Carbon + Oxygen ➔ Carbon dioxide
+C + O2 ➔ CO2
+Step 2 Coke will further react with the carbon dioxide produced in step 1
+to form carbon monoxide
+Carbon + Carbon dioxide ➔ Carbon monoxide
+C + CO2 ➔ 2CO
+Step 3 Carbon monoxide will react with haematite (Fe2O3). Iron metal
+can be obtained in this step. Fe2O3 is reduced to Fe in this step.
+The reducing agent used is carbon monoxide.
+Carbon monoxide + Iron(III) oxide ➔ Carbon dioxide + Iron
+3CO + Fe2O3 ➔ 3CO2 + 2Fe
+- Limestone is also added to the blast furnace. It is decomposed upon heating to form calcium oxide and carbon dioxide.
+Calcium oxide can react with the impurities such as silicon dioxide to form slag and it is further removed.
+- Calcium carbonate ➔ Calcium oxide + Carbon dioxide
+CaCO3 ➔ CaO + CO2
+- Calcium oxide + Silicon dioxide ➔ Calcium silicate
+CaO + SiO2 ➔ CaSiO3
+
+-- 1 of 12 --
+
+2 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Extraction of aluminium
+Raw materials required:
+1. Bauxite (Source of aluminium ore, Al2O3)
+2. Cryolite (To reduce the melting point of aluminium ore)
+- At negative electrode: Aluminum ion + electrons ➔ Aluminum
+Al3+ + 3e- ➔ Al
+At positive electrode: Oxide ion ➔ Oxygen + electrons
+2O2- ➔ O2 + 4e-
+- Aluminium oxide must be in molten form. The melting point of bauxite is very high (2000 ℃). Therefore the bauxite is
+dissolved in molten cyolite (a less common aluminum ore) so that the melting point of the mixture of aluminium ore will be
+reduced to below 2000 ℃.
+Relation between metal reactivity series and the extraction method
+- Reactive metals (element) form stable ore (compound)
+➔ Lower the position of the metal in the reactivity series, the more easily it can be extracted from ore.
+Q: Explain why iron was discovered and used much earlier than aluminium
+A: Iron is less reactive than aluminium. Ore of irons are less stable. Therefore iron can be extracted more easily.
+Factors affecting availability of metals
+1. Abundance of the metal in Earth’s crust
+2. Ease and cost of mining the ore
+3. Ease and cost of extracting the metal from its ore
+In general, the more easily a metal can be extracted, the earlier it was discovered in history.
+Ways of conserving metals
+1. Reusing metal articles
+2. Reducing the use of metals
+3. Recycling used metals
+
+-- 2 of 12 --
+
+3 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Extractions of metals
+1. Heating metal ore alone
+A. Metal oxide ➔ Metal + Oxygen
+2Ag2O(s) ➔ 4Ag(s) + O2(g)
+B. Metal sulphide + Oxygen ➔ Metal + Sulphur dioxide
+Cu2S(s) + O2(g) ➔ 2Cu(s) + SO2(g)
+Ag, Hg
+Ag, Hg, Cu
+2. Heating metal oxide with reducing agent (e.g. Carbon / carbon monoxide / hydrogen)
+A. Metal oxide + Carbon ➔ Metal + Carbon dioxide
+2PbO(s) + C(s) ➔ 2Pb(s) + CO2(g)
+B. Metal oxide + Carbon monoxide ➔ Metal + Carbon dioxide
+Fe3O4(s) + 4CO(g) ➔ 3Fe(s) + 4CO2(g)
+C. Metal oxide + Hydrogen ➔ Metal + Water
+CuO(s) + H2(g) ➔ Cu(s) + H2O(l)
+Cu, Pb, Fe, Zn
+Cu, Pb, Fe, Zn
+Cu, Pb, Fe, Zn
+*The ores of some metals are in sulphide form. These metal sulphides can be converted to oxide
+by heating in air
+Metal sulphide + Oxygen ➔ Metal oxide + Sulphur dioxide
+2PbS(s) + 3O2(g) ➔ 2PbO(s) + 2SO2(g)
+3. Electrolysis of molten ore
+2Al2O3(l) ➔ 4Al(l) + 3O2(g)
+*Due to high temperature, aluminium metal will be produced in liquid state
+Al, Mg, Ca, Na, K
+Reactions of metals
+1. Reaction of metal with oxygen
+Metal + Oxygen ➔ Metal oxide
+2Mg(s) + O2(g) ➔ 2MgO(s)
+K, Na, Ca, Mg, Al, Zn, Fe, Pb, Cu, Hg
+2. Reaction of metal with water / steam
+Metal + Water ➔ Metal hydroxide + Hydrogen
+2Na(s) + 2H2O(l) ➔ 2NaOH(aq) + H2(g)
+Metal + Steam ➔ Metal oxide + Hydrogen
+Zn(s) + H2O(g) ➔ ZnO(s) + H2(g)
+K, Na, Ca
+K, Na, Ca, Mg, Al, Zn, Fe
+3. Reaction of metal with acid
+Metal + Dilute hydrochloric acid ➔ Metal chloride + Hydrogen
+Ca(s) + 2HCl(aq) ➔ CaCl2(aq) + H2(g)
+Metal + Dilute sulphuric acid ➔ Metal sulphate + Hydrogen
+Fe(s) + H2SO4(aq) ➔ FeSO4(aq) + H2(g)
+K, Na, Ca, Mg, Al, Zn, Fe, Pb
+K, Na, Ca, Mg, Al, Zn, Fe, Pb,
+4. Displacement reaction
+Metal A + Metal B ion ➔ Metal B + Metal A ion
+Cu(s) + 2AgNO3(aq) ➔ Cu(NO3)2(aq) + 2Ag(s)
+A should be more reactive than B.
+
+-- 3 of 12 --
+
+4 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Metal reactivity series
+Most reactive metal
+(Easy to react to form compounds)
+Least reactive metal
+(Difficult to react to form compounds)
+K Na Ca Mg Al Zn Fe Pb Cu Hg Ag Pt Au
+Forming most stable ore
+(Difficult to extract)
+Forming least stable ore
+(Easy to extract)
+Reaction of metals with oxygen in air
+Metal Observation Word equation
+Potassium On gentle heating, it burns with lilac flame and give a white
+powder
+Potassium + Oxygen ➔ Potassium oxide
+Sodium On gentle heating, it burns with golden yellow flame and give a
+white powder
+Sodium + Oxygen ➔ Sodium oxide
+Calcium On strong heating, it burns with brick-red flame and give a
+white powder
+Calcium + Oxygen ➔ Calcium oxide
+Magnesium On strong heating, it burns with bright white flame and give a
+white powder
+Magnesium + Oxygen ➔ Magnesium
+oxide
+Aluminium On strong heating, it burns to give out heat and a white powder Aluminium + Oxygen ➔ Aluminium
+oxide
+Zinc On strong heating, it burns to give out heat and a powder
+(Hot: Yellow; Cold: white)
+Zinc + Oxygen ➔ Zinc oxide
+Iron On strong heating, it burns with yellow spark and give a black
+powder (Note: Iron(III) oxide is brown in color)
+Iron + Oxygen ➔ Iron(II, III) oxide
+Lead On strong heating, it melts and gives a powder
+(Hot: Orange; Cold: yellow)
+Lead + Oxygen ➔ Lead(II) oxide
+Copper On very strong heating, it gives a black powder Copper + Oxygen ➔ Copper(II) oxide
+Mercury On very strong heating, it gives a red powder Mercury + Oxygen ➔ Mercury(II) oxide
+Silver No reaction with oxygen (Note: Silver oxide is black in color) ---
+Platinum No reaction with oxygen ---
+Gold No reaction with oxygen ---
+Note: Potassium and sodium should be store under paraffin oil
+(Shiny surface of reactive metals turns dull when exposed in air)
+Calcium should be store in an airtight container
+
+-- 4 of 12 --
+
+5 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Reaction of metals with water / steam
+Metal Observation Word equation
+Potassium Reacts with cold water:
+- Melts to form a silvery ball
+- Moves on water surface with a hissing sound
+- Burns with lilac flame
+- Dissolves in water to give an alkaline solution
+Potassium + Water ➔
+Potassium hydroxide + Hydrogen
+Sodium Reacts with cold water:
+- Melts to form a silvery ball
+- Moves on water surface with a hissing sound
+- Burns with golden yellow flame
+- Dissolves in water to give an alkaline solution
+Sodium + Water ➔
+Sodium hydroxide + Hydrogen
+Calcium Reacts with cold water:
+- Sinks to the bottom
+- Reacts readily to give colorless gas bubbles
+- Forms a milky suspension (calcium hydroxide)
+Calcium + Water ➔
+Calcium hydroxide + Hydrogen
+Magnesium Reacts with hot water slowly.
+Reacts with steam vigorously:
+- Give an intense white light to form a white solid
+Magnesium + Water ➔
+Magnesium hydroxide + Hydrogen
+Magnesium + Steam ➔
+Magnesium oxide + Hydrogen
+Aluminium Aluminium usually covered by a thin layer of aluminium oxide
+which prevents the reaction between aluminium and steam.
+Aluminium + Steam ➔
+Aluminium oxide + Hydrogen
+Zinc Reacts with steam to give a powder
+(Hot: Yellow; Cold: White)
+Zinc + Steam ➔
+Zinc oxide + Hydrogen
+Iron Reacts with steam to give a black powder Iron + Steam ➔
+Iron(II, III) oxide + Hydrogen
+Lead, Copper,
+Mercury, Silver,
+Platinum, Gold
+No reaction with water or steam ---
+
+-- 5 of 12 --
+
+6 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Reaction of metals with dilute sulphuric acid and dilute hydrochloric acid
+Metal Observation Word equation
+Potassium React explosively because flammable hydrogen gas
+is given off and the reaction produced a lot of heat
+Metal + Dilute hydrochloric acid ➔
+Metal chloride + Hydrogen
+Metal + Dilute sulphuric acid ➔
+Metal sulphate + Hydrogen
+Sodium React explosively because flammable hydrogen gas
+is given off and the reaction produced a lot of heat
+Calcium Reacts readily to give colorless gas
+*Insoluble calcium sulphate forms. When the metal
+surface is fully covered by calcium sulphate, the
+reaction stops as the metal is no longer in contact
+with the acid.
+Magnesium Reacts readily to give colorless gas
+Aluminium Reacts readily to give colorless gas
+Zinc Reacts readily to give colorless gas
+Iron Reacts readily to give colorless gas
+Lead Reacts very slowly to give colorless gas
+*Insoluble lead(II) sulphate / lead(II) chloride forms.
+When the metal surface is fully covered by lead(II)
+sulphate / lead(II) chloride, the reaction stops as the
+metal is no longer in contact with the acid.
+Copper No reaction with both acids ---
+Mercury No reaction with both acids ---
+Silver No reaction with both acids ---
+Platinum No reaction with both acids ---
+Gold No reaction with both acids ---
+Displacement reaction
+- A metal will displace a less reactive metal from solution of the compound of the less reactive metal, but not vice versa.
+Example 1: Zinc + Copper(II) sulphate ➔ Copper + Zinc sulphate
+Zinc is more reactive than copper. Zinc displaces copper metal from the copper(II) sulphate solution.
+Example 2: Silver + Zinc sulphate ➔ No reaction
+Silver is less reactive than zinc. There is no reaction between silver and zinc sulphate solution
+Note: When potassium / sodium / calcium is added to the solution of a metal compound, colorless gas will also be given
+out because these metals can react with water in the solution directly.
+Appearance of metals
+Copper: Reddish brown solid
+Gold: Yellow solid
+Mercury: Silvery grey liquid
+Others: Silvery grey solid
+
+-- 6 of 12 --
+
+7 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Steps for writing an ionic equation
+1. Write down the FULL chemical equation
+3 H2SO4(aq) + 2 Al(OH)3(s) → Al2(SO4)3(aq) + 6 H2O(l)
+Note: This is the reaction between acid and a base, producing salt and water
+2. Split the compounds that are soluble in water (aqueous state) into individual ions
+6 H+(aq) + 3 SO42-(aq) + 2 Al(OH)3(s) → 2 Al3+(aq) + 3 SO42-(aq) + 6 H2O(l)
+Note: Pay attention to the coefficient of H+. Do not write 3H2. It is an acid not hydrogen gas.
+Al(OH)3 is insoluble in water. Do NOT split it into Al3+ and 3OH-
+3. Cancel out the ions that appear in both sides. Simplify the equation if needed.
+6 H+(aq) + 3 SO42-(aq) + 2 Al(OH)3(s) → 2 Al3+(aq) + 3 SO42-(aq) + 6 H2O(l)
+6 H+(aq) + 2 Al(OH)3(s) → 2 Al3+(aq) + 6 H2O(l)
+Ionic equation: 3 H+(aq) + Al(OH)3(s) → Al3+(aq) + 3 H2O(l)
+Note: Since SO42- does not participate in the reaction, we call them ‘spectator ion’.
+4. If ALL ions are cancelled out, there is NO REACTION between 2 compounds
+NaCl(aq) + KBr(aq) → NaBr(aq) + KCl(aq)
+Na+(aq) + Cl-(aq) + K+(aq) + Br-(aq) → Na+(aq) + Br-(aq) + K+(aq) + Cl-(aq)
+States of common chemicals
+A. Gas (g)
+- He, Ne, Ar, F2, Cl2, O2, N2, H2, CO2, CO, NO2, NO, SO3, SO2, CH4, NH3, H2S, PH3
+B. Liquid (l)
+- Br2, Hg, H2O, CH3OH
+C. Solid (s)
+- All Insoluble salts
+- All metals (except Hg)
+- C, P4, S8, SiO2, I2, B, Si
+D. Aqueous state (aq)
+- Substances that are soluble in water (soluble salts, acids, alkalis etc)
+Note: Cl2(g), Br2(l), and I2(s) can exist as Cl2(aq), Br2(aq) and I2(aq)
+
+-- 7 of 12 --
+
+8 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Mole calculation
+Mole = Mass
+Molar mass (Mole) × (Avogadro′s constant) = No. of formula unit
+1. Calculate the number of oxygen atoms in 60.1 g of quartz. (Relative atomic masses: O = 16.0, Si = 28.1)
+Answer: Mole of SiO2 = (mass) / (molar mass) = 60.1 / (28.1 + 16x2) = 1
+Number of formula unit (i.e. amount of SiO2) = (mole) x (Avogadro’s constant)
+= 1 x 6.02 x 1023 = 6.02 x 1023
+Since 1 SiO2 contains 2 O atoms, number of atoms = 6.02 x 1023 x 2 = 1.204 x 1024
+2. Calculate the number of atoms in 14.0 g of nitrogen gas. (Relative atomic mass of N = 14.0)
+Answer: Mole of nitrogen (N2) = mass / molar mass = 14 / 14x2 = 0.5
+Number of formula unit (i.e. amount of N2 molecules) = (mole) x (Avogadro’s constant)
+= 0.5 x (6.02 x 1023) = 3.01 x 1023
+Since 1 N2 molecules contains 2 N atoms, number of atoms = 3.01 x 1023 x 2 = 6.02 x 1023
+3. Calculate the number of ions in 1 mol of iron(III) sulphate
+Answer: Number of formula unit (i.e. amount of Fe2(SO4)3) = (mole) x (Avogadro’s constant)
+= 1 x (6.02 x 1023) = 6.02 x 1023
+Since 1 Fe2(SO4)3 contains 2 Fe3+ ions and 3 SO42- ions, number of ions = 6.02 x 1023 x (2+3) = 3.01 x 1024 ions
+4. Calculate the mass of 30624700 C atoms (Relative atomic mass of C = 12.0)
+Answer: Number of moles of 30624700 C atoms = (no. of formula unit) / (Avogadro’s constant)
+= 30624700 / 6.02 x 1023 = 5.087 x 10-17
+Mass of 30624700 C atoms = (mole) x (Molar mass) = 5.087 x 10-17 x 12.0 = 6.10 x 10-16 g.
+5. Calculate the mass of 534202 oxygen molecules. (Relative atomic mass of O = 16.0)
+Answer: Number of moles of 534202 oxygen molecules (O2) = (no. of formula unit) / (Avogadro’s constant)
+= 534202 / 6.02 x 1023 = 8.87 x 10-19
+Mass of 534202 oxygen molecules = (mole) x (Molar mass) = 8.87 x 10-19 x (16.0 x 2) = 2.84 x 10-17 g.
+Deduce the empirical formula of a compound
+- 2.21 g of an oxide of platinum is heated strongly until no further reaction. The mass of the solid remaining is 1.97 g. What is
+the chemical formula of this oxide? (Relative atomic masses: O = 16.0, Pt = 197.0)
+Pt O
+Mass 1.97 2.21 – 1.97 = 0.24
+Mole 1.97 / 197 = 0.01 0.24 / 16 = 0.015
+Simplest ratio 0.01 / 0.01 = 1 0.015 / 0.01 = 1.5
+The formula is Pt2O3
+
+-- 8 of 12 --
+
+9 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Deduce the molecular formula of a compound from empirical formula
+- Compound W contains carbon, hydrogen and oxygen only. The relative molecular mass of W is 88. Complete combustion of
+1.32 g of W gives 2.64 g of carbon dioxide and 1.08 g of water. (Relative atomic masses: H = 1.0, C = 12.0, O = 16.0)
+C H O
+Mass 2.64 x [12 / (12 + 16x2)]
+= 0.72
+1.08 x [1x2 / (1x2 + 16)
+= 0.12
+1.32 – 0.72 – 0.12
+= 0.48
+Mole 0.72 / 12
+= 0.06
+0.12 / 1
+= 0.12
+0.48 / 16
+= 0.03
+Simplest ratio 0.06 / 0.03
+= 2
+0.12 / 0.03
+= 4
+0.03 / 0.03
+= 1
+The empirical formula is C2H4O. Let the molecular formula be (C2H4O)n
+n (12x2 + 1x4 + 16) = 88
+n = 2 (The molecular formula is C4H8O2)
+Mole calculation and percentage yield
+1. In an experiment, 17 g of NH3 and excess O2 are allowed to react. The equation for the reaction is shown below:
+4NH3 + 5O2 ➔ 4NO + 6H2O
+(Relative atomic masses: H = 1.0, N = 14.0, O = 16.0)
+(a) Calculate the theoretical yield of H2O.
+Answer: Mole of NH3 used = 17 / (14 + 1x3) = 1
+Theoretical mole of H2O obtained = 1 x 6/4 = 1.5
+Theoretical mass of H2O obtained = 1.5 x (1x2 + 16) = 27 g
+(b) If the mass of H2O obtained is 5.4 g, calculate the percentage yield of H2O
+Answer: Percentage yield = Actual mass / theoretical mass x 100% = 5.4/27 x 100% = 20%
+(c) Suggest a reason why the percentage yield cannot reach 100%.
+Answer: Incomplete reaction
+2. Under certain conditions, 1.0 g of SiO2 is allowed to react with 1.0 g of Mg. The equation for the reaction is shown below:
+SiO2 + 2Mg ➔ 2MgO + Si
+(Relative atomic masses: O = 16.0. Mg = 24.3, Si = 28.1)
+(a) Determine the limiting reactant in this reaction.
+Answer: Mole of SiO2 used = 1 / (28.1 + 16x2) = 0.0166
+0.0166 mol of SiO2 requires 0.0166 x 2 = 0.0333 mol of Mg for complete reaction
+Mole of Mg used = 1 / 24.3 = 0.0411 > 0.0333 (SiO2 is limiting and Mg is in excess)
+(b) Calculate the theoretical mass of Si that can be formed.
+Answer: Theoretical mole of Si obtained = 0.0166 x 1 = 0.0166
+Theoretical mass of Si obtained = 0.0166 x 28.1 = 0.468 g
+
+-- 9 of 12 --
+
+10 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Corrosion
+- Corrosion of metal refers to the gradual deterioration of a metal, resulting from the reaction of the metal with air, water or
+other substances in the environment.
+In general, the more reactive a metal, the more rapidly it corrodes.
+Note: Rusting refers to the corrosion of iron only, but not other metals
+Chemistry of rusting
+Essential conditions of rusting: Water and oxygen
+Step 1: Iron ➔ Iron(II) ion (Fe ➔ Fe2+ + 2e-)
+Water + Oxygen ➔ Hydroxide ion (O2 + 2H2O + 4e- ➔ 4OH-)
+Step 2: Iron(II) ion + Hydroxide ion ➔ Iron(II) hydroxide (Fe2+ + 2OH- ➔ Fe(OH)2)
+Step 3: Iron(II) hydroxide + Water + Oxygen ➔ Iron(III) hydroxide (4Fe(OH)2 + O2 + 2H2O ➔ 4Fe(OH)3)
+Step 4: Iron(III) hydroxide ➔ Hydrated iron(III) oxide (Rust, reddish brown solid)
+Overall equation: 4Fe(s) + 3O2(g) + 2nH2O(l) ➔ 2Fe2O3⸱nH2O
+Experiments related to rusting
+Tube 1: No rusting will occur. Anhydrous calcium chloride is a drying agent. It removes water from the air. Therefore the iron
+nail in tube 1 has no contact with water.
+Tube 2: No rusting will occur. Boiled distilled water removes dissolved oxygen in water. The oil layer prevents oxygen from
+dissolving in water again. Therefore the iron nail in tube 2 has no contact with oxygen.
+Tube 3: Rusting will occur. It is because iron nail in tube 3 has contact with water and oxygen. Note that normal distilled water
+still contains dissolved oxygen.
+Blue area: When iron rusts, iron(II) ion (Fe2+) will be formed. It turns potassium hexacyanoferrate(III) (K3Fe(CN)6) blue.
+Pink area: Hydroxide ion (OH-) forms during rusting. It turns phenolphthalein pink.
+Note 1: Uneven, scratched, bent or sharp area of an iron object will rust more readily.
+Note 2: Gel can slow down the diffusion of the color patches for easier observation
+
+-- 10 of 12 --
+
+11 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Method of rust
+prevention Chemistry Advantage Disadvantage Example
+Painting
+Added layer prevents the iron
+object from contact with aid
+and water
+- Cheap - Scratched off
+1. Bridges
+2. Ships
+3. Fences
+4. Car bodies
+Coating with
+plastic
+- Lasts long
+- Looks good
+- More expensive
+than painting
+1. Coat hangers
+2. Paper clips
+Greasing
+- Does not fall off
+- Lubricating
+effect
+- Not once and
+for all
+- Dirt would
+stick to grease
+1. Moving parts
+of machine
+2. Woodworking
+tools
+Galvanizing
+(zinc-plating)
+- In case the zinc is
+scratched, the
+iron is still
+protected
+- Zinc ions are
+toxic
+1. Construction
+2. Buckets
+Tin-plating
+- Tin is corrosion
+resistant
+- Tin is not toxic
+- When tin is
+scratched, iron
+rusts more
+quickly as tin is
+less reactive
+than iron
+1. Tin food cans
+Electroplating - Beautiful
+appearance - Expensive 1. Water taps
+2. Car bumpers
+Cathodic
+protection
+Iron object is connected to the
+negative terminal of an
+electric source. It supplies
+electrons to prevent iron from
+losing electrons
+- Convenient - Not applicable
+to many objects
+1. Car bodies
+2. Underground
+water pipes
+3. Storage tanks
+4. Steel pier legs
+Sacrificial
+protection
+Iron object is connected to a
+more reactive metal. It loses
+electrons more readily than
+iron.
+- Effective
+- Sacrificed
+metal needs
+replacement
+1. Galvanized
+iron
+2. Pipelines
+connected to Mg
+Alloying
+Iron object is mixed uniformly
+with other elements such as C,
+Cr, Mn. (Cr2O3 layer which is
+impermeable to O2 and H2O)
+- Beautiful
+appearance
+- Effective
+- Expensive 1. Cookware
+2. Cutlery
+
+-- 11 of 12 --
+
+12 警告: 不可翻印,販賣,違者必究 薈進教育中心 Unit Education Tel: 98583618
+Intensive notes (Topic 3: Metals)
+Factors that speed up rusting
+1. Presence of salt (Salt increases the electrical conductivity)
+2. Presence of acid (Acid increases the electrical conductivity and promotes iron(II) ion formation)
+3. High temperature (Higher temperature, higher reaction rate)
+4. Attachment of less reactive metal (e.g. tin, lead, copper, silver) to iron
+Corrosion resistance of aluminium
+Aluminium has a thin layer of aluminium oxide which is impermeable to water and oxygen.
+Anodization: A process to thicken the aluminium oxide layer on the surface of aluminium.
+In anodization, the aluminium object is connected to a positive terminal of the battery
+Anodized aluminium object has a higher corrosion resistance and can be dyed more easily.
+
+-- 12 of 12 --
+

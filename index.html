@@ -292,10 +292,14 @@
         </div>
         <div class="chapter-draw-mount" data-chapter-draw-root aria-hidden="true"></div>
     </div>
-    <!-- Microscopic World I MCQ quiz (Ch5–8) -->
+    <!-- Quiz: Microscopic World I + Topic 3 Metals -->
     <div id="quiz-page" class="blank-page chapter-page quiz-embed-page">
         <div class="quiz-embed-fs">
-            <iframe class="quiz-embed-frame" title="Microscopic World I Quiz"
+            <div class="quiz-embed-toolbar seg" role="group" aria-label="Quiz topic">
+                <button type="button" id="quiz-embed-topic-mwi" class="active" aria-pressed="true" data-i18n="quizEmbed.topicMicroscopicWorldI">Microscopic World I</button>
+                <button type="button" id="quiz-embed-topic-metals" aria-pressed="false" data-i18n="quizEmbed.topicMetals">Topic 3: Metals</button>
+            </div>
+            <iframe id="quiz-embed-frame" class="quiz-embed-frame" title="Microscopic World I Quiz"
                 src="./public/quiz/microscopic-world-i/quiz.html?v=20260704v4"></iframe>
         </div>
     </div>
@@ -559,6 +563,28 @@
                                 <p class="chem-tool-desc" data-i18n="worksheets.subtypeMicroscopicWorldIExerciseDesc">427 HKDSE questions: atomic structure, periodic table, bonding, and properties of substances.</p>
                             </div>
                         </div>
+                        <div class="chem-tool-card worksheet-type-card" data-worksheet-subtype="topic-3-metals-exercise" role="button" tabindex="0">
+                            <div class="chem-tool-header">
+                                <div class="chem-tool-icon-box balancer-icon">
+                                    <span class="chem-tool-number">5</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="3" y="8" width="18" height="10" rx="1" />
+                                        <path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
+                                        <path d="M12 12v2" />
+                                    </svg>
+                                </div>
+                                <span class="chem-tool-arrow" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="chem-tool-info">
+                                <h3 class="chem-tool-name" data-i18n="worksheets.subtypeTopic3Metals">Topic 3: Metals</h3>
+                                <p class="chem-tool-desc" data-i18n="worksheets.subtypeTopic3MetalsDesc">48 HKDSE-style questions: uses, extraction, reactivity, reactions, displacement, corrosion, and mole calculations.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -728,6 +754,15 @@
                 <div class="worksheet-embed-fs">
                     <iframe class="worksheet-embed-fs-frame" title="Microscopic World I"
                         src="./public/worksheets/microscopic-world-i-exercise/quiz.html?v=20260704v4"></iframe>
+                </div>
+            </div>
+            <div id="worksheet-panel-topic-3-metals-exercise" class="worksheet-panel worksheet-panel--embed-full" hidden aria-hidden="true">
+                <div class="worksheet-panel-bar">
+                    <button type="button" class="worksheet-back-btn" data-i18n="worksheets.backToHub">Back to worksheets</button>
+                </div>
+                <div class="worksheet-embed-fs">
+                    <iframe class="worksheet-embed-fs-frame" title="Topic 3: Metals"
+                        src="./public/worksheets/topic-3-metals-exercise/quiz.html?v=20260704v1"></iframe>
                 </div>
             </div>
         </div>
