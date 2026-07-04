@@ -99,7 +99,7 @@ function renderCard() {
   if (card.backCompact) {
     els.cardBack.classList.add("card-text-compact");
   } else {
-    applyCardTextSize(els.cardBack, card.back, true);
+    applyCardTextSize(els.cardBack, card.back, true, "back");
   }
 
   if (card.image) {
@@ -166,11 +166,19 @@ function stripHtml(html) {
   return d.textContent || "";
 }
 
-function applyCardTextSize(el, text, isHtml = false) {
+function applyCardTextSize(el, text, isHtml = false, side = "front") {
   el.classList.remove("card-text-long", "card-text-compact");
   const plain = (isHtml ? stripHtml(text) : text).trim();
   const lines = plain.split("\n").filter(Boolean).length;
   const len = plain.length;
+  if (side === "back") {
+    if (lines >= 4 || len > 150) {
+      el.classList.add("card-text-compact");
+    } else if (lines >= 3 || len > 90) {
+      el.classList.add("card-text-long");
+    }
+    return;
+  }
   if (lines >= 5 || len > 220) {
     el.classList.add("card-text-compact");
   } else if (lines >= 4 || len > 130) {

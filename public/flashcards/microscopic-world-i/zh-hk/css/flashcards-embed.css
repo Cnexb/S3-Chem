@@ -41,14 +41,24 @@ html.bio-embed body {
 }
 
 .card-front-text,
-.card-back-text,
-#card-front-text,
-#card-back-text {
+#card-front-text {
   font-size: clamp(1.5rem, 4.5vw, 2.5rem) !important;
   font-weight: 700;
   line-height: 1.45;
   letter-spacing: 0.01em;
   word-spacing: 0.05em;
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.card-back-text,
+#card-back-text {
+  font-size: clamp(1.05rem, 2.6vw, 1.5rem) !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  word-spacing: 0.04em;
   white-space: normal;
   overflow-wrap: break-word;
   max-width: 100%;
@@ -81,19 +91,27 @@ html.bio-embed body {
 }
 
 .card-front-text.card-text-long,
-.card-back-text.card-text-long,
-#card-front-text.card-text-long,
-#card-back-text.card-text-long {
+#card-front-text.card-text-long {
   font-size: clamp(1.05rem, 2.4vw, 1.45rem) !important;
   line-height: 1.38;
 }
 
+.card-back-text.card-text-long,
+#card-back-text.card-text-long {
+  font-size: clamp(0.95rem, 2.1vw, 1.2rem) !important;
+  line-height: 1.36;
+}
+
 .card-front-text.card-text-compact,
-.card-back-text.card-text-compact,
-#card-front-text.card-text-compact,
-#card-back-text.card-text-compact {
+#card-front-text.card-text-compact {
   font-size: clamp(0.9rem, 2vw, 1.2rem) !important;
   line-height: 1.35;
+}
+
+.card-back-text.card-text-compact,
+#card-back-text.card-text-compact {
+  font-size: clamp(0.82rem, 1.7vw, 1rem) !important;
+  line-height: 1.32;
 }
 
 .card-body-scroll {
