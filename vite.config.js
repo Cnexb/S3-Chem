@@ -9,6 +9,7 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('elementsDetail')) return 'elements-detail';
+          if (id.includes('eitController') || id.includes('eitMobileController')) return 'eit-controller';
           if (id.includes('elementsIndex') || id.includes('elementShells')) return 'elements-index';
           if (id.includes('elementsData')) return 'elements-data';
           if (id.includes('threeRenderer')) return 'three-renderer';

@@ -6,7 +6,7 @@
   <title>HKDSE Chem — Atomic structure worksheet (HTML)</title>
   <link rel="stylesheet" href="../../../css/worksheet-styles.css?v=2.1.7">
   <link rel="stylesheet" href="../ch5-shared/ch5-embed-base.css?v=2">
-  <link rel="stylesheet" href="atomic-worksheet.css?v=4">
+  <link rel="stylesheet" href="atomic-worksheet.css?v=20260704">
   <script src="../ch5-shared/ch5-embed-ui.js?v=4"></script>
   <style>
     @media print {
@@ -42,6 +42,10 @@
         margin: 0 !important;
         padding: 0 !important;
         pointer-events: auto !important;
+      }
+      #pdfSheet .pdf-q {
+        page-break-inside: avoid;
+        break-inside: avoid;
       }
     }
   </style>
@@ -168,6 +172,10 @@
   <script>
 (function () {
   "use strict";
+
+  const EXPORT_Q_STYLE = "page-break-inside:avoid;break-inside:avoid;margin-bottom:1rem";
+  const EXPORT_HEAD_STYLE =
+    "<style>.export-q,.pdf-q{page-break-inside:avoid;break-inside:avoid;margin-bottom:1rem}.export-q h2{margin-top:0}</style>";
 
   const ELEMENTS = [
     { z: 1, sym: "H", name_en: "Hydrogen", name_zh: "氫", shells: "1" },
@@ -1626,7 +1634,7 @@
     }
     html += "</div>";
     lastQuestions.forEach((q, i) => {
-      html += "<div class=\"pdf-q\"><strong>Q" + (i + 1) + "</strong> [" + escHtml(q.qtype) + "]<br/>";
+      html += "<div class=\"pdf-q\" style=\"page-break-inside:avoid;break-inside:avoid;margin-bottom:10pt\"><strong>Q" + (i + 1) + "</strong> [" + escHtml(q.qtype) + "]<br/>";
       html += "<strong>EN:</strong> " + escHtml(q.stem_en) + "<br/>";
       html += "<strong>中文：</strong> " + escHtml(q.stem_zh) + "<br/>";
       if (window.Ch5EmbedUI.hasChoiceOptions(q) && !answersMode) {
@@ -1664,6 +1672,7 @@
     const titleZh = answersMode ? "原子結構 — 答案" : "原子結構 — 試題";
     let body = "";
     lastQuestions.forEach((q, i) => {
+      body += "<div class=\"export-q\" style=\"" + EXPORT_Q_STYLE + "\">";
       body += "<h2>Q" + (i + 1) + " [" + escHtml(q.qtype) + "]</h2>";
       body += "<p><b>EN:</b> " + escHtml(q.stem_en) + "</p>";
       body += "<p><b>中文：</b> " + escHtml(q.stem_zh) + "</p>";
@@ -1686,13 +1695,14 @@
         }
         body += "<p><i>Hint / 提示:</i> " + escHtml(q.hint_en) + " | " + escHtml(q.hint_zh) + "</p>";
       }
+      body += "</div>";
     });
     const html =
       "<html xmlns:o=\"urn:schemas-microsoft-com:office:office\" " +
       "xmlns:w=\"urn:schemas-microsoft-com:office:word\" xmlns=\"http://www.w3.org/TR/REC-html40\">" +
       "<head><meta charset=\"utf-8\"><title>" +
       escHtml(titleEn) +
-      "</title></head><body>" +
+      "</title>" + EXPORT_HEAD_STYLE + "</head><body>" +
       "<h1>" +
       escHtml(titleEn) +
       "</h1><h2 style=\"font-size:14pt\">" +

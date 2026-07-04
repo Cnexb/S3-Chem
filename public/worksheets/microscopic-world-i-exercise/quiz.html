@@ -102,10 +102,26 @@ tailwind.config = {
 }
 .quiz-stem-table td.tabular-nums { font-variant-numeric: tabular-nums; }
 @media print {
-  body * { visibility: hidden; }
-  #quiz-pdf-sheet, #quiz-pdf-sheet * { visibility: visible; }
-  #quiz-pdf-sheet { display: block !important; position: absolute; left: 0; top: 0; width: 100%; padding: 1rem; }
-  #settings-panel { display: none !important; }
+  html, body {
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+  body > *:not(#quiz-pdf-sheet) { display: none !important; }
+  #quiz-pdf-sheet {
+    display: block !important;
+    position: static !important;
+    width: 100%;
+    padding: 1rem;
+    visibility: visible !important;
+  }
+  #quiz-pdf-sheet .export-q { page-break-inside: avoid; break-inside: avoid; margin-bottom: 1rem; }
+  #quiz-pdf-sheet .quiz-stem-table th,
+  #quiz-pdf-sheet .quiz-stem-table td { border: 1px solid #999; padding: 4px 8px; }
+  #quiz-pdf-sheet .export-fig img { max-width: 100%; height: auto; page-break-inside: avoid; }
 }
 </style>
 </head>

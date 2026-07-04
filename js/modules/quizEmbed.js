@@ -3,7 +3,7 @@
 const CACHE_BUST = "v=20260704v1";
 
 const QUIZZES = {
-  "microscopic-world-i": `./public/quiz/microscopic-world-i/quiz.html?v=20260702v19`,
+  "microscopic-world-i": `./public/quiz/microscopic-world-i/quiz.html?v=20260704v4`,
   metals: `./public/quiz/metals/quiz.html?${CACHE_BUST}`,
 };
 

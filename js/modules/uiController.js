@@ -24,8 +24,6 @@ import {
 } from "../data/locales/zhHantUi.js";
 
 
-// v2 dataset stub — file removed; branches gated by uniplusVersion === 'new' are inert.
-const elementsData_v2 = [];
 let cachedFinallyData = null;
 let threeRendererModule = null;
 let tutorialInitialized = false;
@@ -80,6 +78,7 @@ const REPRESENTATIVE_MASS_NUMBERS = [
 let activeLegendCategory = null;
 let headlineResizeHandler = null;
 let levelSystemBound = false;
+let modal3DInitTimer = null;
 
 // ===== Expandable Ion / Isotope Pill Helpers =====
 const ION_SUBSCRIPT_MAP = {
@@ -1216,7 +1215,6 @@ function updatePeriodicTableLocalizedText(tableContainer) {
 
 // ===== Periodic Table Grid Generation =====
 export async function buildPeriodicTable(tableContainer) {
-  await ensureElementDetailCache();
   eitController.resetEITRegistry();
   eitController.resetEITState();
 
@@ -1537,6 +1535,10 @@ export async function buildPeriodicTable(tableContainer) {
       setTimeout(() => showModal(leadElement), 500);
     }
   }
+
+  void ensureElementDetailCache()
+    .then(() => eitController.rehydrateRegistry())
+    .catch((e) => console.error("Element detail preload error:", e));
 }
 
 // ===== Modal DOM References (assigned in initModalUI) =====
@@ -1958,7 +1960,6 @@ function setupL3UnitConversion(blueCard, rawData, extData) {
 // ===== Simplified View Population =====
 function populateSimplifiedView(element) {
   const finallyElementData = getFinallyElementData(element);
-  const v2Data = elementsData_v2[element.number];
   const eduData = element.educational || {};
   const numberToSuperscript = (num) => {
     const map = {
@@ -2087,11 +2088,6 @@ function populateSimplifiedView(element) {
     let typeDisplay = element.category || "Unknown";
     let phaseDisplay = element.phase || "Unknown";
 
-    if (window.uniplusVersion === 'new' && v2Data) {
-      typeDisplay = v2Data.level1_basic.type || typeDisplay;
-      phaseDisplay = v2Data.level1_basic.phaseAtSTP || phaseDisplay;
-    }
-
     const localizeType = (rawType) => {
       if (!rawType) return t("elementL1.unknown");
       const s = String(rawType).trim();
@@ -2142,9 +2138,6 @@ function populateSimplifiedView(element) {
         .querySelectorAll(".ion-item")
         .forEach((item) => item.remove());
       let commonIonsText = finallyElementData.level1_basic?.commonIons || "";
-      if (window.uniplusVersion === 'new' && v2Data) {
-        commonIonsText = v2Data.level1_basic.commonIons || "";
-      }
       const langCode = getLang();
       if (elementLocales[langCode] && elementLocales[langCode][element.number]?.ions) {
         commonIonsText = elementLocales[langCode][element.number].ions;
@@ -2225,13 +2218,6 @@ function populateSimplifiedView(element) {
   );
   if (yellowCard) {
     let avgMass = finallyElementData.level2_atomic?.mass?.highSchool || "—";
-    if (window.uniplusVersion === 'new' && v2Data && v2Data.level2_atomic.mass.standard) {
-      avgMass = v2Data.level2_atomic.mass.standard;
-    }
-    let level2Config = finallyElementData.level3_properties?.electronic?.configuration || "—";
-    if (window.uniplusVersion === 'new' && v2Data && v2Data.level3_properties?.electronic?.configuration) {
-      level2Config = v2Data.level3_properties.electronic.configuration;
-    }
 
     setText("#l2-avg-mass-value", formatAverageAtomicMass(avgMass, element.number, element.weight));
     setText("#l2-protons-value", element.number.toString());
@@ -2260,9 +2246,6 @@ function populateSimplifiedView(element) {
                   ? finallyElementData.level2_atomic.mostStableIsotopes
                   : [];
 
-      if (window.uniplusVersion === 'new' && v2Data) {
-        isotopesToDisplay = v2Data.level2_atomic.naturalIsotopes || [];
-      }
       isotopesToDisplay.forEach((iso) => {
         const parseMassNumber = () => {
           if (iso.name?.includes("-")) return iso.name.split("-")[1];
@@ -2309,12 +2292,6 @@ function populateSimplifiedView(element) {
     if (oxidationContainer) {
       oxidationContainer.innerHTML = "";
       let statesObj = finallyElementData.level3_properties?.electronic?.oxidationStates || { common: [], possible: [] };
-      if (window.uniplusVersion === 'new' && v2Data) {
-        const v2Ox = v2Data.level3_properties?.electronic?.oxidationStates;
-        if (v2Ox && ((v2Ox.common && v2Ox.common.length > 0) || (v2Ox.possible && v2Ox.possible.length > 0))) {
-          statesObj = v2Ox;
-        }
-      }
       // Support legacy flat array format
       if (Array.isArray(statesObj)) {
         statesObj = { common: statesObj.slice(0, 1), possible: statesObj.slice(1) };
@@ -2362,14 +2339,6 @@ function populateSimplifiedView(element) {
     let melt = finallyElementData.level3_properties?.physical?.meltingPoint || "";
     let boil = finallyElementData.level3_properties?.physical?.boilingPoint || "";
     let ar = finallyElementData.level3_properties?.physical?.atomicRadius || "";
-
-    if (window.uniplusVersion === 'new' && v2Data) {
-      en = v2Data.level3_properties.physical.electronegativity ?? en;
-      den = v2Data.level3_properties.physical.density || den;
-      melt = v2Data.level3_properties.physical.meltingPoint || melt;
-      boil = v2Data.level3_properties.physical.boilingPoint || boil;
-      ar = v2Data.level3_properties.physical.atomicRadius || ar;
-    }
 
     const ext = getGlobalPhysicalExtremes();
     function getExt(metric) {
@@ -2464,19 +2433,11 @@ function populateSimplifiedView(element) {
       });
     });
     let year = finallyElementData.level4_history_stse?.history?.discoveryYear || "—";
-    if (window.uniplusVersion === 'new' && v2Data && v2Data.level4_history_stse.history.discoveryYear) {
-      year = v2Data.level4_history_stse.history.discoveryYear;
-    }
 
     setText("#el-modal-l4-year", year);
     
     let discoveredBy = finallyElementData.level4_history_stse?.history?.discoveredBy || "—";
     let namedBy = finallyElementData.level4_history_stse?.history?.namedBy || "—";
-
-    if (window.uniplusVersion === 'new' && v2Data) {
-      discoveredBy = v2Data.level4_history_stse.history.discoveredBy || "—";
-      namedBy = v2Data.level4_history_stse.history.namedBy || "—";
-    }
 
     const langCode = getLang();
     if (elementLocales[langCode] && elementLocales[langCode][element.number]?.history) {
@@ -2504,11 +2465,6 @@ function populateSimplifiedView(element) {
         const stseContent = findContentDiv(stseCell, "stse");
 
         let stseVal = (finallyElementData.level4_history_stse?.stseContext || []).join("; ");
-        if (window.uniplusVersion === 'new' && v2Data) {
-          stseVal = v2Data.level4_history_stse.stseContext && v2Data.level4_history_stse.stseContext.length > 0
-            ? v2Data.level4_history_stse.stseContext.join(" • ")
-            : "";
-        }
 
         const langCode = getLang();
         if (elementLocales[langCode] && elementLocales[langCode][element.number]?.stse) {
@@ -2532,11 +2488,6 @@ function populateSimplifiedView(element) {
         const usesContent = findContentDiv(usesCell, "uses");
 
         let usesVal = (finallyElementData.level4_history_stse?.commonUses || []).join(", ") || "—";
-        if (window.uniplusVersion === 'new' && v2Data) {
-          usesVal = v2Data.level4_history_stse.commonUses && v2Data.level4_history_stse.commonUses.length > 0
-            ? v2Data.level4_history_stse.commonUses.join(", ")
-            : "—";
-        }
 
         const langCode = getLang();
         if (elementLocales[langCode] && elementLocales[langCode][element.number]?.uses) {
@@ -2555,11 +2506,6 @@ function populateSimplifiedView(element) {
         const hazardsContent = findContentDiv(hazardsCell, "hazards");
 
         let hazardsVal = (finallyElementData.level4_history_stse?.hazards || []).join(", ") || "—";
-        if (window.uniplusVersion === 'new' && v2Data) {
-          hazardsVal = v2Data.level4_history_stse.hazards && v2Data.level4_history_stse.hazards.length > 0
-            ? v2Data.level4_history_stse.hazards.join(", ")
-            : "—";
-        }
 
         const langCode = getLang();
         if (elementLocales[langCode] && elementLocales[langCode][element.number]?.hazards) {
@@ -3142,9 +3088,12 @@ export async function showModal(element) {
     three.clearCurrentAtom();
     three.renderScene();
     void atomContainer.offsetWidth;
-    setTimeout(async () => {
+    clearTimeout(modal3DInitTimer);
+    modal3DInitTimer = setTimeout(async () => {
       try {
+        if (!modal || !modal.classList.contains("active")) return;
         await three.ensureThreeLibLoaded();
+        if (!modal.classList.contains("active")) return;
         const contentHeight =
           modal.querySelector(".modal-content").clientHeight;
         if (atomContainer.clientHeight === 0) {
@@ -3172,7 +3121,9 @@ export async function showModal(element) {
     }, 100);
   } else {
     atomContainer.classList.remove("visible");
-    void getThreeRenderer().then((three) => three.cleanup3D()).catch(() => {});
+    void getThreeRenderer().then((three) => three.cleanup3D()).catch((e) => {
+      console.warn("Three.js cleanup failed:", e);
+    });
   }
 }
 
@@ -3410,12 +3361,16 @@ export function initModalUI() {
   }
 
   function closeElementModal() {
+    clearTimeout(modal3DInitTimer);
+    modal3DInitTimer = null;
     modal.classList.remove("active");
     document.body.classList.remove("hide-nav");
     document.title = "Uni+";
     clearHeadlineResizeHandler();
     resetElementHeadlineName(document.getElementById("headline-name"));
-    void getThreeRenderer().then((three) => three.cleanup3D(true)).catch(() => {});
+    void getThreeRenderer().then((three) => three.cleanup3D(true)).catch((e) => {
+      console.warn("Three.js cleanup failed:", e);
+    });
     atomContainer.classList.remove("visible");
     if (window._uniplusAtomPauseBtn) window._uniplusAtomPauseBtn.style.display = "none";
     resetModalUI();
@@ -3580,7 +3535,9 @@ export function unmountElementDetailsInline() {
   if (!st) return;
 
   try {
-    void getThreeRenderer().then((three) => three.cleanup3D(true)).catch(() => {});
+    void getThreeRenderer().then((three) => three.cleanup3D(true)).catch((e) => {
+      console.warn("Three.js cleanup failed:", e);
+    });
   } catch {
     /* ignore */
   }
@@ -3702,7 +3659,9 @@ export function unmountAtom3DInline() {
   if (!st) return;
 
   try {
-    void getThreeRenderer().then((three) => three.cleanup3D(true)).catch(() => {});
+    void getThreeRenderer().then((three) => three.cleanup3D(true)).catch((e) => {
+      console.warn("Three.js cleanup failed:", e);
+    });
   } catch {
     /* ignore */
   }

@@ -5,7 +5,16 @@ import {
   modelAnswerText,
   questionFormat,
   getFillLines,
-} from "./quizUtils.js";
+  buildStemExportHtml,
+  prefetchExportImages,
+  buildFiguresExportHtml,
+  waitForExportImages,
+  EXPORT_TABLE_STYLE,
+} from "./quizUtils.js?v=20260704v3";
+
+const EXPORT_Q_STYLE = "page-break-inside:avoid;break-inside:avoid;margin-bottom:1rem";
+const EXPORT_HEAD_STYLE =
+  `<style>.export-q{page-break-inside:avoid;break-inside:avoid;margin-bottom:1rem}.export-q h2{margin-top:0}${EXPORT_TABLE_STYLE}</style>`;
 
 function fillLineExportHtml(line, answersMode) {
   let html = "";
@@ -23,16 +32,14 @@ function fillLineExportHtml(line, answersMode) {
   return html;
 }
 
-function buildDocBody(questions, answersMode) {
+function buildDocBody(questions, answersMode, imageCache, imageMode = "embed") {
   let body = "";
   questions.forEach((q, i) => {
     const fmt = questionFormat(q);
+    body += `<div class="export-q" style="${EXPORT_Q_STYLE}">`;
     body += `<h2>Q${i + 1} · ${escHtml(q.section)} · ${escHtml(q.difficulty)} · ${escHtml(fmt.toUpperCase())}</h2>`;
-    body += `<p><b>EN:</b> ${escHtml(q.stem)}</p>`;
-    if (q.stemZh) body += `<p><b>中文：</b> ${escHtml(q.stemZh)}</p>`;
-    if (q.image?.src && !answersMode) {
-      body += `<p><i>[Diagram: ${escHtml(q.image.caption || q.image.alt || "see notes")}]</i></p>`;
-    }
+    body += buildStemExportHtml(q);
+    body += buildFiguresExportHtml(q, imageCache, imageMode);
     if (!answersMode) {
       if (fmt === "fill" && getFillLines(q).length) {
         if (q.wordBank?.length) {
@@ -58,11 +65,12 @@ function buildDocBody(questions, answersMode) {
       if (ma.zh) body += `<p>${escHtml(ma.zh)}</p>`;
       body += `<p><i>Hint / 提示:</i> ${escHtml(q.hint || "")}</p>`;
     }
+    body += "</div>";
   });
   return body;
 }
 
-export function downloadWord(questions, answersMode, lang) {
+export async function downloadWord(questions, answersMode, lang) {
   if (!questions.length) {
     alert(noQuizAlertMessage(lang));
     return;
@@ -71,10 +79,11 @@ export function downloadWord(questions, answersMode, lang) {
     ? "Ch 3.7 Refraction — Answers"
     : "Ch 3.7 Refraction — Questions";
   const titleZh = answersMode ? "第三章 3.7 折射 — 答案" : "第三章 3.7 折射 — 試題";
-  const body = buildDocBody(questions, answersMode);
+  const imageCache = await prefetchExportImages(questions);
+  const body = buildDocBody(questions, answersMode, imageCache);
   const html =
     '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">' +
-    `<head><meta charset="utf-8"><title>${escHtml(titleEn)}</title></head><body>` +
+    `<head><meta charset="utf-8"><title>${escHtml(titleEn)}</title>${EXPORT_HEAD_STYLE}</head><body>` +
     `<h1>${escHtml(titleEn)}</h1><h2 style="font-size:14pt">${escHtml(titleZh)}</h2>${body}</body></html>`;
   const blob = new Blob(["\ufeff", html], { type: "application/msword" });
   const a = document.createElement("a");
@@ -85,7 +94,7 @@ export function downloadWord(questions, answersMode, lang) {
   URL.revokeObjectURL(a.href);
 }
 
-export function printSheet(questions, answersMode, lang) {
+export async function printSheet(questions, answersMode, lang) {
   if (!questions.length) {
     alert(noQuizAlertMessage(lang));
     return;
@@ -96,7 +105,8 @@ export function printSheet(questions, answersMode, lang) {
     ? "Ch 3.7 Refraction (Answers)"
     : "Ch 3.7 Refraction (Questions)";
   let html = `<h1>${escHtml(titleEn)}</h1>`;
-  html += buildDocBody(questions, answersMode);
+  html += buildDocBody(questions, answersMode, null, "direct");
   sheet.innerHTML = html;
+  await waitForExportImages(sheet);
   window.print();
 }
