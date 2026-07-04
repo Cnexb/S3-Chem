@@ -121,10 +121,6 @@ export const zhHantUI = {
     "pendingName": "待定",
     "pendingDesc": "更多類型稍後推出。"
   },
-  "quizEmbed": {
-    "topicMicroscopicWorldI": "微觀世界 I",
-    "topicMetals": "Topic 3：金屬"
-  },
   "summary": {
     "hubTitle": "總結",
     "hubSubtitle": "選擇主題以查看圖像筆記",

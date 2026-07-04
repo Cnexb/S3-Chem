@@ -121,10 +121,6 @@ export const frUI = {
     "pendingName": "A venir",
     "pendingDesc": "D'autres types arriveront plus tard."
   },
-  "quizEmbed": {
-    "topicMicroscopicWorldI": "Microscopic World I",
-    "topicMetals": "Topic 3: Metals"
-  },
   "search": {
     "placeholder": "Rechercher...",
     "noResults": "Aucun element trouve"

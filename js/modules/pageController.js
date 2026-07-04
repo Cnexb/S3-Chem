@@ -12,7 +12,6 @@ export function initPageController(options = {}) {
     onWorksheetPageShown,
     onSettingsPageShown,
     onFlashcardsPageShown,
-    onQuizPageShown,
   } = options;
 
   const mainContainer = document.getElementById("main-container");
@@ -104,9 +103,6 @@ export function initPageController(options = {}) {
 
     if (page === "quiz") {
       requestAnimationFrame(() => window.dispatchEvent(new Event("resize")));
-      if (typeof onQuizPageShown === "function") {
-        onQuizPageShown();
-      }
     }
 
     if (page === "flashcards" && typeof onFlashcardsPageShown === "function") {

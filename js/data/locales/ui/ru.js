@@ -121,10 +121,6 @@ export const ruUI = {
     "pendingName": "Скоро",
     "pendingDesc": "Другие типы появятся позже."
   },
-  "quizEmbed": {
-    "topicMicroscopicWorldI": "Microscopic World I",
-    "topicMetals": "Topic 3: Metals"
-  },
   "search": {
     "placeholder": "Поиск...",
     "noResults": "Элементы не найдены"

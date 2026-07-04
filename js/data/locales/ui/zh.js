@@ -121,10 +121,6 @@ export const zhUI = {
     "pendingName": "待定",
     "pendingDesc": "更多类型稍后推出。"
   },
-  "quizEmbed": {
-    "topicMicroscopicWorldI": "微观世界 I",
-    "topicMetals": "Topic 3：金属"
-  },
   "summary": {
     "hubTitle": "总结",
     "hubSubtitle": "选择主题以查看图像笔记",
