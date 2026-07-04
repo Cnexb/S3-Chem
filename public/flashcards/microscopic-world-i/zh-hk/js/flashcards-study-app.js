@@ -96,6 +96,7 @@ function renderCard() {
   els.cardFront.innerHTML = card.front;
   els.cardBack.innerHTML = card.back;
   applyCardTextSize(els.cardFront, card.front, true);
+  els.cardBack.classList.remove("card-text-long", "card-text-compact");
   if (card.backCompact) {
     els.cardBack.classList.add("card-text-compact");
   } else {
@@ -172,9 +173,9 @@ function applyCardTextSize(el, text, isHtml = false, side = "front") {
   const lines = plain.split("\n").filter(Boolean).length;
   const len = plain.length;
   if (side === "back") {
-    if (lines >= 4 || len > 150) {
+    if (lines >= 3 || len > 100) {
       el.classList.add("card-text-compact");
-    } else if (lines >= 3 || len > 90) {
+    } else if (len > 55) {
       el.classList.add("card-text-long");
     }
     return;

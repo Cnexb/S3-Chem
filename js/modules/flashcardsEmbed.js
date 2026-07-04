@@ -1,6 +1,6 @@
 // Microscopic World I flashcards — iframe language switcher for #flashcards-page
 
-const CACHE_BUST = "v=20260630";
+const CACHE_BUST = "v=20260704";
 const BASE = "./public/flashcards/microscopic-world-i";
 
 const LOCALES = {
