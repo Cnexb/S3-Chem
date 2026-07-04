@@ -121,10 +121,6 @@ export const enUI = {
     "pendingName": "Pending",
     "pendingDesc": "More worksheet types coming later."
   },
-  "quizEmbed": {
-    "topicMicroscopicWorldI": "Microscopic World I",
-    "topicMetals": "Topic 3: Metals"
-  },
   "summary": {
     "hubTitle": "Summary",
     "hubSubtitle": "Choose a topic to view infographic summaries",

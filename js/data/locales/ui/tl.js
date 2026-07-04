@@ -121,10 +121,6 @@ export const tlUI = {
     "pendingName": "Nakabinbin",
     "pendingDesc": "Higit pang uri mamaya."
   },
-  "quizEmbed": {
-    "topicMicroscopicWorldI": "Microscopic World I",
-    "topicMetals": "Topic 3: Metals"
-  },
   "search": {
     "placeholder": "Maghanap...",
     "noResults": "Walang elementong nakita"

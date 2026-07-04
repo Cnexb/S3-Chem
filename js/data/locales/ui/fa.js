@@ -121,10 +121,6 @@ export const faUI = {
     "pendingName": "به‌زودی",
     "pendingDesc": "انواع دیگر بعداً اضافه می‌شوند."
   },
-  "quizEmbed": {
-    "topicMicroscopicWorldI": "Microscopic World I",
-    "topicMetals": "Topic 3: Metals"
-  },
   "search": {
     "placeholder": "جستجو...",
     "noResults": "عنصری یافت نشد"

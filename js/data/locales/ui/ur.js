@@ -121,10 +121,6 @@ export const urUI = {
     "pendingName": "زیر التواء",
     "pendingDesc": "مزید اقسام بعد میں۔"
   },
-  "quizEmbed": {
-    "topicMicroscopicWorldI": "Microscopic World I",
-    "topicMetals": "Topic 3: Metals"
-  },
   "search": {
     "placeholder": "تلاش کریں...",
     "noResults": "کوئی عنصر نہیں ملا"
