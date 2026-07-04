@@ -232,12 +232,14 @@ export function parsePipeTableFromStem(stem) {
   };
 }
 
-export function renderStemTableHtml(table) {
+export function renderStemTableHtml(table, forExport = false) {
   const headers = table?.headers || [];
   const rows = table?.rows || [];
   if (!headers.length && !rows.length) return "";
   const useHeaderRow = headers.length > 0;
-  let html = '<div class="overflow-x-auto my-4"><table class="quiz-stem-table">';
+  let html = forExport
+    ? '<table class="quiz-stem-table">'
+    : '<div class="overflow-x-auto my-4"><table class="quiz-stem-table">';
   if (useHeaderRow) {
     html += "<thead><tr>";
     for (const h of headers) {
@@ -255,11 +257,225 @@ export function renderStemTableHtml(table) {
       const rowLabel =
         (useHeaderRow && headers[0] === "" && i === 0) || (!useHeaderRow && i === 0);
       const tag = rowLabel ? "th" : "td";
-      const cls = tag === "td" ? ' class="tabular-nums"' : "";
+      const cls = tag === "td" && !forExport ? ' class="tabular-nums"' : "";
       html += `<${tag}${cls}>${escHtml(cell)}</${tag}>`;
     });
     html += "</tr>";
   }
-  html += "</tbody></table></div>";
+  html += "</tbody></table>";
+  if (!forExport) html += "</div>";
+  return html;
+}
+
+export const EXPORT_TABLE_STYLE = `
+.quiz-stem-table{border-collapse:collapse;width:100%;margin:0.5rem 0}
+.quiz-stem-table th,.quiz-stem-table td{border:1px solid #999;padding:4px 8px;text-align:left}
+.export-fig{margin:0.5rem 0;page-break-inside:avoid}
+.export-fig img{max-width:100%;height:auto;page-break-inside:avoid;display:block;margin:0.25rem 0}
+`;
+
+export function resolveExportAssetUrl(src) {
+  try {
+    return new URL(src, window.location.href).href;
+  } catch {
+    return String(src || "");
+  }
+}
+
+export function collectQuestionImageSrcs(questions) {
+  const srcs = new Set();
+  for (const q of questions) {
+    if (q.image?.src) srcs.add(q.image.src);
+    for (const img of q.images || []) {
+      if (img?.src) srcs.add(img.src);
+    }
+  }
+  return [...srcs];
+}
+
+function readBlobAsDataUrl(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+}
+
+export async function prefetchExportImages(questions) {
+  const cache = new Map();
+  const srcs = collectQuestionImageSrcs(questions);
+  await Promise.all(
+    srcs.map(async (src) => {
+      const resolved = resolveExportAssetUrl(src);
+      try {
+        const res = await fetch(resolved);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const dataUrl = await readBlobAsDataUrl(await res.blob());
+        cache.set(src, dataUrl);
+        cache.set(resolved, dataUrl);
+      } catch {
+        cache.set(src, null);
+        cache.set(resolved, null);
+      }
+    }),
+  );
+  return cache;
+}
+
+export function buildFiguresExportHtml(q, imageCache) {
+  const imgs = q.images?.length ? q.images.filter((img) => img?.src) : q.image?.src ? [q.image] : [];
+  if (!imgs.length) return "";
+
+  const caption = q.image?.caption || imgs[0]?.caption || "";
+  const imgStyle = "max-width:100%;height:auto;page-break-inside:avoid;display:block;margin:0.25rem 0";
+  let html = '<figure class="export-fig">';
+
+  for (const img of imgs) {
+    const dataUrl = imageCache.get(img.src) ?? imageCache.get(resolveExportAssetUrl(img.src));
+    if (dataUrl) {
+      html += `<img src="${dataUrl}" alt="${escHtml(img.alt || "")}" style="${imgStyle}"/>`;
+    } else {
+      html += `<p><i>[Diagram unavailable: ${escHtml(img.caption || img.alt || img.src)}]</i></p>`;
+    }
+  }
+  if (caption) {
+    html += `<figcaption style="font-size:0.9em;margin-top:0.25rem">${escHtml(caption)}</figcaption>`;
+  }
+  html += "</figure>";
+  return html;
+}
+
+function isTableSeparatorLine(line) {
+  return /^\|[\s\-:|]+\|$/.test(line.trim());
+}
+
+function isTableRow(line) {
+  const t = line.trim();
+  if (!t) return false;
+  if (isTableSeparatorLine(t)) return true;
+  if (t.startsWith("|") && t.endsWith("|")) return true;
+  return (t.match(/\|/g) || []).length >= 2;
+}
+
+function parseTableCells(line) {
+  const t = line.trim();
+  if (t.startsWith("|") && t.endsWith("|")) {
+    return t
+      .slice(1, -1)
+      .split("|")
+      .map((s) => s.trim());
+  }
+  return t.split("|").map((s) => s.trim()).filter(Boolean);
+}
+
+function isNumberedLine(line) {
+  return /^\(\d+\)\s/.test(line.trim());
+}
+
+function isOptionTableRow(cells) {
+  return cells.length > 0 && /^[A-D]\.\s/.test(cells[0]);
+}
+
+/** Parse stem text into structured HTML (paragraphs, numbered lists, tables). */
+export function formatStemHtml(text) {
+  const lines = String(text || "").split("\n");
+  const parts = [];
+  let paragraphCount = 0;
+  let i = 0;
+
+  function flushTable(rows) {
+    const dataRows = rows.filter((r) => !isTableSeparatorLine(r));
+    if (!dataRows.length) return;
+    let html = '<table class="quiz-stem-table"><tbody>';
+    dataRows.forEach((row, ri) => {
+      const cells = parseTableCells(row);
+      const isHeader = ri === 0 && !isOptionTableRow(cells);
+      html += "<tr>";
+      cells.forEach((cell) => {
+        html += isHeader
+          ? `<th>${escHtml(cell)}</th>`
+          : `<td>${escHtml(cell)}</td>`;
+      });
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    parts.push(html);
+  }
+
+  function flushList(items) {
+    if (!items.length) return;
+    parts.push(
+      `<ul class="quiz-stem-list">${items.map((li) => `<li>${escHtml(li)}</li>`).join("")}</ul>`,
+    );
+  }
+
+  function flushParagraph(line) {
+    const t = line.trim();
+    if (!t) return;
+    paragraphCount += 1;
+    const cls = paragraphCount === 1 ? "quiz-stem-p quiz-stem-lead" : "quiz-stem-p";
+    parts.push(`<p class="${cls}">${escHtml(t)}</p>`);
+  }
+
+  while (i < lines.length) {
+    const trimmed = lines[i].trim();
+    if (!trimmed) {
+      i += 1;
+      continue;
+    }
+
+    if (isTableRow(trimmed)) {
+      const tableRows = [];
+      while (i < lines.length && lines[i].trim() && isTableRow(lines[i].trim())) {
+        tableRows.push(lines[i].trim());
+        i += 1;
+      }
+      flushTable(tableRows);
+      continue;
+    }
+
+    if (isNumberedLine(trimmed)) {
+      const listItems = [];
+      while (i < lines.length && isNumberedLine(lines[i].trim())) {
+        listItems.push(lines[i].trim());
+        i += 1;
+      }
+      flushList(listItems);
+      continue;
+    }
+
+    flushParagraph(trimmed);
+    i += 1;
+  }
+
+  return parts.join("");
+}
+
+export function buildStemExportHtml(q) {
+  let table = q.stemTable;
+  let intro = q.stem;
+  let suffix = "";
+
+  if (table) {
+    const split = splitStemText(q.stem);
+    intro = split.intro;
+    suffix = split.suffix;
+  } else {
+    const parsed = parsePipeTableFromStem(q.stem);
+    if (parsed?.table && (parsed.table.rows?.length || parsed.table.headers?.length)) {
+      intro = parsed.intro;
+      suffix = parsed.suffix;
+      table = parsed.table;
+    }
+  }
+
+  let html = "";
+  if (intro) html += `<p><b>EN:</b> ${escHtml(intro)}</p>`;
+  if (table && (table.rows?.length || table.headers?.length)) {
+    html += renderStemTableHtml(table, true);
+  }
+  if (suffix) html += `<p>${escHtml(suffix)}</p>`;
+  if (q.stemZh) html += `<p><b>中文：</b> ${escHtml(q.stemZh)}</p>`;
   return html;
 }
