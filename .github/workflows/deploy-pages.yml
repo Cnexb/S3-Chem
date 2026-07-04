@@ -43,6 +43,9 @@ jobs:
           grep -q 'flashcards-page' dist/index.html
           grep -q 'worksheet-hub' dist/index.html
           grep -q 'data-page="flashcards"' dist/index.html
+          grep -q 'fc-embed-topic-metals' dist/index.html
+          test -f dist/public/flashcards/topic-3-metals/en/flashcards-study.html
+          test -f dist/public/flashcards/topic-3-metals/en/js/flashcardData.js
           test -f dist/public/notes/topic-01-planet-earth.pdf
           grep -q 'notes-pdf-frame' dist/index.html
           grep -q 'summary-hub' dist/index.html

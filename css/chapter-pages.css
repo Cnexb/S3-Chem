@@ -1058,7 +1058,7 @@ button.summary-topic-card {
   -webkit-transform: translateZ(0);
 }
 
-/* Flashcards tab — full-viewport iframe embed (Microscopic World I) */
+/* Flashcards tab — full-viewport iframe embed (Topic 2 + Topic 3) */
 #flashcards-page.flashcards-embed-page {
   flex-direction: column;
   align-items: stretch;
@@ -1085,16 +1085,43 @@ button.summary-topic-card {
   flex-direction: column;
 }
 
+#flashcards-page .flashcards-embed-toolbars {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  z-index: 1;
+  padding-top: 0.5rem;
+}
+
 #flashcards-page .flashcards-embed-toolbar {
   flex: 0 0 auto;
   display: inline-flex;
   align-self: center;
-  margin: 0.5rem 0 0.35rem;
+  margin: 0;
   padding: 3px;
   border-radius: 999px;
   background: #eceef0;
   border: 1px solid rgba(193, 198, 213, 0.6);
   z-index: 1;
+}
+
+#flashcards-page .flashcards-embed-toolbar--topic button {
+  padding: 0.35rem 0.65rem;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  #flashcards-page .flashcards-embed-toolbar--topic button {
+    padding: 0.3rem 0.5rem;
+    font-size: 11px;
+  }
+
+  #flashcards-page .flashcards-embed-toolbar button {
+    padding: 0.3rem 0.6rem;
+    font-size: 12px;
+  }
 }
 
 #flashcards-page .flashcards-embed-toolbar button {
