@@ -114,9 +114,9 @@ export const faUI = {
     "subtypeMicroscopicWorld1": "پیوند یونی و کووالانسی",
     "subtypeMicroscopicWorld1Desc": "سوالات پیوند یونی و کووالانسی از Topic 02 Overall 1 (صفحات ۵۸–۱۲۵).",
     "subtypeMicroscopicWorldIExercise": "Microscopic World I",
-    "subtypeMicroscopicWorldIExerciseDesc": "427 HKDSE questions: atomic structure, periodic table, bonding, and properties of substances.",
+    "subtypeMicroscopicWorldIExerciseDesc": "HKDSE questions: atomic structure, periodic table, bonding, and properties of substances.",
     "subtypeTopic3Metals": "Topic 3: Metals",
-    "subtypeTopic3MetalsDesc": "48 HKDSE-style questions: uses, extraction, reactivity, reactions, displacement, corrosion, and mole calculations.",
+    "subtypeTopic3MetalsDesc": "HKDSE-style questions: uses, extraction, reactivity, reactions, displacement, corrosion, and mole calculations.",
     "backToHub": "بازگشت به برگه‌ها",
     "pendingName": "به‌زودی",
     "pendingDesc": "انواع دیگر بعداً اضافه می‌شوند."
