@@ -1,4 +1,4 @@
-import { getFinallyData, getFinallyDataSync, preloadElementDetail } from "../elementDetailLoader.js";
+import { getFinallyDataSync } from "../elementDetailLoader.js";
 import { t, onLangChange } from "../langController.js";
 
 function defaultNormalizeCategoryClass(catClass) {
@@ -422,6 +422,33 @@ function resetEITState() {
 
 function resetEITRegistry() {
   eitRegistry = [];
+}
+
+function hydrateEITEntryMetrics(entry, finallyData) {
+  const physical = finallyData[entry.number]?.level3_properties?.physical || {};
+  EIT_PROPERTY_CONFIG.forEach((config) => {
+    if (config.type !== "numeric") return;
+    const res = parseNumericMetric(physical[config.source], config.source);
+    if (res) {
+      entry.metrics[config.key] = res.value;
+      entry.ranges[config.key] = res;
+    } else {
+      entry.metrics[config.key] = null;
+    }
+  });
+  entry.state =
+    finallyData[entry.number]?.level1_basic?.phaseAtSTP || entry.state || "Unknown";
+}
+
+function rehydrateRegistry() {
+  const finallyData = getFinallyDataSync();
+  if (!finallyData) return;
+  for (let i = 0, len = eitRegistry.length; i < len; i++) {
+    hydrateEITEntryMetrics(eitRegistry[i], finallyData);
+  }
+  if (activeTableContainer) {
+    applyEIT(activeTableContainer);
+  }
 }
 
 function formatEITValue(value, config, withUnit = false) {
@@ -1537,6 +1564,7 @@ function ensureEITController(tableContainer) {
     registerEITElementCell,
     resetEITState,
     resetEITRegistry,
+    rehydrateRegistry,
     ensureEITController,
     isLegendLocked: () => lockLegendInteractions,
     getRegistry: () => eitRegistry,

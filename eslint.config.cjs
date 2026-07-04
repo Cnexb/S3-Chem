@@ -11,6 +11,7 @@ module.exports = [
       "public/**",
       "_import_flash/**",
       "js/vendor/**",
+      "scripts/check-syntax.cjs",
       "three.min.js",
       "generate_*.js",
       "patch_html.js",

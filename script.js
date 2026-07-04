@@ -20,22 +20,6 @@ import {
 } from "./js/modules/langController.js";
 import { initEntryLanding } from "./js/modules/onboardingController.js";
 
-function isRealMobileDevice() {
-  // Wide viewports (> 1024px) get the full desktop app, even on touch devices like iPad.
-  // This must stay in sync with the CSS breakpoint in mobile-landing.css.
-  if (window.innerWidth > 1024) return false;
-
-  const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
-  const hasTouchScreen = ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
-  const mobileUA = /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  const isIPad = /Macintosh/i.test(navigator.userAgent) && hasTouchScreen;
-  return hasCoarsePointer && (mobileUA || isIPad);
-}
-
-
-// ========================================
-// Welcome Modal - Intro Page
-// ========================================
 // ========================================
 // Global Dragging State (used to prevent accidental panel close)
 // ========================================
@@ -99,7 +83,6 @@ applyAnimationPauseState(window._uniplusAnimPaused);
 // ========================================
 /** Vite-bundled worksheet chunk — do NOT use a raw <script src="js/worksheet-generator.js">; that file is not emitted in `dist/`. */
 let worksheetModulePromise = null;
-let heroAtomModulePromise = null;
 
 async function ensureWorksheetReady() {
   if (!worksheetModulePromise) {
@@ -182,16 +165,6 @@ function scheduleIdleDeferredModules() {
   } else {
     setTimeout(run, 2000);
   }
-}
-
-function loadHeroAtomModule() {
-  if (heroAtomModulePromise) return heroAtomModulePromise;
-  heroAtomModulePromise = import("./js/modules/heroAtomRenderer.js");
-  return heroAtomModulePromise;
-}
-
-function initWelcomeModal() {
-  // Deprecated: welcome modal removed (direct-to-app).
 }
 
 // ========================================
@@ -544,9 +517,6 @@ function initNavResponsive() {
   requestAnimationFrame(checkNavCollision);
 }
 
-// Global Data Version State
-window.uniplusVersion = 'old';
-
 function initMainApp() {
   // No welcome / notice pages — go straight to main app.
 
@@ -577,13 +547,11 @@ function initMainApp() {
       void ensureToolsReady()
         .then((ctrl) => setTimeout(() => ctrl.initChemToolCards(), 100))
         .catch((e) => console.error("Tools lazy init error:", e));
-      if (tableContainer) syncEitMobileMount(tableContainer, eitController);
     },
     onLabPageShown: () => {
       void ensureToolsReady()
         .then((ctrl) => setTimeout(() => ctrl.initChemToolCards(), 100))
         .catch((e) => console.error("Tools lazy init error:", e));
-      if (tableContainer) syncEitMobileMount(tableContainer, eitController);
     },
     onWorksheetPageShown: () => {
       void Promise.all([ensureWorksheetHubReady(), ensureWorksheetReady()])
@@ -592,7 +560,6 @@ function initMainApp() {
           hubMod.applyWorksheetEmbedIframesLang();
         })
         .catch((e) => console.error("Worksheet lazy init error:", e));
-      if (tableContainer) syncEitMobileMount(tableContainer, eitController);
     },
     onSettingsPageShown: () => {
       void ensureSummaryHubReady()
@@ -603,22 +570,22 @@ function initMainApp() {
       requestAnimationFrame(() => {
          if (window._syncGlobalUnitButtons) window._syncGlobalUnitButtons(true);
       });
-      if (tableContainer) syncEitMobileMount(tableContainer, eitController);
     },
     onFlashcardsPageShown: () => {
       void ensureFlashcardsEmbedReady().catch((e) => console.error("Flashcards embed init error:", e));
-      if (tableContainer) syncEitMobileMount(tableContainer, eitController);
     },
   });
 
   // Initialize element search in navbar
   initElementSearch(pageCtrl);
 
-  // Floating about button opens Welcome / Help
+  // Floating about button opens element tutorial
   const aboutBtn = document.getElementById("floating-about-btn");
   if (aboutBtn) {
     aboutBtn.addEventListener("click", () => {
-      if (window._showWelcome) window._showWelcome();
+      void import("./js/modules/tutorialController.js")
+        .then((mod) => mod.initElementTutorial(true))
+        .catch((e) => console.error("Tutorial init error:", e));
     });
   }
 
