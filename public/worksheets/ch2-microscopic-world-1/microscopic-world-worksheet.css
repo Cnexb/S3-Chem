@@ -159,6 +159,8 @@
 
 #pdfSheet .pdf-q {
   margin-bottom: 10pt;
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
 
 #pdfSheet .meta {

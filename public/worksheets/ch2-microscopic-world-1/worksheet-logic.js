@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
+  const EXPORT_Q_STYLE = "page-break-inside:avoid;break-inside:avoid;margin-bottom:1rem";
+  const EXPORT_HEAD_STYLE =
+    "<style>.export-q,.pdf-q{page-break-inside:avoid;break-inside:avoid;margin-bottom:1rem}.export-q h2{margin-top:0}</style>";
+
   const F = window.BondingQuestionFilters;
 
   const QUESTION_TYPES = [
@@ -575,7 +579,7 @@
     if (sheetDate) html += " · " + escHtml(sheetDate);
     html += "</div>";
     lastQuestions.forEach((q, i) => {
-      html += "<div class=\"pdf-q\"><strong>Q" + (i + 1) + "</strong> [" + escHtml(q.qtype) + "]<br/>";
+      html += "<div class=\"pdf-q\" style=\"page-break-inside:avoid;break-inside:avoid;margin-bottom:10pt\"><strong>Q" + (i + 1) + "</strong> [" + escHtml(q.qtype) + "]<br/>";
       html += "<strong>EN:</strong> " + escHtml(q.stem_en) + "<br/><strong>中文：</strong> " + escHtml(q.stem_zh) + "<br/>";
       if (window.Ch5EmbedUI.hasChoiceOptions(q) && !answersMode) {
         q.options_en.forEach((op, j) => {
@@ -602,10 +606,12 @@
     const titleEn = answersMode ? "Ionic and covalent bond — Answers" : "Ionic and covalent bond — Questions";
     let body = "";
     lastQuestions.forEach((q, i) => {
+      body += "<div class=\"export-q\" style=\"" + EXPORT_Q_STYLE + "\">";
       body += "<h2>Q" + (i + 1) + " [" + escHtml(q.qtype) + "]</h2><p><b>EN:</b> " + escHtml(q.stem_en) + "</p><p><b>中文：</b> " + escHtml(q.stem_zh) + "</p>";
       if (answersMode) body += "<p><b>Answer:</b> " + escHtml(q.answer_en) + " / " + escHtml(q.answer_zh) + "</p>";
+      body += "</div>";
     });
-    const html = "<html><head><meta charset=\"utf-8\"><title>" + escHtml(titleEn) + "</title></head><body><h1>" + escHtml(titleEn) + "</h1>" + body + "</body></html>";
+    const html = "<html><head><meta charset=\"utf-8\"><title>" + escHtml(titleEn) + "</title>" + EXPORT_HEAD_STYLE + "</head><body><h1>" + escHtml(titleEn) + "</h1>" + body + "</body></html>";
     const blob = new Blob(["\ufeff", html], { type: "application/msword" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
