@@ -15,9 +15,10 @@ permissions:
   pages: write
   id-token: write
 
+# Wait for in-flight deploys instead of cancelling (avoids "Deployment failed, try again later").
 concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -66,39 +67,64 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     environment:
       name: github-pages
-      url: ${{ steps.deploy1.outputs.page_url || steps.deploy2.outputs.page_url || steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_retry2.outputs.page_url || steps.deployment_retry3.outputs.page_url || steps.deployment_retry4.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages (attempt 1)
-        id: deploy1
+        id: deployment
         continue-on-error: true
         uses: actions/deploy-pages@v4
-        timeout-minutes: 10
 
-      - name: Wait for in-progress Pages deployment
-        if: steps.deploy1.outcome == 'failure'
-        run: sleep 90
+      - name: Wait 45s before retry
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 45
 
       - name: Deploy to GitHub Pages (attempt 2)
-        id: deploy2
-        if: steps.deploy1.outcome == 'failure'
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
         continue-on-error: true
         uses: actions/deploy-pages@v4
-        timeout-minutes: 10
 
-      - name: Wait before final deploy attempt
-        if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
-        run: sleep 90
+      - name: Wait 60s before retry
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
+        run: sleep 60
 
       - name: Deploy to GitHub Pages (attempt 3)
-        id: deployment
-        if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        id: deployment_retry2
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
+        continue-on-error: true
         uses: actions/deploy-pages@v4
-        timeout-minutes: 10
+
+      - name: Wait 90s before retry
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure' && steps.deployment_retry2.outcome == 'failure'
+        run: sleep 90
+
+      - name: Deploy to GitHub Pages (attempt 4)
+        id: deployment_retry3
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure' && steps.deployment_retry2.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Wait 120s before retry
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure' && steps.deployment_retry2.outcome == 'failure' && steps.deployment_retry3.outcome == 'failure'
+        run: sleep 120
+
+      - name: Deploy to GitHub Pages (attempt 5)
+        id: deployment_retry4
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure' && steps.deployment_retry2.outcome == 'failure' && steps.deployment_retry3.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
 
       - name: Fail if all deploy attempts failed
-        if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure' && (steps.deployment.outcome == 'failure' || steps.deployment.outcome == 'skipped')
+        if: >-
+          steps.deployment.outcome == 'failure' &&
+          steps.deployment_retry.outcome == 'failure' &&
+          steps.deployment_retry2.outcome == 'failure' &&
+          steps.deployment_retry3.outcome == 'failure' &&
+          steps.deployment_retry4.outcome == 'failure'
         run: |
-          echo "All GitHub Pages deploy attempts failed."
+          echo "GitHub Pages deploy failed after 5 attempts (transient API error or conflicting Pages source)."
+          echo "Check Settings → Pages uses GitHub Actions only (not Deploy from branch /dist)."
           exit 1
