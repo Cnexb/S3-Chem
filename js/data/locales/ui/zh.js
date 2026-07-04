@@ -115,9 +115,15 @@ export const zhUI = {
     "subtypeMicroscopicWorld1Desc": "来自 Topic 02 Overall 1（第 58–125 页）的离子键与共价键题目。",
     "subtypeMicroscopicWorldIExercise": "微观世界 I",
     "subtypeMicroscopicWorldIExerciseDesc": "427 题 HKDSE 练习：原子结构、周期表、键合及物质性质。",
+    "subtypeTopic3Metals": "Topic 3：金属",
+    "subtypeTopic3MetalsDesc": "48 题 HKDSE 练习：金属用途、提取、活性序、反应、置换、腐蚀及摩尔计算。",
     "backToHub": "返回工作纸",
     "pendingName": "待定",
     "pendingDesc": "更多类型稍后推出。"
+  },
+  "quizEmbed": {
+    "topicMicroscopicWorldI": "微观世界 I",
+    "topicMetals": "Topic 3：金属"
   },
   "summary": {
     "hubTitle": "总结",

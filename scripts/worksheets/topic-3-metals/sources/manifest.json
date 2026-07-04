@@ -1,0 +1,22 @@
+{
+  "chapter": "Topic 3 · Metals",
+  "chapterSlug": "metals",
+  "subject": "Chemistry",
+  "uiLanguage": "en",
+  "expectedFormats": ["mcq", "tf", "fill"],
+  "sources": [
+    {
+      "id": "src-pdf-01",
+      "type": "pdf",
+      "path": "topic-03-metals.pdf",
+      "role": "primary",
+      "description": "Intensive Notes — Topic 3 Metals (question bank source)"
+    }
+  ],
+  "answerKey": null,
+  "images": [],
+  "questionCount": 48,
+  "formats": { "mcq": 36, "tf": 9, "fill": 3 },
+  "notes": "Fresh extraction from PDF; Metal 2 not used as question source.",
+  "createdAt": "2026-07-04"
+}

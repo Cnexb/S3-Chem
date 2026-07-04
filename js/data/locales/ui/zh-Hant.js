@@ -115,9 +115,15 @@ export const zhHantUI = {
     "subtypeMicroscopicWorld1Desc": "來自 Topic 02 Overall 1（第 58–125 頁）的離子鍵與共價鍵題目。",
     "subtypeMicroscopicWorldIExercise": "微觀世界 I",
     "subtypeMicroscopicWorldIExerciseDesc": "427 題 HKDSE 練習：原子結構、週期表、鍵合及物質性質。",
+    "subtypeTopic3Metals": "Topic 3：金屬",
+    "subtypeTopic3MetalsDesc": "48 題 HKDSE 練習：金屬用途、提取、活性序、反應、置換、腐蝕及摩爾計算。",
     "backToHub": "返回工作紙",
     "pendingName": "待定",
     "pendingDesc": "更多類型稍後推出。"
+  },
+  "quizEmbed": {
+    "topicMicroscopicWorldI": "微觀世界 I",
+    "topicMetals": "Topic 3：金屬"
   },
   "summary": {
     "hubTitle": "總結",

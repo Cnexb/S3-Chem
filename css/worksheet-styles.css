@@ -1004,7 +1004,8 @@
 #worksheet-panel-equation.worksheet-panel,
 #worksheet-panel-isotope-ram.worksheet-panel,
 #worksheet-panel-cursor-chem.worksheet-panel,
-#worksheet-panel-microscopic-world-i-exercise.worksheet-panel {
+#worksheet-panel-microscopic-world-i-exercise.worksheet-panel,
+#worksheet-panel-topic-3-metals-exercise.worksheet-panel {
     display: none !important;
     flex-direction: column;
     position: absolute;
@@ -1035,6 +1036,10 @@
 }
 
 #worksheet-shell.worksheet-shell--detail[data-worksheet-panel="microscopic-world-i-exercise"] #worksheet-panel-microscopic-world-i-exercise {
+    display: flex !important;
+}
+
+#worksheet-shell.worksheet-shell--detail[data-worksheet-panel="topic-3-metals-exercise"] #worksheet-panel-topic-3-metals-exercise {
     display: flex !important;
 }
 
@@ -1157,14 +1162,16 @@
 
 #worksheet-shell.worksheet-shell--detail[data-worksheet-panel="isotope-ram"] #worksheet-panel-isotope-ram,
 #worksheet-shell.worksheet-shell--detail[data-worksheet-panel="cursor-chem"] #worksheet-panel-cursor-chem,
-#worksheet-shell.worksheet-shell--detail[data-worksheet-panel="microscopic-world-i-exercise"] #worksheet-panel-microscopic-world-i-exercise {
+#worksheet-shell.worksheet-shell--detail[data-worksheet-panel="microscopic-world-i-exercise"] #worksheet-panel-microscopic-world-i-exercise,
+#worksheet-shell.worksheet-shell--detail[data-worksheet-panel="topic-3-metals-exercise"] #worksheet-panel-topic-3-metals-exercise {
     min-height: 0;
 }
 
 /* Embedded worksheets: same stacking/sizing path as equation panel (absolute inset inside #worksheet-shell). */
 #worksheet-shell.worksheet-shell--detail[data-worksheet-panel="isotope-ram"] #worksheet-panel-isotope-ram.worksheet-panel--embed-full,
 #worksheet-shell.worksheet-shell--detail[data-worksheet-panel="cursor-chem"] #worksheet-panel-cursor-chem.worksheet-panel--embed-full,
-#worksheet-shell.worksheet-shell--detail[data-worksheet-panel="microscopic-world-i-exercise"] #worksheet-panel-microscopic-world-i-exercise.worksheet-panel--embed-full {
+#worksheet-shell.worksheet-shell--detail[data-worksheet-panel="microscopic-world-i-exercise"] #worksheet-panel-microscopic-world-i-exercise.worksheet-panel--embed-full,
+#worksheet-shell.worksheet-shell--detail[data-worksheet-panel="topic-3-metals-exercise"] #worksheet-panel-topic-3-metals-exercise.worksheet-panel--embed-full {
     isolation: isolate;
     z-index: 4;
 }

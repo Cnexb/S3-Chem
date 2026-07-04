@@ -4,7 +4,7 @@
 
 import { getLang, onLangChange } from "./langController.js";
 
-const WORKSHEET_SUBTYPES = ["equation", "isotope-ram", "cursor-chem", "microscopic-world-i-exercise"];
+const WORKSHEET_SUBTYPES = ["equation", "isotope-ram", "cursor-chem", "microscopic-world-i-exercise", "topic-3-metals-exercise"];
 
 const EMBED_IFRAME_SEL = "#worksheet-shell iframe.worksheet-embed-fs-frame";
 
@@ -72,6 +72,7 @@ const PANEL_ID_BY_SUBTYPE = {
   "isotope-ram": "worksheet-panel-isotope-ram",
   "cursor-chem": "worksheet-panel-cursor-chem",
   "microscopic-world-i-exercise": "worksheet-panel-microscopic-world-i-exercise",
+  "topic-3-metals-exercise": "worksheet-panel-topic-3-metals-exercise",
 };
 
 function getShell() {
