@@ -42,6 +42,7 @@ EXPLICIT_EXCLUDE_IDS = {
     "mc-05032",
     "mc-05033",
     "mc-07025",
+    "mc-07027",  # Broken ionic bond stem — missing element name after "concerning"
     # Broken structure-properties items (screenshot review 2026-07)
     "mc-09016",
     "mc-09077",

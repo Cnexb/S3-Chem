@@ -2954,34 +2954,6 @@ export const QUIZ_ITEMS = [
     "sourceRef": "ChemMCQ07026"
   },
   {
-    "id": "mc-07027",
-    "section": "ionic-bond",
-    "format": "mcq",
-    "difficulty": "Standard",
-    "stem": "Which of the following statements concerning  are correct?\n(1) Its atom has 13 electrons.\n(2) It is a Period 3 element.\n(3) It reacts with oxygen to form a covalent compound.",
-    "options": [
-      {
-        "key": "A",
-        "text": "(1) and (2) only"
-      },
-      {
-        "key": "B",
-        "text": "(1) and (3) only"
-      },
-      {
-        "key": "C",
-        "text": "(2) and (3) only"
-      },
-      {
-        "key": "D",
-        "text": "(1), (2) and (3)"
-      }
-    ],
-    "answer": "A",
-    "hint": "The electronic arrangement of Z is 2, 8, 3. Z is a Group III metal, which reacts with oxygen to form an ionic compound.",
-    "sourceRef": "ChemMCQ07027"
-  },
-  {
     "id": "mc-07028",
     "section": "ionic-bond",
     "format": "mcq",
