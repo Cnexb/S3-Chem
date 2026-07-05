@@ -115,7 +115,7 @@ export const ruUI = {
     "subtypeMicroscopicWorld1Desc": "Вопросы по ионной и ковалентной связи из Topic 02 Overall 1 (стр. 58–125).",
     "subtypeMicroscopicWorldIExercise": "Microscopic World I",
     "subtypeMicroscopicWorldIExerciseDesc": "HKDSE questions: atomic structure, periodic table, bonding, and properties of substances.",
-    "subtypeTopic3Metals": "Topic 3: Metals",
+    "subtypeTopic3Metals": "Metals",
     "subtypeTopic3MetalsDesc": "HKDSE-style questions: uses, extraction, reactivity, reactions, displacement, corrosion, and mole calculations.",
     "backToHub": "К списку листов",
     "pendingName": "Скоро",

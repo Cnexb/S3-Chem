@@ -115,7 +115,7 @@ export const enUI = {
     "subtypeMicroscopicWorld1Desc": "Ionic and covalent bonding questions from Topic 02 Overall 1 (pages 58–125).",
     "subtypeMicroscopicWorldIExercise": "Microscopic World I",
     "subtypeMicroscopicWorldIExerciseDesc": "HKDSE questions: atomic structure, periodic table, bonding, and properties of substances.",
-    "subtypeTopic3Metals": "Topic 3: Metals",
+    "subtypeTopic3Metals": "Metals",
     "subtypeTopic3MetalsDesc": "HKDSE-style questions: uses, extraction, reactivity, reactions, displacement, corrosion, and mole calculations.",
     "backToHub": "Back to worksheets",
     "pendingName": "Pending",
