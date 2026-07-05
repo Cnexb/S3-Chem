@@ -148,7 +148,8 @@
 
 /* Summary Topic 2: two infographic cards per row on desktop */
 #summary-panel-topic-2 .chapter-section-stack,
-#summary-panel-topic-3 .chapter-section-stack {
+#summary-panel-topic-3 .chapter-section-stack,
+#summary-panel-topic-4 .chapter-section-stack {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem 1rem;
@@ -156,42 +157,49 @@
 }
 
 #summary-panel-topic-2 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
-#summary-panel-topic-3 .chapter-section:has(.summary-infographic-card + .summary-infographic-card) {
+#summary-panel-topic-3 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
+#summary-panel-topic-4 .chapter-section:has(.summary-infographic-card + .summary-infographic-card) {
   grid-column: 1 / -1;
 }
 
 #summary-panel-topic-2 .summary-subtopic-stack,
-#summary-panel-topic-3 .summary-subtopic-stack {
+#summary-panel-topic-3 .summary-subtopic-stack,
+#summary-panel-topic-4 .summary-subtopic-stack {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
 #summary-panel-topic-2 .summary-subtopic-stack:has(> :only-child),
-#summary-panel-topic-3 .summary-subtopic-stack:has(> :only-child) {
+#summary-panel-topic-3 .summary-subtopic-stack:has(> :only-child),
+#summary-panel-topic-4 .summary-subtopic-stack:has(> :only-child) {
   grid-template-columns: 1fr;
 }
 
 @media (max-width: 900px) {
   #summary-panel-topic-2 .chapter-section-stack,
-  #summary-panel-topic-3 .chapter-section-stack {
+  #summary-panel-topic-3 .chapter-section-stack,
+  #summary-panel-topic-4 .chapter-section-stack {
     grid-template-columns: 1fr;
   }
 
   #summary-panel-topic-2 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
-  #summary-panel-topic-3 .chapter-section:has(.summary-infographic-card + .summary-infographic-card) {
+  #summary-panel-topic-3 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
+  #summary-panel-topic-4 .chapter-section:has(.summary-infographic-card + .summary-infographic-card) {
     grid-column: auto;
   }
 }
 
 @media (max-height: 820px) {
   #summary-panel-topic-2 .summary-infographic-media,
-  #summary-panel-topic-3 .summary-infographic-media {
+  #summary-panel-topic-3 .summary-infographic-media,
+  #summary-panel-topic-4 .summary-infographic-media {
     max-height: min(42dvh, 480px);
   }
 
   #summary-panel-topic-2 .summary-infographic-img,
-  #summary-panel-topic-3 .summary-infographic-img {
+  #summary-panel-topic-3 .summary-infographic-img,
+  #summary-panel-topic-4 .summary-infographic-img {
     max-height: min(42dvh, 480px);
   }
 }
@@ -776,7 +784,8 @@ button.summary-topic-card {
 }
 
 #summary-panel-topic-2.summary-panel,
-#summary-panel-topic-3.summary-panel {
+#summary-panel-topic-3.summary-panel,
+#summary-panel-topic-4.summary-panel {
   display: none !important;
   flex-direction: column;
   position: absolute;
@@ -791,7 +800,8 @@ button.summary-topic-card {
 }
 
 .summary-shell--detail #summary-panel-topic-2.summary-panel:not([hidden]),
-.summary-shell--detail #summary-panel-topic-3.summary-panel:not([hidden]) {
+.summary-shell--detail #summary-panel-topic-3.summary-panel:not([hidden]),
+.summary-shell--detail #summary-panel-topic-4.summary-panel:not([hidden]) {
   display: flex !important;
 }
 

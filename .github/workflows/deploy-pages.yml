@@ -51,10 +51,13 @@ jobs:
           grep -q 'summary-hub' dist/index.html
           grep -q 'summary-panel-topic-2' dist/index.html
           grep -q 'summary-panel-topic-3' dist/index.html
+          grep -q 'summary-panel-topic-4' dist/index.html
           test -f dist/public/summary/topic-02/01-elements-and-isotopes.png
           test -f dist/public/summary/topic-02/01-elements-and-isotopes.webp
           test -f dist/public/summary/topic-03/01-uses-of-metals.png
           test -f dist/public/summary/topic-03/01-uses-of-metals.webp
+          test -f dist/public/summary/topic-04/01-common-acids-and-bases.png
+          test -f dist/public/summary/topic-04/01-common-acids-and-bases.webp
           test -f dist/public/tools/chem-catch/index.html
           test -f dist/public/worksheets/cursor-chem/index.html
           test -f dist/public/worksheets/ch2-microscopic-world-1/worksheet.html
