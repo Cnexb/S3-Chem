@@ -2162,6 +2162,12 @@
     </button>
 
     <!-- Legacy showcase landing removed -->
+    <script>
+window.addEventListener('message', function(e) {
+  if (!e.data || e.data.type !== 'uniplus:session') return;
+  try { sessionStorage.setItem('uniplus_session', JSON.stringify(e.data)); } catch(_) {}
+});
+</script>
 </body>
 
 </html>
