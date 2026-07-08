@@ -630,7 +630,7 @@ export function initQuiz() {
             const _startTime = parseInt(wrap.dataset.startTime || String(Date.now()));
             const _selOpt = q.options?.find(o => o.key === state.selected);
             const _corOpt = q.options?.find(o => o.key === q.answer);
-            window.parent.postMessage({
+            window.postMessage({
               type: 'uniplus:quizAnswer',
               subject: 'CHEM',
               quizId: 'chem-microscopic-world-i',
@@ -671,7 +671,7 @@ export function initQuiz() {
           const _startTime = parseInt(wrap.dataset.startTime || String(Date.now()));
           const _selOpt = q.options?.find(o => o.key === state.selected);
           const _corOpt = q.options?.find(o => o.key === q.answer);
-          window.parent.postMessage({
+          window.postMessage({
             type: 'uniplus:quizAnswer',
             subject: 'CHEM',
             quizId: 'chem-microscopic-world-i',
