@@ -919,7 +919,7 @@ function renderWorksheet(worksheet, mode) {
                 } catch(_) {}
             });
         }
-
+    }
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
             syncWorksheetPreviewScrollArea();
