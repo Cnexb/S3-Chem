@@ -1,3 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atomic structure quiz</title>
+    <link rel="stylesheet" href="../../../css/worksheet-styles.css?v=2.1.9">
+    <link rel="stylesheet" href="../ch5-shared/ch5-embed-base.css?v=2">
+    <script type="module" crossorigin src="./assets/index-B9s3wOws.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-sgwgHuwE.css">
+    <link rel="stylesheet" href="quiz-worksheet.css?v=8">
+  </head>
+  <body>
+    <div id="root"></div>
 <script src="https://uni-education-elearning.pages.dev/tracker/uni-tracker.js?v=8" defer></script>
 <script>
 (function() {
@@ -26,16 +41,14 @@
 
   var _startTime = Date.now();
   var _captured = null;
-  var _lastSymbol = '';  // 學生最後輸入嘅 symbol
+  var _lastSymbol = '';
 
-  // 監聽 input event，記低學生打嘅字
   document.addEventListener('input', function(e) {
     if (e.target && e.target.classList.contains('notation-tile__symbol')) {
       _lastSymbol = e.target.value || '';
     }
   }, true);
 
-  // 題目切換時 reset
   document.addEventListener('click', function(e) {
     var btn = e.target.closest('button');
     if (!btn) return;
@@ -125,3 +138,5 @@
   observer.observe(document.body, { childList: true, subtree: true });
 })();
 </script>
+  </body>
+</html>
