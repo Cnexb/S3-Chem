@@ -13,7 +13,6 @@
   </head>
   <body>
     <div id="root"></div>
- <script src="https://uni-education-elearning.pages.dev/tracker/uni-tracker.js?v=8" defer></script>
 <script src="https://uni-education-elearning.pages.dev/tracker/uni-tracker.js?v=8" defer></script>
 <script>
 (function() {
@@ -28,18 +27,16 @@
     var shellCounts = [];
     shellBoxes.forEach(function(box) {
       var countEl = box.querySelector('.shell-box__count');
-      shellCounts.push(countEl ? parseInt(countEl.textContent) || 0 : 0);
+      shellCounts.push(countEl ? (parseInt(countEl.textContent) || 0) : 0);
     });
 
     var zEl = document.querySelector('.bohr-meta');
-    var zText = zEl ? zEl.textContent : '';
-    var zMatch = zText.match(/Z\s*=\s*(\d+)/);
+    var zMatch = (zEl ? zEl.textContent : '').match(/Z\s*=\s*(\d+)/);
     var z = zMatch ? zMatch[1] : 'unknown';
 
     var progressEl = document.querySelector('.quiz__progress');
-    var progressText = progressEl ? progressEl.textContent : '';
-    var match = progressText.match(/(\d+)/);
-    var current = match ? match[1] : '1';
+    var pMatch = (progressEl ? progressEl.textContent : '').match(/(\d+)/);
+    var current = pMatch ? pMatch[1] : '1';
 
     return {
       z: z,
@@ -50,27 +47,30 @@
     };
   }
 
-  // 監聽 Check answer button click — 喺 React 改 DOM 之前讀取
-  document.addEventListener('click', function(e) {
+  // pointerdown 係最早，早過 click 同 React 嘅 onClick
+  document.addEventListener('pointerdown', function(e) {
     var btn = e.target.closest('button');
     if (!btn) return;
     var text = btn.textContent.trim().toLowerCase();
     if (text === 'check answer' || text === '檢查答案') {
       _captured = captureStudentAnswer();
     }
-  }, true); // capture phase，先於 React 處理
+  }, true);
 
-  // feedback 出現後 dispatch
+  var _lastFeedback = null;
+
   var observer = new MutationObserver(function() {
     var ok = document.querySelector('.feedback--ok');
     var bad = document.querySelector('.feedback--bad');
-    if (!ok && !bad) return;
-    if (!_captured) return;
+    var current = ok ? 'ok' : (bad ? 'bad' : null);
+    if (!current || current === _lastFeedback) return;
+    _lastFeedback = current;
 
+    if (!_captured) return;
     var ans = _captured;
     _captured = null;
 
-    var isCorrect = !!ok;
+    var isCorrect = (current === 'ok');
     var selectedAnswer = ans.studentSymbol + '|' + ans.shellCountStr;
 
     try {
@@ -93,6 +93,7 @@
     } catch(_) {}
 
     _startTime = Date.now();
+    _lastFeedback = null;
   });
 
   observer.observe(document.body, { childList: true, subtree: true });
