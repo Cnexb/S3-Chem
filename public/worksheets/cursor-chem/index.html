@@ -16,12 +16,49 @@
 <script src="https://uni-education-elearning.pages.dev/tracker/uni-tracker.js?v=8" defer></script>
 <script>
 (function() {
+  var ANSWERS = {
+    '1':  {symbol:'H',  shells:'1'},
+    '2':  {symbol:'He', shells:'2'},
+    '3':  {symbol:'Li', shells:'2,1'},
+    '4':  {symbol:'Be', shells:'2,2'},
+    '5':  {symbol:'B',  shells:'2,3'},
+    '6':  {symbol:'C',  shells:'2,4'},
+    '7':  {symbol:'N',  shells:'2,5'},
+    '8':  {symbol:'O',  shells:'2,6'},
+    '9':  {symbol:'F',  shells:'2,7'},
+    '10': {symbol:'Ne', shells:'2,8'},
+    '11': {symbol:'Na', shells:'2,8,1'},
+    '12': {symbol:'Mg', shells:'2,8,2'},
+    '13': {symbol:'Al', shells:'2,8,3'},
+    '14': {symbol:'Si', shells:'2,8,4'},
+    '15': {symbol:'P',  shells:'2,8,5'},
+    '16': {symbol:'S',  shells:'2,8,6'},
+    '17': {symbol:'Cl', shells:'2,8,7'},
+    '18': {symbol:'Ar', shells:'2,8,8'},
+    '19': {symbol:'K',  shells:'2,8,8,1'},
+    '20': {symbol:'Ca', shells:'2,8,8,2'}
+  };
+
   var _startTime = Date.now();
   var _captured = null;
 
+  function getReactValue(el) {
+    if (!el) return '';
+    try {
+      var key = Object.keys(el).find(function(k) {
+        return k.startsWith('__reactFiber') || k.startsWith('__reactInternalInstance');
+      });
+      if (key && el[key]) {
+        var val = el[key].memoizedProps && el[key].memoizedProps.value;
+        if (val !== undefined && val !== null) return String(val);
+      }
+    } catch(_) {}
+    return el.value ? el.value.trim() : '';
+  }
+
   function captureStudentAnswer() {
     var symbolInput = document.querySelector('.notation-tile__symbol');
-    var studentSymbol = symbolInput ? symbolInput.value.trim() : '';
+    var studentSymbol = getReactValue(symbolInput);
 
     var shellBoxes = document.querySelectorAll('.shell-box');
     var shellCounts = [];
@@ -47,7 +84,6 @@
     };
   }
 
-  // pointerdown 係最早，早過 click 同 React 嘅 onClick
   document.addEventListener('pointerdown', function(e) {
     var btn = e.target.closest('button');
     if (!btn) return;
@@ -73,6 +109,9 @@
     var isCorrect = (current === 'ok');
     var selectedAnswer = ans.studentSymbol + '|' + ans.shellCountStr;
 
+    var correct = ANSWERS[ans.z];
+    var correctAnswer = correct ? correct.symbol + '|' + correct.shells : null;
+
     try {
       window.postMessage({
         type: 'uniplus:quizAnswer',
@@ -84,8 +123,8 @@
         stem: 'Z = ' + ans.z,
         selectedAnswer: selectedAnswer,
         selectedAnswerText: selectedAnswer,
-        correctAnswer: null,
-        correctAnswerText: null,
+        correctAnswer: correctAnswer,
+        correctAnswerText: correctAnswer,
         isCorrect: isCorrect,
         attemptNumber: 1,
         msTaken: ans.msTaken
