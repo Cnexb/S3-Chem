@@ -510,6 +510,7 @@
     lastQuestions.forEach((q, idx) => {
       const wrap = document.createElement("div");
       wrap.className = "q-block";
+      wrap.dataset.startTime = String(Date.now());
       const head = document.createElement("div");
       head.className = "q-head";
       head.textContent = "Q" + (idx + 1) + " · " + q.qtype + " · " + q.difficulty;
@@ -549,6 +550,31 @@
         fb.style.display = "block";
         if (ok) {
           st.solved = true; attemptMap.set(q.id, st);
+          try {
+            const _startTime = parseInt(wrap.dataset.startTime || String(Date.now()));
+            const _selAns = window.Ch5EmbedUI.hasChoiceOptions(q)
+              ? String(q.correct_index)
+              : (inputEl ? inputEl.value : null);
+            const _selText = window.Ch5EmbedUI.hasChoiceOptions(q)
+              ? (q.options_en?.[q.correct_index] || null)
+              : (inputEl ? inputEl.value : null);
+            window.postMessage({
+              type: 'uniplus:quizAnswer',
+              subject: 'CHEM',
+              quizId: 'chem-ch2-microscopic-world-1',
+              questionId: q.id,
+              section: q.qtype || null,
+              difficulty: q.difficulty || null,
+              stem: q.stem_en || null,
+              selectedAnswer: _selAns,
+              selectedAnswerText: _selText,
+              correctAnswer: window.Ch5EmbedUI.hasChoiceOptions(q) ? String(q.correct_index) : (q.answer_en || null),
+              correctAnswerText: window.Ch5EmbedUI.hasChoiceOptions(q) ? (q.options_en?.[q.correct_index] || null) : (q.answer_en || null),
+              isCorrect: true,
+              attemptNumber: (st.wrong || 0) + 1,
+              msTaken: Date.now() - _startTime
+            }, '*');
+          } catch (_) {}
           fb.className = "feedback ok"; fb.textContent = lang === "zh" ? "正確。" : "Correct.";
           return;
         }
@@ -558,6 +584,32 @@
           fb.innerHTML = (lang === "zh" ? "<b>提示：</b>" : "<b>Hint:</b>") + " " + (lang === "zh" ? q.hint_zh : q.hint_en);
         } else {
           st.solved = true; attemptMap.set(q.id, st);
+          try {
+            const _startTime = parseInt(wrap.dataset.startTime || String(Date.now()));
+            const _selAns = window.Ch5EmbedUI.hasChoiceOptions(q)
+              ? (wrap.querySelector('input[name="mcq_' + q.id + '"]:checked')?.value || null)
+              : (inputEl ? inputEl.value : null);
+            const _selIdx = _selAns !== null ? parseInt(_selAns) : null;
+            const _selText = window.Ch5EmbedUI.hasChoiceOptions(q)
+              ? (q.options_en?.[_selIdx] || null)
+              : _selAns;
+            window.postMessage({
+              type: 'uniplus:quizAnswer',
+              subject: 'CHEM',
+              quizId: 'chem-ch2-microscopic-world-1',
+              questionId: q.id,
+              section: q.qtype || null,
+              difficulty: q.difficulty || null,
+              stem: q.stem_en || null,
+              selectedAnswer: _selAns,
+              selectedAnswerText: _selText,
+              correctAnswer: window.Ch5EmbedUI.hasChoiceOptions(q) ? String(q.correct_index) : (q.answer_en || null),
+              correctAnswerText: window.Ch5EmbedUI.hasChoiceOptions(q) ? (q.options_en?.[q.correct_index] || null) : (q.answer_en || null),
+              isCorrect: false,
+              attemptNumber: st.wrong,
+              msTaken: Date.now() - _startTime
+            }, '*');
+          } catch (_) {}
           fb.className = "feedback bad";
           fb.innerHTML = (lang === "zh" ? "<b>參考答案：</b>" : "<b>Model answer:</b>") + " " + (lang === "zh" ? q.answer_zh : q.answer_en);
         }
