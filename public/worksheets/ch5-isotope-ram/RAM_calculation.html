@@ -18,7 +18,6 @@
                 <h2 id="ui-generator-title">Worksheet Generator</h2>
                 <p id="ui-subtitle">Create isotope &amp; RAM worksheets for your class</p>
             </div>
-
             <div class="control-group">
                 <label id="ui-label-type">Question Type:</label>
                 <select id="qType" class="control-input">
@@ -28,7 +27,6 @@
                     <option value="3">Type 3: Calculate Isotopic Mass</option>
                 </select>
             </div>
-
             <div class="control-group">
                 <label id="ui-label-diff">Difficulty:</label>
                 <input type="hidden" id="diff" value="easy">
@@ -38,7 +36,6 @@
                     <button type="button" class="option-btn" data-value="hard">Hard</button>
                 </div>
             </div>
-
             <div class="control-group">
                 <label id="ui-label-num">Number of Questions:</label>
                 <div class="button-group" id="question-count-group">
@@ -49,7 +46,6 @@
                 </div>
                 <input type="number" id="numQs" class="control-input count-input-hidden" value="5" min="1" max="20" tabindex="-1" aria-hidden="true">
             </div>
-
             <div class="control-group">
                 <label id="ui-label-lang">Language</label>
                 <div class="button-group" id="lang-group">
@@ -57,7 +53,6 @@
                     <button type="button" class="option-btn active" id="btnLangZh">繁體中文</button>
                 </div>
             </div>
-
             <button type="button" class="generate-btn" id="ui-btn-gen">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 3v1m0 16v1m-9-9h1m16 0h1m-2.64-6.36l-.7.7m-12.02 12.02l-.7.7m0-12.72l.7.7m12.02 12.02l.7.7" />
@@ -141,53 +136,31 @@
             generatorTitle: "工作紙產生器",
             generatorSubtitle: "為你的課堂建立同位素與相對原子質量練習",
             title: "同位素與相對原子質量工作紙",
-            subtitle: "同位素與相對原子質量 · 雙語 繁體中文 / English",
-            labelType: "題目類型:",
-            labelDiff: "難度:",
-            labelNum: "題目數量:",
-            labelLang: "語言",
-            btnGen: "生成工作紙",
-            btnPrint: "列印",
-            btnExportPrint: "列印",
-            btnSolutionsPdf: "完整題解 PDF",
-            btnSolutionsDoc: "完整題解 Word",
-            btnWorksheetDoc: "工作紙 Word",
+            labelType: "題目類型:", labelDiff: "難度:", labelNum: "題目數量:", labelLang: "語言",
+            btnGen: "生成工作紙", btnPrint: "列印", btnExportPrint: "列印",
+            btnSolutionsPdf: "完整題解 PDF", btnSolutionsDoc: "完整題解 Word", btnWorksheetDoc: "工作紙 Word",
             note: "註：如有需要，請將最終答案四捨五入至兩位小數。",
             trustText: "註：如有需要，請將最終答案四捨五入至兩位小數。",
-            tabPrint: "列印",
-            tabPractice: "練習",
-            tabAnswer: "參考答案",
-            placeholder: "按「生成工作紙」以建立練習題",
-            practiceHint: "三次錯誤：提示 → 詳細步驟 → 顯示答案。",
-            check: "檢查答案",
-            correct: "正確！ ✓",
-            wrong1: "錯誤。請參閱提示再試一次！",
-            wrong2: "仍然錯誤。請參閱更詳細的步驟再試一次！",
+            tabPrint: "列印", tabPractice: "練習", tabAnswer: "參考答案",
+            placeholder: "輸入答案", practiceHint: "三次錯誤：提示 → 詳細步驟 → 顯示答案。",
+            check: "檢查答案", correct: "正確！ ✓",
+            wrong1: "錯誤。請參閱提示再試一次！", wrong2: "仍然錯誤。請參閱更詳細的步驟再試一次！",
             finalWrong: "錯誤。正確答案約為 ",
-            placeholder: "輸入答案",
-            progress: "進度：已答對",
-            progressOf: "／",
-            progressSuffix: "題",
-            summaryTitle: "完成摘要",
-            summaryIntro: "你已答對本工作紙的全部題目。",
+            progress: "進度：已答對", progressOf: "／", progressSuffix: "題",
+            summaryTitle: "完成摘要", summaryIntro: "你已答對本工作紙的全部題目。",
             summaryAttempts: "有效提交次數（每次按「檢查答案」計一次）：",
             summaryHint: "提示：在列印對話框中選擇「另存為 PDF」即可下載完整題解。",
             alertNoSheet: "請先生成工作紙。",
-            types: ["混合所有類型", "類型 1: 計算相對原子質量", "類型 2: 計算百分比豐度", "類型 3: 計算同位素質量"],
-            diffs: ["簡單", "中等", "困難"],
-            btnSessionSummary: "學習摘要與分析",
-            analysisTitle: "摘要與分析",
-            summaryScoreLabel: "得分（答對／總題數）",
-            summaryFirstTry: "首次即答對",
-            summaryByTypeTitle: "各題型答對率",
-            summaryByTypeColType: "題型",
-            summaryByTypeColFraction: "答對／該題型題數",
-            summaryByTypeColRate: "答對率",
+            types: ["混合所有類型","類型 1: 計算相對原子質量","類型 2: 計算百分比豐度","類型 3: 計算同位素質量"],
+            diffs: ["簡單","中等","困難"],
+            btnSessionSummary: "學習摘要與分析", analysisTitle: "摘要與分析",
+            summaryScoreLabel: "得分（答對／總題數）", summaryFirstTry: "首次即答對",
+            summaryByTypeTitle: "各題型答對率", summaryByTypeColType: "題型",
+            summaryByTypeColFraction: "答對／該題型題數", summaryByTypeColRate: "答對率",
             summaryByTypeColFirst: "首次即對／該題型題數",
             summaryWrongTitle: "三次皆錯（已顯示答案）— 需重溫（題號與題型）",
             summaryNoneWrong: "沒有此類題目 — 尚未出現「三次皆錯」。",
-            summaryIncomplete: "尚未答對（仍可作答）",
-            revTitle: "評語與溫習建議",
+            summaryIncomplete: "尚未答對（仍可作答）", revTitle: "評語與溫習建議",
             revBandExcellent: "整體答對率很高。建議持續混合三類題型，熟練加權平均與代數整理。",
             revBandGood: "整體表現不錯。請參考上表，對答對率較低的題型加做一輪。",
             revBandFair: "表現參差：請重溫 RAM 公式（豐度以 % 代入時須 ÷100）、聯立方程與小數運算。",
@@ -203,53 +176,31 @@
             generatorTitle: "Worksheet Generator",
             generatorSubtitle: "Create isotope & relative atomic mass worksheets for your class",
             title: "Isotopes & Relative Atomic Mass Worksheet",
-            subtitle: "Isotopes & relative atomic mass · bilingual EN / 繁體中文",
-            labelType: "Question Type:",
-            labelDiff: "Difficulty:",
-            labelNum: "Number of Questions:",
-            labelLang: "Language",
-            btnGen: "Generate Worksheet",
-            btnPrint: "Print",
-            btnExportPrint: "Print",
-            btnSolutionsPdf: "Full solutions PDF",
-            btnSolutionsDoc: "Full solutions Word",
-            btnWorksheetDoc: "Worksheet Word",
+            labelType: "Question Type:", labelDiff: "Difficulty:", labelNum: "Number of Questions:", labelLang: "Language",
+            btnGen: "Generate Worksheet", btnPrint: "Print", btnExportPrint: "Print",
+            btnSolutionsPdf: "Full solutions PDF", btnSolutionsDoc: "Full solutions Word", btnWorksheetDoc: "Worksheet Word",
             note: "Note: Round final answers to 2 decimal places if necessary.",
             trustText: "Note: Round final answers to 2 decimal places if necessary.",
-            tabPrint: "Print",
-            tabPractice: "Practice",
-            tabAnswer: "Answer Key",
-            placeholder: "Click 'Generate Worksheet' to create practice problems",
-            practiceHint: "Three wrong attempts: hints then model answer.",
-            check: "Check Answer",
-            correct: "Correct! ✓",
-            wrong1: "Incorrect. Check the hint and try again!",
-            wrong2: "Still incorrect. Check the step-by-step solution and try again!",
+            tabPrint: "Print", tabPractice: "Practice", tabAnswer: "Answer Key",
+            placeholder: "Answer", practiceHint: "Three wrong attempts: hints then model answer.",
+            check: "Check Answer", correct: "Correct! ✓",
+            wrong1: "Incorrect. Check the hint and try again!", wrong2: "Still incorrect. Check the step-by-step solution and try again!",
             finalWrong: "Incorrect. The correct answer is approx. ",
-            placeholder: "Answer",
-            progress: "Progress: ",
-            progressOf: " of ",
-            progressSuffix: " correct",
-            summaryTitle: "Session summary",
-            summaryIntro: "You answered every question on this worksheet correctly.",
+            progress: "Progress: ", progressOf: " of ", progressSuffix: " correct",
+            summaryTitle: "Session summary", summaryIntro: "You answered every question on this worksheet correctly.",
             summaryAttempts: "Valid check submissions (each Check click): ",
             summaryHint: "Tip: In the print dialog, choose Save as PDF to download the full worked solutions.",
             alertNoSheet: "Generate a worksheet first.",
-            types: ["Mix of All Types", "Type 1: Calculate RAM", "Type 2: Calculate % Abundance", "Type 3: Calculate Isotopic Mass"],
-            diffs: ["Easy", "Medium", "Hard"],
-            btnSessionSummary: "Session summary & analysis",
-            analysisTitle: "Summary & analysis",
-            summaryScoreLabel: "Score (correct / total)",
-            summaryFirstTry: "Correct on first attempt",
-            summaryByTypeTitle: "Correct rate by question type",
-            summaryByTypeColType: "Type",
-            summaryByTypeColFraction: "Correct / in type",
-            summaryByTypeColRate: "Rate",
+            types: ["Mix of All Types","Type 1: Calculate RAM","Type 2: Calculate % Abundance","Type 3: Calculate Isotopic Mass"],
+            diffs: ["Easy","Medium","Hard"],
+            btnSessionSummary: "Session summary & analysis", analysisTitle: "Summary & analysis",
+            summaryScoreLabel: "Score (correct / total)", summaryFirstTry: "Correct on first attempt",
+            summaryByTypeTitle: "Correct rate by question type", summaryByTypeColType: "Type",
+            summaryByTypeColFraction: "Correct / in type", summaryByTypeColRate: "Rate",
             summaryByTypeColFirst: "First-try / in type",
             summaryWrongTitle: "Three wrong attempts (answer shown) — review (Q & type)",
             summaryNoneWrong: "None — no item reached three wrong attempts.",
-            summaryIncomplete: "Still in progress (not yet correct)",
-            revTitle: "Comments & revision suggestions",
+            summaryIncomplete: "Still in progress (not yet correct)", revTitle: "Comments & revision suggestions",
             revBandExcellent: "Very strong accuracy. Keep rotating all three task types so the RAM formula stays automatic.",
             revBandGood: "Solid work. Use the table to spot weaker types and drill those with another generated set.",
             revBandFair: "Mixed results: revisit the weighted RAM formula (% to fraction), simultaneous equations, and careful arithmetic.",
@@ -267,15 +218,11 @@
     let lang = window.Ch5EmbedUI.readLangFromQuery("zh");
     let previewTabsCtrl = null;
 
-    function getLang() {
-        return lang;
-    }
+    function getLang() { return lang; }
 
     function setExportButtonsEnabled(enabled) {
         window.Ch5EmbedUI.setExportButtonsEnabled(
-            ["ui-btn-print", "ui-btn-solutions-pdf", "ui-btn-solutions-doc", "ui-btn-worksheet-doc"],
-            enabled
-        );
+            ["ui-btn-print","ui-btn-solutions-pdf","ui-btn-solutions-doc","ui-btn-worksheet-doc"], enabled);
     }
 
     function updateUI() {
@@ -301,145 +248,65 @@
         document.getElementById("btn-session-summary").innerText = i18n[l].btnSessionSummary;
         document.getElementById("btnLangEn").classList.toggle("active", l === "en");
         document.getElementById("btnLangZh").classList.toggle("active", l === "zh");
-
         const qSelect = document.getElementById("qType");
         for (let i = 0; i < qSelect.options.length; i++) qSelect.options[i].text = i18n[l].types[i];
-
         const diffMap = { easy: 0, medium: 1, hard: 2 };
         document.querySelectorAll("#difficulty-group .option-btn").forEach((btn) => {
             const idx = diffMap[btn.dataset.value];
             if (idx !== undefined) btn.textContent = i18n[l].diffs[idx];
         });
-
-        if (hasWorksheetData()) {
-            renderPrintPreview();
-            renderAnswerPreview();
-            rebuildPracticeQuestions();
-        }
+        if (hasWorksheetData()) { renderPrintPreview(); renderAnswerPreview(); rebuildPracticeQuestions(); }
         if (previewTabsCtrl) previewTabsCtrl.refresh();
     }
 
-    function setLang(next) {
-        lang = next;
-        window.Ch5EmbedUI.setLangInQuery(next);
-        updateUI();
-    }
-
+    function setLang(next) { lang = next; window.Ch5EmbedUI.setLangInQuery(next); updateUI(); }
     function setDifficulty(value) {
         document.getElementById('diff').value = value;
         document.querySelectorAll('#difficulty-group .option-btn').forEach((btn) => {
             btn.classList.toggle('active', btn.dataset.value === value);
         });
     }
-
     function syncCountPills() {
         const val = String(document.getElementById('numQs').value);
         document.querySelectorAll('#question-count-group .option-btn').forEach((btn) => {
             btn.classList.toggle('active', btn.dataset.value === val);
         });
     }
-
     function randInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
-
-    /**
-     * Full worked solution (HTML) for teacher / PDF; language matches worksheet.
-     */
     function buildFullSolution(ctx) {
         const { type, diff, l, elName, m1, m2, m3, p1, p2, p3, ram, ans } = ctx;
         const R = (n) => (typeof n === 'number' ? n.toFixed(2) : String(n));
         const ramS = ram.toFixed(2);
-
         if (type === 1) {
             if (diff === 'hard') {
-                const num = (m1 * p1) + (m2 * p2) + (m3 * p3);
-                if (l === 'zh') {
-                    return `<p><strong>解題步驟</strong></p>
-<p>相對原子質量 = [(質量₁×豐度₁) + (質量₂×豐度₂) + (質量₃×豐度₃)] ÷ 100</p>
-<p>= [(${m1}×${p1}) + (${m2}×${p2}) + (${m3}×${p3})] ÷ 100 = ${num} ÷ 100 = <strong>${R(ans)}</strong></p>
-<p>故 ${elName} 的相對原子質量約為 <strong>${R(ans)}</strong>。</p>`;
-                }
-                return `<p><strong>Worked solution</strong></p>
-<p>RAM = [(m₁×%₁) + (m₂×%₂) + (m₃×%₃)] / 100</p>
-<p>= [(${m1}×${p1}) + (${m2}×${p2}) + (${m3}×${p3})] / 100 = ${num} / 100 = <strong>${R(ans)}</strong></p>
-<p>Relative atomic mass of ${elName} ≈ <strong>${R(ans)}</strong>.</p>`;
+                const num = (m1*p1)+(m2*p2)+(m3*p3);
+                if (l === 'zh') return `<p><strong>解題步驟</strong></p><p>相對原子質量 = [(質量₁×豐度₁) + (質量₂×豐度₂) + (質量₃×豐度₃)] ÷ 100</p><p>= [(${m1}×${p1}) + (${m2}×${p2}) + (${m3}×${p3})] ÷ 100 = ${num} ÷ 100 = <strong>${R(ans)}</strong></p><p>故 ${elName} 的相對原子質量約為 <strong>${R(ans)}</strong>。</p>`;
+                return `<p><strong>Worked solution</strong></p><p>RAM = [(m₁×%₁) + (m₂×%₂) + (m₃×%₃)] / 100</p><p>= [(${m1}×${p1}) + (${m2}×${p2}) + (${m3}×${p3})] / 100 = ${num} / 100 = <strong>${R(ans)}</strong></p><p>Relative atomic mass of ${elName} ≈ <strong>${R(ans)}</strong>.</p>`;
             }
-            const num = (m1 * p1) + (m2 * p2);
-            if (l === 'zh') {
-                return `<p><strong>解題步驟</strong></p>
-<p>相對原子質量 = [(${m1}×${p1}) + (${m2}×${p2})] ÷ 100 = ${num} ÷ 100 = <strong>${R(ans)}</strong></p>
-<p>故 ${elName} 的相對原子質量約為 <strong>${R(ans)}</strong>。</p>`;
-            }
-            return `<p><strong>Worked solution</strong></p>
-<p>RAM = [(${m1}×${p1}) + (${m2}×${p2})] / 100 = ${num} / 100 = <strong>${R(ans)}</strong></p>
-<p>Relative atomic mass of ${elName} ≈ <strong>${R(ans)}</strong>.</p>`;
+            const num = (m1*p1)+(m2*p2);
+            if (l === 'zh') return `<p><strong>解題步驟</strong></p><p>相對原子質量 = [(${m1}×${p1}) + (${m2}×${p2})] ÷ 100 = ${num} ÷ 100 = <strong>${R(ans)}</strong></p><p>故 ${elName} 的相對原子質量約為 <strong>${R(ans)}</strong>。</p>`;
+            return `<p><strong>Worked solution</strong></p><p>RAM = [(${m1}×${p1}) + (${m2}×${p2})] / 100 = ${num} / 100 = <strong>${R(ans)}</strong></p><p>Relative atomic mass of ${elName} ≈ <strong>${R(ans)}</strong>.</p>`;
         }
-
         if (type === 2) {
             if (diff === 'hard') {
-                if (l === 'zh') {
-                    return `<p><strong>解題步驟</strong></p>
-<p>設 ${elName}-${m1} 的豐度為 <em>x</em>%，則 ${elName}-${m2} 為 (100 − ${p3} − <em>x</em>)% = (${100 - p3} − <em>x</em>)%。</p>
-<p>${ramS} = [${m1}<em>x</em> + ${m2}(${100 - p3} − <em>x</em>) + (${m3}×${p3})] ÷ 100</p>
-<p>兩邊同乘 100，整理後可得 <em>x</em> ≈ <strong>${R(ans)}</strong>。</p>
-<p>故 ${elName}-${m1} 的百分比豐度約為 <strong>${R(ans)}%</strong>。</p>`;
-                }
-                return `<p><strong>Worked solution</strong></p>
-<p>Let abundance of ${elName}-${m1} be <em>x</em>%. Then ${elName}-${m2} is (${100 - p3} − <em>x</em>)%.</p>
-<p>${ramS} = [${m1}<em>x</em> + ${m2}(${100 - p3} − <em>x</em>) + (${m3}×${p3})] / 100</p>
-<p>Multiply by 100 and rearrange → <em>x</em> ≈ <strong>${R(ans)}</strong>.</p>
-<p>% abundance of ${elName}-${m1} ≈ <strong>${R(ans)}%</strong>.</p>`;
+                if (l === 'zh') return `<p><strong>解題步驟</strong></p><p>設 ${elName}-${m1} 的豐度為 <em>x</em>%，則 ${elName}-${m2} 為 (${100-p3} − <em>x</em>)%。</p><p>${ramS} = [${m1}<em>x</em> + ${m2}(${100-p3} − <em>x</em>) + (${m3}×${p3})] ÷ 100</p><p>整理後可得 <em>x</em> ≈ <strong>${R(ans)}</strong>。</p><p>故 ${elName}-${m1} 的百分比豐度約為 <strong>${R(ans)}%</strong>。</p>`;
+                return `<p><strong>Worked solution</strong></p><p>Let abundance of ${elName}-${m1} be <em>x</em>%. Then ${elName}-${m2} is (${100-p3} − <em>x</em>)%.</p><p>${ramS} = [${m1}<em>x</em> + ${m2}(${100-p3} − <em>x</em>) + (${m3}×${p3})] / 100</p><p>Multiply by 100 and rearrange → <em>x</em> ≈ <strong>${R(ans)}</strong>.</p><p>% abundance of ${elName}-${m1} ≈ <strong>${R(ans)}%</strong>.</p>`;
             }
-            if (l === 'zh') {
-                return `<p><strong>解題步驟</strong></p>
-<p>設 ${elName}-${m1} 為 <em>x</em>%，則 ${elName}-${m2} 為 (100 − <em>x</em>)%。</p>
-<p>${ramS} = [${m1}<em>x</em> + ${m2}(100 − <em>x</em>)] ÷ 100 → 100×${ramS} = ${m1}<em>x</em> + ${m2}(100 − <em>x</em>)</p>
-<p>整理得 <em>x</em> = (100×${ramS} − ${m2}×100) ÷ (${m1} − ${m2}) ≈ <strong>${R(ans)}</strong>。</p>
-<p>故 ${elName}-${m1} 的百分比豐度約為 <strong>${R(ans)}%</strong>。</p>`;
-            }
-            return `<p><strong>Worked solution</strong></p>
-<p>Let abundance of ${elName}-${m1} be <em>x</em>%. Then ${elName}-${m2} is (100 − <em>x</em>)%.</p>
-<p>${ramS} = [${m1}<em>x</em> + ${m2}(100 − <em>x</em>)] / 100 → 100×${ramS} = ${m1}<em>x</em> + ${m2}(100 − <em>x</em>)</p>
-<p>Solve → <em>x</em> ≈ <strong>${R(ans)}</strong>.</p>
-<p>% abundance of ${elName}-${m1} ≈ <strong>${R(ans)}%</strong>.</p>`;
+            if (l === 'zh') return `<p><strong>解題步驟</strong></p><p>設 ${elName}-${m1} 為 <em>x</em>%，則 ${elName}-${m2} 為 (100 − <em>x</em>)%。</p><p>${ramS} = [${m1}<em>x</em> + ${m2}(100 − <em>x</em>)] ÷ 100</p><p>整理得 <em>x</em> ≈ <strong>${R(ans)}</strong>。</p><p>故 ${elName}-${m1} 的百分比豐度約為 <strong>${R(ans)}%</strong>。</p>`;
+            return `<p><strong>Worked solution</strong></p><p>Let abundance of ${elName}-${m1} be <em>x</em>%. Then ${elName}-${m2} is (100 − <em>x</em>)%.</p><p>${ramS} = [${m1}<em>x</em> + ${m2}(100 − <em>x</em>)] / 100</p><p>Solve → <em>x</em> ≈ <strong>${R(ans)}</strong>.</p><p>% abundance of ${elName}-${m1} ≈ <strong>${R(ans)}%</strong>.</p>`;
         }
-
-        /* type 3 — isotopic mass */
         if (diff === 'hard') {
-            const rhs = 100 * ram - m1 * p1 - m2 * p2;
-            if (l === 'zh') {
-                return `<p><strong>解題步驟</strong></p>
-<p>設第三種同位素質量為 <em>m</em>。</p>
-<p>${ramS} = [(${m1}×${p1}) + (${m2}×${p2}) + (<em>m</em>×${p3})] ÷ 100</p>
-<p>100×${ramS} − (${m1}×${p1}) − (${m2}×${p2}) = ${p3}×<em>m</em> → <em>m</em> = ${rhs.toFixed(2)} ÷ ${p3} ≈ <strong>${R(ans)}</strong></p>
-<p>故該同位素質量約為 <strong>${R(ans)}</strong>。</p>`;
-            }
-            return `<p><strong>Worked solution</strong></p>
-<p>Let the third isotopic mass be <em>m</em>.</p>
-<p>${ramS} = [(${m1}×${p1}) + (${m2}×${p2}) + (<em>m</em>×${p3})] / 100</p>
-<p><em>m</em> = (100×${ramS} − ${m1}×${p1} − ${m2}×${p2}) / ${p3} ≈ <strong>${R(ans)}</strong>.</p>
-<p>Isotopic mass ≈ <strong>${R(ans)}</strong>.</p>`;
+            const rhs = 100*ram - m1*p1 - m2*p2;
+            if (l === 'zh') return `<p><strong>解題步驟</strong></p><p>設第三種同位素質量為 <em>m</em>。</p><p>${ramS} = [(${m1}×${p1}) + (${m2}×${p2}) + (<em>m</em>×${p3})] ÷ 100</p><p><em>m</em> = ${rhs.toFixed(2)} ÷ ${p3} ≈ <strong>${R(ans)}</strong></p><p>故該同位素質量約為 <strong>${R(ans)}</strong>。</p>`;
+            return `<p><strong>Worked solution</strong></p><p>Let the third isotopic mass be <em>m</em>.</p><p>${ramS} = [(${m1}×${p1}) + (${m2}×${p2}) + (<em>m</em>×${p3})] / 100</p><p><em>m</em> = (100×${ramS} − ${m1}×${p1} − ${m2}×${p2}) / ${p3} ≈ <strong>${R(ans)}</strong>.</p>`;
         }
-        const rhs = 100 * ram - m1 * p1;
-        if (l === 'zh') {
-            return `<p><strong>解題步驟</strong></p>
-<p>設未知同位素質量為 <em>m</em>。</p>
-<p>${ramS} = [(${m1}×${p1}) + (<em>m</em>×${p2})] ÷ 100 → 100×${ramS} − (${m1}×${p1}) = ${p2}×<em>m</em></p>
-<p><em>m</em> = ${rhs.toFixed(2)} ÷ ${p2} ≈ <strong>${R(ans)}</strong></p>
-<p>故該同位素質量約為 <strong>${R(ans)}</strong>。</p>`;
-        }
-        return `<p><strong>Worked solution</strong></p>
-<p>Let the unknown isotopic mass be <em>m</em>.</p>
-<p>${ramS} = [(${m1}×${p1}) + (<em>m</em>×${p2})] / 100 → <em>m</em> = (100×${ramS} − ${m1}×${p1}) / ${p2} ≈ <strong>${R(ans)}</strong>.</p>
-<p>Isotopic mass ≈ <strong>${R(ans)}</strong>.</p>`;
+        const rhs = 100*ram - m1*p1;
+        if (l === 'zh') return `<p><strong>解題步驟</strong></p><p>設未知同位素質量為 <em>m</em>。</p><p>${ramS} = [(${m1}×${p1}) + (<em>m</em>×${p2})] ÷ 100</p><p><em>m</em> = ${rhs.toFixed(2)} ÷ ${p2} ≈ <strong>${R(ans)}</strong></p><p>故該同位素質量約為 <strong>${R(ans)}</strong>。</p>`;
+        return `<p><strong>Worked solution</strong></p><p>Let the unknown isotopic mass be <em>m</em>.</p><p>${ramS} = [(${m1}×${p1}) + (<em>m</em>×${p2})] / 100 → <em>m</em> = (100×${ramS} − ${m1}×${p1}) / ${p2} ≈ <strong>${R(ans)}</strong>.</p>`;
     }
 
-    function countSolved() {
-        return window.questionData.filter((d) => d && d.solved).length;
-    }
-
-    function totalCheckSubmissions() {
-        return window.questionData.reduce((s, d) => s + (d && d.checkSubmissions ? d.checkSubmissions : 0), 0);
-    }
+    function countSolved() { return window.questionData.filter((d) => d && d.solved).length; }
+    function totalCheckSubmissions() { return window.questionData.reduce((s, d) => s + (d && d.checkSubmissions ? d.checkSubmissions : 0), 0); }
 
     function updateProgressUI(l) {
         const n = window.questionData.length;
@@ -452,496 +319,188 @@
 
     function maybeShowSummary(l) {
         const n = window.questionData.length;
-        if (!n || countSolved() < n) {
-            updateProgressUI(l);
-            return;
-        }
+        if (!n || countSolved() < n) { updateProgressUI(l); return; }
         const panel = document.getElementById('summary-panel');
         panel.hidden = false;
         const subs = totalCheckSubmissions();
-        panel.innerHTML =
-            '<h2>' + i18n[l].summaryTitle + '</h2>' +
-            '<p>' + i18n[l].summaryIntro + '</p>' +
-            '<p>' + i18n[l].summaryAttempts + '<strong>' + subs + '</strong></p>' +
-            '<p style="font-size:14px;color:#555;">' + i18n[l].summaryHint + '</p>';
+        panel.innerHTML = '<h2>' + i18n[l].summaryTitle + '</h2><p>' + i18n[l].summaryIntro + '</p><p>' + i18n[l].summaryAttempts + '<strong>' + subs + '</strong></p><p style="font-size:14px;color:#555;">' + i18n[l].summaryHint + '</p>';
         updateProgressUI(l);
     }
 
-    function escapeHtml(s) {
-        return String(s)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;');
-    }
-
-    function T(key, langOpt) {
-        const l = langOpt != null ? langOpt : getLang();
-        return (i18n[l] && i18n[l][key]) || i18n.en[key] || key;
-    }
-
-    function qTypeLongLabel(lang, typeNum) {
-        const arr = i18n[lang].types;
-        if (typeNum >= 1 && typeNum <= 3) return arr[typeNum];
-        return String(typeNum);
-    }
-
-    function revFill(template, map) {
-        let out = template;
-        Object.keys(map).forEach((k) => {
-            out = out.split('{' + k + '}').join(map[k]);
-        });
-        return out;
-    }
+    function escapeHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function T(key, langOpt) { const l = langOpt != null ? langOpt : getLang(); return (i18n[l] && i18n[l][key]) || i18n.en[key] || key; }
+    function qTypeLongLabel(lang, typeNum) { const arr = i18n[lang].types; if (typeNum >= 1 && typeNum <= 3) return arr[typeNum]; return String(typeNum); }
+    function revFill(template, map) { let out = template; Object.keys(map).forEach((k) => { out = out.split('{'+k+'}').join(map[k]); }); return out; }
 
     function buildRevisionSuggestionsRAM(lang, total, correct, firstTry, failed, incomplete, byType) {
-        const lines = [];
-        const seen = new Set();
-        function addLine(s) {
-            if (!s || seen.has(s)) return;
-            seen.add(s);
-            lines.push(s);
-        }
-        const pctAll = total ? Math.round((100 * correct) / total) : 0;
-        const ftPctAll = total ? Math.round((100 * firstTry) / total) : 0;
-
+        const lines = []; const seen = new Set();
+        function addLine(s) { if (!s || seen.has(s)) return; seen.add(s); lines.push(s); }
+        const pctAll = total ? Math.round((100*correct)/total) : 0;
+        const ftPctAll = total ? Math.round((100*firstTry)/total) : 0;
         if (pctAll >= 85) addLine(T('revBandExcellent', lang));
         else if (pctAll >= 65) addLine(T('revBandGood', lang));
         else if (pctAll >= 40) addLine(T('revBandFair', lang));
         else addLine(T('revBandLow', lang));
-
         const typeRows = [];
         byType.forEach((agg, tid) => {
             if (!agg || !agg.total) return;
-            const n = Number(tid);
-            const pct = Math.round((100 * agg.correct) / agg.total);
-            typeRows.push({
-                name: qTypeLongLabel(lang, n),
-                total: agg.total,
-                correct: agg.correct,
-                firstTry: agg.firstTry,
-                pct
-            });
+            const pct = Math.round((100*agg.correct)/agg.total);
+            typeRows.push({ name: qTypeLongLabel(lang, Number(tid)), total: agg.total, correct: agg.correct, firstTry: agg.firstTry, pct });
         });
         typeRows.sort((a, b) => a.pct - b.pct || b.total - a.total);
-
         let weakPick = typeRows.filter((r) => r.total >= 2 && r.pct < 66);
         if (!weakPick.length) weakPick = typeRows.filter((r) => r.total >= 1 && r.pct < 50);
         weakPick = weakPick.slice(0, 2);
-
-        weakPick.forEach((r) => {
-            addLine(
-                revFill(T('revWeakOne', lang), {
-                    type: r.name,
-                    c: String(r.correct),
-                    t: String(r.total),
-                    pct: String(r.pct)
-                })
-            );
-        });
-
+        weakPick.forEach((r) => { addLine(revFill(T('revWeakOne', lang), { type: r.name, c: String(r.correct), t: String(r.total), pct: String(r.pct) })); });
         const strongOnes = typeRows.filter((r) => r.total >= 2 && r.pct === 100);
-        if (strongOnes.length && !weakPick.length) {
-            const r0 = strongOnes[0];
-            addLine(revFill(T('revStrongOne', lang), { type: r0.name, n: String(r0.total) }));
-        }
-
-        if (total >= 4 && pctAll >= 45 && ftPctAll < 40) {
-            addLine(T('revFirstTryLow', lang));
-        }
+        if (strongOnes.length && !weakPick.length) addLine(revFill(T('revStrongOne', lang), { type: strongOnes[0].name, n: String(strongOnes[0].total) }));
+        if (total >= 4 && pctAll >= 45 && ftPctAll < 40) addLine(T('revFirstTryLow', lang));
         if (failed.length) addLine(T('revThreeStrike', lang));
         if (incomplete.length) addLine(T('revIncomplete', lang));
-        if (!weakPick.length && typeRows.length >= 2 && pctAll >= 35 && pctAll < 78) {
-            addLine(T('revBalanced', lang));
-        }
-
+        if (!weakPick.length && typeRows.length >= 2 && pctAll >= 35 && pctAll < 78) addLine(T('revBalanced', lang));
         return lines;
     }
 
     function renderSessionAnalysis() {
         const l = getLang();
         const qs = window.questionData;
-        if (!qs || !qs.length || !qs[0]) {
-            alert(T('alertNoSheet'));
-            return;
-        }
-        const total = qs.length;
-        let correct = 0;
-        let firstTry = 0;
-        const failed = [];
-        const incomplete = [];
-        const byType = new Map();
+        if (!qs || !qs.length || !qs[0]) { alert(T('alertNoSheet')); return; }
+        const total = qs.length; let correct = 0, firstTry = 0;
+        const failed = [], incomplete = [], byType = new Map();
         qs.forEach((d, idx) => {
             if (!d) return;
             const tid = String(d.type);
-            if (!byType.has(tid)) {
-                byType.set(tid, { total: 0, correct: 0, firstTry: 0 });
-            }
-            const agg = byType.get(tid);
-            agg.total += 1;
-            const att = d.attempts || 0;
-            const solved = d.solved;
-            if (solved) {
-                agg.correct += 1;
-                if (att === 0) agg.firstTry += 1;
-            }
-            if (solved) {
-                correct += 1;
-                if (att === 0) firstTry += 1;
-            } else if (att >= 3) {
-                failed.push({ n: idx + 1, q: d });
-            } else {
-                incomplete.push(idx + 1);
-            }
+            if (!byType.has(tid)) byType.set(tid, { total: 0, correct: 0, firstTry: 0 });
+            const agg = byType.get(tid); agg.total += 1;
+            const att = d.attempts || 0, solved = d.solved;
+            if (solved) { agg.correct += 1; if (att === 0) agg.firstTry += 1; correct += 1; if (att === 0) firstTry += 1; }
+            else if (att >= 3) failed.push({ n: idx+1, q: d });
+            else incomplete.push(idx+1);
         });
-
         let html = '<h3>' + escapeHtml(T('analysisTitle', l)) + '</h3>';
         html += '<div class="summary-score">' + escapeHtml(T('summaryScoreLabel', l)) + '：' + correct + ' / ' + total + '</div>';
         html += '<p class="summary-sub">' + escapeHtml(T('summaryFirstTry', l)) + '：' + firstTry + ' / ' + total + '</p>';
-
         html += '<div class="summary-by-type-title">' + escapeHtml(T('summaryByTypeTitle', l)) + '</div>';
-        html += '<table class="summary-type-table" aria-label="' + escapeHtml(T('summaryByTypeTitle', l)) + '">';
-        html +=
-            '<thead><tr><th>' +
-            escapeHtml(T('summaryByTypeColType', l)) +
-            '</th><th class="num">' +
-            escapeHtml(T('summaryByTypeColFraction', l)) +
-            '</th><th class="num">' +
-            escapeHtml(T('summaryByTypeColRate', l)) +
-            '</th><th class="num">' +
-            escapeHtml(T('summaryByTypeColFirst', l)) +
-            '</th></tr></thead><tbody>';
-        [1, 2, 3].forEach((typeNum) => {
+        html += '<table class="summary-type-table"><thead><tr><th>' + escapeHtml(T('summaryByTypeColType', l)) + '</th><th class="num">' + escapeHtml(T('summaryByTypeColFraction', l)) + '</th><th class="num">' + escapeHtml(T('summaryByTypeColRate', l)) + '</th><th class="num">' + escapeHtml(T('summaryByTypeColFirst', l)) + '</th></tr></thead><tbody>';
+        [1,2,3].forEach((typeNum) => {
             const agg = byType.get(String(typeNum));
             if (!agg || !agg.total) return;
-            const pct = Math.round((100 * agg.correct) / agg.total);
-            const ftPct = Math.round((100 * agg.firstTry) / agg.total);
-            const name = qTypeLongLabel(l, typeNum);
-            html +=
-                '<tr><td><span class="type-name">' +
-                escapeHtml(name) +
-                '</span> <span class="type-code-cell">(type ' +
-                typeNum +
-                ')</span></td><td class="num">' +
-                agg.correct +
-                ' / ' +
-                agg.total +
-                '</td><td class="num">' +
-                pct +
-                '%</td><td class="num">' +
-                agg.firstTry +
-                ' / ' +
-                agg.total +
-                ' (' +
-                ftPct +
-                '%)</td></tr>';
+            const pct = Math.round((100*agg.correct)/agg.total);
+            const ftPct = Math.round((100*agg.firstTry)/agg.total);
+            html += '<tr><td>' + escapeHtml(qTypeLongLabel(l, typeNum)) + '</td><td class="num">' + agg.correct + ' / ' + agg.total + '</td><td class="num">' + pct + '%</td><td class="num">' + agg.firstTry + ' / ' + agg.total + ' (' + ftPct + '%)</td></tr>';
         });
         html += '</tbody></table>';
-
         const revLines = buildRevisionSuggestionsRAM(l, total, correct, firstTry, failed, incomplete, byType);
         html += '<div class="summary-revision"><h4>' + escapeHtml(T('revTitle', l)) + '</h4><ul>';
-        revLines.forEach((line) => {
-            html += '<li>' + escapeHtml(line) + '</li>';
-        });
+        revLines.forEach((line) => { html += '<li>' + escapeHtml(line) + '</li>'; });
         html += '</ul></div>';
-
         html += '<div class="summary-wrong-title">' + escapeHtml(T('summaryWrongTitle', l)) + '</div>';
-        if (!failed.length) {
-            html += '<p class="summary-none">' + escapeHtml(T('summaryNoneWrong', l)) + '</p>';
-        } else {
-            html += '<ul class="summary-wrong-list">';
-            failed.forEach((f) => {
-                const label = qTypeLongLabel(l, f.q.type);
-                html +=
-                    '<li>Q' +
-                    f.n +
-                    ' · ' +
-                    escapeHtml(label) +
-                    ' <span class="type-code">(type ' +
-                    f.q.type +
-                    ')</span></li>';
-            });
-            html += '</ul>';
-        }
-        if (incomplete.length) {
-            html +=
-                '<p class="summary-sub" style="margin-top:0.75rem">' +
-                escapeHtml(T('summaryIncomplete', l)) +
-                '：' +
-                incomplete.map((x) => 'Q' + x).join(l === 'zh' ? '、' : ', ') +
-                '</p>';
-        }
-
+        if (!failed.length) html += '<p class="summary-none">' + escapeHtml(T('summaryNoneWrong', l)) + '</p>';
+        else { html += '<ul class="summary-wrong-list">'; failed.forEach((f) => { html += '<li>Q' + f.n + ' · ' + escapeHtml(qTypeLongLabel(l, f.q.type)) + '</li>'; }); html += '</ul>'; }
+        if (incomplete.length) html += '<p class="summary-sub" style="margin-top:0.75rem">' + escapeHtml(T('summaryIncomplete', l)) + '：' + incomplete.map((x) => 'Q'+x).join(l==='zh'?'、':', ') + '</p>';
         const panel = document.getElementById('session-analysis-panel');
-        panel.hidden = false;
-        panel.innerHTML = html;
-
+        panel.hidden = false; panel.innerHTML = html;
         if (previewTabsCtrl) previewTabsCtrl.setMode('practice');
     }
 
     function renderPrintPreview() {
-        const l = getLang();
-        const el = document.getElementById('printView');
-        if (!hasWorksheetData()) {
-            el.innerHTML = '';
-            return;
-        }
-        let html = '<h1>' + escapeHtml(i18n[l].title) + '</h1>';
-        html += '<p class="meta">' + escapeHtml(i18n[l].note) + '</p>';
-        window.questionData.forEach((d, i) => {
-            if (!d) return;
-            html += '<div class="print-q"><strong>Q' + (i + 1) + '.</strong> ' + escapeHtml(d.qText) + '</div>';
-        });
+        const l = getLang(); const el = document.getElementById('printView');
+        if (!hasWorksheetData()) { el.innerHTML = ''; return; }
+        let html = '<h1>' + escapeHtml(i18n[l].title) + '</h1><p class="meta">' + escapeHtml(i18n[l].note) + '</p>';
+        window.questionData.forEach((d, i) => { if (!d) return; html += '<div class="print-q"><strong>Q' + (i+1) + '.</strong> ' + escapeHtml(d.qText) + '</div>'; });
         el.innerHTML = html;
     }
 
     function renderAnswerPreview() {
-        const l = getLang();
-        const el = document.getElementById('answerView');
-        if (!hasWorksheetData()) {
-            el.innerHTML = '';
-            return;
-        }
+        const l = getLang(); const el = document.getElementById('answerView');
+        if (!hasWorksheetData()) { el.innerHTML = ''; return; }
         let html = '<h1>' + escapeHtml(getSolutionsTitle(l)) + '</h1>';
-        window.questionData.forEach((d, i) => {
-            if (!d) return;
-            html +=
-                '<div class="answer-block">' +
-                '<h3>Q' + (i + 1) + '</h3>' +
-                '<p>' + escapeHtml(d.qText) + '</p>' +
-                '<div class="solution-body">' + d.fullSolution + '</div>' +
-                '<p><strong>' + (l === 'zh' ? '參考答案：' : 'Answer key: ') + '</strong>' + d.ans + '</p>' +
-                '</div>';
-        });
+        window.questionData.forEach((d, i) => { if (!d) return; html += '<div class="answer-block"><h3>Q' + (i+1) + '</h3><p>' + escapeHtml(d.qText) + '</p><div class="solution-body">' + d.fullSolution + '</div><p><strong>' + (l==='zh'?'參考答案：':'Answer key: ') + '</strong>' + d.ans + '</p></div>'; });
         el.innerHTML = html;
     }
 
     function rebuildPracticeQuestions() {
-        const l = getLang();
-        const container = document.getElementById('worksheet');
-        container.innerHTML = '';
+        const l = getLang(); const container = document.getElementById('worksheet'); container.innerHTML = '';
         window.questionData.forEach((d, index) => {
             if (!d) return;
-            const qDiv = document.createElement('div');
-            qDiv.className = 'question-box';
-            qDiv.innerHTML =
-                '<div class="question-text"><strong>Q' + (index + 1) + '.</strong> ' + d.qText + '</div>' +
-                '<div class="interaction-area">' +
-                '<input type="number" id="ans_' + index + '" step="0.01" placeholder="' + i18n[l].placeholder + '">' +
-                '<button type="button" data-check="' + index + '">' + i18n[l].check + '</button>' +
-                '</div>' +
-                '<div id="hint_' + index + '" class="hint"></div>' +
-                '<div id="fb_' + index + '" class="feedback"></div>';
+            const qDiv = document.createElement('div'); qDiv.className = 'question-box';
+            qDiv.innerHTML = '<div class="question-text"><strong>Q' + (index+1) + '.</strong> ' + d.qText + '</div><div class="interaction-area"><input type="number" id="ans_' + index + '" step="0.01" placeholder="' + i18n[l].placeholder + '"><button type="button" data-check="' + index + '">' + i18n[l].check + '</button></div><div id="hint_' + index + '" class="hint"></div><div id="fb_' + index + '" class="feedback"></div>';
             container.appendChild(qDiv);
             qDiv.querySelector('[data-check]').addEventListener('click', () => checkAnswer(index, l));
         });
     }
 
-    function printCurrentView() {
-        const l = getLang();
-        if (!hasWorksheetData()) {
-            alert(i18n[l].alertNoSheet);
-            return;
-        }
-        const mode = previewTabsCtrl ? previewTabsCtrl.getMode() : 'print';
-        if (mode === 'answer') {
-            openSolutionsPdf();
-            return;
-        }
-        window.print();
-    }
-
-    function hasWorksheetData() {
-        return window.questionData && window.questionData.length > 0 && window.questionData[0];
-    }
-
-    function getSolutionsTitle(l) {
-        return l === 'zh'
-            ? '完整題解 — 同位素與相對原子質量'
-            : 'Worked solutions — Isotopes & relative atomic mass';
-    }
+    function hasWorksheetData() { return window.questionData && window.questionData.length > 0 && window.questionData[0]; }
+    function getSolutionsTitle(l) { return l === 'zh' ? '完整題解 — 同位素與相對原子質量' : 'Worked solutions — Isotopes & relative atomic mass'; }
 
     function buildSolutionsBodyInnerHtml(l) {
         let body = '';
-        window.questionData.forEach((d, i) => {
-            if (!d) return;
-            body +=
-                '<section style="margin-bottom:28px;page-break-inside:avoid;">' +
-                '<h2 style="color:#2c3e50;border-bottom:1px solid #3498db;padding-bottom:6px;">Q' +
-                (i + 1) +
-                '</h2>' +
-                '<p style="font-size:15px;line-height:1.55;">' +
-                escapeHtml(d.qText) +
-                '</p>' +
-                '<div style="margin-top:12px;font-size:15px;line-height:1.6;">' +
-                d.fullSolution +
-                '</div>' +
-                '<p style="margin-top:10px;"><strong>' +
-                (l === 'zh' ? '參考答案：' : 'Answer key: ') +
-                '</strong>' +
-                d.ans +
-                '</p>' +
-                '</section>';
-        });
+        window.questionData.forEach((d, i) => { if (!d) return; body += '<section style="margin-bottom:28px;page-break-inside:avoid;"><h2 style="color:#2c3e50;border-bottom:1px solid #3498db;padding-bottom:6px;">Q' + (i+1) + '</h2><p style="font-size:15px;line-height:1.55;">' + escapeHtml(d.qText) + '</p><div style="margin-top:12px;font-size:15px;line-height:1.6;">' + d.fullSolution + '</div><p style="margin-top:10px;"><strong>' + (l==='zh'?'參考答案：':'Answer key: ') + '</strong>' + d.ans + '</p></section>'; });
         return body;
     }
 
     function buildSolutionsDocumentHtml(l) {
-        const title = getSolutionsTitle(l);
-        const body = buildSolutionsBodyInnerHtml(l);
-        const styles =
-            'body{font-family:Segoe UI,Microsoft JhengHei,微軟正黑體,sans-serif;padding:24px;color:#222;max-width:800px;margin:0 auto;}' +
-            'h1{font-size:22px;text-align:center;}';
-        return (
-            '<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:office" ' +
-            'xmlns:w="urn:schemas-microsoft-com:office:word" lang="' +
-            (l === 'zh' ? 'zh-Hant' : 'en') +
-            '"><head><meta charset="UTF-8"><title>' +
-            escapeHtml(title) +
-            '</title><style>' +
-            styles +
-            '</style></head><body><h1>' +
-            title +
-            '</h1>' +
-            body +
-            '</body></html>'
-        );
+        const title = getSolutionsTitle(l); const body = buildSolutionsBodyInnerHtml(l);
+        const styles = 'body{font-family:Segoe UI,Microsoft JhengHei,微軟正黑體,sans-serif;padding:24px;color:#222;max-width:800px;margin:0 auto;}h1{font-size:22px;text-align:center;}';
+        return '<!DOCTYPE html><html lang="' + (l==='zh'?'zh-Hant':'en') + '"><head><meta charset="UTF-8"><title>' + escapeHtml(title) + '</title><style>' + styles + '</style></head><body><h1>' + title + '</h1>' + body + '</body></html>';
     }
 
     function buildWorksheetDocumentHtml(l) {
         const title = i18n[l].title;
-        let body =
-            '<p style="font-style:italic;font-size:14px;">' +
-            escapeHtml(i18n[l].note) +
-            '</p>';
-        window.questionData.forEach((d, i) => {
-            if (!d) return;
-            body +=
-                '<h2 style="font-size:16px;color:#2c3e50;margin-top:18px;">Q' +
-                (i + 1) +
-                '</h2>' +
-                '<p style="font-size:15px;line-height:1.6;">' +
-                escapeHtml(d.qText) +
-                '</p>' +
-                '<p style="border-bottom:1px dashed #999;padding-bottom:36px;margin-bottom:8px;">&nbsp;</p>';
-        });
-        body +=
-            '<p style="margin-top:24px;font-size:14px;">' +
-            (l === 'zh'
-                ? '姓名：________________　班別：________　日期：________'
-                : 'Name: ________________　Class: ______　Date: ________') +
-            '</p>';
-        const styles =
-            'body{font-family:Segoe UI,Microsoft JhengHei,微軟正黑體,sans-serif;padding:24px;color:#222;}';
-        return (
-            '<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:office" ' +
-            'xmlns:w="urn:schemas-microsoft-com:office:word" lang="' +
-            (l === 'zh' ? 'zh-Hant' : 'en') +
-            '"><head><meta charset="UTF-8"><title>' +
-            escapeHtml(title) +
-            '</title><style>' +
-            styles +
-            '</style></head><body><h1 style="text-align:center;font-size:20px;">' +
-            title +
-            '</h1>' +
-            body +
-            '</body></html>'
-        );
+        let body = '<p style="font-style:italic;font-size:14px;">' + escapeHtml(i18n[l].note) + '</p>';
+        window.questionData.forEach((d, i) => { if (!d) return; body += '<h2 style="font-size:16px;color:#2c3e50;margin-top:18px;">Q' + (i+1) + '</h2><p style="font-size:15px;line-height:1.6;">' + escapeHtml(d.qText) + '</p><p style="border-bottom:1px dashed #999;padding-bottom:36px;margin-bottom:8px;">&nbsp;</p>'; });
+        body += '<p style="margin-top:24px;font-size:14px;">' + (l==='zh'?'姓名：________________　班別：________　日期：________':'Name: ________________　Class: ______　Date: ________') + '</p>';
+        const styles = 'body{font-family:Segoe UI,Microsoft JhengHei,微軟正黑體,sans-serif;padding:24px;color:#222;}';
+        return '<!DOCTYPE html><html lang="' + (l==='zh'?'zh-Hant':'en') + '"><head><meta charset="UTF-8"><title>' + escapeHtml(title) + '</title><style>' + styles + '</style></head><body><h1 style="text-align:center;font-size:20px;">' + title + '</h1>' + body + '</body></html>';
     }
 
-    /** Word opens HTML saved as .doc (application/msword). */
     function downloadAsWordFile(htmlString, filename) {
-        const blob = new Blob(['\ufeff', htmlString], {
-            type: 'application/msword;charset=utf-8'
-        });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        const blob = new Blob(['\ufeff', htmlString], { type: 'application/msword;charset=utf-8' });
+        const url = URL.createObjectURL(blob); const a = document.createElement('a');
+        a.href = url; a.download = filename; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
     }
 
     function docFilenameStem(kind) {
         const d = new Date();
-        const stamp =
-            d.getFullYear() +
-            String(d.getMonth() + 1).padStart(2, '0') +
-            String(d.getDate()).padStart(2, '0');
-        if (kind === 'solutions') return 'isotope-solutions-' + stamp;
-        return 'isotope-worksheet-' + stamp;
+        const stamp = d.getFullYear() + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0');
+        return (kind === 'solutions' ? 'isotope-solutions-' : 'isotope-worksheet-') + stamp;
     }
 
-    function downloadSolutionsDoc() {
-        const l = getLang();
-        if (!hasWorksheetData()) {
-            alert(i18n[l].alertNoSheet);
-            return;
-        }
-        downloadAsWordFile(buildSolutionsDocumentHtml(l), docFilenameStem('solutions') + '.doc');
-    }
-
-    function downloadWorksheetDoc() {
-        const l = getLang();
-        if (!hasWorksheetData()) {
-            alert(i18n[l].alertNoSheet);
-            return;
-        }
-        downloadAsWordFile(buildWorksheetDocumentHtml(l), docFilenameStem('worksheet') + '.doc');
-    }
+    function downloadSolutionsDoc() { const l = getLang(); if (!hasWorksheetData()) { alert(i18n[l].alertNoSheet); return; } downloadAsWordFile(buildSolutionsDocumentHtml(l), docFilenameStem('solutions')+'.doc'); }
+    function downloadWorksheetDoc() { const l = getLang(); if (!hasWorksheetData()) { alert(i18n[l].alertNoSheet); return; } downloadAsWordFile(buildWorksheetDocumentHtml(l), docFilenameStem('worksheet')+'.doc'); }
 
     function openSolutionsPdf() {
-        const l = getLang();
-        if (!hasWorksheetData()) {
-            alert(i18n[l].alertNoSheet);
-            return;
-        }
-        const html = buildSolutionsDocumentHtml(l);
+        const l = getLang(); if (!hasWorksheetData()) { alert(i18n[l].alertNoSheet); return; }
         const w = window.open('', '_blank');
-        if (!w) {
-            alert(l === 'zh' ? '請允許彈出視窗以產生題解。' : 'Please allow pop-ups to open solutions.');
-            return;
-        }
-        w.document.open();
-        w.document.write(html);
-        w.document.close();
-        w.onload = function () {
-            setTimeout(function () {
-                try {
-                    w.focus();
-                    w.print();
-                } catch (e) {}
-            }, 150);
-        };
+        if (!w) { alert(l==='zh'?'請允許彈出視窗以產生題解。':'Please allow pop-ups to open solutions.'); return; }
+        w.document.open(); w.document.write(buildSolutionsDocumentHtml(l)); w.document.close();
+        w.onload = function () { setTimeout(function () { try { w.focus(); w.print(); } catch(e) {} }, 150); };
     }
 
+    function printCurrentView() {
+        const l = getLang(); if (!hasWorksheetData()) { alert(i18n[l].alertNoSheet); return; }
+        const mode = previewTabsCtrl ? previewTabsCtrl.getMode() : 'print';
+        if (mode === 'answer') { openSolutionsPdf(); return; }
+        window.print();
+    }
     function generateWorksheet() {
         const l = getLang();
         const numQs = parseInt(document.getElementById('numQs').value, 10);
         const typeSelect = document.getElementById('qType').value;
         const diff = document.getElementById('diff').value;
-        
         window.questionData = [];
         document.getElementById('summary-panel').hidden = true;
         document.getElementById('summary-panel').innerHTML = '';
         const sap = document.getElementById('session-analysis-panel');
-        sap.hidden = true;
-        sap.innerHTML = '';
+        sap.hidden = true; sap.innerHTML = '';
         const pl = document.getElementById('progress-line');
-        pl.style.display = 'none';
-        pl.innerText = '';
-        const elements = ["X", "Y", "Z", "A", "B", "M", "Q"];
-
+        pl.style.display = 'none'; pl.innerText = '';
+        const elements = ["X","Y","Z","A","B","M","Q"];
         for (let i = 0; i < numQs; i++) {
             let currentType = typeSelect === 'all' ? randInt(1, 3) : parseInt(typeSelect, 10);
             createQuestionData(currentType, diff, i, elements[i % elements.length], l);
         }
-
-        renderPrintPreview();
-        renderAnswerPreview();
-        rebuildPracticeQuestions();
+        renderPrintPreview(); renderAnswerPreview(); rebuildPracticeQuestions();
         setExportButtonsEnabled(true);
         if (previewTabsCtrl) previewTabsCtrl.setMode('print');
         updateProgressUI(l);
@@ -949,20 +508,11 @@
 
     function createQuestionData(type, diff, index, elName, l) {
         let m1, m2, m3, p1, p2, p3, ram, qText, ans, hint1, hint2;
-
-        m1 = randInt(10, 80);
-        m2 = m1 + randInt(1, 4);
-        m3 = m2 + randInt(1, 4);
-
-        if (diff === 'easy') {
-            p1 = randInt(1, 4) * 20; p2 = 100 - p1; p3 = 0;
-        } else if (diff === 'medium') {
-            p1 = randInt(15, 85); p2 = 100 - p1; p3 = 0;
-        } else {
-            p1 = randInt(30, 60); p2 = randInt(10, 30); p3 = 100 - p1 - p2;
-        }
-
-        ram = (diff === 'hard') ? ((m1*p1)+(m2*p2)+(m3*p3))/100 : ((m1*p1)+(m2*p2))/100;
+        m1 = randInt(10, 80); m2 = m1 + randInt(1, 4); m3 = m2 + randInt(1, 4);
+        if (diff === 'easy') { p1 = randInt(1,4)*20; p2 = 100-p1; p3 = 0; }
+        else if (diff === 'medium') { p1 = randInt(15,85); p2 = 100-p1; p3 = 0; }
+        else { p1 = randInt(30,60); p2 = randInt(10,30); p3 = 100-p1-p2; }
+        ram = (diff==='hard') ? ((m1*p1)+(m2*p2)+(m3*p3))/100 : ((m1*p1)+(m2*p2))/100;
 
         if (type === 1) {
             ans = ram;
@@ -983,9 +533,7 @@
                 hint1 = "提示 1：設未知豐度為 x%，則另一同位素為 (100 - 已知% - x)%。代入公式求解 x。";
                 hint2 = `提示 2 (步驟)：<br>設 ${elName}-${m1} 的豐度為 x%。<br>${ram.toFixed(2)} = [${m1}x + ${m2}${p2Expr}` + (diff==='hard' ? ` + (${m3} × ${p3})` : "") + `] / 100<br>展開括號並解出 x。`;
             } else {
-                qText = `Element ${elName} has isotopes ${elName}-${m1} and ${elName}-${m2}. The RAM is ${ram.toFixed(2)}. Calculate the % abundance of ${elName}-${m1}.`;
-                if(diff === 'hard') qText = `Element ${elName} has isotopes ${elName}-${m1}, ${elName}-${m2}, and ${elName}-${m3} (${p3}%). The RAM is ${ram.toFixed(2)}. Calculate the % abundance of ${elName}-${m1}.`;
-                
+                qText = (diff==='hard') ? `Element ${elName} has isotopes ${elName}-${m1}, ${elName}-${m2}, and ${elName}-${m3} (${p3}%). The RAM is ${ram.toFixed(2)}. Calculate the % abundance of ${elName}-${m1}.` : `Element ${elName} has isotopes ${elName}-${m1} and ${elName}-${m2}. The RAM is ${ram.toFixed(2)}. Calculate the % abundance of ${elName}-${m1}.`;
                 hint1 = "Hint 1: Let abundance of isotope 1 be x%. Then isotope 2 is (100 - known% - x)%. Solve for x.";
                 hint2 = `Hint 2 (Steps):<br>Let the abundance of ${elName}-${m1} be x%.<br>${ram.toFixed(2)} = [${m1}x + ${m2}${p2Expr}` + (diff==='hard' ? ` + (${m3} × ${p3})` : "") + `] / 100<br>Expand the brackets and solve for x.`;
             }
@@ -1002,32 +550,8 @@
             }
         }
 
-        const fullSolution = buildFullSolution({
-            type,
-            diff,
-            l,
-            elName,
-            m1,
-            m2,
-            m3,
-            p1,
-            p2,
-            p3,
-            ram,
-            ans: parseFloat(ans.toFixed(2))
-        });
-
-        window.questionData[index] = {
-            ans: parseFloat(ans.toFixed(2)),
-            hint1,
-            hint2,
-            attempts: 0,
-            solved: false,
-            checkSubmissions: 0,
-            type,
-            qText,
-            fullSolution
-        };
+        const fullSolution = buildFullSolution({ type, diff, l, elName, m1, m2, m3, p1, p2, p3, ram, ans: parseFloat(ans.toFixed(2)) });
+        window.questionData[index] = { ans: parseFloat(ans.toFixed(2)), hint1, hint2, attempts: 0, solved: false, checkSubmissions: 0, type, diff, qText, fullSolution };
     }
 
     function checkAnswer(index, l) {
@@ -1036,35 +560,45 @@
         const data = window.questionData[index];
         const fb = document.getElementById('fb_' + index);
         const ht = document.getElementById('hint_' + index);
-
         if (raw === '' || raw === null || Number.isNaN(userVal)) {
             fb.innerText = l === 'zh' ? '請輸入數字答案。' : 'Please enter a numeric answer.';
-            fb.style.color = '#c0392b';
-            updateProgressUI(l);
-            return;
+            fb.style.color = '#c0392b'; updateProgressUI(l); return;
         }
         data.checkSubmissions = (data.checkSubmissions || 0) + 1;
-
         if (Math.abs(userVal - data.ans) <= 0.05) {
-            fb.innerText = i18n[l].correct;
-            fb.style.color = "#27ae60";
-            ht.style.display = 'none';
-            data.solved = true;
+            fb.innerText = i18n[l].correct; fb.style.color = "#27ae60";
+            ht.style.display = 'none'; data.solved = true;
+            try {
+                window.postMessage({
+                    type: 'uniplus:quizAnswer', subject: 'CHEM', quizId: 'chem-ch5-isotope-ram',
+                    questionId: 'q' + (index + 1), section: 'isotope-ram-type' + data.type,
+                    difficulty: data.diff || 'standard', stem: data.qText || null,
+                    selectedAnswer: String(userVal), selectedAnswerText: String(userVal),
+                    correctAnswer: String(data.ans), correctAnswerText: String(data.ans),
+                    isCorrect: true, attemptNumber: data.attempts + 1, msTaken: 0
+                }, '*');
+            } catch(_) {}
             maybeShowSummary(l);
         } else {
             data.attempts++;
             if (data.attempts === 1) {
-                fb.innerText = i18n[l].wrong1; 
-                fb.style.color = "#c0392b";
-                ht.innerHTML = data.hint1; 
-                ht.style.display = 'block';
+                fb.innerText = i18n[l].wrong1; fb.style.color = "#c0392b";
+                ht.innerHTML = data.hint1; ht.style.display = 'block';
             } else if (data.attempts === 2) {
-                fb.innerText = i18n[l].wrong2; 
-                fb.style.color = "#c0392b";
-                ht.innerHTML = data.hint1 + "<br><br>" + data.hint2; 
+                fb.innerText = i18n[l].wrong2; fb.style.color = "#c0392b";
+                ht.innerHTML = data.hint1 + "<br><br>" + data.hint2;
             } else {
-                fb.innerText = i18n[l].finalWrong + data.ans;
-                fb.style.color = "#c0392b";
+                fb.innerText = i18n[l].finalWrong + data.ans; fb.style.color = "#c0392b";
+                try {
+                    window.postMessage({
+                        type: 'uniplus:quizAnswer', subject: 'CHEM', quizId: 'chem-ch5-isotope-ram',
+                        questionId: 'q' + (index + 1), section: 'isotope-ram-type' + data.type,
+                        difficulty: data.diff || 'standard', stem: data.qText || null,
+                        selectedAnswer: String(userVal), selectedAnswerText: String(userVal),
+                        correctAnswer: String(data.ans), correctAnswerText: String(data.ans),
+                        isCorrect: false, attemptNumber: data.attempts, msTaken: 0
+                    }, '*');
+                } catch(_) {}
             }
         }
         updateProgressUI(l);
@@ -1072,25 +606,12 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         previewTabsCtrl = window.Ch5EmbedUI.bindPreviewTabs('.preview-tab', {
-            panels: {
-                print: document.getElementById('printView'),
-                practice: document.getElementById('practiceView'),
-                answer: document.getElementById('answerView'),
-            },
+            panels: { print: document.getElementById('printView'), practice: document.getElementById('practiceView'), answer: document.getElementById('answerView') },
             placeholder: document.getElementById('previewPlaceholder'),
-            hasContent: hasWorksheetData,
-            defaultMode: 'print',
+            hasContent: hasWorksheetData, defaultMode: 'print',
         });
-
-        window.Ch5EmbedUI.bindOptionGroup(document.getElementById('difficulty-group'), {
-            hiddenInput: document.getElementById('diff'),
-            onChange: setDifficulty,
-        });
-
-        window.Ch5EmbedUI.bindOptionGroup(document.getElementById('question-count-group'), {
-            hiddenInput: document.getElementById('numQs'),
-        });
-
+        window.Ch5EmbedUI.bindOptionGroup(document.getElementById('difficulty-group'), { hiddenInput: document.getElementById('diff'), onChange: setDifficulty });
+        window.Ch5EmbedUI.bindOptionGroup(document.getElementById('question-count-group'), { hiddenInput: document.getElementById('numQs') });
         document.getElementById('ui-btn-gen').addEventListener('click', generateWorksheet);
         document.getElementById('btnLangEn').addEventListener('click', () => setLang('en'));
         document.getElementById('btnLangZh').addEventListener('click', () => setLang('zh'));
@@ -1099,12 +620,12 @@
         document.getElementById('ui-btn-solutions-pdf').addEventListener('click', openSolutionsPdf);
         document.getElementById('ui-btn-solutions-doc').addEventListener('click', downloadSolutionsDoc);
         document.getElementById('ui-btn-worksheet-doc').addEventListener('click', downloadWorksheetDoc);
-
         setExportButtonsEnabled(false);
         updateUI();
         setDifficulty(document.getElementById('diff').value);
         syncCountPills();
     });
 </script>
+<script src="https://uni-education-elearning.pages.dev/tracker/uni-tracker.js?v=8" defer></script>
 </body>
 </html>
