@@ -884,9 +884,41 @@ function renderWorksheet(worksheet, mode) {
                     userAnswers[qIndex][cIndex] = parseInt(input.value) || 0;
                 });
                 renderWorksheet(worksheet, 'practice');
+                // uni-tracker dispatch
+                try {
+                    const qs = worksheet.questions || [];
+                    qs.forEach((q, qIdx) => {
+                        const correctCoefs = q.coefficients || [];
+                        const userCoefs = userAnswers[qIdx] || [];
+                        const isCorrect = correctCoefs.every((c, i) => userCoefs[i] === c);
+                        const stemParts = [];
+                        (q.reactants || []).forEach((r, i) => { stemParts.push((correctCoefs[i] > 1 ? correctCoefs[i] : '') + r); });
+                        stemParts.push('→');
+                        let cIdx = (q.reactants || []).length;
+                        (q.products || []).forEach((p, i) => { stemParts.push((correctCoefs[cIdx + i] > 1 ? correctCoefs[cIdx + i] : '') + p); });
+                        const stem = stemParts.join(' ');
+                        const selectedAnswer = userCoefs.join(',');
+                        const correctAnswer = correctCoefs.join(',');
+                        window.postMessage({
+                            type: 'uniplus:quizAnswer',
+                            subject: 'CHEM',
+                            quizId: 'chem-equation-practice',
+                            questionId: 'eq-' + qIdx,
+                            section: 'equation-balancing',
+                            difficulty: 'standard',
+                            stem: stem,
+                            selectedAnswer: selectedAnswer,
+                            selectedAnswerText: selectedAnswer,
+                            correctAnswer: correctAnswer,
+                            correctAnswerText: correctAnswer,
+                            isCorrect: isCorrect,
+                            attemptNumber: 1,
+                            msTaken: 0
+                        }, '*');
+                    });
+                } catch(_) {}
             });
         }
-    }
 
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
