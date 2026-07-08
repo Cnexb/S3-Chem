@@ -13,48 +13,68 @@
   </head>
   <body>
     <div id="root"></div>
-  <script src="https://uni-education-elearning.pages.dev/tracker/uni-tracker.js?v=8" defer></script>
+ <script src="https://uni-education-elearning.pages.dev/tracker/uni-tracker.js?v=8" defer></script>
 <script>
 (function() {
   var _startTime = Date.now();
-  var _questionIndex = 0;
 
-  // 監聽 feedback 出現
-  var observer = new MutationObserver(function() {
-    var ok = document.querySelector('.feedback--ok');
-    var bad = document.querySelector('.feedback--bad');
-    if (!ok && !bad) return;
+  function readStudentAnswer() {
+    // Symbol
+    var symbolInput = document.querySelector('.notation-tile__symbol');
+    var studentSymbol = symbolInput ? symbolInput.value.trim() : '';
 
-    // 讀取目前題目資訊
-    var progressEl = document.querySelector('.quiz__progress');
-    var progressText = progressEl ? progressEl.textContent : '';
-    var match = progressText.match(/(\d+)\s*[\/of]+\s*(\d+)/);
-    var current = match ? parseInt(match[1]) : (_questionIndex + 1);
+    // Shell counts per shell (e.g. [2,8,1])
+    var shellBoxes = document.querySelectorAll('.shell-box');
+    var shellCounts = [];
+    shellBoxes.forEach(function(box) {
+      var countEl = box.querySelector('.shell-box__count');
+      shellCounts.push(countEl ? parseInt(countEl.textContent) || 0 : 0);
+    });
 
-    // 讀取 Z number (atomic number)
+    // Z number
     var zEl = document.querySelector('.bohr-meta');
     var zText = zEl ? zEl.textContent : '';
     var zMatch = zText.match(/Z\s*=\s*(\d+)/);
     var z = zMatch ? zMatch[1] : 'unknown';
 
-    // 讀取學生輸入嘅 symbol
-    var symbolInput = document.querySelector('.notation-tile__symbol');
-    var studentSymbol = symbolInput ? symbolInput.value : '';
+    // Progress
+    var progressEl = document.querySelector('.quiz__progress');
+    var progressText = progressEl ? progressEl.textContent : '';
+    var match = progressText.match(/(\d+)/);
+    var current = match ? match[1] : '1';
 
+    return {
+      z: z,
+      current: current,
+      studentSymbol: studentSymbol,
+      shellCounts: shellCounts,
+      shellCountStr: shellCounts.join(',')
+    };
+  }
+
+  var observer = new MutationObserver(function() {
+    var ok = document.querySelector('.feedback--ok');
+    var bad = document.querySelector('.feedback--bad');
+    if (!ok && !bad) return;
+
+    var ans = readStudentAnswer();
     var isCorrect = !!ok;
     var msTaken = Date.now() - _startTime;
+
+    // selectedAnswer = "symbol|shells" e.g. "Na|2,8,1"
+    var selectedAnswer = ans.studentSymbol + '|' + ans.shellCountStr;
 
     try {
       window.postMessage({
         type: 'uniplus:quizAnswer',
         subject: 'CHEM',
         quizId: 'chem-ch5-atomic-structure',
-        questionId: 'z' + z + '-q' + current,
+        questionId: 'z' + ans.z + '-q' + ans.current,
         section: 'atomic-structure',
         difficulty: 'standard',
-        stem: 'Z = ' + z,
-        selectedAnswer: studentSymbol,
-        selectedAnswerText: studentSymbol,
+        stem: 'Z = ' + ans.z,
+        selectedAnswer: selectedAnswer,
+        selectedAnswerText: selectedAnswer,
         correctAnswer: null,
         correctAnswerText: null,
         isCorrect: isCorrect,
@@ -63,9 +83,7 @@
       }, '*');
     } catch(_) {}
 
-    // reset timer for next question
     _startTime = Date.now();
-    _questionIndex++;
   });
 
   observer.observe(document.body, { childList: true, subtree: true });
