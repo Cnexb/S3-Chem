@@ -1,6 +1,6 @@
-import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v25";
-import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260702v25";
-import { downloadWord, printSheet } from "./quizExport.js?v=20260702v25";
+import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js";
+import { sectionLabel, renderSessionSummary } from "./quizSummary.js";
+import { downloadWord, printSheet } from "./quizExport.js";
 import {
   DIFFICULTY_LEVELS,
   difficultyLevel,
@@ -18,18 +18,18 @@ import {
   formatFilterLabel,
   buildQuizBankStats,
   filterQuizPool,
-} from "./quizUtils.js?v=20260702v25";
+} from "./quizUtils.js";
 import {
   animateSplitText,
   bindMagnets,
   bindTrueFocus,
   revealQuestionBlocks,
   initSettingsToggle,
-} from "./quizEffects.js?v=20260702v25";
+} from "./quizEffects.js";
 
 const UI = {
   en: {
-    appSubtitle: "HKDSE 工作紙練習 · English / 繁體中文 UI",
+    appSubtitle: "Concept checks · English / 繁體中文 UI",
     hSettings: "Worksheet settings",
     lblTypes: "Topics",
     lblFormats: "Question types",
@@ -39,7 +39,7 @@ const UI = {
     bankByType: "By question type",
     bankMatrix: "Topic × type",
     bankNone: "Select at least one topic and one question type.",
-    lblCount: "Number of questions (1–100)",
+    lblCount: "Number of questions (1–50)",
     lblDiff: "Difficulty",
     lblSeed: "Random seed (optional)",
     btnGenerate: "Generate questions",
@@ -82,7 +82,7 @@ const UI = {
     revBandGood: "Good result. Use the table above to add a short round on weaker topics.",
     revBandFair: "Mixed performance: re-read refraction notes for weaker topics, then regenerate.",
     revBandLow:
-      "部分課題需加強。請重溫原子結構、化學鍵與物質結構性質，再生成新一輪題目。",
+      "Several concepts need consolidation. Review Snell's law, refractive index, ray paths, and dispersion before the next round.",
     revWeakOne: "Prioritise revision on {type} — you scored {c}/{t} ({pct}%) in that topic.",
     revStrongOne: "Strength: every {type} item correct ({n} questions).",
     revTwoStrike: "Questions missed twice: study the model answers, then regenerate those topics.",
@@ -243,8 +243,10 @@ export function initQuiz() {
 
   if (!els.quizArea) return;
 
-  function setHint(_text) {
-    /* hint sidebar removed */
+  function setHint(text) {
+    const msg = text || t("empty");
+    if (els.hintText) els.hintText.textContent = msg;
+    if (els.hintTextMobile) els.hintTextMobile.textContent = msg;
   }
 
   function applyLang() {
@@ -436,7 +438,7 @@ export function initQuiz() {
       alert(t("alertNoFormats"));
       return;
     }
-    const count = Math.min(100, Math.max(1, Number(els.numCount?.value) || 10));
+    const count = Math.min(50, Math.max(1, Number(els.numCount?.value) || 10));
     const diffFilter = els.selDiff?.value || "all";
     const seed = els.txtSeed?.value || "";
 
@@ -512,12 +514,17 @@ export function initQuiz() {
     el.innerHTML = "";
 
     const firstOpen = lastQuestions.find((q) => !attemptMap.get(q.id)?.solved);
+    if (firstOpen) setHint(firstOpen.hint);
+
     lastQuestions.forEach((q, idx) => {
       const st = attemptMap.get(q.id) || { wrong: 0, solved: false, selected: null };
       const wrap = document.createElement("article");
       wrap.className =
         "q-block p-5 md:p-6 rounded-2xl bg-surface border border-outline-variant/25 shadow-sm";
       wrap.id = "q-block-" + q.id;
+      wrap.addEventListener("mouseenter", () => setHint(q.hint));
+      wrap.addEventListener("focusin", () => setHint(q.hint));
+
       const head = document.createElement("div");
       head.className = "text-[11px] font-label-bold uppercase tracking-wide text-on-surface-variant mb-3";
       head.textContent =
@@ -539,45 +546,11 @@ export function initQuiz() {
         wrap.appendChild(fig);
       }
 
-      const stemClass =
-        "split-text-target font-headline-lg-mobile text-headline-lg-mobile text-on-surface leading-tight whitespace-pre-line";
-
-      function appendStemParagraph(text, extraClass = "mb-1") {
-        if (!text) return;
-        const p = document.createElement("p");
-        p.className = `${stemClass} ${extraClass}`;
-        p.textContent = text;
-        wrap.appendChild(p);
-      }
-
-      let table = q.stemTable;
-      let intro = q.stem;
-      let suffix = "";
-      if (table) {
-        const split = splitStemText(q.stem);
-        intro = split.intro;
-        suffix = split.suffix;
-      } else {
-        const parsed = parsePipeTableFromStem(q.stem);
-        if (parsed?.table && (parsed.table.rows?.length || parsed.table.headers?.length)) {
-          intro = parsed.intro;
-          suffix = parsed.suffix;
-          table = parsed.table;
-        } else {
-          const split = splitStemText(q.stem);
-          if (split.suffix) {
-            intro = split.intro;
-            suffix = split.suffix;
-          }
-        }
-      }
-      appendStemParagraph(intro);
-      if (table && (table.rows?.length || table.headers?.length)) {
-        const tableWrap = document.createElement("div");
-        tableWrap.innerHTML = renderStemTableHtml(table);
-        wrap.appendChild(tableWrap);
-      }
-      appendStemParagraph(suffix, q.stemZh ? "mb-1" : "mb-4");
+      const stem = document.createElement("p");
+      stem.className =
+        "split-text-target font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1 leading-tight whitespace-pre-line";
+      stem.textContent = q.stem;
+      wrap.appendChild(stem);
 
       if (q.stemZh) {
         const stemZh = document.createElement("p");

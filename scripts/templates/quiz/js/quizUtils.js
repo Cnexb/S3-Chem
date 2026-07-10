@@ -83,7 +83,8 @@ export function questionFormat(q) {
 /** Worksheet filters for question format (MCQ / T/F / fill). */
 export const QUIZ_FORMAT_FILTERS = [
   { id: "mcq", labelEn: "Multiple choice", labelZh: "選擇題", labelZhHans: "选择题" },
-  { id: "fill", labelEn: "Short answer", labelZh: "短答題", labelZhHans: "短答题" },
+  { id: "tf", labelEn: "True / False", labelZh: "是非題", labelZhHans: "是非题" },
+  { id: "fill", labelEn: "Fill in the blanks", labelZh: "填充題", labelZhHans: "填空题" },
 ];
 
 export function formatFilterLabel(filter, lang) {

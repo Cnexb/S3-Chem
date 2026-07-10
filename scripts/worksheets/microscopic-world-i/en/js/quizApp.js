@@ -1,6 +1,6 @@
 import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v25";
 import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260702v25";
-import { downloadWord, printSheet } from "./quizExport.js?v=20260704v3";
+import { downloadWord, printSheet } from "./quizExport.js?v=20260702v25";
 import {
   DIFFICULTY_LEVELS,
   difficultyLevel,
@@ -820,30 +820,15 @@ export function initQuiz() {
       lang,
     });
   });
-  let exportBusy = false;
-  async function runExport(task) {
-    if (exportBusy) return;
-    exportBusy = true;
-    try {
-      await task();
-    } finally {
-      exportBusy = false;
-    }
-  }
-
-  document.getElementById("btn-doc-q")?.addEventListener("click", () =>
-    runExport(() => downloadWord(lastQuestions, false, lang)),
-  );
-  document.getElementById("btn-doc-a")?.addEventListener("click", () =>
-    runExport(() => downloadWord(lastQuestions, true, lang)),
-  );
+  document.getElementById("btn-doc-q")?.addEventListener("click", () => downloadWord(lastQuestions, false, lang));
+  document.getElementById("btn-doc-a")?.addEventListener("click", () => downloadWord(lastQuestions, true, lang));
   document.getElementById("btn-print")?.addEventListener("click", () => {
     if (!lastQuestions.length) {
       alert(t("alertNoQuiz"));
       return;
     }
     const want = confirm(t("printConfirm"));
-    runExport(() => printSheet(lastQuestions, want, lang));
+    printSheet(lastQuestions, want, lang);
   });
 
   function syncLangFromParent() {

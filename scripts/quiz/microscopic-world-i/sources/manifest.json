@@ -1,9 +1,10 @@
 {
   "title": "Microscopic World I MCQ Quiz",
   "titleZh": "微觀世界 I 多項選擇題",
-  "sourcePdf": "C:\\Users\\UniplusUser02\\S3-Chem\\scripts\\quiz\\microscopic-world-i\\sources\\microscopic-world-i-mcq.pdf",
-  "questionsFile": "C:\\Users\\UniplusUser02\\S3-Chem\\scripts\\quiz\\microscopic-world-i\\questions.json",
-  "figuresDir": "C:\\Users\\UniplusUser02\\S3-Chem\\scripts\\quiz\\microscopic-world-i\\figures",
+  "sourcesNote": "Original PDF is not in the repo. Rebuild uses committed questions.json and figures/ only.",
+  "sourcePdf": "sources/microscopic-world-i-mcq.pdf",
+  "questionsFile": "questions.json",
+  "figuresDir": "figures",
   "questionCount": 40,
   "chapters": [
     {

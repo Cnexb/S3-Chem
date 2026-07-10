@@ -302,98 +302,48 @@ function readBlobAsDataUrl(blob) {
   });
 }
 
-function loadImageDataUrl(resolvedUrl) {
-  return new Promise((resolve) => {
-    const img = new Image();
-    img.onload = () => {
-      try {
-        const canvas = document.createElement("canvas");
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) {
-          resolve(null);
-          return;
-        }
-        ctx.drawImage(img, 0, 0);
-        resolve(canvas.toDataURL("image/png"));
-      } catch {
-        resolve(null);
-      }
-    };
-    img.onerror = () => resolve(null);
-    img.src = resolvedUrl;
-  });
-}
-
 export async function prefetchExportImages(questions) {
   const cache = new Map();
   const srcs = collectQuestionImageSrcs(questions);
   await Promise.all(
     srcs.map(async (src) => {
       const resolved = resolveExportAssetUrl(src);
-      let dataUrl = null;
       try {
         const res = await fetch(resolved);
-        if (res.ok) dataUrl = await readBlobAsDataUrl(await res.blob());
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const dataUrl = await readBlobAsDataUrl(await res.blob());
+        cache.set(src, dataUrl);
+        cache.set(resolved, dataUrl);
       } catch {
-        /* fall through to Image loader */
+        cache.set(src, null);
+        cache.set(resolved, null);
       }
-      if (!dataUrl) dataUrl = await loadImageDataUrl(resolved);
-      cache.set(src, dataUrl);
-      cache.set(resolved, dataUrl);
     }),
   );
   return cache;
 }
 
-export function buildFiguresExportHtml(q, imageCache, imageMode = "embed") {
+export function buildFiguresExportHtml(q, imageCache) {
   const imgs = q.images?.length ? q.images.filter((img) => img?.src) : q.image?.src ? [q.image] : [];
   if (!imgs.length) return "";
 
   const caption = q.image?.caption || imgs[0]?.caption || "";
   const imgStyle = "max-width:100%;height:auto;page-break-inside:avoid;display:block;margin:0.25rem 0";
   let html = '<figure class="export-fig">';
-  let imageCount = 0;
 
   for (const img of imgs) {
-    const resolved = resolveExportAssetUrl(img.src);
-    const src =
-      imageMode === "direct"
-        ? resolved
-        : imageCache?.get(img.src) ?? imageCache?.get(resolved) ?? resolved;
-    if (src) {
-      html += `<img src="${src}" alt="${escHtml(img.alt || "")}" style="${imgStyle}"/>`;
-      imageCount += 1;
+    const dataUrl = imageCache.get(img.src) ?? imageCache.get(resolveExportAssetUrl(img.src));
+    if (dataUrl) {
+      html += `<img src="${dataUrl}" alt="${escHtml(img.alt || "")}" style="${imgStyle}"/>`;
     } else {
       html += `<p><i>[Diagram unavailable: ${escHtml(img.caption || img.alt || img.src)}]</i></p>`;
     }
   }
-  if (caption && imageCount > 0) {
+  if (caption) {
     html += `<figcaption style="font-size:0.9em;margin-top:0.25rem">${escHtml(caption)}</figcaption>`;
   }
   html += "</figure>";
   return html;
-}
-
-export function waitForExportImages(container) {
-  const imgs = [...container.querySelectorAll("img")];
-  if (!imgs.length) return Promise.resolve();
-  return Promise.all(
-    imgs.map(
-      (img) =>
-        new Promise((resolve) => {
-          if (img.complete && img.naturalWidth > 0) {
-            resolve();
-            return;
-          }
-          const done = () => resolve();
-          img.addEventListener("load", done, { once: true });
-          img.addEventListener("error", done, { once: true });
-          window.setTimeout(done, 4000);
-        }),
-    ),
-  );
 }
 
 function isTableSeparatorLine(line) {

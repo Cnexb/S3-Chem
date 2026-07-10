@@ -5,3 +5,14 @@ dist/
 .deploy-gh-pages/
 uniplus-dist.zip
 _extract_chem/
+
+# Python
+**/__pycache__/
+*.pyc
+
+# Local audit / scratch files (repo root)
+/*.txt
+
+# Worksheet build scratch
+scripts/**/_tmp_media/
+scripts/**/_tmp_*/

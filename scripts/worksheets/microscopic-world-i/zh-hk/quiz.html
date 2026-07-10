@@ -86,21 +86,6 @@ tailwind.config = {
 .quiz-bank-matrix td:first-child, .quiz-bank-matrix th:first-child { text-align: left; max-width: 9rem; }
 .quiz-bank-matrix .cell-zero { color: #727784; }
 .quiz-bank-matrix .cell-hit { font-weight: 700; color: #004e9f; }
-.quiz-stem-table {
-  width: 100%; border-collapse: collapse; font-size: 14px;
-  background: #ffffff; border-radius: 0.75rem; overflow: hidden;
-  border: 1px solid rgba(193, 198, 213, 0.55);
-}
-.quiz-stem-table th, .quiz-stem-table td {
-  border: 1px solid rgba(193, 198, 213, 0.45); padding: 0.5rem 0.75rem; text-align: center;
-}
-.quiz-stem-table thead th {
-  background: rgba(242, 244, 246, 0.95); font-weight: 600; color: #191c1e;
-}
-.quiz-stem-table tbody th {
-  background: rgba(242, 244, 246, 0.7); font-weight: 600; text-align: left;
-}
-.quiz-stem-table td.tabular-nums { font-variant-numeric: tabular-nums; }
 @media print {
   html, body {
     height: auto !important;
@@ -110,15 +95,21 @@ tailwind.config = {
     overflow: visible !important;
     background: #fff !important;
   }
-  body > *:not(#quiz-pdf-sheet) { display: none !important; }
+  body > *:not(#quiz-pdf-sheet) {
+    display: none !important;
+  }
   #quiz-pdf-sheet {
     display: block !important;
+    visibility: visible !important;
     position: static !important;
-    width: 100%;
-    padding: 1rem;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  #quiz-pdf-sheet * {
     visibility: visible !important;
   }
-  #quiz-pdf-sheet .export-q { page-break-inside: avoid; break-inside: avoid; margin-bottom: 1rem; }
+  #quiz-pdf-sheet .export-q { page-break-inside: avoid; break-inside: avoid-page; margin-bottom: 1rem; }
   #quiz-pdf-sheet .quiz-stem-table th,
   #quiz-pdf-sheet .quiz-stem-table td { border: 1px solid #999; padding: 4px 8px; }
   #quiz-pdf-sheet .export-fig img { max-width: 100%; height: auto; page-break-inside: avoid; }

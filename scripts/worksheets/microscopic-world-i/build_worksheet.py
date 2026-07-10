@@ -4,9 +4,11 @@ import json, os, re, shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+REPO_ROOT = ROOT.parents[2]
+DEFAULT_QUIZ_TEMPLATE_DIR = REPO_ROOT / "scripts" / "templates" / "quiz"
 TPL = Path(os.environ.get(
     "QUIZ_TEMPLATE_DIR",
-    r"C:\Users\UniplusUser02\.agents\skills\create-quiz\templates",
+    str(DEFAULT_QUIZ_TEMPLATE_DIR),
 ))
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"

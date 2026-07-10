@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-<title>Microscopic World I · Worksheet</title>
+<title>Quiz — replace chapter title</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -127,8 +126,8 @@ tailwind.config = {
 <div class="space-y-2 mb-4" id="quiz-type-checks"></div>
 <label class="block text-body-sm font-label-bold text-on-surface-variant mb-2" data-i18n="lblFormats">Question types</label>
 <div class="space-y-2 mb-4" id="quiz-format-checks"></div>
-<label class="block text-body-sm font-label-bold text-on-surface-variant mb-1" for="quiz-num-count" data-i18n="lblCount">Number of questions (1–100)</label>
-<input class="w-full mb-4 rounded-xl border-outline-variant bg-surface-container-low focus:ring-primary focus:border-primary" id="quiz-num-count" max="100" min="1" type="number" value="10"/>
+<label class="block text-body-sm font-label-bold text-on-surface-variant mb-1" for="quiz-num-count" data-i18n="lblCount">Number of questions (1–50)</label>
+<input class="w-full mb-4 rounded-xl border-outline-variant bg-surface-container-low focus:ring-primary focus:border-primary" id="quiz-num-count" max="50" min="1" type="number" value="9"/>
 <label class="block text-body-sm font-label-bold text-on-surface-variant mb-1" for="quiz-sel-diff" data-i18n="lblDiff">Difficulty</label>
 <select class="w-full mb-4 rounded-xl border-outline-variant bg-surface-container-low font-label-bold focus:ring-primary" id="quiz-sel-diff"></select>
 <label class="block text-body-sm font-label-bold text-on-surface-variant mb-1" for="quiz-txt-seed" data-i18n="lblSeed">Random seed (optional)</label>
@@ -146,7 +145,7 @@ tailwind.config = {
 <div class="min-w-0 space-y-4">
 <div class="flex flex-wrap items-center justify-between gap-3 focus-dim">
 <div class="min-w-0 flex-1">
-<p class="font-label-bold text-primary text-body-sm mb-1">Topic 2 · Microscopic World I</p>
+<p class="font-label-bold text-primary text-body-sm mb-1">CH · CHAPTER LABEL</p>
 <p class="font-label-bold text-on-surface-variant text-body-sm" id="quiz-progress-text">No session yet</p>
 <div class="h-2.5 w-full max-w-md mt-2 bg-surface-container-high rounded-full relative overflow-hidden">
 <div class="shiny-progress-bar absolute left-0 top-0 h-full bg-primary-container rounded-full transition-all duration-500" id="quiz-progress-bar" style="width:0%"></div>
@@ -157,6 +156,17 @@ tailwind.config = {
 <span data-i18n="hideSettings" data-label-hide="Hide settings" data-label-show="Show settings" id="settings-toggle-label">Hide settings</span>
 </button>
 </div>
+
+<div class="grid grid-cols-1 xl:grid-cols-[minmax(220px,260px)_1fr] gap-6 items-start">
+<aside class="hidden xl:block focus-dim transition-all duration-500">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<h3 class="font-label-bold">Hint</h3>
+</div>
+<p class="text-body-sm text-on-surface-variant leading-relaxed" id="quiz-hint-text">Generate questions to see topic hints here.</p>
+</div>
+</aside>
 
 <section class="bg-surface-container-lowest p-6 md:p-10 rounded-[2rem] shadow-lg border border-outline-variant/30 min-h-[480px] focus-target transition-all duration-500 relative overflow-hidden" id="quiz-container">
 <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-primary-fixed/20 blur-[100px] rounded-full pointer-events-none"></div>
@@ -169,14 +179,18 @@ tailwind.config = {
 </div>
 <button class="py-2.5 px-5 rounded-full border border-outline-variant/30 bg-surface font-label-bold text-body-sm hover:border-primary hover:text-primary transition-colors" id="btn-summary" type="button" data-i18n="btnSummary">Session summary</button>
 </div>
+<div class="xl:hidden mb-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant/15 focus-dim">
+<p class="text-body-sm text-on-surface-variant" id="quiz-hint-text-mobile">Generate questions to see hints.</p>
+</div>
 <div class="summary-panel mb-6 p-5 rounded-2xl bg-surface-container-low border border-outline-variant/25" hidden id="summary-panel" role="region" aria-live="polite"></div>
 <div id="quiz-area" class="quiz-empty text-center text-on-surface-variant py-12 text-body-sm">Generate questions first.</div>
 </div>
 </section>
 </div>
+</div>
 </main>
 
 <div aria-hidden="true" id="quiz-pdf-sheet"></div>
-<script type="module" src="./js/quizApp.js?v=20260702v25"></script>
+<script type="module" src="./js/quizApp.js"></script>
 </body>
 </html>

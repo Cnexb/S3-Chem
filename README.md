@@ -69,14 +69,16 @@
 
 ## 🚀 Quick Start
 
+Contributors: see [CONTRIBUTING.md](CONTRIBUTING.md) for where to edit labs, worksheets, quiz, and the full collaboration workflow.
+
 ### Local Development
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/uniplus.git
+git clone https://github.com/unipluseducationact-ctrl/S3-Chem.git
 
 # Navigate to project directory
-cd uniplus
+cd S3-Chem
 
 # Install dependencies
 npm install
@@ -107,7 +109,7 @@ npm run preview
 ## 📁 Project Structure
 
 ```
-uniplus/
+S3-Chem/
 ├── .github/workflows/ci.yml # CI pipeline
 ├── package.json            # Vite scripts and dependencies
 ├── index.html              # Main HTML file
@@ -115,6 +117,10 @@ uniplus/
 ├── public/three.min.js     # Local Three.js copy (lazy-loaded for 3D atoms)
 ├── logo.svg                # Project logo
 ├── public/                 # Static files copied directly by Vite
+│   ├── tools/              # Interactive labs and games
+│   ├── worksheets/         # Embedded worksheet pages
+│   ├── quiz/               # Standalone MCQ quiz pages
+│   └── flashcards/         # Flashcard study pages
 ├── css/
 │   ├── base.css            # Design tokens, layout, navigation
 │   ├── grid.css            # Periodic table grid
@@ -135,7 +141,12 @@ uniplus/
 │       ├── ionsController.js
 │       ├── threeRenderer.js
 │       └── uiController.js
+├── scripts/
+│   ├── templates/quiz/     # Shared quiz UI templates
+│   ├── worksheets/         # Worksheet build scripts + JSON banks
+│   └── quiz/               # Quiz build scripts + JSON bank
 ├── images/                 # Preview screenshots
+├── CONTRIBUTING.md         # Contributor guide
 └── README.md
 ```
 

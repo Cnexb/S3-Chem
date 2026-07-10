@@ -88,9 +88,10 @@ def write_manifest(questions):
     manifest = {
         "title": "Microscopic World I MCQ Quiz",
         "titleZh": "微觀世界 I 多項選擇題",
-        "sourcePdf": str(PDF),
-        "questionsFile": str(QUESTIONS_JSON),
-        "figuresDir": str(FIGURES_DIR),
+        "sourcesNote": "Original PDF is not in the repo. Rebuild uses committed questions.json and figures/ only.",
+        "sourcePdf": "sources/microscopic-world-i-mcq.pdf",
+        "questionsFile": "questions.json",
+        "figuresDir": "figures",
         "questionCount": len(questions),
         "chapters": [
             {"ch": ch, "sectionId": meta[0], "label": meta[1], "labelZh": meta[2], "count": 10}
