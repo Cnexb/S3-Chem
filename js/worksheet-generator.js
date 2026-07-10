@@ -916,7 +916,7 @@ function renderWorksheet(worksheet, mode) {
                             msTaken: 0
                         }, '*');
                     });
-                } catch(_) {}
+                } catch (_) { /* ignore tracker errors */ }
             });
         }
     }
