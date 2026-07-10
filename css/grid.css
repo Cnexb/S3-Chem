@@ -1484,7 +1484,8 @@ html[lang="ar"] .eit-mode-btn {
 }
 
 #periodic-table.table-electron-view-3d .element .electron-bohr-wrap {
-  perspective: 140px;
+  perspective: 200px;
+  perspective-origin: center center;
 }
 
 #periodic-table.table-electron-view-3d .element .electron-bohr {

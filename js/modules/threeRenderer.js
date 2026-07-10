@@ -112,6 +112,25 @@ export function bohrShellElectronAngleRad(shellIndex, electronIndex, count) {
   return (fullPairs / numSlots) * Math.PI * 2;
 }
 
+/** Per-shell orbit tilt (degrees) for crossed 3D Bohr rings. */
+const SHELL_ORBIT_TILT_DEG = [
+  { x: 72, y: 0 },
+  { x: 58, y: 55 },
+  { x: 65, y: -48 },
+  { x: 70, y: 35 },
+  { x: 52, y: -62 },
+  { x: 68, y: -30 },
+  { x: 60, y: 48 },
+];
+
+function getShellOrbitTiltRad(shellIndex) {
+  const tilt = SHELL_ORBIT_TILT_DEG[shellIndex % SHELL_ORBIT_TILT_DEG.length];
+  return {
+    x: (tilt.x * Math.PI) / 180,
+    y: (tilt.y * Math.PI) / 180,
+  };
+}
+
 // ===== Geometry cache helpers =====
 function getSphereGeometry(radius, segments) {
   const key = `s:${radius}:${segments}`;
@@ -515,6 +534,12 @@ export function updateAtomStructure(element) {
     electronsLeft -= count;
     const radius = 4.5 + s * 2.5;
 
+    const shellTilt = getShellOrbitTiltRad(s);
+    const shellFrame = new THREE.Group();
+    shellFrame.rotation.x = shellTilt.x;
+    shellFrame.rotation.y = shellTilt.y;
+    wobbleGroup.add(shellFrame);
+
     // Standard Planetary Bohr Render Path
     // Orbit ring
     const orbitGeo = getTorusGeometry(radius, 0.04, 20, quality.orbitTubularSegments);
@@ -526,14 +551,14 @@ export function updateAtomStructure(element) {
     const orbit = new THREE.Mesh(orbitGeo, orbitMat);
     orbit.rotation.x = Math.PI / 2;
     orbit.userData = { originalOpacity: 0.3, highlightOpacity: 0.8, originalColor: 0x8d7f71 };
-    wobbleGroup.add(orbit);
+    shellFrame.add(orbit);
 
     // Invisible hit target for raycaster hover
     const hitGeo = getTorusGeometry(radius, 0.4, 8, quality.hitTubularSegments);
     const hitMesh = new THREE.Mesh(hitGeo, mats.hitMat);
     hitMesh.rotation.x = Math.PI / 2;
     hitMesh.userData = { orbitMesh: orbit };
-    wobbleGroup.add(hitMesh);
+    shellFrame.add(hitMesh);
     orbitHitTargets.push(hitMesh);
 
     // Electron geometry + shared trail assets
@@ -557,10 +582,10 @@ export function updateAtomStructure(element) {
         const trailGeo = getSphereGeometry(0.2 - t * 0.015, 8);
         const tMesh = new THREE.Mesh(trailGeo, trailMats[t]);
         tMesh.position.copy(elMesh.position);
-        wobbleGroup.add(tMesh);
+        shellFrame.add(tMesh);
         elMesh.userData.trails.push(tMesh);
       }
-      wobbleGroup.add(elMesh);
+      shellFrame.add(elMesh);
       electrons.push(elMesh);
     }
   }
