@@ -37,8 +37,38 @@ async function getThreeRenderer() {
   return threeRendererModule;
 }
 
+function ensureAtomBohrViewGroup() {
+  let group =
+    window._uniplusAtomBohrViewGroup ||
+    document.getElementById("atom-bohr-view-group");
+  if (!group) return null;
+  if (group.parentElement !== document.body) {
+    document.body.appendChild(group);
+  }
+  window._uniplusAtomBohrViewGroup = group;
+  return group;
+}
+
+function showAtomBohrViewControls() {
+  const group = ensureAtomBohrViewGroup();
+  if (!group) return;
+  group.removeAttribute("hidden");
+  group.style.display = "inline-flex";
+  group.style.zIndex = "2147483647";
+  void getThreeRenderer().then((mod) => {
+    syncAtomBohrViewUI(mod.getBohrViewMode());
+  });
+}
+
+function hideAtomBohrViewControls() {
+  const group = ensureAtomBohrViewGroup();
+  if (!group) return;
+  group.hidden = true;
+  group.style.display = "none";
+}
+
 function syncAtomBohrViewUI(mode) {
-  const group = window._uniplusAtomBohrViewGroup;
+  const group = ensureAtomBohrViewGroup();
   if (!group) return;
   group.setAttribute("aria-label", t("eit.electronView.aria"));
   group.querySelectorAll(".atom-bohr-view-btn").forEach((btn) => {
@@ -2522,12 +2552,7 @@ export async function showModal(element) {
     btn.classList.toggle("is-paused", paused);
     btn.setAttribute("aria-label", paused ? "Resume 3D animation" : "Pause 3D animation");
   }
-  if (window._uniplusAtomBohrViewGroup) {
-    window._uniplusAtomBohrViewGroup.hidden = false;
-    void getThreeRenderer().then((three) => {
-      syncAtomBohrViewUI(three.getBohrViewMode());
-    });
-  }
+  showAtomBohrViewControls();
   const isSimplifiedView = element.number <= 118;
   const elementContent = document.querySelector(".element-content");
   const simplifiedBox = document.querySelector(".simplified-element-box");
@@ -3308,6 +3333,14 @@ export function initModalUI() {
   } else if (atomBohrViewGroup.parentElement !== document.body) {
     document.body.appendChild(atomBohrViewGroup);
   }
+  atomBohrViewGroup.style.cssText = [
+    "position:fixed",
+    "left:max(96px,calc(12px + env(safe-area-inset-left) + 72px))",
+    "bottom:max(12px,env(safe-area-inset-bottom))",
+    "z-index:2147483647",
+    "pointer-events:auto",
+    "display:none",
+  ].join(";");
   window._uniplusAtomBohrViewGroup = atomBohrViewGroup;
 
   if (!atomBohrViewGroup.dataset.bound) {
@@ -3362,7 +3395,7 @@ export function initModalUI() {
     });
     atomContainer.classList.remove("visible");
     if (window._uniplusAtomPauseBtn) window._uniplusAtomPauseBtn.style.display = "none";
-    if (window._uniplusAtomBohrViewGroup) window._uniplusAtomBohrViewGroup.hidden = true;
+    hideAtomBohrViewControls();
     resetModalUI();
   }
 
