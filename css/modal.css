@@ -2765,25 +2765,34 @@
   line-height: 1.4;
 }
 
+.info-row:has(.config-formula) {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
 .info-row:has(.config-formula) .info-label {
-  flex-shrink: 1;
+  flex-shrink: 0;
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: clip;
   white-space: nowrap;
 }
 
 .info-value.config-formula {
   margin-top: 0;
-  width: auto;
+  width: 100%;
   max-width: 100%;
   display: block;
-  text-align: right;
-  font-size: clamp(0.85rem, 2.5vw, 1.35rem);
-  white-space: nowrap;
-  letter-spacing: -0.5px;
+  text-align: left;
+  font-size: clamp(0.7rem, 3.8cqw, 0.95rem);
+  white-space: normal;
+  letter-spacing: 0;
   line-height: 1.35;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: break-word;
 }
 
 /* ========================================

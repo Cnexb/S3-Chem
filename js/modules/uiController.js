@@ -2225,7 +2225,7 @@ function populateSimplifiedView(element) {
     const level2ConfigNode = yellowCard.querySelector("#l2-configuration-value");
     if (level2ConfigNode) {
       const shells = getElectronArrangementByZ(element.number);
-      level2ConfigNode.textContent = formatShellElectronsLabel(shells);
+      level2ConfigNode.textContent = shells?.length ? shells.join(", ") : "—";
     }
 
     const isotopesSection = yellowCard.querySelector(".ions-section");
