@@ -2766,9 +2766,12 @@
 }
 
 .info-row:has(.config-formula) {
+  flex: 1 1 auto;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 .info-row:has(.config-formula) .info-label {
@@ -2785,10 +2788,11 @@
   max-width: 100%;
   display: block;
   text-align: left;
-  font-size: clamp(0.7rem, 3.8cqw, 0.95rem);
+  font-size: clamp(1rem, 8cqw, 1.45rem);
+  font-weight: 700;
   white-space: normal;
   letter-spacing: 0;
-  line-height: 1.35;
+  line-height: 1.2;
   flex-shrink: 1;
   min-width: 0;
   font-variant-numeric: tabular-nums;

@@ -163,11 +163,11 @@ export const faUI = {
     "keyIsotopes": "ایزوتوپ های مهم",
     "stable": "پایدار",
     "radioactive": "رادیواکتیو",
-    "configuration": "الکترون‌های پوسته"
+    "configuration": "پیکربندی الکترونی"
   },
   "elementL3": {
     "electronicIdentity": "هویت الکترونی",
-    "configuration": "الکترون‌های پوسته",
+    "configuration": "پیکربندی الکترونی",
     "oxidationStates": "حالت های اکسایش",
     "common": "رایج",
     "possible": "ممکن",

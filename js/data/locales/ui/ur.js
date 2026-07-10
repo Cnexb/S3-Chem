@@ -163,11 +163,11 @@ export const urUI = {
     "keyIsotopes": "اہم آئسوٹوپس",
     "stable": "مستحکم",
     "radioactive": "تابکار",
-    "configuration": "شیل الیکٹران"
+    "configuration": "برقی ترتیب"
   },
   "elementL3": {
     "electronicIdentity": "الیکٹرونک شناخت",
-    "configuration": "شیل الیکٹران",
+    "configuration": "برقی ترتیب",
     "oxidationStates": "آکسیڈیشن حالتیں",
     "common": "عام",
     "possible": "ممکن",

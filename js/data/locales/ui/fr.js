@@ -163,11 +163,11 @@ export const frUI = {
     "keyIsotopes": "Isotopes principaux",
     "stable": "Stable",
     "radioactive": "Radioactif",
-    "configuration": "Electrons de couche"
+    "configuration": "Configuration électronique"
   },
   "elementL3": {
     "electronicIdentity": "Identite electronique",
-    "configuration": "Electrons de couche",
+    "configuration": "Configuration électronique",
     "oxidationStates": "Etats d'oxydation",
     "common": "Courant",
     "possible": "Possibles",
