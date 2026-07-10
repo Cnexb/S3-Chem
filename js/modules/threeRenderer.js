@@ -8,8 +8,6 @@ import { getShellArrangementByZ } from "../utils/electronArrangement.js";
 import { getShellOrbitTiltRad } from "./bohrShellTilts.js";
 
 const ELECTRON_COLOR_2D = 0x0000ff;
-const ELECTRON_COLOR_3D = 0x3b82f6;
-const ELECTRON_EMISSIVE_3D = 0x2563eb;
 
 // ===== Module-level state =====
 let scene, camera, renderer, atomGroup, animationId;
@@ -158,7 +156,7 @@ function applyBohrVisualProfile() {
   const mats = ensureSharedMaterials();
   const google = ensureGoogleMaterials();
   const is3d = bohrViewMode === "3d";
-  const electronMat = is3d ? google.electronMat : mats.electronMat;
+  const electronMat = mats.electronMat;
 
   for (let i = 0; i < electrons.length; i++) {
     const el = electrons[i];
@@ -279,13 +277,6 @@ let googleMaterials = null;
 function ensureGoogleMaterials() {
   if (googleMaterials) return googleMaterials;
   googleMaterials = {
-    electronMat: new THREE.MeshStandardMaterial({
-      color: ELECTRON_COLOR_3D,
-      roughness: 0.35,
-      metalness: 0.4,
-      emissive: ELECTRON_EMISSIVE_3D,
-      emissiveIntensity: 0.25,
-    }),
     neutronMat: new THREE.MeshStandardMaterial({
       color: 0x7aa2e3,
       roughness: 0.15,
@@ -543,7 +534,7 @@ export function updateAtomStructure(element) {
   const googleMats = ensureGoogleMaterials();
   const useGoogle3d = isGoogleBohr3d();
   const neutronMat = useGoogle3d ? googleMats.neutronMat : mats.neutronMat;
-  const electronMat = useGoogle3d ? googleMats.electronMat : mats.electronMat;
+  const electronMat = mats.electronMat;
   const particleRadius = 0.6;
   const protonGeo = getSphereGeometry(particleRadius, quality.nucleusSegments);
   const neutronGeo = getSphereGeometry(particleRadius, quality.nucleusSegments);
