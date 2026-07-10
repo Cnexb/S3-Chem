@@ -3,21 +3,11 @@
 // =============================================================================
 
 import { bohrShellElectronAngleRad } from "./threeRenderer.js";
+import { getShellOrbitTiltDeg } from "./bohrShellTilts.js";
 
 const DEFAULT_SIZE_PX = 44;
 const MIN_INNER_RADIUS = 5;
 const MAX_OUTER_RADIUS = 19;
-
-/** Per-shell 3D tilt presets (degrees), cycles for deep shells. */
-const SHELL_TILT_PRESETS = [
-  { x: 72, y: 0 },
-  { x: 58, y: 55 },
-  { x: 65, y: -48 },
-  { x: 70, y: 35 },
-  { x: 52, y: -62 },
-  { x: 68, y: -30 },
-  { x: 60, y: 48 },
-];
 
 /**
  * @param {number} shellCount
@@ -106,7 +96,7 @@ export function renderCellBohr(container, shells, options = {}) {
 
   shells.forEach((count, idx) => {
     const r = radii[idx] ?? MIN_INNER_RADIUS;
-    const tilt = SHELL_TILT_PRESETS[idx % SHELL_TILT_PRESETS.length];
+    const tilt = getShellOrbitTiltDeg(idx);
     const durationSec = 4 + idx * 1.4;
     const direction = idx % 2 === 0 ? "normal" : "reverse";
 

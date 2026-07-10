@@ -37,6 +37,20 @@ async function getThreeRenderer() {
   return threeRendererModule;
 }
 
+function syncAtomBohrViewUI(mode) {
+  const group = window._uniplusAtomBohrViewGroup;
+  if (!group) return;
+  group.setAttribute("aria-label", t("eit.electronView.aria"));
+  group.querySelectorAll(".atom-bohr-view-btn").forEach((btn) => {
+    const view = btn.dataset.view;
+    if (view === "2d") btn.textContent = t("eit.electronView.2d");
+    if (view === "3d") btn.textContent = t("eit.electronView.3d");
+    const active = view === mode;
+    btn.classList.toggle("active", active);
+    btn.setAttribute("aria-pressed", active ? "true" : "false");
+  });
+}
+
 async function ensureElementDetailCache() {
   if (!cachedFinallyData) {
     cachedFinallyData = await getFinallyData();
@@ -2508,6 +2522,12 @@ export async function showModal(element) {
     btn.classList.toggle("is-paused", paused);
     btn.setAttribute("aria-label", paused ? "Resume 3D animation" : "Pause 3D animation");
   }
+  if (window._uniplusAtomBohrViewGroup) {
+    window._uniplusAtomBohrViewGroup.hidden = false;
+    void getThreeRenderer().then((three) => {
+      syncAtomBohrViewUI(three.getBohrViewMode());
+    });
+  }
   const isSimplifiedView = element.number <= 118;
   const elementContent = document.querySelector(".element-content");
   const simplifiedBox = document.querySelector(".simplified-element-box");
@@ -3273,6 +3293,41 @@ export function initModalUI() {
   ].join(";");
   window._uniplusAtomPauseBtn = atomPauseBtn;
 
+  let atomBohrViewGroup = document.getElementById("atom-bohr-view-group");
+  if (!atomBohrViewGroup) {
+    atomBohrViewGroup = document.createElement("div");
+    atomBohrViewGroup.id = "atom-bohr-view-group";
+    atomBohrViewGroup.className = "atom-bohr-view-group";
+    atomBohrViewGroup.setAttribute("role", "group");
+    atomBohrViewGroup.hidden = true;
+    atomBohrViewGroup.innerHTML = `
+      <button type="button" class="atom-bohr-view-btn" data-view="2d" aria-pressed="false">2D</button>
+      <button type="button" class="atom-bohr-view-btn active" data-view="3d" aria-pressed="true">3D</button>
+    `;
+    document.body.appendChild(atomBohrViewGroup);
+  } else if (atomBohrViewGroup.parentElement !== document.body) {
+    document.body.appendChild(atomBohrViewGroup);
+  }
+  window._uniplusAtomBohrViewGroup = atomBohrViewGroup;
+
+  if (!atomBohrViewGroup.dataset.bound) {
+    atomBohrViewGroup.querySelectorAll(".atom-bohr-view-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const view = btn.dataset.view;
+        if (view !== "2d" && view !== "3d") return;
+        void getThreeRenderer().then((three) => {
+          three.setBohrViewMode(view);
+          syncAtomBohrViewUI(three.getBohrViewMode());
+        });
+      });
+    });
+    atomBohrViewGroup.dataset.bound = "true";
+  }
+  void getThreeRenderer().then((three) => {
+    syncAtomBohrViewUI(three.getBohrViewMode());
+  });
+
   // Modal close handler
   function resetModalUI() {
     const slider = document.querySelector(".cards-slider");
@@ -3307,6 +3362,7 @@ export function initModalUI() {
     });
     atomContainer.classList.remove("visible");
     if (window._uniplusAtomPauseBtn) window._uniplusAtomPauseBtn.style.display = "none";
+    if (window._uniplusAtomBohrViewGroup) window._uniplusAtomBohrViewGroup.hidden = true;
     resetModalUI();
   }
 
@@ -3361,6 +3417,9 @@ export function initModalUI() {
 
   // Re-render modal labels when language changes
   onLangChange(() => {
+    void getThreeRenderer().then((three) => {
+      syncAtomBohrViewUI(three.getBohrViewMode());
+    });
     if (modal && modal.classList.contains("active") && window.currentAtomElement) {
       reRenderCurrentAtomModal();
     }

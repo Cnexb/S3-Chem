@@ -5,6 +5,7 @@
 // =============================================================================
 
 import { getShellArrangementByZ } from "../utils/electronArrangement.js";
+import { getShellOrbitTiltRad } from "./bohrShellTilts.js";
 
 // ===== Module-level state =====
 let scene, camera, renderer, atomGroup, animationId;
@@ -14,6 +15,9 @@ let isIntroAnimating = false;
 let isTopViewMode = false;
 let initialCameraZ = 16;
 let targetCameraZ = 16;
+let bohrViewMode = "3d";
+
+const BOHR_VIEW_STORAGE_KEY = "uniplus_modal_bohr_view";
 
 let _container = null;
 let eventAbortController = null;
@@ -112,23 +116,102 @@ export function bohrShellElectronAngleRad(shellIndex, electronIndex, count) {
   return (fullPairs / numSlots) * Math.PI * 2;
 }
 
-/** Per-shell orbit tilt (degrees) for crossed 3D Bohr rings. */
-const SHELL_ORBIT_TILT_DEG = [
-  { x: 72, y: 0 },
-  { x: 58, y: 55 },
-  { x: 65, y: -48 },
-  { x: 70, y: 35 },
-  { x: 52, y: -62 },
-  { x: 68, y: -30 },
-  { x: 60, y: 48 },
-];
+function loadBohrViewModeFromStorage() {
+  try {
+    const stored = localStorage.getItem(BOHR_VIEW_STORAGE_KEY);
+    if (stored === "2d" || stored === "3d") bohrViewMode = stored;
+  } catch (e) {
+    // ignore storage failures
+  }
+}
 
-function getShellOrbitTiltRad(shellIndex) {
-  const tilt = SHELL_ORBIT_TILT_DEG[shellIndex % SHELL_ORBIT_TILT_DEG.length];
-  return {
-    x: (tilt.x * Math.PI) / 180,
-    y: (tilt.y * Math.PI) / 180,
-  };
+loadBohrViewModeFromStorage();
+
+export function getBohrViewMode() {
+  return bohrViewMode;
+}
+
+function applyShellFrameTilts() {
+  const frames = _wobbleGroupRef?.userData?.shellFrames;
+  if (!frames) return;
+  for (let i = 0; i < frames.length; i++) {
+    const frame = frames[i];
+    const shellIndex = frame.userData.shellIndex ?? i;
+    if (bohrViewMode === "3d") {
+      const tilt = getShellOrbitTiltRad(shellIndex);
+      frame.rotation.x = tilt.x;
+      frame.rotation.y = tilt.y;
+    } else {
+      frame.rotation.x = 0;
+      frame.rotation.y = 0;
+    }
+  }
+}
+
+function applyBohrVisualProfile() {
+  if (!window.THREE) return;
+  const mats = ensureSharedMaterials();
+  const google = ensureGoogleMaterials();
+  const is3d = bohrViewMode === "3d";
+  const electronMat = is3d ? google.electronMat : mats.electronMat;
+
+  for (let i = 0; i < electrons.length; i++) {
+    const el = electrons[i];
+    if (el.userData?.isCloud) continue;
+    el.material = electronMat;
+    el.scale.setScalar(is3d ? 0.73 : 1);
+    const trails = el.userData.trails;
+    if (!trails) continue;
+    for (let t = 0; t < trails.length; t++) {
+      trails[t].visible = !is3d;
+      if (!is3d) trails[t].material = getTrailMaterials()[t];
+    }
+  }
+
+  const frames = _wobbleGroupRef?.userData?.shellFrames;
+  if (frames) {
+    for (let i = 0; i < frames.length; i++) {
+      const orbit = frames[i].userData.orbitMesh;
+      if (!orbit?.material) continue;
+      orbit.material.opacity = is3d ? 0.22 : 0.3;
+      orbit.material.color.setHex(is3d ? 0xaaaaaa : 0x8d7f71);
+      orbit.userData.originalOpacity = orbit.material.opacity;
+      orbit.userData.originalColor = is3d ? 0xaaaaaa : 0x8d7f71;
+    }
+  }
+
+  if (_nucleusGroupRef) {
+    for (let i = 0; i < _nucleusGroupRef.children.length; i++) {
+      const child = _nucleusGroupRef.children[i];
+      if (!(child instanceof window.THREE.Mesh)) continue;
+      if (child.material === mats.protonMat) continue;
+      child.material = is3d ? google.neutronMat : mats.neutronMat;
+    }
+  }
+}
+
+export function setBohrViewMode(mode) {
+  if (mode !== "2d" && mode !== "3d") return;
+  if (bohrViewMode === mode) return;
+  bohrViewMode = mode;
+  try {
+    localStorage.setItem(BOHR_VIEW_STORAGE_KEY, mode);
+  } catch (e) {
+    // ignore storage failures
+  }
+  applyShellFrameTilts();
+  applyBohrVisualProfile();
+  if (bohrViewMode === "2d" && atomGroup) {
+    atomGroup.rotation.set(0, 0, 0);
+  }
+}
+
+function isGoogleBohr3d() {
+  return bohrViewMode === "3d";
+}
+
+function isFlatBohr2d() {
+  return bohrViewMode === "2d";
 }
 
 // ===== Geometry cache helpers =====
@@ -178,6 +261,29 @@ function ensureSharedMaterials() {
     hitMat: new THREE.MeshBasicMaterial({ visible: false }),
   };
   return sharedMaterials;
+}
+
+let googleMaterials = null;
+
+function ensureGoogleMaterials() {
+  if (googleMaterials) return googleMaterials;
+  googleMaterials = {
+    electronMat: new THREE.MeshStandardMaterial({
+      color: 0x4ade80,
+      roughness: 0.35,
+      metalness: 0.4,
+      emissive: 0x22c55e,
+      emissiveIntensity: 0.35,
+    }),
+    neutronMat: new THREE.MeshStandardMaterial({
+      color: 0x7aa2e3,
+      roughness: 0.15,
+      metalness: 0.45,
+      emissive: 0x4466aa,
+      emissiveIntensity: 0.45,
+    }),
+  };
+  return googleMaterials;
 }
 
 let trailMaterials = null;
@@ -417,6 +523,10 @@ export function updateAtomStructure(element) {
   }
 
   const mats = ensureSharedMaterials();
+  const googleMats = ensureGoogleMaterials();
+  const useGoogle3d = isGoogleBohr3d();
+  const neutronMat = useGoogle3d ? googleMats.neutronMat : mats.neutronMat;
+  const electronMat = useGoogle3d ? googleMats.electronMat : mats.electronMat;
   const particleRadius = 0.6;
   const protonGeo = getSphereGeometry(particleRadius, quality.nucleusSegments);
   const neutronGeo = getSphereGeometry(particleRadius, quality.nucleusSegments);
@@ -515,7 +625,7 @@ export function updateAtomStructure(element) {
     const p = surfaceParticles[i];
     const mesh = new THREE.Mesh(
       p.type === "proton" ? protonGeo : neutronGeo,
-      p.type === "proton" ? mats.protonMat : mats.neutronMat,
+      p.type === "proton" ? mats.protonMat : neutronMat,
     );
     mesh.position.copy(p.pos);
     p.mesh = mesh;
@@ -527,6 +637,7 @@ export function updateAtomStructure(element) {
   const shells = shellCounts.length ? shellCounts : [atomicNumber];
   
   let electronsLeft = atomicNumber;
+  const shellFrames = [];
   for (let s = 0; s < shells.length; s++) {
     if (electronsLeft <= 0) break;
     const count = shells[s];
@@ -534,23 +645,34 @@ export function updateAtomStructure(element) {
     electronsLeft -= count;
     const radius = 4.5 + s * 2.5;
 
-    const shellTilt = getShellOrbitTiltRad(s);
+    const shellTilt = useGoogle3d ? getShellOrbitTiltRad(s) : { x: 0, y: 0 };
     const shellFrame = new THREE.Group();
+    shellFrame.userData.shellIndex = s;
     shellFrame.rotation.x = shellTilt.x;
     shellFrame.rotation.y = shellTilt.y;
     wobbleGroup.add(shellFrame);
+    shellFrames.push(shellFrame);
+
+    const orbitTube = useGoogle3d ? 0.025 : 0.04;
+    const orbitOpacity = useGoogle3d ? 0.22 : 0.3;
+    const orbitColor = useGoogle3d ? 0xaaaaaa : 0x8d7f71;
 
     // Standard Planetary Bohr Render Path
     // Orbit ring
-    const orbitGeo = getTorusGeometry(radius, 0.04, 20, quality.orbitTubularSegments);
+    const orbitGeo = getTorusGeometry(radius, orbitTube, 20, quality.orbitTubularSegments);
     const orbitMat = new THREE.MeshBasicMaterial({
-      color: 0x8d7f71,
+      color: orbitColor,
       transparent: true,
-      opacity: 0.3,
+      opacity: orbitOpacity,
     });
     const orbit = new THREE.Mesh(orbitGeo, orbitMat);
     orbit.rotation.x = Math.PI / 2;
-    orbit.userData = { originalOpacity: 0.3, highlightOpacity: 0.8, originalColor: 0x8d7f71 };
+    orbit.userData = {
+      originalOpacity: orbitOpacity,
+      highlightOpacity: 0.8,
+      originalColor: orbitColor,
+    };
+    shellFrame.userData.orbitMesh = orbit;
     shellFrame.add(orbit);
 
     // Invisible hit target for raycaster hover
@@ -562,12 +684,13 @@ export function updateAtomStructure(element) {
     orbitHitTargets.push(hitMesh);
 
     // Electron geometry + shared trail assets
-    const elGeo = getSphereGeometry(0.3, quality.electronSegments);
-    const TRAIL_LENGTH = quality.trailLength;
+    const electronRadius = useGoogle3d ? 0.22 : 0.3;
+    const elGeo = getSphereGeometry(electronRadius, quality.electronSegments);
+    const TRAIL_LENGTH = useGoogle3d ? 0 : quality.trailLength;
     const trailMats = getTrailMaterials();
 
     for (let e = 0; e < count; e++) {
-      const elMesh = new THREE.Mesh(elGeo, mats.electronMat);
+      const elMesh = new THREE.Mesh(elGeo, electronMat);
       const angleOffset = bohrShellElectronAngleRad(s, e, count);
       elMesh.userData = {
         radius: radius,
@@ -589,6 +712,7 @@ export function updateAtomStructure(element) {
       electrons.push(elMesh);
     }
   }
+  wobbleGroup.userData.shellFrames = shellFrames;
 
   // --- Camera fit ---
   let actualMaxRadius = 4.5;
@@ -717,25 +841,33 @@ export function animateAtom() {
   // --- Intro camera animation ---
   const isNa = window.currentAtomElement && window.currentAtomElement.number === 11;
   const isEdu = isNa && window._uniplusNaMode === "educational";
+  const useGoogle3d = isGoogleBohr3d() && !isEdu;
+  const useFlat2d = isFlatBohr2d() && !isEdu;
 
   if (isIntroAnimating) {
     const elapsed = (Date.now() - introStartTime) * 0.001;
     const t = Math.min(elapsed / 2.0, 1);
     const ease = 1 - Math.pow(1 - t, 5);
     camera.position.z = 20 - (20 - targetCameraZ) * ease;
-    
-    if (!isEdu) {
-       atomGroup.rotation.x = ease * 0.5;
-       atomGroup.rotation.y += 0.002 * ease;
+
+    if (isEdu || useFlat2d) {
+      atomGroup.rotation.x = 0;
+      atomGroup.rotation.y = 0;
+    } else if (useGoogle3d) {
+      atomGroup.rotation.x = ease * 0.15;
+      atomGroup.rotation.y += 0.001 * ease * speedMul;
     } else {
-       // Lock rotation for 2D Educational Mode
-       atomGroup.rotation.x = 0;
-       atomGroup.rotation.y = 0;
+      atomGroup.rotation.x = ease * 0.5;
+      atomGroup.rotation.y += 0.002 * ease;
     }
-    
+
     if (t >= 1) isIntroAnimating = false;
   } else if (!isTopViewMode && !isPaused && !isEdu) {
-    atomGroup.rotation.y += 0.002 * speedMul;
+    if (useGoogle3d) {
+      atomGroup.rotation.y += 0.0012 * speedMul;
+    } else if (!useFlat2d) {
+      atomGroup.rotation.y += 0.002 * speedMul;
+    }
   }
 
   // --- Pop-in scale ---
@@ -754,20 +886,20 @@ export function animateAtom() {
   // --- Wobble & nucleus rotation ---
   const wg = _wobbleGroupRef;
   if (wg && !isTopViewMode && !isPaused) {
-    if (!isEdu) {
-       wg.rotation.y += 0.002 * speedMul;
-       wg.rotation.z = Math.sin(time * 0.5 * speedMul) * 0.2;
-       wg.rotation.x = Math.cos(time * 0.3 * speedMul) * 0.1;
+    if (useGoogle3d || useFlat2d || isEdu) {
+      wg.rotation.set(0, 0, 0);
     } else {
-       wg.rotation.set(0,0,0);
+      wg.rotation.y += 0.002 * speedMul;
+      wg.rotation.z = Math.sin(time * 0.5 * speedMul) * 0.2;
+      wg.rotation.x = Math.cos(time * 0.3 * speedMul) * 0.1;
     }
   }
   if (ng && !isTopViewMode && !isPaused) {
-    if (!isEdu) {
-       ng.rotation.y -= 0.005 * speedMul;
-       ng.rotation.x = Math.sin(time * 0.2 * speedMul) * 0.1;
+    if (useGoogle3d || useFlat2d || isEdu) {
+      ng.rotation.set(0, 0, 0);
     } else {
-       ng.rotation.set(0,0,0);
+      ng.rotation.y -= 0.005 * speedMul;
+      ng.rotation.x = Math.sin(time * 0.2 * speedMul) * 0.1;
     }
   }
 

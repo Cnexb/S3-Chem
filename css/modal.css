@@ -1381,6 +1381,56 @@
   border-color: rgba(0, 0, 0, 0.18);
 }
 
+.atom-bohr-view-group {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  left: max(96px, calc(12px + env(safe-area-inset-left) + 72px));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 9999;
+  height: 38px;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  gap: 2px;
+  pointer-events: auto;
+}
+
+.atom-bohr-view-group[hidden] {
+  display: none !important;
+}
+
+.atom-bohr-view-btn {
+  height: 32px;
+  min-width: 40px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(17, 24, 39, 0.55);
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0 12px;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.atom-bohr-view-btn:hover:not(.active) {
+  color: rgba(17, 24, 39, 0.92);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.atom-bohr-view-btn.active {
+  color: rgba(17, 24, 39, 0.95);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
 #modal-watermark {
   position: absolute;
   top: 50%;
