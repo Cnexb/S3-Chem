@@ -582,6 +582,11 @@ export const zhHantUI = {
     "style": {
       "electrons": "電子排布"
     },
+    "electronView": {
+      "2d": "2D",
+      "3d": "3D",
+      "aria": "電子排布圖顯示模式"
+    },
     "selected": "已選",
     "clickToChangeUnit": "再次點擊可切換單位",
     "inSelectedRange": "位於所選範圍",

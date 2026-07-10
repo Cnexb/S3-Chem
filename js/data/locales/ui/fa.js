@@ -493,6 +493,11 @@ export const faUI = {
     "color": "رنگ",
     "filter": "فیلتر",
     "reset": "بازنشانی",
+    "electronView": {
+      "2d": "2D",
+      "3d": "3D",
+      "aria": "حالت نمایش نمودار الکترونی"
+    },
     "selected": "انتخاب شده",
     "clickToChangeUnit": "برای تغییر واحد دوباره کلیک کنید",
     "inSelectedRange": "در بازه انتخاب شده",

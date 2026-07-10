@@ -460,6 +460,11 @@ export const frUI = {
     "color": "Couleur",
     "filter": "Filtre",
     "reset": "Reinitialiser",
+    "electronView": {
+      "2d": "2D",
+      "3d": "3D",
+      "aria": "Mode d'affichage du diagramme electronique"
+    },
     "selected": "Selectionne",
     "clickToChangeUnit": "Cliquez a nouveau pour changer l'unite",
     "inSelectedRange": "dans la plage selectionnee",

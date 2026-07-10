@@ -493,6 +493,11 @@ export const tlUI = {
     "color": "Kulay",
     "filter": "Salain",
     "reset": "I-reset",
+    "electronView": {
+      "2d": "2D",
+      "3d": "3D",
+      "aria": "Mode ng diagram ng electron"
+    },
     "selected": "Napili",
     "clickToChangeUnit": "I-click muli upang palitan ang unit",
     "inSelectedRange": "sa napiling saklaw",

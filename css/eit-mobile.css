@@ -53,6 +53,7 @@
   }
 
   body.eit-mobile #eit-controller #eit-style-toggle-btn,
+  body.eit-mobile #eit-controller #eit-electron-view-group,
   body.eit-mobile #eit-controller #eit-reset-btn,
   body.eit-mobile #eit-controller #eit-first20-btn,
   body.eit-mobile #eit-controller #eit-s3mode-btn {
@@ -80,6 +81,7 @@
   body.eit-mobile #eit-controller.eit-bar-collapsed #eit-reset-btn,
   body.eit-mobile #eit-controller.eit-bar-collapsed #eit-first20-btn,
   body.eit-mobile #eit-controller.eit-bar-collapsed #eit-style-toggle-btn,
+  body.eit-mobile #eit-controller.eit-bar-collapsed #eit-electron-view-group,
   body.eit-mobile #eit-controller.eit-bar-collapsed #eit-s3mode-btn {
     display: none !important;
   }

@@ -584,6 +584,11 @@ export const enUI = {
     "style": {
       "electrons": "Electron layout"
     },
+    "electronView": {
+      "2d": "2D",
+      "3d": "3D",
+      "aria": "Electron diagram view mode"
+    },
     "selected": "Selected",
     "clickToChangeUnit": "Click again to change unit",
     "inSelectedRange": "in selected range",

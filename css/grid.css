@@ -161,6 +161,10 @@
   display: inline-flex !important;
 }
 
+#eit-controller.s3-mode #eit-electron-view-group {
+  display: inline-flex !important;
+}
+
 #eit-controller.s3-mode #eit-s3mode-btn {
   display: inline-flex !important;
 }
@@ -556,6 +560,49 @@ html[lang="ar"] .eit-mode-btn {
 
 .eit-reset-btn:active {
   transform: scale(0.96);
+}
+
+.eit-electron-view-group {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 32px;
+  padding: 2px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.04);
+  gap: 2px;
+}
+
+.eit-electron-view-group[hidden] {
+  display: none !important;
+}
+
+.eit-electron-view-btn {
+  height: 28px;
+  min-width: 36px;
+  border: none;
+  border-radius: 16px;
+  background: transparent;
+  color: #999;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0 10px;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.eit-electron-view-btn:hover:not(.active) {
+  color: #1d1d1f;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.eit-electron-view-btn.active {
+  color: #1d1d1f;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 /* ---- Dropdown panel (matches .version-dropdown-menu) ---- */
@@ -1357,6 +1404,61 @@ html[lang="ar"] .eit-mode-btn {
   overflow: visible;
 }
 
+.element .electron-bohr-nucleus {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 120, 120, 0.95), rgba(180, 40, 40, 0.9) 55%, rgba(120, 30, 30, 0.85));
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  opacity: 0.92;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.element .electron-bohr-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--orbit-r, 10px) * 2);
+  height: calc(var(--orbit-r, 10px) * 2);
+  margin-left: calc(var(--orbit-r, 10px) * -1);
+  margin-top: calc(var(--orbit-r, 10px) * -1);
+  transform-style: preserve-3d;
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  pointer-events: none;
+}
+
+.element .electron-bohr-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid currentColor;
+  opacity: 0.28;
+  border-radius: 9999px;
+  box-sizing: border-box;
+}
+
+.element .electron-bohr-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  margin: -1.5px 0 0 -1.5px;
+  border-radius: 0;
+  background:
+    linear-gradient(currentColor, currentColor) center / 3px 1px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1px 3px no-repeat;
+  opacity: 0.82;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22);
+  transform: rotate(var(--dot-angle, 0deg)) translateX(var(--orbit-r, 10px));
+  transform-origin: center center;
+}
+
 .element .electron-bohr-symbol {
   position: absolute;
   left: 50%;
@@ -1371,29 +1473,55 @@ html[lang="ar"] .eit-mode-btn {
   opacity: 0.92;
   pointer-events: none;
   text-shadow: 0 1px 0 rgba(255,255,255,0.55);
+  z-index: 3;
 }
 
-.element .electron-bohr-ring {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  border: 1px solid currentColor;
-  opacity: 0.28;
-  border-radius: 9999px;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
+/* 2D view: flat orbits, electrons spin on rings */
+#periodic-table.table-electron-view-2d .element .electron-bohr-orbit {
+  transform: none;
+  animation: bohr-orbit-spin var(--orbit-duration, 5s) linear infinite;
+  animation-direction: var(--orbit-direction, normal);
 }
 
-.element .electron-bohr-dot {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  border-radius: 0;
-  background:
-    linear-gradient(currentColor, currentColor) center / 3px 1px no-repeat,
-    linear-gradient(currentColor, currentColor) center / 1px 3px no-repeat;
-  opacity: 0.75;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.22);
+#periodic-table.table-electron-view-3d .element .electron-bohr-wrap {
+  perspective: 140px;
+}
+
+#periodic-table.table-electron-view-3d .element .electron-bohr {
+  transform-style: preserve-3d;
+  animation: bohr-scene-tilt 12s ease-in-out infinite alternate;
+}
+
+#periodic-table.table-electron-view-3d .element .electron-bohr-orbit {
+  animation: bohr-orbit-spin var(--orbit-duration, 5s) linear infinite;
+  animation-direction: var(--orbit-direction, normal);
+}
+
+@keyframes bohr-orbit-spin {
+  from { transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) rotateZ(0deg); }
+  to { transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) rotateZ(360deg); }
+}
+
+#periodic-table.table-electron-view-2d .element .electron-bohr-orbit {
+  animation-name: bohr-orbit-spin-2d;
+}
+
+@keyframes bohr-orbit-spin-2d {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bohr-scene-tilt {
+  from { transform: rotateX(8deg) rotateY(-12deg); }
+  to { transform: rotateX(-6deg) rotateY(14deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #periodic-table.table-electron-view-2d .element .electron-bohr-orbit,
+  #periodic-table.table-electron-view-3d .element .electron-bohr-orbit,
+  #periodic-table.table-electron-view-3d .element .electron-bohr {
+    animation: none !important;
+  }
 }
 
 #periodic-table.table-style-electrons .element.electron-arrangement-has-graph .number {

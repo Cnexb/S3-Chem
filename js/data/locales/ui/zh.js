@@ -585,6 +585,11 @@ export const zhUI = {
     "style": {
       "electrons": "电子排布"
     },
+    "electronView": {
+      "2d": "2D",
+      "3d": "3D",
+      "aria": "电子排布图显示模式"
+    },
     "selected": "已选",
     "clickToChangeUnit": "再次点击可切换单位",
     "inSelectedRange": "位于所选范围",

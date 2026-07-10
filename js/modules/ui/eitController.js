@@ -107,16 +107,51 @@ let eitState = {
 };
 let first20OverlayActive = false;
 let tableElectronStyleActive = false;
+let tableElectronViewMode = "2d";
 let s3ModeActive = false;
 /** Last container passed to ensureEITController — used by mobile wizard public API */
 let activeTableContainer = null;
 
 const TABLE_STYLE_STORAGE_KEY = "uniplus_table_style";
 const TABLE_STYLE_ELECTRONS_VALUE = "electrons";
+const ELECTRON_VIEW_STORAGE_KEY = "uniplus_electron_view";
 
 function applyTableStyleClass(tableContainer) {
   if (!tableContainer) return;
   tableContainer.classList.toggle("table-style-electrons", tableElectronStyleActive === true);
+  applyElectronViewClass(tableContainer);
+  syncElectronViewGroupVisibility();
+}
+
+function applyElectronViewClass(tableContainer) {
+  if (!tableContainer) return;
+  const active = tableElectronStyleActive === true;
+  tableContainer.classList.toggle("table-electron-view-2d", active && tableElectronViewMode === "2d");
+  tableContainer.classList.toggle("table-electron-view-3d", active && tableElectronViewMode === "3d");
+}
+
+function syncElectronViewGroupVisibility() {
+  const group = document.getElementById("eit-electron-view-group");
+  if (!group) return;
+  group.hidden = tableElectronStyleActive !== true;
+  group.querySelectorAll(".eit-electron-view-btn").forEach((btn) => {
+    const view = btn.dataset.view;
+    const isActive = view === tableElectronViewMode;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+}
+
+function setElectronViewMode(mode, tableContainer) {
+  if (mode !== "2d" && mode !== "3d") return;
+  tableElectronViewMode = mode;
+  try {
+    localStorage.setItem(ELECTRON_VIEW_STORAGE_KEY, mode);
+  } catch (e) {
+    // ignore storage failures
+  }
+  applyElectronViewClass(tableContainer);
+  syncElectronViewGroupVisibility();
 }
 
 function captureS3OriginalLayout(tableContainer) {
@@ -1080,6 +1115,10 @@ function ensureEITController(tableContainer) {
       <button type="button" class="eit-reset-btn" id="eit-reset-btn">${t("eit.reset")}</button>
       <button type="button" class="eit-reset-btn" id="eit-first20-btn" aria-pressed="false">${t("eit.first20")}</button>
       <button type="button" class="eit-reset-btn" id="eit-style-toggle-btn" aria-pressed="false">${t("eit.style.electrons")}</button>
+      <div class="eit-electron-view-group" id="eit-electron-view-group" role="group" aria-label="${t("eit.electronView.aria")}" hidden>
+        <button type="button" class="eit-electron-view-btn active" data-view="2d" aria-pressed="true">${t("eit.electronView.2d")}</button>
+        <button type="button" class="eit-electron-view-btn" data-view="3d" aria-pressed="false">${t("eit.electronView.3d")}</button>
+      </div>
       <button type="button" class="eit-reset-btn" id="eit-s3mode-btn" aria-pressed="false">S3 mode</button>
       <div class="eit-property-panel" id="eit-property-panel">
         <div class="eit-property-chips" id="eit-property-chips">
@@ -1126,6 +1165,8 @@ function ensureEITController(tableContainer) {
     resetButton: root.querySelector("#eit-reset-btn"),
     first20Button: root.querySelector("#eit-first20-btn"),
     styleToggleButton: root.querySelector("#eit-style-toggle-btn"),
+    electronViewGroup: root.querySelector("#eit-electron-view-group"),
+    electronViewButtons: Array.from(root.querySelectorAll(".eit-electron-view-btn")),
     s3ModeButton: root.querySelector("#eit-s3mode-btn"),
     collapseBarButton: root.querySelector("#eit-bar-collapse-btn"),
     closeButton: root.querySelector("#eit-panel-close"),
@@ -1137,6 +1178,26 @@ function ensureEITController(tableContainer) {
     legendMid: root.querySelector("#eit-legend-mid"),
     legendMax: root.querySelector("#eit-legend-max"),
   };
+
+  if (!root.querySelector("#eit-electron-view-group")) {
+    const styleBtn = root.querySelector("#eit-style-toggle-btn");
+    const s3Btn = root.querySelector("#eit-s3mode-btn");
+    if (styleBtn && s3Btn) {
+      const group = document.createElement("div");
+      group.className = "eit-electron-view-group";
+      group.id = "eit-electron-view-group";
+      group.setAttribute("role", "group");
+      group.setAttribute("aria-label", t("eit.electronView.aria"));
+      group.hidden = true;
+      group.innerHTML = `
+        <button type="button" class="eit-electron-view-btn active" data-view="2d" aria-pressed="true">${t("eit.electronView.2d")}</button>
+        <button type="button" class="eit-electron-view-btn" data-view="3d" aria-pressed="false">${t("eit.electronView.3d")}</button>
+      `;
+      styleBtn.insertAdjacentElement("afterend", group);
+      eitUI.electronViewGroup = group;
+      eitUI.electronViewButtons = Array.from(group.querySelectorAll(".eit-electron-view-btn"));
+    }
+  }
 
   // If the EIT toolbar DOM already existed (dataset.bound=true) but we shipped new controls later,
   // ensure new buttons still get listeners without duplicating the whole binding block.
@@ -1164,6 +1225,15 @@ function ensureEITController(tableContainer) {
       applyTableStyleClass(tableContainer);
     });
     root.dataset.styleToggleBound = "true";
+  }
+
+  if (root.dataset.bound === "true" && eitUI.electronViewButtons?.length && root.dataset.electronViewBound !== "true") {
+    eitUI.electronViewButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        setElectronViewMode(btn.dataset.view || "2d", tableContainer);
+      });
+    });
+    root.dataset.electronViewBound = "true";
   }
 
   if (root.dataset.bound === "true" && eitUI.s3ModeButton && root.dataset.s3ModeBound !== "true") {
@@ -1403,6 +1473,13 @@ function ensureEITController(tableContainer) {
     });
     root.dataset.styleToggleBound = "true";
 
+    eitUI.electronViewButtons?.forEach((btn) => {
+      bindTap(btn, () => {
+        setElectronViewMode(btn.dataset.view || "2d", tableContainer);
+      });
+    });
+    root.dataset.electronViewBound = "true";
+
     // S3 mode toggle
     bindTap(eitUI.s3ModeButton, () => {
       s3ModeActive = !s3ModeActive;
@@ -1440,6 +1517,14 @@ function ensureEITController(tableContainer) {
         if (eitUI?.resetButton) eitUI.resetButton.textContent = t("eit.reset");
         if (eitUI?.first20Button) eitUI.first20Button.textContent = t("eit.first20");
         if (eitUI?.styleToggleButton) eitUI.styleToggleButton.textContent = t("eit.style.electrons");
+        if (eitUI?.electronViewGroup) {
+          eitUI.electronViewGroup.setAttribute("aria-label", t("eit.electronView.aria"));
+        }
+        eitUI?.electronViewButtons?.forEach((btn) => {
+          const view = btn.dataset.view;
+          if (view === "2d") btn.textContent = t("eit.electronView.2d");
+          if (view === "3d") btn.textContent = t("eit.electronView.3d");
+        });
         
         // Update group labels
         const groupLabels = root.querySelectorAll(".eit-chip-group-label");
@@ -1465,7 +1550,16 @@ function ensureEITController(tableContainer) {
     tableElectronStyleActive = false;
   }
   eitUI?.styleToggleButton?.setAttribute("aria-pressed", tableElectronStyleActive ? "true" : "false");
+  try {
+    const storedView = localStorage.getItem(ELECTRON_VIEW_STORAGE_KEY);
+    if (storedView === "2d" || storedView === "3d") {
+      tableElectronViewMode = storedView;
+    }
+  } catch (e) {
+    tableElectronViewMode = "2d";
+  }
   applyTableStyleClass(tableContainer);
+  syncElectronViewGroupVisibility();
   eitUI?.s3ModeButton?.setAttribute("aria-pressed", s3ModeActive ? "true" : "false");
   applyS3Mode(tableContainer);
   if (typeof window._scalePeriodicTable === "function") {
@@ -1481,6 +1575,7 @@ function ensureEITController(tableContainer) {
       mode: eitState.mode,
       first20: first20OverlayActive,
       electronLayout: tableElectronStyleActive,
+      electronView: tableElectronViewMode,
       s3: s3ModeActive,
     };
   }
@@ -1559,6 +1654,16 @@ function ensureEITController(tableContainer) {
     setEITPanelOpen(false);
   }
 
+  function toggleElectronView() {
+    if (!activeTableContainer) return;
+    setElectronViewMode(tableElectronViewMode === "2d" ? "3d" : "2d", activeTableContainer);
+  }
+
+  function setEitElectronView(mode) {
+    if (!activeTableContainer) return;
+    setElectronViewMode(mode, activeTableContainer);
+  }
+
   return {
     EIT_PROPERTY_CONFIG,
     registerEITElementCell,
@@ -1574,6 +1679,8 @@ function ensureEITController(tableContainer) {
     cycleEitPropertyUnit,
     toggleFirst20,
     toggleElectronLayout,
+    toggleElectronView,
+    setEitElectronView,
     toggleS3Mode,
     eitReset,
   };

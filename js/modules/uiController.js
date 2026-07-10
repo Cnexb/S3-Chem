@@ -8,6 +8,7 @@ import { getElectronArrangementByZ } from "../utils/electronArrangement.js";
 import { translations } from "../data/translations.js";
 import { initCardSlider } from "./cardSliderController.js";
 import { createEITController } from "./ui/eitController.js";
+import { hydrateCellBohrModels } from "./cellBohrRenderer.js";
 import { loadStylesheet } from "./assetLoader.js";
 import { getFinallyData } from "./elementDetailLoader.js";
 import {
@@ -913,66 +914,6 @@ function formatShellElectronsLabel(shells, label) {
   return shells?.length ? `${lbl}: ${shells.join(", ")}` : "—";
 }
 
-function renderMiniBohr(container, shells) {
-  if (!container) return;
-  container.innerHTML = "";
-  if (!Array.isArray(shells) || shells.length === 0) return;
-
-  const sizePx = 44;
-  const center = sizePx / 2;
-  const ringGap = shells.length <= 1 ? 0 : 6.8;
-
-  container.style.width = `${sizePx}px`;
-  container.style.height = `${sizePx}px`;
-
-  shells.forEach((count, idx) => {
-    const ring = document.createElement("div");
-    ring.className = "electron-bohr-ring";
-    const r = 10.2 + idx * ringGap;
-    ring.style.width = `${r * 2}px`;
-    ring.style.height = `${r * 2}px`;
-    ring.style.left = `${center}px`;
-    ring.style.top = `${center}px`;
-    container.appendChild(ring);
-
-    const n = Math.max(0, Math.floor(count || 0));
-    if (n <= 0) return;
-
-    // Pair electrons for shells 2+, but keep the first shell unpaired (even spacing).
-    if (idx === 0) {
-      for (let i = 0; i < n; i++) {
-        const dot = document.createElement("span");
-        dot.className = "electron-bohr-dot";
-        const deg = (360 / n) * i;
-        dot.style.left = `${center}px`;
-        dot.style.top = `${center}px`;
-        dot.style.transform = `translate(-50%, -50%) rotate(${deg}deg) translate(${r}px) rotate(${-deg}deg)`;
-        container.appendChild(dot);
-      }
-      return;
-    }
-
-    const pairCount = Math.ceil(n / 2);
-    const pairSpreadDeg = 8;
-    for (let p = 0; p < pairCount; p++) {
-      const baseDeg = (360 / pairCount) * p;
-      const remaining = n - p * 2;
-      const dotsInPair = remaining >= 2 ? 2 : 1;
-      for (let k = 0; k < dotsInPair; k++) {
-        const dot = document.createElement("span");
-        dot.className = "electron-bohr-dot";
-        const offset =
-          dotsInPair === 2 ? (k === 0 ? -pairSpreadDeg / 2 : pairSpreadDeg / 2) : 0;
-        const deg = baseDeg + offset;
-        dot.style.left = `${center}px`;
-        dot.style.top = `${center}px`;
-        dot.style.transform = `translate(-50%, -50%) rotate(${deg}deg) translate(${r}px) rotate(${-deg}deg)`;
-        container.appendChild(dot);
-      }
-    }
-  });
-}
-
 let legendMeasureCanvas = null;
 
 function getTranslationByPath(source, path) {
@@ -1341,7 +1282,7 @@ export async function buildPeriodicTable(tableContainer) {
         }
         const shells = getElectronArrangementByZ(element.number);
         const arrangementText = formatShellElectronsLabel(shells);
-        const showGraph = typeof element.number === "number" && element.number <= 20;
+        const showGraph = shells.length > 0;
         if (showGraph) cell.classList.add("electron-arrangement-has-graph");
         cell.innerHTML = `
                       <span class="number">${element.number}</span>
@@ -1430,7 +1371,7 @@ export async function buildPeriodicTable(tableContainer) {
     }
     const shells = getElectronArrangementByZ(element.number);
     const arrangementText = formatShellElectronsLabel(shells);
-    const showGraph = typeof element.number === "number" && element.number <= 20;
+    const showGraph = shells.length > 0;
     if (showGraph) cell.classList.add("electron-arrangement-has-graph");
     cell.innerHTML = `
               <span class="number">${element.number}</span>
@@ -1478,7 +1419,7 @@ export async function buildPeriodicTable(tableContainer) {
     }
     const shells = getElectronArrangementByZ(element.number);
     const arrangementText = formatShellElectronsLabel(shells);
-    const showGraph = typeof element.number === "number" && element.number <= 20;
+    const showGraph = shells.length > 0;
     if (showGraph) cell.classList.add("electron-arrangement-has-graph");
     cell.innerHTML = `
               <span class="number">${element.number}</span>
@@ -1507,14 +1448,7 @@ export async function buildPeriodicTable(tableContainer) {
   // Apply text cramping and correct language classes initially
   updatePeriodicTableLocalizedText(tableContainer);
 
-  // Hydrate mini Bohr diagrams once per build (Z <= 20 only).
-  tableContainer.querySelectorAll(".electron-bohr").forEach((node) => {
-    const shells = String(node.dataset.shells || "")
-      .split(",")
-      .map((n) => Number.parseInt(n, 10))
-      .filter((n) => Number.isFinite(n) && n > 0);
-    renderMiniBohr(node, shells);
-  });
+  hydrateCellBohrModels(tableContainer);
 
   if (!tableContainer.dataset.langBound) {
     onLangChange(() => {

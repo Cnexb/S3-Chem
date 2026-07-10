@@ -493,6 +493,11 @@ export const ruUI = {
     "color": "Цвет",
     "filter": "Фильтр",
     "reset": "Сброс",
+    "electronView": {
+      "2d": "2D",
+      "3d": "3D",
+      "aria": "Режим отображения диаграммы электронов"
+    },
     "selected": "Выбрано",
     "clickToChangeUnit": "Нажмите, чтобы изменить единицу",
     "inSelectedRange": "в выбранном диапазоне",

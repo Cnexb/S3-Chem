@@ -493,6 +493,11 @@ export const urUI = {
     "color": "رنگ",
     "filter": "فلٹر",
     "reset": "ری سیٹ",
+    "electronView": {
+      "2d": "2D",
+      "3d": "3D",
+      "aria": "الیکٹران ڈایاگرام دکھانے کا موڈ"
+    },
     "selected": "منتخب",
     "clickToChangeUnit": "یونٹ بدلنے کے لیے دوبارہ کلک کریں",
     "inSelectedRange": "منتخب رینج میں",
