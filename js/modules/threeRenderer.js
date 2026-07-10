@@ -7,6 +7,10 @@
 import { getShellArrangementByZ } from "../utils/electronArrangement.js";
 import { getShellOrbitTiltRad } from "./bohrShellTilts.js";
 
+const ELECTRON_COLOR_2D = 0x0000ff;
+const ELECTRON_COLOR_3D = 0x3b82f6;
+const ELECTRON_EMISSIVE_3D = 0x2563eb;
+
 // ===== Module-level state =====
 let scene, camera, renderer, atomGroup, animationId;
 let electrons = [];
@@ -42,6 +46,7 @@ let _nucleusGroupRef = null;
 let _wobbleGroupRef = null;
 let paneResizeObserver = null;
 let visibilityListenerBound = false;
+let isUserDraggingAtom = false;
 
 function attachPaneResizeObserver() {
   if (paneResizeObserver || !_container) return;
@@ -203,6 +208,12 @@ export function setBohrViewMode(mode) {
   applyBohrVisualProfile();
   if (bohrViewMode === "2d" && atomGroup) {
     atomGroup.rotation.set(0, 0, 0);
+    const spinGroups = _wobbleGroupRef?.userData?.shellSpinGroups;
+    if (spinGroups) {
+      for (let i = 0; i < spinGroups.length; i++) {
+        spinGroups[i].rotation.set(0, 0, 0);
+      }
+    }
   }
 }
 
@@ -254,7 +265,7 @@ function ensureSharedMaterials() {
       emissiveIntensity: 0.6,
     }),
     electronMat: new THREE.MeshStandardMaterial({
-      color: 0x0000ff,
+      color: ELECTRON_COLOR_2D,
       roughness: 0.4,
       metalness: 0.6,
     }),
@@ -269,11 +280,11 @@ function ensureGoogleMaterials() {
   if (googleMaterials) return googleMaterials;
   googleMaterials = {
     electronMat: new THREE.MeshStandardMaterial({
-      color: 0x4ade80,
+      color: ELECTRON_COLOR_3D,
       roughness: 0.35,
       metalness: 0.4,
-      emissive: 0x22c55e,
-      emissiveIntensity: 0.35,
+      emissive: ELECTRON_EMISSIVE_3D,
+      emissiveIntensity: 0.25,
     }),
     neutronMat: new THREE.MeshStandardMaterial({
       color: 0x7aa2e3,
@@ -294,7 +305,7 @@ function getTrailMaterials() {
   for (let t = 0; t < 10; t++) {
     trailMaterials.push(
       new THREE.MeshBasicMaterial({
-        color: 0x0000ff,
+        color: ELECTRON_COLOR_2D,
         transparent: true,
         opacity: 0.3 - t * 0.03,
       }),
@@ -428,6 +439,7 @@ export function init3DScene(container) {
 
     canvasEl.addEventListener("mousedown", (e) => {
       isDragging = true;
+      isUserDraggingAtom = true;
       isIntroAnimating = false;
       prevPos = { x: e.offsetX, y: e.offsetY };
       canvasEl.style.cursor = "grabbing";
@@ -447,12 +459,14 @@ export function init3DScene(container) {
 
     window.addEventListener("mouseup", () => {
       isDragging = false;
+      isUserDraggingAtom = false;
       canvasEl.style.cursor = "grab";
     }, sig);
 
     canvasEl.addEventListener("touchstart", (e) => {
       if (e.touches.length === 1) {
         isDragging = true;
+        isUserDraggingAtom = true;
         isIntroAnimating = false;
         prevPos = { x: e.touches[0].pageX, y: e.touches[0].pageY };
       }
@@ -468,7 +482,10 @@ export function init3DScene(container) {
       prevPos = { x: e.touches[0].pageX, y: e.touches[0].pageY };
     }, { passive: false, signal: eventAbortController.signal });
 
-    window.addEventListener("touchend", () => { isDragging = false; }, sig);
+    window.addEventListener("touchend", () => {
+      isDragging = false;
+      isUserDraggingAtom = false;
+    }, sig);
 
     canvasEl.addEventListener("wheel", (e) => {
       e.preventDefault();
@@ -638,6 +655,7 @@ export function updateAtomStructure(element) {
   
   let electronsLeft = atomicNumber;
   const shellFrames = [];
+  const shellSpinGroups = [];
   for (let s = 0; s < shells.length; s++) {
     if (electronsLeft <= 0) break;
     const count = shells[s];
@@ -652,6 +670,17 @@ export function updateAtomStructure(element) {
     shellFrame.rotation.y = shellTilt.y;
     wobbleGroup.add(shellFrame);
     shellFrames.push(shellFrame);
+
+    const shellSpinGroup = new THREE.Group();
+    shellSpinGroup.userData.spinSpeed = 0.004 * (1 + s * 0.15) * (s % 2 === 0 ? 1 : -1);
+    const axisIdx = s % 3;
+    shellSpinGroup.userData.spinAxis = new THREE.Vector3(
+      axisIdx === 0 ? 1 : 0,
+      axisIdx === 1 ? 1 : 0,
+      axisIdx === 2 ? 1 : 0,
+    );
+    shellFrame.add(shellSpinGroup);
+    shellSpinGroups.push(shellSpinGroup);
 
     const orbitTube = useGoogle3d ? 0.025 : 0.04;
     const orbitOpacity = useGoogle3d ? 0.22 : 0.3;
@@ -673,14 +702,14 @@ export function updateAtomStructure(element) {
       originalColor: orbitColor,
     };
     shellFrame.userData.orbitMesh = orbit;
-    shellFrame.add(orbit);
+    shellSpinGroup.add(orbit);
 
     // Invisible hit target for raycaster hover
     const hitGeo = getTorusGeometry(radius, 0.4, 8, quality.hitTubularSegments);
     const hitMesh = new THREE.Mesh(hitGeo, mats.hitMat);
     hitMesh.rotation.x = Math.PI / 2;
     hitMesh.userData = { orbitMesh: orbit };
-    shellFrame.add(hitMesh);
+    shellSpinGroup.add(hitMesh);
     orbitHitTargets.push(hitMesh);
 
     // Electron geometry + shared trail assets
@@ -705,14 +734,15 @@ export function updateAtomStructure(element) {
         const trailGeo = getSphereGeometry(0.2 - t * 0.015, 8);
         const tMesh = new THREE.Mesh(trailGeo, trailMats[t]);
         tMesh.position.copy(elMesh.position);
-        shellFrame.add(tMesh);
+        shellSpinGroup.add(tMesh);
         elMesh.userData.trails.push(tMesh);
       }
-      shellFrame.add(elMesh);
+      shellSpinGroup.add(elMesh);
       electrons.push(elMesh);
     }
   }
   wobbleGroup.userData.shellFrames = shellFrames;
+  wobbleGroup.userData.shellSpinGroups = shellSpinGroups;
 
   // --- Camera fit ---
   let actualMaxRadius = 4.5;
@@ -862,9 +892,11 @@ export function animateAtom() {
     }
 
     if (t >= 1) isIntroAnimating = false;
-  } else if (!isTopViewMode && !isPaused && !isEdu) {
+  } else if (!isTopViewMode && !isPaused && !isEdu && !isUserDraggingAtom) {
     if (useGoogle3d) {
       atomGroup.rotation.y += 0.0012 * speedMul;
+      atomGroup.rotation.x = Math.sin(time * 0.18 * speedMul) * 0.14;
+      atomGroup.rotation.z = Math.cos(time * 0.12 * speedMul) * 0.08;
     } else if (!useFlat2d) {
       atomGroup.rotation.y += 0.002 * speedMul;
     }
@@ -900,6 +932,20 @@ export function animateAtom() {
     } else {
       ng.rotation.y -= 0.005 * speedMul;
       ng.rotation.x = Math.sin(time * 0.2 * speedMul) * 0.1;
+    }
+  }
+
+  if (useGoogle3d && wg && !isTopViewMode && !isPaused) {
+    const spinGroups = wg.userData.shellSpinGroups;
+    if (spinGroups) {
+      for (let i = 0; i < spinGroups.length; i++) {
+        const sg = spinGroups[i];
+        const axis = sg.userData.spinAxis;
+        const speed = sg.userData.spinSpeed;
+        if (axis && speed) {
+          sg.rotateOnAxis(axis, speed * speedMul);
+        }
+      }
     }
   }
 
