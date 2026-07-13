@@ -275,10 +275,22 @@ main.preview-only .control-panel {
   background: #1d4ed8;
 }
 
-/* SVG tap hint pulse — hidden in schematic mode */
+/* SVG tap hint pulse on stopcock */
 .tap-hint-pulse {
-  visibility: hidden;
+  fill: rgba(37, 99, 235, 0.12);
+  stroke: #2563eb;
+  stroke-width: 2;
   pointer-events: none;
+  animation: tap-hint-pulse 1.4s ease-in-out infinite;
+}
+
+.tap-hint-pulse[visibility="hidden"] {
+  visibility: hidden;
+}
+
+@keyframes tap-hint-pulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
 }
 
 /* Burette tap */

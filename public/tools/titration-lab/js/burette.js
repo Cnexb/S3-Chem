@@ -152,20 +152,67 @@ var Burette = (function () {
     drop.classList.add('falling');
   }
 
-  function dismissHint() {
+  var TOOLTIP_DISMISSED_KEY = 'hkdse-titration-hint-dismissed';
+  var PULSE_DISMISSED_KEY = 'hkdse-titration-pulse-dismissed';
+
+  function isTooltipDismissed() {
+    try {
+      return localStorage.getItem(TOOLTIP_DISMISSED_KEY) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function isPulseDismissed() {
+    try {
+      return localStorage.getItem(PULSE_DISMISSED_KEY) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function dismissTooltip() {
     var hint = document.getElementById('stopcock-hint');
-    var pulse = document.getElementById('tap-hint-pulse');
     var guideLine = document.getElementById('hint-guide-line');
     if (hint) {
       hint.hidden = true;
       hint.style.display = 'none';
       hint.style.visibility = '';
     }
-    if (pulse) pulse.setAttribute('visibility', 'hidden');
     if (guideLine) guideLine.setAttribute('visibility', 'hidden');
     try {
-      localStorage.setItem('hkdse-titration-hint-dismissed', '1');
+      localStorage.setItem(TOOLTIP_DISMISSED_KEY, '1');
     } catch (e) { /* ignore */ }
+  }
+
+  function dismissPulse() {
+    var pulse = document.getElementById('tap-hint-pulse');
+    if (pulse) pulse.setAttribute('visibility', 'hidden');
+    try {
+      localStorage.setItem(PULSE_DISMISSED_KEY, '1');
+    } catch (e) { /* ignore */ }
+  }
+
+  function dismissAllHints() {
+    dismissTooltip();
+    dismissPulse();
+  }
+
+  function positionTapPulse(tapCenterX, tapCenterY, sceneRect) {
+    var pulse = document.getElementById('tap-hint-pulse');
+    if (!pulse || pulse.getAttribute('visibility') === 'hidden') return;
+
+    var svg = document.querySelector('.lab-svg');
+    if (!svg) return;
+
+    var svgRect = svg.getBoundingClientRect();
+    var vb = svg.viewBox.baseVal;
+    var scaleX = vb.width / svgRect.width;
+    var scaleY = vb.height / svgRect.height;
+    var svgX = (tapCenterX - (svgRect.left - sceneRect.left)) * scaleX;
+    var svgY = (tapCenterY - (svgRect.top - sceneRect.top)) * scaleY;
+    pulse.setAttribute('cx', svgX);
+    pulse.setAttribute('cy', svgY);
   }
 
   function positionStopcockHint() {
@@ -173,7 +220,7 @@ var Burette = (function () {
     var tap = document.getElementById('burette-tap');
     var hint = document.getElementById('stopcock-hint');
     var guideLine = document.getElementById('hint-guide-line');
-    if (!scene || !tap || !hint || hint.hidden) {
+    if (!scene || !tap) {
       if (guideLine) guideLine.setAttribute('visibility', 'hidden');
       return;
     }
@@ -182,6 +229,13 @@ var Burette = (function () {
     var tapRect = tap.getBoundingClientRect();
     var tapCenterX = tapRect.left + tapRect.width / 2 - sceneRect.left;
     var tapCenterY = tapRect.top + tapRect.height / 2 - sceneRect.top;
+
+    positionTapPulse(tapCenterX, tapCenterY, sceneRect);
+
+    if (!hint || hint.hidden) {
+      if (guideLine) guideLine.setAttribute('visibility', 'hidden');
+      return;
+    }
 
     hint.style.visibility = 'hidden';
     hint.style.display = 'block';
@@ -220,44 +274,34 @@ var Burette = (function () {
       guideLine.setAttribute('y2', tapCenterY);
       guideLine.setAttribute('visibility', 'visible');
     }
-
-    var pulse = document.getElementById('tap-hint-pulse');
-    if (pulse && pulse.getAttribute('visibility') !== 'hidden') {
-      var svg = document.querySelector('.lab-svg');
-      if (svg) {
-        var svgRect = svg.getBoundingClientRect();
-        var vb = svg.viewBox.baseVal;
-        var scaleX = vb.width / svgRect.width;
-        var scaleY = vb.height / svgRect.height;
-        var svgX = (tapCenterX - (svgRect.left - sceneRect.left)) * scaleX;
-        var svgY = (tapCenterY - (svgRect.top - sceneRect.top)) * scaleY;
-        pulse.setAttribute('cx', svgX);
-        pulse.setAttribute('cy', svgY);
-      }
-    }
   }
 
   function initHint() {
-    var dismissed = false;
-    try {
-      dismissed = localStorage.getItem('hkdse-titration-hint-dismissed') === '1';
-    } catch (e) { /* ignore */ }
+    var tooltipDismissed = isTooltipDismissed();
+    var pulseDismissed = isPulseDismissed();
 
     var hint = document.getElementById('stopcock-hint');
     var pulse = document.getElementById('tap-hint-pulse');
     var dismissBtn = document.getElementById('hint-dismiss');
 
-    if (dismissed) {
-      if (hint) hint.hidden = true;
+    if (tooltipDismissed) {
+      if (hint) {
+        hint.hidden = true;
+        hint.style.display = 'none';
+      }
+    } else if (hint) {
+      hint.hidden = false;
+      hint.style.display = '';
+    }
+
+    if (pulseDismissed) {
       if (pulse) pulse.setAttribute('visibility', 'hidden');
-    } else {
-      if (hint) hint.hidden = false;
-      if (pulse) pulse.setAttribute('visibility', 'hidden');
-      requestAnimationFrame(positionStopcockHint);
+    } else if (pulse) {
+      pulse.setAttribute('visibility', 'visible');
     }
 
     if (dismissBtn) {
-      dismissBtn.addEventListener('click', dismissHint);
+      dismissBtn.addEventListener('click', dismissTooltip);
     }
 
     window.addEventListener('resize', positionStopcockHint);
@@ -267,7 +311,7 @@ var Burette = (function () {
   }
 
   function hideHintOnInteraction() {
-    dismissHint();
+    dismissAllHints();
   }
 
   function startHold() {
@@ -306,6 +350,7 @@ var Burette = (function () {
       });
       tap.addEventListener('pointerdown', function (e) {
         e.preventDefault();
+        hideHintOnInteraction();
         tap.setPointerCapture(e.pointerId);
         holdTimer = setTimeout(startHold, 280);
       });
