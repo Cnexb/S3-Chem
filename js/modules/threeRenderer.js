@@ -276,14 +276,9 @@ let googleMaterials = null;
 
 function ensureGoogleMaterials() {
   if (googleMaterials) return googleMaterials;
+  const mats = ensureSharedMaterials();
   googleMaterials = {
-    neutronMat: new THREE.MeshStandardMaterial({
-      color: 0x7aa2e3,
-      roughness: 0.15,
-      metalness: 0.45,
-      emissive: 0x4466aa,
-      emissiveIntensity: 0.45,
-    }),
+    neutronMat: mats.neutronMat,
   };
   return googleMaterials;
 }
