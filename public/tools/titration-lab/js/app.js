@@ -408,6 +408,10 @@ var TitrationApp = (function () {
   }
 
   function init() {
+    if (new URLSearchParams(window.location.search).get('embed') === '1') {
+      document.documentElement.classList.add('embed-mode');
+    }
+
     I18n.init();
     I18n.onChange(onLanguageChange);
 
