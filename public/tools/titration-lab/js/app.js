@@ -1,6 +1,5 @@
 /* HKDSE Titration Lab — Main application */
 var TitrationApp = (function () {
-  var PREVIEW_STORAGE_KEY = 'hkdse-titration-preview-only';
   var BANNER_DISPLAY_MS = 5000;
   var BANNER_FADE_MS = 500;
 
@@ -178,10 +177,6 @@ var TitrationApp = (function () {
     }
     updateToggleButton();
 
-    try {
-      localStorage.setItem(PREVIEW_STORAGE_KEY, previewOnly ? '1' : '0');
-    } catch (e) { /* ignore */ }
-
     if (typeof Burette.positionStopcockHint === 'function') {
       requestAnimationFrame(function () {
         Burette.positionStopcockHint();
@@ -190,11 +185,7 @@ var TitrationApp = (function () {
   }
 
   function initPreviewOnly() {
-    var stored = false;
-    try {
-      stored = localStorage.getItem(PREVIEW_STORAGE_KEY) === '1';
-    } catch (e) { /* ignore */ }
-    setPreviewOnly(stored);
+    setPreviewOnly(false);
   }
 
   function updateTargetUI(volumes, vAdd) {
