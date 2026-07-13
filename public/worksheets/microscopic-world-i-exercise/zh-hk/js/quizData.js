@@ -882,7 +882,7 @@ export const QUIZ_ITEMS = [
     "section": "atomic-structure",
     "format": "mcq",
     "difficulty": "Standard",
-    "stem": "Which of the following statements concerning an ⁸O atom and a ⁹F atom is correct?",
+    "stem": "Which of the following statements concerning an O atom and an F atom is correct?",
     "options": [
       {
         "key": "A",

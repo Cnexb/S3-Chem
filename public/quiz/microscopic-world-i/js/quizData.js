@@ -271,8 +271,8 @@ export const QUIZ_ITEMS = [
     "id": "atom-10",
     "section": "atom-isotopes",
     "difficulty": "Standard",
-    "stem": "Which of the following statements concerning an ⁸O atom and a ⁹F atom is correct?",
-    "stemZh": "下列關於 ⁸O 原子及 ⁹F 原子的陳述哪一句是正確的？",
+    "stem": "Which of the following statements concerning an O atom and an F atom is correct?",
+    "stemZh": "下列關於 O 原子及 F 原子的陳述哪一句是正確的？",
     "options": [
       {
         "key": "A",

@@ -11,7 +11,7 @@
 | 7 | atom-7 | atom-isotopes | D | — | Element Y has three naturally occurring isotopes. The number… |
 | 8 | atom-8 | atom-isotopes | C | — | Element M has two naturally occurring isotopes, ¹⁰⁷M and ¹⁰⁹… |
 | 9 | atom-9 | atom-isotopes | C | — | Which of the following pairs of atoms have the same number o… |
-| 10 | atom-10 | atom-isotopes | A | — | Which of the following statements concerning an ⁸O atom and … |
+| 10 | atom-10 | atom-isotopes | A | — | Which of the following statements concerning an O atom and an F atom is correct? |
 | 11 | pt-1 | periodic-table | B | — | Which of the following statements concerning metals are corr… |
 | 12 | pt-2 | periodic-table | B | — | Which of the following statements concerning non-metals is/a… |
 | 13 | pt-3 | periodic-table | C | — | Which of the following statements concerning semi-metals is … |
