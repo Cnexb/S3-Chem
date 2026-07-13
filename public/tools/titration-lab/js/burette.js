@@ -156,7 +156,11 @@ var Burette = (function () {
     var hint = document.getElementById('stopcock-hint');
     var pulse = document.getElementById('tap-hint-pulse');
     var guideLine = document.getElementById('hint-guide-line');
-    if (hint) hint.hidden = true;
+    if (hint) {
+      hint.hidden = true;
+      hint.style.display = 'none';
+      hint.style.visibility = '';
+    }
     if (pulse) pulse.setAttribute('visibility', 'hidden');
     if (guideLine) guideLine.setAttribute('visibility', 'hidden');
     try {
@@ -183,6 +187,12 @@ var Burette = (function () {
     hint.style.display = 'block';
     var hintH = hint.offsetHeight || 90;
     hint.style.visibility = '';
+    hint.style.display = '';
+
+    if (hint.hidden) {
+      if (guideLine) guideLine.setAttribute('visibility', 'hidden');
+      return;
+    }
 
     var gap = 14;
     var left = tapCenterX + gap + 12;
@@ -195,6 +205,11 @@ var Burette = (function () {
 
     hint.style.left = left + 'px';
     hint.style.top = Math.max(8, top) + 'px';
+
+    if (hint.hidden) {
+      if (guideLine) guideLine.setAttribute('visibility', 'hidden');
+      return;
+    }
 
     if (guideLine) {
       var hintLeft = left;

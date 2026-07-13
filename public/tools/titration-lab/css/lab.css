@@ -224,7 +224,7 @@ main.preview-only .control-panel {
 }
 
 .stopcock-hint[hidden] {
-  display: none;
+  display: none !important;
 }
 
 @keyframes hint-enter {
