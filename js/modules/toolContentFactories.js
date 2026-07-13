@@ -1,7 +1,30 @@
 // CSS is now loaded in index.html to support native ES modules without a bundler
 
 import { t, getLang } from "./langController.js";
-import { buildLabIframeSrc } from "./labLangBridge.js";
+import { buildLabIframeSrc, INTERACTIVE_LAB_TOOLS } from "./labLangBridge.js";
+
+function generateInteractiveLabIframeContent(toolPath, titleKey) {
+  const title = t(titleKey);
+  const src = buildLabIframeSrc(toolPath, getLang());
+  return `
+        <div class="tool-modal-content interactive-lab-wrap">
+            <iframe class="interactive-lab-iframe"
+                src="${src}"
+                title="${title.replace(/"/g, "&quot;")}"></iframe>
+        </div>
+    `;
+}
+
+function createInteractiveLabToolContent({ path, titleKey }) {
+  return () => generateInteractiveLabIframeContent(path, titleKey);
+}
+
+const INTERACTIVE_LAB_CONTENT_FACTORIES = Object.fromEntries(
+  Object.entries(INTERACTIVE_LAB_TOOLS).map(([toolType, config]) => [
+    toolType,
+    createInteractiveLabToolContent(config),
+  ]),
+);
 
 const TOOL_CONTENT_FACTORIES = {
   balancer: generateBalancerToolContent,
@@ -12,10 +35,7 @@ const TOOL_CONTENT_FACTORIES = {
   "chem-catch": generateChemCatchToolContent,
   "lab-hazard-match": generateLabHazardMatchToolContent,
   "flame-test-fireworks": generateFlameTestFireworksToolContent,
-  "ionic-compound-puzzle": generateIonicCompoundPuzzleToolContent,
-  "covalent-bond-puzzle": generateCovalentBondPuzzleToolContent,
-  "covalent-properties-sandbox": generateCovalentPropertiesSandboxToolContent,
-  "titration-lab": generateTitrationLabToolContent,
+  ...INTERACTIVE_LAB_CONTENT_FACTORIES,
 };
 
 export function getChemToolContent(toolType) {
@@ -2102,44 +2122,3 @@ function generateFlameTestFireworksToolContent() {
         </div>
     `;
 }
-
-function generateInteractiveLabIframeContent(toolPath, titleKey) {
-  const title = t(titleKey);
-  const src = buildLabIframeSrc(toolPath, getLang());
-  return `
-        <div class="tool-modal-content interactive-lab-wrap">
-            <iframe class="interactive-lab-iframe"
-                src="${src}"
-                title="${title.replace(/"/g, "&quot;")}"></iframe>
-        </div>
-    `;
-}
-
-function generateIonicCompoundPuzzleToolContent() {
-  return generateInteractiveLabIframeContent(
-    "public/tools/ionic-compound-puzzle/index.html",
-    "lab.ionicName",
-  );
-}
-
-function generateCovalentBondPuzzleToolContent() {
-  return generateInteractiveLabIframeContent(
-    "public/tools/covalent-bond-puzzle/index.html",
-    "lab.covalentName",
-  );
-}
-
-function generateCovalentPropertiesSandboxToolContent() {
-  return generateInteractiveLabIframeContent(
-    "public/tools/covalent-properties-sandbox/index.html?v=20260703sandbox23",
-    "lab.sandboxName",
-  );
-}
-
-function generateTitrationLabToolContent() {
-  return generateInteractiveLabIframeContent(
-    "public/tools/titration-lab/index.html",
-    "lab.titrationName",
-  );
-}
-

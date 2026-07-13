@@ -543,12 +543,7 @@ function initMainApp() {
       if (window._scalePeriodicTable) window._scalePeriodicTable(true);
       if (tableContainer) syncEitMobileMount(tableContainer, eitController);
     },
-    onToolsPageShown: () => {
-      void ensureToolsReady()
-        .then((ctrl) => setTimeout(() => ctrl.initChemToolCards(), 100))
-        .catch((e) => console.error("Tools lazy init error:", e));
-    },
-    onLabPageShown: () => {
+    onChemToolsHubShown: () => {
       void ensureToolsReady()
         .then((ctrl) => setTimeout(() => ctrl.initChemToolCards(), 100))
         .catch((e) => console.error("Tools lazy init error:", e));

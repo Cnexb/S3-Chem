@@ -1110,25 +1110,6 @@ html.dark-theme .feature-tag {
   }
 }
 
-/* Lab card preview fallbacks when PNG is missing */
-.chem-tool-thumb--lab-ionic {
-  background: linear-gradient(135deg, #0b1126 0%, #1a3a6b 55%, #00a8ff 100%);
-}
-
-.chem-tool-thumb--lab-covalent {
-  background: linear-gradient(135deg, #0b1126 0%, #2d1b69 55%, #6366f1 100%);
-}
-
-.chem-tool-thumb--lab-sandbox {
-  background: linear-gradient(135deg, #0b1126 0%, #1a472a 55%, #39ff14 100%);
-}
-
-.chem-tool-thumb--lab-ionic .chem-tool-thumb-img,
-.chem-tool-thumb--lab-covalent .chem-tool-thumb-img,
-.chem-tool-thumb--lab-sandbox .chem-tool-thumb-img {
-  background: transparent;
-}
-
 .feature-detail-header {
   display: flex;
   align-items: center;

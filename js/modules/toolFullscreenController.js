@@ -2,6 +2,8 @@
 // Tool Fullscreen Controller - Games & Interactive Labs projection mode
 // =============================================================================
 
+import { LAB_TOOL_TYPES } from "./labLangBridge.js";
+
 const OVERLAY_Z = 100000;
 
 export const EMBED_FULLSCREEN_TOOL_TYPES = new Set([
@@ -9,10 +11,7 @@ export const EMBED_FULLSCREEN_TOOL_TYPES = new Set([
   "chem-catch",
   "lab-hazard-match",
   "flame-test-fireworks",
-  "ionic-compound-puzzle",
-  "covalent-bond-puzzle",
-  "covalent-properties-sandbox",
-  "titration-lab",
+  ...LAB_TOOL_TYPES,
 ]);
 
 export function isEmbedFullscreenToolType(toolType) {
