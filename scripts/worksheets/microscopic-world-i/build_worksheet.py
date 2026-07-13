@@ -13,7 +13,7 @@ TPL = Path(os.environ.get(
 MC_JSON = ROOT / "questions_mc.json"
 LQ_JSON = ROOT / "questions_lq.json"
 ASSETS = ROOT / "assets"
-QUIZ_ASSET_VERSION = "20260702v25"
+QUIZ_ASSET_VERSION = "20260713v1"
 
 
 def patch_quiz_module_imports(text: str) -> str:

@@ -1,5 +1,5 @@
-import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260703v21";
-import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260703v21";
+import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260713v1";
+import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260713v1";
 import { downloadWord, printSheet } from "./quizExport.js?v=20260704v3";
 import {
   seededShuffle,
@@ -16,14 +16,14 @@ import {
   getFillLines,
   buildQuizBankStats,
   filterQuizPool,
-} from "./quizUtils.js?v=20260703v21";
+} from "./quizUtils.js?v=20260713v1";
 import {
   animateSplitText,
   bindMagnets,
   bindTrueFocus,
   revealQuestionBlocks,
   initSettingsToggle,
-} from "./quizEffects.js?v=20260703v21";
+} from "./quizEffects.js?v=20260713v1";
 
 function normalizeLang(l) {
   return l === "zh-Hant" || l === "zh" ? "zh-Hant" : "en";

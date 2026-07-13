@@ -1,6 +1,6 @@
-import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260702v25";
-import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260702v25";
-import { downloadWord, printSheet } from "./quizExport.js?v=20260702v25";
+import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260713v1";
+import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260713v1";
+import { downloadWord, printSheet } from "./quizExport.js?v=20260713v1";
 import {
   DIFFICULTY_LEVELS,
   difficultyLevel,
@@ -18,14 +18,14 @@ import {
   formatFilterLabel,
   buildQuizBankStats,
   filterQuizPool,
-} from "./quizUtils.js?v=20260702v25";
+} from "./quizUtils.js?v=20260713v1";
 import {
   animateSplitText,
   bindMagnets,
   bindTrueFocus,
   revealQuestionBlocks,
   initSettingsToggle,
-} from "./quizEffects.js?v=20260702v25";
+} from "./quizEffects.js?v=20260713v1";
 
 const UI = {
   en: {
