@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HKDSE 化學滴定模擬器</title>
+  <link rel="stylesheet" href="css/lab.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div>
+        <h1 data-i18n="header.title">HKDSE 化學滴定模擬器</h1>
+        <p data-i18n="header.subtitle">酸鹼滴定實驗互動工具</p>
+      </div>
+      <div class="lang-switch">
+        <button type="button" data-lang="zh" class="lang-btn active">中文</button>
+        <button type="button" data-lang="en" class="lang-btn">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="lab-panel" aria-label="Laboratory apparatus">
+      <div class="panel-header">
+        <span data-i18n="panel.setup">實驗裝置</span>
+        <button type="button" id="toggle-controls-btn" class="btn-secondary btn-compact" aria-pressed="false">隱藏設定</button>
+      </div>
+      <div class="lab-scene">
+        <div id="near-eq-banner" class="banner-eq" data-i18n="banner.nearEq" role="status" aria-live="polite">接近當量點 — 留意指示劑顏色變化</div>
+        <svg class="lab-svg" viewBox="0 0 280 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <clipPath id="burette-clip">
+              <rect x="128" y="60" width="18" height="236"/>
+            </clipPath>
+            <clipPath id="flask-liquid-clip">
+              <path d="M 119 364.5 L 113 394 L 161 394 L 155 364.5 Z"/>
+            </clipPath>
+          </defs>
+
+          <!-- Support stand -->
+          <g id="support-stand">
+            <rect x="30" y="395" width="200" height="14" fill="#d0d0d0" stroke="#333" stroke-width="1"/>
+            <rect x="52" y="55" width="5" height="345" fill="#c8c8c8" stroke="#333" stroke-width="1"/>
+          </g>
+
+          <!-- Conical flask -->
+          <g id="flask-group">
+            <path id="flask-liquid"
+                  clip-path="url(#flask-liquid-clip)"
+                  d="M 119 364.5 L 113 394 L 161 394 L 155 364.5 Z"
+                  fill="#f5e6a8"/>
+            <ellipse id="flask-glow"
+                     clip-path="url(#flask-liquid-clip)"
+                     cx="137" cy="364.5" rx="18" ry="2.5"
+                     fill="#f5e6a8" opacity="0.6"/>
+            <path class="schematic-outline"
+                  d="M 124 332 L 112 395 L 162 395 L 150 332 Z"
+                  fill="none" stroke="#333" stroke-width="1" stroke-linejoin="round"/>
+            <ellipse cx="137" cy="332" rx="13" ry="3" fill="none" stroke="#333" stroke-width="1"/>
+          </g>
+
+          <!-- Burette holder (clamp) -->
+          <g id="burette-holder">
+            <rect x="57" y="112" width="72" height="5" fill="#b0b0b0" stroke="#333" stroke-width="1"/>
+            <rect x="120" y="108" width="6" height="14" fill="#a0a0a0" stroke="#333" stroke-width="1"/>
+            <rect x="144" y="108" width="6" height="14" fill="#a0a0a0" stroke="#333" stroke-width="1"/>
+          </g>
+
+          <!-- Burette -->
+          <g id="burette-group">
+            <rect x="126" y="50" width="22" height="246" fill="#fff" stroke="#333" stroke-width="1"/>
+
+            <!-- Graduation marks (left side, no numbers) -->
+            <g class="graduations" stroke="#222" stroke-width="1">
+              <line x1="118" y1="60" x2="126" y2="60"/>
+              <line x1="118" y1="80" x2="124" y2="80"/>
+              <line x1="118" y1="100" x2="126" y2="100"/>
+              <line x1="118" y1="120" x2="124" y2="120"/>
+              <line x1="118" y1="140" x2="126" y2="140"/>
+              <line x1="118" y1="160" x2="124" y2="160"/>
+              <line x1="118" y1="180" x2="126" y2="180"/>
+              <line x1="118" y1="200" x2="124" y2="200"/>
+              <line x1="118" y1="220" x2="126" y2="220"/>
+              <line x1="118" y1="240" x2="124" y2="240"/>
+              <line x1="118" y1="260" x2="126" y2="260"/>
+              <line x1="118" y1="280" x2="124" y2="280"/>
+              <line x1="118" y1="290" x2="126" y2="290"/>
+            </g>
+
+            <rect id="burette-liquid" x="128" y="60" width="18" height="236"
+                  fill="rgba(140,190,240,0.85)" clip-path="url(#burette-clip)"/>
+            <ellipse id="burette-meniscus" cx="137" cy="60" rx="8" ry="2"
+                     fill="rgba(140,190,240,0.9)"/>
+
+            <ellipse id="tap-hint-pulse" class="tap-hint-pulse" cx="137" cy="302" rx="18" ry="10" visibility="hidden"/>
+
+            <!-- Stopcock -->
+            <g id="burette-tap" role="button" tabindex="0" data-i18n-aria="tap.aria">
+              <rect x="128" y="296" width="18" height="10" fill="#b0b0b0" stroke="#333" stroke-width="1"/>
+              <rect x="118" y="299" width="12" height="4" fill="#c0c0c0" stroke="#333" stroke-width="1"/>
+              <line x1="137" y1="306" x2="137" y2="316" stroke="#333" stroke-width="1.5"/>
+              <path d="M 133 316 L 141 316 L 137 322 Z" fill="#a0a0a0" stroke="#333" stroke-width="1"/>
+            </g>
+
+            <!-- Burette tip -->
+            <path d="M 132 322 L 142 322 L 137 332 Z" fill="#fff" stroke="#333" stroke-width="1"/>
+
+            <circle id="burette-drop" class="burette-drop" cx="137" cy="332" r="2.5" fill="rgba(140,190,240,0.9)"/>
+            <circle id="burette-drop-2" class="burette-drop" cx="137" cy="332" r="2.5" fill="rgba(140,190,240,0.9)"/>
+          </g>
+
+          <!-- Leader lines (annotation) -->
+          <g class="leader-lines" stroke="#222" stroke-width="1" fill="none">
+            <line x1="20" y1="95" x2="115" y2="95"/>
+            <line x1="115" y1="95" x2="115" y2="100"/>
+          </g>
+        </svg>
+
+        <!-- Guide line from hint to stopcock -->
+        <svg id="hint-overlay" class="hint-overlay" aria-hidden="true">
+          <line id="hint-guide-line" class="hint-guide-line" x1="0" y1="0" x2="0" y2="0" visibility="hidden"/>
+        </svg>
+
+        <!-- Stopcock usage hint (right of flask, points to stopcock) -->
+        <div id="stopcock-hint" class="stopcock-hint">
+          <div class="hint-pointer" aria-hidden="true"></div>
+          <p class="hint-title" data-i18n="hint.stopcock">點擊或按住活塞，溶液會從滴定管流出</p>
+          <p class="hint-sub" data-i18n="hint.stopcockSub">亦可拖曳右側滑桿控制加液體積</p>
+          <button type="button" id="hint-dismiss" class="hint-dismiss" data-i18n="hint.dismiss">知道了</button>
+        </div>
+
+        <div class="burette-slider-wrap">
+          <label for="burette-slider" data-i18n="slider.drag">拖曳加液</label>
+          <input type="range" id="burette-slider" min="0" max="50" step="0.05" value="0"
+                 orient="vertical" data-i18n-aria="slider.aria">
+          <span id="slider-val">0.00 cm³</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="control-panel" aria-label="Control panel">
+      <div class="panel-header" data-i18n="panel.controls">控制面板</div>
+      <div class="control-body">
+        <div id="setup-error" class="alert alert-error" hidden></div>
+
+        <div class="field">
+          <label for="preset-select" data-i18n="preset.label">預設實驗</label>
+          <select id="preset-select"></select>
+          <p id="preset-note" class="preset-note" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="flask-chem" data-i18n="flask.chem">錐形瓶試液</label>
+          <select id="flask-chem"></select>
+        </div>
+
+        <div class="field">
+          <label for="flask-conc" data-i18n="flask.conc">錐形瓶濃度</label>
+          <input type="range" id="flask-conc" min="0.01" max="2" step="0.01" value="0.1">
+          <span class="range-val" id="flask-conc-val">0.10 M</span>
+        </div>
+
+        <div class="field">
+          <label for="flask-vol" data-i18n="flask.vol">溶液體積 (cm³)</label>
+          <input type="range" id="flask-vol" min="10" max="50" step="0.5" value="25">
+          <span class="range-val" id="flask-vol-val">25.0 cm³</span>
+        </div>
+
+        <div class="field">
+          <label for="burette-chem" data-i18n="burette.chem">滴定管試液</label>
+          <select id="burette-chem"></select>
+        </div>
+
+        <div class="field">
+          <label for="burette-conc" data-i18n="burette.conc">滴定管濃度</label>
+          <input type="range" id="burette-conc" min="0.01" max="2" step="0.01" value="0.1">
+          <span class="range-val" id="burette-conc-val">0.10 M</span>
+        </div>
+
+        <div class="field">
+          <span data-i18n="indicator.label">指示劑</span>
+          <div class="indicator-group">
+            <label class="indicator-option">
+              <input type="radio" name="indicator" value="methylOrange">
+              <span class="indicator-swatch swatch-mo"></span>
+              <span data-i18n="indicator.methylOrange">甲基橙</span>
+            </label>
+            <label class="indicator-option">
+              <input type="radio" name="indicator" value="phenolphthalein" checked>
+              <span class="indicator-swatch swatch-ph"></span>
+              <span data-i18n="indicator.phenolphthalein">酚酞</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <span data-i18n="target.label">滴定目標</span>
+          <div class="target-mode-group">
+            <label class="target-mode-option">
+              <input type="radio" name="targetMode" value="equivalence" checked>
+              <span data-i18n="target.equivalence">當量點</span>
+            </label>
+            <label class="target-mode-option">
+              <input type="radio" name="targetMode" value="endpoint">
+              <span data-i18n="target.endpoint">終點</span>
+            </label>
+          </div>
+          <p id="target-mode-note" class="target-mode-note"></p>
+        </div>
+
+        <div class="btn-row">
+          <button type="button" id="btn-step" class="btn-primary" data-i18n="btn.step">+0.05 cm³ 單步加液</button>
+          <button type="button" id="btn-reset-vol" class="btn-secondary" data-i18n="btn.resetVol">重置體積</button>
+          <button type="button" id="btn-reset-all" class="btn-secondary" data-i18n="btn.resetAll">重置實驗</button>
+        </div>
+
+        <div class="data-card">
+          <h3 data-i18n="data.title">即時數據</h3>
+          <div class="data-grid">
+            <div class="data-item">
+              <span class="label" data-i18n="data.ph">pH（估算）</span>
+              <span class="value" id="ph-value">—</span>
+            </div>
+            <div class="data-item">
+              <span class="label"><span id="target-vol-label">當量點體積 V</span><sub>target</sub></span>
+              <span class="value"><span id="target-vol-value">—</span> cm³</span>
+            </div>
+            <div class="data-item">
+              <span class="label" data-i18n="data.eqPh">當量點 pH</span>
+              <span class="value" id="eq-ph-value">—</span>
+            </div>
+            <div class="data-item">
+              <span class="label" data-i18n="data.indColor">指示劑顏色</span>
+              <span class="value" id="indicator-color-label" style="font-size:0.9rem">—</span>
+            </div>
+          </div>
+          <p id="endpoint-desc" class="endpoint-desc"></p>
+          <p id="target-reached" class="eq-reached" hidden>
+            <span id="target-reached-badge" class="badge-eq" data-i18n="badge.eqReached">已達當量點</span>
+          </p>
+        </div>
+
+        <div id="suitability-msg" class="suitability-msg ok"></div>
+
+        <div class="guide-section">
+          <button type="button" id="guide-toggle" class="guide-toggle" aria-expanded="false" data-i18n="guide.title">
+            指示劑選擇指南
+          </button>
+          <div id="guide-body" class="guide-body" hidden>
+            <p data-i18n="guide.note1">指示劑並不顯示溶液的 pH 值，只顯示酸鹼範圍的顏色變化。量度 pH 應使用萬用指示劑或 pH 計（更準確）。</p>
+            <table>
+              <thead>
+                <tr>
+                  <th data-i18n="guide.table.titration">滴定</th>
+                  <th data-i18n="guide.table.indicator">適用指示劑</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-i18n="guide.row.sa_sb">強酸 + 強鹼</td>
+                  <td data-i18n="guide.row.sa_sb.ind">甲基橙 / 酚酞</td>
+                </tr>
+                <tr>
+                  <td data-i18n="guide.row.sa_wb">強酸 + 弱鹼</td>
+                  <td data-i18n="guide.row.sa_wb.ind">僅甲基橙</td>
+                </tr>
+                <tr>
+                  <td data-i18n="guide.row.wa_sb">弱酸 + 強鹼</td>
+                  <td data-i18n="guide.row.wa_sb.ind">僅酚酞</td>
+                </tr>
+                <tr>
+                  <td data-i18n="guide.row.wa_wb">弱酸 + 弱鹼</td>
+                  <td data-i18n="guide.row.wa_wb.ind">無適合指示劑</td>
+                </tr>
+              </tbody>
+            </table>
+            <p data-i18n="guide.mo">甲基橙：pH &lt; 3.1 紅 · 3.1–4.4 橙 · &gt; 4.4 黃</p>
+            <p data-i18n="guide.ph">酚酞：pH &lt; 8.3 無色 · 8.3–10 淡粉紅 · &gt; 10 粉紅</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-i18n="footer">HKDSE 化學 課題四 酸與鹼 · 適用於 Google Chrome</footer>
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/chemicals.js" defer></script>
+  <script src="js/chemistry.js" defer></script>
+  <script src="js/indicators.js" defer></script>
+  <script src="js/burette.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

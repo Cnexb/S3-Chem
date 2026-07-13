@@ -313,7 +313,9 @@ export const zhUI = {
     "covalentName": "共价",
     "covalentDesc": "绘制共价键，探索共价化合物结构。",
     "sandboxName": "沙盒",
-    "sandboxDesc": "模拟微观结构，比较共价物质性质。"
+    "sandboxDesc": "模拟微观结构，比较共价物质性质。",
+    "titrationName": "滴定",
+    "titrationDesc": "模拟酸碱滴定实验，练习读数、指示剂选择及当量点计算。"
   },
   "worksheet": {
     "title": "练习单生成器",

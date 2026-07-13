@@ -6,6 +6,7 @@ export const LAB_TOOL_TYPES = new Set([
   "ionic-compound-puzzle",
   "covalent-bond-puzzle",
   "covalent-properties-sandbox",
+  "titration-lab",
 ]);
 
 /** Host hot-bar: en | zh | zh-Hant → lab iframe: en | zh */
