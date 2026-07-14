@@ -279,6 +279,9 @@ var TitrationApp = (function () {
 
     // Trigger curve redraw since width might have changed
     update();
+    setTimeout(function() {
+      update();
+    }, 100);
   }
 
   function initPreviewOnly() {
@@ -379,10 +382,10 @@ var TitrationApp = (function () {
     var ctx = curveCtx;
     ctx.clearRect(0, 0, width, height);
 
-    var paddingLeft = 50;
-    var paddingRight = 20;
-    var paddingTop = 20;
-    var paddingBottom = 40;
+    var paddingLeft = 75;
+    var paddingRight = 30;
+    var paddingTop = 30;
+    var paddingBottom = 65;
 
     var graphWidth = width - paddingLeft - paddingRight;
     var graphHeight = height - paddingTop - paddingBottom;
@@ -420,26 +423,28 @@ var TitrationApp = (function () {
     ctx.stroke();
 
     ctx.fillStyle = '#64748b';
-    ctx.font = '20px system-ui, sans-serif';
+    ctx.font = '24px system-ui, sans-serif';
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
     for (var ph = 0; ph <= 14; ph += 2) {
-      ctx.fillText(ph, paddingLeft - 10, toY(ph));
+      ctx.fillText(ph, paddingLeft - 12, toY(ph));
     }
 
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     for (var v = 0; v <= 50; v += 10) {
-      ctx.fillText(v, toX(v), height - paddingBottom + 8);
+      ctx.fillText(v, toX(v), height - paddingBottom + 10);
     }
 
     ctx.save();
-    ctx.translate(15, paddingTop + graphHeight / 2);
+    ctx.translate(24, paddingTop + graphHeight / 2);
     ctx.rotate(-Math.PI / 2);
+    ctx.font = 'bold 28px system-ui, sans-serif';
     ctx.fillText('pH', 0, 0);
     ctx.restore();
 
-    ctx.fillText(I18n.getLang() === 'en' ? 'Volume added (cm³)' : '已加體積 (cm³)', paddingLeft + graphWidth / 2, height - 18);
+    ctx.font = 'bold 24px system-ui, sans-serif';
+    ctx.fillText(I18n.getLang() === 'en' ? 'Volume added (cm³)' : '已加體積 (cm³)', paddingLeft + graphWidth / 2, height - 22);
 
     if (state.indicatorId === 'phenolphthalein') {
       ctx.fillStyle = 'rgba(255, 182, 193, 0.15)';
@@ -448,7 +453,7 @@ var TitrationApp = (function () {
       ctx.fillRect(paddingLeft, y1, graphWidth, y2 - y1);
 
       ctx.fillStyle = 'rgba(219, 39, 119, 0.7)';
-      ctx.font = 'italic 16px system-ui, sans-serif';
+      ctx.font = 'bold italic 22px system-ui, sans-serif';
       ctx.textAlign = 'right';
       ctx.fillText(I18n.getLang() === 'en' ? 'Phenolphthalein range (pH 8.3-10)' : '酚酞變色範圍 (pH 8.3-10)', width - paddingRight - 10, y1 + (y2 - y1) / 2);
     } else if (state.indicatorId === 'methylOrange') {
@@ -458,7 +463,7 @@ var TitrationApp = (function () {
       ctx.fillRect(paddingLeft, y1, graphWidth, y2 - y1);
 
       ctx.fillStyle = 'rgba(180, 83, 9, 0.7)';
-      ctx.font = 'italic 16px system-ui, sans-serif';
+      ctx.font = 'bold italic 22px system-ui, sans-serif';
       ctx.textAlign = 'right';
       ctx.fillText(I18n.getLang() === 'en' ? 'Methyl orange range (pH 3.1-4.4)' : '甲基橙變色範圍 (pH 3.1-4.4)', width - paddingRight - 10, y1 + (y2 - y1) / 2);
     }
@@ -503,9 +508,9 @@ var TitrationApp = (function () {
       ctx.fill();
 
       ctx.fillStyle = '#065f46';
-      ctx.font = 'bold 16px system-ui, sans-serif';
+      ctx.font = 'bold 22px system-ui, sans-serif';
       ctx.textAlign = 'left';
-      ctx.fillText('Eq Point (' + vEq.toFixed(2) + ' cm³, pH ' + eqPH.toFixed(1) + ')', eqX + 10, eqY - 10);
+      ctx.fillText('Eq Point (' + vEq.toFixed(2) + ' cm³, pH ' + eqPH.toFixed(1) + ')', eqX + 12, eqY - 10);
     }
 
     var currentPH = Chemistry.calculatePH(flaskChem, buretteChem, state.flaskConc, state.flaskVol, state.buretteConc, vAdd);

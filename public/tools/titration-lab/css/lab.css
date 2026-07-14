@@ -102,7 +102,15 @@ main {
 
 main.preview-only {
   grid-template-columns: 1fr;
-  max-width: 960px;
+  max-width: 1400px;
+}
+
+main.preview-only .lab-svg {
+  max-width: 580px;
+}
+
+main.preview-only .lab-scene {
+  min-height: 540px !important;
 }
 
 main.preview-only .control-panel {
@@ -145,33 +153,33 @@ main.preview-only .control-panel {
 
 .part-label {
   font-family: Georgia, "Times New Roman", "Songti TC", serif;
-  font-size: 13px;
+  font-size: 16px;
   fill: #7c2d12;
   font-style: italic;
 }
 
 .scale-label {
-  font-size: 10px;
+  font-size: 13px;
   fill: #374151;
   font-family: "Segoe UI", sans-serif;
 }
 
 .burette-solution-label {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   fill: #334155;
   font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
 }
 
 .reading-title {
-  font-size: 10px;
+  font-size: 13px;
   fill: #64748b;
   font-weight: 600;
   font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
 }
 
 .reading-line {
-  font-size: 10px;
+  font-size: 13px;
   fill: #334155;
   font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
 }
@@ -185,14 +193,17 @@ main.preview-only .control-panel {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   padding: 0.75rem;
   border-radius: 8px;
   box-shadow: var(--shadow);
+  z-index: 20;
+  pointer-events: auto;
 }
 
 .burette-slider-wrap label {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--muted);
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -201,11 +212,12 @@ main.preview-only .control-panel {
 #burette-slider {
   writing-mode: vertical-lr;
   direction: rtl;
-  width: 10px;
+  width: 24px;
   height: 220px;
   accent-color: var(--accent);
   cursor: grab;
   touch-action: none;
+  pointer-events: auto;
 }
 
 #burette-slider:active {
@@ -213,7 +225,7 @@ main.preview-only .control-panel {
 }
 
 #slider-val {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--accent);
 }
