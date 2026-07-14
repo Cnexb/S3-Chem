@@ -2,12 +2,26 @@
 // Lab language bridge — map host hot-bar lang to embedded lab iframe lang
 // =============================================================================
 
-export const LAB_TOOL_TYPES = new Set([
-  "ionic-compound-puzzle",
-  "covalent-bond-puzzle",
-  "covalent-properties-sandbox",
-  "titration-lab",
-]);
+export const INTERACTIVE_LAB_TOOLS = {
+  "ionic-compound-puzzle": {
+    path: "public/tools/ionic-compound-puzzle/index.html",
+    titleKey: "lab.ionicName",
+  },
+  "covalent-bond-puzzle": {
+    path: "public/tools/covalent-bond-puzzle/index.html",
+    titleKey: "lab.covalentName",
+  },
+  "covalent-properties-sandbox": {
+    path: "public/tools/covalent-properties-sandbox/index.html?v=20260703sandbox23",
+    titleKey: "lab.sandboxName",
+  },
+  "titration-lab": {
+    path: "public/tools/titration-lab/index.html",
+    titleKey: "lab.titrationName",
+  },
+};
+
+export const LAB_TOOL_TYPES = new Set(Object.keys(INTERACTIVE_LAB_TOOLS));
 
 /** Host hot-bar: en | zh | zh-Hant → lab iframe: en | zh */
 export function hostLangToLabLang(hostLang) {

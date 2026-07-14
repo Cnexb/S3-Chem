@@ -8,6 +8,8 @@ import { getShellArrangementByZ } from "../utils/electronArrangement.js";
 import { getShellOrbitTiltRad } from "./bohrShellTilts.js";
 
 const ELECTRON_COLOR_2D = 0x0000ff;
+const BOHR_ORBIT_COLOR = 0x8d7f71;
+const BOHR_ORBIT_OPACITY = 0.3;
 
 // ===== Module-level state =====
 let scene, camera, renderer, atomGroup, animationId;
@@ -176,10 +178,10 @@ function applyBohrVisualProfile() {
     for (let i = 0; i < frames.length; i++) {
       const orbit = frames[i].userData.orbitMesh;
       if (!orbit?.material) continue;
-      orbit.material.opacity = is3d ? 0.22 : 0.3;
-      orbit.material.color.setHex(is3d ? 0xaaaaaa : 0x8d7f71);
-      orbit.userData.originalOpacity = orbit.material.opacity;
-      orbit.userData.originalColor = is3d ? 0xaaaaaa : 0x8d7f71;
+      orbit.material.opacity = BOHR_ORBIT_OPACITY;
+      orbit.material.color.setHex(BOHR_ORBIT_COLOR);
+      orbit.userData.originalOpacity = BOHR_ORBIT_OPACITY;
+      orbit.userData.originalColor = BOHR_ORBIT_COLOR;
     }
   }
 
@@ -276,14 +278,9 @@ let googleMaterials = null;
 
 function ensureGoogleMaterials() {
   if (googleMaterials) return googleMaterials;
+  const mats = ensureSharedMaterials();
   googleMaterials = {
-    neutronMat: new THREE.MeshStandardMaterial({
-      color: 0x7aa2e3,
-      roughness: 0.15,
-      metalness: 0.45,
-      emissive: 0x4466aa,
-      emissiveIntensity: 0.45,
-    }),
+    neutronMat: mats.neutronMat,
   };
   return googleMaterials;
 }
@@ -674,8 +671,8 @@ export function updateAtomStructure(element) {
     shellSpinGroups.push(shellSpinGroup);
 
     const orbitTube = useGoogle3d ? 0.025 : 0.04;
-    const orbitOpacity = useGoogle3d ? 0.22 : 0.3;
-    const orbitColor = useGoogle3d ? 0xaaaaaa : 0x8d7f71;
+    const orbitOpacity = BOHR_ORBIT_OPACITY;
+    const orbitColor = BOHR_ORBIT_COLOR;
 
     // Standard Planetary Bohr Render Path
     // Orbit ring

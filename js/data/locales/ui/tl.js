@@ -229,7 +229,9 @@ export const tlUI = {
     "covalentName": "Covalent",
     "covalentDesc": "Draw covalent bonds and explore covalent compound structures.",
     "sandboxName": "Sandbox",
-    "sandboxDesc": "Simulate micro-structure and compare covalent substance properties."
+    "sandboxDesc": "Simulate micro-structure and compare covalent substance properties.",
+    "titrationName": "Titration",
+    "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points."
   },
   "worksheet": {
     "title": "Generator ng Worksheet",

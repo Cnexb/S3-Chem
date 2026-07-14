@@ -15,7 +15,6 @@ const GLOB_PATTERNS = [
 
 const IMAGE_NAME_PATTERNS = [
   /^interactive-tools-.*-preview\.png$/i,
-  /^interactive-lab-.*-preview\.png$/i,
   /^preview-modal\.png$/i,
   /^mobile-atom-2\.png$/i,
   /^uniplus-logo\.png$/i,

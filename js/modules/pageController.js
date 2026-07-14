@@ -7,8 +7,7 @@ import { onLangChange } from "./langController.js";
 export function initPageController(options = {}) {
   const {
     onTablePageShown,
-    onToolsPageShown,
-    onLabPageShown,
+    onChemToolsHubShown,
     onWorksheetPageShown,
     onSettingsPageShown,
     onFlashcardsPageShown,
@@ -85,12 +84,8 @@ export function initPageController(options = {}) {
       requestAnimationFrame(onTablePageShown);
     }
 
-    if (page === "blank1" && typeof onToolsPageShown === "function") {
-      onToolsPageShown();
-    }
-
-    if (page === "lab" && typeof onLabPageShown === "function") {
-      onLabPageShown();
+    if ((page === "blank1" || page === "lab") && typeof onChemToolsHubShown === "function") {
+      onChemToolsHubShown();
     }
 
     if (page === "blank2" && typeof onWorksheetPageShown === "function") {

@@ -230,7 +230,9 @@ export const frUI = {
     "covalentName": "Covalent",
     "covalentDesc": "Tracez des liaisons covalentes et explorez les structures covalentes.",
     "sandboxName": "Bac a sable",
-    "sandboxDesc": "Simulez la microstructure et comparez les proprietes des substances covalentes."
+    "sandboxDesc": "Simulez la microstructure et comparez les proprietes des substances covalentes.",
+    "titrationName": "Titration",
+    "titrationDesc": "Simulez une titration acido-basique avec lectures de burette, indicateurs et points d'equivalence."
   },
   "worksheet": {
     "title": "Generateur d'exercices",

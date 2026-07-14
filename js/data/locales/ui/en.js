@@ -314,8 +314,8 @@ export const enUI = {
     "covalentDesc": "Draw covalent bonds and explore covalent compound structures.",
     "sandboxName": "Sandbox",
     "sandboxDesc": "Simulate micro-structure and compare covalent substance properties.",
-    "titrationName": "Titration Simulator",
-    "titrationDesc": "Perform neutralisation, plot curves and select indicators in WebGL 3D."
+    "titrationName": "Titration",
+    "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points."
   },
   "worksheet": {
     "title": "Worksheet Generator",
