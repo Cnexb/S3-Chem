@@ -199,6 +199,7 @@ main.preview-only .control-panel {
   box-shadow: var(--shadow);
   z-index: 20;
   pointer-events: auto;
+  touch-action: none;
 }
 
 .burette-slider-wrap label {

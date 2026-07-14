@@ -335,6 +335,66 @@ var Burette = (function () {
     if (resetBtn) {
       resetBtn.addEventListener('click', reset);
     }
+
+    makeSliderWrapDraggable();
+  }
+
+  function makeSliderWrapDraggable() {
+    var wrap = document.querySelector('.burette-slider-wrap');
+    if (!wrap) return;
+
+    var activeDrag = false;
+    var initialX;
+    var initialY;
+
+    wrap.style.cursor = 'grab';
+
+    wrap.addEventListener('pointerdown', function (e) {
+      if (e.target.id === 'burette-slider') return;
+
+      activeDrag = true;
+      wrap.style.cursor = 'grabbing';
+
+      var rect = wrap.getBoundingClientRect();
+      var parentRect = wrap.parentElement.getBoundingClientRect();
+
+      initialX = e.clientX - (rect.left - parentRect.left);
+      initialY = e.clientY - (rect.top - parentRect.top);
+
+      wrap.setPointerCapture(e.pointerId);
+    });
+
+    wrap.addEventListener('pointermove', function (e) {
+      if (!activeDrag) return;
+      e.preventDefault();
+
+      var parentRect = wrap.parentElement.getBoundingClientRect();
+      var x = e.clientX - initialX;
+      var y = e.clientY - initialY;
+
+      var maxX = parentRect.width - wrap.offsetWidth;
+      var maxY = parentRect.height - wrap.offsetHeight;
+
+      x = Math.max(0, Math.min(x, maxX));
+      y = Math.max(0, Math.min(y, maxY));
+
+      wrap.style.left = x + 'px';
+      wrap.style.top = y + 'px';
+      wrap.style.transform = 'none';
+    });
+
+    function dragEnd(e) {
+      if (activeDrag) {
+        activeDrag = false;
+        wrap.style.cursor = 'grab';
+        try {
+          wrap.releasePointerCapture(e.pointerId);
+        } catch (err) {}
+      }
+    }
+
+    wrap.addEventListener('pointerup', dragEnd);
+    wrap.addEventListener('pointercancel', dragEnd);
   }
 
   function init(callback) {
