@@ -206,8 +206,9 @@ main.preview-only .control-panel {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--muted);
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+  text-align: center;
+  width: 70px;
+  line-height: 1.25;
 }
 
 #burette-slider {
