@@ -228,14 +228,6 @@ var TitrationApp = (function () {
     updateBuretteLabel();
     updateTargetUI(volumes, vAdd);
 
-    if (typeof Render3D !== 'undefined') {
-      Render3D.updateState({
-        vol: vAdd,
-        flaskColor: colorInfo.color,
-        indicatorId: state.indicatorId
-      });
-    }
-
     drawTitrationCurve(flaskChem, buretteChem, vAdd);
 
     $('eq-ph-value').textContent = eqPH.toFixed(1);
@@ -283,12 +275,6 @@ var TitrationApp = (function () {
       requestAnimationFrame(function () {
         Burette.positionStopcockHint();
       });
-    }
-
-    if (typeof Render3D !== 'undefined' && Render3D.onWindowResize) {
-      setTimeout(function() {
-        Render3D.onWindowResize();
-      }, 50);
     }
 
     // Trigger curve redraw since width might have changed
@@ -363,51 +349,6 @@ var TitrationApp = (function () {
       body.hidden = !open;
       this.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-
-    var btn2d = $('btn-view-2d');
-    var btn3d = $('btn-view-3d');
-    var svgVessel = document.querySelector('.lab-svg');
-    var container3d = $('canvas3d-container');
-
-    if (btn2d && btn3d && svgVessel && container3d) {
-      btn2d.addEventListener('click', function () {
-        btn2d.classList.add('active');
-        btn2d.style.background = '#fff';
-        btn2d.style.color = '#1f2937';
-        btn3d.classList.remove('active');
-        btn3d.style.background = 'transparent';
-        btn3d.style.color = '#6b7280';
-        svgVessel.style.display = 'block';
-        container3d.style.display = 'none';
-        if (typeof Render3D !== 'undefined') {
-          Render3D.destroy();
-        }
-      });
-
-      btn3d.addEventListener('click', function () {
-        btn3d.classList.add('active');
-        btn3d.style.background = '#fff';
-        btn3d.style.color = '#1f2937';
-        btn2d.classList.remove('active');
-        btn2d.style.background = 'transparent';
-        btn2d.style.color = '#6b7280';
-        svgVessel.style.display = 'none';
-        container3d.style.display = 'block';
-        if (typeof Render3D !== 'undefined') {
-          Render3D.init(container3d);
-          var vAdd = Burette.getVolume();
-          var pH = Chemistry.calculatePH(
-            getChemical(state.flaskId), getChemical(state.buretteId), state.flaskConc, state.flaskVol, state.buretteConc, vAdd
-          );
-          var colorInfo = Indicators.getColor(state.indicatorId, pH);
-          Render3D.updateState({
-            vol: vAdd,
-            flaskColor: colorInfo.color,
-            indicatorId: state.indicatorId
-          });
-        }
-      });
-    }
 
     var toggleBtn = $('toggle-controls-btn');
     if (toggleBtn) {

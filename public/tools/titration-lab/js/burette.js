@@ -142,10 +142,6 @@ var Burette = (function () {
     if (now - lastDropTime < 100) return;
     lastDropTime = now;
 
-    if (typeof Render3D !== 'undefined') {
-      Render3D.updateState({ isStepAdding: true });
-    }
-
     dropToggle = !dropToggle;
     var id = dropToggle ? 'burette-drop-2' : 'burette-drop';
     var drop = document.getElementById(id);
@@ -261,9 +257,6 @@ var Burette = (function () {
 
   function startHold() {
     stopHold();
-    if (typeof Render3D !== 'undefined') {
-      Render3D.updateState({ tapOpen: true });
-    }
     holdInterval = setInterval(function () {
       if (targetVol >= MAX_VOL) {
         stopHold();
@@ -279,9 +272,6 @@ var Burette = (function () {
     if (holdInterval) {
       clearInterval(holdInterval);
       holdInterval = null;
-    }
-    if (typeof Render3D !== 'undefined') {
-      Render3D.updateState({ tapOpen: false });
     }
   }
 

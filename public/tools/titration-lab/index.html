@@ -24,18 +24,11 @@
     <section class="lab-panel" aria-label="Laboratory apparatus">
       <div class="panel-header" style="display:flex; justify-content:space-between; align-items:center;">
         <span data-i18n="panel.setup">實驗裝置</span>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <button type="button" id="toggle-controls-btn" class="btn-secondary btn-compact" aria-pressed="false" data-i18n="controls.hide" style="font-size:0.8rem; padding:4px 10px; border-radius:6px; cursor:pointer;">隱藏設定</button>
-          <div class="view-toggle-segmented" style="display:flex; background:rgba(0,0,0,0.06); padding:2px; border-radius:6px; font-size:0.8rem;">
-            <button type="button" id="btn-view-2d" class="segmented-btn active" style="border:none; padding:3px 10px; border-radius:4px; cursor:pointer; background:#fff; font-weight:600; color:#1f2937;">2D SVG</button>
-            <button type="button" id="btn-view-3d" class="segmented-btn" style="border:none; padding:3px 10px; border-radius:4px; cursor:pointer; background:transparent; font-weight:600; color:#6b7280;">3D WebGL</button>
-          </div>
-        </div>
+        <button type="button" id="toggle-controls-btn" class="btn-secondary btn-compact" aria-pressed="false" data-i18n="controls.hide" style="font-size:0.8rem; padding:4px 10px; border-radius:6px; cursor:pointer;">隱藏設定</button>
       </div>
       <div class="lab-panel-content">
         <div class="lab-scene">
         <div id="near-eq-banner" class="banner-eq" data-i18n="banner.nearEq" hidden>接近當量點 — 留意指示劑顏色變化</div>
-        <div id="canvas3d-container" style="position:absolute; inset:0; width:100%; height:100%; display:none; border-radius:inherit; overflow:hidden;"></div>
         <svg class="lab-svg" viewBox="0 0 520 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
             <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -51,10 +44,10 @@
             <filter id="shadow" x="-8%" y="-8%" width="116%" height="116%">
               <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.18"/>
             </filter>
-            <clipPath id="burette-clip" transform="translate(0, -30)">
+            <clipPath id="burette-clip">
               <rect x="157" y="70" width="24" height="240" rx="2"/>
             </clipPath>
-            <clipPath id="flask-liquid-clip" transform="translate(0, 35)">
+            <clipPath id="flask-liquid-clip">
               <path d="M 155 305 L 157 310 L 157 340 Q 157 350, 147 356 L 115 400 Q 110 405, 120 405 L 220 405 Q 230 405, 225 400 L 193 356 Q 183 350, 183 340 L 183 310 L 185 305 Z"/>
             </clipPath>
           </defs>
@@ -65,8 +58,8 @@
             <rect x="40" y="405" width="300" height="8" fill="#fafafa" stroke="#d1d5db" stroke-width="1"/>
             <rect x="62" y="72" width="10" height="340" fill="url(#metalGrad)" stroke="#374151" stroke-width="1"/>
             <rect x="58" y="72" width="18" height="10" rx="2" fill="#9ca3af" stroke="#374151"/>
+            <text class="part-label" x="18" y="448" data-i18n="label.supportStand">滴定管架</text>
           </g>
-          <text class="part-label" x="18" y="472" data-i18n="label.supportStand">滴定管架</text>
 
           <!-- Conical flask on stand (drawn before clamp so clamp stays visible) -->
           <g id="flask-group" filter="url(#shadow)" transform="translate(0, 35)">
@@ -89,8 +82,8 @@
             <path class="flask-highlight" d="M 142 360 L 118 396" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
             <path class="flask-highlight" d="M 196 360 L 220 396" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.0" stroke-linecap="round"/>
             <path class="flask-highlight" d="M 160 312 L 160 338" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.0" stroke-linecap="round"/>
+            <text class="part-label" x="248" y="368" data-i18n="label.flask">錐形瓶</text>
           </g>
-          <text class="part-label" x="248" y="403" data-i18n="label.flask">錐形瓶</text>
 
           <!-- Burette Holder (butterfly clamp) -->
           <g id="burette-holder" filter="url(#shadow)" transform="translate(0, -30)">
@@ -99,8 +92,8 @@
             <path d="M 148 118 L 158 138 L 148 148 L 138 138 Z" fill="#6b7280" stroke="#374151"/>
             <rect x="84" y="128" width="12" height="28" rx="2" fill="#4b5563"/>
             <rect x="140" y="128" width="12" height="28" rx="2" fill="#4b5563"/>
+            <text class="part-label" x="248" y="118" data-i18n="label.buretteHolder">蝴蝶夾</text>
           </g>
-          <text class="part-label" x="248" y="88" data-i18n="label.buretteHolder">蝴蝶夾</text>
 
           <!-- Burette -->
           <g id="burette-group" filter="url(#shadow)" transform="translate(0, -30)">
@@ -137,9 +130,10 @@
 
             <circle id="burette-drop" class="burette-drop" cx="170" cy="364" r="2.8" fill="rgba(140,190,240,0.9)"/>
             <circle id="burette-drop-2" class="burette-drop" cx="170" cy="364" r="2.8" fill="rgba(140,190,240,0.9)"/>
+
+            <text id="burette-label" class="burette-solution-label" x="169" y="44" text-anchor="middle">HCl 0.10 M</text>
+            <text class="part-label" x="248" y="200" data-i18n="label.burette">滴定管</text>
           </g>
-          <text id="burette-label" class="burette-solution-label" x="169" y="14" text-anchor="middle">HCl 0.10 M</text>
-          <text class="part-label" x="248" y="170" data-i18n="label.burette">滴定管</text>
 
           <!-- Reading panel -->
           <g class="reading-panel">
@@ -336,12 +330,10 @@
 
   <footer data-i18n="footer">HKDSE 化學 課題四 酸與鹼 · 適用於 Google Chrome</footer>
 
-  <script src="../../three.min.js" defer></script>
   <script src="js/i18n.js" defer></script>
   <script src="js/chemicals.js" defer></script>
   <script src="js/chemistry.js" defer></script>
   <script src="js/indicators.js" defer></script>
-  <script src="js/render3D.js" defer></script>
   <script src="js/burette.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>

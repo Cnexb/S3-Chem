@@ -178,7 +178,7 @@ main.preview-only .control-panel {
 
 .burette-slider-wrap {
   position: absolute;
-  right: 1rem;
+  left: 1rem;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -785,4 +785,14 @@ html.embed-mode main {
 
 html.embed-mode .lab-panel-content {
   padding: 0.75rem 1.25rem 1.25rem 1.25rem;
+}
+
+@media (min-width: 900px) and (min-height: 800px) {
+  .lab-scene {
+    min-height: 600px !important;
+  }
+  .lab-svg {
+    max-width: 640px !important;
+    max-height: 580px !important;
+  }
 }
