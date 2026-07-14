@@ -415,6 +415,13 @@ var TitrationApp = (function () {
         setPreviewOnly(!previewOnly);
       });
     }
+
+    window.addEventListener('resize', function () {
+      if (typeof Burette.positionStopcockHint === 'function') {
+        Burette.positionStopcockHint();
+      }
+      update();
+    });
   }
 
   function drawTitrationCurve(flaskChem, buretteChem, vAdd) {
@@ -587,6 +594,11 @@ var TitrationApp = (function () {
   function init() {
     I18n.init();
     I18n.onChange(onLanguageChange);
+
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('embed') === '1') {
+      document.documentElement.classList.add('embed-mode');
+    }
 
     curveCanvas = $('titration-curve-canvas');
     if (curveCanvas) {
