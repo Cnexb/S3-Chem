@@ -312,7 +312,9 @@ export const zhHantUI = {
     "covalentName": "共價",
     "covalentDesc": "繪製共價鍵，探索共價化合物結構。",
     "sandboxName": "沙盒",
-    "sandboxDesc": "模擬微觀結構，比較共價物質性質。"
+    "sandboxDesc": "模擬微觀結構，比較共價物質性質。",
+    "titrationName": "滴定模擬器",
+    "titrationDesc": "進行酸鹼滴定中和反應，繪製滴定曲線，並在 3D WebGL 下觀察指示劑平滑變色。"
   },
   "worksheet": {
     "title": "練習單生成器",

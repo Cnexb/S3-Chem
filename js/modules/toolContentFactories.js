@@ -15,6 +15,7 @@ const TOOL_CONTENT_FACTORIES = {
   "ionic-compound-puzzle": generateIonicCompoundPuzzleToolContent,
   "covalent-bond-puzzle": generateCovalentBondPuzzleToolContent,
   "covalent-properties-sandbox": generateCovalentPropertiesSandboxToolContent,
+  "titration-lab": generateTitrationLabToolContent,
 };
 
 export function getChemToolContent(toolType) {
@@ -2132,6 +2133,13 @@ function generateCovalentPropertiesSandboxToolContent() {
   return generateInteractiveLabIframeContent(
     "public/tools/covalent-properties-sandbox/index.html?v=20260703sandbox23",
     "lab.sandboxName",
+  );
+}
+
+function generateTitrationLabToolContent() {
+  return generateInteractiveLabIframeContent(
+    "public/tools/titration-lab/index.html",
+    "lab.titrationName",
   );
 }
 

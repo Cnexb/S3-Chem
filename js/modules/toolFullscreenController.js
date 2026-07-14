@@ -12,6 +12,7 @@ export const EMBED_FULLSCREEN_TOOL_TYPES = new Set([
   "ionic-compound-puzzle",
   "covalent-bond-puzzle",
   "covalent-properties-sandbox",
+  "titration-lab",
 ]);
 
 export function isEmbedFullscreenToolType(toolType) {

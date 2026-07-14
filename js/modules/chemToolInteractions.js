@@ -24,6 +24,7 @@ const TOOL_LISTENER_MAP = {
   "ionic-compound-puzzle": () => {},
   "covalent-bond-puzzle": () => {},
   "covalent-properties-sandbox": () => {},
+  "titration-lab": () => {},
 };
 
 export function attachToolEventListeners(toolType) {
