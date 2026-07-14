@@ -24,9 +24,12 @@
     <section class="lab-panel" aria-label="Laboratory apparatus">
       <div class="panel-header" style="display:flex; justify-content:space-between; align-items:center;">
         <span data-i18n="panel.setup">實驗裝置</span>
-        <div class="view-toggle-segmented" style="display:flex; background:rgba(0,0,0,0.06); padding:2px; border-radius:6px; font-size:0.8rem;">
-          <button type="button" id="btn-view-2d" class="segmented-btn active" style="border:none; padding:3px 10px; border-radius:4px; cursor:pointer; background:#fff; font-weight:600; color:#1f2937;">2D SVG</button>
-          <button type="button" id="btn-view-3d" class="segmented-btn" style="border:none; padding:3px 10px; border-radius:4px; cursor:pointer; background:transparent; font-weight:600; color:#6b7280;">3D WebGL</button>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <button type="button" id="toggle-controls-btn" class="btn-secondary btn-compact" aria-pressed="false" data-i18n="controls.hide" style="font-size:0.8rem; padding:4px 10px; border-radius:6px; cursor:pointer;">隱藏設定</button>
+          <div class="view-toggle-segmented" style="display:flex; background:rgba(0,0,0,0.06); padding:2px; border-radius:6px; font-size:0.8rem;">
+            <button type="button" id="btn-view-2d" class="segmented-btn active" style="border:none; padding:3px 10px; border-radius:4px; cursor:pointer; background:#fff; font-weight:600; color:#1f2937;">2D SVG</button>
+            <button type="button" id="btn-view-3d" class="segmented-btn" style="border:none; padding:3px 10px; border-radius:4px; cursor:pointer; background:transparent; font-weight:600; color:#6b7280;">3D WebGL</button>
+          </div>
         </div>
       </div>
       <div id="near-eq-banner" class="banner-eq" data-i18n="banner.nearEq" hidden>接近當量點 — 留意指示劑顏色變化</div>
@@ -51,7 +54,7 @@
               <rect x="157" y="70" width="24" height="240" rx="2"/>
             </clipPath>
             <clipPath id="flask-liquid-clip">
-              <path d="M 134 403 L 127 388 L 129 350 L 139 337 L 158 332 L 158 315 L 182 315 L 182 332 L 201 337 L 211 350 L 213 388 L 206 403 Z"/>
+              <path d="M 155 305 L 157 310 L 157 340 Q 157 350, 147 356 L 115 400 Q 110 405, 120 405 L 220 405 Q 230 405, 225 400 L 193 356 Q 183 350, 183 340 L 183 310 L 185 305 Z"/>
             </clipPath>
           </defs>
 
@@ -69,21 +72,22 @@
             <!-- Solution fill (clipped to interior) -->
             <path id="flask-liquid"
                   clip-path="url(#flask-liquid-clip)"
-                  d="M 118 368 L 222 368 L 222 410 L 118 410 Z"
+                  d="M 100 368 L 240 368 L 240 410 L 100 410 Z"
                   fill="rgba(255,182,193,0.78)"/>
             <ellipse id="flask-glow"
                      clip-path="url(#flask-liquid-clip)"
-                     cx="170" cy="368" rx="40" ry="5"
+                     cx="170" cy="368" rx="32" ry="3.5"
                      fill="rgba(255,182,193,0.5)" opacity="0.75"/>
-            <!-- Erlenmeyer glass body -->
-            <path d="M 130 405 L 122 388 L 124 362 L 136 338 L 158 332 L 158 318 L 158 310 Q 170 304 182 310 L 182 318 L 182 332 L 204 338 L 216 362 L 218 388 L 210 405 Z"
+            <!-- Erlenmeyer glass body with neck -->
+            <path d="M 155 305 L 157 310 L 157 340 Q 157 350, 147 356 L 115 400 Q 110 405, 120 405 L 220 405 Q 230 405, 225 400 L 193 356 Q 183 350, 183 340 L 183 310 L 185 305 Z"
                   fill="url(#glassGrad)" fill-opacity="0.55" stroke="#1f2937" stroke-width="1.5" stroke-linejoin="round"/>
             <!-- Beaded rim -->
-            <ellipse cx="170" cy="310" rx="13" ry="3.5" fill="none" stroke="#1f2937" stroke-width="1.6"/>
-            <ellipse cx="170" cy="309" rx="10" ry="2" fill="rgba(255,255,255,0.35)" stroke="none"/>
+            <ellipse cx="170" cy="305" rx="15" ry="4" fill="none" stroke="#1f2937" stroke-width="1.6"/>
+            <ellipse cx="170" cy="304" rx="12" ry="2" fill="rgba(255,255,255,0.35)" stroke="none"/>
             <!-- Glass highlights -->
-            <path class="flask-highlight" d="M 138 395 L 132 375 L 134 352 L 144 340" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.2" stroke-linecap="round"/>
-            <path class="flask-highlight" d="M 200 340 L 208 355 L 212 378 L 208 398" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="0.9" stroke-linecap="round"/>
+            <path class="flask-highlight" d="M 142 360 L 118 396" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+            <path class="flask-highlight" d="M 196 360 L 220 396" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.0" stroke-linecap="round"/>
+            <path class="flask-highlight" d="M 160 312 L 160 338" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.0" stroke-linecap="round"/>
           </g>
           <text class="part-label" x="248" y="368" data-i18n="label.flask">錐形瓶</text>
 
@@ -172,6 +176,14 @@
           <input type="range" id="burette-slider" min="0" max="50" step="0.05" value="0"
                  orient="vertical" data-i18n-aria="slider.aria">
           <span id="slider-val">0.00 cm³</span>
+        </div>
+      </div>
+
+      <!-- Titration Curve (Moved here to display simultaneously with the setup) -->
+      <div class="data-card curve-card" style="margin: 0 1.5rem 1.5rem 1.5rem; padding: 1.25rem; border-top: 1px solid var(--border); background: #ffffff; border-radius: 8px;">
+        <h3 data-i18n="curve.title" style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">滴定曲線 (Titration Curve)</h3>
+        <div class="curve-container" style="position:relative; width: 100%; aspect-ratio: 2.2; margin-top: 10px;">
+          <canvas id="titration-curve-canvas" style="width:100%; height:100%; background: #ffffff; border-radius: 8px; border: 1px solid #e2e8f0;"></canvas>
         </div>
       </div>
     </section>
@@ -276,13 +288,6 @@
           <p id="target-reached" class="eq-reached" hidden>
             <span id="target-reached-badge" class="badge-eq" data-i18n="badge.eqReached">已達當量點</span>
           </p>
-        </div>
-
-        <div class="data-card curve-card">
-          <h3 data-i18n="curve.title">滴定曲線 (Titration Curve)</h3>
-          <div class="curve-container" style="position:relative; width: 100%; aspect-ratio: 1.5; margin-top: 10px;">
-            <canvas id="titration-curve-canvas" style="width:100%; height:100%; background: #ffffff; border-radius: 8px; border: 1px solid #e2e8f0;"></canvas>
-          </div>
         </div>
 
         <div id="suitability-msg" class="suitability-msg ok"></div>

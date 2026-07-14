@@ -11,6 +11,9 @@ var TitrationApp = (function () {
     targetMode: 'equivalence'
   };
 
+  var PREVIEW_STORAGE_KEY = 'hkdse-titration-preview-only';
+  var previewOnly = false;
+
   var curveCanvas = null;
   var curveCtx = null;
 
@@ -253,7 +256,51 @@ var TitrationApp = (function () {
     if (typeof Burette.positionStopcockHint === 'function') {
       Burette.positionStopcockHint();
     }
+    updateToggleButton();
     update();
+  }
+
+  function updateToggleButton() {
+    var btn = $('toggle-controls-btn');
+    if (!btn) return;
+    btn.textContent = previewOnly ? I18n.t('controls.show') : I18n.t('controls.hide');
+    btn.setAttribute('aria-pressed', previewOnly ? 'true' : 'false');
+  }
+
+  function setPreviewOnly(enabled) {
+    previewOnly = !!enabled;
+    var main = document.querySelector('main');
+    if (main) {
+      main.classList.toggle('preview-only', previewOnly);
+    }
+    updateToggleButton();
+
+    try {
+      localStorage.setItem(PREVIEW_STORAGE_KEY, previewOnly ? '1' : '0');
+    } catch (e) { /* ignore */ }
+
+    if (typeof Burette.positionStopcockHint === 'function') {
+      requestAnimationFrame(function () {
+        Burette.positionStopcockHint();
+      });
+    }
+
+    if (typeof Render3D !== 'undefined' && Render3D.onWindowResize) {
+      setTimeout(function() {
+        Render3D.onWindowResize();
+      }, 50);
+    }
+
+    // Trigger curve redraw since width might have changed
+    update();
+  }
+
+  function initPreviewOnly() {
+    var stored = false;
+    try {
+      stored = localStorage.getItem(PREVIEW_STORAGE_KEY) === '1';
+    } catch (e) { /* ignore */ }
+    setPreviewOnly(stored);
   }
 
   function bindUI() {
@@ -359,6 +406,13 @@ var TitrationApp = (function () {
             indicatorId: state.indicatorId
           });
         }
+      });
+    }
+
+    var toggleBtn = $('toggle-controls-btn');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function () {
+        setPreviewOnly(!previewOnly);
       });
     }
   }
@@ -553,6 +607,7 @@ var TitrationApp = (function () {
       update();
     });
 
+    initPreviewOnly();
     bindUI();
     update();
   }

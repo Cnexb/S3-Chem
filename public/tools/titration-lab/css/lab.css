@@ -100,6 +100,15 @@ main {
   margin: 0 auto;
 }
 
+main.preview-only {
+  grid-template-columns: 1fr;
+  max-width: 960px;
+}
+
+main.preview-only .control-panel {
+  display: none;
+}
+
 @media (max-width: 900px) {
   main {
     grid-template-columns: 1fr;
