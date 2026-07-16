@@ -2253,6 +2253,36 @@ function populateSimplifiedView(element) {
             </div>
           `,
         });
+        isoItem.addEventListener("click", () => {
+          setTimeout(() => {
+            const isActive = isoItem.classList.contains("active");
+            if (isActive) {
+              updateAtomStructure(element, iso);
+              const headlineMass = document.getElementById("headline-mass");
+              if (headlineMass) {
+                headlineMass.textContent = massNumber;
+              }
+              const modalN = document.getElementById("modal-n");
+              if (modalN) {
+                modalN.textContent = String(parseInt(massNumber, 10) - element.number);
+              }
+            } else {
+              updateAtomStructure(element);
+              const headlineMass = document.getElementById("headline-mass");
+              if (headlineMass) {
+                const defaultMassNumber = getRepresentativeMassNumber(
+                  element.number,
+                  Math.round(element.weight),
+                );
+                headlineMass.textContent = defaultMassNumber;
+              }
+              const modalN = document.getElementById("modal-n");
+              if (modalN) {
+                modalN.textContent = String(Math.round(element.weight) - element.number);
+              }
+            }
+          }, 0);
+        });
         isotopesSection.appendChild(isoItem);
       });
     }

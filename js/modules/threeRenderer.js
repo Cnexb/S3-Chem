@@ -10,6 +10,7 @@ import { getShellOrbitTiltRad } from "./bohrShellTilts.js";
 const ELECTRON_COLOR_2D = 0x0000ff;
 const BOHR_ORBIT_COLOR = 0x8d7f71;
 const BOHR_ORBIT_OPACITY = 0.3;
+import { finallyData } from "../data/elementsData.js";
 
 // ===== Module-level state =====
 let scene, camera, renderer, atomGroup, animationId;
@@ -264,6 +265,13 @@ function ensureSharedMaterials() {
       emissive: 0x333333,
       emissiveIntensity: 0.6,
     }),
+    additionalNeutronMat: new THREE.MeshStandardMaterial({
+      color: 0xffdd00,
+      roughness: 0.15,
+      metalness: 0.5,
+      emissive: 0xffaa00,
+      emissiveIntensity: 3.5,
+    }),
     electronMat: new THREE.MeshStandardMaterial({
       color: ELECTRON_COLOR_2D,
       roughness: 0.4,
@@ -488,8 +496,62 @@ export function init3DScene(container) {
   }
 }
 
+// ===== Helper: Parse neutron count from isotope =====
+function parseNeutronCount(iso, element) {
+  if (!iso) return null;
+  if (iso.neutron) {
+    const match = String(iso.neutron).match(/\d+/);
+    if (match) return parseInt(match[0], 10);
+  }
+  if (iso.name) {
+    const match = iso.name.match(/\d+/);
+    if (match) {
+      const massNumber = parseInt(match[0], 10);
+      if (massNumber > element.number) {
+        return massNumber - element.number;
+      }
+    }
+  }
+  return null;
+}
+
+// ===== Helper: Find base (minimum) neutron count among isotopes =====
+function getBaseNeutronCount(element) {
+  const atomicNumber = element.number;
+  if (atomicNumber === 1) return 0;
+
+  const finallyElementData = finallyData[atomicNumber] || {};
+  const isotopes = finallyElementData.level2_atomic?.naturalIsotopes || 
+                   finallyElementData.level2_atomic?.naturallyOccurringRadioisotopes ||
+                   finallyElementData.level2_atomic?.representativeIsotopes ||
+                   finallyElementData.level2_atomic?.longestLivedIsotopes ||
+                   finallyElementData.level2_atomic?.mostStableIsotopes || [];
+
+  if (isotopes.length > 0) {
+    let minNeutrons = Infinity;
+    for (let i = 0; i < isotopes.length; i++) {
+      const n = parseNeutronCount(isotopes[i], element);
+      if (n !== null && n < minNeutrons) {
+        minNeutrons = n;
+      }
+    }
+    if (minNeutrons !== Infinity) {
+      return minNeutrons;
+    }
+  }
+
+  const eduData = element.educational || {};
+  if (eduData && eduData.neutronOverride) {
+    return eduData.neutronOverride;
+  } else if (element.weight && !isNaN(element.weight)) {
+    return Math.round(element.weight) - atomicNumber;
+  } else {
+    return atomicNumber;
+  }
+}
+
 // ===== Atom Structure Builder =====
-export function updateAtomStructure(element) {
+export function updateAtomStructure(element, selectedIsotope = null) {
   if (!atomGroup) return;
   while (atomGroup.children.length > 0) {
     atomGroup.remove(atomGroup.children[0]);
@@ -512,18 +574,32 @@ export function updateAtomStructure(element) {
   const atomicNumber = element.number;
   const quality = getQualityProfile(atomicNumber);
 
-  // --- Neutron count ---
+  // --- Neutron count & Isotope handling ---
   let neutronCount;
-  if (atomicNumber === 1) {
-    neutronCount = 0;
-  } else {
-    const eduData = element.educational || {};
-    if (eduData && eduData.neutronOverride) {
-      neutronCount = eduData.neutronOverride;
-    } else if (element.weight && !isNaN(element.weight)) {
-      neutronCount = Math.round(element.weight) - atomicNumber;
+  let additionalCount = 0;
+  const isIsotopeMode = !!selectedIsotope;
+
+  if (isIsotopeMode) {
+    const parsed = parseNeutronCount(selectedIsotope, element);
+    if (parsed !== null) {
+      neutronCount = parsed;
     } else {
-      neutronCount = atomicNumber;
+      neutronCount = atomicNumber === 1 ? 0 : Math.round(element.weight) - atomicNumber;
+    }
+    const baseNeutrons = getBaseNeutronCount(element);
+    additionalCount = Math.max(0, neutronCount - baseNeutrons);
+  } else {
+    if (atomicNumber === 1) {
+      neutronCount = 0;
+    } else {
+      const eduData = element.educational || {};
+      if (eduData && eduData.neutronOverride) {
+        neutronCount = eduData.neutronOverride;
+      } else if (element.weight && !isNaN(element.weight)) {
+        neutronCount = Math.round(element.weight) - atomicNumber;
+      } else {
+        neutronCount = atomicNumber;
+      }
     }
   }
 
@@ -538,8 +614,16 @@ export function updateAtomStructure(element) {
 
   // --- Build & shuffle particle list ---
   const particles = [];
-  for (let i = 0; i < atomicNumber; i++) particles.push({ type: "proton" });
-  for (let i = 0; i < neutronCount; i++) particles.push({ type: "neutron" });
+  for (let i = 0; i < atomicNumber; i++) {
+    particles.push({ type: "proton" });
+  }
+  const normalNeutronsCount = neutronCount - additionalCount;
+  for (let i = 0; i < normalNeutronsCount; i++) {
+    particles.push({ type: "neutron", isAdditional: false });
+  }
+  for (let i = 0; i < additionalCount; i++) {
+    particles.push({ type: "neutron", isAdditional: true });
+  }
   for (let i = particles.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [particles[i], particles[j]] = [particles[j], particles[i]];
@@ -618,7 +702,7 @@ export function updateAtomStructure(element) {
     if (cutoff > 0) {
       surfaceParticles = [];
       for (let i = 0; i < n; i++) {
-        if (particles[i].pos.length() >= cutoff) {
+        if (particles[i].isAdditional || particles[i].pos.length() >= cutoff) {
           surfaceParticles.push(particles[i]);
         }
       }
@@ -628,9 +712,15 @@ export function updateAtomStructure(element) {
   // --- Create meshes only for visible (surface) particles ---
   for (let i = 0; i < surfaceParticles.length; i++) {
     const p = surfaceParticles[i];
+    let mat = mats.neutronMat;
+    if (p.type === "proton") {
+      mat = mats.protonMat;
+    } else if (p.isAdditional) {
+      mat = mats.additionalNeutronMat;
+    }
     const mesh = new THREE.Mesh(
       p.type === "proton" ? protonGeo : neutronGeo,
-      p.type === "proton" ? mats.protonMat : neutronMat,
+      mat,
     );
     mesh.position.copy(p.pos);
     p.mesh = mesh;
