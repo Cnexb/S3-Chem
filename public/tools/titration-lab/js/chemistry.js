@@ -126,9 +126,11 @@ var Chemistry = (function () {
     var acid = flaskChem.type === 'acid' ? flaskChem : buretteChem;
     var base = flaskChem.type === 'base' ? flaskChem : buretteChem;
     var titratingBaseWithAcid = flaskChem.type === 'base' && buretteChem.type === 'acid';
+    var useAcidBuffer = flaskChem.type === 'acid' && acid.strength === 'weak' && isFinite(vEq) && vAdd < vEq - 1e-6;
+    var useBaseBuffer = flaskChem.type === 'base' && base.strength === 'weak' && isFinite(vEq) && vAdd < vEq - 1e-6;
 
     if (excessH > 1e-9) {
-      var acidPH = acidRegionPH(excessH, totalVolL, acid, reacted);
+      var acidPH = acidRegionPH(excessH, totalVolL, acid, useAcidBuffer ? reacted : 0);
       if (titratingBaseWithAcid && isFinite(vEq)) {
         if (vAdd > vEq + 0.12) return acidPH;
         if (vAdd >= vEq - 0.12) {
@@ -149,7 +151,7 @@ var Chemistry = (function () {
     }
 
     if (excessOH > 1e-9) {
-      var basePH = baseRegionPH(excessOH, totalVolL, base, reacted);
+      var basePH = baseRegionPH(excessOH, totalVolL, base, useBaseBuffer ? reacted : 0);
       var titratingAcidWithBase = flaskChem.type === 'acid' && buretteChem.type === 'base';
       if (titratingAcidWithBase && isFinite(vEq)) {
         if (vAdd > vEq + 0.12) return basePH;
