@@ -2254,10 +2254,11 @@ function populateSimplifiedView(element) {
           `,
         });
         isoItem.addEventListener("click", () => {
-          setTimeout(() => {
+          setTimeout(async () => {
             const isActive = isoItem.classList.contains("active");
+            const three = await getThreeRenderer();
             if (isActive) {
-              updateAtomStructure(element, iso);
+              three.updateAtomStructure(element, iso);
               const headlineMass = document.getElementById("headline-mass");
               if (headlineMass) {
                 headlineMass.textContent = massNumber;
@@ -2267,7 +2268,7 @@ function populateSimplifiedView(element) {
                 modalN.textContent = String(parseInt(massNumber, 10) - element.number);
               }
             } else {
-              updateAtomStructure(element);
+              three.updateAtomStructure(element);
               const headlineMass = document.getElementById("headline-mass");
               if (headlineMass) {
                 const defaultMassNumber = getRepresentativeMassNumber(
