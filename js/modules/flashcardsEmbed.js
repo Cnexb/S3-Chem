@@ -11,11 +11,16 @@ const DECKS = {
     en: "./public/flashcards/topic-3-metals/en/flashcards-study.html",
     zh: "./public/flashcards/topic-3-metals/zh-hk/flashcards-study.html",
   },
+  "topic-4-acids-and-bases": {
+    en: "./public/flashcards/topic-4-acids-and-bases/en/flashcards-study.html",
+    zh: "./public/flashcards/topic-4-acids-and-bases/zh-hk/flashcards-study.html",
+  },
 };
 
 const TITLES = {
   "microscopic-world-i": "Microscopic World I Flashcards",
   "topic-3-metals": "Topic 3: Metals Flashcards",
+  "topic-4-acids-and-bases": "Topic 4: Acids and Bases Flashcards",
 };
 
 export function initFlashcardsEmbed() {
