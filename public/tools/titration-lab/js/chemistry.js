@@ -72,11 +72,23 @@ var Chemistry = (function () {
     return clampPH(14 - (-log10(Math.sqrt(Kb * bMoles / totalVolL))));
   }
 
+  function bufferAcidPH(haMoles, aMoles, Ka) {
+    return clampPH(-log10(Ka) + log10(aMoles / haMoles));
+  }
+
+  function bufferBasePH(bMoles, bhMoles, Kb) {
+    var pOH = -log10(Kb) + log10(bhMoles / bMoles);
+    return clampPH(14 - pOH);
+  }
+
   function acidRegionPH(excessH, totalVolL, acidChem, saltMoles) {
     if (acidChem.strength === 'strong') {
       return strongAcidPH(excessH, totalVolL);
     }
-    var haMoles = excessH / acidChem.equivalents + saltMoles;
+    var haMoles = excessH / acidChem.equivalents;
+    if (saltMoles > 1e-12 && haMoles > 1e-12) {
+      return bufferAcidPH(haMoles, saltMoles, acidChem.Ka);
+    }
     return weakAcidPH(haMoles, totalVolL, acidChem.Ka);
   }
 
@@ -84,7 +96,10 @@ var Chemistry = (function () {
     if (baseChem.strength === 'strong') {
       return strongBasePH(excessOH, totalVolL);
     }
-    var bMoles = excessOH / baseChem.equivalents + saltMoles;
+    var bMoles = excessOH / baseChem.equivalents;
+    if (saltMoles > 1e-12 && bMoles > 1e-12) {
+      return bufferBasePH(bMoles, saltMoles, baseChem.Kb);
+    }
     return weakBasePH(bMoles, totalVolL, baseChem.Kb);
   }
 
@@ -117,11 +132,12 @@ var Chemistry = (function () {
       if (titratingBaseWithAcid && isFinite(vEq)) {
         if (vAdd > vEq + 0.12) return acidPH;
         if (vAdd >= vEq - 0.12) {
+          var vPriorBase = Math.max(0, vEq - 0.15);
           var priorBasePH = baseRegionPH(
-            ohEquivMoles(base, flaskConc, flaskVol) - hEquivMoles(buretteChem, buretteConc, Math.max(0, vEq - 0.15)),
-            (flaskVol + Math.max(0, vEq - 0.15)) / 1000,
+            ohEquivMoles(base, flaskConc, flaskVol) - hEquivMoles(buretteChem, buretteConc, vPriorBase),
+            (flaskVol + vPriorBase) / 1000,
             base,
-            0
+            hEquivMoles(buretteChem, buretteConc, vPriorBase)
           );
           var blended = blendNearEq(vAdd, vEq, priorBasePH, eqPH);
           if (blended !== null && vAdd <= vEq) return blended;
@@ -138,11 +154,12 @@ var Chemistry = (function () {
       if (titratingAcidWithBase && isFinite(vEq)) {
         if (vAdd > vEq + 0.12) return basePH;
         if (vAdd >= vEq - 0.12) {
+          var vPriorAcid = Math.max(0, vEq - 0.15);
           var priorAcidPH = acidRegionPH(
-            hEquivMoles(acid, flaskConc, flaskVol) - ohEquivMoles(buretteChem, buretteConc, Math.max(0, vEq - 0.15)),
-            (flaskVol + Math.max(0, vEq - 0.15)) / 1000,
+            hEquivMoles(acid, flaskConc, flaskVol) - ohEquivMoles(buretteChem, buretteConc, vPriorAcid),
+            (flaskVol + vPriorAcid) / 1000,
             acid,
-            0
+            ohEquivMoles(buretteChem, buretteConc, vPriorAcid)
           );
           var blended2 = blendNearEq(vAdd, vEq, priorAcidPH, eqPH);
           if (blended2 !== null && vAdd <= vEq) return blended2;
