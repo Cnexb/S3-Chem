@@ -315,7 +315,11 @@ export const enUI = {
     "sandboxName": "Sandbox",
     "sandboxDesc": "Simulate micro-structure and compare covalent substance properties.",
     "titrationName": "Titration",
-    "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points."
+    "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points.",
+    "group1Name": "Group 1 Elements",
+    "group1Desc": "Compare 3D atomic structures of Group 1 elements, and explore trends in size, electron configuration, and water reactivity.",
+    "groupsPeriodsName": "Groups & Periods 3D",
+    "groupsPeriodsDesc": "Compare 3D atomic structures of elements in the same group or period side-by-side to explore size and electron trends."
   },
   "worksheet": {
     "title": "Worksheet Generator",
@@ -583,6 +587,7 @@ export const enUI = {
     "filter": "Filter",
     "reset": "Reset",
     "first20": "First 20",
+    "groupsPeriodsBtn": "Groups & Periods 3D",
     "style": {
       "electrons": "Electron layout"
     },

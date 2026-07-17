@@ -1122,6 +1122,7 @@ function ensureEITController(tableContainer) {
         <button type="button" class="eit-electron-view-btn" data-view="3d" aria-pressed="false">${t("eit.electronView.3d")}</button>
       </div>
       <button type="button" class="eit-reset-btn" id="eit-s3mode-btn" aria-pressed="false">S3 mode</button>
+      <button type="button" class="eit-reset-btn" id="eit-groupsperiods-btn" aria-pressed="false">${t("eit.groupsPeriodsBtn")}</button>
       <button type="button" class="eit-reset-btn" id="eit-teach-period-btn" aria-pressed="false">${t("eit.teach.period")}</button>
       <button type="button" class="eit-reset-btn" id="eit-teach-group-btn" aria-pressed="false">${t("eit.teach.group")}</button>
       <div class="eit-property-panel" id="eit-property-panel">
@@ -1172,6 +1173,7 @@ function ensureEITController(tableContainer) {
     electronViewGroup: root.querySelector("#eit-electron-view-group"),
     electronViewButtons: Array.from(root.querySelectorAll(".eit-electron-view-btn")),
     s3ModeButton: root.querySelector("#eit-s3mode-btn"),
+    groupsPeriodsButton: root.querySelector("#eit-groupsperiods-btn"),
     teachPeriodButton: root.querySelector("#eit-teach-period-btn"),
     teachGroupButton: root.querySelector("#eit-teach-group-btn"),
     collapseBarButton: root.querySelector("#eit-bar-collapse-btn"),
@@ -1251,7 +1253,6 @@ function ensureEITController(tableContainer) {
     });
     root.dataset.s3ModeBound = "true";
   }
-
   if (root.dataset.bound === "true" && eitUI.teachPeriodButton && root.dataset.teachPeriodBound !== "true") {
     eitUI.teachPeriodButton.addEventListener("click", () => {
       openTeachModal("period", 3);
@@ -1264,6 +1265,14 @@ function ensureEITController(tableContainer) {
       openTeachModal("group", 1);
     });
     root.dataset.teachGroupBound = "true";
+  }
+  if (root.dataset.bound === "true" && eitUI.groupsPeriodsButton && root.dataset.groupsPeriodsBound !== "true") {
+    eitUI.groupsPeriodsButton.addEventListener("click", () => {
+      if (typeof window.openChemToolModal === "function") {
+        window.openChemToolModal("groups-periods");
+      }
+    });
+    root.dataset.groupsPeriodsBound = "true";
   }
 
   // Populate hidden select (backwards compat)
@@ -1508,7 +1517,6 @@ function ensureEITController(tableContainer) {
       if (s3ModeActive) setEITPanelOpen(false);
     });
     root.dataset.s3ModeBound = "true";
-
     // Teach Period toggle
     if (eitUI.teachPeriodButton) {
       bindTap(eitUI.teachPeriodButton, () => {
@@ -1524,6 +1532,13 @@ function ensureEITController(tableContainer) {
       });
       root.dataset.teachGroupBound = "true";
     }
+    // Groups & Periods 3D modal trigger
+    bindTap(eitUI.groupsPeriodsButton, () => {
+      if (typeof window.openChemToolModal === "function") {
+        window.openChemToolModal("groups-periods");
+      }
+    });
+    root.dataset.groupsPeriodsBound = "true";
     // Close on outside click
     document.addEventListener("click", (event) => {
       if (!eitUI || !eitUI.root.contains(event.target)) {
@@ -1553,6 +1568,7 @@ function ensureEITController(tableContainer) {
         if (eitUI?.resetButton) eitUI.resetButton.textContent = t("eit.reset");
         if (eitUI?.first20Button) eitUI.first20Button.textContent = t("eit.first20");
         if (eitUI?.styleToggleButton) eitUI.styleToggleButton.textContent = t("eit.style.electrons");
+        if (eitUI?.groupsPeriodsButton) eitUI.groupsPeriodsButton.textContent = t("eit.groupsPeriodsBtn");
         if (eitUI?.electronViewGroup) {
           eitUI.electronViewGroup.setAttribute("aria-label", t("eit.electronView.aria"));
         }

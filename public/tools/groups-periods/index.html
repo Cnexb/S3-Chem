@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>族與週期 3D 原子結構對比工具 | Groups & Periods 3D Atomic Comparison Tool</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Orbitron:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-cyber: #050814;
+            --sidebar-bg: #0b1126;
+            --card-glass: rgba(16, 22, 47, 0.65);
+            --card-border: rgba(0, 168, 255, 0.15);
+            --card-border-glow: rgba(0, 168, 255, 0.4);
+            --accent-blue: #00a8ff;
+            --accent-gold: #ffaa00;
+            --accent-gold-glow: rgba(255, 170, 0, 0.6);
+            --neon-green: #39ff14;
+            --neon-red: #ff3366;
+            --text-main: #f0f3ff;
+            --text-secondary: #8a9fc4;
+            --font-orbitron: 'Orbitron', 'Noto Sans TC', sans-serif;
+            --font-main: 'Noto Sans TC', 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-cyber);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 5% 15%, rgba(0, 168, 255, 0.12) 0px, transparent 45%),
+                radial-gradient(at 95% 85%, rgba(255, 170, 0, 0.08) 0px, transparent 45%);
+            background-attachment: fixed;
+            padding: 20px;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(5, 8, 20, 0.5);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 168, 255, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 168, 255, 0.5);
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Top Header Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1.5px solid rgba(0, 168, 255, 0.15);
+            padding-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-orbitron);
+        }
+
+        .header-title i {
+            color: var(--accent-gold);
+            filter: drop-shadow(0 0 8px var(--accent-gold));
+            animation: rotateAtom 12s linear infinite;
+        }
+
+        @keyframes rotateAtom {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn {
+            background: rgba(0, 168, 255, 0.1);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: var(--font-main);
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            user-select: none;
+        }
+
+        .btn:hover {
+            background: rgba(0, 168, 255, 0.25);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-gold {
+            background: rgba(255, 170, 0, 0.1);
+            border-color: rgba(255, 170, 0, 0.2);
+        }
+
+        .btn-gold:hover {
+            background: rgba(255, 170, 0, 0.25);
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-blue);
+            color: #ffffff;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 8px rgba(0, 168, 255, 0.4);
+        }
+
+        .sound-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.3em;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 5px;
+        }
+
+        .sound-toggle:hover {
+            color: var(--accent-blue);
+        }
+
+        .sound-toggle.muted {
+            color: var(--neon-red);
+        }
+
+        /* Main Workspace Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        @media (max-width: 1200px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Left Column: Periodic Table & Info */
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .panel-card {
+            background: var(--card-glass);
+            border: 1.5px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: border-color 0.3s ease;
+        }
+
+        .panel-card:hover {
+            border-color: var(--card-border-glow);
+        }
+
+        .panel-title {
+            font-size: 1.25em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #ffffff;
+            font-family: var(--font-orbitron);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panel-subtitle {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        /* Simplified Periodic Table Grid */
+        .pt-grid {
+            display: grid;
+            grid-template-columns: repeat(10, minmax(0, 1fr)); /* Use minmax(0, 1fr) to prevent columns from expanding due to long English names */
+            gap: 4px;
+            margin-bottom: 15px;
+            background: rgba(5, 8, 20, 0.4);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 168, 255, 0.08);
+        }
+
+        /* Row and Column Headers */
+        .pt-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7em;
+            font-weight: 900;
+            color: var(--accent-blue);
+            font-family: var(--font-orbitron);
+            text-align: center;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            user-select: none;
+            padding: 4px 0;
+        }
+
+        .pt-header:hover {
+            background: rgba(0, 168, 255, 0.2);
+            color: #ffffff;
+            box-shadow: 0 0 5px rgba(0, 168, 255, 0.3);
+        }
+
+        .pt-header.active {
+            background: var(--accent-blue);
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(0, 168, 255, 0.5);
+        }
+
+        .pt-row-header {
+            color: var(--text-secondary);
+            font-size: 0.75em;
+        }
+
+        .pt-row-header:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .pt-row-header.active {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .pt-cell {
+            aspect-ratio: 1;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribute top, middle, bottom */
+            align-items: center;
+            font-family: var(--font-orbitron);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            user-select: none;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            min-width: 0; /* Allow cell to shrink below content size */
+            overflow: hidden; /* Contain overflowing text */
+            padding: 3px 4px 4px 4px; /* Small padding all around */
+            box-sizing: border-box;
+        }
+
+        .pt-cell .z {
+            font-size: 0.55em; /* Slightly smaller to fit nicely in the top-left */
+            color: var(--text-secondary);
+            line-height: 1;
+            align-self: flex-start; /* Align to top-left */
+            margin-bottom: 1px; /* Small gap below atomic number */
+        }
+
+        .pt-cell .symbol {
+            font-size: 1.05em;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+            margin: auto 0; /* Vertically center in the remaining space */
+        }
+
+        .pt-cell .name {
+            font-size: 0.5em;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; /* Truncate long English names like Beryllium or Phosphorus */
+            max-width: 100%;
+            text-align: center;
+            line-height: 1;
+            margin-top: 1px; /* Small gap above name */
+        }
+
+        /* Categories colors */
+        .pt-cell.alkali { background: rgba(255, 100, 0, 0.15); border-color: rgba(255, 100, 0, 0.3); }
+        .pt-cell.alkaline { background: rgba(255, 200, 0, 0.15); border-color: rgba(255, 200, 0, 0.3); }
+        .pt-cell.metalloid { background: rgba(0, 200, 150, 0.15); border-color: rgba(0, 200, 150, 0.3); }
+        .pt-cell.nonmetal { background: rgba(0, 168, 255, 0.15); border-color: rgba(0, 168, 255, 0.3); }
+        .pt-cell.halogen { background: rgba(150, 50, 250, 0.15); border-color: rgba(150, 50, 250, 0.3); }
+        .pt-cell.noble { background: rgba(250, 50, 150, 0.15); border-color: rgba(250, 50, 150, 0.3); }
+        .pt-cell.metal { background: rgba(100, 150, 180, 0.15); border-color: rgba(100, 150, 180, 0.3); }
+
+        .pt-cell:hover {
+            transform: scale(1.1);
+            z-index: 5;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+        }
+
+        .pt-cell.active-focus {
+            box-shadow: 0 0 12px #ffffff;
+            border-color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .pt-cell.highlight-compare {
+            animation: pulseGlow 1.5s infinite alternate;
+            border-color: var(--accent-blue);
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 2px rgba(0, 168, 255, 0.2); }
+            100% { box-shadow: 0 0 8px rgba(0, 168, 255, 0.6); }
+        }
+
+        .pt-spacer {
+            cursor: default;
+        }
+
+        /* Quick Info Box */
+        .quick-info-box {
+            background: rgba(5, 8, 20, 0.5);
+            border: 1px solid rgba(0, 168, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .qi-symbol-badge {
+            width: 65px;
+            height: 65px;
+            border-radius: 8px;
+            background: rgba(0, 168, 255, 0.1);
+            border: 1.5px solid var(--accent-blue);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-orbitron);
+            box-shadow: 0 0 10px rgba(0, 168, 255, 0.2);
+        }
+
+        .qi-symbol-badge .qi-z {
+            font-size: 0.65em;
+            color: var(--text-secondary);
+        }
+
+        .qi-symbol-badge .qi-symbol {
+            font-size: 1.6em;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .qi-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .qi-name {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .qi-desc {
+            font-size: 0.8em;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Right Column: 3D Comparison & Controls */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Comparison Grid */
+        .comparison-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .comparison-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .comparison-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            font-family: var(--font-orbitron);
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(0, 168, 255, 0.2);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            width: 100%;
+        }
+
+        /* Atom Card */
+        .atom-card {
+            background: var(--card-glass);
+            border: 1.5px solid var(--card-border);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .atom-card:hover {
+            border-color: var(--card-border-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 168, 255, 0.15);
+        }
+
+        .atom-card.active-focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.25);
+        }
+
+        .atom-card-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        .atom-symbol-wrap {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .atom-card-symbol {
+            font-size: 1.4em;
+            font-weight: 900;
+            font-family: var(--font-orbitron);
+            color: #ffffff;
+        }
+
+        .atom-card-z {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+            font-family: var(--font-orbitron);
+        }
+
+        .atom-card-name {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .atom-canvas-wrap {
+            width: 100%;
+            aspect-ratio: 1;
+            position: relative;
+            margin-bottom: 10px;
+            background: rgba(5, 8, 20, 0.3);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            cursor: grab;
+        }
+
+        .atom-canvas-wrap:active {
+            cursor: grabbing;
+        }
+
+        .atom-canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .atom-card-footer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 0.8em;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+            padding-bottom: 3px;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row span:first-child {
+            color: var(--text-secondary);
+        }
+
+        .info-row span:last-child {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .highlight-val {
+            color: var(--accent-gold) !important;
+            text-shadow: 0 0 5px rgba(255, 170, 0, 0.4);
+        }
+
+        /* Controls Panel */
+        .controls-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: rgba(16, 22, 47, 0.4);
+            border: 1px solid rgba(0, 168, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px 20px;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 120px;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            transition: background 0.3s;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(0, 168, 255, 0.6);
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkbox-container input {
+            cursor: pointer;
+        }
+
+        /* Trend Insights Card */
+        .trend-insights-card {
+            background: linear-gradient(135deg, rgba(16, 22, 47, 0.8) 0%, rgba(5, 8, 20, 0.9) 100%);
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .trend-insights-card.period-mode {
+            border-left-color: var(--accent-gold);
+        }
+
+        .insights-desc {
+            font-size: 0.92em;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .insights-desc strong {
+            color: #ffffff;
+        }
+
+        /* Quiz Section */
+        .quiz-card {
+            border: 1.5px solid rgba(0, 168, 255, 0.15);
+        }
+
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 10px;
+        }
+
+        .quiz-score {
+            font-family: var(--font-orbitron);
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-shadow: 0 0 5px rgba(255, 170, 0, 0.3);
+        }
+
+        .quiz-question {
+            font-size: 1em;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-main);
+            padding: 12px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: left;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quiz-option:hover {
+            background: rgba(0, 168, 255, 0.08);
+            border-color: var(--accent-blue);
+        }
+
+        .quiz-option.correct {
+            background: rgba(57, 255, 20, 0.15) !important;
+            border-color: var(--neon-green) !important;
+            color: #ffffff !important;
+            box-shadow: 0 0 8px rgba(57, 255, 20, 0.3);
+        }
+
+        .quiz-option.incorrect {
+            background: rgba(255, 51, 102, 0.15) !important;
+            border-color: var(--neon-red) !important;
+            color: #ffffff !important;
+            box-shadow: 0 0 8px rgba(255, 51, 102, 0.3);
+        }
+
+        .quiz-feedback {
+            font-size: 0.9em;
+            line-height: 1.4;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .quiz-feedback.correct {
+            display: block;
+            background: rgba(57, 255, 20, 0.08);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            color: #d4ffd4;
+        }
+
+        .quiz-feedback.incorrect {
+            display: block;
+            background: rgba(255, 51, 102, 0.08);
+            border: 1px solid rgba(255, 51, 102, 0.2);
+            color: #ffd4d4;
+        }
+
+        .quiz-controls {
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-title">
+                <i class="fa-solid fa-atom"></i>
+                <span id="txt-header-title">族與週期 3D 原子結構對比工具</span>
+            </div>
+            <div class="header-controls">
+                <button class="sound-toggle" id="btn-sound-toggle" title="切換音效 / Toggle Sound">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+                <div style="display: flex; gap: 5px;">
+                    <button class="lang-btn active" data-lang="zh">中文</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Workspace -->
+        <div class="main-layout">
+            <!-- Left Column: Interactive Periodic Table -->
+            <div class="left-column">
+                <div class="panel-card">
+                    <h2 class="panel-title" id="txt-pt-title"><i class="fa-solid fa-table"></i> 互動元素週期表</h2>
+                    <p class="panel-subtitle" id="txt-pt-subtitle">點擊「族標頭」或「週期標頭」進行 3D 並排對比</p>
+                    
+                    <!-- Periodic Table Grid -->
+                    <div class="pt-grid" id="periodic-table-grid">
+                        <!-- Column Headers (Groups) -->
+                        <div class="pt-header" data-group="1" style="grid-column: 2; grid-row: 1;" title="Group 1 (Alkali Metals)">G1</div>
+                        <div class="pt-header" data-group="2" style="grid-column: 3; grid-row: 1;" title="Group 2 (Alkaline Earth Metals)">G2</div>
+                        <div class="pt-header" data-group="17" style="grid-column: 9; grid-row: 1;" title="Group 17 (Halogens)">G17</div>
+                        <div class="pt-header" data-group="18" style="grid-column: 10; grid-row: 1;" title="Group 18 (Noble Gases)">G18</div>
+
+                        <!-- Period Headers (Rows) -->
+                        <div class="pt-header pt-row-header" data-period="1" style="grid-column: 1; grid-row: 2;">P1</div>
+                        <div class="pt-header pt-row-header" data-period="2" style="grid-column: 1; grid-row: 3;">P2</div>
+                        <div class="pt-header pt-row-header" data-period="3" style="grid-column: 1; grid-row: 4;">P3</div>
+                        <div class="pt-header pt-row-header" data-period="4" style="grid-column: 1; grid-row: 5;">P4</div>
+                        <div class="pt-header pt-row-header" data-period="5" style="grid-column: 1; grid-row: 6;">P5</div>
+                        <div class="pt-header pt-row-header" data-period="6" style="grid-column: 1; grid-row: 7;">P6</div>
+                        <div class="pt-header pt-row-header" data-period="7" style="grid-column: 1; grid-row: 8;">P7</div>
+                        <!-- Cells will be dynamically generated by JS -->
+                    </div>
+
+                    <!-- Quick Info Box -->
+                    <div class="quick-info-box">
+                        <div class="qi-symbol-badge" id="qi-badge">
+                            <span class="qi-z" id="qi-num">3</span>
+                            <span class="qi-symbol" id="qi-symbol">Li</span>
+                        </div>
+                        <div class="qi-details">
+                            <div class="qi-name" id="qi-name">鋰 Lithium</div>
+                            <div class="qi-desc" id="qi-desc">點擊元素或上方的族/週期標頭開始探索！</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trend Insights Card -->
+                <div class="panel-card trend-insights-card" id="card-insights">
+                    <h2 class="panel-title" id="txt-insights-title"><i class="fa-solid fa-lightbulb"></i> 科學規律解析</h2>
+                    <p class="panel-subtitle" id="txt-insights-subtitle">同族與同週期的關鍵科學趨勢</p>
+                    <div class="insights-desc" id="txt-insights-desc">
+                        在左側選擇一個<strong>族（Group）</strong>或<strong>週期（Period）</strong>，此處將顯示其詳細的原子半徑與電子排佈規律。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: 3D Comparison Panel -->
+            <div class="right-column">
+                <div class="comparison-container">
+                    <div class="comparison-header-bar">
+                        <h2 class="comparison-title" id="txt-comparison-title">3D 原子結構並排對比</h2>
+                        <!-- Controls Row -->
+                        <div class="controls-row">
+                            <div class="control-group">
+                                <span id="lbl-rotation">自轉速度 Speed:</span>
+                                <input type="range" id="slider-speed" class="slider" min="0" max="100" value="30">
+                            </div>
+                            <div class="control-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="chk-sync-rotation" checked>
+                                    <span id="lbl-sync-rot">同步 3D 視角 Sync 3D Rotation</span>
+                                </label>
+                            </div>
+                            <div class="control-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="chk-highlight-valence" checked>
+                                    <span id="lbl-highlight-valence">突出最外層電子 Highlight Valence</span>
+                                </label>
+                            </div>
+                            <button class="btn btn-gold" id="btn-reset-rotation">
+                                <i class="fa-solid fa-rotate-left"></i> <span id="btn-reset-rot-txt">重設視角 Reset View</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3D Atom Cards Grid -->
+                    <div class="comparison-grid" id="atoms-comparison-grid">
+                        <!-- Dynamically populated side-by-side cards -->
+                    </div>
+                </div>
+
+                <!-- Quiz Card -->
+                <div class="panel-card quiz-card">
+                    <div class="quiz-container">
+                        <div class="quiz-header">
+                            <h2 class="panel-title" id="txt-quiz-title"><i class="fa-solid fa-circle-question"></i> 互動概念挑戰 (Concept Challenge)</h2>
+                            <span class="quiz-score" id="txt-quiz-score">得分 Score: 0 / 0</span>
+                        </div>
+                        <div class="quiz-question" id="txt-quiz-question">載入問題中...</div>
+                        <div class="quiz-options" id="quiz-options-container">
+                            <!-- Dynamic options -->
+                        </div>
+                        <div class="quiz-feedback" id="quiz-feedback-box">回饋內容</div>
+                        <div class="quiz-controls">
+                            <button class="btn btn-gold" id="btn-next-question" style="display: none;">
+                                <span id="btn-next-txt">下一題 Next</span> <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        // ==========================================
+        // 1. MULTI-LANGUAGE DICTIONARY (zh-HK & en)
+        // ==========================================
+        const I18N = {
+            zh: {
+                headerTitle: "族與週期 3D 原子結構對比工具",
+                ptTitle: "互動元素週期表",
+                ptSubtitle: "點擊「族標頭」或「週期標頭」進行 3D 並排對比",
+                qiDefaultName: "請選擇元素、族或週期",
+                qiDefaultDesc: "點擊週期表上方的 G1, G2 等「族標頭」，或左側的 P1, P2 等「週期標頭」，即可在右側並排顯示 3D 原子結構，直觀對比其大小與電子排佈！",
+                
+                comparisonTitle: "3D 原子結構並排對比",
+                lblRotation: "自轉速度 Speed:",
+                lblSyncRot: "同步 3D 視角 Sync 3D Rotation",
+                lblHighlightValence: "突出最外層電子 Highlight Valence",
+                btnResetRot: "重設視角 Reset View",
+                
+                insightsTitle: "科學規律解析",
+                insightsSubtitle: "同族與同週期的關鍵科學趨勢",
+                
+                group1Trends: "<strong>第 1 族（鹼金屬）規律：</strong><br>隨著原子序增加（從 Li 到 Fr），<strong>電子殼層數目增多</strong>，最外層電子距離原子核越來越遠，因此<strong>原子半徑（Size）顯著變大</strong>。所有第 1 族元素<strong>最外層都只有 1 個價電子</strong>，這決定了它們具有相似的化學性質，且反應活性隨半徑變大而急劇增強。",
+                group2Trends: "<strong>第 2 族（鹼土金屬）規律：</strong><br>隨著原子序增加（從 Be 到 Ra），<strong>電子殼層數目增多</strong>，<strong>原子半徑（Size）顯著變大</strong>。所有第 2 族元素<strong>最外層都有 2 個價電子</strong>。由於最外層電子受原子核引力隨半徑增大而減弱，其反應活性也隨之增強。",
+                group17Trends: "<strong>第 17 族（鹵素）規律：</strong><br>隨著原子序增加（從 F 到 At），<strong>電子殼層數目增多</strong>，<strong>原子半徑（Size）顯著變大</strong>。所有第 17 族元素<strong>最外層都有 7 個價電子</strong>。由於半徑變大，原子核吸引外來電子的能力減弱，因此它們的化學反應活性（得電子能力）隨原子序增加而逐漸減弱。",
+                group18Trends: "<strong>第 18 族（惰性氣體）規律：</strong><br>隨著原子序增加（從 He 到 Rn），<strong>電子殼層數目增多</strong>，<strong>原子半徑（Size）變大</strong>。除了氦（最外層 2 個電子）外，其餘元素<strong>最外層都有 8 個價電子</strong>，達到了極其穩定的飽滿狀態，因此化學性質極不活潑。",
+                
+                period1Trends: "<strong>第 1 週期規律：</strong><br>第 1 週期只有兩個元素（H 和 He）。它們都<strong>只有 1 個電子殼層</strong>。從 H 到 He，質子數增加，原子核對電子的引力增強，因此<strong>氦（He）的原子半徑比氫（H）更小</strong>。氦的最外層電子數達到 2 個的飽和狀態。",
+                period2Trends: "<strong>第 2 週期規律：</strong><br>從鋰（Li）到氖（Ne），所有元素都<strong>擁有 2 個電子殼層</strong>。隨著原子序增加，<strong>質子數（核電荷）逐漸增多</strong>，原子核對外層電子的靜電引力顯著增強，將電子拉得更近，因此<strong>原子半徑（Size）逐漸變小</strong>！最外層電子數則從 1（Li）逐漸增加到 8（Ne）。",
+                period3Trends: "<strong>第 3 週期規律：</strong><br>從鈉（Na）到氬（Ar），所有元素都<strong>擁有 3 個電子殼層</strong>。與第 2 週期相同，隨著原子序增加，質子數增多，核引力增強，導致<strong>原子半徑（Size）從左到右逐漸變小</strong>！最外層電子數從 1（Na）逐漸增加到 8（Ar）。",
+                
+                shells: "電子殼層數",
+                valence: "最外層電子 (價電子)",
+                radius: "原子半徑",
+                config: "電子排佈",
+                protons: "質子數",
+                
+                quizTitle: "互動概念挑戰 (Concept Challenge)",
+                quizScore: "得分 Score:",
+                btnNext: "下一題 Next",
+                quizCorrect: "🎉 太棒了！回答正確！",
+                quizIncorrect: "❌ 答錯囉，再想一想！",
+                
+                q1_q: "當你在元素週期表中「同一個族（Group）向下移動」時，原子的大小（半徑）會如何變化？為什麼？",
+                q1_a: "變大，因為電子殼層數目增多",
+                q1_b: "變小，因為質子數目增多",
+                q1_c: "不變，因為最外層電子數相同",
+                q1_d: "變大，因為最外層電子數增多",
+                q1_explain: "正確答案是 A。在同一個族中向下移動時，每向下一個週期就會增加一個全新的電子殼層，這使得原子半徑顯著變大。",
+                
+                q2_q: "在「同一個週期（Period）從左向右移動」時，原子的最外層（價）電子數和原子半徑會如何變化？",
+                q2_a: "價電子數增加，原子半徑變小",
+                q2_b: "價電子數增加，原子半徑變大",
+                q2_c: "價電子數不變，原子半徑變小",
+                q2_d: "價電子數減少，原子半徑變大",
+                q2_explain: "正確答案是 A。在同一個週期中從左向右，最外層電子數從 1 逐漸增加到 8。同時，由於原子核內的質子數（正電荷）增加，對電子的吸引力增強，導致原子半徑逐漸收縮變小。",
+                
+                q3_q: "為什麼第 1 族元素（如 Li, Na, K）具有非常相似的化學性質？",
+                q3_a: "因為它們的最外層都只有 1 個價電子",
+                q3_b: "因為它們的原子半徑完全相同",
+                q3_c: "因為它們擁有相同數目的電子殼層",
+                q3_d: "因為它們都是非金屬元素",
+                q3_explain: "正確答案是 A。元素的化學性質主要由其最外層電子（價電子）數目決定。第 1 族元素最外層都只有 1 個電子，因此它們的化學反應方式非常相似。"
+            },
+            en: {
+                headerTitle: "Groups & Periods 3D Atomic Comparison Tool",
+                ptTitle: "Interactive Periodic Table",
+                ptSubtitle: "Click Group Headers or Period Headers for 3D comparison",
+                qiDefaultName: "Select an Element, Group or Period",
+                qiDefaultDesc: "Click Group Headers (G1, G2, etc.) at the top, or Period Headers (P1, P2, etc.) on the left to display 3D atomic structures side-by-side, comparing sizes and electron configurations!",
+                
+                comparisonTitle: "3D Atomic Structure Side-by-Side Comparison",
+                lblRotation: "Rotation Speed:",
+                lblSyncRot: "Sync 3D Rotation",
+                lblHighlightValence: "Highlight Valence Electrons",
+                btnResetRot: "Reset View",
+                
+                insightsTitle: "Scientific Trend Insights",
+                insightsSubtitle: "Key trends in Groups and Periods",
+                
+                group1Trends: "<strong>Group 1 (Alkali Metals) Trends:</strong><br>As atomic number increases (from Li to Fr), <strong>the number of electron shells increases</strong>, placing valence electrons further from the nucleus, so <strong>atomic radius (Size) increases significantly</strong>. All Group 1 elements have <strong>exactly 1 valence electron</strong>, giving them highly similar chemical properties and increasing reactivity down the group.",
+                group2Trends: "<strong>Group 2 (Alkaline Earth Metals) Trends:</strong><br>As atomic number increases (from Be to Ra), <strong>the number of electron shells increases</strong>, so <strong>atomic radius (Size) increases significantly</strong>. All Group 2 elements have <strong>exactly 2 valence electrons</strong>. Reactivity increases down the group as valence electrons are easier to lose.",
+                group17Trends: "<strong>Group 17 (Halogens) Trends:</strong><br>As atomic number increases (from F to At), <strong>the number of electron shells increases</strong>, so <strong>atomic radius (Size) increases significantly</strong>. All Group 17 elements have <strong>exactly 7 valence electrons</strong>. Reactivity (ability to gain an electron) decreases down the group due to weaker nuclear pull on outer electrons.",
+                group18Trends: "<strong>Group 18 (Noble Gases) Trends:</strong><br>As atomic number increases (from He to Rn), <strong>the number of electron shells increases</strong>, so <strong>atomic radius (Size) increases</strong>. Except Helium (2 outer electrons), all have <strong>8 valence electrons</strong>, forming a stable octet, making them extremely unreactive.",
+                
+                period1Trends: "<strong>Period 1 Trends:</strong><br>Period 1 contains only H and He, both having <strong>exactly 1 electron shell</strong>. From H to He, protons increase, strengthening the nuclear pull on the shell, so <strong>Helium (He) has a smaller atomic radius than Hydrogen (H)</strong>. He has a stable filled shell of 2 electrons.",
+                period2Trends: "<strong>Period 2 Trends:</strong><br>From Lithium (Li) to Neon (Ne), all elements have <strong>exactly 2 electron shells</strong>. As atomic number increases, <strong>the number of protons (nuclear charge) increases</strong>, pulling the electron shells closer, so <strong>atomic radius (Size) decreases from left to right</strong>! Valence electrons increase from 1 (Li) to 8 (Ne).",
+                period3Trends: "<strong>Period 3 Trends:</strong><br>From Sodium (Na) to Argon (Ar), all elements have <strong>exactly 3 electron shells</strong>. Similar to Period 2, as protons increase across the period, the nuclear pull strengthens, causing <strong>atomic radius (Size) to decrease from left to right</strong>! Valence electrons increase from 1 (Na) to 8 (Ar).",
+                
+                shells: "Electron Shells",
+                valence: "Valence Electrons",
+                radius: "Atomic Radius",
+                config: "Electron Config.",
+                protons: "Protons",
+                
+                quizTitle: "Interactive Concept Challenge",
+                quizScore: "Score:",
+                btnNext: "Next",
+                quizCorrect: "🎉 Awesome! That is correct!",
+                quizIncorrect: "❌ Incorrect, try again!",
+                
+                q1_q: "How does atomic size (radius) change as you move DOWN a Group in the periodic table, and why?",
+                q1_a: "Increases, because the number of electron shells increases",
+                q1_b: "Decreases, because the number of protons increases",
+                q1_c: "Stays the same, because valence electrons stay the same",
+                q1_d: "Increases, because the number of valence electrons increases",
+                q1_explain: "The correct answer is A. Moving down a group, each step down adds a completely new electron shell, which makes the atomic radius significantly larger.",
+                
+                q2_q: "As you move from LEFT to RIGHT across a Period, how do valence electrons and atomic radius change?",
+                q2_a: "Valence electrons increase, atomic radius decreases",
+                q2_b: "Valence electrons increase, atomic radius increases",
+                q2_c: "Valence electrons stay the same, atomic radius decreases",
+                q2_d: "Valence electrons decrease, atomic radius increases",
+                q2_explain: "The correct answer is A. Across a period from left to right, valence electrons increase from 1 to 8. Meanwhile, because the number of protons (positive charge) in the nucleus increases, it pulls the same shells closer, shrinking the atomic radius.",
+                
+                q3_q: "Why do Group 1 elements (like Li, Na, K) have highly similar chemical properties?",
+                q3_a: "Because they all have exactly 1 valence electron",
+                q3_b: "Because they have the exact same atomic radius",
+                q3_c: "Because they have the same number of electron shells",
+                q3_d: "Because they are all non-metal gases",
+                q3_explain: "The correct answer is A. An element's chemical properties are determined by its valence (outermost) electrons. Since all Group 1 elements have exactly 1 valence electron, they react in highly similar ways."
+            }
+        };
+
+        // ==========================================
+        // 2. COMPREHENSIVE ELEMENT DATA
+        // ==========================================
+        const ELEMENT_DATA = {
+            "H": { z: 1, symbol: "H", nameZh: "氫", nameEn: "Hydrogen", shells: [1], radius: 53, config: "1", group: 0, period: 1, cat: "nonmetal" },
+            "He": { z: 2, symbol: "He", nameZh: "氦", nameEn: "Helium", shells: [2], radius: 31, config: "2", group: 18, period: 1, cat: "noble" },
+            "Li": { z: 3, symbol: "Li", nameZh: "鋰", nameEn: "Lithium", shells: [2, 1], radius: 152, config: "2, 1", group: 1, period: 2, cat: "alkali" },
+            "Be": { z: 4, symbol: "Be", nameZh: "鈹", nameEn: "Beryllium", shells: [2, 2], radius: 112, config: "2, 2", group: 2, period: 2, cat: "alkaline" },
+            "B": { z: 5, symbol: "B", nameZh: "硼", nameEn: "Boron", shells: [2, 3], radius: 88, config: "2, 3", group: 13, period: 2, cat: "metalloid" },
+            "C": { z: 6, symbol: "C", nameZh: "碳", nameEn: "Carbon", shells: [2, 4], radius: 77, config: "2, 4", group: 14, period: 2, cat: "nonmetal" },
+            "N": { z: 7, symbol: "N", nameZh: "氮", nameEn: "Nitrogen", shells: [2, 5], radius: 70, config: "2, 5", group: 15, period: 2, cat: "nonmetal" },
+            "O": { z: 8, symbol: "O", nameZh: "氧", nameEn: "Oxygen", shells: [2, 6], radius: 66, config: "2, 6", group: 16, period: 2, cat: "nonmetal" },
+            "F": { z: 9, symbol: "F", nameZh: "氟", nameEn: "Fluorine", shells: [2, 7], radius: 64, config: "2, 7", group: 17, period: 2, cat: "halogen" },
+            "Ne": { z: 10, symbol: "Ne", nameZh: "氖", nameEn: "Neon", shells: [2, 8], radius: 58, config: "2, 8", group: 18, period: 2, cat: "noble" },
+            "Na": { z: 11, symbol: "Na", nameZh: "鈉", nameEn: "Sodium", shells: [2, 8, 1], radius: 186, config: "2, 8, 1", group: 1, period: 3, cat: "alkali" },
+            "Mg": { z: 12, symbol: "Mg", nameZh: "鎂", nameEn: "Magnesium", shells: [2, 8, 2], radius: 160, config: "2, 8, 2", group: 2, period: 3, cat: "alkaline" },
+            "Al": { z: 13, symbol: "Al", nameZh: "鋁", nameEn: "Aluminium", shells: [2, 8, 3], radius: 143, config: "2, 8, 3", group: 13, period: 3, cat: "metal" },
+            "Si": { z: 14, symbol: "Si", nameZh: "矽", nameEn: "Silicon", shells: [2, 8, 4], radius: 111, config: "2, 8, 4", group: 14, period: 3, cat: "metalloid" },
+            "P": { z: 15, symbol: "P", nameZh: "磷", nameEn: "Phosphorus", shells: [2, 8, 5], radius: 110, config: "2, 8, 5", group: 15, period: 3, cat: "nonmetal" },
+            "S": { z: 16, symbol: "S", nameZh: "硫", nameEn: "Sulfur", shells: [2, 8, 6], radius: 104, config: "2, 8, 6", group: 16, period: 3, cat: "nonmetal" },
+            "Cl": { z: 17, symbol: "Cl", nameZh: "氯", nameEn: "Chlorine", shells: [2, 8, 7], radius: 99, config: "2, 8, 7", group: 17, period: 3, cat: "halogen" },
+            "Ar": { z: 18, symbol: "Ar", nameZh: "氬", nameEn: "Argon", shells: [2, 8, 8], radius: 94, config: "2, 8, 8", group: 18, period: 3, cat: "noble" },
+            "K": { z: 19, symbol: "K", nameZh: "鉀", nameEn: "Potassium", shells: [2, 8, 8, 1], radius: 227, config: "2, 8, 8, 1", group: 1, period: 4, cat: "alkali" },
+            "Ca": { z: 20, symbol: "Ca", nameZh: "鈣", nameEn: "Calcium", shells: [2, 8, 8, 2], radius: 197, config: "2, 8, 8, 2", group: 2, period: 4, cat: "alkaline" },
+            "Br": { z: 35, symbol: "Br", nameZh: "溴", nameEn: "Bromine", shells: [2, 8, 18, 7], radius: 114, config: "2, 8, 18, 7", group: 17, period: 4, cat: "halogen" },
+            "Kr": { z: 36, symbol: "Kr", nameZh: "氪", nameEn: "Krypton", shells: [2, 8, 18, 8], radius: 109, config: "2, 8, 18, 8", group: 18, period: 4, cat: "noble" },
+            "Rb": { z: 37, symbol: "Rb", nameZh: "銣", nameEn: "Rubidium", shells: [2, 8, 18, 8, 1], radius: 248, config: "2, 8, 18, 8, 1", group: 1, period: 5, cat: "alkali" },
+            "Sr": { z: 38, symbol: "Sr", nameZh: "鍶", nameEn: "Strontium", shells: [2, 8, 18, 8, 2], radius: 215, config: "2, 8, 18, 8, 2", group: 2, period: 5, cat: "alkaline" },
+            "I": { z: 53, symbol: "I", nameZh: "碘", nameEn: "Iodine", shells: [2, 8, 18, 18, 7], radius: 133, config: "2, 8, 18, 18, 7", group: 17, period: 5, cat: "halogen" },
+            "Xe": { z: 54, symbol: "Xe", nameZh: "氙", nameEn: "Xenon", shells: [2, 8, 18, 18, 8], radius: 130, config: "2, 8, 18, 18, 8", group: 18, period: 5, cat: "noble" },
+            "Cs": { z: 55, symbol: "Cs", nameZh: "銫", nameEn: "Caesium", shells: [2, 8, 18, 18, 8, 1], radius: 265, config: "2, 8, 18, 18, 8, 1", group: 1, period: 6, cat: "alkali" },
+            "Ba": { z: 56, symbol: "Ba", nameZh: "鋇", nameEn: "Barium", shells: [2, 8, 18, 18, 8, 2], radius: 222, config: "2, 8, 18, 18, 8, 2", group: 2, period: 6, cat: "alkaline" },
+            "At": { z: 85, symbol: "At", nameZh: "砈", nameEn: "Astatine", shells: [2, 8, 18, 32, 18, 7], radius: 150, config: "2, 8, 18, 32, 18, 7", group: 17, period: 6, cat: "halogen" },
+            "Rn": { z: 86, symbol: "Rn", nameZh: "氡", nameEn: "Radon", shells: [2, 8, 18, 32, 18, 8], radius: 140, config: "2, 8, 18, 32, 18, 8", group: 18, period: 6, cat: "noble" },
+            "Fr": { z: 87, symbol: "Fr", nameZh: "鍅", nameEn: "Francium", shells: [2, 8, 18, 32, 18, 8, 1], radius: 270, config: "2, 8, 18, 32, 18, 8, 1", group: 1, period: 7, cat: "alkali" },
+            "Ra": { z: 88, symbol: "Ra", nameZh: "鐳", nameEn: "Radium", shells: [2, 8, 18, 32, 18, 8, 2], radius: 223, config: "2, 8, 18, 32, 18, 8, 2", group: 2, period: 7, cat: "alkaline" }
+        };
+
+        // Complete list of elements for the periodic table grid
+        const PERIODIC_TABLE_LAYOUT = [
+            // Row 1
+            { z: 1, symbol: "H", col: 2, row: 2, cat: "nonmetal" },
+            { col: 3, row: 2, span: 6, type: "spacer" },
+            { z: 2, symbol: "He", col: 10, row: 2, cat: "noble" },
+            
+            // Row 2
+            { z: 3, symbol: "Li", col: 2, row: 3, cat: "alkali" },
+            { z: 4, symbol: "Be", col: 3, row: 3, cat: "alkaline" },
+            { z: 5, symbol: "B", col: 4, row: 3, cat: "metalloid" },
+            { z: 6, symbol: "C", col: 5, row: 3, cat: "nonmetal" },
+            { z: 7, symbol: "N", col: 6, row: 3, cat: "nonmetal" },
+            { z: 8, symbol: "O", col: 7, row: 3, cat: "nonmetal" },
+            { z: 9, symbol: "F", col: 9, row: 3, cat: "halogen" },
+            { z: 10, symbol: "Ne", col: 10, row: 3, cat: "noble" },
+
+            // Row 3
+            { z: 11, symbol: "Na", col: 2, row: 4, cat: "alkali" },
+            { z: 12, symbol: "Mg", col: 3, row: 4, cat: "alkaline" },
+            { z: 13, symbol: "Al", col: 4, row: 4, cat: "metal" },
+            { z: 14, symbol: "Si", col: 5, row: 4, cat: "metalloid" },
+            { z: 15, symbol: "P", col: 6, row: 4, cat: "nonmetal" },
+            { z: 16, symbol: "S", col: 7, row: 4, cat: "nonmetal" },
+            { z: 17, symbol: "Cl", col: 9, row: 4, cat: "halogen" },
+            { z: 18, symbol: "Ar", col: 10, row: 4, cat: "noble" },
+
+            // Row 4
+            { z: 19, symbol: "K", col: 2, row: 5, cat: "alkali" },
+            { z: 20, symbol: "Ca", col: 3, row: 5, cat: "alkaline" },
+            { col: 4, row: 5, span: 4, type: "spacer" },
+            { z: 35, symbol: "Br", col: 9, row: 5, cat: "halogen" },
+            { z: 36, symbol: "Kr", col: 10, row: 5, cat: "noble" },
+
+            // Row 5
+            { z: 37, symbol: "Rb", col: 2, row: 6, cat: "alkali" },
+            { z: 38, symbol: "Sr", col: 3, row: 6, cat: "alkaline" },
+            { col: 4, row: 6, span: 4, type: "spacer" },
+            { z: 53, symbol: "I", col: 9, row: 6, cat: "halogen" },
+            { z: 54, symbol: "Xe", col: 10, row: 6, cat: "noble" },
+
+            // Row 6
+            { z: 55, symbol: "Cs", col: 2, row: 7, cat: "alkali" },
+            { z: 56, symbol: "Ba", col: 3, row: 7, cat: "alkaline" },
+            { col: 4, row: 7, span: 4, type: "spacer" },
+            { z: 85, symbol: "At", col: 9, row: 7, cat: "halogen" },
+            { z: 86, symbol: "Rn", col: 10, row: 7, cat: "noble" },
+
+            // Row 7
+            { z: 87, symbol: "Fr", col: 2, row: 8, cat: "alkali" },
+            { z: 88, symbol: "Ra", col: 3, row: 8, cat: "alkaline" }
+        ];
+
+        // ==========================================
+        // 3. STATE MANAGEMENT
+        // ==========================================
+        let currentLang = "zh";
+        let activeElementSymbol = "Li"; // Default element
+        let compareMode = "group"; // 'group' or 'period'
+        let compareValue = 1; // Group 1 or Period 2 etc.
+        let soundEnabled = true;
+        let speedMultiplier = 0.3;
+        let syncRotation = true;
+        let highlightValence = true;
+
+        // 3D Camera Rotation Angles (Theta: Y-axis rotation, Phi: X-axis rotation)
+        let globalTheta = 0.3;
+        let globalPhi = 0.2;
+
+        const individualAngles = {};
+        const canvases = {};
+        const ctxs = {};
+        let rotationAngle = 0;
+        let animationFrameId = null;
+
+        // Audio Context (Web Audio API)
+        let audioCtx = null;
+
+        // ==========================================
+        // 4. AUDIO SYNTHESIS (No external files)
+        // ==========================================
+        function initAudio() {
+            if (audioCtx) return;
+            try {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            } catch (e) {
+                console.warn("Web Audio API not supported.");
+            }
+        }
+
+        function playSound(type) {
+            if (!soundEnabled) return;
+            initAudio();
+            if (!audioCtx) return;
+
+            const now = audioCtx.currentTime;
+
+            if (type === "click") {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = "sine";
+                osc.frequency.setValueAtTime(800, now);
+                osc.frequency.exponentialRampToValueAtTime(150, now + 0.1);
+                gain.gain.setValueAtTime(0.15, now);
+                gain.gain.linearRampToValueAtTime(0.01, now + 0.1);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(now);
+                osc.stop(now + 0.1);
+            } 
+            else if (type === "hover") {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = "triangle";
+                osc.frequency.setValueAtTime(400, now);
+                osc.frequency.setValueAtTime(450, now + 0.04);
+                gain.gain.setValueAtTime(0.04, now);
+                gain.gain.linearRampToValueAtTime(0.001, now + 0.08);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(now);
+                osc.stop(now + 0.08);
+            }
+            else if (type === "correct") {
+                const osc1 = audioCtx.createOscillator();
+                const osc2 = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc1.type = "sine";
+                osc1.frequency.setValueAtTime(523.25, now); // C5
+                osc1.frequency.setValueAtTime(659.25, now + 0.1); // E5
+                osc1.frequency.setValueAtTime(783.99, now + 0.2); // G5
+                
+                gain.gain.setValueAtTime(0.12, now);
+                gain.gain.linearRampToValueAtTime(0.01, now + 0.4);
+                
+                osc1.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc1.start(now);
+                osc1.stop(now + 0.4);
+            }
+            else if (type === "incorrect") {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = "sawtooth";
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.linearRampToValueAtTime(100, now + 0.3);
+                gain.gain.setValueAtTime(0.15, now);
+                gain.gain.linearRampToValueAtTime(0.01, now + 0.3);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            }
+        }
+
+        // ==========================================
+        // 5. INTERACTIVE PERIODIC TABLE GENERATOR
+        // ==========================================
+        function generatePeriodicTable() {
+            const grid = document.getElementById("periodic-table-grid");
+            
+            // Remove existing cells except headers and spacers
+            const cells = grid.querySelectorAll(".pt-cell, .pt-spacer-cell");
+            cells.forEach(c => c.remove());
+
+            // Generate spacer cells and element cells
+            PERIODIC_TABLE_LAYOUT.forEach(el => {
+                if (el.type === "spacer") {
+                    const spacer = document.createElement("div");
+                    spacer.className = "pt-spacer-cell";
+                    spacer.style.gridColumn = `${el.col} / span ${el.span}`;
+                    spacer.style.gridRow = el.row;
+                    grid.appendChild(spacer);
+                } else {
+                    const data = ELEMENT_DATA[el.symbol];
+                    const cell = document.createElement("div");
+                    cell.className = `pt-cell ${el.cat}`;
+                    cell.style.gridColumn = el.col;
+                    cell.style.gridRow = el.row;
+                    cell.dataset.symbol = el.symbol;
+
+                    if (el.symbol === activeElementSymbol) {
+                        cell.classList.add("active-focus");
+                    }
+
+                    // Highlight if part of current comparison
+                    const isGroupMatch = (compareMode === "group" && data.group === compareValue);
+                    const isPeriodMatch = (compareMode === "period" && data.period === compareValue);
+                    if (isGroupMatch || isPeriodMatch) {
+                        cell.classList.add("highlight-compare");
+                    }
+
+                    const num = document.createElement("span");
+                    num.className = "z";
+                    num.textContent = data.z;
+                    cell.appendChild(num);
+
+                    const sym = document.createElement("span");
+                    sym.className = "symbol";
+                    sym.textContent = el.symbol;
+                    cell.appendChild(sym);
+
+                    const name = document.createElement("span");
+                    name.className = "name";
+                    name.textContent = currentLang === "zh" ? data.nameZh : data.nameEn;
+                    cell.appendChild(name);
+
+                    // Hover event
+                    cell.addEventListener("mouseenter", () => {
+                        playSound("hover");
+                        updateQuickInfoBox(el.symbol);
+                    });
+
+                    // Click event
+                    cell.addEventListener("click", () => {
+                        playSound("click");
+                        selectElement(el.symbol);
+                    });
+
+                    grid.appendChild(cell);
+                }
+            });
+
+            // Re-bind click events to Row and Column Headers
+            document.querySelectorAll(".pt-header[data-group]").forEach(header => {
+                const groupNum = parseInt(header.dataset.group);
+                header.classList.toggle("active", compareMode === "group" && compareValue === groupNum);
+                
+                // Remove old listeners by replacing node
+                const newHeader = header.cloneNode(true);
+                newHeader.addEventListener("click", () => {
+                    playSound("click");
+                    selectCompareMode("group", groupNum);
+                });
+                header.parentNode.replaceChild(newHeader, header);
+            });
+
+            document.querySelectorAll(".pt-header[data-period]").forEach(header => {
+                const periodNum = parseInt(header.dataset.period);
+                header.classList.toggle("active", compareMode === "period" && compareValue === periodNum);
+                
+                const newHeader = header.cloneNode(true);
+                newHeader.addEventListener("click", () => {
+                    playSound("click");
+                    selectCompareMode("period", periodNum);
+                });
+                header.parentNode.replaceChild(newHeader, header);
+            });
+        }
+
+        function updateQuickInfoBox(symbol) {
+            const data = ELEMENT_DATA[symbol];
+            if (!data) return;
+
+            const numEl = document.getElementById("qi-num");
+            const symbolEl = document.getElementById("qi-symbol");
+            const nameEl = document.getElementById("qi-name");
+            const descEl = document.getElementById("qi-desc");
+            const badge = document.getElementById("qi-badge");
+
+            numEl.textContent = data.z;
+            symbolEl.textContent = data.symbol;
+            nameEl.textContent = currentLang === "zh" ? `${data.nameZh} ${data.nameEn}` : `${data.nameEn} ${data.nameZh}`;
+            
+            // Set description based on properties
+            const shellsStr = data.shells.join(", ");
+            if (currentLang === "zh") {
+                descEl.innerHTML = `質子數: <strong>${data.z}</strong> | 原子半徑: <strong>${data.radius} pm</strong><br>電子排佈: <strong>${shellsStr}</strong> (最外層 <strong>${data.shells[data.shells.length - 1]}</strong> 個價電子)`;
+            } else {
+                descEl.innerHTML = `Protons: <strong>${data.z}</strong> | Radius: <strong>${data.radius} pm</strong><br>Shell Config: <strong>${shellsStr}</strong> (<strong>${data.shells[data.shells.length - 1]}</strong> valence e⁻)`;
+            }
+
+            // Update badge color class
+            badge.className = `qi-symbol-badge ${data.cat}`;
+        }
+
+        function selectElement(symbol) {
+            activeElementSymbol = symbol;
+            const data = ELEMENT_DATA[symbol];
+            if (!data) return;
+
+            // Automatically select its group or period based on current mode
+            if (compareMode === "group") {
+                // If the group is supported (and exclude Hydrogen group 0), switch to it
+                if ([1, 2, 17, 18].includes(data.group)) {
+                    compareValue = data.group;
+                } else {
+                    // Fallback to period
+                    compareMode = "period";
+                    compareValue = data.period;
+                }
+            } else {
+                if ([1, 2, 3].includes(data.period)) {
+                    compareValue = data.period;
+                } else {
+                    // Fallback to group
+                    compareMode = "group";
+                    compareValue = data.group;
+                }
+            }
+
+            updateWorkspace();
+        }
+
+        function selectCompareMode(mode, value) {
+            compareMode = mode;
+            compareValue = value;
+
+            // Pick a default active element in this group/period
+            const matches = Object.keys(ELEMENT_DATA).filter(sym => {
+                const data = ELEMENT_DATA[sym];
+                return mode === "group" ? data.group === value : data.period === value;
+            });
+            if (matches.length > 0) {
+                activeElementSymbol = matches[0];
+            }
+
+            updateWorkspace();
+        }
+
+        function updateWorkspace() {
+            generatePeriodicTable();
+            updateQuickInfoBox(activeElementSymbol);
+            init3DComparisonGrid();
+            updateScientificTrends();
+            generateQuizQuestion();
+        }
+
+        // ==========================================
+        // 6. 3D ATOMIC RENDERING ENGINE (Multi-Atom)
+        // ==========================================
+        function init3DComparisonGrid() {
+            const grid = document.getElementById("atoms-comparison-grid");
+            grid.innerHTML = ""; // Clear existing
+
+            // Cancel old animation frame
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+
+            // Find elements to compare
+            const elements = Object.keys(ELEMENT_DATA).filter(sym => {
+                const data = ELEMENT_DATA[sym];
+                if (compareMode === "group") {
+                    return data.group === compareValue;
+                } else {
+                    return data.period === compareValue;
+                }
+            }).sort((a, b) => ELEMENT_DATA[a].z - ELEMENT_DATA[b].z);
+
+            // Initialize canvas and angles dictionaries
+            Object.keys(canvases).forEach(k => delete canvases[k]);
+            Object.keys(ctxs).forEach(k => delete ctxs[k]);
+
+            elements.forEach(symbol => {
+                const data = ELEMENT_DATA[symbol];
+                const card = document.createElement("div");
+                card.className = `atom-card ${symbol === activeElementSymbol ? 'active-focus' : ''}`;
+                card.dataset.symbol = symbol;
+
+                if (!individualAngles[symbol]) {
+                    individualAngles[symbol] = { theta: 0.3, phi: 0.2 };
+                }
+
+                const shellsStr = data.shells.join(", ");
+                const name = currentLang === "zh" ? data.nameZh : data.nameEn;
+
+                card.innerHTML = `
+                    <div class="atom-card-header">
+                        <div class="atom-symbol-wrap">
+                            <span class="atom-card-symbol">${symbol}</span>
+                            <span class="atom-card-z">Z=${data.z}</span>
+                        </div>
+                        <span class="atom-card-name">${name}</span>
+                    </div>
+                    <div class="atom-canvas-wrap">
+                        <canvas class="atom-canvas" id="canvas-3d-${symbol}"></canvas>
+                    </div>
+                    <div class="atom-card-footer">
+                        <div class="info-row">
+                            <span data-i18n="shells">${I18N[currentLang].shells}:</span>
+                            <span>${data.shells.length}</span>
+                        </div>
+                        <div class="info-row">
+                            <span data-i18n="valence">${I18N[currentLang].valence}:</span>
+                            <span class="highlight-val">${data.shells[data.shells.length - 1]} e⁻</span>
+                        </div>
+                        <div class="info-row">
+                            <span data-i18n="radius">${I18N[currentLang].radius}:</span>
+                            <span>${data.radius} pm</span>
+                        </div>
+                        <div class="info-row">
+                            <span data-i18n="config">${I18N[currentLang].config}:</span>
+                            <span>[${data.config}]</span>
+                        </div>
+                    </div>
+                `;
+
+                // Click to select
+                card.addEventListener("click", () => {
+                    playSound("click");
+                    document.querySelectorAll(".atom-card").forEach(c => c.classList.remove("active-focus"));
+                    card.classList.add("active-focus");
+                    activeElementSymbol = symbol;
+                    updateQuickInfoBox(symbol);
+                    
+                    // Highlight on periodic table
+                    document.querySelectorAll(".pt-cell").forEach(c => {
+                        c.classList.toggle("active-focus", c.dataset.symbol === symbol);
+                    });
+                });
+
+                grid.appendChild(card);
+
+                // Setup Canvas
+                const canvas = card.querySelector(".atom-canvas");
+                canvases[symbol] = canvas;
+                ctxs[symbol] = canvas.getContext("2d");
+
+                resizeCanvas(canvas);
+                setupDragInteraction(canvas, symbol);
+            });
+
+            // Start Render Loop
+            render3DAtoms();
+        }
+
+        function resizeCanvas(canvas) {
+            const rect = canvas.getBoundingClientRect();
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            const ctx = canvas.getContext("2d");
+            ctx.scale(dpr, dpr);
+        }
+
+        function setupDragInteraction(canvas, symbol) {
+            let isDragging = false;
+            let prevX = 0;
+            let prevY = 0;
+
+            function handleStart(x, y) {
+                isDragging = true;
+                prevX = x;
+                prevY = y;
+            }
+
+            function handleMove(x, y) {
+                if (!isDragging) return;
+                const dx = x - prevX;
+                const dy = y - prevY;
+
+                const sensitivity = 0.008;
+
+                if (syncRotation) {
+                    globalTheta += dx * sensitivity;
+                    globalPhi += dy * sensitivity;
+                    // Clamp X-axis rotation to avoid flipping upside down
+                    globalPhi = Math.max(-Math.PI/2.1, Math.min(Math.PI/2.1, globalPhi));
+                } else {
+                    individualAngles[symbol].theta += dx * sensitivity;
+                    individualAngles[symbol].phi += dy * sensitivity;
+                    individualAngles[symbol].phi = Math.max(-Math.PI/2.1, Math.min(Math.PI/2.1, individualAngles[symbol].phi));
+                }
+
+                prevX = x;
+                prevY = y;
+            }
+
+            function handleEnd() {
+                isDragging = false;
+            }
+
+            // Mouse Events
+            canvas.addEventListener("mousedown", (e) => handleStart(e.clientX, e.clientY));
+            window.addEventListener("mousemove", (e) => handleMove(e.clientX, e.clientY));
+            window.addEventListener("mouseup", handleEnd);
+
+            // Touch Events
+            canvas.addEventListener("touchstart", (e) => {
+                if (e.touches.length === 1) {
+                    handleStart(e.touches[0].clientX, e.touches[0].clientY);
+                }
+            }, { passive: true });
+            window.addEventListener("touchmove", (e) => {
+                if (e.touches.length === 1) {
+                    handleMove(e.touches[0].clientX, e.touches[0].clientY);
+                }
+            }, { passive: true });
+            window.addEventListener("touchend", handleEnd);
+        }
+
+        // 3D Math Helper Functions
+        function rotateY(x, y, z, theta) {
+            const cos = Math.cos(theta);
+            const sin = Math.sin(theta);
+            return {
+                x: x * cos - z * sin,
+                y: y,
+                z: x * sin + z * cos
+            };
+        }
+
+        function rotateX(x, y, z, phi) {
+            const cos = Math.cos(phi);
+            const sin = Math.sin(phi);
+            return {
+                x: x,
+                y: y * cos - z * sin,
+                z: y * sin + z * cos
+            };
+        }
+
+        function project(x, y, z, width, height) {
+            // Simple perspective projection
+            const fov = 150;
+            const distance = 250;
+            const scale = fov / (distance + z);
+            const centerX = width / 2;
+            const centerY = height / 2;
+            return {
+                x: centerX + x * scale,
+                y: centerY + y * scale,
+                scale: scale
+            };
+        }
+
+        // Render Loop
+        function render3DAtoms() {
+            rotationAngle += speedMultiplier * 0.05;
+
+            const activeSymbols = Object.keys(canvases);
+            activeSymbols.forEach(symbol => {
+                const canvas = canvases[symbol];
+                const ctx = ctxs[symbol];
+                if (!canvas || !ctx) return;
+
+                const dpr = window.devicePixelRatio || 1;
+                const rect = canvas.getBoundingClientRect();
+
+                // Dynamic resizing check
+                if (canvas.width !== Math.floor(rect.width * dpr) || canvas.height !== Math.floor(rect.height * dpr)) {
+                    if (rect.width > 0 && rect.height > 0) {
+                        canvas.width = rect.width * dpr;
+                        canvas.height = rect.height * dpr;
+                        ctx.scale(dpr, dpr);
+                    }
+                }
+
+                const width = canvas.width / dpr;
+                const height = canvas.height / dpr;
+
+                if (width === 0 || height === 0) return;
+
+                ctx.clearRect(0, 0, width, height);
+
+                const data = ELEMENT_DATA[symbol];
+                const angles = syncRotation ? { theta: globalTheta, phi: globalPhi } : individualAngles[symbol];
+
+                // 1. Calculate Nucleus Radius based on atomic number Z (protons count)
+                // Z ranges from 1 to 88. We use Z^0.6 to scale the nucleus radius from ~7px to ~23px.
+                const nucRadius = 6 + Math.pow(data.z, 0.6) * 1.2;
+
+                // 2. Scale orbit sizes based on atomic radius
+                // Real atomic radii range from 31pm (He) to 270pm (Fr)
+                // We map this range to 35px - 95px orbit radius to make the size differences extremely distinct
+                const minRadiusPm = 31;
+                const maxRadiusPm = 270;
+                const minOrbitPx = 35;
+                const maxOrbitPx = 95;
+
+                const outerRadiusPx = minOrbitPx + (data.radius - minRadiusPm) / (maxRadiusPm - minRadiusPm) * (maxOrbitPx - minOrbitPx);
+                const startRadius = nucRadius + 8; // Guarantee that the first shell starts outside the nucleus
+
+                const getOrbitRadius = (shellIndex, totalShells) => {
+                    if (totalShells === 1) return outerRadiusPx;
+                    // Interpolate between startRadius and outerRadiusPx
+                    return startRadius + (shellIndex / (totalShells - 1)) * (outerRadiusPx - startRadius);
+                };
+
+                // Orbit tilts
+                const shellTilts = [
+                    { beta: 0.25, alpha: 0 },
+                    { beta: -0.4, alpha: 0.8 },
+                    { beta: 0.6, alpha: -0.8 },
+                    { beta: -0.8, alpha: 1.5 },
+                    { beta: 0.9, alpha: -1.5 },
+                    { beta: -0.3, alpha: 2.2 },
+                    { beta: 0.5, alpha: -2.2 }
+                ];
+
+                const drawables = [];
+
+                // 1. Nucleus
+                drawables.push({
+                    type: "nucleus",
+                    z: 0,
+                    draw: () => {
+                        const radius = nucRadius;
+                        const grad = ctx.createRadialGradient(width/2 - 3, height/2 - 3, 1, width/2, height/2, radius);
+                        grad.addColorStop(0, "#ffffff");
+                        grad.addColorStop(0.3, data.cat === "nonmetal" || data.cat === "noble" || data.cat === "halogen" ? "#00f0ff" : "#ffaa00");
+                        grad.addColorStop(1, "rgba(5, 8, 20, 0.95)");
+
+                        ctx.beginPath();
+                        ctx.arc(width/2, height/2, radius, 0, Math.PI * 2);
+                        ctx.fillStyle = grad;
+                        ctx.shadowColor = data.cat === "nonmetal" || data.cat === "noble" || data.cat === "halogen" ? "rgba(0, 240, 255, 0.6)" : "rgba(255, 170, 0, 0.6)";
+                        ctx.shadowBlur = 12;
+                        ctx.fill();
+                        ctx.shadowBlur = 0; // Reset
+
+                        // Proton count
+                        ctx.fillStyle = "#ffffff";
+                        ctx.font = "bold 9px var(--font-orbitron)";
+                        ctx.textBaseline = "middle";
+                        ctx.textAlign = "center";
+                        ctx.fillText(`+${data.z}`, width/2, height/2);
+                    }
+                });
+
+                // 2. Orbits and Electrons
+                data.shells.forEach((electronCount, shellIdx) => {
+                    const orbitRadius = getOrbitRadius(shellIdx, data.shells.length);
+                    const tilt = shellTilts[shellIdx % shellTilts.length];
+                    const isValenceShell = (shellIdx === data.shells.length - 1);
+
+                    // Orbit Segments
+                    const segmentCount = 64;
+                    const orbitPoints = [];
+                    for (let i = 0; i <= segmentCount; i++) {
+                        const phi = (i / segmentCount) * Math.PI * 2;
+                        let x = orbitRadius * Math.cos(phi);
+                        let y = 0;
+                        let z = orbitRadius * Math.sin(phi);
+
+                        // Tilt
+                        const cosA = Math.cos(tilt.alpha);
+                        const sinA = Math.sin(tilt.alpha);
+                        const x1 = x * cosA - y * sinA;
+                        const y1 = x * sinA + y * cosA;
+
+                        const cosB = Math.cos(tilt.beta);
+                        const sinB = Math.sin(tilt.beta);
+                        const y2 = y1 * cosB - z * sinB;
+                        const z2 = y1 * sinB + z * cosB;
+
+                        // Camera
+                        let rotated = rotateY(x1, y2, z2, angles.theta);
+                        rotated = rotateX(rotated.x, rotated.y, rotated.z, angles.phi);
+
+                        orbitPoints.push(rotated);
+                    }
+
+                    // Add segments to drawables
+                    for (let i = 0; i < segmentCount; i++) {
+                        const pA = orbitPoints[i];
+                        const pB = orbitPoints[i + 1];
+                        const avgZ = (pA.z + pB.z) / 2;
+
+                        drawables.push({
+                            type: "orbit-segment",
+                            z: avgZ,
+                            draw: () => {
+                                const projA = project(pA.x, pA.y, pA.z, width, height);
+                                const projB = project(pB.x, pB.y, pB.z, width, height);
+
+                                ctx.beginPath();
+                                ctx.moveTo(projA.x, projA.y);
+                                ctx.lineTo(projB.x, projB.y);
+
+                                if (isValenceShell) {
+                                    ctx.strokeStyle = `rgba(255, 170, 0, ${0.12 + (1 - (avgZ + orbitRadius)/(2*orbitRadius)) * 0.3})`;
+                                    ctx.lineWidth = 1.5;
+                                } else {
+                                    ctx.strokeStyle = `rgba(0, 168, 255, ${0.06 + (1 - (avgZ + orbitRadius)/(2*orbitRadius)) * 0.12})`;
+                                    ctx.lineWidth = 0.8;
+                                }
+                                ctx.stroke();
+                            }
+                        });
+                    }
+
+                    // Electrons
+                    const orbitSpeed = (0.035 / Math.sqrt(shellIdx + 1)) * (speedMultiplier / 0.3);
+                    const baseAngle = rotationAngle * (shellIdx + 1) * 0.4;
+
+                    for (let j = 0; j < electronCount; j++) {
+                        const phi = baseAngle + (j / electronCount) * Math.PI * 2;
+                        let x = orbitRadius * Math.cos(phi);
+                        let y = 0;
+                        let z = orbitRadius * Math.sin(phi);
+
+                        // Tilt
+                        const cosA = Math.cos(tilt.alpha);
+                        const sinA = Math.sin(tilt.alpha);
+                        const x1 = x * cosA - y * sinA;
+                        const y1 = x * sinA + y * cosA;
+
+                        const cosB = Math.cos(tilt.beta);
+                        const sinB = Math.sin(tilt.beta);
+                        const y2 = y1 * cosB - z * sinB;
+                        const z2 = y1 * sinB + z * cosB;
+
+                        // Camera
+                        let rotated = rotateY(x1, y2, z2, angles.theta);
+                        rotated = rotateX(rotated.x, rotated.y, rotated.z, angles.phi);
+
+                        const isValenceElectron = isValenceShell;
+
+                        drawables.push({
+                            type: "electron",
+                            z: rotated.z,
+                            draw: () => {
+                                const proj = project(rotated.x, rotated.y, rotated.z, width, height);
+                                
+                                let eRadius = 3.5;
+                                if (isValenceElectron) {
+                                    eRadius = highlightValence ? 5.5 : 4.0;
+                                } else {
+                                    eRadius = highlightValence ? 2.5 : 3.5;
+                                }
+
+                                const grad = ctx.createRadialGradient(
+                                    proj.x - eRadius*0.3, proj.y - eRadius*0.3, 0.5,
+                                    proj.x, proj.y, eRadius
+                                );
+
+                                if (isValenceElectron) {
+                                    grad.addColorStop(0, "#ffffff");
+                                    grad.addColorStop(0.3, "#ffaa00");
+                                    grad.addColorStop(1, "#9a5500");
+                                    ctx.shadowColor = "rgba(255, 170, 0, 0.8)";
+                                    ctx.shadowBlur = highlightValence ? 12 : 6;
+                                } else {
+                                    grad.addColorStop(0, "#ffffff");
+                                    grad.addColorStop(0.3, "#00f0ff");
+                                    grad.addColorStop(1, "#004488");
+                                    ctx.shadowColor = "rgba(0, 240, 255, 0.6)";
+                                    ctx.shadowBlur = highlightValence ? 3 : 5;
+                                }
+
+                                ctx.beginPath();
+                                ctx.arc(proj.x, proj.y, eRadius * proj.scale, 0, Math.PI * 2);
+                                ctx.fillStyle = grad;
+                                ctx.fill();
+                                ctx.shadowBlur = 0; // Reset
+                            }
+                        });
+                    }
+                });
+
+                // Painter's Algorithm: Sort by Z depth (furthest first)
+                drawables.sort((a, b) => b.z - a.z);
+                drawables.forEach(obj => obj.draw());
+            });
+
+            animationFrameId = requestAnimationFrame(render3DAtoms);
+        }
+
+        // ==========================================
+        // 7. SCIENTIFIC TRENDS & EXPLANATIONS
+        // ==========================================
+        function updateScientificTrends() {
+            const titleEl = document.getElementById("txt-insights-title");
+            const descEl = document.getElementById("txt-insights-desc");
+            const card = document.getElementById("card-insights");
+
+            if (compareMode === "group") {
+                card.classList.remove("period-mode");
+                if (currentLang === "zh") {
+                    titleEl.innerHTML = `<i class="fa-solid fa-lightbulb"></i> 同族規律 (Group Trends)`;
+                } else {
+                    titleEl.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Group Trends`;
+                }
+
+                if (compareValue === 1) descEl.innerHTML = I18N[currentLang].group1Trends;
+                else if (compareValue === 2) descEl.innerHTML = I18N[currentLang].group2Trends;
+                else if (compareValue === 17) descEl.innerHTML = I18N[currentLang].group17Trends;
+                else if (compareValue === 18) descEl.innerHTML = I18N[currentLang].group18Trends;
+            } else {
+                card.classList.add("period-mode");
+                if (currentLang === "zh") {
+                    titleEl.innerHTML = `<i class="fa-solid fa-lightbulb"></i> 同週期規律 (Period Trends)`;
+                } else {
+                    titleEl.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Period Trends`;
+                }
+
+                if (compareValue === 1) descEl.innerHTML = I18N[currentLang].period1Trends;
+                else if (compareValue === 2) descEl.innerHTML = I18N[currentLang].period2Trends;
+                else if (compareValue === 3) descEl.innerHTML = I18N[currentLang].period3Trends;
+            }
+        }
+
+        // ==========================================
+        // 8. INTERACTIVE CONCEPT QUIZ
+        // ==========================================
+        let currentQuestionIdx = 0;
+        let score = 0;
+        let totalQuestions = 0;
+        let answered = false;
+
+        const quizData = [
+            {
+                id: 1,
+                qKey: "q1_q",
+                options: [
+                    { key: "q1_a", isCorrect: true },
+                    { key: "q1_b", isCorrect: false },
+                    { key: "q1_c", isCorrect: false },
+                    { key: "q1_d", isCorrect: false }
+                ],
+                explainKey: "q1_explain"
+            },
+            {
+                id: 2,
+                qKey: "q2_q",
+                options: [
+                    { key: "q2_a", isCorrect: true },
+                    { key: "q2_b", isCorrect: false },
+                    { key: "q2_c", isCorrect: false },
+                    { key: "q2_d", isCorrect: false }
+                ],
+                explainKey: "q2_explain"
+            },
+            {
+                id: 3,
+                qKey: "q3_q",
+                options: [
+                    { key: "q3_a", isCorrect: true },
+                    { key: "q3_b", isCorrect: false },
+                    { key: "q3_c", isCorrect: false },
+                    { key: "q3_d", isCorrect: false }
+                ],
+                explainKey: "q3_explain"
+            }
+        ];
+
+        function generateQuizQuestion() {
+            answered = false;
+            document.getElementById("btn-next-question").style.display = "none";
+            document.getElementById("quiz-feedback-box").style.display = "none";
+
+            const q = quizData[currentQuestionIdx];
+            document.getElementById("txt-quiz-question").innerHTML = `${currentQuestionIdx + 1}. ${I18N[currentLang][q.qKey]}`;
+
+            const optionsContainer = document.getElementById("quiz-options-container");
+            optionsContainer.innerHTML = "";
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "quiz-option";
+                btn.innerHTML = `<span class="opt-letter" style="color: var(--accent-blue); font-weight: bold; margin-right: 5px;">${String.fromCharCode(65 + idx)}.</span> ${I18N[currentLang][opt.key]}`;
+                
+                btn.addEventListener("click", () => {
+                    if (answered) return;
+                    checkAnswer(opt.isCorrect, btn, q.explainKey);
+                });
+
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById("txt-quiz-score").textContent = `${I18N[currentLang].quizScore} ${score} / ${totalQuestions}`;
+        }
+
+        function checkAnswer(isCorrect, selectedBtn, explainKey) {
+            answered = true;
+            totalQuestions++;
+
+            const feedbackBox = document.getElementById("quiz-feedback-box");
+            
+            if (isCorrect) {
+                playSound("correct");
+                score++;
+                selectedBtn.classList.add("correct");
+                feedbackBox.className = "quiz-feedback correct";
+                feedbackBox.innerHTML = `<strong>${I18N[currentLang].quizCorrect}</strong><br>${I18N[currentLang][explainKey]}`;
+            } else {
+                playSound("incorrect");
+                selectedBtn.classList.add("incorrect");
+                feedbackBox.className = "quiz-feedback incorrect";
+                feedbackBox.innerHTML = `<strong>${I18N[currentLang].quizIncorrect}</strong><br>${I18N[currentLang][explainKey]}`;
+                
+                // Highlight correct option
+                const q = quizData[currentQuestionIdx];
+                const correctIdx = q.options.findIndex(opt => opt.isCorrect);
+                const options = document.querySelectorAll(".quiz-option");
+                if (options[correctIdx]) {
+                    options[correctIdx].classList.add("correct");
+                }
+            }
+
+            document.getElementById("txt-quiz-score").textContent = `${I18N[currentLang].quizScore} ${score} / ${totalQuestions}`;
+            document.getElementById("btn-next-question").style.display = "block";
+        }
+
+        // ==========================================
+        // 9. LANGUAGE SWITCHING & INITIALIZATION
+        // ==========================================
+        function setLanguage(lang) {
+            if (lang !== "zh" && lang !== "en") return;
+            currentLang = lang;
+
+            // Update active state on buttons
+            document.querySelectorAll(".lang-btn").forEach(btn => {
+                btn.classList.toggle("active", btn.dataset.lang === lang);
+            });
+
+            // Translate static text elements
+            document.getElementById("txt-header-title").textContent = I18N[lang].headerTitle;
+            document.getElementById("txt-pt-title").textContent = I18N[lang].ptTitle;
+            document.getElementById("txt-pt-subtitle").textContent = I18N[lang].ptSubtitle;
+            document.getElementById("txt-comparison-title").textContent = I18N[lang].comparisonTitle;
+            document.getElementById("lbl-rotation").textContent = I18N[lang].lblRotation;
+            document.getElementById("lbl-sync-rot").textContent = I18N[lang].lblSyncRot;
+            document.getElementById("lbl-highlight-valence").textContent = I18N[lang].lblHighlightValence;
+            document.getElementById("btn-reset-rot-txt").textContent = I18N[lang].btnResetRot;
+            document.getElementById("txt-insights-subtitle").textContent = I18N[lang].insightsSubtitle;
+            document.getElementById("txt-quiz-title").innerHTML = `<i class="fa-solid fa-circle-question"></i> ${I18N[lang].quizTitle}`;
+            document.getElementById("btn-next-txt").textContent = I18N[lang].btnNext;
+
+            // Re-render components with new language
+            generatePeriodicTable();
+            updateQuickInfoBox(activeElementSymbol);
+            init3DComparisonGrid();
+            updateScientificTrends();
+            generateQuizQuestion();
+        }
+
+        // ==========================================
+        // 10. EVENT LISTENERS & INITIALIZATION
+        // ==========================================
+        window.addEventListener("load", () => {
+            // 1. Language Buttons
+            document.querySelectorAll(".lang-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    playSound("click");
+                    setLanguage(btn.dataset.lang);
+                });
+            });
+
+            // 2. Sound Toggle
+            const soundBtn = document.getElementById("btn-sound-toggle");
+            soundBtn.addEventListener("click", () => {
+                soundEnabled = !soundEnabled;
+                if (soundEnabled) {
+                    soundBtn.classList.remove("muted");
+                    soundBtn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+                    playSound("click");
+                } else {
+                    soundBtn.classList.add("muted");
+                    soundBtn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+                }
+            });
+
+            // 3. 3D Control Speed Slider
+            const speedSlider = document.getElementById("slider-speed");
+            speedSlider.addEventListener("input", (e) => {
+                speedMultiplier = parseFloat(e.target.value) / 100;
+            });
+
+            // 4. Sync Rotation Checkbox
+            const syncCheckbox = document.getElementById("chk-sync-rotation");
+            syncCheckbox.addEventListener("change", (e) => {
+                syncRotation = e.target.checked;
+                if (syncRotation) {
+                    // Align all individual angles to global
+                    Object.keys(individualAngles).forEach(symbol => {
+                        individualAngles[symbol].theta = globalTheta;
+                        individualAngles[symbol].phi = globalPhi;
+                    });
+                }
+            });
+
+            // 5. Highlight Valence Checkbox
+            const highlightCheckbox = document.getElementById("chk-highlight-valence");
+            highlightCheckbox.addEventListener("change", (e) => {
+                highlightValence = e.target.checked;
+            });
+
+            // 6. Reset View Button
+            document.getElementById("btn-reset-rotation").addEventListener("click", () => {
+                playSound("click");
+                globalTheta = 0.3;
+                globalPhi = 0.2;
+                Object.keys(individualAngles).forEach(symbol => {
+                    individualAngles[symbol].theta = 0.3;
+                    individualAngles[symbol].phi = 0.2;
+                });
+            });
+
+            // 7. Quiz Next Question Button
+            document.getElementById("btn-next-question").addEventListener("click", () => {
+                playSound("click");
+                currentQuestionIdx = (currentQuestionIdx + 1) % quizData.length;
+                generateQuizQuestion();
+            });
+
+            // 8. Initialize everything
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get("lang");
+            const initialLang = (urlLang === "en" || urlLang === "zh") ? urlLang : "zh";
+            
+            setLanguage(initialLang);
+
+            // Listen for language updates from the parent frame
+            window.addEventListener("message", (event) => {
+                const data = event.data;
+                if (data && data.type === "uniplus:setLang" && (data.lang === "en" || data.lang === "zh")) {
+                    setLanguage(data.lang);
+                }
+            });
+        });
+
+        // Handle window resize for all 3D canvases
+        window.addEventListener("resize", () => {
+            Object.keys(canvases).forEach(symbol => {
+                resizeCanvas(canvases[symbol]);
+            });
+        });
+    </script>
+</body>
+</html>
