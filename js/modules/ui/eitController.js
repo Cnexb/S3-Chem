@@ -1808,7 +1808,12 @@ function ensureEITController(tableContainer) {
       else if (filtered.length >= 4) gridEl.classList.add("cols-4");
       else if (filtered.length >= 2) gridEl.classList.add("cols-2");
     } else {
-      filtered = filtered.filter(entry => entry.element.column === value);
+      filtered = filtered.filter(entry => {
+        if (type === "group" && value === 1 && entry.number === 1) {
+          return false;
+        }
+        return entry.element.column === value;
+      });
       filtered.sort((a, b) => a.element.row - b.element.row);
       gridEl.className = "teach-modal-grid";
       if (filtered.length >= 4) gridEl.classList.add("cols-4");

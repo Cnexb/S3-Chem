@@ -1468,13 +1468,11 @@ html[lang="ar"] .eit-mode-btn {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 3px;
-  height: 3px;
-  margin: -1.5px 0 0 -1.5px;
-  border-radius: 0;
-  background:
-    linear-gradient(currentColor, currentColor) center / 3px 1px no-repeat,
-    linear-gradient(currentColor, currentColor) center / 1px 3px no-repeat;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: currentColor;
   opacity: 0.82;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22);
   transform: rotate(var(--dot-angle, 0deg)) translateX(var(--orbit-r, 10px));
@@ -1787,26 +1785,26 @@ html[lang^="zh"] .element {
 
 /* Specific grids layout depending on card counts */
 .teach-modal-grid.cols-8 {
-  grid-template-columns: repeat(8, 145px);
+  grid-template-columns: repeat(8, 190px);
 }
 
 .teach-modal-grid.cols-4 {
-  grid-template-columns: repeat(4, 145px);
+  grid-template-columns: repeat(4, 190px);
 }
 
 .teach-modal-grid.cols-2 {
-  grid-template-columns: repeat(2, 145px);
+  grid-template-columns: repeat(2, 190px);
 }
 
 /* Element card inside comparison grid */
 #teach-modal .teach-element-card.element {
-  width: 145px;
-  height: 145px;
+  width: 190px;
+  height: 190px;
   aspect-ratio: 1;
-  border-radius: 18px;
+  border-radius: 22px;
   border: 1px solid var(--border-color, rgba(17, 24, 39, 0.08));
   background-color: var(--element-bg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
   display: block;
   position: relative;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1863,8 +1861,8 @@ html[lang^="zh"] .element {
 #teach-modal .teach-element-card .electron-bohr-wrap {
   position: absolute;
   left: 50%;
-  top: calc(50% + 10px);
-  transform: translate(-50%, -50%) scale(2.0); /* Scaled from 1.6 to 2.0 to make it larger and fill card beautifully */
+  top: calc(50% + 12px);
+  transform: translate(-50%, -50%) scale(2.6); /* 放大至 2.6x，填滿卡片空間，更加顯眼 */
   transform-origin: center center;
   width: 44px;
   height: 44px;
@@ -1884,24 +1882,43 @@ html[lang^="zh"] .element {
 /* Responsiveness for mobile comparison screen */
 @media (max-width: 1200px) {
   .teach-modal-grid.cols-8 {
-    grid-template-columns: repeat(4, 145px);
+    grid-template-columns: repeat(4, 160px);
+  }
+  .teach-modal-grid.cols-4 {
+    grid-template-columns: repeat(4, 160px);
+  }
+  .teach-modal-grid.cols-2 {
+    grid-template-columns: repeat(2, 160px);
+  }
+  #teach-modal .teach-element-card.element {
+    width: 160px;
+    height: 160px;
+    border-radius: 18px;
+  }
+  #teach-modal .teach-element-card .electron-bohr-wrap {
+    transform: translate(-50%, -50%) scale(2.2);
+    top: calc(50% + 10px);
   }
 }
 
 @media (max-width: 768px) {
   .teach-modal-grid.cols-8 {
-    grid-template-columns: repeat(2, 120px);
+    grid-template-columns: repeat(2, 140px);
   }
   .teach-modal-grid.cols-4 {
-    grid-template-columns: repeat(2, 120px);
+    grid-template-columns: repeat(2, 140px);
+  }
+  .teach-modal-grid.cols-2 {
+    grid-template-columns: repeat(2, 140px);
   }
   #teach-modal .teach-element-card.element {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
+    border-radius: 16px;
   }
   #teach-modal .teach-element-card .electron-bohr-wrap {
-    transform: translate(-50%, -50%) scale(1.6);
-    top: calc(50% + 8px);
+    transform: translate(-50%, -50%) scale(1.9);
+    top: calc(50% + 9px);
   }
   #teach-modal .teach-modal-content {
     padding: 16px;
