@@ -12,13 +12,14 @@ const MAX_OUTER_RADIUS = 19;
 /**
  * @param {number} shellCount
  * @param {number} [maxRadius]
+ * @param {number} [minRadius]
  * @returns {number[]}
  */
-export function fitShellRadii(shellCount, maxRadius = MAX_OUTER_RADIUS) {
+export function fitShellRadii(shellCount, maxRadius = MAX_OUTER_RADIUS, minRadius = MIN_INNER_RADIUS) {
   if (!Number.isFinite(shellCount) || shellCount <= 0) return [];
-  if (shellCount === 1) return [Math.min(maxRadius, MIN_INNER_RADIUS + 4)];
-  const gap = (maxRadius - MIN_INNER_RADIUS) / (shellCount - 1);
-  return Array.from({ length: shellCount }, (_, i) => MIN_INNER_RADIUS + i * gap);
+  if (shellCount === 1) return [Math.min(maxRadius, minRadius + 4)];
+  const gap = (maxRadius - minRadius) / (shellCount - 1);
+  return Array.from({ length: shellCount }, (_, i) => minRadius + i * gap);
 }
 
 /**
@@ -74,7 +75,7 @@ function appendElectronsToOrbit(orbit, shellIndex, count, radiusPx) {
 /**
  * @param {HTMLElement | null} container
  * @param {number[]} shells
- * @param {{ sizePx?: number, maxRadius?: number }} [options]
+ * @param {{ sizePx?: number, maxRadius?: number, minRadius?: number }} [options]
  */
 export function renderCellBohr(container, shells, options = {}) {
   if (!container) return;
@@ -83,7 +84,8 @@ export function renderCellBohr(container, shells, options = {}) {
 
   const sizePx = options.sizePx ?? DEFAULT_SIZE_PX;
   const maxRadius = options.maxRadius ?? MAX_OUTER_RADIUS;
-  const radii = fitShellRadii(shells.length, maxRadius);
+  const minRadius = options.minRadius ?? MIN_INNER_RADIUS;
+  const radii = fitShellRadii(shells.length, maxRadius, minRadius);
 
   container.style.width = `${sizePx}px`;
   container.style.height = `${sizePx}px`;
@@ -95,13 +97,16 @@ export function renderCellBohr(container, shells, options = {}) {
   container.appendChild(nucleus);
 
   shells.forEach((count, idx) => {
-    const r = radii[idx] ?? MIN_INNER_RADIUS;
+    const r = radii[idx] ?? minRadius;
     const tilt = getShellOrbitTiltDeg(idx);
     const durationSec = 4 + idx * 1.4;
     const direction = idx % 2 === 0 ? "normal" : "reverse";
 
     const orbit = document.createElement("span");
     orbit.className = "electron-bohr-orbit";
+    if (idx === shells.length - 1) {
+      orbit.classList.add("outermost-shell");
+    }
     orbit.dataset.shell = String(idx);
     orbit.style.setProperty("--orbit-r", `${r}px`);
     orbit.style.setProperty("--tilt-x", `${tilt.x}deg`);
@@ -129,6 +134,12 @@ export function hydrateCellBohrModels(root) {
       .map((n) => Number.parseInt(n, 10))
       .filter((n) => Number.isFinite(n) && n >= 0);
     if (shells.length === 0) return;
-    renderCellBohr(node, shells);
+
+    const inTeachCard = node.closest(".teach-element-card");
+    if (inTeachCard) {
+      renderCellBohr(node, shells, { sizePx: 130, maxRadius: 60, minRadius: 14 });
+    } else {
+      renderCellBohr(node, shells);
+    }
   });
 }

@@ -1862,12 +1862,32 @@ html[lang^="zh"] .element {
   position: absolute;
   left: 50%;
   top: calc(50% + 12px);
-  transform: translate(-50%, -50%) scale(2.6); /* 放大至 2.6x，填滿卡片空間，更加顯眼 */
+  transform: translate(-50%, -50%); /* 已經使用 130px 原生大小，無須在桌面端縮放 */
   transform-origin: center center;
-  width: 44px;
-  height: 44px;
+  width: 130px;
+  height: 130px;
   margin: 0 !important;
   z-index: 3;
+}
+
+#teach-modal .teach-element-card .electron-bohr-nucleus {
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+}
+
+/* 最外層電子與軌道高亮樣式：與內層電子區分，使其在教學中極其醒目 */
+.element .electron-bohr-orbit.outermost-shell .electron-bohr-dot,
+.teach-element-card .electron-bohr-orbit.outermost-shell .electron-bohr-dot {
+  background-color: #ef4444; /* 鮮艷的紅色，與內層電子的暗色形成強烈對比 */
+  box-shadow: 0 0 5px #ef4444, 0 0 0 1px rgba(255, 255, 255, 0.45);
+  opacity: 1;
+}
+
+.element .electron-bohr-orbit.outermost-shell .electron-bohr-ring,
+.teach-element-card .electron-bohr-orbit.outermost-shell .electron-bohr-ring {
+  border: 1px dashed #ef4444; /* 虛線軌道，更清晰標示最外層 */
+  opacity: 0.55;
 }
 
 #teach-modal .teach-element-card .electron-bohr {
@@ -1896,7 +1916,7 @@ html[lang^="zh"] .element {
     border-radius: 18px;
   }
   #teach-modal .teach-element-card .electron-bohr-wrap {
-    transform: translate(-50%, -50%) scale(2.2);
+    transform: translate(-50%, -50%) scale(0.84);
     top: calc(50% + 10px);
   }
 }
@@ -1917,7 +1937,7 @@ html[lang^="zh"] .element {
     border-radius: 16px;
   }
   #teach-modal .teach-element-card .electron-bohr-wrap {
-    transform: translate(-50%, -50%) scale(1.9);
+    transform: translate(-50%, -50%) scale(0.73);
     top: calc(50% + 9px);
   }
   #teach-modal .teach-modal-content {
