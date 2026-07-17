@@ -584,6 +584,14 @@ export const zhHantUI = {
     "style": {
       "electrons": "電子排布"
     },
+    "teach": {
+      "period": "教學：週期",
+      "group": "教學：族",
+      "modalTitlePeriod": "第 {num} 週期主族元素",
+      "modalTitleGroup": "第 {num} 族元素",
+      "periodBtn": "第 {num} 週期",
+      "groupBtn": "第 {num} 族"
+    },
     "electronView": {
       "2d": "2D",
       "3d": "3D",

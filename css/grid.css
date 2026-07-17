@@ -178,8 +178,18 @@
   font-weight: 800;
   color: rgba(17, 24, 39, 0.65);
   user-select: none;
-  pointer-events: none;
+  pointer-events: auto !important;
+  cursor: pointer;
   font-variant-numeric: tabular-nums;
+  border-radius: 4px;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.group-label:hover,
+.period-label:hover {
+  background: rgba(17, 24, 39, 0.08);
+  color: rgba(17, 24, 39, 0.95);
+  transform: scale(1.1);
 }
 
 .group-label {
@@ -560,6 +570,12 @@ html[lang="ar"] .eit-mode-btn {
 
 .eit-reset-btn:active {
   transform: scale(0.96);
+}
+
+.eit-reset-btn[aria-pressed="true"] {
+  background: #1d1d1f !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 .eit-electron-view-group {
@@ -1388,7 +1404,8 @@ html[lang="ar"] .eit-mode-btn {
   line-height: 1.05;
 }
 
-.element .electron-bohr-wrap {
+.element .electron-bohr-wrap,
+.teach-element-card .electron-bohr-wrap {
   position: relative;
   display: grid;
   place-items: center;
@@ -1398,13 +1415,15 @@ html[lang="ar"] .eit-mode-btn {
   flex-shrink: 0;
 }
 
-.element .electron-bohr {
+.element .electron-bohr,
+.teach-element-card .electron-bohr {
   position: relative;
   display: block;
   overflow: visible;
 }
 
-.element .electron-bohr-nucleus {
+.element .electron-bohr-nucleus,
+.teach-element-card .electron-bohr-nucleus {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1420,7 +1439,8 @@ html[lang="ar"] .eit-mode-btn {
   z-index: 2;
 }
 
-.element .electron-bohr-orbit {
+.element .electron-bohr-orbit,
+.teach-element-card .electron-bohr-orbit {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1433,7 +1453,8 @@ html[lang="ar"] .eit-mode-btn {
   pointer-events: none;
 }
 
-.element .electron-bohr-ring {
+.element .electron-bohr-ring,
+.teach-element-card .electron-bohr-ring {
   position: absolute;
   inset: 0;
   border: 1px solid currentColor;
@@ -1442,7 +1463,8 @@ html[lang="ar"] .eit-mode-btn {
   box-sizing: border-box;
 }
 
-.element .electron-bohr-dot {
+.element .electron-bohr-dot,
+.teach-element-card .electron-bohr-dot {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1459,7 +1481,8 @@ html[lang="ar"] .eit-mode-btn {
   transform-origin: center center;
 }
 
-.element .electron-bohr-symbol {
+.element .electron-bohr-symbol,
+.teach-element-card .electron-bohr-symbol {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1477,23 +1500,27 @@ html[lang="ar"] .eit-mode-btn {
 }
 
 /* 2D view: flat orbits, electrons spin on rings */
-#periodic-table.table-electron-view-2d .element .electron-bohr-orbit {
+#periodic-table.table-electron-view-2d .element .electron-bohr-orbit,
+.teach-modal-content.table-electron-view-2d .electron-bohr-orbit {
   transform: none;
   animation: bohr-orbit-spin var(--orbit-duration, 5s) linear infinite;
   animation-direction: var(--orbit-direction, normal);
 }
 
-#periodic-table.table-electron-view-3d .element .electron-bohr-wrap {
+#periodic-table.table-electron-view-3d .element .electron-bohr-wrap,
+.teach-modal-content.table-electron-view-3d .electron-bohr-wrap {
   perspective: 200px;
   perspective-origin: center center;
 }
 
-#periodic-table.table-electron-view-3d .element .electron-bohr {
+#periodic-table.table-electron-view-3d .element .electron-bohr,
+.teach-modal-content.table-electron-view-3d .electron-bohr {
   transform-style: preserve-3d;
   animation: bohr-scene-tilt 12s ease-in-out infinite alternate;
 }
 
-#periodic-table.table-electron-view-3d .element .electron-bohr-orbit {
+#periodic-table.table-electron-view-3d .element .electron-bohr-orbit,
+.teach-modal-content.table-electron-view-3d .electron-bohr-orbit {
   animation: bohr-orbit-spin var(--orbit-duration, 5s) linear infinite;
   animation-direction: var(--orbit-direction, normal);
 }
@@ -1503,7 +1530,8 @@ html[lang="ar"] .eit-mode-btn {
   to { transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) rotateZ(360deg); }
 }
 
-#periodic-table.table-electron-view-2d .element .electron-bohr-orbit {
+#periodic-table.table-electron-view-2d .element .electron-bohr-orbit,
+.teach-modal-content.table-electron-view-2d .electron-bohr-orbit {
   animation-name: bohr-orbit-spin-2d;
 }
 
@@ -1520,7 +1548,10 @@ html[lang="ar"] .eit-mode-btn {
 @media (prefers-reduced-motion: reduce) {
   #periodic-table.table-electron-view-2d .element .electron-bohr-orbit,
   #periodic-table.table-electron-view-3d .element .electron-bohr-orbit,
-  #periodic-table.table-electron-view-3d .element .electron-bohr {
+  #periodic-table.table-electron-view-3d .element .electron-bohr,
+  .teach-modal-content.table-electron-view-2d .electron-bohr-orbit,
+  .teach-modal-content.table-electron-view-3d .electron-bohr-orbit,
+  .teach-modal-content.table-electron-view-3d .electron-bohr {
     animation: none !important;
   }
 }
@@ -1660,4 +1691,197 @@ html[lang^="zh"] .element {
   flex-direction: column;
   justify-content: center;
   gap: 0;
+}
+
+/* ==============================================
+   Teach Modal - Glassmorphism Compare Pop-up
+   ============================================== */
+
+/* Modal Overrides for Teach Modal */
+#teach-modal .teach-modal-content {
+  width: 92%;
+  max-width: 1400px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  padding: 30px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #1d1d1f;
+}
+
+#teach-modal .modal-top-buttons {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  z-index: 10;
+}
+
+.teach-modal-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.teach-modal-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.teach-modal-selectors {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.teach-modal-btn {
+  height: 34px;
+  border-radius: 17px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.6);
+  color: #555;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.teach-modal-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+.teach-modal-btn.active {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.teach-modal-grid {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  overflow-y: auto;
+  padding: 8px;
+  justify-content: center;
+  align-content: start;
+}
+
+/* Specific grids layout depending on card counts */
+.teach-modal-grid.cols-8 {
+  grid-template-columns: repeat(8, 125px);
+}
+
+.teach-modal-grid.cols-4 {
+  grid-template-columns: repeat(4, 150px);
+}
+
+.teach-modal-grid.cols-2 {
+  grid-template-columns: repeat(2, 180px);
+}
+
+/* Element card inside comparison grid */
+.teach-element-card {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  aspect-ratio: 0.85;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  user-select: none;
+}
+
+.teach-element-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.teach-element-card .card-number {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #9ca3af;
+}
+
+.teach-element-card .card-symbol {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 10px;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.teach-element-card .card-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 6px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.teach-element-card .card-layout-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 6px;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* Make orbits fit perfectly inside teach card */
+.teach-element-card .electron-bohr-wrap {
+  margin: 6px 0;
+}
+
+/* Responsiveness for mobile comparison screen */
+@media (max-width: 1200px) {
+  .teach-modal-grid.cols-8 {
+    grid-template-columns: repeat(4, 125px);
+  }
+}
+
+@media (max-width: 768px) {
+  .teach-modal-grid.cols-8 {
+    grid-template-columns: repeat(2, 110px);
+  }
+  .teach-modal-grid.cols-4 {
+    grid-template-columns: repeat(2, 130px);
+  }
+  #teach-modal .teach-modal-content {
+    padding: 16px;
+  }
+  .teach-modal-title {
+    font-size: 1.3rem;
+  }
 }

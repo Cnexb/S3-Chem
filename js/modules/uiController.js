@@ -1025,6 +1025,7 @@ export const eitController = createEITController({
     clearLegendSelection(container);
     clearHighlights(container);
   },
+  localizeElementName: (element) => localizeElementName(element),
 });
 
 function createLegend(container) {
@@ -1276,6 +1277,26 @@ export async function buildPeriodicTable(tableContainer) {
         e.stopPropagation();
         return;
       }
+      
+      const periodLabel = e.target.closest(".period-label");
+      if (periodLabel) {
+        const periodNum = parseInt(periodLabel.textContent, 10);
+        if (Number.isFinite(periodNum)) {
+          eitController.openTeachModal("period", periodNum);
+        }
+        return;
+      }
+      const groupLabel = e.target.closest(".group-label");
+      if (groupLabel) {
+        const gridColStr = groupLabel.style.gridColumn.split("/")[0].trim();
+        const gridCol = parseInt(gridColStr, 10);
+        const col = gridCol - 1;
+        if (Number.isFinite(col)) {
+          eitController.openTeachModal("group", col);
+        }
+        return;
+      }
+
       const cell = e.target.closest(".element:not(.range-block)");
       if (!cell || !tableContainer.contains(cell)) return;
       const num = Number.parseInt(cell.dataset.elementNumber, 10);
@@ -1286,6 +1307,32 @@ export async function buildPeriodicTable(tableContainer) {
     tableContainer.addEventListener("pointerup", (e) => {
       if (e.pointerType !== "touch" && e.pointerType !== "pen") return;
       if (window._uniplusIsDragging) return;
+
+      const periodLabel = e.target.closest(".period-label");
+      if (periodLabel) {
+        e.preventDefault();
+        e.stopPropagation();
+        lastTouchUpAt = performance.now();
+        const periodNum = parseInt(periodLabel.textContent, 10);
+        if (Number.isFinite(periodNum)) {
+          eitController.openTeachModal("period", periodNum);
+        }
+        return;
+      }
+      const groupLabel = e.target.closest(".group-label");
+      if (groupLabel) {
+        e.preventDefault();
+        e.stopPropagation();
+        lastTouchUpAt = performance.now();
+        const gridColStr = groupLabel.style.gridColumn.split("/")[0].trim();
+        const gridCol = parseInt(gridColStr, 10);
+        const col = gridCol - 1;
+        if (Number.isFinite(col)) {
+          eitController.openTeachModal("group", col);
+        }
+        return;
+      }
+
       const cell = e.target.closest(".element:not(.range-block)");
       if (!cell || !tableContainer.contains(cell)) return;
       e.preventDefault();

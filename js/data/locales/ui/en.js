@@ -586,6 +586,14 @@ export const enUI = {
     "style": {
       "electrons": "Electron layout"
     },
+    "teach": {
+      "period": "Teach: Period",
+      "group": "Teach: Group",
+      "modalTitlePeriod": "Period {num} Main Group Elements",
+      "modalTitleGroup": "Group {num} Elements",
+      "periodBtn": "Period {num}",
+      "groupBtn": "Group {num}"
+    },
     "electronView": {
       "2d": "2D",
       "3d": "3D",

@@ -1,5 +1,7 @@
 import { getFinallyDataSync } from "../elementDetailLoader.js";
 import { t, onLangChange } from "../langController.js";
+import { getElectronArrangementByZ } from "../../utils/electronArrangement.js";
+import { hydrateCellBohrModels } from "../cellBohrRenderer.js";
 
 function defaultNormalizeCategoryClass(catClass) {
   const aliasMap = {
@@ -1120,6 +1122,8 @@ function ensureEITController(tableContainer) {
         <button type="button" class="eit-electron-view-btn" data-view="3d" aria-pressed="false">${t("eit.electronView.3d")}</button>
       </div>
       <button type="button" class="eit-reset-btn" id="eit-s3mode-btn" aria-pressed="false">S3 mode</button>
+      <button type="button" class="eit-reset-btn" id="eit-teach-period-btn" aria-pressed="false">${t("eit.teach.period")}</button>
+      <button type="button" class="eit-reset-btn" id="eit-teach-group-btn" aria-pressed="false">${t("eit.teach.group")}</button>
       <div class="eit-property-panel" id="eit-property-panel">
         <div class="eit-property-chips" id="eit-property-chips">
           ${chipsHTML}
@@ -1168,6 +1172,8 @@ function ensureEITController(tableContainer) {
     electronViewGroup: root.querySelector("#eit-electron-view-group"),
     electronViewButtons: Array.from(root.querySelectorAll(".eit-electron-view-btn")),
     s3ModeButton: root.querySelector("#eit-s3mode-btn"),
+    teachPeriodButton: root.querySelector("#eit-teach-period-btn"),
+    teachGroupButton: root.querySelector("#eit-teach-group-btn"),
     collapseBarButton: root.querySelector("#eit-bar-collapse-btn"),
     closeButton: root.querySelector("#eit-panel-close"),
     legend: root.querySelector("#eit-legend"),
@@ -1244,6 +1250,20 @@ function ensureEITController(tableContainer) {
       if (s3ModeActive) setEITPanelOpen(false);
     });
     root.dataset.s3ModeBound = "true";
+  }
+
+  if (root.dataset.bound === "true" && eitUI.teachPeriodButton && root.dataset.teachPeriodBound !== "true") {
+    eitUI.teachPeriodButton.addEventListener("click", () => {
+      openTeachModal("period", 3);
+    });
+    root.dataset.teachPeriodBound = "true";
+  }
+
+  if (root.dataset.bound === "true" && eitUI.teachGroupButton && root.dataset.teachGroupBound !== "true") {
+    eitUI.teachGroupButton.addEventListener("click", () => {
+      openTeachModal("group", 1);
+    });
+    root.dataset.teachGroupBound = "true";
   }
 
   // Populate hidden select (backwards compat)
@@ -1488,6 +1508,22 @@ function ensureEITController(tableContainer) {
       if (s3ModeActive) setEITPanelOpen(false);
     });
     root.dataset.s3ModeBound = "true";
+
+    // Teach Period toggle
+    if (eitUI.teachPeriodButton) {
+      bindTap(eitUI.teachPeriodButton, () => {
+        openTeachModal("period", 3);
+      });
+      root.dataset.teachPeriodBound = "true";
+    }
+
+    // Teach Group toggle
+    if (eitUI.teachGroupButton) {
+      bindTap(eitUI.teachGroupButton, () => {
+        openTeachModal("group", 1);
+      });
+      root.dataset.teachGroupBound = "true";
+    }
     // Close on outside click
     document.addEventListener("click", (event) => {
       if (!eitUI || !eitUI.root.contains(event.target)) {
@@ -1652,6 +1688,156 @@ function ensureEITController(tableContainer) {
     resetEITState();
     applyEIT(activeTableContainer);
     setEITPanelOpen(false);
+    const teachModal = document.getElementById("teach-modal");
+    if (teachModal) teachModal.classList.remove("active");
+  }
+
+  function getOrCreateTeachModal() {
+    let modal = document.getElementById("teach-modal");
+    if (!modal) {
+      modal = document.createElement("div");
+      modal.id = "teach-modal";
+      modal.className = "modal-overlay";
+      modal.innerHTML = `
+        <div class="modal-content teach-modal-content">
+          <div class="modal-top-buttons">
+            <button class="modal-close" id="teach-modal-close" aria-label="Close teaching view">&times;</button>
+          </div>
+          <div class="teach-modal-body">
+            <h2 class="teach-modal-title" id="teach-modal-title"></h2>
+            <div class="teach-modal-selectors" id="teach-modal-selectors"></div>
+            <div class="teach-modal-grid" id="teach-modal-grid"></div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      // Bind close events
+      const closeBtn = modal.querySelector("#teach-modal-close");
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+    }
+    return modal;
+  }
+
+  function openTeachModal(type, value) {
+    const modal = getOrCreateTeachModal();
+    const titleEl = modal.querySelector("#teach-modal-title");
+    const selectorsEl = modal.querySelector("#teach-modal-selectors");
+    const gridEl = modal.querySelector("#teach-modal-grid");
+
+    // Determine active view mode (2D or 3D) matching the table view mode
+    const viewMode = tableElectronViewMode || "2d";
+    const modalContent = modal.querySelector(".teach-modal-content");
+    modalContent.classList.remove("table-electron-view-2d", "table-electron-view-3d");
+    modalContent.classList.add(`table-electron-view-${viewMode}`);
+
+    const groupLabelByColumn = {
+      1: "I",
+      2: "II",
+      13: "III",
+      14: "IV",
+      15: "V",
+      16: "VI",
+      17: "VII",
+      18: "0",
+    };
+
+    // Set Title
+    if (type === "period") {
+      let tTitle = t("eit.teach.modalTitlePeriod") || "Period {num} Main Group Elements";
+      titleEl.textContent = tTitle.replace("{num}", value);
+    } else {
+      const groupLabel = groupLabelByColumn[value] || "";
+      let tTitle = t("eit.teach.modalTitleGroup") || "Group {num} Elements";
+      titleEl.textContent = tTitle.replace("{num}", groupLabel);
+    }
+
+    // Generate Switcher Buttons
+    selectorsEl.innerHTML = "";
+    if (type === "period") {
+      const maxPeriod = s3ModeActive ? 4 : 7;
+      for (let i = 1; i <= maxPeriod; i++) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `teach-modal-btn${i === value ? " active" : ""}`;
+        let btnLabel = t("eit.teach.periodBtn") || "Period {num}";
+        btn.textContent = btnLabel.replace("{num}", i);
+        btn.addEventListener("click", () => {
+          openTeachModal("period", i);
+        });
+        selectorsEl.appendChild(btn);
+      }
+    } else {
+      const columns = [1, 2, 13, 14, 15, 16, 17, 18];
+      columns.forEach((col) => {
+        const label = groupLabelByColumn[col];
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `teach-modal-btn${col === value ? " active" : ""}`;
+        let btnLabel = t("eit.teach.groupBtn") || "Group {num}";
+        btn.textContent = btnLabel.replace("{num}", label);
+        btn.addEventListener("click", () => {
+          openTeachModal("group", col);
+        });
+        selectorsEl.appendChild(btn);
+      });
+    }
+
+    // Filter and Render Cards
+    gridEl.innerHTML = "";
+    const columnsToMatch = [1, 2, 13, 14, 15, 16, 17, 18];
+    const localizeFn = options.localizeElementName || ((el) => el.name);
+
+    let filtered = eitRegistry.filter(entry => entry.element);
+    if (s3ModeActive) {
+      // Only elements 1-20
+      filtered = filtered.filter(entry => entry.number >= 1 && entry.number <= 20);
+    }
+
+    if (type === "period") {
+      filtered = filtered.filter(entry => entry.element.row === value && columnsToMatch.includes(entry.element.column));
+      filtered.sort((a, b) => a.element.column - b.element.column);
+      gridEl.className = "teach-modal-grid";
+      // Add grid layout hint for columns
+      if (filtered.length === 8) gridEl.classList.add("cols-8");
+      else if (filtered.length >= 4) gridEl.classList.add("cols-4");
+      else if (filtered.length >= 2) gridEl.classList.add("cols-2");
+    } else {
+      filtered = filtered.filter(entry => entry.element.column === value);
+      filtered.sort((a, b) => a.element.row - b.element.row);
+      gridEl.className = "teach-modal-grid";
+      if (filtered.length >= 4) gridEl.classList.add("cols-4");
+      else if (filtered.length >= 2) gridEl.classList.add("cols-2");
+    }
+
+    filtered.forEach(({ element }) => {
+      const arr = getElectronArrangementByZ(element.number) || [];
+      const shells = arr.filter((n) => typeof n === "number" && n >= 0);
+
+      const card = document.createElement("div");
+      card.className = "teach-element-card";
+      card.innerHTML = `
+        <div class="card-number">${element.number}</div>
+        <div class="card-symbol">${element.symbol}</div>
+        <div class="card-name">${localizeFn(element)}</div>
+        <span class="electron-bohr" data-shells="${shells.join(",")}"></span>
+        <div class="card-layout-text">${shells.join(", ")}</div>
+      `;
+      gridEl.appendChild(card);
+    });
+
+    // Open the modal
+    modal.classList.add("active");
+
+    // Hydrate Bohr models
+    hydrateCellBohrModels(gridEl);
   }
 
   function toggleElectronView() {
@@ -1683,5 +1869,6 @@ function ensureEITController(tableContainer) {
     setEitElectronView,
     toggleS3Mode,
     eitReset,
+    openTeachModal,
   };
 }

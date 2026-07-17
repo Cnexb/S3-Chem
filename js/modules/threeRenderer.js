@@ -266,11 +266,11 @@ function ensureSharedMaterials() {
       emissiveIntensity: 0.6,
     }),
     additionalNeutronMat: new THREE.MeshStandardMaterial({
-      color: 0xffdd00,
+      color: 0x888888,
       roughness: 0.15,
       metalness: 0.5,
-      emissive: 0xffaa00,
-      emissiveIntensity: 3.5,
+      emissive: 0x444444,
+      emissiveIntensity: 1.0,
     }),
     electronMat: new THREE.MeshStandardMaterial({
       color: ELECTRON_COLOR_2D,
@@ -1065,6 +1065,11 @@ export function animateAtom() {
       }
       trails[0].position.copy(el.position);
     }
+  }
+
+  if (sharedMaterials && sharedMaterials.additionalNeutronMat) {
+    const pulseIntensity = 0.5 + Math.abs(Math.sin(time * 4)) * 3.0;
+    sharedMaterials.additionalNeutronMat.emissiveIntensity = pulseIntensity;
   }
 
   renderer.render(scene, camera);

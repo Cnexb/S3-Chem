@@ -587,6 +587,14 @@ export const zhUI = {
     "style": {
       "electrons": "电子排布"
     },
+    "teach": {
+      "period": "教学：周期",
+      "group": "教学：族",
+      "modalTitlePeriod": "第 {num} 周期主族元素",
+      "modalTitleGroup": "第 {num} 族元素",
+      "periodBtn": "第 {num} 周期",
+      "groupBtn": "第 {num} 族"
+    },
     "electronView": {
       "2d": "2D",
       "3d": "3D",
