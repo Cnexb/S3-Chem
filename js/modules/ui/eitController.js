@@ -1829,14 +1829,13 @@ function ensureEITController(tableContainer) {
       const card = document.createElement("div");
       card.className = `teach-element-card element s3-in electron-arrangement-has-graph ${categoryClass || ""}`;
       card.innerHTML = `
-        <span class="number">${element.number}</span>
+        <span class="number">${element.number} (${element.symbol})</span>
         <span class="symbol">${element.symbol}</span>
         <span class="name">${localizeFn(element)}</span>
         <span class="electron-arrangement" aria-hidden="true">
           <span class="electron-arrangement-text">${arrangementText}</span>
           <span class="electron-bohr-wrap">
             <span class="electron-bohr" data-shells="${shells.join(",")}"></span>
-            <span class="electron-bohr-symbol">${element.symbol}</span>
           </span>
         </span>
       `;
