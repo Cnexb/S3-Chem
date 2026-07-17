@@ -116,11 +116,6 @@ async function ensureToolsReady() {
   return toolsBundlePromise;
 }
 
-window.openChemToolModal = async function(toolType) {
-  const ctrl = await ensureToolsReady();
-  ctrl.openToolModal(toolType);
-};
-
 let worksheetHubPromise = null;
 let worksheetHubApi = null;
 

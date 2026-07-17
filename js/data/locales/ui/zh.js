@@ -315,11 +315,7 @@ export const zhUI = {
     "sandboxName": "沙盒",
     "sandboxDesc": "模拟微观结构，比较共价物质性质。",
     "titrationName": "滴定",
-    "titrationDesc": "模拟酸碱滴定实验，练习读数、指示剂选择及当量点计算。",
-    "group1Name": "第一族元素",
-    "group1Desc": "对比第一族元素（氢及碱金属）的 3D 原子结构，探索其大小、电子排布与反应性规律。",
-    "groupsPeriodsName": "族与周期 3D 对比",
-    "groupsPeriodsDesc": "并排对比同族或同周期元素的 3D 原子结构，直观探索原子大小與电子排布规律。"
+    "titrationDesc": "模拟酸碱滴定实验，练习读数、指示剂选择及当量点计算。"
   },
   "worksheet": {
     "title": "练习单生成器",
@@ -588,7 +584,6 @@ export const zhUI = {
     "filter": "筛选",
     "reset": "重置",
     "first20": "首 20 元素",
-    "groupsPeriodsBtn": "族与周期 3D",
     "style": {
       "electrons": "电子排布"
     },

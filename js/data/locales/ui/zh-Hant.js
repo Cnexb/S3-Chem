@@ -314,11 +314,7 @@ export const zhHantUI = {
     "sandboxName": "沙盒",
     "sandboxDesc": "模擬微觀結構，比較共價物質性質。",
     "titrationName": "滴定",
-    "titrationDesc": "模擬酸鹼滴定實驗，練習讀數、指示劑選擇及當量點計算。",
-    "group1Name": "第一族元素",
-    "group1Desc": "對比第一族元素（氫及鹼金屬）的 3D 原子結構，探索其大小、電子排佈與反應性規律。",
-    "groupsPeriodsName": "族與週期 3D 對比",
-    "groupsPeriodsDesc": "並排對比同族或同週期元素的 3D 原子結構，直觀探索原子大小與電子排佈規律。"
+    "titrationDesc": "模擬酸鹼滴定實驗，練習讀數、指示劑選擇及當量點計算。"
   },
   "worksheet": {
     "title": "練習單生成器",
@@ -585,7 +581,6 @@ export const zhHantUI = {
     "filter": "篩選",
     "reset": "重設",
     "first20": "首 20 元素",
-    "groupsPeriodsBtn": "族與週期 3D",
     "style": {
       "electrons": "電子排布"
     },

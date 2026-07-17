@@ -19,14 +19,6 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/titration-lab/index.html",
     titleKey: "lab.titrationName",
   },
-  "group1-elements": {
-    path: "public/tools/group1-elements/index.html",
-    titleKey: "lab.group1Name",
-  },
-  "groups-periods": {
-    path: "public/tools/groups-periods/index.html",
-    titleKey: "lab.groupsPeriodsName",
-  },
 };
 
 export const LAB_TOOL_TYPES = new Set(Object.keys(INTERACTIVE_LAB_TOOLS));

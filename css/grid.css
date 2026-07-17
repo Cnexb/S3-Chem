@@ -169,10 +169,6 @@
   display: inline-flex !important;
 }
 
-#eit-controller.s3-mode #eit-groupsperiods-btn {
-  display: inline-flex !important;
-}
-
 /* Group/Period headers */
 .group-label,
 .period-label {
