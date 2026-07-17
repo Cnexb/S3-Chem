@@ -1809,14 +1809,11 @@ html[lang^="zh"] .element {
   border: 1px solid var(--border-color, rgba(17, 24, 39, 0.08));
   background-color: var(--element-bg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
+  display: block;
   position: relative;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 #teach-modal .teach-element-card.element:hover {
@@ -1832,8 +1829,9 @@ html[lang^="zh"] .element {
   left: 8px;
   font-size: 11px;
   font-weight: 700;
-  opacity: 0.45;
+  opacity: 0.55;
   color: inherit;
+  z-index: 5;
 }
 
 #teach-modal .teach-element-card .symbol {
@@ -1845,38 +1843,42 @@ html[lang^="zh"] .element {
 }
 
 #teach-modal .teach-element-card .electron-arrangement {
-  display: grid !important;
-  grid-template-rows: min-content 74px;
-  align-content: center;
-  justify-items: center;
-  gap: 0;
-  margin-top: 0;
-  max-width: 100%;
+  display: block !important;
+  position: static;
+  width: 100%;
+  height: 100%;
 }
 
 #teach-modal .teach-element-card .electron-arrangement-text {
   position: absolute;
   top: 8px;
-  left: 28px; /* shift right so it doesn't overlap atomic number */
-  font-size: 12px;
+  right: 8px;
+  font-size: 11px;
   line-height: 1;
   font-weight: 700;
-  opacity: 0.7;
+  opacity: 0.75;
+  z-index: 5;
+  color: inherit;
 }
 
 #teach-modal .teach-element-card .electron-bohr-wrap {
-  width: 74px;
-  height: 74px;
-  margin-top: 24px;
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 8px);
+  transform: translate(-50%, -50%) scale(1.6);
+  transform-origin: center center;
+  width: 44px;
+  height: 44px;
+  margin: 0 !important;
+  z-index: 3;
 }
 
 #teach-modal .teach-element-card .electron-bohr {
-  transform: scale(1.7);
-  transform-origin: center;
+  transform: none !important; /* Let parent scale handle it */
 }
 
 #teach-modal .teach-element-card .electron-bohr-symbol {
-  font-size: 16px;
+  font-size: 10px; /* scaled to 16px by wrapper's 1.6x scale */
   font-weight: 800;
 }
 
@@ -1899,12 +1901,8 @@ html[lang^="zh"] .element {
     height: 110px;
   }
   #teach-modal .teach-element-card .electron-bohr-wrap {
-    width: 60px;
-    height: 60px;
-    margin-top: 20px;
-  }
-  #teach-modal .teach-element-card .electron-bohr {
-    transform: scale(1.4);
+    transform: translate(-50%, -50%) scale(1.3);
+    top: calc(50% + 6px);
   }
   #teach-modal .teach-modal-content {
     padding: 16px;
