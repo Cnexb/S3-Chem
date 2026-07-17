@@ -1789,89 +1789,101 @@ html[lang^="zh"] .element {
 
 /* Specific grids layout depending on card counts */
 .teach-modal-grid.cols-8 {
-  grid-template-columns: repeat(8, 125px);
+  grid-template-columns: repeat(8, 120px);
 }
 
 .teach-modal-grid.cols-4 {
-  grid-template-columns: repeat(4, 150px);
+  grid-template-columns: repeat(4, 120px);
 }
 
 .teach-modal-grid.cols-2 {
-  grid-template-columns: repeat(2, 180px);
+  grid-template-columns: repeat(2, 120px);
 }
 
 /* Element card inside comparison grid */
-.teach-element-card {
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 16px;
-  padding: 16px 12px;
+#teach-modal .teach-element-card.element {
+  width: 120px;
+  height: 120px;
+  aspect-ratio: 1;
+  border-radius: 18px;
+  border: 1px solid var(--border-color, rgba(17, 24, 39, 0.08));
+  background-color: var(--element-bg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  aspect-ratio: 0.85;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  justify-content: center;
+  padding: 8px;
   position: relative;
-  user-select: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-sizing: border-box;
 }
 
-.teach-element-card:hover {
-  transform: translateY(-4px) scale(1.03);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-  border-color: rgba(0, 0, 0, 0.1);
+#teach-modal .teach-element-card.element:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
-.teach-element-card .card-number {
+/* Replicate S3 Mode styles for text inside teach-modal cards */
+#teach-modal .teach-element-card .number {
   position: absolute;
-  top: 10px;
-  left: 12px;
-  font-size: 0.82rem;
+  top: 8px;
+  left: 8px;
+  font-size: 11px;
   font-weight: 700;
-  color: #9ca3af;
+  opacity: 0.45;
+  color: inherit;
 }
 
-.teach-element-card .card-symbol {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-top: 10px;
-  color: #111827;
-  line-height: 1.1;
+#teach-modal .teach-element-card .symbol {
+  display: none !important;
 }
 
-.teach-element-card .card-name {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #4b5563;
-  margin-bottom: 6px;
+#teach-modal .teach-element-card .name {
+  display: none !important;
+}
+
+#teach-modal .teach-element-card .electron-arrangement {
+  display: grid !important;
+  grid-template-rows: min-content 74px;
+  align-content: center;
+  justify-items: center;
+  gap: 0;
+  margin-top: 0;
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.teach-element-card .card-layout-text {
-  font-size: 0.9rem;
+#teach-modal .teach-element-card .electron-arrangement-text {
+  position: absolute;
+  top: 8px;
+  left: 28px; /* shift right so it doesn't overlap atomic number */
+  font-size: 12px;
+  line-height: 1;
   font-weight: 700;
-  color: #111827;
-  margin-top: 6px;
-  background: rgba(0, 0, 0, 0.04);
-  padding: 2px 8px;
-  border-radius: 10px;
+  opacity: 0.7;
 }
 
-/* Make orbits fit perfectly inside teach card */
-.teach-element-card .electron-bohr-wrap {
-  margin: 6px 0;
+#teach-modal .teach-element-card .electron-bohr-wrap {
+  width: 74px;
+  height: 74px;
+  margin-top: 24px;
+}
+
+#teach-modal .teach-element-card .electron-bohr {
+  transform: scale(1.7);
+  transform-origin: center;
+}
+
+#teach-modal .teach-element-card .electron-bohr-symbol {
+  font-size: 16px;
+  font-weight: 800;
 }
 
 /* Responsiveness for mobile comparison screen */
 @media (max-width: 1200px) {
   .teach-modal-grid.cols-8 {
-    grid-template-columns: repeat(4, 125px);
+    grid-template-columns: repeat(4, 120px);
   }
 }
 
@@ -1880,7 +1892,19 @@ html[lang^="zh"] .element {
     grid-template-columns: repeat(2, 110px);
   }
   .teach-modal-grid.cols-4 {
-    grid-template-columns: repeat(2, 130px);
+    grid-template-columns: repeat(2, 110px);
+  }
+  #teach-modal .teach-element-card.element {
+    width: 110px;
+    height: 110px;
+  }
+  #teach-modal .teach-element-card .electron-bohr-wrap {
+    width: 60px;
+    height: 60px;
+    margin-top: 20px;
+  }
+  #teach-modal .teach-element-card .electron-bohr {
+    transform: scale(1.4);
   }
   #teach-modal .teach-modal-content {
     padding: 16px;

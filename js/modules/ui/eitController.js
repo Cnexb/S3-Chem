@@ -436,6 +436,7 @@ function registerEITElementCell(cell, element) {
   });
   eitRegistry.push({
     cell,
+    element,
     number: element.number,
     categoryLabel: element.category || "Unknown",
     categoryClass: catClass,
@@ -1833,18 +1834,25 @@ function ensureEITController(tableContainer) {
       else if (filtered.length >= 2) gridEl.classList.add("cols-2");
     }
 
-    filtered.forEach(({ element }) => {
+    filtered.forEach((entry) => {
+      const { element, categoryClass } = entry;
       const arr = getElectronArrangementByZ(element.number) || [];
       const shells = arr.filter((n) => typeof n === "number" && n >= 0);
+      const arrangementText = shells.join(", ");
 
       const card = document.createElement("div");
-      card.className = "teach-element-card";
+      card.className = `teach-element-card element s3-in electron-arrangement-has-graph ${categoryClass || ""}`;
       card.innerHTML = `
-        <div class="card-number">${element.number}</div>
-        <div class="card-symbol">${element.symbol}</div>
-        <div class="card-name">${localizeFn(element)}</div>
-        <span class="electron-bohr" data-shells="${shells.join(",")}"></span>
-        <div class="card-layout-text">${shells.join(", ")}</div>
+        <span class="number">${element.number}</span>
+        <span class="symbol">${element.symbol}</span>
+        <span class="name">${localizeFn(element)}</span>
+        <span class="electron-arrangement" aria-hidden="true">
+          <span class="electron-arrangement-text">${arrangementText}</span>
+          <span class="electron-bohr-wrap">
+            <span class="electron-bohr" data-shells="${shells.join(",")}"></span>
+            <span class="electron-bohr-symbol">${element.symbol}</span>
+          </span>
+        </span>
       `;
       gridEl.appendChild(card);
     });
