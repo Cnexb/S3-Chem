@@ -1572,11 +1572,11 @@ function ensureEITController(tableContainer) {
   applyFirst20Overlay(tableContainer);
   // Apply persisted table style
   try {
-    tableElectronStyleActive =
-      localStorage.getItem(TABLE_STYLE_STORAGE_KEY) === TABLE_STYLE_ELECTRONS_VALUE;
+    localStorage.removeItem(TABLE_STYLE_STORAGE_KEY);
   } catch (e) {
-    tableElectronStyleActive = false;
+    // ignore
   }
+  tableElectronStyleActive = false;
   eitUI?.styleToggleButton?.setAttribute("aria-pressed", tableElectronStyleActive ? "true" : "false");
   try {
     const storedView = localStorage.getItem(ELECTRON_VIEW_STORAGE_KEY);
