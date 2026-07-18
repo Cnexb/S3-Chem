@@ -204,6 +204,19 @@
   }
 }
 
+/* Topic 5 images: always show in full width/height scale without height constraints */
+#summary-panel-topic-5 .summary-infographic-media {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+#summary-panel-topic-5 .summary-infographic-img {
+  max-height: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
 .summary-lang {
   display: none;
 }
@@ -785,7 +798,8 @@ button.summary-topic-card {
 
 #summary-panel-topic-2.summary-panel,
 #summary-panel-topic-3.summary-panel,
-#summary-panel-topic-4.summary-panel {
+#summary-panel-topic-4.summary-panel,
+#summary-panel-topic-5.summary-panel {
   display: none !important;
   flex-direction: column;
   position: absolute;
@@ -801,7 +815,8 @@ button.summary-topic-card {
 
 .summary-shell--detail #summary-panel-topic-2.summary-panel:not([hidden]),
 .summary-shell--detail #summary-panel-topic-3.summary-panel:not([hidden]),
-.summary-shell--detail #summary-panel-topic-4.summary-panel:not([hidden]) {
+.summary-shell--detail #summary-panel-topic-4.summary-panel:not([hidden]),
+.summary-shell--detail #summary-panel-topic-5.summary-panel:not([hidden]) {
   display: flex !important;
 }
 
