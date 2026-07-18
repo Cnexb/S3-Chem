@@ -1863,7 +1863,7 @@ html[lang^="zh"] .element {
 #teach-modal .teach-element-card .electron-bohr-wrap {
   position: absolute;
   left: 50%;
-  top: calc(50% + 12px);
+  top: calc(50% - 6px); /* 向上微移 18px，為底部電子排布數字騰出完美的空間，徹底解決重疊問題 */
   transform: translate(-50%, -50%); /* 已經使用 130px 原生大小，無須在桌面端縮放 */
   transform-origin: center center;
   width: 130px;
@@ -1919,7 +1919,7 @@ html[lang^="zh"] .element {
   }
   #teach-modal .teach-element-card .electron-bohr-wrap {
     transform: translate(-50%, -50%) scale(0.84);
-    top: calc(50% + 10px);
+    top: calc(50% - 5px); /* 向上微移，確保在 160px 平板版面中，底部的電子排布數字依然乾淨不重疊 */
   }
 }
 
@@ -1940,7 +1940,7 @@ html[lang^="zh"] .element {
   }
   #teach-modal .teach-element-card .electron-bohr-wrap {
     transform: translate(-50%, -50%) scale(0.73);
-    top: calc(50% + 9px);
+    top: calc(50% - 4px); /* 向上微移，確保在 140px 手機版面中，電子圖案與底部文字保持完美的安全距離 */
   }
   #teach-modal .teach-modal-content {
     padding: 16px;

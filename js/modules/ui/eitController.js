@@ -1812,6 +1812,12 @@ function ensureEITController(tableContainer) {
         if (type === "group" && value === 1 && entry.number === 1) {
           return false;
         }
+        // 排除鑭系（Lanthanides）與錒系（Actinides）f 區元素。
+        // 它們在資料庫中雖然被賦予了 column 3-17 以利橫向佈局，但並不屬於 Group III 到 Group VII 的主族（代位元元素）
+        const z = entry.number;
+        if ((z >= 57 && z <= 71) || (z >= 89 && z <= 103)) {
+          return false;
+        }
         return entry.element.column === value;
       });
       filtered.sort((a, b) => a.element.row - b.element.row);
