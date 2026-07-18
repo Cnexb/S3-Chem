@@ -1832,6 +1832,10 @@ function ensureEITController(tableContainer) {
       const shells = arr.filter((n) => typeof n === "number" && n >= 0);
       const arrangementText = shells.join(", ");
 
+      // 當為 Group 0 / Noble Gas（也就是第 18 欄的惰性氣體）時，在電子模型加上 no-outer-color，讓其最外層不著紅色，保持普通顏色
+      const isNobleGas = element.column === 18;
+      const bClass = isNobleGas ? "electron-bohr no-outer-color" : "electron-bohr";
+
       const card = document.createElement("div");
       card.className = `teach-element-card element s3-in electron-arrangement-has-graph ${categoryClass || ""}`;
       card.innerHTML = `
@@ -1841,7 +1845,7 @@ function ensureEITController(tableContainer) {
         <span class="electron-arrangement" aria-hidden="true">
           <span class="electron-arrangement-text">${arrangementText}</span>
           <span class="electron-bohr-wrap">
-            <span class="electron-bohr" data-shells="${shells.join(",")}"></span>
+            <span class="${bClass}" data-shells="${shells.join(",")}"></span>
           </span>
         </span>
       `;

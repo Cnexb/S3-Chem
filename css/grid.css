@@ -1886,10 +1886,24 @@ html[lang^="zh"] .element {
   opacity: 1;
 }
 
+/* 惰性氣體 (noble-gas) 專屬：如果是 no-outer-color 則最外層重置為與其他電子相同，不變紅色 */
+.element .electron-bohr.no-outer-color .electron-bohr-orbit.outermost-shell .electron-bohr-dot,
+.teach-element-card .electron-bohr.no-outer-color .electron-bohr-orbit.outermost-shell .electron-bohr-dot {
+  background-color: currentColor;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22);
+  opacity: 0.82;
+}
+
 .element .electron-bohr-orbit.outermost-shell .electron-bohr-ring,
 .teach-element-card .electron-bohr-orbit.outermost-shell .electron-bohr-ring {
   border: 1px dashed #ef4444; /* 虛線軌道，更清晰標示最外層 */
   opacity: 0.55;
+}
+
+.element .electron-bohr.no-outer-color .electron-bohr-orbit.outermost-shell .electron-bohr-ring,
+.teach-element-card .electron-bohr.no-outer-color .electron-bohr-orbit.outermost-shell .electron-bohr-ring {
+  border: 1px solid currentColor;
+  opacity: 0.28;
 }
 
 #teach-modal .teach-element-card .electron-bohr {

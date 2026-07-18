@@ -96,7 +96,7 @@ export function renderCellBohr(container, shells, options = {}) {
   nucleus.setAttribute("aria-hidden", "true");
   container.appendChild(nucleus);
 
-  shells.forEach((count, idx) => {
+    shells.forEach((count, idx) => {
     const r = radii[idx] ?? minRadius;
     const tilt = getShellOrbitTiltDeg(idx);
     const durationSec = 4 + idx * 1.4;
@@ -104,7 +104,8 @@ export function renderCellBohr(container, shells, options = {}) {
 
     const orbit = document.createElement("span");
     orbit.className = "electron-bohr-orbit";
-    if (idx === shells.length - 1) {
+    // 只有當不帶 no-outer-color 屬性時，才為最外層加上 outermost-shell 樣式進行高亮顏色區分
+    if (idx === shells.length - 1 && !container.classList.contains("no-outer-color")) {
       orbit.classList.add("outermost-shell");
     }
     orbit.dataset.shell = String(idx);
@@ -137,7 +138,12 @@ export function hydrateCellBohrModels(root) {
 
     const inTeachCard = node.closest(".teach-element-card");
     if (inTeachCard) {
-      renderCellBohr(node, shells, { sizePx: 130, maxRadius: 60, minRadius: 14 });
+      // 傳遞一個自定義的 classList 給渲染器
+      const noOuterColor = node.classList.contains("no-outer-color");
+      const tempElement = renderCellBohr(node, shells, { sizePx: 130, maxRadius: 60, minRadius: 14 });
+      if (noOuterColor) {
+        node.classList.add("no-outer-color");
+      }
     } else {
       renderCellBohr(node, shells);
     }
