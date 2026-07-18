@@ -1117,12 +1117,6 @@ function ensureEITController(tableContainer) {
       <button type="button" class="eit-reset-btn eit-collapse-btn" id="eit-bar-collapse-btn" aria-pressed="false" aria-label="Collapse controls">▾</button>
       <button type="button" class="eit-reset-btn" id="eit-reset-btn">${t("eit.reset")}</button>
       <button type="button" class="eit-reset-btn" id="eit-first20-btn" aria-pressed="false">${t("eit.first20")}</button>
-      <button type="button" class="eit-reset-btn" id="eit-style-toggle-btn" aria-pressed="false">${t("eit.style.electrons")}</button>
-      <div class="eit-electron-view-group" id="eit-electron-view-group" role="group" aria-label="${t("eit.electronView.aria")}" hidden>
-        <button type="button" class="eit-electron-view-btn active" data-view="2d" aria-pressed="true">${t("eit.electronView.2d")}</button>
-        <button type="button" class="eit-electron-view-btn" data-view="3d" aria-pressed="false">${t("eit.electronView.3d")}</button>
-      </div>
-      <button type="button" class="eit-reset-btn" id="eit-s3mode-btn" aria-pressed="false">S3 mode</button>
       <button type="button" class="eit-reset-btn" id="eit-teach-period-btn" aria-pressed="false">${t("eit.teach.period")}</button>
       <button type="button" class="eit-reset-btn" id="eit-teach-group-btn" aria-pressed="false">${t("eit.teach.group")}</button>
       <div class="eit-property-panel" id="eit-property-panel">
