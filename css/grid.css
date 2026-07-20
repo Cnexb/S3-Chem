@@ -1826,21 +1826,21 @@ html[lang^="zh"] .element {
 
 /* Specific grids layout depending on card counts */
 .teach-modal-grid.cols-8 {
-  grid-template-columns: repeat(8, 190px);
+  grid-template-columns: repeat(8, 250px);
 }
 
 .teach-modal-grid.cols-4 {
-  grid-template-columns: repeat(4, 190px);
+  grid-template-columns: repeat(4, 250px);
 }
 
 .teach-modal-grid.cols-2 {
-  grid-template-columns: repeat(2, 190px);
+  grid-template-columns: repeat(2, 250px);
 }
 
 /* Element card inside comparison grid */
 #teach-modal .teach-element-card.element {
-  width: 190px;
-  height: 190px;
+  width: 250px;
+  height: 250px;
   aspect-ratio: 1;
   border-radius: 22px;
   border: 1px solid var(--border-color, rgba(17, 24, 39, 0.08));
@@ -1904,11 +1904,11 @@ html[lang^="zh"] .element {
 #teach-modal .teach-element-card .electron-bohr-wrap {
   position: absolute;
   left: 50%;
-  top: calc(50% - 6px); /* 向上微移 18px，為底部電子排布數字騰出完美的空間，徹底解決重疊問題 */
-  transform: translate(-50%, -50%); /* 已經使用 130px 原生大小，無須在桌面端縮放 */
+  top: calc(50% - 14px); /* 向上微移，為底部電子排布數字騰出空間，徹底解決重疊問題 */
+  transform: translate(-50%, -50%);
   transform-origin: center center;
-  width: 130px;
-  height: 130px;
+  width: 154px;
+  height: 154px;
   margin: 0 !important;
   z-index: 3;
 }
@@ -1959,43 +1959,43 @@ html[lang^="zh"] .element {
 /* Responsiveness for mobile comparison screen */
 @media (max-width: 1200px) {
   .teach-modal-grid.cols-8 {
-    grid-template-columns: repeat(4, 160px);
+    grid-template-columns: repeat(4, 180px);
   }
   .teach-modal-grid.cols-4 {
-    grid-template-columns: repeat(4, 160px);
+    grid-template-columns: repeat(4, 180px);
   }
   .teach-modal-grid.cols-2 {
-    grid-template-columns: repeat(2, 160px);
+    grid-template-columns: repeat(2, 180px);
   }
   #teach-modal .teach-element-card.element {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     border-radius: 18px;
   }
   #teach-modal .teach-element-card .electron-bohr-wrap {
-    transform: translate(-50%, -50%) scale(0.84);
-    top: calc(50% - 5px); /* 向上微移，確保在 160px 平板版面中，底部的電子排布數字依然乾淨不重疊 */
+    transform: translate(-50%, -50%) scale(0.85);
+    top: calc(50% - 5px); /* 向上微移，確保在 180px 平板版面中，底部的電子排布數字依然乾淨不重疊 */
   }
 }
 
 @media (max-width: 768px) {
   .teach-modal-grid.cols-8 {
-    grid-template-columns: repeat(2, 140px);
+    grid-template-columns: repeat(2, 150px);
   }
   .teach-modal-grid.cols-4 {
-    grid-template-columns: repeat(2, 140px);
+    grid-template-columns: repeat(2, 150px);
   }
   .teach-modal-grid.cols-2 {
-    grid-template-columns: repeat(2, 140px);
+    grid-template-columns: repeat(2, 150px);
   }
   #teach-modal .teach-element-card.element {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 16px;
   }
   #teach-modal .teach-element-card .electron-bohr-wrap {
-    transform: translate(-50%, -50%) scale(0.73);
-    top: calc(50% - 4px); /* 向上微移，確保在 140px 手機版面中，電子圖案與底部文字保持完美的安全距離 */
+    transform: translate(-50%, -50%) scale(0.72);
+    top: calc(50% - 4px); /* 向上微移，確保在 150px 手機版面中，電子圖案與底部文字保持完美的安全距離 */
   }
   #teach-modal .teach-element-card .number {
     font-size: 12px;
@@ -2012,4 +2012,31 @@ html[lang^="zh"] .element {
   .teach-modal-title {
     font-size: 1.3rem;
   }
+}
+
+/* Fullscreen Mode for Teach Modal */
+#teach-modal.teach-modal-fullscreen-active,
+#teach-modal:fullscreen {
+  background-color: #0a0f1d !important; /* Dark theme background for fullscreen teaching view */
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+}
+
+#teach-modal.teach-modal-fullscreen-active .teach-modal-content,
+#teach-modal:fullscreen .teach-modal-content {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 30px;
+}
+
+#teach-modal.teach-modal-fullscreen-active .teach-modal-grid,
+#teach-modal:fullscreen .teach-modal-grid {
+  padding: 30px;
+  gap: 30px;
 }

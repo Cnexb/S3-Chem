@@ -152,28 +152,28 @@ export function hydrateCellBohrModels(root) {
         maxRadius = 32;
         minRadius = 12;
       } else if (shellCount === 2) {
-        sizePx = 96;
-        maxRadius = 42;
+        sizePx = 94;
+        maxRadius = 41;
         minRadius = 13;
       } else if (shellCount === 3) {
-        sizePx = 114;
-        maxRadius = 51;
+        sizePx = 110;
+        maxRadius = 50;
         minRadius = 14;
       } else if (shellCount === 4) {
-        sizePx = 130;
-        maxRadius = 60;
+        sizePx = 124;
+        maxRadius = 57;
         minRadius = 14;
       } else if (shellCount === 5) {
+        sizePx = 134;
+        maxRadius = 62;
+        minRadius = 14;
+      } else if (shellCount === 6) {
         sizePx = 144;
         maxRadius = 67;
         minRadius = 14;
-      } else if (shellCount === 6) {
-        sizePx = 156;
-        maxRadius = 73;
-        minRadius = 14;
       } else if (shellCount === 7) {
-        sizePx = 166;
-        maxRadius = 78;
+        sizePx = 154;
+        maxRadius = 72;
         minRadius = 14;
       }
 

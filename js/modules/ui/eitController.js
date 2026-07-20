@@ -1671,6 +1671,14 @@ function ensureEITController(tableContainer) {
       modal.innerHTML = `
         <div class="modal-content teach-modal-content">
           <div class="modal-top-buttons">
+            <button type="button" id="teach-modal-fullscreen" class="modal-fullscreen-btn" aria-label="Toggle Fullscreen">
+              <svg class="modal-fullscreen-icon modal-fullscreen-icon--enter" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path fill="currentColor" d="M5 5h5V3H3v7h2V5zm14 0v5h2V3h-7v2h5zM5 19v-5H3v7h7v-2H5zm14 0h-5v2h7v-7h-2v5z"/>
+              </svg>
+              <svg class="modal-fullscreen-icon modal-fullscreen-icon--exit" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" style="display: none;">
+                <path fill="currentColor" d="M14 19h2v-7h7v-2h-9v9zM5 19v-5H3v7h7v-2H5zm14-14h-5V3h7v7h-2V5zM10 5H5v5H3V3h7v2z"/>
+              </svg>
+            </button>
             <button class="modal-close" id="teach-modal-close" aria-label="Close teaching view">&times;</button>
           </div>
           <div class="teach-modal-body">
@@ -1687,14 +1695,92 @@ function ensureEITController(tableContainer) {
 
       // Bind close events
       const closeBtn = modal.querySelector("#teach-modal-close");
+      const fullscreenBtn = modal.querySelector("#teach-modal-fullscreen");
+
+      // Bind fullscreenchange listener to sync state if exited via Esc key
+      const handleFullscreenChange = () => {
+        const isCurrentlyFullscreen = document.fullscreenElement === modal || document.webkitFullscreenElement === modal;
+        if (!isCurrentlyFullscreen && modal.classList.contains("teach-modal-fullscreen-active")) {
+          modal.classList.remove("teach-modal-fullscreen-active");
+          if (fullscreenBtn) {
+            fullscreenBtn.setAttribute("aria-pressed", "false");
+            const enterIcon = fullscreenBtn.querySelector(".modal-fullscreen-icon--enter");
+            const exitIcon = fullscreenBtn.querySelector(".modal-fullscreen-icon--exit");
+            if (enterIcon && exitIcon) {
+              enterIcon.style.display = "block";
+              exitIcon.style.display = "none";
+            }
+          }
+          window.dispatchEvent(new Event("resize"));
+        }
+      };
+      document.addEventListener("fullscreenchange", handleFullscreenChange);
+      document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+
+      const resetFullscreen = () => {
+        modal.classList.remove("teach-modal-fullscreen-active");
+        if (fullscreenBtn) {
+          fullscreenBtn.setAttribute("aria-pressed", "false");
+          const enterIcon = fullscreenBtn.querySelector(".modal-fullscreen-icon--enter");
+          const exitIcon = fullscreenBtn.querySelector(".modal-fullscreen-icon--exit");
+          if (enterIcon && exitIcon) {
+            enterIcon.style.display = "block";
+            exitIcon.style.display = "none";
+          }
+        }
+        if (document.fullscreenElement === modal || document.webkitFullscreenElement === modal) {
+          if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
+          else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        }
+      };
+
       closeBtn.addEventListener("click", () => {
         modal.classList.remove("active");
+        resetFullscreen();
       });
       modal.addEventListener("click", (e) => {
         if (e.target === modal) {
           modal.classList.remove("active");
+          resetFullscreen();
         }
       });
+
+      if (fullscreenBtn) {
+        fullscreenBtn.addEventListener("click", () => {
+          const isFullscreen = modal.classList.toggle("teach-modal-fullscreen-active");
+          fullscreenBtn.setAttribute("aria-pressed", isFullscreen ? "true" : "false");
+          
+          const enterIcon = fullscreenBtn.querySelector(".modal-fullscreen-icon--enter");
+          const exitIcon = fullscreenBtn.querySelector(".modal-fullscreen-icon--exit");
+          
+          if (enterIcon && exitIcon) {
+            if (isFullscreen) {
+              enterIcon.style.display = "none";
+              exitIcon.style.display = "block";
+              
+              // HTML5 Fullscreen enter
+              if (modal.requestFullscreen) {
+                modal.requestFullscreen().catch(() => {});
+              } else if (modal.webkitRequestFullscreen) {
+                modal.webkitRequestFullscreen();
+              }
+            } else {
+              enterIcon.style.display = "block";
+              exitIcon.style.display = "none";
+              
+              // HTML5 Fullscreen exit
+              if (document.exitFullscreen) {
+                document.exitFullscreen().catch(() => {});
+              } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+              }
+            }
+          }
+          
+          // Trigger a resize event to let any canvas or 3D models adapt
+          window.dispatchEvent(new Event("resize"));
+        });
+      }
     }
     return modal;
   }
