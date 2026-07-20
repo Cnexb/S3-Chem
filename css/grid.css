@@ -2017,7 +2017,7 @@ html[lang^="zh"] .element {
 /* Fullscreen Mode for Teach Modal */
 #teach-modal.teach-modal-fullscreen-active,
 #teach-modal:fullscreen {
-  background-color: #0a0f1d !important; /* Dark theme background for fullscreen teaching view */
+  background: transparent !important;
   width: 100vw !important;
   height: 100vh !important;
   max-width: 100vw !important;
@@ -2033,10 +2033,57 @@ html[lang^="zh"] .element {
   border-radius: 0 !important;
   border: none !important;
   padding: 30px;
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: none !important;
 }
 
 #teach-modal.teach-modal-fullscreen-active .teach-modal-grid,
 #teach-modal:fullscreen .teach-modal-grid {
-  padding: 30px;
-  gap: 30px;
+  padding: 35px;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 280px)) !important;
+  justify-content: center;
+}
+
+#teach-modal.teach-modal-fullscreen-active .teach-modal-grid.cols-8,
+#teach-modal:fullscreen .teach-modal-grid.cols-8 {
+  grid-template-columns: repeat(8, 280px) !important;
+}
+
+#teach-modal.teach-modal-fullscreen-active .teach-modal-grid.cols-4,
+#teach-modal:fullscreen .teach-modal-grid.cols-4 {
+  grid-template-columns: repeat(4, 280px) !important;
+}
+
+#teach-modal.teach-modal-fullscreen-active .teach-modal-grid.cols-2,
+#teach-modal:fullscreen .teach-modal-grid.cols-2 {
+  grid-template-columns: repeat(2, 280px) !important;
+}
+
+#teach-modal.teach-modal-fullscreen-active .teach-element-card.element,
+#teach-modal:fullscreen .teach-element-card.element {
+  width: 280px !important;
+  height: 280px !important;
+  border-radius: 28px !important;
+}
+
+#teach-modal.teach-modal-fullscreen-active .teach-element-card .electron-bohr-wrap,
+#teach-modal:fullscreen .teach-element-card .electron-bohr-wrap {
+  transform: translate(-50%, -50%) scale(1.22) !important;
+  top: calc(50% - 6px) !important;
+}
+
+#teach-modal.teach-modal-fullscreen-active .teach-element-card .number,
+#teach-modal:fullscreen .teach-element-card .number {
+  font-size: 16px !important;
+  top: 14px !important;
+  left: 16px !important;
+}
+
+#teach-modal.teach-modal-fullscreen-active .teach-element-card .electron-arrangement-text,
+#teach-modal:fullscreen .teach-element-card .electron-arrangement-text {
+  font-size: 16px !important;
+  bottom: 16px !important;
 }
