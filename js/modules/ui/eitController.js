@@ -1674,9 +1674,11 @@ function ensureEITController(tableContainer) {
             <button class="modal-close" id="teach-modal-close" aria-label="Close teaching view">&times;</button>
           </div>
           <div class="teach-modal-body">
-            <h2 class="teach-modal-title" id="teach-modal-title"></h2>
+            <div class="teach-modal-header">
+              <h2 class="teach-modal-title" id="teach-modal-title"></h2>
+              <div class="teach-modal-view-toggle" id="teach-modal-view-toggle"></div>
+            </div>
             <div class="teach-modal-selectors" id="teach-modal-selectors"></div>
-            <div class="teach-modal-view-toggle" id="teach-modal-view-toggle"></div>
             <div class="teach-modal-grid" id="teach-modal-grid"></div>
           </div>
         </div>

@@ -140,7 +140,50 @@ export function hydrateCellBohrModels(root) {
     if (inTeachCard) {
       // 傳遞一個自定義的 classList 給渲染器
       const noOuterColor = node.classList.contains("no-outer-color");
-      const tempElement = renderCellBohr(node, shells, { sizePx: 130, maxRadius: 60, minRadius: 14 });
+      
+      // Calculate dynamic sizes based on shells.length to show increasing atomic size
+      const shellCount = shells.length;
+      let sizePx = 130;
+      let maxRadius = 60;
+      let minRadius = 14;
+      
+      if (shellCount === 1) {
+        sizePx = 76;
+        maxRadius = 32;
+        minRadius = 12;
+      } else if (shellCount === 2) {
+        sizePx = 96;
+        maxRadius = 42;
+        minRadius = 13;
+      } else if (shellCount === 3) {
+        sizePx = 114;
+        maxRadius = 51;
+        minRadius = 14;
+      } else if (shellCount === 4) {
+        sizePx = 130;
+        maxRadius = 60;
+        minRadius = 14;
+      } else if (shellCount === 5) {
+        sizePx = 144;
+        maxRadius = 67;
+        minRadius = 14;
+      } else if (shellCount === 6) {
+        sizePx = 156;
+        maxRadius = 73;
+        minRadius = 14;
+      } else if (shellCount === 7) {
+        sizePx = 166;
+        maxRadius = 78;
+        minRadius = 14;
+      }
+
+      const wrap = node.closest(".electron-bohr-wrap");
+      if (wrap) {
+        wrap.style.width = `${sizePx}px`;
+        wrap.style.height = `${sizePx}px`;
+      }
+
+      const tempElement = renderCellBohr(node, shells, { sizePx, maxRadius, minRadius });
       if (noOuterColor) {
         node.classList.add("no-outer-color");
       }

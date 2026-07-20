@@ -1725,10 +1725,19 @@ html[lang^="zh"] .element {
   overflow: hidden;
 }
 
+.teach-modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
 .teach-modal-title {
   font-size: 1.8rem;
   font-weight: 800;
-  margin: 0 0 15px 0;
+  margin: 0;
   text-align: center;
   letter-spacing: -0.02em;
   color: #111827;
@@ -1773,7 +1782,7 @@ html[lang^="zh"] .element {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .teach-view-btn {
