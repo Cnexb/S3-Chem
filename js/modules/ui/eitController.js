@@ -107,7 +107,7 @@ let eitState = {
   numericRanges: new Map(),
   unitIndex: new Map(),   // tracks which unit is active per property key
 };
-let first20OverlayActive = false;
+let first20OverlayActive = false; // Deprecated, use s3ModeActive instead
 let tableElectronStyleActive = false;
 let tableElectronViewMode = "2d";
 let s3ModeActive = false;
@@ -285,34 +285,15 @@ function applyS3Mode(tableContainer) {
   if (!active && typeof window !== "undefined" && typeof window._scalePeriodicTable === "function") {
     requestAnimationFrame(() => window._scalePeriodicTable(true));
   }
+
+  if (eitUI) {
+    eitUI.first20Button?.setAttribute("aria-pressed", active ? "true" : "false");
+    eitUI.s3ModeButton?.setAttribute("aria-pressed", active ? "true" : "false");
+  }
 }
 
 function applyFirst20Overlay(tableContainer) {
-  if (!tableContainer) return;
-  const root = document.getElementById("eit-controller");
-  const active = first20OverlayActive === true;
-  root?.classList.toggle("eit-first20-active", active);
-  tableContainer.classList.toggle("eit-first20-active", active);
-
-  // Range-block placeholders (La-Lu / Ac-Lr) are not real Z elements — always dim them when overlay is active.
-  const rangeBlocks = tableContainer.querySelectorAll(".element.range-block");
-  rangeBlocks.forEach((cell) => {
-    cell.classList.toggle("eit-first20-in", false);
-    cell.classList.toggle("eit-first20-out", active);
-    if (!active) cell.classList.remove("eit-first20-out");
-  });
-
-  for (let i = 0; i < eitRegistry.length; i++) {
-    const entry = eitRegistry[i];
-    const cell = entry?.cell;
-    if (!cell) continue;
-    const isIn = typeof entry.number === "number" && entry.number >= 1 && entry.number <= 20;
-    cell.classList.toggle("eit-first20-in", active && isIn);
-    cell.classList.toggle("eit-first20-out", active && !isIn);
-    if (!active) {
-      cell.classList.remove("eit-first20-in", "eit-first20-out");
-    }
-  }
+  applyS3Mode(tableContainer);
 }
 
 /** Get the active unit config for a property (with conversion function) */
@@ -1048,8 +1029,8 @@ function applyEIT(tableContainer) {
     applyNumericEIT(config);
   }
 
-  if (first20OverlayActive) {
-    applyFirst20Overlay(tableContainer);
+  if (s3ModeActive) {
+    applyS3Mode(tableContainer);
   }
 }
 
@@ -1204,9 +1185,9 @@ function ensureEITController(tableContainer) {
   // ensure new buttons still get listeners without duplicating the whole binding block.
   if (root.dataset.bound === "true" && eitUI.first20Button && root.dataset.first20Bound !== "true") {
     eitUI.first20Button.addEventListener("click", () => {
-      first20OverlayActive = !first20OverlayActive;
-      eitUI.first20Button?.setAttribute("aria-pressed", first20OverlayActive ? "true" : "false");
-      applyFirst20Overlay(tableContainer);
+      s3ModeActive = !s3ModeActive;
+      eitUI.first20Button?.setAttribute("aria-pressed", s3ModeActive ? "true" : "false");
+      applyS3Mode(tableContainer);
     });
     root.dataset.first20Bound = "true";
   }
@@ -1413,8 +1394,6 @@ function ensureEITController(tableContainer) {
     });
     // Reset
     bindTap(eitUI.resetButton, () => {
-      first20OverlayActive = false;
-      applyFirst20Overlay(tableContainer);
       // Reset electron layout style as part of a true "reset"
       tableElectronStyleActive = false;
       try {
@@ -1425,6 +1404,7 @@ function ensureEITController(tableContainer) {
       eitUI.styleToggleButton?.setAttribute("aria-pressed", "false");
       applyTableStyleClass(tableContainer);
       s3ModeActive = false;
+      eitUI.first20Button?.setAttribute("aria-pressed", "false");
       eitUI.s3ModeButton?.setAttribute("aria-pressed", "false");
       applyS3Mode(tableContainer);
       resetEITState();
@@ -1464,9 +1444,9 @@ function ensureEITController(tableContainer) {
 
     // First 20 toggle
     bindTap(eitUI.first20Button, () => {
-      first20OverlayActive = !first20OverlayActive;
-      eitUI.first20Button?.setAttribute("aria-pressed", first20OverlayActive ? "true" : "false");
-      applyFirst20Overlay(tableContainer);
+      s3ModeActive = !s3ModeActive;
+      eitUI.first20Button?.setAttribute("aria-pressed", s3ModeActive ? "true" : "false");
+      applyS3Mode(tableContainer);
     });
     root.dataset.first20Bound = "true";
 
@@ -1569,7 +1549,6 @@ function ensureEITController(tableContainer) {
   }
 
   applyEIT(tableContainer);
-  applyFirst20Overlay(tableContainer);
   // Apply persisted table style
   try {
     localStorage.removeItem(TABLE_STYLE_STORAGE_KEY);
@@ -1601,7 +1580,7 @@ function ensureEITController(tableContainer) {
     return {
       property: eitState.property,
       mode: eitState.mode,
-      first20: first20OverlayActive,
+      first20: s3ModeActive,
       electronLayout: tableElectronStyleActive,
       electronView: tableElectronViewMode,
       s3: s3ModeActive,
@@ -1634,9 +1613,9 @@ function ensureEITController(tableContainer) {
 
   function toggleFirst20() {
     if (!activeTableContainer || !eitUI) return;
-    first20OverlayActive = !first20OverlayActive;
-    eitUI.first20Button?.setAttribute("aria-pressed", first20OverlayActive ? "true" : "false");
-    applyFirst20Overlay(activeTableContainer);
+    s3ModeActive = !s3ModeActive;
+    eitUI.first20Button?.setAttribute("aria-pressed", s3ModeActive ? "true" : "false");
+    applyS3Mode(activeTableContainer);
   }
 
   function toggleElectronLayout() {
@@ -1664,8 +1643,6 @@ function ensureEITController(tableContainer) {
 
   function eitReset() {
     if (!activeTableContainer || !eitUI) return;
-    first20OverlayActive = false;
-    applyFirst20Overlay(activeTableContainer);
     tableElectronStyleActive = false;
     try {
       localStorage.setItem(TABLE_STYLE_STORAGE_KEY, "");
@@ -1675,6 +1652,7 @@ function ensureEITController(tableContainer) {
     eitUI.styleToggleButton?.setAttribute("aria-pressed", "false");
     applyTableStyleClass(activeTableContainer);
     s3ModeActive = false;
+    eitUI.first20Button?.setAttribute("aria-pressed", "false");
     eitUI.s3ModeButton?.setAttribute("aria-pressed", "false");
     applyS3Mode(activeTableContainer);
     resetEITState();
@@ -1698,6 +1676,7 @@ function ensureEITController(tableContainer) {
           <div class="teach-modal-body">
             <h2 class="teach-modal-title" id="teach-modal-title"></h2>
             <div class="teach-modal-selectors" id="teach-modal-selectors"></div>
+            <div class="teach-modal-view-toggle" id="teach-modal-view-toggle"></div>
             <div class="teach-modal-grid" id="teach-modal-grid"></div>
           </div>
         </div>
@@ -1729,6 +1708,28 @@ function ensureEITController(tableContainer) {
     const modalContent = modal.querySelector(".teach-modal-content");
     modalContent.classList.remove("table-electron-view-2d", "table-electron-view-3d");
     modalContent.classList.add(`table-electron-view-${viewMode}`);
+
+    // Generate 2D/3D view toggle buttons inside teach-modal-view-toggle
+    const viewToggleEl = modal.querySelector("#teach-modal-view-toggle");
+    if (viewToggleEl) {
+      viewToggleEl.innerHTML = `
+        <button type="button" class="teach-view-btn${viewMode === "2d" ? " active" : ""}" data-view="2d">${t("eit.electronView.2d") || "2D"}</button>
+        <button type="button" class="teach-view-btn${viewMode === "3d" ? " active" : ""}" data-view="3d">${t("eit.electronView.3d") || "3D"}</button>
+      `;
+      viewToggleEl.querySelectorAll(".teach-view-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const selectedView = btn.dataset.view;
+          setElectronViewMode(selectedView, activeTableContainer);
+          // Update modal content class
+          modalContent.classList.remove("table-electron-view-2d", "table-electron-view-3d");
+          modalContent.classList.add(`table-electron-view-${selectedView}`);
+          // Update active button state
+          viewToggleEl.querySelectorAll(".teach-view-btn").forEach((b) => {
+            b.classList.toggle("active", b.dataset.view === selectedView);
+          });
+        });
+      });
+    }
 
     const groupLabelByColumn = {
       1: "I",
@@ -1797,9 +1798,8 @@ function ensureEITController(tableContainer) {
       filtered = filtered.filter(entry => entry.element.row === value && columnsToMatch.includes(entry.element.column));
       filtered.sort((a, b) => a.element.column - b.element.column);
       gridEl.className = "teach-modal-grid";
-      // Add grid layout hint for columns
-      if (filtered.length === 8) gridEl.classList.add("cols-8");
-      else if (filtered.length >= 4) gridEl.classList.add("cols-4");
+      // Add grid layout hint for columns (use cols-4 for 8 elements to arrange them in two rows)
+      if (filtered.length >= 4) gridEl.classList.add("cols-4");
       else if (filtered.length >= 2) gridEl.classList.add("cols-2");
     } else {
       filtered = filtered.filter(entry => {
@@ -1840,6 +1840,7 @@ function ensureEITController(tableContainer) {
           <span class="electron-arrangement-text">${arrangementText}</span>
           <span class="electron-bohr-wrap">
             <span class="${bClass}" data-shells="${shells.join(",")}"></span>
+            <span class="electron-bohr-symbol">${element.symbol}</span>
           </span>
         </span>
       `;
