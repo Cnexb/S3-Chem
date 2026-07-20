@@ -1840,7 +1840,6 @@ function ensureEITController(tableContainer) {
           <span class="electron-arrangement-text">${arrangementText}</span>
           <span class="electron-bohr-wrap">
             <span class="${bClass}" data-shells="${shells.join(",")}"></span>
-            <span class="electron-bohr-symbol">${element.symbol}</span>
           </span>
         </span>
       `;

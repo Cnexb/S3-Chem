@@ -150,8 +150,6 @@
 #eit-controller.s3-mode .eit-property-trigger,
 #eit-controller.s3-mode .eit-slider-section,
 #eit-controller.s3-mode .eit-mode-group,
-#eit-controller.s3-mode #eit-reset-btn,
-#eit-controller.s3-mode #eit-first20-btn,
 #eit-controller.s3-mode .eit-property-panel,
 #eit-controller.s3-mode .eit-property-note {
   display: none !important;
