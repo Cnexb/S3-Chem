@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HKDSE 金屬反應模擬器</title>
+  <link rel="stylesheet" href="css/lab.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div>
+        <h1 data-i18n="header.title">HKDSE 金屬反應模擬器</h1>
+        <p data-i18n="header.subtitle">Topic 3 金屬反應互動實驗</p>
+      </div>
+      <div class="lang-switch">
+        <button type="button" data-lang="zh" class="lang-btn active">中文</button>
+        <button type="button" data-lang="en" class="lang-btn">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="lab-panel" aria-label="Laboratory apparatus">
+      <div class="panel-header lab-panel-header">
+        <nav class="mode-tabs" role="tablist" aria-label="Experiment mode">
+          <button type="button" class="mode-tab active" data-mode="oxygen" role="tab" aria-selected="true" data-i18n="mode.oxygen">金屬與氧氣</button>
+          <button type="button" class="mode-tab" data-mode="solution" role="tab" aria-selected="false" data-i18n="mode.solution">金屬與溶液</button>
+        </nav>
+        <div class="header-actions">
+          <label class="field" id="solution-field">
+            <span data-i18n="label.solution">選擇溶液 / 環境</span>
+            <select id="solution-select"></select>
+          </label>
+          <button type="button" class="btn primary" id="btn-run" data-i18n="btn.run">開始實驗</button>
+          <button type="button" class="btn secondary" id="btn-reset" data-i18n="btn.reset">重置</button>
+        </div>
+      </div>
+
+      <div class="scene-toolbar">
+        <button type="button" class="btn primary" id="btn-run-scene" data-i18n="btn.run">開始實驗</button>
+        <button type="button" class="btn secondary" id="btn-reset-scene" data-i18n="btn.reset">重置</button>
+      </div>
+
+      <div class="scene-workspace">
+      <div class="scene-stage">
+      <!-- Oxygen mode -->
+      <div class="lab-scene oxygen-scene" id="oxygen-scene-wrap">
+        <div class="scene-equation-box">
+          <div class="scene-equation-label" data-i18n="result.equation">化學方程式</div>
+          <div class="scene-equation-val">—</div>
+        </div>
+        <svg class="lab-svg oxygen-svg" viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="oxygen-scene-title">
+          <title id="oxygen-scene-title">Metal strip heating in Bunsen flame</title>
+          <defs>
+            <linearGradient id="burnerMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#b8860b"/>
+              <stop offset="50%" stop-color="#ffd700"/>
+              <stop offset="100%" stop-color="#b8860b"/>
+            </linearGradient>
+            <linearGradient id="silverMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#707a8a"/>
+              <stop offset="30%" stop-color="#cbd5e1"/>
+              <stop offset="50%" stop-color="#f8fafc"/>
+              <stop offset="75%" stop-color="#94a3b8"/>
+              <stop offset="100%" stop-color="#475569"/>
+            </linearGradient>
+            <linearGradient id="castIron" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#111827"/>
+              <stop offset="50%" stop-color="#374151"/>
+              <stop offset="100%" stop-color="#111827"/>
+            </linearGradient>
+            <linearGradient id="stretchedFlameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop id="stretched-stop-0" offset="0%" stop-color="#1d4ed8" stop-opacity="0.95"/>
+              <stop id="stretched-stop-1" offset="22%" stop-color="#2563eb" stop-opacity="0.85"/>
+              <stop id="stretched-stop-2" offset="42%" stop-color="#fbbf24" stop-opacity="0.85"/>
+              <stop id="stretched-stop-3" offset="100%" stop-color="#fbbf24" stop-opacity="0.2"/>
+            </linearGradient>
+            <linearGradient id="nichromeHandle" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#dfd5be"/>
+              <stop offset="35%" stop-color="#c5b48f"/>
+              <stop offset="70%" stop-color="#a69470"/>
+              <stop offset="100%" stop-color="#807253"/>
+            </linearGradient>
+            <radialGradient id="burnGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="35%" stop-color="#fef9c3"/>
+              <stop offset="70%" stop-color="#fde047" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </radialGradient>
+            <radialGradient id="flameInner" cx="50%" cy="80%" r="60%">
+              <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.95"/>
+              <stop offset="60%" stop-color="#2563eb" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="flameOuter" cx="50%" cy="90%" r="70%">
+              <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.9"/>
+              <stop offset="70%" stop-color="#1d4ed8" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="tongMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4b5563"/>
+              <stop offset="50%" stop-color="#374151"/>
+              <stop offset="100%" stop-color="#1f2937"/>
+            </linearGradient>
+            <filter id="smokeBlur" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="5"/>
+            </filter>
+            <filter id="wispyGlow" x="-80%" y="-80%" width="260%" height="260%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.04 0.08" numOctaves="3" seed="4" result="noise">
+                <animate attributeName="baseFrequency" dur="2.5s" values="0.03 0.06;0.06 0.12;0.03 0.06" repeatCount="indefinite"/>
+              </feTurbulence>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G" result="disp"/>
+              <feGaussianBlur in="disp" stdDeviation="6"/>
+            </filter>
+          </defs>
+
+          <rect id="oxygen-scene-bg" width="520" height="420" fill="#0a0a0a"/>
+
+          <!-- Lab bench / floor -->
+          <rect id="lab-floor" x="0" y="368" width="520" height="52" fill="#1a1a1a"/>
+          <rect x="0" y="365" width="520" height="5" fill="#2d2d2d"/>
+
+          <!-- Bunsen burner on floor -->
+          <g id="bunsen-burner">
+            <!-- White Heatproof Ceramic Plate (Mat) -->
+            <rect x="195" y="362" width="130" height="4" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.5"/>
+            <rect x="198" y="364" width="124" height="2" fill="#94a3b8"/>
+            
+            <!-- Gas hose connection (Orange Rubber Tube) -->
+            <path d="M 240 352 C 220 361 140 361 90 350" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round"/>
+            <path d="M 90 350 L 50 345" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- Heavy Cast Iron Base -->
+            <path d="M 225 362 L 235 344 L 253 340 L 267 340 L 285 344 L 295 362 Z" fill="url(#castIron)" stroke="#111827" stroke-width="1"/>
+            <ellipse cx="260" cy="362" rx="35" ry="3" fill="#111827"/>
+            <rect x="250" y="336" width="20" height="6" rx="1" fill="url(#castIron)"/>
+
+            <!-- Side Gas Nozzle / Connection inlet -->
+            <path d="M 250 348 L 240 349 L 240 352" fill="none" stroke="url(#silverMetal)" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- Air Control Collar & Air Holes -->
+            <rect x="252" y="328" width="16" height="8" fill="url(#silverMetal)" stroke="#64748b" stroke-width="0.5"/>
+            <circle cx="260" cy="332" r="2.5" fill="#1e293b"/>
+
+            <!-- Long Silver Chrome Burner Barrel (Stem) -->
+            <rect x="253" y="267" width="14" height="61" fill="url(#silverMetal)" stroke="#475569" stroke-width="0.8"/>
+            <ellipse cx="260" cy="267" rx="7" ry="1.8" fill="#1e293b" stroke="#475569" stroke-width="0.5"/>
+          </g>
+
+          <!-- Smoke particles (world coords) -->
+          <g id="oxygen-smoke-particles"></g>
+          <g id="oxygen-explosion-layer"></g>
+
+          <!-- Nichrome wire holding metal sample -->
+          <g id="oxygen-tongs-assembly" class="tongs-ready">
+            <g id="oxygen-crucible-tongs">
+              <!-- Wooden Handle (sloping slightly upwards to the right) -->
+              <path d="M 100 60 L 210 50" fill="none" stroke="url(#nichromeHandle)" stroke-width="12" stroke-linecap="round"/>
+              <!-- Silver Ferrule / Collar at the tip of the handle -->
+              <path d="M 100 60 L 112 58.7" fill="none" stroke="url(#silverMetal)" stroke-width="12" stroke-linecap="round"/>
+              
+              <!-- Sample + reaction FX -->
+              <g id="oxygen-sample-group" transform="translate(0, 55)">
+                <g id="oxygen-reaction-glow" opacity="0">
+                  <circle cx="7" cy="-2" r="25" fill="url(#burnGlow)" filter="url(#wispyGlow)" opacity="0.65"/>
+                </g>
+                <!-- Powder heap of the metal sample, sitting perfectly inside the nichrome wire loop -->
+                <path id="oxygen-metal-strip" d="M -1 2 Q 3 -10, 7 -10 Q 11 -10, 15 2 Q 7 7, -1 2 Z" fill="#b8b8c0" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+                <!-- Oxide powder layer that overlays at the end of the reaction -->
+                <path id="oxygen-powder-layer" d="M -1 2 Q 3 -10, 7 -10 Q 11 -10, 15 2 Q 7 7, -1 2 Z" fill="#f8fafc" opacity="0" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
+                <!-- We completely hide the duplicated independent flame element and rely entirely on the stretched, color-morphing connected Bunsen burner flame below -->
+                <g id="oxygen-reaction-flame" opacity="0">
+                </g>
+                <g id="oxygen-sparks" opacity="0">
+                  <circle cx="4" cy="-5" r="1.5" fill="#fbbf24"/>
+                  <circle cx="11" cy="-2" r="1.2" fill="#fde047"/>
+                  <circle cx="1" cy="2" r="1.5" fill="#f59e0b"/>
+                  <circle cx="13" cy="4" r="1.2" fill="#fbbf24"/>
+                </g>
+              </g>
+
+              <!-- Thin Nichrome Wire (bending slightly upwards in a gentle smile curve to enter the flame) -->
+              <path d="M 100 60 Q 75 64 13.5 55" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+              <!-- Circular wire loop wrapping in front of the metal ribbon -->
+              <circle cx="7" cy="55" r="7.5" fill="none" stroke="#94a3b8" stroke-width="2"/>
+            </g>
+          </g>
+
+          <!-- Bunsen burner flame (placed here to render in front of the tongs and metal strip) -->
+          <g id="bunsen-flame">
+            <!-- Default paths representing non-luminous gas flame (Hot Blue) -->
+            <path id="bunsen-flame-outer" class="flame-layer-outer" d="M 260 267 C 242 245 245 210 260 180 C 275 210 278 245 260 267 Z" fill="url(#flameOuter)" opacity="0.85"/>
+            <path id="bunsen-flame-mid" class="flame-layer-mid" d="M 260 267 C 248 250 250 220 260 198 C 270 220 272 250 260 267 Z" fill="#60a5fa" opacity="0.6"/>
+            <path id="bunsen-flame-inner" class="flame-layer-inner" d="M 260 267 C 253 255 254 235 260 218 C 266 235 267 255 260 267 Z" fill="url(#flameInner)" opacity="0.95"/>
+          </g>
+
+          <!-- Status label -->
+          <g id="oxygen-status-label" class="oxygen-status-label">
+            <rect x="320" y="188" width="140" height="44" rx="6" fill="rgba(15,23,42,0.82)" stroke="rgba(148,163,184,0.45)"/>
+            <text id="oxygen-label-name" x="330" y="208" fill="#f8fafc" font-size="13" font-weight="700" font-family="Segoe UI, Microsoft JhengHei, sans-serif">Mg</text>
+            <text id="oxygen-label-status" x="330" y="226" fill="#94a3b8" font-size="11" font-family="Segoe UI, Microsoft JhengHei, sans-serif">...</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Beaker mode -->
+      <div class="lab-scene beaker-scene" id="beaker-scene-wrap" hidden>
+        <div class="scene-equation-box">
+          <div class="scene-equation-label" data-i18n="result.equation">化學方程式</div>
+          <div class="scene-equation-val">—</div>
+        </div>
+        <p class="beaker-click-hint" id="beaker-click-hint" data-i18n="beaker.clickHint">點擊燒杯加入金屬</p>
+        <div id="beaker-scene-3d-container"></div>
+      </div>
+
+      <!-- Steam mode (Figure 3.3) -->
+      <div class="lab-scene steam-scene" id="steam-scene-wrap" hidden>
+        <div class="scene-equation-box">
+          <div class="scene-equation-label" data-i18n="result.equation">化學方程式</div>
+          <div class="scene-equation-val">—</div>
+        </div>
+        <svg class="lab-svg steam-svg" viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="steam-scene-title">
+          <title id="steam-scene-title">Action of steam on a metal</title>
+          <defs>
+            <linearGradient id="steam-burnerMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#b8860b"/>
+              <stop offset="50%" stop-color="#ffd700"/>
+              <stop offset="100%" stop-color="#b8860b"/>
+            </linearGradient>
+            <linearGradient id="steam-silverMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#707a8a"/>
+              <stop offset="30%" stop-color="#cbd5e1"/>
+              <stop offset="50%" stop-color="#f8fafc"/>
+              <stop offset="75%" stop-color="#94a3b8"/>
+              <stop offset="100%" stop-color="#475569"/>
+            </linearGradient>
+            <linearGradient id="steam-castIron" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#111827"/>
+              <stop offset="50%" stop-color="#374151"/>
+              <stop offset="100%" stop-color="#111827"/>
+            </linearGradient>
+            <linearGradient id="steam-tongMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4b5563"/>
+              <stop offset="50%" stop-color="#374151"/>
+              <stop offset="100%" stop-color="#1f2937"/>
+            </linearGradient>
+            <clipPath id="invertedTubeClip">
+              <path d="M 368.5,345 L 368.5,152 A 11.5,11.5 0 0,1 391.5,152 L 391.5,345 Z" />
+            </clipPath>
+          </defs>
+
+          <rect id="steam-scene-bg" width="520" height="420" fill="#0a0a0a"/>
+
+          <!-- Lab bench / floor -->
+          <rect id="steam-lab-floor" x="0" y="368" width="520" height="52" fill="#1a1a1a"/>
+          <rect x="0" y="365" width="520" height="5" fill="#2d2d2d"/>
+
+          <!-- Iron Stand -->
+          <rect x="160" y="356" width="70" height="9" rx="2" fill="url(#steam-castIron)" stroke="#111827" stroke-width="1"/>
+          <rect x="192" y="80" width="6" height="276" fill="url(#steam-silverMetal)" stroke="#475569" stroke-width="0.5"/>
+          
+          <!-- Clamp holding horizontal test tube -->
+          <rect x="145" y="171" width="47" height="8" fill="url(#steam-tongMetal)"/>
+          <path d="M 132,158 C 132,158 142,158 142,175 C 142,192 132,192 132,192" fill="none" stroke="url(#steam-tongMetal)" stroke-width="4"/>
+          <circle cx="192" cy="175" r="3.5" fill="url(#steam-silverMetal)" stroke="#374151" stroke-width="0.5"/>
+
+          <!-- Horizontal test tube -->
+          <path d="M 230,160 L 70,160 A 15,15 0 0,0 70,190 L 230,190 Z" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+          <path d="M 230,162 L 72,162" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+          <ellipse cx="230" cy="175" rx="2" ry="15" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+
+          <!-- Glass-wool soaked in water -->
+          <g id="steam-glass-wool">
+            <path d="M 56,175 C 56,166 62,162 72,162 C 82,162 88,166 88,175 C 88,184 82,188 72,188 C 62,188 56,184 56,175 Z" fill="#cbd5e1" opacity="0.55" filter="url(#smokeBlur)"/>
+            <path d="M 58,170 C 62,168 68,174 74,166 M 61,180 C 65,182 72,176 80,182 M 66,173 C 70,178 76,171 83,176" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+          </g>
+
+          <!-- Bunsen burner heated glass-wool underneath (x=72, y=362, offset x = -188 from x=260) -->
+          <g id="steam-bunsen-burner" transform="translate(-188, 0)">
+            <!-- White Heatproof Ceramic Plate (Mat) -->
+            <rect x="195" y="362" width="130" height="4" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.5"/>
+            <rect x="198" y="364" width="124" height="2" fill="#94a3b8"/>
+            
+            <!-- Gas hose connection (Orange Rubber Tube) -->
+            <path d="M 240 352 C 220 361 140 361 90 350" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round"/>
+            <path d="M 90 350 L 50 345" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- Heavy Cast Iron Base -->
+            <path d="M 225 362 L 235 344 L 253 340 L 267 340 L 285 344 L 295 362 Z" fill="url(#steam-castIron)" stroke="#111827" stroke-width="1"/>
+            <ellipse cx="260" cy="362" rx="35" ry="3" fill="#111827"/>
+            <rect x="250" y="336" width="20" height="6" rx="1" fill="url(#steam-castIron)"/>
+
+            <!-- Side Gas Nozzle / Connection inlet -->
+            <path d="M 250 348 L 240 349 L 240 352" fill="none" stroke="url(#steam-silverMetal)" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- Air Control Collar & Air Holes -->
+            <rect x="252" y="328" width="16" height="8" fill="url(#steam-silverMetal)" stroke="#64748b" stroke-width="0.5"/>
+            <circle cx="260" cy="332" r="2.5" fill="#1e293b"/>
+
+            <!-- Long Silver Chrome Burner Barrel (Stem) -->
+            <rect x="253" y="267" width="14" height="61" fill="url(#steam-silverMetal)" stroke="#475569" stroke-width="0.8"/>
+            <ellipse cx="260" cy="267" rx="7" ry="1.8" fill="#1e293b" stroke="#475569" stroke-width="0.5"/>
+          </g>
+
+          <!-- Bunsen burner flame group (also offset by -188) -->
+          <g id="steam-bunsen-flame" transform="translate(-188, 0)">
+            <path id="steam-bunsen-flame-outer" class="flame-layer-outer" d="M 260 267 C 242 245 245 210 260 180 C 275 210 278 245 260 267 Z" fill="url(#flameOuter)" opacity="0"/>
+            <path id="steam-bunsen-flame-mid" class="flame-layer-mid" d="M 260 267 C 248 250 250 220 260 198 C 270 220 272 250 260 267 Z" fill="#60a5fa" opacity="0"/>
+            <path id="steam-bunsen-flame-inner" class="flame-layer-inner" d="M 260 267 C 253 255 254 235 260 218 C 266 235 267 255 260 267 Z" fill="url(#flameInner)" opacity="0"/>
+          </g>
+
+          <!-- Dynamic steam particles layer inside horizontal tube -->
+          <g id="steam-particle-layer"></g>
+
+          <!-- Metal sample and reaction glows -->
+          <g id="steam-sample-assembly">
+            <path id="steam-metal-sample" d="M 125,189 C 127,181 133,178 138,178 C 143,178 146,181 148,189 Z" fill="#cbd5e1" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+            <!-- Oxide layer overlay -->
+            <path id="steam-oxide-layer" d="M 125,189 C 127,181 133,178 138,178 C 143,178 146,181 148,189 Z" fill="#ffffff" opacity="0" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
+            
+            <!-- Reactions glows and flashes -->
+            <g id="steam-reaction-glow" opacity="0">
+              <circle cx="137" cy="183" r="28" fill="url(#burnGlow)" filter="url(#wispyGlow)" opacity="0.7"/>
+            </g>
+            
+            <!-- Reactions characteristic flame -->
+            <g id="steam-reaction-flame" opacity="0" transform="translate(137, 188) scale(0.35, 0.18) translate(-260, -260)">
+              <path class="reaction-flame-wisp" d="M 260,260 C 240,230 245,180 260,140 C 275,180 280,230 260,260 Z" fill="#ffaa00" opacity="0.8"/>
+              <path class="reaction-flame-wisp" d="M 260,260 C 248,240 250,200 260,165 C 270,200 272,240 260,260 Z" fill="#fbbf24" opacity="0.9"/>
+            </g>
+          </g>
+
+          <!-- Cork plug -->
+          <polygon points="228,162 237,165 237,185 228,188" fill="#b45309" stroke="#78350f" stroke-width="0.5"/>
+
+          <!-- Glass delivery tube -->
+          <path d="M 233,175 L 255,175 L 290,210 L 332,345 L 378,345 L 378,336" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 233,175 L 255,175 L 290,210 L 332,345 L 378,345 L 378,336" fill="none" stroke="rgba(14,165,233,0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Water trough -->
+          <rect x="315" y="312" width="135" height="48" rx="3" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+          <rect x="317" y="325" width="131" height="33" fill="rgba(56,189,248,0.25)" stroke="none"/>
+          <line x1="317" y1="325" x2="448" y2="325" stroke="rgba(56,189,248,0.5)" stroke-width="1"/>
+
+          <!-- Inverted test tube (Water displacement hydrogen collection) -->
+          <rect id="steam-water-column" x="368.5" y="145" width="23" height="198" fill="rgba(56,189,248,0.35)" clip-path="url(#invertedTubeClip)"/>
+          <path d="M 368,345 L 368,152 A 12,12 0 0,1 392,152 L 392,345" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+          <path d="M 371,345 L 371,154" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+
+          <!-- Dynamic bubbles layer inside water trough / inverted tube -->
+          <g id="steam-bubble-layer"></g>
+
+          <!-- Reaction smoke layer -->
+          <g id="steam-smoke-particles"></g>
+
+          <!-- Labels & pointers -->
+          <g id="steam-pointers-and-labels">
+            <!-- Glass wool pointer (label stays left of metal sample label) -->
+            <polyline points="72,175 72,108 14,108" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <circle cx="72" cy="175" r="2" fill="#fff"/>
+            <text id="steam-label-text-wool" x="14" y="103" text-anchor="start" fill="#94a3b8" font-size="10" font-family="Segoe UI, Microsoft JhengHei, sans-serif">Glass-wool soaked in water</text>
+
+            <!-- Metal sample pointer (label extends right, clear of glass-wool text) -->
+            <polyline points="137,183 137,108 200,108" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <circle cx="137" cy="183" r="2" fill="#fff"/>
+            <text id="steam-label-text-sample" x="200" y="103" text-anchor="start" fill="#94a3b8" font-size="10" font-family="Segoe UI, Microsoft JhengHei, sans-serif">Metal sample</text>
+
+            <!-- Burner pointer -->
+            <polyline points="50,330 30,330 30,300" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <circle cx="50" cy="330" r="2" fill="#fff"/>
+            <text id="steam-label-text-burner" x="30" y="294" text-anchor="start" fill="#94a3b8" font-size="11" font-family="Segoe UI, Microsoft JhengHei, sans-serif">Burner</text>
+
+            <!-- Stand pointer -->
+            <polyline points="195,240 220,240" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <circle cx="195" cy="240" r="2" fill="#fff"/>
+            <text id="steam-label-text-stand" x="225" y="244" text-anchor="start" fill="#94a3b8" font-size="11" font-family="Segoe UI, Microsoft JhengHei, sans-serif">Stand</text>
+
+            <!-- Cork pointer -->
+            <polyline points="233,175 255,175 255,145" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <circle cx="233" cy="175" r="2" fill="#fff"/>
+            <text id="steam-label-text-cork" x="255" y="140" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Segoe UI, Microsoft JhengHei, sans-serif">Cork</text>
+
+            <!-- Delivery tube pointer -->
+            <polyline points="290,210 320,210" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <circle cx="290" cy="210" r="2" fill="#fff"/>
+            <text id="steam-label-text-tube" x="325" y="214" text-anchor="start" fill="#94a3b8" font-size="11" font-family="Segoe UI, Microsoft JhengHei, sans-serif">Delivery tube</text>
+
+            <!-- Hydrogen pointer -->
+            <polyline points="380,165 425,165" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <circle cx="380" cy="165" r="2" fill="#fff"/>
+            <text id="steam-label-text-h2" x="430" y="169" text-anchor="start" fill="#f8fafc" font-weight="bold" font-size="11" font-family="Segoe UI, Microsoft JhengHei, sans-serif">Hydrogen</text>
+
+            <!-- Water pointer -->
+            <polyline points="420,335 440,335 440,305" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <circle cx="420" cy="335" r="2" fill="#fff"/>
+            <text id="steam-label-text-water" x="440" y="299" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Segoe UI, Microsoft JhengHei, sans-serif">Water</text>
+          </g>
+
+          <!-- Status label box -->
+          <g id="steam-status-label" class="steam-status-label">
+            <rect id="steam-status-bg" x="340" y="55" width="140" height="44" rx="6" fill="rgba(15,23,42,0.82)" stroke="rgba(148,163,184,0.45)"/>
+            <text id="steam-label-name" x="350" y="75" fill="#f8fafc" font-size="13" font-weight="700" font-family="Segoe UI, Microsoft JhengHei, sans-serif">Mg</text>
+            <text id="steam-label-status" x="350" y="93" fill="#94a3b8" font-size="11" font-family="Segoe UI, Microsoft JhengHei, sans-serif">...</text>
+          </g>
+        </svg>
+      </div>
+      </div><!-- /.scene-stage -->
+
+      <aside class="reactivity-section scene-reactivity" aria-label="Reactivity series">
+        <h3 data-i18n="reactivity.title">金屬活性序</h3>
+        <p class="muted small reactivity-end-label" data-i18n="reactivity.most">最活潑</p>
+        <div class="reactivity-bar" id="reactivity-bar"></div>
+        <p class="muted small reactivity-end-label" data-i18n="reactivity.least">最不活潑</p>
+      </aside>
+      </div><!-- /.scene-workspace -->
+    </section>
+
+    <aside class="control-panel" hidden></aside>
+  </main>
+
+  <footer>
+    <p data-i18n="footer">HKDSE 化學 Topic 3 金屬 · 適用於 Google Chrome</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="js/metalsData.js"></script>
+  <script src="js/reactions.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/explosionFx.js"></script>
+  <script src="js/smokeParticles.js"></script>
+  <script src="js/oxygenScene.js"></script>
+  <script src="js/splashFx.js"></script>
+  <script src="js/beakerScene.js"></script>
+  <script src="js/steamScene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

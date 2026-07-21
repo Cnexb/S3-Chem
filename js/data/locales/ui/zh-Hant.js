@@ -351,7 +351,10 @@ export const zhHantUI = {
   },
   "lab": {
     "pageTitle": "互動實驗室",
-    "hubSubtitle": "選擇實驗室模擬，探索鍵合與結構",
+    "hubSubtitle": "按課題選擇實驗室：鍵合、金屬，或酸與鹼。",
+    "catMicroscopicWorldI": "微觀世界 I",
+    "catMetals": "金屬",
+    "catAcidsAndBases": "酸與鹼",
     "ionicName": "離子",
     "ionicDesc": "搭建離子晶格結構，探索離子化合物形成。",
     "covalentName": "共價",
@@ -359,7 +362,13 @@ export const zhHantUI = {
     "sandboxName": "沙盒",
     "sandboxDesc": "模擬微觀結構，比較共價物質性質。",
     "titrationName": "滴定",
-    "titrationDesc": "模擬酸鹼滴定實驗，練習讀數、指示劑選擇及當量點計算。"
+    "titrationDesc": "模擬酸鹼滴定實驗，練習讀數、指示劑選擇及當量點計算。",
+    "group1Name": "第一族元素",
+    "group1Desc": "對比第一族元素（氫及鹼金屬）的 3D 原子結構，探索其大小、電子排佈與反應性規律。",
+    "groupsPeriodsName": "族與週期 3D 對比",
+    "groupsPeriodsDesc": "並排對比同族或同週期元素的 3D 原子結構，直觀探索原子大小與電子排佈規律。",
+    "metalReactivityName": "金屬反應",
+    "metalReactivityDesc": "互動模擬金屬與氧氣、水／蒸汽、酸及置換溶液的反應。"
   },
   "worksheet": {
     "title": "練習單生成器",

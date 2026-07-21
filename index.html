@@ -523,102 +523,186 @@
         <div class="blank-page-content" id="page-lab">
             <div class="chem-tools-container lab-hub-inner">
                 <h1 class="chem-tools-title" data-i18n="lab.pageTitle">Interactive Lab</h1>
-                <p class="chem-tools-subtitle" data-i18n="lab.hubSubtitle">Choose a lab simulation to explore bonding and structure</p>
+                <p class="chem-tools-subtitle" data-i18n="lab.hubSubtitle">Choose a lab by topic — bonding, metals, or acids and bases.</p>
 
-                <div class="chem-tools-grid worksheet-hub-grid lab-hub-grid">
-                    <div class="chem-tool-card lab-tool-card" data-tool="ionic-compound-puzzle" role="button" tabindex="0">
-                        <div class="chem-tool-header">
-                            <div class="chem-tool-icon-box balancer-icon">
-                                <span class="chem-tool-number">1</span>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <rect x="3" y="3" width="7" height="7" rx="1" />
-                                    <rect x="14" y="3" width="7" height="7" rx="1" />
-                                    <rect x="8.5" y="14" width="7" height="7" rx="1" />
-                                    <path d="M6.5 6.5h0M17.5 6.5h0M12 17.5h0" />
-                                </svg>
+                <section class="lab-hub-category" aria-labelledby="lab-cat-mw1">
+                    <h2 id="lab-cat-mw1" class="lab-hub-category-title" data-i18n="lab.catMicroscopicWorldI">Microscopic world I</h2>
+                    <div class="chem-tools-grid worksheet-hub-grid lab-hub-grid">
+                        <div class="chem-tool-card lab-tool-card" data-tool="ionic-compound-puzzle" role="button" tabindex="0">
+                            <div class="chem-tool-header">
+                                <div class="chem-tool-icon-box balancer-icon">
+                                    <span class="chem-tool-number">1</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                                        <rect x="14" y="3" width="7" height="7" rx="1" />
+                                        <rect x="8.5" y="14" width="7" height="7" rx="1" />
+                                        <path d="M6.5 6.5h0M17.5 6.5h0M12 17.5h0" />
+                                    </svg>
+                                </div>
+                                <span class="chem-tool-arrow" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
                             </div>
-                            <span class="chem-tool-arrow" aria-hidden="true">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span>
+                            <div class="chem-tool-info">
+                                <h3 class="chem-tool-name" data-i18n="lab.ionicName">Ionic</h3>
+                                <p class="chem-tool-desc" data-i18n="lab.ionicDesc">Build ionic lattice structures and explore ionic compound formation.</p>
+                            </div>
                         </div>
-                        <div class="chem-tool-info">
-                            <h3 class="chem-tool-name" data-i18n="lab.ionicName">Ionic</h3>
-                            <p class="chem-tool-desc" data-i18n="lab.ionicDesc">Build ionic lattice structures and explore ionic compound formation.</p>
+                        <div class="chem-tool-card lab-tool-card" data-tool="covalent-bond-puzzle" role="button" tabindex="0">
+                            <div class="chem-tool-header">
+                                <div class="chem-tool-icon-box balancer-icon">
+                                    <span class="chem-tool-number">2</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <circle cx="7" cy="12" r="3" />
+                                        <circle cx="17" cy="12" r="3" />
+                                        <path d="M10 12h4" />
+                                    </svg>
+                                </div>
+                                <span class="chem-tool-arrow" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="chem-tool-info">
+                                <h3 class="chem-tool-name" data-i18n="lab.covalentName">Covalent</h3>
+                                <p class="chem-tool-desc" data-i18n="lab.covalentDesc">Draw covalent bonds and explore covalent compound structures.</p>
+                            </div>
+                        </div>
+                        <div class="chem-tool-card lab-tool-card" data-tool="covalent-properties-sandbox" role="button" tabindex="0">
+                            <div class="chem-tool-header">
+                                <div class="chem-tool-icon-box balancer-icon">
+                                    <span class="chem-tool-number">3</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M12 3v4M12 17v4M3 12h4M17 12h4" />
+                                        <circle cx="12" cy="12" r="4" />
+                                        <path d="M7.5 7.5l2 2M14.5 14.5l2 2M16.5 7.5l-2 2M9.5 14.5l-2 2" />
+                                    </svg>
+                                </div>
+                                <span class="chem-tool-arrow" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="chem-tool-info">
+                                <h3 class="chem-tool-name" data-i18n="lab.sandboxName">Sandbox</h3>
+                                <p class="chem-tool-desc" data-i18n="lab.sandboxDesc">Simulate micro-structure and compare covalent substance properties.</p>
+                            </div>
+                        </div>
+                        <div class="chem-tool-card lab-tool-card" data-tool="group1-elements" role="button" tabindex="0">
+                            <div class="chem-tool-header">
+                                <div class="chem-tool-icon-box balancer-icon">
+                                    <span class="chem-tool-number">4</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <circle cx="12" cy="12" r="6" />
+                                        <circle cx="12" cy="12" r="2" />
+                                    </svg>
+                                </div>
+                                <span class="chem-tool-arrow" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="chem-tool-info">
+                                <h3 class="chem-tool-name" data-i18n="lab.group1Name">Group 1 Elements</h3>
+                                <p class="chem-tool-desc" data-i18n="lab.group1Desc">Compare 3D atomic structures of Group 1 elements and explore trends.</p>
+                            </div>
+                        </div>
+                        <div class="chem-tool-card lab-tool-card" data-tool="groups-periods" role="button" tabindex="0">
+                            <div class="chem-tool-header">
+                                <div class="chem-tool-icon-box balancer-icon">
+                                    <span class="chem-tool-number">5</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="3" y="3" width="7" height="9" rx="1" />
+                                        <rect x="14" y="3" width="7" height="5" rx="1" />
+                                        <rect x="14" y="12" width="7" height="9" rx="1" />
+                                        <rect x="3" y="16" width="7" height="5" rx="1" />
+                                    </svg>
+                                </div>
+                                <span class="chem-tool-arrow" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="chem-tool-info">
+                                <h3 class="chem-tool-name" data-i18n="lab.groupsPeriodsName">Groups & Periods 3D</h3>
+                                <p class="chem-tool-desc" data-i18n="lab.groupsPeriodsDesc">Compare 3D atomic structures of elements in the same group or period side-by-side.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="chem-tool-card lab-tool-card" data-tool="covalent-bond-puzzle" role="button" tabindex="0">
-                        <div class="chem-tool-header">
-                            <div class="chem-tool-icon-box balancer-icon">
-                                <span class="chem-tool-number">2</span>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <circle cx="7" cy="12" r="3" />
-                                    <circle cx="17" cy="12" r="3" />
-                                    <path d="M10 12h4" />
-                                </svg>
+                </section>
+
+                <section class="lab-hub-category" aria-labelledby="lab-cat-metals">
+                    <h2 id="lab-cat-metals" class="lab-hub-category-title" data-i18n="lab.catMetals">Metals</h2>
+                    <div class="chem-tools-grid worksheet-hub-grid lab-hub-grid">
+                        <div class="chem-tool-card lab-tool-card" data-tool="metal-reactions-lab" role="button" tabindex="0">
+                            <div class="chem-tool-header">
+                                <div class="chem-tool-icon-box balancer-icon">
+                                    <span class="chem-tool-number">1</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M12 2v4" />
+                                        <path d="M8 10h8" />
+                                        <path d="M9 10v8a3 3 0 0 0 6 0v-8" />
+                                        <path d="M7 18h10" />
+                                        <circle cx="12" cy="7" r="1.5" />
+                                    </svg>
+                                </div>
+                                <span class="chem-tool-arrow" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
                             </div>
-                            <span class="chem-tool-arrow" aria-hidden="true">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="chem-tool-info">
-                            <h3 class="chem-tool-name" data-i18n="lab.covalentName">Covalent</h3>
-                            <p class="chem-tool-desc" data-i18n="lab.covalentDesc">Draw covalent bonds and explore covalent compound structures.</p>
+                            <div class="chem-tool-info">
+                                <h3 class="chem-tool-name" data-i18n="lab.metalReactivityName">Metal Reactivity</h3>
+                                <p class="chem-tool-desc" data-i18n="lab.metalReactivityDesc">Interactive metal reactions with oxygen, water/steam, acids, and displacement solutions.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="chem-tool-card lab-tool-card" data-tool="covalent-properties-sandbox" role="button" tabindex="0">
-                        <div class="chem-tool-header">
-                            <div class="chem-tool-icon-box balancer-icon">
-                                <span class="chem-tool-number">3</span>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M12 3v4M12 17v4M3 12h4M17 12h4" />
-                                    <circle cx="12" cy="12" r="4" />
-                                    <path d="M7.5 7.5l2 2M14.5 14.5l2 2M16.5 7.5l-2 2M9.5 14.5l-2 2" />
-                                </svg>
+                </section>
+
+                <section class="lab-hub-category" aria-labelledby="lab-cat-acids">
+                    <h2 id="lab-cat-acids" class="lab-hub-category-title" data-i18n="lab.catAcidsAndBases">Acids and bases</h2>
+                    <div class="chem-tools-grid worksheet-hub-grid lab-hub-grid">
+                        <div class="chem-tool-card lab-tool-card" data-tool="titration-lab" role="button" tabindex="0">
+                            <div class="chem-tool-header">
+                                <div class="chem-tool-icon-box balancer-icon">
+                                    <span class="chem-tool-number">1</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M12 2v6" />
+                                        <path d="M8 8h8" />
+                                        <path d="M10 8v12" />
+                                        <path d="M14 8v12" />
+                                        <path d="M8 20h8" />
+                                        <circle cx="12" cy="14" r="2" />
+                                    </svg>
+                                </div>
+                                <span class="chem-tool-arrow" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
                             </div>
-                            <span class="chem-tool-arrow" aria-hidden="true">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="chem-tool-info">
-                            <h3 class="chem-tool-name" data-i18n="lab.sandboxName">Sandbox</h3>
-                            <p class="chem-tool-desc" data-i18n="lab.sandboxDesc">Simulate micro-structure and compare covalent substance properties.</p>
+                            <div class="chem-tool-info">
+                                <h3 class="chem-tool-name" data-i18n="lab.titrationName">Titration</h3>
+                                <p class="chem-tool-desc" data-i18n="lab.titrationDesc">Simulate acid-base titration with burette readings, indicators, and equivalence points.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="chem-tool-card lab-tool-card" data-tool="titration-lab" role="button" tabindex="0">
-                        <div class="chem-tool-header">
-                            <div class="chem-tool-icon-box balancer-icon">
-                                <span class="chem-tool-number">4</span>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M12 2v6" />
-                                    <path d="M8 8h8" />
-                                    <path d="M10 8v12" />
-                                    <path d="M14 8v12" />
-                                    <path d="M8 20h8" />
-                                    <circle cx="12" cy="14" r="2" />
-                                </svg>
-                            </div>
-                            <span class="chem-tool-arrow" aria-hidden="true">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="chem-tool-info">
-                            <h3 class="chem-tool-name" data-i18n="lab.titrationName">Titration</h3>
-                            <p class="chem-tool-desc" data-i18n="lab.titrationDesc">Simulate acid-base titration with burette readings, indicators, and equivalence points.</p>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>

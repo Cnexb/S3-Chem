@@ -983,6 +983,23 @@
     max-height: none;
 }
 
+#interactive-lab-page .lab-hub-category {
+    width: 100%;
+    margin: 0 0 clamp(1.25rem, 3dvh, 2rem);
+}
+
+#interactive-lab-page .lab-hub-category:last-child {
+    margin-bottom: 0;
+}
+
+#interactive-lab-page .lab-hub-category-title {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--text-primary, #0f172a);
+}
+
 #interactive-lab-page .lab-tool-card.chem-tool-card {
     height: auto;
     min-height: 0;

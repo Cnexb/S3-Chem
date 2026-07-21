@@ -352,7 +352,10 @@ export const zhUI = {
   },
   "lab": {
     "pageTitle": "互动实验室",
-    "hubSubtitle": "选择实验室模拟，探索键合与结构",
+    "hubSubtitle": "按课题选择实验室：键合、金属，或酸与碱。",
+    "catMicroscopicWorldI": "微观世界 I",
+    "catMetals": "金属",
+    "catAcidsAndBases": "酸与碱",
     "ionicName": "离子",
     "ionicDesc": "搭建离子晶格结构，探索离子化合物形成。",
     "covalentName": "共价",
@@ -360,7 +363,13 @@ export const zhUI = {
     "sandboxName": "沙盒",
     "sandboxDesc": "模拟微观结构，比较共价物质性质。",
     "titrationName": "滴定",
-    "titrationDesc": "模拟酸碱滴定实验，练习读数、指示剂选择及当量点计算。"
+    "titrationDesc": "模拟酸碱滴定实验，练习读数、指示剂选择及当量点计算。",
+    "group1Name": "第一族元素",
+    "group1Desc": "对比第一族元素（氢及碱金属）的 3D 原子结构，探索其大小、电子排布与反应性规律。",
+    "groupsPeriodsName": "族与周期 3D 对比",
+    "groupsPeriodsDesc": "并排对比同族或同周期元素的 3D 原子结构，直观探索原子大小與电子排布规律。",
+    "metalReactivityName": "金属反应",
+    "metalReactivityDesc": "互动模拟金属与氧气、水／蒸汽、酸及置换溶液的反应。"
   },
   "worksheet": {
     "title": "练习单生成器",

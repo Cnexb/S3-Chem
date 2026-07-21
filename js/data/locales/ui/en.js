@@ -352,7 +352,10 @@ export const enUI = {
   },
   "lab": {
     "pageTitle": "Interactive Lab",
-    "hubSubtitle": "Choose a lab simulation to explore bonding and structure",
+    "hubSubtitle": "Choose a lab by topic — bonding, metals, or acids and bases.",
+    "catMicroscopicWorldI": "Microscopic world I",
+    "catMetals": "Metals",
+    "catAcidsAndBases": "Acids and bases",
     "ionicName": "Ionic",
     "ionicDesc": "Build ionic lattice structures and explore ionic compound formation.",
     "covalentName": "Covalent",
@@ -360,7 +363,13 @@ export const enUI = {
     "sandboxName": "Sandbox",
     "sandboxDesc": "Simulate micro-structure and compare covalent substance properties.",
     "titrationName": "Titration",
-    "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points."
+    "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points.",
+    "group1Name": "Group 1 Elements",
+    "group1Desc": "Compare 3D atomic structures of Group 1 elements, and explore trends in size, electron configuration, and water reactivity.",
+    "groupsPeriodsName": "Groups & Periods 3D",
+    "groupsPeriodsDesc": "Compare 3D atomic structures of elements in the same group or period side-by-side to explore size and electron trends.",
+    "metalReactivityName": "Metal Reactivity",
+    "metalReactivityDesc": "Interactive metal reactions with oxygen, water/steam, acids, and displacement solutions."
   },
   "worksheet": {
     "title": "Worksheet Generator",
