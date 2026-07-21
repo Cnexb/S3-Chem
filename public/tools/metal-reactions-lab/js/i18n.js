@@ -3,6 +3,7 @@ var I18n = (function () {
   var STORAGE_KEY = 'hkdse-metal-reactions-lang';
   var currentLang = 'zh';
   var listeners = [];
+  var isEmbed = false;
 
   var strings = {
     zh: {
@@ -95,11 +96,41 @@ var I18n = (function () {
     }
   };
 
-  function loadLang() {
+  function readUrlParams() {
     try {
-      var stored = localStorage.getItem(STORAGE_KEY);
-      if (stored === 'en' || stored === 'zh') currentLang = stored;
-    } catch (e) { /* ignore */ }
+      return new URLSearchParams(window.location.search);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyEmbedClass() {
+    if (!isEmbed) return;
+    if (document.body) document.body.classList.add('embed-mode');
+    else document.documentElement.classList.add('embed-mode');
+  }
+
+  function loadLang() {
+    var params = readUrlParams();
+    if (params && params.get('embed') === '1') {
+      isEmbed = true;
+      applyEmbedClass();
+    }
+
+    // Host dashboard passes ?lang=en|zh — follow it when present
+    var urlLang = params && params.get('lang');
+    if (urlLang === 'en' || urlLang === 'zh') {
+      currentLang = urlLang;
+      return;
+    }
+
+    // Standalone only: remember last choice
+    if (!isEmbed) {
+      try {
+        var stored = localStorage.getItem(STORAGE_KEY);
+        if (stored === 'en' || stored === 'zh') currentLang = stored;
+      } catch (e) { /* ignore */ }
+    }
   }
 
   function getLang() {
@@ -114,7 +145,10 @@ var I18n = (function () {
   function setLang(lang) {
     if (lang !== 'zh' && lang !== 'en') return;
     currentLang = lang;
-    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* ignore */ }
+    if (!isEmbed) {
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* ignore */ }
+    }
+    applyEmbedClass();
     document.documentElement.lang = lang === 'zh' ? 'zh-HK' : 'en';
     document.title = t('page.title');
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
@@ -133,6 +167,17 @@ var I18n = (function () {
     listeners.push(fn);
   }
 
+  function initHostLangBridge() {
+    applyEmbedClass();
+    window.addEventListener('message', function (event) {
+      var data = event.data;
+      if (data && data.type === 'uniplus:setLang' && (data.lang === 'en' || data.lang === 'zh')) {
+        setLang(data.lang);
+      }
+    });
+  }
+
   loadLang();
+  initHostLangBridge();
   return { getLang: getLang, t: t, setLang: setLang, onChange: onChange };
 })();
