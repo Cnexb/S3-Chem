@@ -19,14 +19,6 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/titration-lab/index.html",
     titleKey: "lab.titrationName",
   },
-  "group1-elements": {
-    path: "public/tools/group1-elements/index.html",
-    titleKey: "lab.group1Name",
-  },
-  "groups-periods": {
-    path: "public/tools/groups-periods/index.html",
-    titleKey: "lab.groupsPeriodsName",
-  },
   "metal-reactions-lab": {
     path: "public/tools/metal-reactions-lab/index.html",
     titleKey: "lab.metalReactivityName",
