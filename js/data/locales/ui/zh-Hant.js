@@ -364,7 +364,9 @@ export const zhHantUI = {
     "titrationName": "滴定",
     "titrationDesc": "模擬酸鹼滴定實驗，練習讀數、指示劑選擇及當量點計算。",
     "metalReactivityName": "金屬反應",
-    "metalReactivityDesc": "互動模擬金屬與氧氣、水／蒸汽、酸及置換溶液的反應。"
+    "metalReactivityDesc": "互動模擬金屬與氧氣、水／蒸汽、酸及置換溶液的反應。",
+    "rustingName": "生銹",
+    "rustingDesc": "探究鐵生銹條件、指示劑實驗與防銹保護。"
   },
   "worksheet": {
     "title": "練習單生成器",

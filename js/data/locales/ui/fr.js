@@ -260,7 +260,9 @@ export const frUI = {
     "sandboxName": "Bac a sable",
     "sandboxDesc": "Simulez la microstructure et comparez les proprietes des substances covalentes.",
     "titrationName": "Titration",
-    "titrationDesc": "Simulez une titration acido-basique avec lectures de burette, indicateurs et points d'equivalence."
+    "titrationDesc": "Simulez une titration acido-basique avec lectures de burette, indicateurs et points d'equivalence.",
+    "rustingName": "Rusting",
+    "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection."
   },
   "worksheet": {
     "title": "Generateur d'exercices",

@@ -23,6 +23,10 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/metal-reactions-lab/index.html",
     titleKey: "lab.metalReactivityName",
   },
+  "rusting-lab": {
+    path: "public/tools/rusting-lab/index.html",
+    titleKey: "lab.rustingName",
+  },
 };
 
 export const LAB_TOOL_TYPES = new Set(Object.keys(INTERACTIVE_LAB_TOOLS));

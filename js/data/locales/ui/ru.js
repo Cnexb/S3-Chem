@@ -259,7 +259,9 @@ export const ruUI = {
     "sandboxName": "Sandbox",
     "sandboxDesc": "Simulate micro-structure and compare covalent substance properties.",
     "titrationName": "Titration",
-    "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points."
+    "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points.",
+    "rustingName": "Rusting",
+    "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection."
   },
   "worksheet": {
     "title": "Генератор листов заданий",

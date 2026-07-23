@@ -365,7 +365,9 @@ export const zhUI = {
     "titrationName": "滴定",
     "titrationDesc": "模拟酸碱滴定实验，练习读数、指示剂选择及当量点计算。",
     "metalReactivityName": "金属反应",
-    "metalReactivityDesc": "互动模拟金属与氧气、水／蒸汽、酸及置换溶液的反应。"
+    "metalReactivityDesc": "互动模拟金属与氧气、水／蒸汽、酸及置换溶液的反应。",
+    "rustingName": "生锈",
+    "rustingDesc": "探究铁生锈条件、指示剂实验与防锈保护。"
   },
   "worksheet": {
     "title": "练习单生成器",

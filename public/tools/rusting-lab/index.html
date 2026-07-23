@@ -1,0 +1,2674 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互動化學實驗室：鐵釘生銹與電化腐蝕 | Interactive Chemistry Lab: Iron Rusting & Corrosion</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- MathJax for chemical equation rendering -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* Modern bright white laboratory panels with delicate borders */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+        }
+        .glass-card {
+            background: rgba(248, 250, 252, 0.7);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 1);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.08);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(241, 245, 249, 0.8);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.5);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(6, 182, 212, 0.6);
+        }
+        /* Tab active highlight line */
+        .tab-underline {
+            height: 3px;
+            background: linear-gradient(90deg, #0891b2, #2563eb);
+            transition: all 0.3s ease;
+        }
+        /* Bubbles animations for test tube boiled water */
+        @keyframes bubbleUp {
+            0% { transform: translateY(0) scale(0.6); opacity: 0; }
+            15% { opacity: 0.7; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-80px) scale(1.1); opacity: 0; }
+        }
+        .bubble {
+            animation: bubbleUp 3s infinite linear;
+        }
+
+        /* Language Switching Styles */
+        html[lang="zh-HK"] .lang-en { display: none !important; }
+        html[lang="en"] .lang-zh { display: none !important; }
+
+        /* Host modal embed */
+        html.embed-mode .lab-lang-switch { display: none !important; }
+        html.embed-mode footer { display: none !important; }
+        html.embed-mode body { min-height: 100%; }
+        html.embed-mode .max-w-7xl { max-width: none; padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen font-sans overflow-x-hidden selection:bg-cyan-500 selection:text-slate-950">
+
+    <!-- Top Glow Effects (extremely delicate in bright mode) -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-400/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-10 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 py-6 relative z-10 flex flex-col min-h-screen">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-slate-200 gap-4">
+            <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-slate-950 text-2xl shadow-lg shadow-cyan-500/20">
+                    <i class="fa-solid fa-flask-vial animate-pulse"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-wider bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 bg-clip-text text-transparent lang-zh">
+                        互動化學實驗室：鐵釘生銹與電化腐蝕
+                    </h1>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-wider bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 bg-clip-text text-transparent lang-en">
+                        Interactive Chemistry Lab: Iron Rusting & Corrosion
+                    </h1>
+                    <p class="text-xs md:text-sm text-slate-600 font-medium tracking-wide">
+                        Interactive Chemistry Lab: Iron Rusting & Electrochemical Corrosion
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Top Actions: DSE badge & Language Switcher -->
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <!-- DSE badge -->
+                <div class="flex items-center space-x-2 bg-cyan-50 border border-cyan-200 px-3 py-1.5 rounded-lg text-xs font-semibold text-cyan-700 shadow-sm">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span class="lang-zh">專為高中 HKDSE 化學科設計</span>
+                    <span class="lang-en">Designed for Senior Secondary HKDSE Chemistry</span>
+                </div>
+                <!-- Language Switcher Button (hidden when embedded in Uni+ modal) -->
+                <div class="lab-lang-switch flex p-0.5 bg-slate-100 border border-slate-200 rounded-lg text-xs">
+                    <button onclick="changeLanguage('zh')" id="lang-btn-zh" class="px-2.5 py-1 rounded-md font-bold transition-all bg-cyan-500 text-slate-950">繁中</button>
+                    <button onclick="changeLanguage('en')" id="lang-btn-en" class="px-2.5 py-1 rounded-md font-bold transition-all text-slate-500 hover:text-slate-800">EN</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Navigation Tabs -->
+        <nav class="flex space-x-1 p-1 bg-white border border-slate-200 rounded-xl mb-6 relative shadow-sm">
+            <button onclick="switchTab('test-tube-tab')" id="btn-test-tube-tab" class="flex-1 py-3 px-4 rounded-lg flex items-center justify-center space-x-2 text-sm font-semibold transition-all duration-200 text-cyan-700 bg-cyan-50/70 border border-cyan-200/40 shadow-inner">
+                <i class="fa-solid fa-vial"></i>
+                <span class="lang-zh"><span class="hidden sm:inline">實驗一：</span>試管生銹探究</span>
+                <span class="lang-en"><span class="hidden sm:inline">Expt 1: </span>Test Tube Rusting Lab</span>
+            </button>
+            <button onclick="switchTab('petri-dish-tab')" id="btn-petri-dish-tab" class="flex-1 py-3 px-4 rounded-lg flex items-center justify-center space-x-2 text-sm font-semibold transition-all duration-200 text-slate-500 hover:text-slate-800 hover:bg-slate-100">
+                <i class="fa-solid fa-circle-dot"></i>
+                <span class="lang-zh"><span class="hidden sm:inline">實驗二：</span>培養皿指示劑實驗</span>
+                <span class="lang-en"><span class="hidden sm:inline">Expt 2: </span>Petri Dish Indicators</span>
+            </button>
+        </nav>
+
+        <!-- MAIN SECTIONS -->
+        <main class="flex-grow flex flex-col">
+
+            <!-- SECTION 1: TEST TUBE LAB -->
+            <section id="sect-test-tube-tab" class="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-grow">
+                <!-- S1: Left Panel - Interaction controls -->
+                <div class="lg:col-span-6 flex flex-col justify-between glass-panel p-6 rounded-2xl shadow-xl">
+                    <div>
+                        <h2 class="text-lg font-bold text-cyan-400 mb-4 flex items-center">
+                            <i class="fa-solid fa-sliders mr-2"></i>
+                            <span class="lang-zh">試管組件控制面板</span>
+                            <span class="lang-en">Test Tube Control Panel</span>
+                        </h2>
+                        <p class="text-xs text-slate-400 mb-5 leading-relaxed lang-zh">
+                            請在下方選擇您想放入試管的物件。你可以隨時點擊按鈕來放入或取出，系統會自動在右方試管中進行立體 3D 視覺渲染。
+                        </p>
+                        <p class="text-xs text-slate-400 mb-5 leading-relaxed lang-en">
+                            Select components to place in the test tube below. You can toggle any items to insert or remove them; the 3D rendering updates in real-time on the right.
+                        </p>
+
+                        <!-- Controls -->
+                        <div class="space-y-3">
+                            <!-- Iron Nail (Compulsory Warning but toggleable) -->
+                            <button id="ctrl-nail" onclick="toggleTubeComponent('nail')" class="w-full p-3 rounded-xl flex items-center justify-between border text-left transition-all duration-200 bg-white border-slate-200 text-slate-700 hover:border-cyan-500/50 shadow-sm">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500 icon-box"><i class="fa-solid fa-screwdriver"></i></span>
+                                    <div>
+                                        <div class="text-sm font-semibold lang-zh">加入鐵釘 <span class="text-xs text-red-500 font-normal">(實驗必須)</span></div>
+                                        <div class="text-sm font-semibold lang-en">Add Iron Nail <span class="text-xs text-red-500 font-normal">(Required)</span></div>
+                                    </div>
+                                </div>
+                                <span class="badge text-xs px-2.5 py-1 rounded bg-slate-100 text-slate-400">未加入</span>
+                            </button>
+
+                            <!-- Copper-wrapped Nail -->
+                            <button id="ctrl-copper-nail" onclick="toggleTubeComponent('copper-nail')" class="w-full p-3 rounded-xl flex items-center justify-between border text-left transition-all duration-200 bg-white border-slate-200 text-slate-700 hover:border-cyan-500/50 shadow-sm">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-orange-500 icon-box"><i class="fa-solid fa-link"></i></span>
+                                    <div>
+                                        <div class="text-sm font-semibold lang-zh">纏繞銅線的鐵釘 <span class="text-xs text-amber-600 font-normal">(電偶腐蝕)</span></div>
+                                        <div class="text-sm font-semibold lang-en">Copper-wrapped Nail <span class="text-xs text-amber-600 font-normal">(Galvanic)</span></div>
+                                    </div>
+                                </div>
+                                <span class="badge text-xs px-2.5 py-1 rounded bg-slate-100 text-slate-400">未加入</span>
+                            </button>
+
+                            <!-- Magnesium-wrapped Nail -->
+                            <button id="ctrl-magnesium-nail" onclick="toggleTubeComponent('magnesium-nail')" class="w-full p-3 rounded-xl flex items-center justify-between border text-left transition-all duration-200 bg-white border-slate-200 text-slate-700 hover:border-cyan-500/50 shadow-sm">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-emerald-500 icon-box"><i class="fa-solid fa-shield-halved"></i></span>
+                                    <div>
+                                        <div class="text-sm font-semibold lang-zh">纏繞鎂帶的鐵釘 <span class="text-xs text-emerald-600 font-normal">(犧牲性保護)</span></div>
+                                        <div class="text-sm font-semibold lang-en">Magnesium-wrapped Nail <span class="text-xs text-emerald-600 font-normal">(Sacrificial)</span></div>
+                                    </div>
+                                </div>
+                                <span class="badge text-xs px-2.5 py-1 rounded bg-slate-100 text-slate-400">未加入</span>
+                            </button>
+
+                            <!-- Water/Medium selection group (Choose One) -->
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/80 space-y-2.5">
+                                <span class="text-xs text-slate-500 font-bold uppercase tracking-wider block lang-zh">加入液體 / 介質 (五選一)</span>
+                                <span class="text-xs text-slate-500 font-bold uppercase tracking-wider block lang-en">Add Liquid / Medium (Choose One)</span>
+                                
+                                <button id="ctrl-distilled-water" onclick="toggleTubeComponent('distilled-water')" class="w-full p-2.5 rounded-lg flex items-center justify-between border text-left transition-all duration-150 bg-white border-slate-200 text-slate-600 hover:border-cyan-500/30 shadow-sm">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="w-6 h-6 rounded bg-slate-100 flex items-center justify-center text-xs text-blue-500"><i class="fa-solid fa-droplet"></i></span>
+                                        <div>
+                                            <div class="text-xs font-semibold lang-zh">蒸餾水 (含有溶解氧)</div>
+                                            <div class="text-xs font-semibold lang-en">Distilled Water (with dissolved oxygen)</div>
+                                        </div>
+                                    </div>
+                                    <span class="badge text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-400">未加入</span>
+                                </button>
+
+                                <button id="ctrl-boiled-water" onclick="toggleTubeComponent('boiled-water')" class="w-full p-2.5 rounded-lg flex items-center justify-between border text-left transition-all duration-150 bg-white border-slate-200 text-slate-600 hover:border-cyan-500/30 shadow-sm">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="w-6 h-6 rounded bg-slate-100 flex items-center justify-center text-xs text-emerald-500"><i class="fa-solid fa-temperature-arrow-up"></i></span>
+                                        <div>
+                                            <div class="text-xs font-semibold lang-zh">經煮沸的蒸餾水 (無溶解氧)</div>
+                                            <div class="text-xs font-semibold lang-en">Boiled Distilled Water (no dissolved oxygen)</div>
+                                        </div>
+                                    </div>
+                                    <span class="badge text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-400">未加入</span>
+                                </button>
+
+                                <button id="ctrl-sea-water" onclick="toggleTubeComponent('sea-water')" class="w-full p-2.5 rounded-lg flex items-center justify-between border text-left transition-all duration-150 bg-white border-slate-200 text-slate-600 hover:border-cyan-500/30 shadow-sm">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="w-6 h-6 rounded bg-slate-100 flex items-center justify-center text-xs text-teal-500"><i class="fa-solid fa-water"></i></span>
+                                        <div>
+                                            <div class="text-xs font-semibold lang-zh">海水 (含有溶解氧與高濃度鹽分)</div>
+                                            <div class="text-xs font-semibold lang-en">Sea Water (with oxygen & high salt content)</div>
+                                        </div>
+                                    </div>
+                                    <span class="badge text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-400">未加入</span>
+                                </button>
+
+                                <button id="ctrl-acid" onclick="toggleTubeComponent('acid')" class="w-full p-2.5 rounded-lg flex items-center justify-between border text-left transition-all duration-150 bg-white border-slate-200 text-slate-600 hover:border-cyan-500/30 shadow-sm">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="w-6 h-6 rounded bg-slate-100 flex items-center justify-center text-xs text-rose-500"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                                        <div>
+                                            <div class="text-xs font-semibold lang-zh">稀酸 (含有溶解氧與高濃度氫離子)</div>
+                                            <div class="text-xs font-semibold lang-en">Dilute Acid (with oxygen & high H⁺ content)</div>
+                                        </div>
+                                    </div>
+                                    <span class="badge text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-400">未加入</span>
+                                </button>
+
+                                <button id="ctrl-oil-poured" onclick="toggleTubeComponent('oil-poured')" class="w-full p-2.5 rounded-lg flex items-center justify-between border text-left transition-all duration-150 bg-white border-slate-200 text-slate-600 hover:border-cyan-500/30 shadow-sm">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="w-6 h-6 rounded bg-slate-100 flex items-center justify-center text-xs text-amber-600"><i class="fa-solid fa-bottle-droplet"></i></span>
+                                        <div>
+                                            <div class="text-xs font-semibold lang-zh">倒入防護油 (浸沒整支鐵釘)</div>
+                                            <div class="text-xs font-semibold lang-en">Pour Oil in Test Tube (immerses nail)</div>
+                                        </div>
+                                    </div>
+                                    <span class="badge text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-400">未加入</span>
+                                </button>
+                            </div>
+
+                            <!-- Floating Barrier (Floating Oil Layer) -->
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/80 space-y-2">
+                                <span class="text-xs text-slate-500 font-bold uppercase tracking-wider block lang-zh">水面防護層</span>
+                                <span class="text-xs text-slate-500 font-bold uppercase tracking-wider block lang-en">Water Surface Protection</span>
+
+                                <button id="ctrl-oil" onclick="toggleTubeComponent('oil')" class="w-full p-2.5 rounded-lg flex items-center justify-between border text-left transition-all duration-150 bg-white border-slate-200 text-slate-600 hover:border-cyan-500/30 shadow-sm">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="w-6 h-6 rounded bg-slate-100 flex items-center justify-center text-xs text-yellow-600"><i class="fa-solid fa-oil-can"></i></span>
+                                        <div>
+                                            <div class="text-xs font-semibold lang-zh">水面防護油層 (阻隔空氣溶入)</div>
+                                            <div class="text-xs font-semibold lang-en">Floating Oil Layer (blocks oxygen)</div>
+                                        </div>
+                                    </div>
+                                    <span class="badge text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-400">未加入</span>
+                                </button>
+                            </div>
+
+                            <!-- Drying agent (Anhydrous calcium chloride + cotton wool) -->
+                            <button id="ctrl-cacl2" onclick="toggleTubeComponent('cacl2')" class="w-full p-3 rounded-xl flex items-center justify-between border text-left transition-all duration-200 bg-white border-slate-200 text-slate-600 hover:border-cyan-500/30 shadow-sm">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-purple-500 icon-box"><i class="fa-solid fa-cloud"></i></span>
+                                    <div>
+                                        <div class="text-sm font-semibold lang-zh">加入無水氯化鈣 & 棉花</div>
+                                        <div class="text-sm font-semibold lang-en">Add Anhydrous CaCl₂ & Cotton Wool</div>
+                                    </div>
+                                </div>
+                                <span class="badge text-xs px-2.5 py-1 rounded bg-slate-100 text-slate-400">未加入</span>
+                            </button>
+
+                            <!-- Rubber stopper -->
+                            <button id="ctrl-stopper" onclick="toggleTubeComponent('stopper')" class="w-full p-3 rounded-xl flex items-center justify-between border text-left transition-all duration-200 bg-white border-slate-200 text-slate-600 hover:border-cyan-500/30 shadow-sm">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-indigo-500 icon-box"><i class="fa-solid fa-plug"></i></span>
+                                    <div>
+                                        <div class="text-sm font-semibold lang-zh">加上試管橡膠塞</div>
+                                        <div class="text-sm font-semibold lang-en">Add Rubber Stopper</div>
+                                    </div>
+                                </div>
+                                <span class="badge text-xs px-2.5 py-1 rounded bg-slate-100 text-slate-400">未加入</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Reset and Action Button -->
+                    <div class="mt-6 pt-4 border-t border-slate-200 space-y-3">
+                        <button onclick="resetTubeExperiment()" class="w-full py-2 px-4 rounded-xl border border-slate-200 text-slate-600 hover:text-slate-800 hover:bg-slate-100 text-xs font-semibold flex items-center justify-center space-x-2 shadow-sm">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            <span class="lang-zh">清空試管重置</span>
+                            <span class="lang-en">Clear Tube & Reset</span>
+                        </button>
+                        <button onclick="startTubeExperiment()" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold shadow-lg shadow-cyan-500/10 hover:shadow-cyan-400/20 flex items-center justify-center space-x-2 transition-all">
+                            <i class="fa-solid fa-play"></i>
+                            <span class="lang-zh">開始實驗 (Start Experiment)</span>
+                            <span class="lang-en">Start Experiment</span>
+                        </button>
+
+                        <!-- Curriculum standard notice -->
+                        <div class="pt-4 border-t border-slate-200 text-[10px] text-slate-500 leading-normal flex items-start space-x-1.5">
+                            <i class="fa-solid fa-circle-info text-cyan-600 mt-0.5"></i>
+                            <span class="lang-zh">這是一個完全密封的微環境模型，模擬了中學化學 DSE 科學教科書中最經典的鐵生銹必備條件（氧氣及水分）對照實驗。</span>
+                            <span class="lang-en">This is a completely sealed microenvironment model, simulating the classic secondary school chemistry DSE curriculum experiment for the essential conditions of rusting (oxygen and water).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S1: Middle Panel - 3D Visual Rendering -->
+                <div class="lg:col-span-6 glass-panel p-6 rounded-2xl flex flex-col justify-between items-center relative min-h-[620px]">
+                    <div class="w-full text-center">
+                        <span class="text-[10px] font-bold tracking-widest text-cyan-700 bg-cyan-50 border border-cyan-200 px-2.5 py-1 rounded-full uppercase lang-zh">3D 試管實時視覺化</span>
+                        <span class="text-[10px] font-bold tracking-widest text-cyan-700 bg-cyan-50 border border-cyan-200 px-2.5 py-1 rounded-full uppercase lang-en">3D Tube Real-time Visualization</span>
+                    </div>
+
+                    <!-- SVG Render Container -->
+                    <div class="w-full flex-grow flex items-center justify-center my-4 relative">
+                        <!-- Custom CSS and SVG 3D Test Tube -->
+                        <svg id="tube-svg" viewBox="0 0 240 460" class="w-full max-w-[280px] h-full filter drop-shadow-[0_12px_24px_rgba(15,23,42,0.08)]">
+                            <defs>
+                                <!-- Metallic Gradient for Iron Nail (Simple Light Silver) -->
+                                <linearGradient id="metal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffffff" />
+                                    <stop offset="25%" stop-color="#f1f5f9" />
+                                    <stop offset="70%" stop-color="#cbd5e1" />
+                                    <stop offset="100%" stop-color="#94a3b8" />
+                                </linearGradient>
+                                <!-- Rust Surface Gradient (Realistic Dark Brown Rusting) -->
+                                <linearGradient id="rust-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#5c2505" />
+                                    <stop offset="35%" stop-color="#451a03" />
+                                    <stop offset="70%" stop-color="#311102" />
+                                    <stop offset="100%" stop-color="#1c0700" />
+                                </linearGradient>
+                                <!-- Protective Yellow-Gold Oil Coating for Nail Surface -->
+                                <linearGradient id="nail-oil-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fef08a" stop-opacity="0.85" />
+                                    <stop offset="40%" stop-color="#fbbf24" stop-opacity="0.65" />
+                                    <stop offset="70%" stop-color="#ca8a04" stop-opacity="0.65" />
+                                    <stop offset="100%" stop-color="#78350f" stop-opacity="0.85" />
+                                </linearGradient>
+                                <!-- Realistic Glass Gradient with specular edge highlights and transparent center -->
+                                <linearGradient id="glass-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#e2e8f0" stop-opacity="0.35" />
+                                    <stop offset="5%" stop-color="#ffffff" stop-opacity="0.65" />
+                                    <stop offset="15%" stop-color="#ffffff" stop-opacity="0.15" />
+                                    <stop offset="45%" stop-color="#ffffff" stop-opacity="0.02" />
+                                    <stop offset="55%" stop-color="#ffffff" stop-opacity="0.02" />
+                                    <stop offset="85%" stop-color="#ffffff" stop-opacity="0.15" />
+                                    <stop offset="95%" stop-color="#ffffff" stop-opacity="0.65" />
+                                    <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0.35" />
+                                </linearGradient>
+                                <!-- Glass Stroke Gradient for realistic physical outline -->
+                                <linearGradient id="glass-stroke-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#475569" stop-opacity="0.95" />
+                                    <stop offset="10%" stop-color="#64748b" stop-opacity="0.85" />
+                                    <stop offset="50%" stop-color="#94a3b8" stop-opacity="0.5" />
+                                    <stop offset="90%" stop-color="#64748b" stop-opacity="0.85" />
+                                    <stop offset="100%" stop-color="#475569" stop-opacity="0.95" />
+                                </linearGradient>
+                                <!-- Water Liquid Gradient (Clean Light Blue) -->
+                                <linearGradient id="water-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.35" />
+                                    <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.5" />
+                                </linearGradient>
+                                <!-- Water Meniscus Gradient -->
+                                <linearGradient id="water-meniscus-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.55" />
+                                    <stop offset="100%" stop-color="#7dd3fc" stop-opacity="0.3" />
+                                </linearGradient>
+                                <!-- Sea Water Liquid Gradient (Clean Teal Blue) -->
+                                <linearGradient id="sea-water-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.35" />
+                                    <stop offset="100%" stop-color="#0f766e" stop-opacity="0.55" />
+                                </linearGradient>
+                                <!-- Sea Water Meniscus Gradient -->
+                                <linearGradient id="sea-water-meniscus-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#99f6e4" stop-opacity="0.55" />
+                                    <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0.3" />
+                                </linearGradient>
+                                <!-- Acid Liquid Gradient (Light Pink/Red) -->
+                                <linearGradient id="acid-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#fda4af" stop-opacity="0.35" />
+                                    <stop offset="100%" stop-color="#f43f5e" stop-opacity="0.5" />
+                                </linearGradient>
+                                <!-- Acid Meniscus Gradient -->
+                                <linearGradient id="acid-meniscus-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#fecdd3" stop-opacity="0.55" />
+                                    <stop offset="100%" stop-color="#fda4af" stop-opacity="0.3" />
+                                </linearGradient>
+                                <!-- Oil Layer Gradient -->
+                                <linearGradient id="oil-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.75" />
+                                    <stop offset="100%" stop-color="#b45309" stop-opacity="0.85" />
+                                </linearGradient>
+                                <!-- Stopper Gradients -->
+                                <linearGradient id="stopper-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#1e293b" />
+                                    <stop offset="25%" stop-color="#475569" />
+                                    <stop offset="50%" stop-color="#334155" />
+                                    <stop offset="85%" stop-color="#1e293b" />
+                                    <stop offset="100%" stop-color="#0f172a" />
+                                </linearGradient>
+                                <radialGradient id="stopper-top-grad" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+                                    <stop offset="0%" stop-color="#64748b" />
+                                    <stop offset="60%" stop-color="#475569" />
+                                    <stop offset="100%" stop-color="#1e293b" />
+                                </radialGradient>
+                            </defs>
+
+                            <!-- 1. DRYING AGENT: CaCl2 (Now placed above the nail, water, and oil) -->
+                            <g id="svg-cacl2" class="opacity-0 transition-all duration-300">
+                                <!-- Calcium chloride granules (little white circles on top of the cotton wool plug at y=110) -->
+                                <ellipse cx="120" cy="110" rx="36" ry="14" fill="#e2e8f0" />
+                                <circle cx="95" cy="107" r="4.5" fill="#f1f5f9" />
+                                <circle cx="104" cy="103" r="5" fill="#cbd5e1" />
+                                <circle cx="112" cy="109" r="4" fill="#f8fafc" />
+                                <circle cx="121" cy="101" r="5" fill="#ffffff" />
+                                <circle cx="130" cy="107" r="4" fill="#cbd5e1" />
+                                <circle cx="138" cy="103" r="4.5" fill="#e2e8f0" />
+                                <circle cx="145" cy="109" r="5" fill="#ffffff" />
+                                <circle cx="118" cy="113" r="4.5" fill="#f1f5f9" />
+                                <circle cx="126" cy="116" r="5" fill="#cbd5e1" />
+                                <circle cx="106" cy="114" r="4" fill="#f8fafc" />
+                                <circle cx="136" cy="114" r="4.5" fill="#ffffff" />
+                            </g>
+
+                            <!-- 2. COTTON WOOL (Now placed below CaCl2 as a support plug at y=130) -->
+                            <g id="svg-cotton" class="opacity-0 transition-all duration-300">
+                                <!-- Fluffy cloud shaped cotton layer plug translated to center at y=130 -->
+                                <path d="M 86 130 
+                                         C 80 120, 100 110, 105 120 
+                                         C 110 107, 130 107, 135 120 
+                                         C 140 110, 160 120, 154 130 
+                                         C 160 140, 140 150, 135 140 
+                                         C 130 153, 110 153, 105 140 
+                                         C 100 150, 80 140, 86 130 Z" 
+                                      fill="#f8fafc" fill-opacity="0.85" stroke="#e2e8f0" stroke-width="1" />
+                            </g>
+
+                            <!-- 5. IRON NAIL -->
+                            <!-- Position A: Normal bottom of the tube (Default) -->
+                            <g id="svg-nail-normal" class="opacity-0 transition-all duration-300">
+                                <!-- Copper Wire Back (behind nail shaft) -->
+                                <g id="svg-copper-wire-back" class="opacity-0 transition-all duration-300">
+                                    <path d="M 103.2,220 Q 97,224 101.6,232 M 110.0,244 Q 104,248 108.4,256 M 116.7,268 Q 111,272 115.1,280 M 123.5,292 Q 118,296 121.9,304 M 130.2,316 Q 124,320 128.6,328 M 137.0,340 Q 131,344 135.4,352" fill="none" stroke="#7c2d12" stroke-width="4.0" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 97,224 101.6,232 M 110.0,244 Q 104,248 108.4,256 M 116.7,268 Q 111,272 115.1,280 M 123.5,292 Q 118,296 121.9,304 M 130.2,316 Q 124,320 128.6,328 M 137.0,340 Q 131,344 135.4,352" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 97,224 101.6,232 M 110.0,244 Q 104,248 108.4,256 M 116.7,268 Q 111,272 115.1,280 M 123.5,292 Q 118,296 121.9,304 M 130.2,316 Q 124,320 128.6,328 M 137.0,340 Q 131,344 135.4,352" fill="none" stroke="#fdba74" stroke-width="1.0" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 97,224 101.6,232 M 110.0,244 Q 104,248 108.4,256 M 116.7,268 Q 111,272 115.1,280 M 123.5,292 Q 118,296 121.9,304 M 130.2,316 Q 124,320 128.6,328 M 137.0,340 Q 131,344 135.4,352" fill="none" stroke="#ffffff" stroke-width="0.4" stroke-linecap="round" />
+                                </g>
+
+                                <!-- Magnesium Wire Back (behind nail shaft) -->
+                                <g id="svg-magnesium-wire-back" class="opacity-0 transition-all duration-300">
+                                    <path d="M 103.2,220 Q 97,224 101.6,232 M 110.0,244 Q 104,248 108.4,256 M 116.7,268 Q 111,272 115.1,280 M 123.5,292 Q 118,296 121.9,304 M 130.2,316 Q 124,320 128.6,328 M 137.0,340 Q 131,344 135.4,352" fill="none" stroke="#334155" stroke-width="7.5" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 97,224 101.6,232 M 110.0,244 Q 104,248 108.4,256 M 116.7,268 Q 111,272 115.1,280 M 123.5,292 Q 118,296 121.9,304 M 130.2,316 Q 124,320 128.6,328 M 137.0,340 Q 131,344 135.4,352" fill="none" stroke="#64748b" stroke-width="5.5" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 97,224 101.6,232 M 110.0,244 Q 104,248 108.4,256 M 116.7,268 Q 111,272 115.1,280 M 123.5,292 Q 118,296 121.9,304 M 130.2,316 Q 124,320 128.6,328 M 137.0,340 Q 131,344 135.4,352" fill="none" stroke="#cbd5e1" stroke-width="3.0" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 97,224 101.6,232 M 110.0,244 Q 104,248 108.4,256 M 116.7,268 Q 111,272 115.1,280 M 123.5,292 Q 118,296 121.9,304 M 130.2,316 Q 124,320 128.6,328 M 137.0,340 Q 131,344 135.4,352" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" />
+                                </g>
+
+                                <!-- Group for metallic clean nail -->
+                                <g id="nail-clean-bottom">
+                                    <!-- Nail Head -->
+                                    <ellipse cx="96" cy="211" rx="11" ry="3.5" fill="url(#metal-grad)" stroke="#94a3b8" stroke-width="0.8" transform="rotate(15, 96, 211)" />
+                                    <!-- Nail Shaft -->
+                                    <path d="M 96,211 L 138,360 L 142,359 L 100,210 Z" fill="url(#metal-grad)" stroke="#94a3b8" stroke-width="0.8" />
+                                    <!-- Nail Point -->
+                                    <polygon points="138,360 144,369 142,359" fill="url(#metal-grad)" stroke="#94a3b8" stroke-width="0.6" />
+                                </g>
+                                <!-- Group for RUST layer (Fades in) -->
+                                <g id="nail-rust-bottom" class="opacity-0 transition-all duration-500">
+                                    <!-- Rusted Nail Head -->
+                                    <ellipse cx="96" cy="211" rx="11" ry="3.5" fill="url(#rust-grad)" stroke="#270e00" stroke-width="1.2" transform="rotate(15, 96, 211)" />
+                                    <!-- Rusted Nail Shaft -->
+                                    <path d="M 96,211 L 138,360 L 142,359 L 100,210 Z" fill="url(#rust-grad)" stroke="#270e00" stroke-width="1.2" />
+                                    <!-- Rusted Nail Point -->
+                                    <polygon points="138,360 144,369 142,359" fill="url(#rust-grad)" stroke="#270e00" stroke-width="0.8" />
+                                    <!-- Little rust texture spots - Deep brown rust scales and darker highlights -->
+                                    <circle cx="105" cy="235" r="3" fill="#843d11" fill-opacity="1" />
+                                    <circle cx="120" cy="285" r="4.5" fill="#7c2d12" fill-opacity="1" />
+                                    <circle cx="132" cy="335" r="3.5" fill="#7c2d12" fill-opacity="1" />
+                                    <circle cx="110" cy="260" r="3.8" fill="#5c2505" fill-opacity="1" />
+                                    <circle cx="126" cy="310" r="4" fill="#9a3412" fill-opacity="1" />
+                                    <circle cx="102" cy="222" r="3" fill="#5c2505" fill-opacity="1" />
+                                    <path d="M110,255 Q112,260 116,257" stroke="#7c2d12" stroke-width="2" fill="none" />
+                                    <path d="M124,312 Q126,318 132,315" stroke="#5c2505" stroke-width="2" fill="none" />
+                                </g>
+
+                                <!-- Copper Wire Front (in front of nail shaft) -->
+                                <g id="svg-copper-wire-front" class="opacity-0 transition-all duration-300">
+                                    <path d="M 103.2,220 Q 110,218 115,215 M 101.6,232 Q 109,238 110.0,244 M 108.4,256 Q 116,262 116.7,268 M 115.1,280 Q 123,286 123.5,292 M 121.9,304 Q 129,310 130.2,316 M 128.6,328 Q 136,334 137.0,340 M 135.4,352 Q 130,356 125,360" fill="none" stroke="#7c2d12" stroke-width="4.0" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 110,218 115,215 M 101.6,232 Q 109,238 110.0,244 M 108.4,256 Q 116,262 116.7,268 M 115.1,280 Q 123,286 123.5,292 M 121.9,304 Q 129,310 130.2,316 M 128.6,328 Q 136,334 137.0,340 M 135.4,352 Q 130,356 125,360" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 110,218 115,215 M 101.6,232 Q 109,238 110.0,244 M 108.4,256 Q 116,262 116.7,268 M 115.1,280 Q 123,286 123.5,292 M 121.9,304 Q 129,310 130.2,316 M 128.6,328 Q 136,334 137.0,340 M 135.4,352 Q 130,356 125,360" fill="none" stroke="#fdba74" stroke-width="1.0" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 110,218 115,215 M 101.6,232 Q 109,238 110.0,244 M 108.4,256 Q 116,262 116.7,268 M 115.1,280 Q 123,286 123.5,292 M 121.9,304 Q 129,310 130.2,316 M 128.6,328 Q 136,334 137.0,340 M 135.4,352 Q 130,356 125,360" fill="none" stroke="#ffffff" stroke-width="0.4" stroke-linecap="round" />
+                                </g>
+
+                                <!-- Magnesium Ribbon Front (in front of nail shaft) -->
+                                <g id="svg-magnesium-wire-front" class="opacity-0 transition-all duration-300">
+                                    <path d="M 103.2,220 Q 110,218 115,215 M 101.6,232 Q 109,238 110.0,244 M 108.4,256 Q 116,262 116.7,268 M 115.1,280 Q 123,286 123.5,292 M 121.9,304 Q 129,310 130.2,316 M 128.6,328 Q 136,334 137.0,340 M 135.4,352 Q 130,356 125,360" fill="none" stroke="#334155" stroke-width="7.5" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 110,218 115,215 M 101.6,232 Q 109,238 110.0,244 M 108.4,256 Q 116,262 116.7,268 M 115.1,280 Q 123,286 123.5,292 M 121.9,304 Q 129,310 130.2,316 M 128.6,328 Q 136,334 137.0,340 M 135.4,352 Q 130,356 125,360" fill="none" stroke="#64748b" stroke-width="5.5" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 110,218 115,215 M 101.6,232 Q 109,238 110.0,244 M 108.4,256 Q 116,262 116.7,268 M 115.1,280 Q 123,286 123.5,292 M 121.9,304 Q 129,310 130.2,316 M 128.6,328 Q 136,334 137.0,340 M 135.4,352 Q 130,356 125,360" fill="none" stroke="#cbd5e1" stroke-width="3.0" stroke-linecap="round" />
+                                    <path d="M 103.2,220 Q 110,218 115,215 M 101.6,232 Q 109,238 110.0,244 M 108.4,256 Q 116,262 116.7,268 M 115.1,280 Q 123,286 123.5,292 M 121.9,304 Q 129,310 130.2,316 M 128.6,328 Q 136,334 137.0,340 M 135.4,352 Q 130,356 125,360" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" />
+                                </g>
+                            </g>
+
+                            <!-- 3. LIQUIDS (Lower part) - Drawn on top of the nail so the liquid naturally covers it -->
+                            <!-- Distilled water / Boiled distilled water / Sea Water -->
+                            <g id="svg-water" class="opacity-0 transition-all duration-300">
+                                <path id="water-liquid-path" d="M 81.5 180 
+                                         L 81.5 354 
+                                         A 38.5 38.5 0 0 0 158.5 354 
+                                         L 158.5 180 
+                                         Z" 
+                                      fill="url(#water-grad)" />
+                                <!-- Liquid meniscus (Raised above the nail head which sits at y=211) -->
+                                <ellipse id="water-meniscus-ellipse" cx="120" cy="180" rx="38.5" ry="8" fill="url(#water-meniscus-grad)" />
+                                
+                                <!-- Rising air bubbles -->
+                                <g id="svg-bubbles" class="hidden">
+                                    <circle cx="105" cy="320" r="1.5" fill="#ffffff" fill-opacity="0.7" class="bubble" style="animation-delay: 0.2s;" />
+                                    <circle cx="135" cy="300" r="2.5" fill="#ffffff" fill-opacity="0.6" class="bubble" style="animation-delay: 0.8s; animation-duration: 2.5s;" />
+                                    <circle cx="115" cy="270" r="2" fill="#ffffff" fill-opacity="0.8" class="bubble" style="animation-delay: 1.4s; animation-duration: 3.5s;" />
+                                    <circle cx="128" cy="330" r="1" fill="#ffffff" fill-opacity="0.5" class="bubble" style="animation-delay: 2.1s;" />
+                                </g>
+                            </g>
+
+                            <!-- 3.5 POURED OIL LAYER (Filling the test tube, covering the nail) -->
+                            <g id="svg-poured-oil" class="opacity-0 transition-all duration-300">
+                                <path d="M 81.5 180 
+                                         L 81.5 354 
+                                         A 38.5 38.5 0 0 0 158.5 354 
+                                         L 158.5 180 
+                                         Z" 
+                                      fill="url(#oil-grad)" />
+                                <!-- Oil meniscus (Raised above the nail head which sits at y=211) -->
+                                <ellipse cx="120" cy="180" rx="38.5" ry="8" fill="#fbbf24" fill-opacity="0.65" stroke="#d97706" stroke-width="0.5" />
+                            </g>
+
+                            <!-- 4. OIL LAYER (On top of water - moved up accordingly) -->
+                            <g id="svg-oil" class="opacity-0 transition-all duration-300">
+                                <rect x="82" y="150" width="76" height="30" fill="url(#oil-grad)" />
+                                <!-- Upper meniscus of oil -->
+                                <ellipse cx="120" cy="150" rx="38" ry="8" fill="#fbbf24" fill-opacity="0.6" />
+                                <!-- Lower meniscus (border with water at y=180) -->
+                                <ellipse cx="120" cy="180" rx="38" ry="8" fill="#fbbf24" fill-opacity="0.3" stroke="#fbbf24" stroke-width="0.5" />
+                            </g>
+
+                            <!-- 7. RUBBER STOPPER (Plugs inside the mouth) -->
+                            <g id="svg-stopper" class="opacity-0 transition-all duration-300">
+                                <!-- Base rubber wedge body -->
+                                <polygon points="76,20 164,20 157,48 83,48" fill="url(#stopper-grad)" stroke="#1e293b" stroke-width="1.2" />
+                                <!-- Top Ellipse of Stopper -->
+                                <ellipse cx="120" cy="20" rx="44" ry="10" fill="url(#stopper-top-grad)" stroke="#1e293b" stroke-width="0.8" />
+                                <!-- Bottom Ellipse insertion line -->
+                                <ellipse cx="120" cy="48" rx="37" ry="8" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.5" />
+                            </g>
+
+                            <!-- 6. GLASS TEST TUBE -->
+                            <!-- Main Glass Tube including Flared Rim and Rounded Bottom -->
+                            <path d="M 74,42 
+                                     C 76,46 80,48 80,52 
+                                     L 80,355 
+                                     A 40,40 0 0 0 160,355 
+                                     L 160,52 
+                                     C 160,48 164,46 166,42" 
+                                  fill="url(#glass-grad)" stroke="url(#glass-stroke-grad)" stroke-width="3" />
+                            
+                            <!-- Flared Glass Rim Lip Opening -->
+                            <ellipse cx="120" cy="42" rx="46" ry="11" fill="none" stroke="url(#glass-stroke-grad)" stroke-width="3" />
+                            <!-- Inner opening ellipse for thickness -->
+                            <ellipse cx="120" cy="42" rx="43" ry="10" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.5" />
+
+                            <!-- Glass Physical Thickness Inner Wall Line (Depth Effect) -->
+                            <path d="M 81.5,52 L 81.5,354 A 38.5,38.5 0 0 0 158.5,354 L 158.5,52" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.3" />
+
+                            <!-- 3D Specular Highlights / Glass Reflections -->
+                            <!-- Primary sharp highlight on left curve of cylinder -->
+                            <path d="M 83,52 L 83,352" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.65" />
+                            <path d="M 83,52 L 83,352" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.9" />
+                            <!-- Secondary highlight on right curve -->
+                            <path d="M 157,52 L 157,352" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.4" />
+                            
+                            <!-- Bottom hemispherical cup spherical reflections -->
+                            <!-- Inner curved shadow / light reflection ring -->
+                            <path d="M 86,350 A 34,34 0 0 0 154,350" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0.5" />
+                            <!-- Outermost faint bottom highlight -->
+                            <path d="M 92,365 A 28,28 0 0 0 148,365" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" opacity="0.35" />
+                            
+                            <!-- Rust Sediment on Tube Bottom -->
+                            <path id="svg-sediment" d="M 84,365 Q120,380 156,365 Q120,395 84,365" fill="#451a03" fill-opacity="0.8" class="opacity-0 transition-all duration-500" />
+                            <!-- Mild liquid turbidity mask for rust conditions -->
+                            <path id="svg-turbidity" d="M 82,180 L 82,355 A 38,38 0 0,0 158,355 L 158,180 Z" fill="#9a3412" fill-opacity="0.15" class="opacity-0 transition-all duration-500 pointer-events-none" />
+                        </svg>
+                    </div>
+
+                    <!-- Rusting level wording indicator under test tube -->
+                    <div id="report-status-badge-container" class="opacity-0 transition-all duration-300 w-full flex justify-center mb-2.5">
+                        <div id="report-status-badge" class="px-4 py-2 rounded-xl font-bold text-sm inline-flex items-center space-x-2 uppercase shadow-sm border bg-slate-50">
+                            <!-- Filled dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Environment indicators -->
+                    <div class="w-full bg-slate-50 rounded-xl border border-slate-200 p-3 text-center">
+                        <div class="text-xs font-semibold text-slate-600 mb-1.5 flex items-center justify-center">
+                            <i class="fa-solid fa-cloud-sun mr-1.5 text-cyan-600"></i>
+                            <span class="lang-zh">試管內微環境分析</span>
+                            <span class="lang-en">Tube Microenvironment Analysis</span>
+                        </div>
+                        <div class="flex justify-around text-[10px] text-slate-500 font-medium">
+                            <span id="env-water"><i class="fa-solid fa-circle text-slate-300 mr-1"></i> <span class="lang-zh">水分 (H₂O)</span><span class="lang-en">Water (H₂O)</span></span>
+                            <span id="env-oxygen"><i class="fa-solid fa-circle text-slate-300 mr-1"></i> <span class="lang-zh">氧氣 (O₂)</span><span class="lang-en">Oxygen (O₂)</span></span>
+                            <span id="env-iron"><i class="fa-solid fa-circle text-slate-300 mr-1"></i> <span class="lang-zh">鐵 (Fe)</span><span class="lang-en">Iron (Fe)</span></span>
+                        </div>
+                    </div>
+
+                    <!-- LaTeX Equation Section (Moved under the set-up) -->
+                    <div id="report-equations" class="w-full mt-3 hidden space-y-2.5 p-3 rounded-xl bg-cyan-50 border border-cyan-200/50 shadow-inner">
+                        <h4 class="text-xs font-bold tracking-wider text-cyan-800 flex items-center">
+                            <i class="fa-solid fa-atom mr-1.5"></i>
+                            <span class="lang-zh">反應方程式 (Equations)</span>
+                            <span class="lang-en">Reaction Equations</span>
+                        </h4>
+                        <div class="space-y-2 text-[11px] font-mono text-slate-700" id="equation-list">
+                            <!-- LaTeX injected here dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden elements to keep JS selectors working seamlessly -->
+                <div class="hidden">
+                    <div id="tube-report-empty"></div>
+                    <div id="tube-report-active"></div>
+                    <p id="report-observation"></p>
+                    <p id="report-explanation"></p>
+                </div>
+            </section>
+
+
+            <!-- SECTION 2: PETRI DISH LAB -->
+            <section id="sect-petri-dish-tab" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6 flex-grow">
+                <!-- S2: Left Panel - Choose Nail setup -->
+                <div class="lg:col-span-5 flex flex-col justify-between glass-panel p-6 rounded-2xl shadow-xl">
+                    <div>
+                        <h2 class="text-lg font-bold text-cyan-700 mb-4 flex items-center">
+                            <i class="fa-solid fa-vial-circle-check mr-2"></i>
+                            <span class="lang-zh">培養皿測試釘選擇</span>
+                            <span class="lang-en">Petri Dish Test Nail Selection</span>
+                        </h2>
+                        <p class="text-xs text-slate-600 mb-5 leading-relaxed lang-zh">
+                            培養皿內充滿含<b>己氰合鐵(III)酸鉀</b>（檢測 $\text{Fe}^{2+}$ 變<b>深藍色</b>）及<b>酚酞</b>（檢測 $\text{OH}^-$ 變<b>粉紅色</b>）的暖凝膠。請選擇一根不同處理的鐵釘：
+                        </p>
+                        <p class="text-xs text-slate-600 mb-5 leading-relaxed lang-en">
+                            The petri dish is filled with warm agar gel containing <b>potassium hexacyanoferrate(III)</b> (detects $\text{Fe}^{2+}$ turning <b>deep blue</b>) and <b>phenolphthalein</b> (detects $\text{OH}^-$ turning <b>pink</b>). Choose a treated nail:
+                        </p>
+                        
+                        <!-- Radio cards list -->
+                        <div class="space-y-2.5 max-h-[360px] overflow-y-auto pr-1">
+                            <!-- Option 1: Plain straight -->
+                            <label class="block cursor-pointer">
+                                <input type="radio" name="dish-nail-select" value="straight" class="sr-only peer" checked>
+                                <div class="p-3 rounded-xl border border-slate-200 bg-white peer-checked:border-cyan-500 peer-checked:bg-cyan-50/20 text-slate-500 peer-checked:text-slate-800 shadow-sm transition-all">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-xs font-bold flex items-center">
+                                            <i class="fa-solid fa-screwdriver mr-1.5 text-slate-500"></i>
+                                            <span class="lang-zh">對照組：普通直鐵釘 (Control)</span>
+                                            <span class="lang-en">Control: Plain Straight Nail</span>
+                                        </span>
+                                        <i class="fa-solid fa-circle-check text-cyan-500 opacity-0 peer-checked:opacity-100"></i>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-zh">普通直鐵釘，無任何外加金屬或物理保護屏障。</p>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-en">Standard straight iron nail without any foreign metals or protective barriers.</p>
+                                </div>
+                            </label>
+
+                            <!-- Option 2: Bent -->
+                            <label class="block cursor-pointer">
+                                <input type="radio" name="dish-nail-select" value="bent" class="sr-only peer">
+                                <div class="p-3 rounded-xl border border-slate-200 bg-white peer-checked:border-cyan-500 peer-checked:bg-cyan-50/20 text-slate-500 peer-checked:text-slate-800 shadow-sm transition-all">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-xs font-bold flex items-center">
+                                            <i class="fa-solid fa-signature mr-1.5 text-cyan-600"></i>
+                                            <span class="lang-zh">彎曲鐵釘 (Bent Nail)</span>
+                                            <span class="lang-en">Bent Iron Nail</span>
+                                        </span>
+                                        <i class="fa-solid fa-circle-check text-cyan-500 opacity-0 peer-checked:opacity-100"></i>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-zh">中間受到重力彎曲，模擬「應力集中」下的點蝕加速效應。</p>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-en">Bent mechanically at the center, simulating corrosion acceleration under physical "stress concentration".</p>
+                                </div>
+                            </label>
+
+                            <!-- Option 3: Scratched -->
+                            <label class="block cursor-pointer">
+                                <input type="radio" name="dish-nail-select" value="scratched" class="sr-only peer">
+                                <div class="p-3 rounded-xl border border-slate-200 bg-white peer-checked:border-cyan-500 peer-checked:bg-cyan-50/20 text-slate-500 peer-checked:text-slate-800 shadow-sm transition-all">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-xs font-bold flex items-center">
+                                            <i class="fa-solid fa-border-all mr-1.5 text-amber-600"></i>
+                                            <span class="lang-zh">有刮痕鐵釘 (Scratched Nail)</span>
+                                            <span class="lang-en">Scratched Iron Nail</span>
+                                        </span>
+                                        <i class="fa-solid fa-circle-check text-cyan-500 opacity-0 peer-checked:opacity-100"></i>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-zh">表面具備物理刮痕，氧化保護膜受損易成為強氧化中心。</p>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-en">Features physical scratches on the oxide film, allowing exposed metal to form active oxidation centers.</p>
+                                </div>
+                            </label>
+
+                            <!-- Option 4: Magnesium (Sacrificial) -->
+                            <label class="block cursor-pointer">
+                                <input type="radio" name="dish-nail-select" value="magnesium" class="sr-only peer">
+                                <div class="p-3 rounded-xl border border-slate-200 bg-white peer-checked:border-cyan-500 peer-checked:bg-cyan-50/20 text-slate-500 peer-checked:text-slate-800 shadow-sm transition-all">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-xs font-bold flex items-center">
+                                            <i class="fa-solid fa-shield-halved mr-1.5 text-emerald-600"></i>
+                                            <span class="lang-zh">纏繞鎂帶的鐵釘 (Magnesium-wrapped)</span>
+                                            <span class="lang-en">Magnesium-wrapped Nail</span>
+                                        </span>
+                                        <i class="fa-solid fa-circle-check text-cyan-500 opacity-0 peer-checked:opacity-100"></i>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-zh">活潑金屬陽極犧牲性保護 (Sacrificial Protection)，提供陰極保護。</p>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-en">Provides sacrificial protection (cathodic protection) using a highly reactive magnesium ribbon.</p>
+                                </div>
+                            </label>
+
+                            <!-- Option 5: Copper (Accelerated) -->
+                            <label class="block cursor-pointer">
+                                <input type="radio" name="dish-nail-select" value="copper" class="sr-only peer">
+                                <div class="p-3 rounded-xl border border-slate-200 bg-white peer-checked:border-cyan-500 peer-checked:bg-cyan-50/20 text-slate-500 peer-checked:text-slate-800 shadow-sm transition-all">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-xs font-bold flex items-center">
+                                            <i class="fa-solid fa-triangle-exclamation mr-1.5 text-red-500"></i>
+                                            <span class="lang-zh">纏繞銅線的鐵釘 (Copper-wrapped)</span>
+                                            <span class="lang-en">Copper-wrapped Nail</span>
+                                        </span>
+                                        <i class="fa-solid fa-circle-check text-cyan-500 opacity-0 peer-checked:opacity-100"></i>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-zh">不活潑金屬接觸，形成電偶加速鐵釘失去電子腐蝕。</p>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-en">Coupled with a less reactive copper wire, forming a galvanic cell that accelerates iron oxidation.</p>
+                                </div>
+                            </label>
+
+                            <!-- Option 6: Paint -->
+                            <label class="block cursor-pointer">
+                                <input type="radio" name="dish-nail-select" value="paint" class="sr-only peer">
+                                <div class="p-3 rounded-xl border border-slate-200 bg-white peer-checked:border-cyan-500 peer-checked:bg-cyan-50/20 text-slate-500 peer-checked:text-slate-800 shadow-sm transition-all">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-xs font-bold flex items-center">
+                                            <i class="fa-solid fa-palette mr-1.5 text-pink-500"></i>
+                                            <span class="lang-zh">塗上油漆的鐵釘 (Painted Nail)</span>
+                                            <span class="lang-en">Painted Iron Nail</span>
+                                        </span>
+                                        <i class="fa-solid fa-circle-check text-cyan-500 opacity-0 peer-checked:opacity-100"></i>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-zh">油漆作為防護屏障 (Barrier Protection)，阻絕介質接觸。</p>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-en">A dense layer of lacquer paint serves as a physical barrier to block medium contact.</p>
+                                </div>
+                            </label>
+
+                            <!-- Option 7: Oil -->
+                            <label class="block cursor-pointer">
+                                <input type="radio" name="dish-nail-select" value="oil" class="sr-only peer">
+                                <div class="p-3 rounded-xl border border-slate-200 bg-white peer-checked:border-cyan-500 peer-checked:bg-cyan-50/20 text-slate-500 peer-checked:text-slate-800 shadow-sm transition-all">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-xs font-bold flex items-center">
+                                            <i class="fa-solid fa-oil-can mr-1.5 text-yellow-600"></i>
+                                            <span class="lang-zh">塗上油脂的鐵釘 (Oiled Nail)</span>
+                                            <span class="lang-en">Oiled Iron Nail</span>
+                                        </span>
+                                        <i class="fa-solid fa-circle-check text-cyan-500 opacity-0 peer-checked:opacity-100"></i>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-zh">油脂阻隔屏障，廣泛應用於機械齒輪防銹。</p>
+                                    <p class="text-[10px] text-slate-500 leading-normal lang-en">Coated with grease, representing physical isolation widely applied on mechanical components.</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="mt-6 pt-4 border-t border-slate-200 space-y-3">
+                        <button onclick="startDishReaction()" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-300 hover:to-cyan-400 text-slate-950 font-bold shadow-lg shadow-teal-500/10 hover:shadow-teal-400/20 flex items-center justify-center space-x-2 transition-all">
+                            <i class="fa-solid fa-flask animate-bounce"></i>
+                            <span class="lang-zh">注入凝膠並觀察 (Pour Gel & Observe)</span>
+                            <span class="lang-en">Pour Gel & Observe</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- S2: Middle Panel - Petri Dish Canvas Simulation -->
+                <div class="lg:col-span-7 glass-panel p-5 rounded-2xl flex flex-col justify-between items-center relative min-h-[460px]">
+                    <div class="w-full text-center mb-2">
+                        <span class="text-[10px] font-bold tracking-widest text-teal-700 bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full uppercase lang-zh">銹指示劑擴慢物理級 Canvas 渲染</span>
+                        <span class="text-[10px] font-bold tracking-widest text-teal-700 bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full uppercase lang-en">Indicator Diffusion Physics-level Canvas</span>
+                    </div>
+
+                    <!-- Canvas Container -->
+                    <div class="w-full flex-grow flex items-center justify-center relative select-none">
+                        <!-- Canvas -->
+                        <canvas id="dish-canvas" width="550" height="380" class="w-full max-w-[480px] aspect-[4/3] rounded-2xl border border-slate-200 shadow-lg bg-white"></canvas>
+
+                        <!-- Mini micro-reaction modal popover linked to click coordinates -->
+                        <div id="micro-reaction-popover" class="absolute hidden glass-panel border border-cyan-500/30 p-3 rounded-xl shadow-xl w-60 z-30 transition-all duration-200">
+                            <div class="flex justify-between items-start mb-1.5">
+                                <h4 id="popover-title" class="text-xs font-bold text-slate-800">微觀化學反應</h4>
+                                <button onclick="closePopover()" class="text-slate-400 hover:text-slate-600 text-[10px]"><i class="fa-solid fa-x"></i></button>
+                            </div>
+                            <p id="popover-desc" class="text-[10px] text-slate-600 leading-relaxed mb-2"></p>
+                            <div class="bg-cyan-50/50 p-2 rounded border border-cyan-100 text-[10px] font-mono text-cyan-800 text-center" id="popover-latex">
+                                <!-- TeX loaded -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Indicator Legend -->
+                    <div class="w-full flex justify-between items-center text-[10px] px-2 pt-2 border-t border-slate-200">
+                        <div class="flex items-center space-x-1.5">
+                            <span class="w-3 h-3 rounded-full bg-blue-600/70 border border-blue-400/30 shadow"></span>
+                            <span class="text-slate-600 lang-zh">普魯士藍色反應斑塊 (Prussian Blue, $\text{Fe}^{2+}$ 指示劑)</span>
+                            <span class="text-slate-600 lang-en">Prussian Blue (indicates $\text{Fe}^{2+}$)</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5">
+                            <span class="w-3 h-3 rounded-full bg-pink-500/70 border border-pink-400/30 shadow"></span>
+                            <span class="text-slate-600 lang-zh">酚酞粉紅色反應斑塊 (Phenolphthalein, $\text{OH}^-$ 指示劑)</span>
+                            <span class="text-slate-600 lang-en">Phenolphthalein Pink (indicates $\text{OH}^-$)</span>
+                        </div>
+                    </div>
+
+                    <!-- LaTeX Equation Section (Moved under the set-up) -->
+                    <div id="dish-equations-container" class="w-full mt-3 hidden space-y-2.5 p-3 rounded-xl bg-teal-50/50 border border-teal-200/50 text-[10px] text-slate-700">
+                        <h4 class="text-xs font-bold tracking-wider text-teal-800 flex items-center">
+                            <i class="fa-solid fa-atom mr-1.5"></i>
+                            <span class="lang-zh">反應方程式 (Equations)</span>
+                            <span class="lang-en">Reaction Equations</span>
+                        </h4>
+                        <div class="space-y-1" id="dish-report-eq">
+                            <!-- LaTeX injected here dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-8 pt-4 border-t border-slate-200 text-center text-xs text-slate-500">
+            <p class="lang-zh">© 2026 互動化學虛擬實驗室 (Interactive Chemistry Lab). All rights reserved. 專為 Google Chrome 優化並在本地運行。</p>
+            <p class="lang-en">© 2026 Interactive Chemistry Lab. All rights reserved. Optimized for Google Chrome running locally.</p>
+        </footer>
+    </div>
+
+    <!-- MAIN JAVASCRIPT LOGIC -->
+    <script>
+        // =========================================================================
+        // 0. LANGUAGE SELECTION STATE & DICTIONARY
+        // =========================================================================
+        let currentLanguage = 'zh';
+
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            if (lang === 'zh') {
+                document.documentElement.setAttribute('lang', 'zh-HK');
+                document.getElementById('lang-btn-zh').className = "px-2.5 py-1 rounded-md font-bold transition-all bg-cyan-500 text-slate-950";
+                document.getElementById('lang-btn-en').className = "px-2.5 py-1 rounded-md font-bold transition-all text-slate-500 hover:text-slate-800";
+            } else {
+                document.documentElement.setAttribute('lang', 'en');
+                document.getElementById('lang-btn-zh').className = "px-2.5 py-1 rounded-md font-bold transition-all text-slate-500 hover:text-slate-800";
+                document.getElementById('lang-btn-en').className = "px-2.5 py-1 rounded-md font-bold transition-all bg-cyan-500 text-slate-950";
+            }
+
+            // Sync dynamic components
+            // 1. Update button states/badges for Part 1 (test tube)
+            const tubeCompNames = ['nail', 'copper-nail', 'magnesium-nail', 'distilled-water', 'boiled-water', 'sea-water', 'acid', 'oil', 'oil-poured', 'cacl2', 'stopper'];
+            tubeCompNames.forEach(comp => {
+                let active = false;
+                if (comp === 'distilled-water') active = tubeState.distilledWater;
+                else if (comp === 'boiled-water') active = tubeState.boiledWater;
+                else if (comp === 'sea-water') active = tubeState.seaWater;
+                else if (comp === 'oil-poured') active = tubeState.oilPoured;
+                else if (comp === 'copper-nail') active = tubeState.copperNail;
+                else if (comp === 'magnesium-nail') active = tubeState.magnesiumNail;
+                else if (comp === 'acid') active = tubeState.acid;
+                else active = tubeState[comp];
+                updateButtonUI(comp, active);
+            });
+
+            // 2. Update environment indicators
+            updateTubeMicroIndicators();
+
+            // 3. Update active report if any
+            if (tubeState.experimentRun) {
+                generateTubeReport();
+            }
+
+            // 4. Update Petri dish report if active
+            const rBoxActive = document.getElementById('dish-equations-container');
+            if (rBoxActive && !rBoxActive.classList.contains('hidden')) {
+                generateDishReport();
+            }
+        }
+
+        // =========================================================================
+        // 1. NAVIGATION & TAB SWITCHING
+        // =========================================================================
+        function switchTab(targetTabId) {
+            // Hide all sections
+            document.getElementById('sect-test-tube-tab').classList.add('hidden');
+            document.getElementById('sect-petri-dish-tab').classList.add('hidden');
+
+            // Show target section
+            document.getElementById('sect-' + targetTabId).classList.remove('hidden');
+
+            // Reset navigation button styles
+            const tabs = ['test-tube-tab', 'petri-dish-tab'];
+            tabs.forEach(tabId => {
+                const btn = document.getElementById('btn-' + tabId);
+                btn.className = "flex-1 py-3 px-4 rounded-lg flex items-center justify-center space-x-2 text-sm font-semibold transition-all duration-200 text-slate-500 hover:text-slate-800 hover:bg-slate-100";
+            });
+
+            // Highlight active button
+            const activeBtn = document.getElementById('btn-' + targetTabId);
+            if (targetTabId === 'test-tube-tab') {
+                activeBtn.className = "flex-1 py-3 px-4 rounded-lg flex items-center justify-center space-x-2 text-sm font-semibold transition-all duration-200 text-cyan-700 bg-cyan-50/70 border border-cyan-200/40 shadow-inner";
+            } else if (targetTabId === 'petri-dish-tab') {
+                activeBtn.className = "flex-1 py-3 px-4 rounded-lg flex items-center justify-center space-x-2 text-sm font-semibold transition-all duration-200 text-teal-700 bg-teal-50/70 border border-teal-200/40 shadow-inner";
+                // Trigger canvas redraw to ensure it fits container dimensions
+                drawDish();
+            }
+        }
+
+
+        // =========================================================================
+        // 2. PART 1: TEST TUBE LAB IMPLEMENTATION
+        // =========================================================================
+        const tubeState = {
+            nail: false,
+            copperNail: false,
+            magnesiumNail: false,
+            distilledWater: false,
+            boiledWater: false,
+            seaWater: false,
+            acid: false,
+            oil: false,
+            oilPoured: false,
+            cacl2: false, 
+            stopper: false,
+            experimentRun: false
+        };
+
+        // Render functions for test tube SVG components based on current state
+        function renderTube() {
+            // A. Iron Nail
+            const svgNailNormal = document.getElementById('svg-nail-normal');
+            const nailRustBottom = document.getElementById('nail-rust-bottom');
+
+            if (tubeState.nail) {
+                svgNailNormal.classList.remove('opacity-0');
+            } else {
+                svgNailNormal.classList.add('opacity-0');
+            }
+
+            // A.2 Copper Wire Wrapping
+            const svgCopperWireBack = document.getElementById('svg-copper-wire-back');
+            const svgCopperWireFront = document.getElementById('svg-copper-wire-front');
+            if (tubeState.nail && tubeState.copperNail) {
+                svgCopperWireBack.classList.remove('opacity-0');
+                svgCopperWireFront.classList.remove('opacity-0');
+            } else {
+                svgCopperWireBack.classList.add('opacity-0');
+                svgCopperWireFront.classList.add('opacity-0');
+            }
+
+            // A.3 Magnesium Ribbon Wrapping
+            const svgMagnesiumWireBack = document.getElementById('svg-magnesium-wire-back');
+            const svgMagnesiumWireFront = document.getElementById('svg-magnesium-wire-front');
+            if (tubeState.nail && tubeState.magnesiumNail) {
+                svgMagnesiumWireBack.classList.remove('opacity-0');
+                svgMagnesiumWireFront.classList.remove('opacity-0');
+            } else {
+                svgMagnesiumWireBack.classList.add('opacity-0');
+                svgMagnesiumWireFront.classList.add('opacity-0');
+            }
+
+            // B. Liquid (Distilled/Boiled/Sea/Acid)
+            const svgWater = document.getElementById('svg-water');
+            const svgBubbles = document.getElementById('svg-bubbles');
+            if (tubeState.distilledWater || tubeState.boiledWater || tubeState.seaWater || tubeState.acid) {
+                svgWater.classList.remove('opacity-0');
+                
+                const pathEl = document.getElementById('water-liquid-path');
+                const ellipseEl = document.getElementById('water-meniscus-ellipse');
+                
+                if (tubeState.seaWater) {
+                    pathEl.setAttribute('fill', 'url(#sea-water-grad)');
+                    ellipseEl.setAttribute('fill', 'url(#sea-water-meniscus-grad)');
+                } else if (tubeState.acid) {
+                    pathEl.setAttribute('fill', 'url(#acid-grad)');
+                    ellipseEl.setAttribute('fill', 'url(#acid-meniscus-grad)');
+                } else {
+                    pathEl.setAttribute('fill', 'url(#water-grad)');
+                    ellipseEl.setAttribute('fill', 'url(#water-meniscus-grad)');
+                }
+
+                if (tubeState.experimentRun && (tubeState.distilledWater || tubeState.seaWater || tubeState.acid)) {
+                    svgBubbles.classList.remove('hidden'); 
+                } else {
+                    svgBubbles.classList.add('hidden');
+                }
+            } else {
+                svgWater.classList.add('opacity-0');
+                svgBubbles.classList.add('hidden');
+            }
+
+            // B.2 Poured Oil
+            const svgPouredOil = document.getElementById('svg-poured-oil');
+            if (tubeState.oilPoured) {
+                svgPouredOil.classList.remove('opacity-0');
+            } else {
+                svgPouredOil.classList.add('opacity-0');
+            }
+
+            // C. Oil Layer
+            const svgOil = document.getElementById('svg-oil');
+            if (tubeState.oil && (tubeState.distilledWater || tubeState.boiledWater || tubeState.seaWater || tubeState.acid)) {
+                svgOil.classList.remove('opacity-0');
+            } else {
+                svgOil.classList.add('opacity-0');
+            }
+
+            // D. CaCl2 & Cotton Wool
+            const svgCacl2 = document.getElementById('svg-cacl2');
+            const svgCotton = document.getElementById('svg-cotton');
+            if (tubeState.cacl2) {
+                svgCacl2.classList.remove('opacity-0');
+                svgCotton.classList.remove('opacity-0');
+            } else {
+                svgCacl2.classList.add('opacity-0');
+                svgCotton.classList.add('opacity-0');
+            }
+
+            // E. Rubber Stopper
+            const svgStopper = document.getElementById('svg-stopper');
+            if (tubeState.stopper) {
+                svgStopper.classList.remove('opacity-0');
+            } else {
+                svgStopper.classList.add('opacity-0');
+            }
+
+            // F. Rust Visual Overlay & Turbidity based on Experiment Result
+            const svgSediment = document.getElementById('svg-sediment');
+            const svgTurbidity = document.getElementById('svg-turbidity');
+            
+            if (tubeState.experimentRun && tubeState.nail) {
+                const rustLevel = analyzeRustLevel();
+                
+                // Determine duration based on chemical reaction speed
+                let duration = '0.5s';
+                if (rustLevel === 'extreme') duration = '1.0s';       // Extremely fast and rapid corrosion
+                else if (rustLevel === 'heavy') duration = '1.8s';     // Fast, violent reaction
+                else if (rustLevel === 'medium') duration = '3.5s';    // Moderate reaction
+                else if (rustLevel === 'light') duration = '5.0s';     // Slow, limited reaction
+                else if (rustLevel === 'slight') duration = '6.5s';    // Extremely slow, trace reaction
+                
+                const transitionStyle = `opacity ${duration} cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+                nailRustBottom.style.transition = transitionStyle;
+                svgSediment.style.transition = transitionStyle;
+                svgTurbidity.style.transition = transitionStyle;
+
+                if (rustLevel === 'extreme') {
+                    nailRustBottom.style.opacity = '1';
+                    svgSediment.style.opacity = '0.95';
+                    svgTurbidity.style.opacity = '0.35';
+                } else if (rustLevel === 'heavy') {
+                    nailRustBottom.style.opacity = '1';
+                    svgSediment.style.opacity = '0.9';
+                    svgTurbidity.style.opacity = '0.25';
+                } else if (rustLevel === 'medium') {
+                    nailRustBottom.style.opacity = '0.85';
+                    svgSediment.style.opacity = '0.65';
+                    svgTurbidity.style.opacity = '0.18';
+                } else if (rustLevel === 'light') {
+                    nailRustBottom.style.opacity = '0.7';
+                    svgSediment.style.opacity = '0.4';
+                    svgTurbidity.style.opacity = '0.12';
+                } else if (rustLevel === 'slight') {
+                    nailRustBottom.style.opacity = '0.55';
+                    svgSediment.style.opacity = '0.15';
+                    svgTurbidity.style.opacity = '0.05';
+                } else {
+                    nailRustBottom.style.opacity = '0';
+                    svgSediment.style.opacity = '0';
+                    svgTurbidity.style.opacity = '0';
+                }
+            } else {
+                // Instantly fade away on reset/edit to keep interaction snappy
+                const instantStyle = 'opacity 0.15s ease-out';
+                nailRustBottom.style.transition = instantStyle;
+                svgSediment.style.transition = instantStyle;
+                svgTurbidity.style.transition = instantStyle;
+
+                nailRustBottom.style.opacity = '0';
+                svgSediment.style.opacity = '0';
+                svgTurbidity.style.opacity = '0';
+            }
+
+            // G. Update indicators on bottom bar
+            updateTubeMicroIndicators();
+        }
+
+        // Handles clicking of a control button
+        function toggleTubeComponent(comp) {
+            // Cancel active experiment outcome on edit
+            if (tubeState.experimentRun) {
+                tubeState.experimentRun = false;
+                document.getElementById('tube-report-active').classList.add('hidden');
+                document.getElementById('report-equations').classList.add('hidden');
+                document.getElementById('tube-report-empty').classList.remove('hidden');
+
+                const badgeContainer = document.getElementById('report-status-badge-container');
+                if (badgeContainer) {
+                    badgeContainer.classList.add('opacity-0');
+                }
+            }
+
+            if (comp === 'nail') {
+                tubeState.nail = !tubeState.nail;
+                if (!tubeState.nail) {
+                    tubeState.copperNail = false;
+                    tubeState.magnesiumNail = false;
+                    updateButtonUI('copper-nail', false);
+                    updateButtonUI('magnesium-nail', false);
+                }
+                updateButtonUI('nail', tubeState.nail);
+            } 
+            else if (comp === 'copper-nail') {
+                tubeState.copperNail = !tubeState.copperNail;
+                if (tubeState.copperNail) {
+                    tubeState.nail = true;
+                    tubeState.magnesiumNail = false;
+                    updateButtonUI('nail', true);
+                    updateButtonUI('magnesium-nail', false);
+                }
+                updateButtonUI('copper-nail', tubeState.copperNail);
+            }
+            else if (comp === 'magnesium-nail') {
+                tubeState.magnesiumNail = !tubeState.magnesiumNail;
+                if (tubeState.magnesiumNail) {
+                    tubeState.nail = true;
+                    tubeState.copperNail = false;
+                    updateButtonUI('nail', true);
+                    updateButtonUI('copper-nail', false);
+                }
+                updateButtonUI('magnesium-nail', tubeState.magnesiumNail);
+            }
+            else if (comp === 'distilled-water') {
+                tubeState.distilledWater = !tubeState.distilledWater;
+                if (tubeState.distilledWater) {
+                    tubeState.boiledWater = false; 
+                    tubeState.seaWater = false;
+                    tubeState.acid = false;
+                    tubeState.oilPoured = false;
+                    updateButtonUI('boiled-water', false);
+                    updateButtonUI('sea-water', false);
+                    updateButtonUI('acid', false);
+                    updateButtonUI('oil-poured', false);
+                } else {
+                    // Automatically remove floating oil layer if water is removed
+                    tubeState.oil = false;
+                    updateButtonUI('oil', false);
+                }
+                updateButtonUI('distilled-water', tubeState.distilledWater);
+            } 
+            else if (comp === 'boiled-water') {
+                tubeState.boiledWater = !tubeState.boiledWater;
+                if (tubeState.boiledWater) {
+                    tubeState.distilledWater = false; 
+                    tubeState.seaWater = false;
+                    tubeState.acid = false;
+                    tubeState.oilPoured = false;
+                    updateButtonUI('distilled-water', false);
+                    updateButtonUI('sea-water', false);
+                    updateButtonUI('acid', false);
+                    updateButtonUI('oil-poured', false);
+                } else {
+                    // Automatically remove floating oil layer if water is removed
+                    tubeState.oil = false;
+                    updateButtonUI('oil', false);
+                }
+                updateButtonUI('boiled-water', tubeState.boiledWater);
+            } 
+            else if (comp === 'sea-water') {
+                tubeState.seaWater = !tubeState.seaWater;
+                if (tubeState.seaWater) {
+                    tubeState.distilledWater = false; 
+                    tubeState.boiledWater = false;
+                    tubeState.acid = false;
+                    tubeState.oilPoured = false;
+                    updateButtonUI('distilled-water', false);
+                    updateButtonUI('boiled-water', false);
+                    updateButtonUI('acid', false);
+                    updateButtonUI('oil-poured', false);
+                } else {
+                    // Automatically remove floating oil layer if water is removed
+                    tubeState.oil = false;
+                    updateButtonUI('oil', false);
+                }
+                updateButtonUI('sea-water', tubeState.seaWater);
+            } 
+            else if (comp === 'acid') {
+                tubeState.acid = !tubeState.acid;
+                if (tubeState.acid) {
+                    tubeState.distilledWater = false; 
+                    tubeState.boiledWater = false;
+                    tubeState.seaWater = false;
+                    tubeState.oilPoured = false;
+                    updateButtonUI('distilled-water', false);
+                    updateButtonUI('boiled-water', false);
+                    updateButtonUI('sea-water', false);
+                    updateButtonUI('oil-poured', false);
+                } else {
+                    // Automatically remove floating oil layer if liquid is removed
+                    tubeState.oil = false;
+                    updateButtonUI('oil', false);
+                }
+                updateButtonUI('acid', tubeState.acid);
+            }
+            else if (comp === 'oil') {
+                // Floating oil layer can only be added if any type of water or acid is present
+                const hasWater = tubeState.distilledWater || tubeState.boiledWater || tubeState.seaWater || tubeState.acid;
+                if (!hasWater) {
+                    if (currentLanguage === 'zh') {
+                        alert('提示：水面防護油層必須在有液體（蒸餾水、沸水、海水、或稀酸）的情況下才能漂浮於液面上！');
+                    } else {
+                        alert('Notice: The floating oil layer can only be added when there is liquid in the tube (distilled water, boiled water, sea water, or dilute acid) to float upon!');
+                    }
+                    return;
+                }
+                
+                tubeState.oil = !tubeState.oil;
+                if (tubeState.oil) {
+                    tubeState.oilPoured = false;
+                    updateButtonUI('oil-poured', false);
+                }
+                updateButtonUI('oil', tubeState.oil);
+            } 
+            else if (comp === 'oil-poured') {
+                tubeState.oilPoured = !tubeState.oilPoured;
+                if (tubeState.oilPoured) {
+                    tubeState.distilledWater = false; 
+                    tubeState.boiledWater = false;
+                    tubeState.seaWater = false;
+                    tubeState.acid = false;
+                    tubeState.oil = false;
+                    updateButtonUI('distilled-water', false);
+                    updateButtonUI('boiled-water', false);
+                    updateButtonUI('sea-water', false);
+                    updateButtonUI('acid', false);
+                    updateButtonUI('oil', false);
+                }
+                updateButtonUI('oil-poured', tubeState.oilPoured);
+            }
+            else if (comp === 'cacl2') {
+                tubeState.cacl2 = !tubeState.cacl2;
+                updateButtonUI('cacl2', tubeState.cacl2);
+            } 
+            else if (comp === 'stopper') {
+                tubeState.stopper = !tubeState.stopper;
+                updateButtonUI('stopper', tubeState.stopper);
+            }
+
+            renderTube();
+        }
+
+        // Syncs the UI appearance of the control panel buttons
+        function updateButtonUI(comp, active) {
+            const btn = document.getElementById('ctrl-' + comp);
+            const badge = btn.querySelector('.badge');
+            
+            if (active) {
+                btn.classList.remove('bg-white', 'border-slate-200', 'text-slate-600');
+                btn.classList.add('bg-cyan-50/80', 'border-cyan-500', 'text-cyan-800');
+                badge.classList.remove('bg-slate-100', 'text-slate-400');
+                badge.classList.add('bg-cyan-100', 'text-cyan-700');
+                badge.textContent = (currentLanguage === 'zh') ? '已加入' : 'Added';
+            } else {
+                btn.classList.add('bg-white', 'text-slate-600');
+                btn.classList.remove('bg-cyan-50/80', 'border-cyan-500', 'text-cyan-800');
+                btn.classList.add('border-slate-200');
+                badge.classList.add('bg-slate-100', 'text-slate-400');
+                badge.classList.remove('bg-cyan-100', 'text-cyan-700');
+                badge.textContent = (currentLanguage === 'zh') ? '未加入' : 'Not Added';
+            }
+
+            if (comp === 'nail' && !active) {
+                btn.classList.remove('border-slate-200');
+                btn.classList.add('border-slate-200');
+            }
+        }
+
+        // Calculates microenvironmental factors for indicators
+        function updateTubeMicroIndicators() {
+            const h2oInd = document.getElementById('env-water');
+            const o2Ind = document.getElementById('env-oxygen');
+            const feInd = document.getElementById('env-iron');
+
+            // 1. Water H2O Status
+            let hasWater = false;
+            if (tubeState.distilledWater || tubeState.boiledWater || tubeState.seaWater || tubeState.acid) {
+                hasWater = true;
+            } else if (tubeState.oilPoured) {
+                hasWater = false;
+            } else if (!tubeState.cacl2) {
+                hasWater = 'ambient';
+            }
+
+            if (hasWater === true) {
+                if (tubeState.acid) {
+                    h2oInd.innerHTML = (currentLanguage === 'zh')
+                        ? '<i class="fa-solid fa-circle text-rose-500 mr-1"></i> 水分 (H₂O): 充足 (稀酸溶液)'
+                        : '<i class="fa-solid fa-circle text-rose-500 mr-1"></i> Water (H₂O): Abundant (Acidic)';
+                } else {
+                    h2oInd.innerHTML = (currentLanguage === 'zh')
+                        ? '<i class="fa-solid fa-circle text-blue-500 mr-1"></i> 水分 (H₂O): 充足'
+                        : '<i class="fa-solid fa-circle text-blue-500 mr-1"></i> Water (H₂O): Abundant';
+                }
+            } else if (hasWater === 'ambient') {
+                h2oInd.innerHTML = (currentLanguage === 'zh')
+                    ? '<i class="fa-solid fa-circle text-yellow-500 mr-1"></i> 水分 (H₂O): 潮濕(空氣)'
+                    : '<i class="fa-solid fa-circle text-yellow-500 mr-1"></i> Water (H₂O): Humid (Air)';
+            } else {
+                h2oInd.innerHTML = (currentLanguage === 'zh')
+                    ? '<i class="fa-solid fa-circle text-slate-300 mr-1"></i> 水分 (H₂O): 極乾燥'
+                    : '<i class="fa-solid fa-circle text-slate-300 mr-1"></i> Water (H₂O): Extremely Dry';
+            }
+
+            // 2. Oxygen O2 Status
+            let hasO2 = true;
+            if (tubeState.oilPoured) {
+                hasO2 = false;
+            } else if (tubeState.boiledWater && tubeState.oil) {
+                hasO2 = false; 
+            } else if (tubeState.oil && (tubeState.distilledWater || tubeState.seaWater || tubeState.acid)) {
+                // Initial dissolved oxygen is present inside non-boiled water/acid even under oil layer
+                hasO2 = 'initial';
+            } else if (tubeState.oil && !tubeState.distilledWater && !tubeState.boiledWater && !tubeState.seaWater && !tubeState.acid) {
+                hasO2 = false;
+            }
+
+            if (hasO2 === true) {
+                o2Ind.innerHTML = (currentLanguage === 'zh')
+                    ? '<i class="fa-solid fa-circle text-emerald-500 mr-1"></i> 氧氣 (O₂): 充足'
+                    : '<i class="fa-solid fa-circle text-emerald-500 mr-1"></i> Oxygen (O₂): Abundant';
+            } else if (hasO2 === 'initial') {
+                o2Ind.innerHTML = (currentLanguage === 'zh')
+                    ? '<i class="fa-solid fa-circle text-yellow-500 mr-1"></i> 氧氣 (O₂): 水中初始溶解氧'
+                    : '<i class="fa-solid fa-circle text-yellow-500 mr-1"></i> Oxygen (O₂): Initial Dissolved O₂';
+            } else {
+                o2Ind.innerHTML = (currentLanguage === 'zh')
+                    ? '<i class="fa-solid fa-circle text-slate-300 mr-1"></i> 氧氣 (O₂): 缺氧'
+                    : '<i class="fa-solid fa-circle text-slate-300 mr-1"></i> Oxygen (O₂): Anoxic';
+            }
+
+            // 3. Iron Fe Status
+            if (tubeState.nail) {
+                if (tubeState.copperNail) {
+                    feInd.innerHTML = (currentLanguage === 'zh')
+                        ? '<i class="fa-solid fa-circle text-orange-500 mr-1"></i> 鐵 (Fe): 已放入 (纏繞銅線)'
+                        : '<i class="fa-solid fa-circle text-orange-500 mr-1"></i> Iron (Fe): Inserted (Copper-wrapped)';
+                } else if (tubeState.magnesiumNail) {
+                    feInd.innerHTML = (currentLanguage === 'zh')
+                        ? '<i class="fa-solid fa-circle text-emerald-500 mr-1"></i> 鐵 (Fe): 已放入 (纏繞鎂帶)'
+                        : '<i class="fa-solid fa-circle text-emerald-500 mr-1"></i> Iron (Fe): Inserted (Magnesium-wrapped)';
+                } else {
+                    feInd.innerHTML = (currentLanguage === 'zh')
+                        ? '<i class="fa-solid fa-circle text-slate-400 mr-1"></i> 鐵 (Fe): 已放入'
+                        : '<i class="fa-solid fa-circle text-slate-400 mr-1"></i> Iron (Fe): Inserted';
+                }
+            } else {
+                feInd.innerHTML = (currentLanguage === 'zh')
+                    ? '<i class="fa-solid fa-circle text-slate-300 mr-1"></i> 鐵 (Fe): 缺席'
+                    : '<i class="fa-solid fa-circle text-slate-300 mr-1"></i> Iron (Fe): Absent';
+            }
+        }
+
+        // Pure logical analyser that outputs the rust level
+        function analyzeRustLevel() {
+            if (!tubeState.nail) return 'none';
+
+            if (tubeState.magnesiumNail) {
+                return 'none'; // Sacrificial protection completely prevents iron rusting!
+            }
+
+            if (tubeState.oilPoured) return 'none';
+
+            if (tubeState.oil && !tubeState.distilledWater && !tubeState.boiledWater && !tubeState.seaWater && !tubeState.acid) {
+                return 'none'; 
+            }
+
+            // Acid dictates the reaction first
+            if (tubeState.acid) {
+                return 'extreme'; // Rapid acid corrosion!
+            }
+
+            // If we have liquid water, the water dictates the rusting, regardless of CaCl2 above
+            if (tubeState.seaWater) {
+                if (tubeState.copperNail) {
+                    return 'extreme'; // Copper wrapping + sea water = extremely rapid corrosion!
+                }
+                if (tubeState.oil) {
+                    return 'heavy'; // Salts accelerate rusting even with limited oxygen (reacting with dissolved initial oxygen)
+                }
+                return 'extreme'; // Salts + oxygen = extremely rapid and severe corrosion!
+            }
+
+            if (tubeState.distilledWater) {
+                if (tubeState.copperNail) {
+                    return 'extreme'; // Copper wrapping accelerates distilled water rusting to extreme
+                }
+                if (tubeState.oil) {
+                    return 'light'; // Light rusting occurs by reacting with water and initial oxygen in the water
+                }
+                return 'heavy'; 
+            }
+
+            if (tubeState.boiledWater) {
+                if (tubeState.oil) {
+                    return 'none'; 
+                }
+                if (tubeState.copperNail) {
+                    return 'heavy'; // Oxygen re-dissolves, accelerated by copper
+                }
+                return 'medium';
+            }
+
+            // If there's no liquid water, but we have CaCl2 drying agent above, there is absolutely no rust (Extremely Dry)
+            if (tubeState.cacl2) {
+                return 'none'; 
+            }
+
+            if (tubeState.copperNail) {
+                return 'light'; // Ambient air moisture + copper wrapping = light rusting
+            }
+
+            return 'slight'; // Ambient air moisture rusting
+        }
+
+        // Clears all test tube components and resets UI
+        function resetTubeExperiment() {
+            tubeState.nail = false;
+            tubeState.copperNail = false;
+            tubeState.magnesiumNail = false;
+            tubeState.distilledWater = false;
+            tubeState.boiledWater = false;
+            tubeState.seaWater = false;
+            tubeState.acid = false;
+            tubeState.oil = false;
+            tubeState.oilPoured = false;
+            tubeState.cacl2 = false;
+            tubeState.stopper = false;
+            tubeState.experimentRun = false;
+
+            const components = ['nail', 'copper-nail', 'magnesium-nail', 'distilled-water', 'boiled-water', 'sea-water', 'acid', 'oil', 'oil-poured', 'cacl2', 'stopper'];
+            components.forEach(comp => updateButtonUI(comp, false));
+
+            document.getElementById('tube-report-empty').classList.remove('hidden');
+            document.getElementById('tube-report-active').classList.add('hidden');
+            document.getElementById('report-equations').classList.add('hidden');
+
+            const badgeContainer = document.getElementById('report-status-badge-container');
+            if (badgeContainer) {
+                badgeContainer.classList.add('opacity-0');
+            }
+
+            renderTube();
+        }
+
+        // Evaluates outcome and initiates gradual rusting transition based on speed
+        function startTubeExperiment() {
+            if (!tubeState.nail) {
+                if (currentLanguage === 'zh') {
+                    alert('警告：試管內沒有放入鐵釘！請先放入鐵釘(Iron Nail)再點擊「開始實驗」。');
+                } else {
+                    alert('Warning: No iron nail in the test tube! Please insert an Iron Nail first.');
+                }
+                return;
+            }
+
+            // Directly run experiment with gradual visual transitions
+            tubeState.experimentRun = true;
+            renderTube();
+            generateTubeReport();
+        }
+
+        // Compiles report details based on chemical outcome and language selection
+        function generateTubeReport() {
+            const level = analyzeRustLevel();
+            const badge = document.getElementById('report-status-badge');
+            const obs = document.getElementById('report-observation');
+            const mech = document.getElementById('report-explanation');
+            const eqList = document.getElementById('equation-list');
+
+            const badgeContainer = document.getElementById('report-status-badge-container');
+            if (badgeContainer) {
+                badgeContainer.classList.remove('opacity-0');
+            }
+
+            document.getElementById('tube-report-empty').classList.add('hidden');
+            document.getElementById('tube-report-active').classList.remove('hidden');
+            document.getElementById('report-equations').classList.remove('hidden');
+
+            if (tubeState.magnesiumNail) {
+                badge.className = "px-4 py-2 rounded-xl font-bold text-sm inline-flex items-center space-x-2 bg-emerald-500/20 text-emerald-500 border border-emerald-500/30 uppercase shadow-inner";
+                if (tubeState.acid) {
+                    if (currentLanguage === 'zh') {
+                        badge.innerHTML = '<i class="fa-solid fa-shield-halved animate-pulse"></i> <span>劇烈鎂-酸置換反應與犧牲性保護 (Vigorous Mg-Acid Displacement & Sacrificial Protection)</span>';
+                        obs.innerHTML = "鎂帶表面爆發<b>極其猛烈的氣泡 (氫氣)</b>，鎂帶迅速溶解，而<b>鐵釘表面完全乾淨，沒有任何生銹或溶解跡象</b>。溶液保持無色澄清，無鐵銹沉澱。";
+                        mech.innerHTML = "由於鎂的活性遠高於鐵和氫，它會優先與酸中的氫離子 ($H^+$) 發生極其劇烈的置換反應，釋放氫氣並溶解為 $\\text{Mg}^{2+}$。在此過程中，鐵釘受到完全的<b>犧牲性保護 (Sacrificial Protection)</b>，不會與酸反應，亦不會生銹。";
+                    } else {
+                        badge.innerHTML = '<i class="fa-solid fa-shield-halved animate-pulse"></i> <span>Vigorous Mg-Acid Displacement & Sacrificial Protection</span>';
+                        obs.innerHTML = "The magnesium ribbon surface erupts with **extremely violent gas bubbles (hydrogen gas)** and dissolves rapidly, while the **iron nail remains completely clean with no signs of rusting or dissolution**. The solution remains clear and colorless with no rust precipitate.";
+                        mech.innerHTML = "Since magnesium is much more reactive than iron and hydrogen, it reacts preferentially and extremely vigorously with hydrogen ions ($H^+$) in the acid, releasing hydrogen gas and dissolving as $\\text{Mg}^{2+}$. During this process, the iron nail receives complete **sacrificial protection** and is entirely prevented from reacting or rusting.";
+                    }
+                    
+                    eqList.innerHTML = `
+                        <div class="mb-1.5"><span class="text-rose-400 font-bold">${currentLanguage === 'zh' ? '鎂-酸置換反應' : 'Mg-Acid Displacement'}:</span> $\\text{Mg(s)} + 2\\text{H}^+\\text{(aq)} \\rightarrow \\text{Mg}^{2+}\\text{(aq)} + \\text{H}_2\\text{(g)}$</div>
+                        <div class="mb-1.5"><span class="text-cyan-400 font-bold">${currentLanguage === 'zh' ? '陽極反應 (鎂溶解)' : 'Anode (Mg)'}:</span> $\\text{Mg(s)} \\rightarrow \\text{Mg}^{2+}\\text{(aq)} + 2e^-$</div>
+                        <div class="mb-1.5"><span class="text-pink-400 font-bold">${currentLanguage === 'zh' ? '陰極反應 (氫離子還原)' : 'Cathode (H+)'}:</span> $2\\text{H}^+\\text{(aq)} + 2e^- \\rightarrow \\text{H}_2\\text{(g)}$</div>
+                        <div><span class="text-emerald-400 font-bold">${currentLanguage === 'zh' ? '保護狀態' : 'Protection State'}:</span> $\\text{Iron nail remains unreacted (Fe is protected cathodic site).}$</div>
+                    `;
+                } else {
+                    if (currentLanguage === 'zh') {
+                        badge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> <span>陰極電化學保護 (Cathodic Sacrificial Protection)</span>';
+                        obs.innerHTML = "<b>鐵釘表面完全沒有生銹</b>，依舊保持明亮的金屬光澤。在與鐵釘接觸的鎂帶表面，可能會觀察到<b>微量白色沉澱物 (氫氧化鎂)</b>，尤其是在海水或蒸餾水中。";
+                        mech.innerHTML = "活性較高的金屬鎂與鐵接觸，形成微型<b>電偶電池</b>。鎂作為<b>陽極 (Anode)</b> 優先失去電子被氧化，而鐵作為<b>陰極 (Cathode)</b> 受到保護。電子由鎂流向鐵，並在鐵表面進行氧氣還原，從而完全防止了鐵的氧化和生銹。";
+                    } else {
+                        badge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> <span>Cathodic Sacrificial Protection</span>';
+                        obs.innerHTML = "The **iron nail remains completely rust-free**, retaining its bright metallic luster. A **trace amount of white precipitate (magnesium hydroxide)** may be observed on the magnesium ribbon in contact with the nail, especially in distilled water or sea water.";
+                        mech.innerHTML = "The more reactive magnesium contacts iron, forming a micro **galvanic cell**. Magnesium acts as the **sacrificial anode** and is preferentially oxidized, while iron acts as the **protected cathode**. Electrons flow from magnesium to iron, where oxygen reduction occurs, completely preventing iron oxidation and rusting.";
+                    }
+                    
+                    eqList.innerHTML = `
+                        <div class="mb-1.5"><span class="text-rose-400 font-bold">${currentLanguage === 'zh' ? '犧牲性陽極保護' : 'Sacrificial Anodic Protection'}:</span> $\\text{Mg is coupled with Fe, acting as a sacrificial anode.}$</div>
+                        <div class="mb-1.5"><span class="text-cyan-400 font-bold">${currentLanguage === 'zh' ? '陽極反應 (鎂氧化)' : 'Anode (Mg)'}:</span> $\\text{Mg(s)} \\rightarrow \\text{Mg}^{2+}\\text{(aq)} + 2e^-$</div>
+                        <div class="mb-1.5"><span class="text-pink-400 font-bold">${currentLanguage === 'zh' ? '陰極反應 (鐵表面氧還原)' : 'Cathode (Fe)'}:</span> $\\text{O}_2\\text{(g)} + 2\\text{H}_2\\text{O(l)} + 4e^- \\rightarrow 4\\text{OH}^-\\text{(aq)}$</div>
+                        <div class="mb-1.5"><span class="text-slate-400 font-bold">${currentLanguage === 'zh' ? '沉澱反應 (白色沉澱)' : 'Precipitation'}:</span> $\\text{Mg}^{2+}\\text{(aq)} + 2\\text{OH}^-\\text{(aq)} \\rightarrow \\text{Mg(OH)}_2\\text{(s)}$</div>
+                        <div><span class="text-emerald-400 font-bold">${currentLanguage === 'zh' ? '保護狀態' : 'Protection State'}:</span> $\\text{Iron nail is fully protected from oxidation (No rust formation).}$</div>
+                    `;
+                }
+            }
+            else if (tubeState.acid) {
+                badge.className = "px-4 py-2 rounded-xl font-bold text-sm inline-flex items-center space-x-2 bg-rose-500/20 text-rose-500 border border-rose-500/30 uppercase animate-pulse shadow-inner";
+                if (currentLanguage === 'zh') {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-radiation animate-spin"></i> <span>劇烈酸性腐蝕 (Vigorous Acid Corrosion)</span>';
+                    obs.innerHTML = "鐵釘表面爆發<b>極其猛烈的氣泡 (氫氣)</b>，鐵釘迅速溶解、變細，溶液中出現<b>大量深褐色鐵銹沉澱物</b>，液體變得<b>極度混濁且呈黃褐色</b>。這是極其劇烈的酸性腐蝕與置換反應！";
+                    mech.innerHTML = "高濃度氫離子 ($H^+$) 直接與鐵發生劇烈的置換反應，將其迅速氧化為 $\\text{Fe}^{2+}$，同時釋放氫氣。在有氧情況下，$\\text{Fe}^{2+}$ 進一步被迅速氧化成水合氧化鐵(III)（鐵銹）。";
+                } else {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-radiation animate-spin"></i> <span>Vigorous Acid Corrosion</span>';
+                    obs.innerHTML = "The iron nail surface erupts with **extremely violent gas bubbles (hydrogen gas)**. The nail rapidly dissolves and thins, a **massive amount of dark brown rust precipitate** accumulates, and the liquid becomes **highly turbid and yellowish-brown**. This is a highly vigorous acid corrosion and displacement reaction!";
+                    mech.innerHTML = "High concentration of hydrogen ions ($H^+$) directly and vigorously react with iron via a displacement reaction, rapidly oxidizing it to $\\text{Fe}^{2+}$ and releasing hydrogen gas. In the presence of oxygen, $\\text{Fe}^{2+}$ is further oxidized rapidly to hydrated iron(III) oxide (rust).";
+                }
+                
+                eqList.innerHTML = `
+                    <div class="mb-1.5"><span class="text-rose-400 font-bold">${currentLanguage === 'zh' ? '酸性置換反應' : 'Acid Displacement'}:</span> $\\text{Fe(s)} + 2\\text{H}^+\\text{(aq)} \\rightarrow \\text{Fe}^{2+}\\text{(aq)} + \\text{H}_2\\text{(g)}$</div>
+                    <div class="mb-1.5"><span class="text-cyan-400 font-bold">${currentLanguage === 'zh' ? '陽極反應' : 'Anode'}:</span> $\\text{Fe(s)} \\rightarrow \\text{Fe}^{2+}\\text{(aq)} + 2e^-$</div>
+                    <div class="mb-1.5"><span class="text-pink-400 font-bold">${currentLanguage === 'zh' ? '陰極反應 (酸性/有氧)' : 'Cathode (Acid/O2)'}:</span> $2\\text{H}^+\\text{(aq)} + 2e^- \\rightarrow \\text{H}_2\\text{(g)} \\text{ and } \\text{O}_2\\text{(g)} + 4\\text{H}^+\\text{(aq)} + 4e^- \\rightarrow 2\\text{H}_2\\text{O(l)}$</div>
+                    <div><span class="text-amber-500 font-bold">${currentLanguage === 'zh' ? '總反應式' : 'Overall'}:</span> $4\\text{Fe(s)} + 3\\text{O}_2\\text{(g)} + 2n\\text{H}_2\\text{O(l)} \\rightarrow 2\\text{Fe}_2\\text{O}_3 \\cdot n\\text{H}_2\\text{O(s)}$</div>
+                `;
+            }
+            else if (tubeState.copperNail && level !== 'none') {
+                badge.className = "px-4 py-2 rounded-xl font-bold text-sm inline-flex items-center space-x-2 bg-rose-500/20 text-rose-500 border border-rose-500/30 uppercase animate-pulse shadow-inner";
+                if (currentLanguage === 'zh') {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-radiation animate-spin"></i> <span>極度嚴重電偶腐蝕 (Extremely Severe Galvanic Corrosion)</span>';
+                    obs.innerHTML = "鐵釘在與銅線接觸的交界處及兩端爆發<b>極其嚴重的深紅褐色鐵銹</b>，試管底部堆積了<b>大量紅褐色沉澱物</b>。相比普通鐵釘，生銹速度與嚴重程度呈<b>倍數級增加</b>！";
+                    mech.innerHTML = "鐵與不活潑的金屬銅接觸，形成微型的<b>電偶電池 (Galvanic Cell)</b>。由於鐵比銅活潑，鐵作為<b>陽極 (Anode)</b> 失去電子，電子迅速流向作為<b>陰極 (Cathode)</b> 的銅線，在銅表面進行氧氣還原，極大加速了鐵的氧化腐蝕。";
+                } else {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-radiation animate-spin"></i> <span>Extremely Severe Galvanic Corrosion</span>';
+                    obs.innerHTML = "The iron nail suffers **extremely severe dark reddish-brown rusting** concentrated at the contact junctions with the copper wire and at both ends. A **large amount of reddish-brown precipitate** accumulates at the bottom. The rusting rate and severity are **multiplied** compared to a plain iron nail!";
+                    mech.innerHTML = "Iron contacts the less reactive copper, establishing micro **galvanic cells**. Since iron is more reactive than copper, it acts as the **anode** and loses electrons. Electrons flow rapidly to the copper wire which acts as the **cathode**, where oxygen reduction occurs, dramatically accelerating iron oxidation.";
+                }
+                
+                eqList.innerHTML = `
+                    <div class="mb-1.5"><span class="text-rose-400 font-bold">${currentLanguage === 'zh' ? '電偶雙金屬效應' : 'Galvanic Coupling'}:</span> $\\text{Fe is coupled with less reactive Cu, forming a galvanic cell.}$</div>
+                    <div class="mb-1.5"><span class="text-cyan-400 font-bold">${currentLanguage === 'zh' ? '陽極反應 (鐵氧化)' : 'Anode (Fe)'}:</span> $\\text{Fe(s)} \\rightarrow \\text{Fe}^{2+}\\text{(aq)} + 2e^-$</div>
+                    <div class="mb-1.5"><span class="text-pink-400 font-bold">${currentLanguage === 'zh' ? '陰極反應 (銅表面氧還原)' : 'Cathode (Cu)'}:</span> $\\text{O}_2\\text{(g)} + 2\\text{H}_2\\text{O(l)} + 4e^- \\rightarrow 4\\text{OH}^-\\text{(aq)}$</div>
+                    <div><span class="text-amber-500 font-bold">${currentLanguage === 'zh' ? '總反應式' : 'Overall'}:</span> $4\\text{Fe(s)} + 3\\text{O}_2\\text{(g)} + 2n\\text{H}_2\\text{O(l)} \\rightarrow 2\\text{Fe}_2\\text{O}_3 \\cdot n\\text{H}_2\\text{O(s)}$</div>
+                `;
+            }
+            else if (level === 'extreme') {
+                badge.className = "px-4 py-2 rounded-xl font-bold text-sm inline-flex items-center space-x-2 bg-rose-500/20 text-rose-500 border border-rose-500/30 uppercase animate-pulse shadow-inner";
+                if (currentLanguage === 'zh') {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-radiation animate-spin"></i> <span>極度嚴重生銹 (Extremely Severe Rusting)</span>';
+                    obs.innerHTML = "鐵釘表面在極短時間內爆發<b>極度嚴重的深黑褐色鐵銹</b>，試管底部堆積了<b>大量紅褐色沉澱物</b>，且綠藍色的海水變得<b>極度混濁且發黃</b>。這是最猛烈的腐蝕現象！";
+                    mech.innerHTML = "高濃度可自由移動離子極大增強導電性，倍速加速電化腐蝕。";
+                } else {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-radiation animate-spin"></i> <span>Extremely Severe Rusting</span>';
+                    obs.innerHTML = "The iron nail suffers **extremely severe dark brown rusting** in a very short time. A **massive amount of precipitate** accumulates at the bottom, and the greenish-blue sea water becomes **highly turbid and yellowish**.";
+                    mech.innerHTML = "High concentration of ions in sea water dramatically speeds up electrochemical rusting.";
+                }
+                
+                eqList.innerHTML = `
+                    <div class="mb-1.5"><span class="text-rose-400 font-bold">${currentLanguage === 'zh' ? '電解質作用' : 'Electrolyte Role'}:</span> $\\text{Na}^+ \\text{ and } \\text{Cl}^- \\text{ act as charge carriers to speed up electron transfer.}$</div>
+                    <div class="mb-1.5"><span class="text-cyan-400 font-bold">${currentLanguage === 'zh' ? '陽極反應' : 'Anode'}:</span> $\\text{Fe(s)} \\rightarrow \\text{Fe}^{2+}\\text{(aq)} + 2e^-$</div>
+                    <div class="mb-1.5"><span class="text-pink-400 font-bold">${currentLanguage === 'zh' ? '陰極反應' : 'Cathode'}:</span> $\\text{O}_2\\text{(g)} + 2\\text{H}_2\\text{O(l)} + 4e^- \\rightarrow 4\\text{OH}^-\\text{(aq)}$</div>
+                    <div><span class="text-amber-500 font-bold">${currentLanguage === 'zh' ? '總反應式' : 'Overall'}:</span> $4\\text{Fe(s)} + 3\\text{O}_2\\text{(g)} + 2n\\text{H}_2\\text{O(l)} \\rightarrow 2\\text{Fe}_2\\text{O}_3 \\cdot n\\text{H}_2\\text{O(s)}$</div>
+                `;
+            }
+            else if (level === 'heavy') {
+                badge.className = "px-3 py-1.5 rounded-lg font-bold text-xs inline-flex items-center space-x-1.5 bg-red-500/20 text-red-400 border border-red-500/30 uppercase";
+                if (currentLanguage === 'zh') {
+                    badge.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <span>重度生銹 (Severe Rusting)</span>';
+                    if (tubeState.seaWater && tubeState.oil) {
+                        obs.innerHTML = "鐵釘表面覆蓋了<b>大量紅褐色斑駁固體鐵銹</b>。試管底部積累了明顯的<b>紅褐色氫氧化鐵(III)沉澱物</b>，且綠藍色的海水變得<b>微混濁</b>。這是極其典型的生銹現象！";
+                        mech.innerHTML = "鐵釘與海水中原有溶解氧反應，高導電鹽分加速重度生銹。";
+                    } else {
+                        obs.innerHTML = "鐵釘表面覆蓋了<b>大量紅褐色斑駁固體鐵銹</b>。試管底部積累了明顯的<b>紅褐色氫氧化鐵(III)沉澱物</b>，且藍色的蒸餾水變得<b>微混濁</b>。這是極其典型的生銹現象！";
+                        mech.innerHTML = "鐵釘同時接觸水分與充足溶解氧，發生快速電化學腐蝕。";
+                    }
+                } else {
+                    badge.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <span>Severe Rusting</span>';
+                    if (tubeState.seaWater && tubeState.oil) {
+                        obs.innerHTML = "The iron nail's surface is covered with **a large amount of reddish-brown patch-like solid rust**. A significant amount of **reddish-brown iron(III) hydroxide precipitate** has accumulated at the bottom, and the greenish-blue sea water has become **slightly turbid**. This is a highly characteristic rusting phenomenon!";
+                        mech.innerHTML = "Nail reacts with water and initial dissolved oxygen, accelerated by salty ions.";
+                    } else {
+                        obs.innerHTML = "The iron nail's surface is covered with **a large amount of reddish-brown patch-like solid rust**. A significant amount of **reddish-brown iron(III) hydroxide precipitate** has accumulated at the bottom, and the blue distilled water has become **slightly turbid**. This is a highly characteristic rusting phenomenon!";
+                        mech.innerHTML = "Iron contacts water and oxygen, triggering electrochemical rusting.";
+                    }
+                }
+                
+                if (tubeState.seaWater && tubeState.oil) {
+                    eqList.innerHTML = `
+                        <div class="mb-1.5"><span class="text-rose-400 font-bold">${currentLanguage === 'zh' ? '電解質作用' : 'Electrolyte Role'}:</span> $\\text{Na}^+ \\text{ and } \\text{Cl}^- \\text{ act as charge carriers to speed up electron transfer.}$</div>
+                        <div class="mb-1.5"><span class="text-cyan-400 font-bold">${currentLanguage === 'zh' ? '陽極反應' : 'Anode'}:</span> $\\text{Fe(s)} \\rightarrow \\text{Fe}^{2+}\\text{(aq)} + 2e^-$</div>
+                        <div class="mb-1.5"><span class="text-pink-400 font-bold">${currentLanguage === 'zh' ? '陰極反應' : 'Cathode'}:</span> $\\text{O}_2\\text{(g)} + 2\\text{H}_2\\text{O(l)} + 4e^- \\rightarrow 4\\text{OH}^-\\text{(aq)}$</div>
+                        <div><span class="text-amber-500 font-bold">${currentLanguage === 'zh' ? '總反應式' : 'Overall'}:</span> $4\\text{Fe(s)} + 3\\text{O}_2\\text{(g)} + 2n\\text{H}_2\\text{O(l)} \\rightarrow 2\\text{Fe}_2\\text{O}_3 \\cdot n\\text{H}_2\\text{O(s)}$</div>
+                    `;
+                } else {
+                    eqList.innerHTML = `
+                        <div class="mb-1.5"><span class="text-cyan-400 font-bold">${currentLanguage === 'zh' ? '陽極反應' : 'Anode'}:</span> $\\text{Fe(s)} \\rightarrow \\text{Fe}^{2+}\\text{(aq)} + 2e^-$</div>
+                        <div class="mb-1.5"><span class="text-pink-400 font-bold">${currentLanguage === 'zh' ? '陰極反應' : 'Cathode'}:</span> $\\text{O}_2\\text{(g)} + 2\\text{H}_2\\text{O(l)} + 4e^- \\rightarrow 4\\text{OH}^-\\text{(aq)}$</div>
+                        <div class="mb-1.5"><span class="text-slate-400 font-bold">${currentLanguage === 'zh' ? '沉澱反應' : 'Precipitation'}:</span> $\\text{Fe}^{2+}\\text{(aq)} + 2\\text{OH}^-\\text{(aq)} \\rightarrow \\text{Fe(OH)}_2\\text{(s)}$</div>
+                        <div class="mb-1.5"><span class="text-slate-400 font-bold">${currentLanguage === 'zh' ? '氧化反應' : 'Oxidation'}:</span> $4\\text{Fe(OH)}_2\\text{(s)} + \\text{O}_2\\text{(g)} + 2\\text{H}_2\\text{O(l)} \\rightarrow 4\\text{Fe(OH)}_3\\text{(s)}$</div>
+                        <div><span class="text-amber-500 font-bold">${currentLanguage === 'zh' ? '總反應式' : 'Overall'}:</span> $4\\text{Fe(s)} + 3\\text{O}_2\\text{(g)} + 2n\\text{H}_2\\text{O(l)} \\rightarrow 2\\text{Fe}_2\\text{O}_3 \\cdot n\\text{H}_2\\text{O(s)}$</div>
+                    `;
+                }
+            } 
+            else if (level === 'medium') {
+                badge.className = "px-3 py-1.5 rounded-lg font-bold text-xs inline-flex items-center space-x-1.5 bg-orange-500/20 text-orange-400 border border-orange-500/30 uppercase";
+                if (currentLanguage === 'zh') {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> <span>中度生銹 (Moderate Rusting)</span>';
+                    obs.innerHTML = "鐵釘表面出現<b>明顯的紅褐色斑點狀銹跡</b>，試管液體底部有少量褐色細微沉澱物。生銹程度中等。";
+                    mech.innerHTML = "氧氣重新溶入無油層保護的經煮沸水中，引發中度腐蝕。";
+                } else {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> <span>Moderate Rusting</span>';
+                    obs.innerHTML = "The surface of the iron nail shows **prominent reddish-brown spot-like rust**, and there is a small amount of brown fine precipitate at the bottom of the test tube. The degree of rusting is moderate.";
+                    mech.innerHTML = "Air oxygen re-dissolves into water without oil layer, causing moderate rusting.";
+                }
+                
+                eqList.innerHTML = `
+                    <div class="mb-1"><span class="text-cyan-400 font-bold">${currentLanguage === 'zh' ? '陽極反應' : 'Anode'}:</span> $\\text{Fe(s)} \\rightarrow \\text{Fe}^{2+}\\text{(aq)} + 2e^-$</div>
+                    <div class="mb-1"><span class="text-pink-400 font-bold">${currentLanguage === 'zh' ? '陰極反應' : 'Cathode'}:</span> $\\text{O}_2\\text{(g)} + 2\\text{H}_2\\text{O(l)} + 4e^- \\rightarrow 4\\text{OH}^-\\text{(aq)}$</div>
+                    <div><span class="text-amber-500 font-bold">${currentLanguage === 'zh' ? '總反應式' : 'Overall'}:</span> $4\\text{Fe(s)} + 3\\text{O}_2\\text{(g)} + 2n\\text{H}_2\\text{O(l)} \\rightarrow 2\\text{Fe}_2\\text{O}_3 \\cdot n\\text{H}_2\\text{O(s)}$</div>
+                `;
+            } 
+            else if (level === 'light') {
+                badge.className = "px-3 py-1.5 rounded-lg font-bold text-xs inline-flex items-center space-x-1.5 bg-amber-500/20 text-amber-400 border border-amber-500/30 uppercase";
+                if (currentLanguage === 'zh') {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-info"></i> <span>輕度生銹 (Light Rusting)</span>';
+                    obs.innerHTML = "鐵釘表面僅在局部區域形成<b>少量零星的淺褐色銹斑</b>，液體底基本無明顯沉澱，水保持澄清。生銹程度非常輕微。";
+                    mech.innerHTML = "鐵釘與普通水中原有初始溶解氧反應，油層阻隔外界空氣。";
+                } else {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-info"></i> <span>Light Rusting</span>';
+                    obs.innerHTML = "Only **a few scattered light-brown rust spots** form locally on the surface of the iron nail. There is no obvious precipitate at the bottom, and the water remains clear. The degree of rusting is very slight.";
+                    mech.innerHTML = "Nail reacts with water and limited initial dissolved oxygen in the water.";
+                }
+                
+                eqList.innerHTML = `
+                    <div class="mb-1"><span class="text-cyan-400 font-bold">${currentLanguage === 'zh' ? '陽極反應' : 'Anode'}:</span> $\\text{Fe(s)} \\rightarrow \\text{Fe}^{2+}\\text{(aq)} + 2e^-$</div>
+                    <div class="mb-1"><span class="text-pink-400 font-bold">${currentLanguage === 'zh' ? '陰極反應' : 'Cathode'}:</span> $\\text{O}_2\\text{(g)} + 2\\text{H}_2\\text{O(l)} + 4e^- \\rightarrow 4\\text{OH}^-\\text{(aq)}$</div>
+                    <div><span class="text-slate-400">${currentLanguage === 'zh' ? '電解質中溶解氧有限，反應很快達到飽和平衡。' : 'Dissolved oxygen is limited, reaction reaches saturation rapidly.'}</span></div>
+                `;
+            } 
+            else if (level === 'slight') {
+                badge.className = "px-3 py-1.5 rounded-lg font-bold text-xs inline-flex items-center space-x-1.5 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 uppercase";
+                if (currentLanguage === 'zh') {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-question"></i> <span>極微量生銹 (Very Slight Rusting)</span>';
+                    obs.innerHTML = "鐵釘絕大部分區域依然保持原有的金屬光澤，僅在尖端應力集中或與試管底接觸處出現<b>肉眼極難察覺的細微銹點</b>。";
+                    mech.innerHTML = "無液態水，但空氣中微弱的水蒸氣與充足氧氣引發極微量慢速生銹。";
+                } else {
+                    badge.innerHTML = '<i class="fa-solid fa-circle-question"></i> <span>Very Slight Rusting</span>';
+                    obs.innerHTML = "Most parts of the iron nail still maintain their original metallic luster, with only **tiny, barely visible rust spots** appearing at the stress-concentrated tip or where it contacts the bottom of the test tube.";
+                    mech.innerHTML = "No liquid water; trace atmospheric humidity and oxygen cause extremely slow rusting.";
+                }
+                
+                eqList.innerHTML = `
+                    <div class="mb-1">${currentLanguage === 'zh' ? '常溫常壓大氣氧化緩慢反應。' : 'Slow atmospheric oxidation at ambient temp/pressure.'}</div>
+                    <div>$\\text{Fe(s)} + \\text{H}_2\\text{O(g/trace)} + \\text{O}_2\\text{(g)} \\rightarrow \\text{Slow Spot Corrosion}$</div>
+                `;
+            } 
+            else {
+                badge.className = "px-3 py-1.5 rounded-lg font-bold text-xs inline-flex items-center space-x-1.5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 uppercase";
+                if (currentLanguage === 'zh') {
+                    badge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> <span>完全不生銹 (No Rusting)</span>';
+                } else {
+                    badge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> <span>No Rusting</span>';
+                }
+                
+                if (tubeState.boiledWater && tubeState.oil) {
+                    if (currentLanguage === 'zh') {
+                        obs.innerHTML = "鐵釘<b>完全沒有生銹</b>，表面依然保持著<b>亮麗耀眼的金屬銀灰色光澤</b>，試管水體極度清澈，底無任何沉澱物。";
+                        mech.innerHTML = "煮沸水無溶解氧，油層阻隔空氣。";
+                    } else {
+                        obs.innerHTML = "The iron nail is **completely free of rust**, maintaining a **bright and dazzling metallic silver-gray luster** on its surface. The liquid is extremely clear with no precipitate at the bottom.";
+                        mech.innerHTML = "Boiled water has no oxygen, and oil layer blocks air entry.";
+                    }
+                    eqList.innerHTML = `<div class="text-emerald-400 font-bold">${currentLanguage === 'zh' ? '缺氧條件限制！電子無法被接收。沒有反應！' : 'Anoxic limit! Electrons cannot be accepted. No reaction!'}</div>`;
+                } 
+                else if (tubeState.cacl2) {
+                    if (currentLanguage === 'zh') {
+                        obs.innerHTML = "試管底部的鐵釘<b>完全沒有生銹</b>，表面依然完好無損，保持著極佳的亮銀色金屬光澤，沒有任何銹斑。";
+                        mech.innerHTML = "無水氯化鈣吸收所有水氣，保持乾燥。";
+                    } else {
+                        obs.innerHTML = "The iron nail at the bottom of the tube is **completely free of rust**, perfectly intact, and maintaining its bright metallic silver luster without any color patches.";
+                        mech.innerHTML = "Anhydrous calcium chloride absorbs all moisture, keeping the environment dry.";
+                    }
+                    eqList.innerHTML = `<div class="text-emerald-400 font-bold">${currentLanguage === 'zh' ? '無水分介質限制！無法形成微原電池。沒有反應！' : 'No water medium limit! Unable to form micro-cells. No reaction!'}</div>`;
+                } 
+                else if (tubeState.oil && !tubeState.distilledWater && !tubeState.boiledWater && !tubeState.seaWater && !tubeState.acid) {
+                    if (currentLanguage === 'zh') {
+                        obs.innerHTML = "鐵釘被淡黃色的防護油層完整覆蓋，<b>完全沒有生銹</b>，金屬光澤完好。";
+                        mech.innerHTML = "防護油層阻隔鐵釘與水分、氧氣接觸。";
+                    } else {
+                        obs.innerHTML = "The iron nail is fully covered by the poured protective oil layer, **completely free of rust**, with its metallic luster fully intact.";
+                        mech.innerHTML = "The oil layer physically blocks contact with water and oxygen.";
+                    }
+                    eqList.innerHTML = `<div class="text-emerald-400 font-bold">${currentLanguage === 'zh' ? '防護屏障物理封鎖！接觸概率為 0。沒有反應！' : 'Barrier protection block! Contact probability = 0. No reaction!'}</div>`;
+                }
+                else if (tubeState.oilPoured) {
+                    if (currentLanguage === 'zh') {
+                        obs.innerHTML = "鐵釘被倒入試管的防護油完全浸沒，<b>完全沒有生銹</b>，金屬光澤完好。";
+                        mech.innerHTML = "防護油浸沒鐵釘，隔離水與氧氣。";
+                    } else {
+                        obs.innerHTML = "The iron nail is fully immersed in the poured protective oil, **completely free of rust**, with its metallic luster fully intact.";
+                        mech.innerHTML = "The poured oil completely blocks contact with water and oxygen.";
+                    }
+                    eqList.innerHTML = `<div class="text-emerald-400 font-bold">${currentLanguage === 'zh' ? '鐵釘浸沒於防護油中！接觸概率為 0。沒有反應！' : 'Nail immersed in oil barrier! Contact probability = 0. No reaction!'}</div>`;
+                }
+            }
+
+            if (window.MathJax && typeof window.MathJax.typesetPromise === 'function') {
+                MathJax.typesetPromise();
+            }
+        }
+
+
+        // =========================================================================
+        // 3. PART 2: PETRI DISH LAB IMPLEMENTATION (PHYSICS CANVAS DIFFUSION)
+        // =========================================================================
+        const canvas = document.getElementById('dish-canvas');
+        const ctx = canvas.getContext('2d');
+        let activeNailType = 'straight';
+        let animationFrameId = null;
+        let reactionProgress = 0; 
+        let isReacting = false;
+        let diffusionSpots = []; 
+
+        canvas.addEventListener('click', handleCanvasClick);
+
+        const radios = document.querySelectorAll('input[name="dish-nail-select"]');
+        radios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (isReacting) {
+                    cancelAnimationFrame(animationFrameId);
+                    isReacting = false;
+                }
+                activeNailType = e.target.value;
+                reactionProgress = 0;
+                diffusionSpots = [];
+                closePopover();
+                
+                document.getElementById('dish-equations-container').classList.add('hidden');
+
+                drawDish();
+            });
+        });
+
+        // Setup custom diffusion spot template for emitters
+        class DiffusionSpot {
+            constructor(x, y, maxRadius, color, type, descZh, descEn, latex) {
+                this.x = x;
+                this.y = y;
+                this.maxRadius = maxRadius;
+                this.color = color; 
+                this.type = type; 
+                this.descZh = descZh;
+                this.descEn = descEn;
+                this.latex = latex;
+                this.currentRadius = 0;
+                this.opacity = 0;
+            }
+
+            update(progress) {
+                this.currentRadius = (progress / 100) * this.maxRadius;
+                if (progress < 40) {
+                    this.opacity = (progress / 40) * 0.75;
+                } else {
+                    this.opacity = 0.75 - ((progress - 40) / 60) * 0.15;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.filter = 'blur(16px)';
+
+                let fillStyle;
+                if (this.color === 'blue') {
+                    let grad = ctx.createRadialGradient(this.x, this.y, this.currentRadius * 0.05, this.x, this.y, this.currentRadius);
+                    grad.addColorStop(0, `rgba(30, 64, 175, ${this.opacity * 0.95})`);
+                    grad.addColorStop(0.3, `rgba(29, 78, 216, ${this.opacity * 0.7})`);
+                    grad.addColorStop(0.7, `rgba(37, 99, 235, ${this.opacity * 0.3})`);
+                    grad.addColorStop(1, 'rgba(30, 64, 175, 0)');
+                    fillStyle = grad;
+                } else if (this.color === 'pink') {
+                    let grad = ctx.createRadialGradient(this.x, this.y, this.currentRadius * 0.1, this.x, this.y, this.currentRadius);
+                    grad.addColorStop(0, `rgba(219, 39, 119, ${this.opacity * 0.95})`);
+                    grad.addColorStop(0.4, `rgba(236, 72, 153, ${this.opacity * 0.65})`);
+                    grad.addColorStop(0.8, `rgba(244, 114, 182, ${this.opacity * 0.25})`);
+                    grad.addColorStop(1, 'rgba(219, 39, 119, 0)');
+                    fillStyle = grad;
+                } else if (this.color === 'white') {
+                    let grad = ctx.createRadialGradient(this.x, this.y, this.currentRadius * 0.1, this.x, this.y, this.currentRadius);
+                    grad.addColorStop(0, `rgba(241, 245, 249, ${this.opacity * 0.85})`);
+                    grad.addColorStop(0.5, `rgba(226, 232, 240, ${this.opacity * 0.4})`);
+                    grad.addColorStop(1, 'rgba(241, 245, 249, 0)');
+                    fillStyle = grad;
+                }
+
+                ctx.fillStyle = fillStyle;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.currentRadius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // Initialize spot emitters based on iron nail status
+        function initDiffusionSpots() {
+            diffusionSpots = [];
+            const W = canvas.width;
+            const H = canvas.height;
+            const cx = W / 2;
+            const cy = H / 2;
+
+            if (activeNailType === 'straight') {
+                diffusionSpots.push(new DiffusionSpot(
+                    cx - 100, cy - 3, 40, 'blue', 'anode',
+                    "鐵釘頭端處於應力集中區，鐵原子極易在此處失去電子被氧化為鐵(II)離子。Fe²⁺ 與鐵氰化鉀起化學呈色反應，生成普魯士藍色沉澱。",
+                    "The nail head is a stress-concentrated area. Iron atoms here lose electrons easily to be oxidized into Fe²⁺. It reacts with potassium hexacyanoferrate(III) to form a deep blue precipitate.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx + 105, cy + 3, 35, 'blue', 'anode',
+                    "鐵釘尖銳的末端是典型的晶格受壓畸變區，屬於活性較強的陽極，鐵在此處優先氧化成 Fe²⁺ 並溶解，遇到鐵氰化鉀顯藍色。",
+                    "The sharp tip of the nail is a lattice-distorted region under force, serving as a highly active anode where iron is preferentially oxidized into Fe²⁺, showing blue with the indicator.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx, cy, 65, 'pink', 'cathode',
+                    "鐵釘的中間軸身充當陰極，表面上溶解在凝膠中的氧氣 and 水接收電子，還原為鹼性的氫氧根離子 OH⁻。酚酞遇到 OH⁻ 變為粉紅色。",
+                    "The middle shaft of the nail acts as the cathode. Oxygen and water dissolved in the gel accept electrons to be reduced into basic hydroxide ions (OH⁻), turning phenolphthalein pink.",
+                    "O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)"
+                ));
+            } 
+            else if (activeNailType === 'bent') {
+                diffusionSpots.push(new DiffusionSpot(
+                    cx - 95, cy - 40, 35, 'blue', 'anode',
+                    "直鐵釘頭端，受應力作用被氧化為 Fe²⁺，遇到 K₃Fe(CN)₆ 生成普魯士藍色。",
+                    "The straight nail head is oxidized into Fe²⁺ under stress, generating Prussian Blue color with the indicator.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx + 95, cy - 40, 32, 'blue', 'anode',
+                    "直鐵釘尖端，受應力氧化形成 Fe²⁺，遇到指示劑顯現藍色。",
+                    "The sharp tip undergoes stress-induced oxidation to release Fe²⁺, creating a blue color with the indicator.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx, cy + 45, 75, 'blue', 'anode',
+                    "彎曲頂角處（Bent Center）受到了極強的物理應力集中。這裡的鐵原子晶格發生嚴重變形畸變，電子溢出勢能極低。鐵在此處被狂烈氧化為 Fe²⁺，產生最濃烈的深藍色擴散斑！",
+                    "The bent vertex (Bent Center) experiences intense mechanical stress concentration. The iron lattice is severely distorted, significantly lowering the energy barrier to lose electrons, causing rapid oxidation into Fe²⁺ and a dense blue patch.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx - 45, cy + 5, 45, 'pink', 'cathode',
+                    "鐵釘左半直軸身充當陰極，還原氧氣 and 水分釋放 OH⁻ 離子，酚酞指示劑遇檢變粉紅色。",
+                    "The left unbent shaft acts as the cathode, reducing dissolved oxygen to produce OH⁻ ions, turning the phenolphthalein pink.",
+                    "O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx + 45, cy + 5, 45, 'pink', 'cathode',
+                    "鐵釘右半直軸身充當陰極，進行還原反應形成鹼性環境，顯現出擴散的粉紅色斑塊。",
+                    "The right unbent shaft acts as the cathode, facilitating reduction to create an alkaline environment, showing a pink diffusion patch.",
+                    "O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)"
+                ));
+            } 
+            else if (activeNailType === 'scratched') {
+                diffusionSpots.push(new DiffusionSpot(
+                    cx - 100, cy - 3, 35, 'blue', 'anode',
+                    "鐵釘頭端應力集中，失去電子呈現藍色。",
+                    "The nail head undergoes stress-induced oxidation to release Fe²⁺, creating blue spots.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx + 105, cy + 3, 30, 'blue', 'anode',
+                    "鐵釘尖端應力集中，被氧化釋放 Fe²⁺ 呈現藍色。",
+                    "The sharp tip experiences stress concentration, releasing Fe²⁺ and showing a blue color.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx - 30, cy - 2, 38, 'blue', 'anode',
+                    "刮痕處 (Scratch Line 1) 物理防護氧化膜破裂，內部高活性鐵直接暴露於介質，成為活躍的陽極中心，釋放 Fe²⁺ 與指示劑化合成藍色。",
+                    "At Scratch Line 1, the protective oxide film is breached, exposing the highly active pure iron directly. This scratch becomes a highly active anode, releasing Fe²⁺ and forming blue color.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx + 40, cy + 2, 38, 'blue', 'anode',
+                    "刮痕處 (Scratch Line 2) 受到物理刮擦產生微應力，金屬鐵加速腐蝕並釋放 Fe²⁺，形成明顯的藍色擴散區。",
+                    "Scratch Line 2 undergoes physical damage and micro-stress, accelerating local corrosion and releasing Fe²⁺, creating a distinct blue diffusion zone.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx, cy, 60, 'pink', 'cathode',
+                    "刮痕鐵釘其餘未受損的金屬表面作為陰極，反應還原溶氧生成 OH⁻，使酚酞變為粉紅色。",
+                    "The remaining undamaged surface of the scratched nail acts as the cathode, reducing dissolved oxygen to yield OH⁻, turning phenolphthalein pink.",
+                    "O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)"
+                ));
+            } 
+            else if (activeNailType === 'magnesium') {
+                diffusionSpots.push(new DiffusionSpot(
+                    cx, cy - 2, 45, 'white', 'mag',
+                    "纏繞的鎂帶作為陽極，由於鎂的活躍度遠大於鐵，它會被「犧牲性氧化」為無色的 Mg²⁺。無藍色產生，代表鐵釘受到完美防護！在鹼性下可能有些微 Mg(OH)₂ 白色微濁。",
+                    "The magnesium ribbon acts as the anode. Since magnesium is much more reactive than iron, it is preferentially oxidized into colorless Mg²⁺. No blue color is generated, indicating complete protection of the iron! Slight white cloudiness of Mg(OH)₂ may form in alkaline medium.",
+                    "Mg(s) -> Mg²⁺(aq) + 2e⁻"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx, cy, 95, 'pink', 'cathode',
+                    "由於電化保護（犧牲性保護），整個鐵釘只充當陰極，將從陽極傳導來的電子在鐵表面全部用來還原氧氣，生成大量 OH⁻。整個鐵釘周圍擴散出大範圍極為鮮豔奪目的粉紅色！",
+                    "Due to sacrificial protection, the entire iron nail serves as the cathode, utilizing electrons from magnesium to reduce oxygen. This produces massive amounts of OH⁻, developing a highly vibrant pink halo across the entire nail.",
+                    "O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)"
+                ));
+            } 
+            else if (activeNailType === 'copper') {
+                diffusionSpots.push(new DiffusionSpot(
+                    cx - 85, cy - 3, 65, 'blue', 'anode',
+                    "與不活躍的銅線連接後，形成電偶雙金屬。鐵的活性強於銅，被迫充當陽極，電子狂烈湧向銅線，鐵自身加速極速溶解，在暴露的左半端釋放極高濃度的 Fe²⁺，形成超大藍色斑！",
+                    "Coupled with the less reactive copper wire, a galvanic cell is established. Iron is more reactive than copper and acts as the anode; electrons flow rapidly to copper, causing accelerated iron oxidation and releasing high concentrations of Fe²⁺ at the left exposed end.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻ (Accelerated)"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx + 85, cy + 3, 65, 'blue', 'anode',
+                    "鐵釘暴露的右半端，因為電原效應，大量鐵原子迅速失去電子溶解，釋放出巨量 Fe²⁺，藍色斑點擴散極為迅速且濃烈。",
+                    "The right exposed end of the iron nail dissolves rapidly due to the galvanic effect, releasing immense amounts of Fe²⁺ and producing a highly concentrated, rapidly diffusing blue patch.",
+                    "Fe(s) -> Fe²⁺(aq) + 2e⁻ (Accelerated)"
+                ));
+                diffusionSpots.push(new DiffusionSpot(
+                    cx, cy, 55, 'pink', 'cathode',
+                    "不活躍的金屬銅線充當電化池的陰極，將從鐵身上奪來的電子聚集在銅線表面，狂烈進行氧還原。因此，銅線線圈周圍擴散出濃郁的酚酞粉紅色斑塊。",
+                    "The less reactive copper wire acts as the cathode, aggregating electrons drawn from iron to reduce oxygen. Thus, a concentrated phenolphthalein pink cloud diffuses right around the copper coil.",
+                    "O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)"
+                ));
+            }
+        }
+
+        // Helper functions to draw 3D realistic coils (back and front parts)
+        function drawCopperCoilBack(ctx, cx, centerY, R) {
+            const wrapX = cx - 88;
+            const wrapW = 176;
+            const pitch = 11;
+            const N = Math.floor(wrapW / pitch);
+            const r_coil = R + 2.5;
+
+            ctx.save();
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            for (let i = 0; i < N; i++) {
+                const x = wrapX + i * pitch;
+                const startX = x - pitch / 2;
+                const startY = centerY + R;
+                const endX = x;
+                const endY = centerY - R;
+                
+                ctx.moveTo(startX, startY);
+                ctx.bezierCurveTo(
+                    startX + pitch / 6, centerY - r_coil,
+                    endX - pitch / 6, centerY - r_coil,
+                    endX, endY
+                );
+            }
+
+            // Stroke layering for realistic 3D copper wire
+            ctx.strokeStyle = '#7c2d12';
+            ctx.lineWidth = 4.0;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#ea580c';
+            ctx.lineWidth = 2.5;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#fdba74';
+            ctx.lineWidth = 1.0;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 0.4;
+            ctx.stroke();
+
+            ctx.restore();
+        }
+
+        function drawCopperCoilFront(ctx, cx, centerY, R) {
+            const wrapX = cx - 88;
+            const wrapW = 176;
+            const pitch = 11;
+            const N = Math.floor(wrapW / pitch);
+            const r_coil = R + 2.5;
+
+            ctx.save();
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+
+            // 1. Draw the loose tail at the bottom-left
+            const tailStartX = wrapX - pitch / 2;
+            const tailStartY = centerY + R;
+            const tailEndX = tailStartX - 30;
+            const tailEndY = tailStartY + 25;
+            const tailCPX = tailStartX - 12;
+            const tailCPY = tailStartY + 28;
+
+            ctx.moveTo(tailEndX, tailEndY);
+            ctx.quadraticCurveTo(tailCPX, tailCPY, tailStartX, tailStartY);
+
+            // 2. Draw the front turns
+            for (let i = 0; i < N; i++) {
+                const x = wrapX + i * pitch;
+                const startX = x;
+                const startY = centerY - R;
+                const endX = x + pitch / 2;
+                const endY = centerY + R;
+
+                ctx.moveTo(startX, startY);
+                ctx.bezierCurveTo(
+                    startX + pitch / 6, centerY + r_coil,
+                    endX - pitch / 6, centerY + r_coil,
+                    endX, endY
+                );
+            }
+
+            // 3. Draw a small tail at the right end
+            const lastX = wrapX + (N - 1) * pitch + pitch / 2;
+            const lastY = centerY + R;
+            ctx.moveTo(lastX, lastY);
+            ctx.quadraticCurveTo(lastX + 10, lastY + 12, lastX + 18, lastY + 15);
+
+            // Stroke layering for realistic 3D copper wire
+            ctx.strokeStyle = '#7c2d12';
+            ctx.lineWidth = 4.0;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#ea580c';
+            ctx.lineWidth = 2.5;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#fdba74';
+            ctx.lineWidth = 1.0;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 0.4;
+            ctx.stroke();
+
+            // Draw "Cu" label
+            ctx.fillStyle = '#c2410c';
+            ctx.font = 'bold 10px sans-serif';
+            ctx.fillText('Cu', cx - 6, centerY - R - 15);
+
+            ctx.restore();
+        }
+
+        function drawMagnesiumCoilBack(ctx, cx, centerY, R) {
+            const wrapX = cx - 84;
+            const wrapW = 168;
+            const pitch = 14;
+            const N = Math.floor(wrapW / pitch);
+            const r_coil = R + 2.0;
+
+            ctx.save();
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            for (let i = 0; i < N; i++) {
+                const x = wrapX + i * pitch;
+                const startX = x - pitch / 2;
+                const startY = centerY + R;
+                const endX = x;
+                const endY = centerY - R;
+
+                ctx.moveTo(startX, startY);
+                ctx.bezierCurveTo(
+                    startX + pitch / 6, centerY - r_coil,
+                    endX - pitch / 6, centerY - r_coil,
+                    endX, endY
+                );
+            }
+
+            // Stroke layering for realistic 3D flat magnesium ribbon
+            ctx.strokeStyle = '#334155';
+            ctx.lineWidth = 7.5;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#64748b';
+            ctx.lineWidth = 5.5;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#cbd5e1';
+            ctx.lineWidth = 3.0;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+
+            ctx.restore();
+        }
+
+        function drawMagnesiumCoilFront(ctx, cx, centerY, R) {
+            const wrapX = cx - 84;
+            const wrapW = 168;
+            const pitch = 14;
+            const N = Math.floor(wrapW / pitch);
+            const r_coil = R + 2.0;
+
+            ctx.save();
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+
+            // 1. Draw the loose ribbon tail at the bottom-left
+            const tailStartX = wrapX - pitch / 2;
+            const tailStartY = centerY + R;
+            const tailEndX = tailStartX - 25;
+            const tailEndY = tailStartY + 20;
+            const tailCPX = tailStartX - 10;
+            const tailCPY = tailStartY + 22;
+
+            ctx.moveTo(tailEndX, tailEndY);
+            ctx.quadraticCurveTo(tailCPX, tailCPY, tailStartX, tailStartY);
+
+            // 2. Draw front turns
+            for (let i = 0; i < N; i++) {
+                const x = wrapX + i * pitch;
+                const startX = x;
+                const startY = centerY - R;
+                const endX = x + pitch / 2;
+                const endY = centerY + R;
+
+                ctx.moveTo(startX, startY);
+                ctx.bezierCurveTo(
+                    startX + pitch / 6, centerY + r_coil,
+                    endX - pitch / 6, centerY + r_coil,
+                    endX, endY
+                );
+            }
+
+            // 3. Draw a small tail at the right end
+            const lastX = wrapX + (N - 1) * pitch + pitch / 2;
+            const lastY = centerY + R;
+            ctx.moveTo(lastX, lastY);
+            ctx.quadraticCurveTo(lastX + 8, lastY + 10, lastX + 15, lastY + 12);
+
+            // Stroke layering for realistic 3D flat magnesium ribbon
+            ctx.strokeStyle = '#334155';
+            ctx.lineWidth = 7.5;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#64748b';
+            ctx.lineWidth = 5.5;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#cbd5e1';
+            ctx.lineWidth = 3.0;
+            ctx.stroke();
+
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+
+            // Draw "Mg" label
+            ctx.fillStyle = '#1e293b';
+            ctx.font = 'bold 10px sans-serif';
+            ctx.fillText('Mg', cx - 7, centerY - R - 15);
+
+            ctx.restore();
+        }
+
+        // Draw the visual dish and components on Canvas
+        function drawDish() {
+            const W = canvas.width;
+            const H = canvas.height;
+            const cx = W / 2;
+            const cy = H / 2;
+
+            ctx.clearRect(0, 0, W, H);
+
+            // 1. Petri Dish Glass Boundary Outer
+            ctx.save();
+            ctx.strokeStyle = 'rgba(15, 23, 42, 0.12)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(cx, cy, 175, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Glass Reflection background fill (Bright white / faint warm clinical agar gel look)
+            let glassRad = ctx.createRadialGradient(cx, cy, 10, cx, cy, 175);
+            glassRad.addColorStop(0, '#fafaf9'); 
+            glassRad.addColorStop(0.8, '#f4f4f5');
+            glassRad.addColorStop(1, '#e4e4e7');
+            ctx.fillStyle = glassRad;
+            ctx.beginPath();
+            ctx.arc(cx, cy, 172, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            // 2. Indicator Warm Gel Agar Color Layer
+            ctx.save();
+            ctx.fillStyle = 'rgba(234, 179, 8, 0.06)'; 
+            ctx.beginPath();
+            ctx.arc(cx, cy, 171, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            // 3. DRAW ACTIVE DIFFUSION SPOTS UNDER THE NAIL
+            diffusionSpots.forEach(spot => {
+                spot.draw();
+            });
+
+            // 4. DRAW THE SPECIALIZED IRON NAIL
+            ctx.save();
+            ctx.filter = 'none'; 
+
+            if (activeNailType === 'straight' || activeNailType === 'scratched' || activeNailType === 'magnesium' || activeNailType === 'copper' || activeNailType === 'paint' || activeNailType === 'oil') {
+                const nx = cx - 110;
+                const centerY = cy; // Center vertically at cy
+                const length = 220;
+                const thick = 10; // Thicker, more realistic nail shaft
+                const R = thick / 2; // Radius of nail shaft (5px)
+
+                ctx.shadowColor = 'rgba(15, 23, 42, 0.22)';
+                ctx.shadowBlur = 10;
+                ctx.shadowOffsetY = 4;
+
+                // --- 1. DRAW COIL BACK (BEHIND NAIL) ---
+                if (activeNailType === 'magnesium') {
+                    drawMagnesiumCoilBack(ctx, cx, centerY, R);
+                } else if (activeNailType === 'copper') {
+                    drawCopperCoilBack(ctx, cx, centerY, R);
+                }
+
+                // --- 2. DRAW NAIL ---
+                let nailGrad = ctx.createLinearGradient(nx, centerY - R, nx, centerY + R);
+                if (activeNailType === 'paint') {
+                    nailGrad.addColorStop(0, '#cbd5e1');
+                    nailGrad.addColorStop(0.4, '#2563eb'); // Shiny blue paint
+                    nailGrad.addColorStop(1, '#1e3a8a');
+                } else if (activeNailType === 'oil') {
+                    nailGrad.addColorStop(0, '#fef08a');
+                    nailGrad.addColorStop(0.3, '#ca8a04');
+                    nailGrad.addColorStop(0.8, '#451a03');
+                } else {
+                    // Realistic metallic iron nail gradient
+                    nailGrad.addColorStop(0, '#f8fafc'); // Bright highlight
+                    nailGrad.addColorStop(0.2, '#cbd5e1'); // Light metallic gray
+                    nailGrad.addColorStop(0.5, '#64748b'); // Medium gray
+                    nailGrad.addColorStop(0.8, '#475569'); // Shadow
+                    nailGrad.addColorStop(1, '#0f172a'); // Deep shadow
+                }
+
+                ctx.fillStyle = nailGrad;
+
+                // Draw Nail Shaft
+                ctx.beginPath();
+                ctx.rect(nx + 10, centerY - R, length - 25, thick);
+                ctx.fill();
+
+                // Draw Nail Head (Left) - Beautiful 3D Oval shape
+                ctx.beginPath();
+                ctx.ellipse(nx + 5, centerY, 5, R + 4, 0, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Draw Nail Point (Right)
+                ctx.beginPath();
+                ctx.moveTo(nx + length - 15, centerY - R);
+                ctx.lineTo(nx + length, centerY);
+                ctx.lineTo(nx + length - 15, centerY + R);
+                ctx.closePath();
+                ctx.fill();
+
+                // Draw nail head details (grooves on the head to make it look like a real nail!)
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.18)';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(nx + 3.5, centerY - 6);
+                ctx.lineTo(nx + 3.5, centerY + 6);
+                ctx.moveTo(nx + 6.5, centerY - 6);
+                ctx.lineTo(nx + 6.5, centerY + 6);
+                ctx.stroke();
+
+                ctx.shadowColor = 'transparent';
+                ctx.shadowBlur = 0;
+                ctx.shadowOffsetY = 0;
+
+                // --- 3. DRAW SPECIALIZED OVERLAYS (SCRATCHES, OIL, PAINT, COILS FRONT) ---
+                if (activeNailType === 'scratched') {
+                    // Draw shiny highlights (white/light gray) to create a high-contrast 3D scratch effect
+                    ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+                    ctx.lineWidth = 1.5;
+                    
+                    // Scratch 1a highlight
+                    ctx.beginPath();
+                    ctx.moveTo(cx - 34, centerY - 4.5);
+                    ctx.lineTo(cx - 24, centerY + 4.5);
+                    ctx.stroke();
+                    
+                    // Scratch 1b highlight
+                    ctx.beginPath();
+                    ctx.moveTo(cx - 27, centerY - 4.5);
+                    ctx.lineTo(cx - 31, centerY + 4.5);
+                    ctx.stroke();
+                    
+                    // Scratch 2 highlight
+                    ctx.beginPath();
+                    ctx.moveTo(cx + 36, centerY - 4.5);
+                    ctx.lineTo(cx + 46, centerY + 4.5);
+                    ctx.stroke();
+
+                    // Draw dark scratch grooves on top of highlights, slightly offset for realistic beveling
+                    ctx.strokeStyle = 'rgba(9, 13, 26, 0.95)';
+                    ctx.lineWidth = 2.0;
+                    
+                    // Scratch 1a groove
+                    ctx.beginPath();
+                    ctx.moveTo(cx - 35, centerY - 4.5);
+                    ctx.lineTo(cx - 25, centerY + 4.5);
+                    ctx.stroke();
+                    
+                    // Scratch 1b groove
+                    ctx.beginPath();
+                    ctx.moveTo(cx - 28, centerY - 4.5);
+                    ctx.lineTo(cx - 32, centerY + 4.5);
+                    ctx.stroke();
+                    
+                    // Scratch 2 groove
+                    ctx.beginPath();
+                    ctx.moveTo(cx + 35, centerY - 4.5);
+                    ctx.lineTo(cx + 45, centerY + 4.5);
+                    ctx.stroke();
+                } 
+                else if (activeNailType === 'magnesium') {
+                    drawMagnesiumCoilFront(ctx, cx, centerY, R);
+                } 
+                else if (activeNailType === 'copper') {
+                    drawCopperCoilFront(ctx, cx, centerY, R);
+                }
+                else if (activeNailType === 'paint') {
+                    ctx.fillStyle = '#2563eb';
+                    ctx.font = 'bold 9px sans-serif';
+                    ctx.fillText('PAINT COATED', cx - 33, centerY + 18);
+                }
+                else if (activeNailType === 'oil') {
+                    ctx.strokeStyle = 'rgba(234, 179, 8, 0.6)';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(nx + 10, centerY);
+                    ctx.lineTo(nx + length - 20, centerY);
+                    ctx.stroke();
+                }
+
+            } 
+            else if (activeNailType === 'bent') {
+                ctx.shadowColor = 'rgba(15, 23, 42, 0.22)';
+                ctx.shadowBlur = 10;
+                ctx.shadowOffsetY = 4;
+
+                let bentGrad = ctx.createLinearGradient(cx - 100, cy, cx + 100, cy);
+                bentGrad.addColorStop(0, '#f8fafc');
+                bentGrad.addColorStop(0.3, '#94a3b8');
+                bentGrad.addColorStop(0.7, '#475569');
+                bentGrad.addColorStop(1, '#0f172a');
+                ctx.fillStyle = bentGrad;
+
+                ctx.lineWidth = 5.5;
+                ctx.strokeStyle = bentGrad;
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(cx - 95, cy - 35);
+                ctx.quadraticCurveTo(cx - 50, cy + 25, cx, cy + 40); 
+                ctx.quadraticCurveTo(cx + 50, cy + 25, cx + 95, cy - 35); 
+                ctx.stroke();
+
+                ctx.save();
+                ctx.translate(cx - 95, cy - 35);
+                ctx.rotate(-Math.PI / 6);
+                ctx.fillStyle = '#64748b';
+                ctx.beginPath();
+                ctx.ellipse(0, 0, 3, 8, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+
+                ctx.save();
+                ctx.translate(cx + 95, cy - 35);
+                ctx.rotate(Math.PI / 6);
+                ctx.fillStyle = '#475569';
+                ctx.beginPath();
+                ctx.moveTo(-3, -2);
+                ctx.lineTo(0, 10);
+                ctx.lineTo(3, -2);
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+
+                ctx.shadowColor = 'transparent';
+                ctx.shadowBlur = 0;
+            }
+
+            ctx.restore();
+
+            // 5. Petri Dish Outer Glass Rim
+            ctx.save();
+            ctx.strokeStyle = 'rgba(15, 23, 42, 0.15)';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(cx, cy, 171, 0, Math.PI * 2);
+            ctx.stroke();
+
+            let topRef = ctx.createLinearGradient(cx - 150, cy - 150, cx, cy);
+            topRef.addColorStop(0, 'rgba(255, 255, 255, 0.7)');
+            topRef.addColorStop(0.5, 'rgba(255, 255, 255, 0.1)');
+            topRef.addColorStop(1, 'rgba(255, 255, 255, 0)');
+            ctx.strokeStyle = topRef;
+            ctx.lineWidth = 5;
+            ctx.beginPath();
+            ctx.arc(cx, cy, 171, -Math.PI * 0.8, -Math.PI * 0.2);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        // Starts Canvas loop simulating ionic color diffusion
+        function startDishReaction() {
+            if (isReacting) {
+                cancelAnimationFrame(animationFrameId);
+            }
+
+            reactionProgress = 0;
+            isReacting = true;
+            closePopover();
+            
+            initDiffusionSpots();
+
+            generateDishReport();
+
+            tickDishReaction();
+        }
+
+        // Loop ticker updating progress frames
+        function tickDishReaction() {
+            if (!isReacting) return;
+
+            reactionProgress += 1.2; 
+
+            if (reactionProgress >= 100) {
+                reactionProgress = 100;
+                isReacting = false;
+            }
+
+            diffusionSpots.forEach(spot => {
+                spot.update(reactionProgress);
+            });
+
+            drawDish();
+
+            if (isReacting) {
+                animationFrameId = requestAnimationFrame(tickDishReaction);
+            }
+        }
+
+        // Renders theoretical report panel
+        function generateDishReport() {
+            const rEq = document.getElementById('dish-report-eq');
+
+            document.getElementById('dish-equations-container').classList.remove('hidden');
+
+            if (activeNailType === 'straight') {
+                rEq.innerHTML = `
+                    <div class="text-cyan-600 font-bold mb-0.5">${currentLanguage === 'zh' ? '藍色區 (陽極反應):' : 'Blue Zone (Anode Reaction):'}</div>
+                    <div class="font-mono text-slate-700 mb-1.5">Fe(s) -> Fe²⁺(aq) + 2e⁻</div>
+                    <div class="text-pink-600 font-bold mb-0.5">${currentLanguage === 'zh' ? '粉紅區 (陰極反應):' : 'Pink Zone (Cathode Reaction):'}</div>
+                    <div class="font-mono text-slate-700">O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)</div>
+                `;
+            } 
+            else if (activeNailType === 'bent') {
+                rEq.innerHTML = `
+                    <div class="text-cyan-600 font-bold mb-0.5">${currentLanguage === 'zh' ? '彎曲陽極區 (極速失去電子):' : 'Bent Anode (Rapid electron loss):'}</div>
+                    <div class="font-mono text-slate-700 mb-1.5">Fe(s) -> Fe²⁺(aq) + 2e⁻ (Stress Activated)</div>
+                    <div class="text-pink-600 font-bold mb-0.5">${currentLanguage === 'zh' ? '直軸陰極區 (氧還原):' : 'Straight Cathode (Oxygen reduction):'}</div>
+                    <div class="font-mono text-slate-700">O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)</div>
+                `;
+            } 
+            else if (activeNailType === 'scratched') {
+                rEq.innerHTML = `
+                    <div class="text-cyan-600 font-bold mb-0.5">${currentLanguage === 'zh' ? '刮痕受損處 (陽極反應):' : 'Scratched Anodes (Anode reaction):'}</div>
+                    <div class="font-mono text-slate-700 mb-1.5">Fe(s) -> Fe²⁺(aq) + 2e⁻ (Exposed Iron)</div>
+                    <div class="text-pink-600 font-bold mb-0.5">${currentLanguage === 'zh' ? '未受損陰極區 (氧還原):' : 'Undamaged Cathode (Oxygen reduction):'}</div>
+                    <div class="font-mono text-slate-700">O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)</div>
+                `;
+            } 
+            else if (activeNailType === 'magnesium') {
+                rEq.innerHTML = `
+                    <div class="text-emerald-600 font-bold mb-0.5">${currentLanguage === 'zh' ? '鎂帶陽極 (犧牲氧化):' : 'Magnesium Anode (Sacrificial oxidation):'}</div>
+                    <div class="font-mono text-slate-700 mb-1">Mg(s) -> Mg²⁺(aq) + 2e⁻</div>
+                    <div class="text-pink-600 font-bold mb-0.5">${currentLanguage === 'zh' ? '鐵釘陰極 (氧還原):' : 'Iron Cathode (Oxygen reduction):'}</div>
+                    <div class="font-mono text-slate-700">O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)</div>
+                `;
+            } 
+            else if (activeNailType === 'copper') {
+                rEq.innerHTML = `
+                    <div class="text-red-600 font-bold mb-0.5">${currentLanguage === 'zh' ? '鐵釘陽極 (電偶加速):' : 'Iron Anode (Galvanic acceleration):'}</div>
+                    <div class="font-mono text-slate-700 mb-1">Fe(s) -> Fe²⁺(aq) + 2e⁻ (Accelerated)</div>
+                    <div class="text-pink-600 font-bold mb-0.5">${currentLanguage === 'zh' ? '銅線陰極 (氧還原):' : 'Copper Cathode (Oxygen reduction):'}</div>
+                    <div class="font-mono text-slate-700">O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)</div>
+                `;
+            } 
+            else if (activeNailType === 'paint') {
+                rEq.innerHTML = `
+                    <div class="text-cyan-600 font-bold">${currentLanguage === 'zh' ? '物理隔絕！沒有反應！' : 'Physical isolation! No reaction!'}</div>
+                `;
+            } 
+            else if (activeNailType === 'oil') {
+                rEq.innerHTML = `
+                    <div class="text-cyan-600 font-bold">${currentLanguage === 'zh' ? '疏水油脂屏蔽！沒有反應！' : 'Hydrophobic grease barrier! No reaction!'}</div>
+                `;
+            }
+        }
+
+        // Modal Popover logic on clicking the Canvas spots
+        function handleCanvasClick(e) {
+            if (isReacting || diffusionSpots.length === 0) return;
+
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = ((e.clientX - rect.left) / rect.width) * canvas.width;
+            const mouseY = ((e.clientY - rect.top) / rect.height) * canvas.height;
+
+            let clickedSpot = null;
+            for (let i = 0; i < diffusionSpots.length; i++) {
+                const s = diffusionSpots[i];
+                const dist = Math.hypot(mouseX - s.x, mouseY - s.y);
+                if (dist <= s.currentRadius + 10) { 
+                    clickedSpot = s;
+                    break; 
+                }
+            }
+
+            if (clickedSpot) {
+                showPopover(clickedSpot, e.clientX - rect.left, e.clientY - rect.top);
+            } else {
+                closePopover();
+            }
+        }
+
+        function showPopover(spot, x, y) {
+            const popover = document.getElementById('micro-reaction-popover');
+            const pTitle = document.getElementById('popover-title');
+            const pDesc = document.getElementById('popover-desc');
+            const pLaTeX = document.getElementById('popover-latex');
+
+            if (spot.color === 'blue') {
+                pTitle.innerHTML = (currentLanguage === 'zh')
+                    ? '<span class="text-blue-400"><i class="fa-solid fa-flask"></i> 陽極反應：藍色呈色</span>'
+                    : '<span class="text-blue-400"><i class="fa-solid fa-flask"></i> Anode Reaction: Blue Coloration</span>';
+            } else if (spot.color === 'pink') {
+                pTitle.innerHTML = (currentLanguage === 'zh')
+                    ? '<span class="text-pink-400"><i class="fa-solid fa-droplet"></i> 陰極反應：鹼性呈色</span>'
+                    : '<span class="text-pink-400"><i class="fa-solid fa-droplet"></i> Cathode Reaction: Pink Coloration</span>';
+            } else {
+                pTitle.innerHTML = (currentLanguage === 'zh')
+                    ? '<span class="text-slate-300"><i class="fa-solid fa-shield"></i> 犧牲性陽極氧化</span>'
+                    : '<span class="text-slate-300"><i class="fa-solid fa-shield"></i> Sacrificial Anode Oxidation</span>';
+            }
+
+            pDesc.innerHTML = (currentLanguage === 'zh') ? spot.descZh : spot.descEn;
+            pLaTeX.innerHTML = spot.latex;
+
+            popover.style.left = `${x + 10}px`;
+            popover.style.top = `${y + 10}px`;
+            
+            if (x + 250 > canvas.width) {
+                popover.style.left = `${x - 250}px`;
+            }
+            if (y + 160 > canvas.height) {
+                popover.style.top = `${y - 140}px`;
+            }
+
+            popover.classList.remove('hidden');
+        }
+
+        function closePopover() {
+            document.getElementById('micro-reaction-popover').classList.add('hidden');
+        }
+
+
+
+
+        // =========================================================================
+        // 4. HOST LANG / EMBED BRIDGE + INITIALIZATION
+        // =========================================================================
+        function initLabLangBridge() {
+            var params = new URLSearchParams(window.location.search);
+            if (params.get('embed') === '1') {
+                document.documentElement.classList.add('embed-mode');
+            }
+            var urlLang = params.get('lang');
+            if (urlLang === 'en' || urlLang === 'zh') {
+                changeLanguage(urlLang);
+            } else {
+                changeLanguage('en');
+            }
+            window.addEventListener('message', function (event) {
+                var data = event.data;
+                if (data && data.type === 'uniplus:setLang' && (data.lang === 'en' || data.lang === 'zh')) {
+                    changeLanguage(data.lang);
+                }
+            });
+        }
+
+        window.onload = function() {
+            renderTube();
+            drawDish();
+            initLabLangBridge();
+        };
+    </script>
+</body>
+</html>

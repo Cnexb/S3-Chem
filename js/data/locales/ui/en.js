@@ -365,7 +365,9 @@ export const enUI = {
     "titrationName": "Titration",
     "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points.",
     "metalReactivityName": "Metal Reactivity",
-    "metalReactivityDesc": "Interactive metal reactions with oxygen, water/steam, acids, and displacement solutions."
+    "metalReactivityDesc": "Interactive metal reactions with oxygen, water/steam, acids, and displacement solutions.",
+    "rustingName": "Rusting",
+    "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection."
   },
   "worksheet": {
     "title": "Worksheet Generator",
