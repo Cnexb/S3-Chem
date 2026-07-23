@@ -352,10 +352,11 @@ export const enUI = {
   },
   "lab": {
     "pageTitle": "Interactive Lab",
-    "hubSubtitle": "Choose a lab by topic — bonding, metals, or acids and bases.",
+    "hubSubtitle": "Choose a lab by topic — bonding, metals, acids and bases, or redox.",
     "catMicroscopicWorldI": "Microscopic world I",
     "catMetals": "Metals",
     "catAcidsAndBases": "Acids and bases",
+    "catRedoxCellsElectrolysis": "Redox reactions, chemical cells and electrolysis",
     "ionicName": "Ionic",
     "ionicDesc": "Build ionic lattice structures and explore ionic compound formation.",
     "covalentName": "Covalent",
@@ -367,7 +368,9 @@ export const enUI = {
     "metalReactivityName": "Metal Reactivity",
     "metalReactivityDesc": "Interactive metal reactions with oxygen, water/steam, acids, and displacement solutions.",
     "rustingName": "Rusting",
-    "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection."
+    "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection.",
+    "chemicalCellsElectrolysisName": "Chemical Cells & Electrolysis",
+    "chemicalCellsElectrolysisDesc": "Interactive chemical cells and electrolysis with ECS, preferential discharge, and live observations."
   },
   "worksheet": {
     "title": "Worksheet Generator",

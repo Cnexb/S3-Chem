@@ -352,10 +352,11 @@ export const zhUI = {
   },
   "lab": {
     "pageTitle": "互动实验室",
-    "hubSubtitle": "按课题选择实验室：键合、金属，或酸与碱。",
+    "hubSubtitle": "按课题选择实验室：键合、金属、酸与碱，或氧化还原。",
     "catMicroscopicWorldI": "微观世界 I",
     "catMetals": "金属",
     "catAcidsAndBases": "酸与碱",
+    "catRedoxCellsElectrolysis": "氧化还原反应、化学电池与电解",
     "ionicName": "离子",
     "ionicDesc": "搭建离子晶格结构，探索离子化合物形成。",
     "covalentName": "共价",
@@ -367,7 +368,9 @@ export const zhUI = {
     "metalReactivityName": "金属反应",
     "metalReactivityDesc": "互动模拟金属与氧气、水／蒸汽、酸及置换溶液的反应。",
     "rustingName": "生锈",
-    "rustingDesc": "探究铁生锈条件、指示剂实验与防锈保护。"
+    "rustingDesc": "探究铁生锈条件、指示剂实验与防锈保护。",
+    "chemicalCellsElectrolysisName": "化学电池与电解",
+    "chemicalCellsElectrolysisDesc": "互动化学电池与电解模拟：电化学序列、优先放电，以及即时观察现象。"
   },
   "worksheet": {
     "title": "练习单生成器",

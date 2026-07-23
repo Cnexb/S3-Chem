@@ -27,6 +27,10 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/rusting-lab/index.html",
     titleKey: "lab.rustingName",
   },
+  "chemical-cells-electrolysis-simulator": {
+    path: "public/tools/chemical-cells-electrolysis-simulator/index.html",
+    titleKey: "lab.chemicalCellsElectrolysisName",
+  },
 };
 
 export const LAB_TOOL_TYPES = new Set(Object.keys(INTERACTIVE_LAB_TOOLS));

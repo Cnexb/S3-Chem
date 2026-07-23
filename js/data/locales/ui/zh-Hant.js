@@ -351,10 +351,11 @@ export const zhHantUI = {
   },
   "lab": {
     "pageTitle": "互動實驗室",
-    "hubSubtitle": "按課題選擇實驗室：鍵合、金屬，或酸與鹼。",
+    "hubSubtitle": "按課題選擇實驗室：鍵合、金屬、酸與鹼，或氧化還原。",
     "catMicroscopicWorldI": "微觀世界 I",
     "catMetals": "金屬",
     "catAcidsAndBases": "酸與鹼",
+    "catRedoxCellsElectrolysis": "氧化還原反應、化學電池與電解",
     "ionicName": "離子",
     "ionicDesc": "搭建離子晶格結構，探索離子化合物形成。",
     "covalentName": "共價",
@@ -366,7 +367,9 @@ export const zhHantUI = {
     "metalReactivityName": "金屬反應",
     "metalReactivityDesc": "互動模擬金屬與氧氣、水／蒸汽、酸及置換溶液的反應。",
     "rustingName": "生銹",
-    "rustingDesc": "探究鐵生銹條件、指示劑實驗與防銹保護。"
+    "rustingDesc": "探究鐵生銹條件、指示劑實驗與防銹保護。",
+    "chemicalCellsElectrolysisName": "化學電池與電解",
+    "chemicalCellsElectrolysisDesc": "互動化學電池與電解模擬：電化學序列、優先放電，以及即時觀察現象。"
   },
   "worksheet": {
     "title": "練習單生成器",
