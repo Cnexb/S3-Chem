@@ -15,12 +15,17 @@ const DECKS = {
     en: "./public/flashcards/topic-4-acids-and-bases/en/flashcards-study.html",
     zh: "./public/flashcards/topic-4-acids-and-bases/zh-hk/flashcards-study.html",
   },
+  "topic-5-fossil-fuels-and-carbon-compounds": {
+    en: "./public/flashcards/topic-5-fossil-fuels-and-carbon-compounds/en/flashcards-study.html",
+    zh: "./public/flashcards/topic-5-fossil-fuels-and-carbon-compounds/zh-hk/flashcards-study.html",
+  },
 };
 
 const TITLES = {
   "microscopic-world-i": "Microscopic World I Flashcards",
   "topic-3-metals": "Topic 3: Metals Flashcards",
   "topic-4-acids-and-bases": "Topic 4: Acids and Bases Flashcards",
+  "topic-5-fossil-fuels-and-carbon-compounds": "Topic 5: Fossil Fuels and Carbon Compounds Flashcards",
 };
 
 export function initFlashcardsEmbed() {
