@@ -48,6 +48,8 @@ jobs:
           test -f dist/public/flashcards/topic-3-metals/en/js/flashcardData.js
           test -f dist/public/flashcards/topic-5-fossil-fuels-and-carbon-compounds/en/flashcards-study.html
           test -f dist/public/flashcards/topic-5-fossil-fuels-and-carbon-compounds/en/js/flashcardData.js
+          test -f dist/public/flashcards/topic-7-redox-reactions-chemical-cells-and-electrolysis/en/flashcards-study.html
+          test -f dist/public/flashcards/topic-7-redox-reactions-chemical-cells-and-electrolysis/en/js/flashcardData.js
           test -f dist/public/notes/topic-01-planet-earth.pdf
           grep -q 'notes-pdf-frame' dist/index.html
           grep -q 'summary-hub' dist/index.html
