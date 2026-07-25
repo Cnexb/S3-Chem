@@ -1139,6 +1139,59 @@ button.summary-topic-card {
   padding-top: 0.5rem;
 }
 
+/* Custom Select Dropdown for Flashcard Topics */
+#flashcards-page .flashcards-embed-select-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 0.25rem 0;
+  z-index: 2;
+}
+
+#flashcards-page .flashcards-embed-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid rgba(193, 198, 213, 0.8);
+  border-radius: 20px;
+  padding: 0.5rem 2.5rem 0.5rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #004e9f;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  min-width: 280px;
+  text-align: center;
+}
+
+#flashcards-page .flashcards-embed-select:hover {
+  border-color: #004e9f;
+  box-shadow: 0 4px 10px rgba(0, 78, 159, 0.1);
+}
+
+#flashcards-page .flashcards-embed-select:focus {
+  border-color: #004e9f;
+  box-shadow: 0 0 0 3px rgba(0, 78, 159, 0.15);
+}
+
+#flashcards-page .flashcards-embed-select-container::after {
+  content: "";
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23004e9f' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 #flashcards-page .flashcards-embed-toolbar {
   flex: 0 0 auto;
   display: inline-flex;

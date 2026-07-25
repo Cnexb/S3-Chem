@@ -19,6 +19,10 @@ const DECKS = {
     en: "./public/flashcards/topic-5-fossil-fuels-and-carbon-compounds/en/flashcards-study.html",
     zh: "./public/flashcards/topic-5-fossil-fuels-and-carbon-compounds/zh-hk/flashcards-study.html",
   },
+  "topic-6-microscopic-world-ii": {
+    en: "./public/flashcards/topic-6-microscopic-world-ii/en/flashcards-study.html",
+    zh: "./public/flashcards/topic-6-microscopic-world-ii/zh-hk/flashcards-study.html",
+  },
   "topic-7-redox-reactions-chemical-cells-and-electrolysis": {
     en: "./public/flashcards/topic-7-redox-reactions-chemical-cells-and-electrolysis/en/flashcards-study.html",
     zh: "./public/flashcards/topic-7-redox-reactions-chemical-cells-and-electrolysis/zh-hk/flashcards-study.html",
@@ -30,6 +34,7 @@ const TITLES = {
   "topic-3-metals": "Topic 3: Metals Flashcards",
   "topic-4-acids-and-bases": "Topic 4: Acids and Bases Flashcards",
   "topic-5-fossil-fuels-and-carbon-compounds": "Topic 5: Fossil Fuels and Carbon Compounds Flashcards",
+  "topic-6-microscopic-world-ii": "Topic 6: Microscopic World II Flashcards",
   "topic-7-redox-reactions-chemical-cells-and-electrolysis": "Topic 7: Redox Reactions, Chemical Cells and Electrolysis Flashcards",
 };
 
@@ -40,6 +45,7 @@ export function initFlashcardsEmbed() {
   const frame = document.getElementById("fc-embed-frame");
   const btnEn = document.getElementById("fc-embed-lang-en");
   const btnZh = document.getElementById("fc-embed-lang-zh");
+  const topicSelect = document.getElementById("fc-embed-topic-select");
   const topicBtns = document.querySelectorAll("[data-fc-topic]");
   if (!frame || !btnEn || !btnZh) return;
 
@@ -55,6 +61,10 @@ export function initFlashcardsEmbed() {
     frame.src = `${deck[locale]}?${CACHE_BUST}`;
     frame.title = TITLES[topic] || "Flashcards";
 
+    if (topicSelect) {
+      topicSelect.value = topic;
+    }
+
     topicBtns.forEach((btn) => {
       const active = btn.dataset.fcTopic === topic;
       btn.classList.toggle("active", active);
@@ -66,6 +76,13 @@ export function initFlashcardsEmbed() {
     btnZh.classList.toggle("active", !isEn);
     btnEn.setAttribute("aria-pressed", isEn ? "true" : "false");
     btnZh.setAttribute("aria-pressed", isEn ? "false" : "true");
+  }
+
+  if (topicSelect) {
+    topicSelect.addEventListener("change", (e) => {
+      const topic = e.target.value;
+      if (topic && DECKS[topic]) setDeck(topic, currentLocale);
+    });
   }
 
   topicBtns.forEach((btn) => {

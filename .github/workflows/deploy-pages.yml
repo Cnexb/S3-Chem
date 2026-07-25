@@ -43,11 +43,13 @@ jobs:
           grep -q 'flashcards-page' dist/index.html
           grep -q 'worksheet-hub' dist/index.html
           grep -q 'data-page="flashcards"' dist/index.html
-          grep -q 'fc-embed-topic-metals' dist/index.html
+          grep -q 'fc-embed-topic-select' dist/index.html
           test -f dist/public/flashcards/topic-3-metals/en/flashcards-study.html
           test -f dist/public/flashcards/topic-3-metals/en/js/flashcardData.js
           test -f dist/public/flashcards/topic-5-fossil-fuels-and-carbon-compounds/en/flashcards-study.html
           test -f dist/public/flashcards/topic-5-fossil-fuels-and-carbon-compounds/en/js/flashcardData.js
+          test -f dist/public/flashcards/topic-6-microscopic-world-ii/en/flashcards-study.html
+          test -f dist/public/flashcards/topic-6-microscopic-world-ii/en/js/flashcardData.js
           test -f dist/public/flashcards/topic-7-redox-reactions-chemical-cells-and-electrolysis/en/flashcards-study.html
           test -f dist/public/flashcards/topic-7-redox-reactions-chemical-cells-and-electrolysis/en/js/flashcardData.js
           test -f dist/public/notes/topic-01-planet-earth.pdf
