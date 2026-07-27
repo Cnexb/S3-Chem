@@ -31,6 +31,10 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/chemical-cells-electrolysis-simulator/index.html",
     titleKey: "lab.chemicalCellsElectrolysisName",
   },
+  "organic-chemistry-lab": {
+    path: "public/tools/organic-chemistry-lab/index.html",
+    titleKey: "lab.organicChemistryName",
+  },
 };
 
 export const LAB_TOOL_TYPES = new Set(Object.keys(INTERACTIVE_LAB_TOOLS));

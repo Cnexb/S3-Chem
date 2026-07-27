@@ -353,11 +353,12 @@ export const enUI = {
   },
   "lab": {
     "pageTitle": "Interactive Lab",
-    "hubSubtitle": "Choose a lab by topic — bonding, metals, acids and bases, or redox.",
+    "hubSubtitle": "Choose a lab by topic — bonding, metals, acids and bases, redox, or fossil fuels and carbon compounds.",
     "catMicroscopicWorldI": "Microscopic world I",
     "catMetals": "Metals",
     "catAcidsAndBases": "Acids and bases",
     "catRedoxCellsElectrolysis": "Redox reactions, chemical cells and electrolysis",
+    "catFossilFuelsCarbonCompounds": "Fossil fuels and carbon compounds",
     "ionicName": "Ionic",
     "ionicDesc": "Build ionic lattice structures and explore ionic compound formation.",
     "covalentName": "Covalent",
@@ -371,7 +372,9 @@ export const enUI = {
     "rustingName": "Rusting",
     "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection.",
     "chemicalCellsElectrolysisName": "Chemical Cells & Electrolysis",
-    "chemicalCellsElectrolysisDesc": "Interactive chemical cells and electrolysis with ECS, preferential discharge, and live observations."
+    "chemicalCellsElectrolysisDesc": "Interactive chemical cells and electrolysis with ECS, preferential discharge, and live observations.",
+    "organicChemistryName": "Organic Chemistry Lab",
+    "organicChemistryDesc": "Build carbon compounds, practise IUPAC naming, and draw structures (F4 / DSE)."
   },
   "worksheet": {
     "title": "Worksheet Generator",

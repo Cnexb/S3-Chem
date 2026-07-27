@@ -252,7 +252,7 @@ export const frUI = {
   },
   "lab": {
     "pageTitle": "Labo interactif",
-    "hubSubtitle": "Choisissez une simulation de laboratoire pour explorer les liaisons et les structures",
+    "hubSubtitle": "Choisissez une simulation par theme — liaisons, metaux, acides et bases, redox, ou combustibles fossiles et composes du carbone.",
     "ionicName": "Ionique",
     "ionicDesc": "Construisez des structures ioniques et explorez la formation des composes ioniques.",
     "covalentName": "Covalent",
@@ -262,7 +262,10 @@ export const frUI = {
     "titrationName": "Titration",
     "titrationDesc": "Simulez une titration acido-basique avec lectures de burette, indicateurs et points d'equivalence.",
     "rustingName": "Rusting",
-    "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection."
+    "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection.",
+    "catFossilFuelsCarbonCompounds": "Combustibles fossiles et composes du carbone",
+    "organicChemistryName": "Laboratoire de chimie organique",
+    "organicChemistryDesc": "Construisez des composes carbones, pratiquez la nomenclature IUPAC et dessinez des structures (F4 / DSE)."
   },
   "worksheet": {
     "title": "Generateur d'exercices",

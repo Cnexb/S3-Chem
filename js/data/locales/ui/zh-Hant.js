@@ -352,11 +352,12 @@ export const zhHantUI = {
   },
   "lab": {
     "pageTitle": "互動實驗室",
-    "hubSubtitle": "按課題選擇實驗室：鍵合、金屬、酸與鹼，或氧化還原。",
+    "hubSubtitle": "按課題選擇實驗室：鍵合、金屬、酸與鹼、氧化還原，或化石燃料與碳化合物。",
     "catMicroscopicWorldI": "微觀世界 I",
     "catMetals": "金屬",
     "catAcidsAndBases": "酸與鹼",
     "catRedoxCellsElectrolysis": "氧化還原反應、化學電池與電解",
+    "catFossilFuelsCarbonCompounds": "化石燃料與碳化合物",
     "ionicName": "離子",
     "ionicDesc": "搭建離子晶格結構，探索離子化合物形成。",
     "covalentName": "共價",
@@ -370,7 +371,9 @@ export const zhHantUI = {
     "rustingName": "生銹",
     "rustingDesc": "探究鐵生銹條件、指示劑實驗與防銹保護。",
     "chemicalCellsElectrolysisName": "化學電池與電解",
-    "chemicalCellsElectrolysisDesc": "互動化學電池與電解模擬：電化學序列、優先放電，以及即時觀察現象。"
+    "chemicalCellsElectrolysisDesc": "互動化學電池與電解模擬：電化學序列、優先放電，以及即時觀察現象。",
+    "organicChemistryName": "有機化學實驗室",
+    "organicChemistryDesc": "建構碳化合物、練習 IUPAC 命名與結構繪圖（中四／文憑試）。"
   },
   "worksheet": {
     "title": "練習單生成器",

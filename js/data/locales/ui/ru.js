@@ -261,7 +261,10 @@ export const ruUI = {
     "titrationName": "Titration",
     "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points.",
     "rustingName": "Rusting",
-    "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection."
+    "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection.",
+    "catFossilFuelsCarbonCompounds": "Fossil fuels and carbon compounds",
+    "organicChemistryName": "Organic Chemistry Lab",
+    "organicChemistryDesc": "Build carbon compounds, practise IUPAC naming, and draw structures (F4 / DSE)."
   },
   "worksheet": {
     "title": "Генератор листов заданий",

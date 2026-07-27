@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>虛擬有機化學實驗室 | Virtual Organic Chemistry Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas Confetti Effect (Local Fallback & CDNs) -->
+  <div id="confetti-container"></div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo-area">
+      <div class="chem-logo">
+        <svg viewBox="0 0 100 100" width="45" height="45">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="5 3"/>
+          <circle cx="50" cy="35" r="8" fill="#ff4d4f" />
+          <circle cx="35" cy="60" r="10" fill="#1890ff" />
+          <circle cx="65" cy="60" r="12" fill="#52c41a" />
+          <line x1="50" y1="35" x2="35" y2="60" stroke="currentColor" stroke-width="3"/>
+          <line x1="50" y1="35" x2="65" y2="60" stroke="currentColor" stroke-width="3"/>
+          <line x1="35" y1="60" x2="65" y2="60" stroke="currentColor" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="title-text">
+        <h1 class="zh">虛擬有機化學實驗室</h1>
+        <h1 class="en">Virtual Organic Chemistry Lab</h1>
+        <p class="subtitle zh">高中化學科 命名與繪圖互動學習平台</p>
+        <p class="subtitle en">Senior Secondary Chemistry </p>
+      </div>
+    </div>
+
+    <!-- Navigation / Mode Selector Tab (Moved inside Header!) -->
+    <nav class="mode-nav">
+      <button id="nav-explore" class="nav-tab active" onclick="switchMode('explore')">
+        <span class="zh">🔬 自由探索與學習</span>
+        <span class="en">🔬 Free Explore & Learn</span>
+      </button>
+      <button id="nav-draw" class="nav-tab" onclick="switchMode('draw')">
+        <span class="zh">✏️ 結構繪圖挑戰</span>
+        <span class="en">✏️ Structure Drawing Challenge</span>
+      </button>
+    </nav>
+    
+    <div class="header-controls">
+      <!-- Language Selector -->
+      <div class="lang-selector">
+        <button id="btn-lang-zh" class="lang-btn active" onclick="setLanguage('zh')">繁體中文 (HK)</button>
+        <button id="btn-lang-en" class="lang-btn" onclick="setLanguage('en')">English</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workspace -->
+  <main class="workspace-grid">
+    
+    <!-- Left Column: Interactive Molecule Builder / Inspector -->
+    <section class="builder-column card">
+      <!-- Mode Info / Prompt Banner -->
+      <div class="panel-header">
+        <div>
+          <h2 class="zh">🧪 分子構造器</h2>
+          <h2 class="en">🧪 Molecule Builder</h2>
+        </div>
+        <div id="challenge-grade-selector" class="challenge-grade-selector hidden">
+          <button id="btn-grade-f4" class="grade-btn" onclick="setChallengeGrade('F4')">
+            <span class="zh">中四 (F4) 範圍</span>
+            <span class="en">F4 Syllabus</span>
+          </button>
+          <button id="btn-grade-f56" class="grade-btn active" onclick="setChallengeGrade('DSE')">
+            <span class="zh">文憑試 (DSE) 範圍</span>
+            <span class="en">DSE Syllabus</span>
+          </button>
+        </div>
+        <div id="explore-syllabus-selector" class="challenge-grade-selector">
+          <button id="btn-explore-f4" class="grade-btn" onclick="setExploreSyllabus('F4')">
+            <span class="zh">中四 (F4) 範圍</span>
+            <span class="en">F4 Syllabus</span>
+          </button>
+          <button id="btn-explore-dse" class="grade-btn active" onclick="setExploreSyllabus('DSE')">
+            <span class="zh">文憑試 (DSE) 範圍</span>
+            <span class="en">DSE Syllabus</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Challenge Instruction (Visible in Quiz modes) -->
+      <div id="quiz-prompt-card" class="quiz-banner hidden">
+        <div class="quiz-info-icon">🎯</div>
+        <div class="quiz-text">
+          <div class="zh">
+            <span class="quiz-label">挑戰任務：</span>
+            <span id="quiz-instruction-zh" class="quiz-instruction">請繪製「2-甲基丙烷」</span>
+          </div>
+          <div class="en">
+            <span class="quiz-label">Challenge Task:</span>
+            <span id="quiz-instruction-en" class="quiz-instruction">Please draw "methylpropane"</span>
+          </div>
+        </div>
+        <div class="quiz-score">
+          <span class="zh">得分：<strong id="score-val-zh">0</strong></span>
+          <span class="en">Score: <strong id="score-val-en">0</strong></span>
+        </div>
+      </div>
+
+      <!-- Carbon Chain Quick Controls -->
+      <div class="chain-quick-controls">
+        <div class="control-group">
+          <label class="zh">主碳鏈長度：</label>
+          <label class="en">Carbon Chain Length:</label>
+          <div class="slider-container">
+            <button class="btn-circle" onclick="adjustChainLength(-1)">−</button>
+            <span id="chain-length-display" class="chain-badge">4</span>
+            <button class="btn-circle" onclick="adjustChainLength(1)">+</button>
+          </div>
+        </div>
+        <button id="btn-reset" class="btn btn-danger" onclick="resetMolecule()">
+          <span class="zh">🧹 重設分子</span>
+          <span class="en">🧹 Reset Molecule</span>
+        </button>
+      </div>
+
+      <!-- Carbon Chain Graphic Row (Clickable Carbon nodes) -->
+      <div class="carbon-chain-view-wrapper">
+        <p class="help-text zh">💡 點擊下方碳原子 (C) 以編輯其化學鍵與取代基：</p>
+        <p class="help-text en">💡 Click a carbon atom (C) below to edit its bonds and substituents:</p>
+        <div id="carbon-chain-visual" class="carbon-chain-visual">
+          <!-- Dynamically populated circles and bonds -->
+        </div>
+      </div>
+
+      <!-- Atom / Node Inspector Panel -->
+      <div id="inspector-panel" class="inspector-panel">
+        <div class="inspector-header">
+          <h3>
+            <span class="zh">✍️ 編輯碳原子 C<span id="inspect-index-zh">1</span> 的接基</span>
+            <span class="en">✍️ Edit Attachments of C<span id="inspect-index-en">1</span></span>
+          </h3>
+          <span id="valence-meter" class="valence-meter val-green">4/4 Bonds Used</span>
+        </div>
+
+        <div class="inspector-grid">
+          <!-- Top Attachment -->
+          <div class="attachment-control-card">
+            <div class="card-label">
+              <span class="zh">⬆️ 上方接基 (Top)</span>
+              <span class="en">⬆️ Top Attachment</span>
+            </div>
+            <select id="select-top" onchange="updateAttachment('top', this.value)">
+              <!-- Options dynamic -->
+            </select>
+          </div>
+
+          <!-- Bottom Attachment -->
+          <div class="attachment-control-card">
+            <div class="card-label">
+              <span class="zh">⬇️ 下方接基 (Bottom)</span>
+              <span class="en">⬇️ Bottom Attachment</span>
+            </div>
+            <select id="select-bottom" onchange="updateAttachment('bottom', this.value)">
+              <!-- Options dynamic -->
+            </select>
+          </div>
+
+          <!-- Left Attachment (Conditional for terminal C0) -->
+          <div id="left-attachment-card" class="attachment-control-card hidden">
+            <div class="card-label">
+              <span class="zh">⬅️ 左方接基 (Left End)</span>
+              <span class="en">⬅️ Left Attachment</span>
+            </div>
+            <select id="select-left" onchange="updateAttachment('left', this.value)">
+              <!-- Options dynamic -->
+            </select>
+          </div>
+
+          <!-- Right Attachment (Conditional for terminal C_last) -->
+          <div id="right-attachment-card" class="attachment-control-card hidden">
+            <div class="card-label">
+              <span class="zh">➡️ 右方接基 (Right End)</span>
+              <span class="en">➡️ Right Attachment</span>
+            </div>
+            <select id="select-right" onchange="updateAttachment('right', this.value)">
+              <!-- Options dynamic -->
+            </select>
+          </div>
+
+          <!-- Next Bond (Bond between Ci and Ci+1) -->
+          <div id="next-bond-card" class="attachment-control-card">
+            <div class="card-label">
+              <span class="zh">🔗 與右側相連的化學鍵</span>
+              <span class="en">🔗 Bond to Next Carbon</span>
+            </div>
+            <div class="radio-group">
+              <button id="bond-single" class="btn-toggle active" onclick="updateNextBond('single')">
+                <span class="zh">單鍵 (C−C)</span>
+                <span class="en">Single (C−C)</span>
+              </button>
+              <button id="bond-double" class="btn-toggle" onclick="updateNextBond('double')">
+                <span class="zh">雙鍵 (C=C)</span>
+                <span class="en">Double (C=C)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ester Settings Card (Shown dynamically when an ester group is selected) -->
+        <div id="ester-settings-panel" class="ester-settings-panel hidden">
+          <div class="ester-settings-header">
+            <h4>
+              <span class="zh">⚙️ 酯基 R 基團設定 (Ester R-Group Settings)</span>
+              <span class="en">⚙️ Ester R-Group Settings</span>
+            </h4>
+          </div>
+          <div class="ester-settings-grid">
+            <div class="attachment-control-card">
+              <div class="card-label">
+                <span class="zh">選擇 R 基團 (Select R-Group)</span>
+                <span class="en">Select R-Group</span>
+              </div>
+              <select id="select-ester-r" onchange="updateEsterR(this.value)">
+                <option value="CH3">CH₃ (Methyl / 甲基)</option>
+                <option value="CH2CH3">CH₂CH₃ (Ethyl / 乙基)</option>
+                <option value="CH2CH2CH3">CH₂CH₂CH₃ (Propyl / 丙基)</option>
+                <option value="CH2CH2CH2CH3">CH₂CH₂CH₂CH₃ (Butyl / 丁基)</option>
+                <option value="CH2CH2CH2CH2CH3">CH₂CH₂CH₂CH₂CH₃ (Pentyl / 戊基)</option>
+                <option value="CH2CH2CH2CH2CH2CH3">CH₂CH₂CH₂CH₂CH₂CH₃ (Hexyl / 己基)</option>
+                <option value="CH2CH2CH2CH2CH2CH2CH3">CH₂CH₂CH₂CH₂CH₂CH₂CH₃ (Heptyl / 庚基)</option>
+                <option value="CH2CH2CH2CH2CH2CH2CH2CH3">CH₂CH₂CH₂CH₂CH₂CH₂CH₂CH₃ (Octyl / 辛基)</option>
+                <option value="custom">Custom (自訂基團)</option>
+              </select>
+            </div>
+            <div id="custom-ester-r-card" class="attachment-control-card hidden">
+              <div class="card-label">
+                <span class="zh">自訂 R 基團化學式 (Custom R-Group Formula)</span>
+                <span class="en">Custom R-Group Formula</span>
+              </div>
+              <input type="text" id="input-ester-r-custom" oninput="updateCustomEsterR(this.value)" placeholder="e.g. C9H19" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons for Drawing Challenge -->
+      <div id="draw-challenge-actions" class="challenge-actions hidden">
+        <button id="btn-check-drawing" class="btn btn-success btn-large" onclick="checkDrawingAnswer()">
+          <span class="zh">驗證繪圖答案 🚀</span>
+          <span class="en">Check Drawing Answer 🚀</span>
+        </button>
+        <button id="btn-skip-question" class="btn btn-outline" onclick="skipQuestion()">
+          <span class="zh">跳過此題 ⏭️</span>
+          <span class="en">Skip Question ⏭️</span>
+        </button>
+        <button id="btn-continue-challenge" class="btn btn-success btn-large hidden" onclick="continueChallenge()">
+          <span class="zh">繼續下一題 ➡️</span>
+          <span class="en">Continue ➡️</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Right Column: Visualization formulas and IUPAC Naming display -->
+    <section class="visuals-column">
+      
+      <!-- Formulas SVG Renderers Card -->
+      <div class="card formulas-card">
+        <div class="formula-tabs">
+          <button id="tab-structural" class="tab-btn active" onclick="switchFormulaTab('structural')">
+            <span class="zh">🖼️ 結構式 (Structural Formula)</span>
+            <span class="en">🖼️ Structural Formula</span>
+          </button>
+          <button id="tab-skeletal" class="tab-btn" onclick="switchFormulaTab('skeletal')">
+            <span class="zh">📐 鍵線式 (Skeletal Formula)</span>
+            <span class="en">📐 Skeletal Formula</span>
+          </button>
+        </div>
+        <div class="formula-render-area">
+          <div class="formula-zoom-controls" aria-label="Zoom controls">
+            <button type="button" id="btn-zoom-out" class="zoom-btn" onclick="zoomOut()" title="Zoom out">−</button>
+            <button type="button" id="btn-zoom-reset" class="zoom-level-btn" onclick="resetZoom()" title="Reset zoom">
+              <span id="zoom-level-label">100%</span>
+            </button>
+            <button type="button" id="btn-zoom-in" class="zoom-btn" onclick="zoomIn()" title="Zoom in">+</button>
+          </div>
+          <!-- Structural Formula SVG Container -->
+          <div id="container-structural" class="svg-container">
+            <svg id="svg-structural" viewBox="0 0 800 350" width="100%" height="100%"></svg>
+          </div>
+          <!-- Skeletal Formula SVG Container -->
+          <div id="container-skeletal" class="svg-container hidden">
+            <svg id="svg-skeletal" viewBox="0 0 800 350" width="100%" height="100%"></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- IUPAC Nomenclature Output Card -->
+      <div id="nomenclature-card" class="card nomenclature-card">
+        <div class="panel-header">
+          <h2 class="zh">🏷️ IUPAC 系統命名</h2>
+          <h2 class="en">🏷️ IUPAC Nomenclature</h2>
+        </div>
+        
+        <div class="iupac-output-display">
+          <div class="name-box">
+            <div class="name-lang en">
+              <span class="badge">EN</span>
+              <span id="iupac-name-en" class="chemical-name-text">butane</span>
+            </div>
+            <div class="name-lang zh">
+              <span class="badge">ZH</span>
+              <span id="iupac-name-zh" class="chemical-name-text">丁烷</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Theoretical existence warning -->
+        <div id="theoretical-warning" class="theoretical-warning hidden">
+          <p class="zh">⚠️ <strong>理論存在提示：</strong>雖然此化合物可以根據系統命名法命名，但由於碘原子體積龐大，在同一個碳原子上接上三個碘原子會產生極大的<strong>空間位阻 (steric hindrance)</strong>，因此該化合物在現實中極不穩定，僅在理論上存在。</p>
+          <p class="en">⚠️ <strong>Theoretical Existence Note:</strong> Although this compound can be systematically named, having three bulky iodine atoms attached to a single carbon atom creates extreme <strong>steric hindrance</strong>. Thus, this compound is highly unstable and exists only theoretically.</p>
+        </div>
+
+        <!-- Step-by-Step Explanation Accordion (Visible in Explore mode) -->
+        <div id="naming-explanation-section" class="naming-explanation-section">
+          <button class="accordion-toggle" onclick="toggleExplanation()">
+            <span class="zh">📚 命名步驟詳細解析 (點擊展開) ▼</span>
+            <span class="en">📚 Step-by-Step Naming Explanation (Click to Expand) ▼</span>
+          </button>
+          <div id="explanation-content" class="accordion-content hidden">
+            <ol class="explanation-steps">
+              <li>
+                <strong>
+                  <span class="zh">步驟 1：尋找主碳鏈 (Longest Carbon Chain)</span>
+                  <span class="en">Step 1: Find the Principal Carbon Chain</span>
+                </strong>
+                <p id="explain-step1" class="explain-detail"></p>
+              </li>
+              <li>
+                <strong>
+                  <span class="zh">步驟 2：識別主要官能基 (Principal Group)</span>
+                  <span class="en">Step 2: Identify Principal Functional Group</span>
+                </strong>
+                <p id="explain-step2" class="explain-detail"></p>
+              </li>
+              <li>
+                <strong>
+                  <span class="zh">步驟 3：碳鏈編號決定 (Carbon Numbering)</span>
+                  <span class="en">Step 3: Determine Carbon Numbering</span>
+                </strong>
+                <p id="explain-step3" class="explain-detail"></p>
+              </li>
+              <li>
+                <strong>
+                  <span class="zh">步驟 4：列出並排列取代基 (Substituents)</span>
+                  <span class="en">Step 4: List and Alphabetize Substituents</span>
+                </strong>
+                <p id="explain-step4" class="explain-detail"></p>
+              </li>
+              <li>
+                <strong>
+                  <span class="zh">步驟 5：整合 IUPAC 完整名稱 (Name Assembly)</span>
+                  <span class="en">Step 5: Assemble Complete Name</span>
+                </strong>
+                <p id="explain-step5" class="explain-detail"></p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Reference Tables Section (Dynamically highlights rules matching active molecule!) -->
+  <section class="reference-tables-section card">
+    <div class="panel-header">
+      <h2 class="zh">📖 課堂重點筆記與規則對照表</h2>
+      <h2 class="en">📖 Interactive Lecture Notes & Reference Tables</h2>
+      <p class="ref-desc zh">系統會根據您繪製的分子，自動在表格中以綠色高亮 <span class="highlight-example">高亮</span> 標示出對應的命名規則！</p>
+      <p class="ref-desc en">The tables will automatically <span class="highlight-example">Highlight</span> in green the rules that apply to your current molecule!</p>
+    </div>
+
+    <div class="tables-grid">
+      <!-- Table 1: Stem names -->
+      <div class="table-card">
+        <h3 class="en">Table 1: Stem name & Branches</h3>
+        <h3 class="zh">表 1：主碳鏈詞幹與烷基分支</h3>
+        <table id="ref-table-1">
+          <thead>
+            <tr>
+              <th><span class="en">No. of C atoms</span><span class="zh">碳原子數目</span></th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="row-stem-en" class="en">
+              <th>Stem</th>
+              <td data-c="1">Meth-</td>
+              <td data-c="2">Eth-</td>
+              <td data-c="3">Prop-</td>
+              <td data-c="4">But-</td>
+              <td data-c="5">Pent-</td>
+              <td data-c="6">Hex-</td>
+              <td data-c="7">Hept-</td>
+              <td data-c="8">Oct-</td>
+            </tr>
+            <tr id="row-stem-zh" class="zh">
+              <th>詞幹</th>
+              <td data-c="1">甲-</td>
+              <td data-c="2">乙-</td>
+              <td data-c="3">丙-</td>
+              <td data-c="4">丁-</td>
+              <td data-c="5">戊-</td>
+              <td data-c="6">己-</td>
+              <td data-c="7">庚-</td>
+              <td data-c="8">辛-</td>
+            </tr>
+            <tr id="row-branch-en" class="en">
+              <th>Branch</th>
+              <td data-branch="methyl">Methyl</td>
+              <td data-branch="ethyl">Ethyl</td>
+              <td data-branch="propyl">Propyl</td>
+              <td colspan="5" class="muted">---</td>
+            </tr>
+            <tr id="row-branch-zh" class="zh">
+              <th>分支</th>
+              <td data-branch="methyl">甲基</td>
+              <td data-branch="ethyl">乙基</td>
+              <td data-branch="propyl">丙基</td>
+              <td colspan="5" class="muted">---</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table 2: Homologous series -->
+      <div class="table-card">
+        <h3 class="en">Table 2: Homologous series</h3>
+        <h3 class="zh">表 2：同系列尾綴</h3>
+        <table id="ref-table-2">
+          <thead>
+            <tr>
+              <th><span class="en">Formula (Group)</span><span class="zh">化學式（基團）</span></th>
+              <th><span class="en">Class Name</span><span class="zh">類別名稱</span></th>
+              <th><span class="en">Prefix</span><span class="zh">前綴</span></th>
+              <th><span class="en">Suffix</span><span class="zh">尾綴</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="row-homo-carboxylic">
+              <td>-COOH</td>
+              <td><span class="en">Carboxylic Acid</span><span class="zh">羧酸</span></td>
+              <td>---</td>
+              <td><span class="en">-oic acid</span><span class="zh">-酸</span></td>
+            </tr>
+            <tr id="row-homo-ester">
+              <td>-COOR</td>
+              <td><span class="en">Ester</span><span class="zh">酯</span></td>
+              <td>---</td>
+              <td><span class="en">-oate</span><span class="zh">-酸酯</span></td>
+            </tr>
+            <tr id="row-homo-amide">
+              <td>-CONH₂</td>
+              <td><span class="en">Amide</span><span class="zh">酰胺</span></td>
+              <td>---</td>
+              <td><span class="en">-amide</span><span class="zh">-酰胺</span></td>
+            </tr>
+            <tr id="row-homo-aldehyde">
+              <td>-CHO</td>
+              <td><span class="en">Aldehyde</span><span class="zh">醛</span></td>
+              <td>---</td>
+              <td><span class="en">-anal</span><span class="zh">-醛</span></td>
+            </tr>
+            <tr id="row-homo-ketone">
+              <td>=O</td>
+              <td><span class="en">Ketone</span><span class="zh">酮</span></td>
+              <td>---</td>
+              <td><span class="en">-one</span><span class="zh">-酮</span></td>
+            </tr>
+            <tr id="row-homo-alcohol">
+              <td>-OH</td>
+              <td><span class="en">Alcohol</span><span class="zh">醇</span></td>
+              <td>---</td>
+              <td><span class="en">-ol</span><span class="zh">-醇</span></td>
+            </tr>
+            <tr id="row-homo-amine">
+              <td>-NH₂</td>
+              <td><span class="en">Primary Amine</span><span class="zh">胺</span></td>
+              <td>---</td>
+              <td><span class="en">-amine</span><span class="zh">-胺</span></td>
+            </tr>
+            <tr id="row-homo-alkene">
+              <td><span class="en">C=C double bond</span><span class="zh">C=C 雙鍵</span></td>
+              <td><span class="en">Alkene</span><span class="zh">烯</span></td>
+              <td><span class="en">-en-</span><span class="zh">-烯-</span></td>
+              <td><span class="en">-ene</span><span class="zh">-烯</span></td>
+            </tr>
+            <tr id="row-homo-alkane">
+              <td><span class="en">Saturated chain</span><span class="zh">飽和碳鏈</span></td>
+              <td><span class="en">Alkane</span><span class="zh">烷</span></td>
+              <td>---</td>
+              <td><span class="en">-ane</span><span class="zh">-烷</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table 3: Prefix halogen groups -->
+      <div class="table-card">
+        <h3 class="en">Table 3: Groups named as prefixes</h3>
+        <h3 class="zh">表 3：鹵代前綴</h3>
+        <table id="ref-table-3">
+          <thead>
+            <tr>
+              <th><span class="en">Group</span><span class="zh">基團</span></th>
+              <th><span class="en">Formula</span><span class="zh">化學式</span></th>
+              <th><span class="en">Prefix</span><span class="zh">前綴</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="row-halogen-F">
+              <td><span class="en">Fluoride</span><span class="zh">氟化物</span></td>
+              <td>-F</td>
+              <td><span class="en">Fluoro-</span><span class="zh">氟代-</span></td>
+            </tr>
+            <tr id="row-halogen-Cl">
+              <td><span class="en">Chloride</span><span class="zh">氯化物</span></td>
+              <td>-Cl</td>
+              <td><span class="en">Chloro-</span><span class="zh">氯代-</span></td>
+            </tr>
+            <tr id="row-halogen-Br">
+              <td><span class="en">Bromide</span><span class="zh">溴化物</span></td>
+              <td>-Br</td>
+              <td><span class="en">Bromo-</span><span class="zh">溴代-</span></td>
+            </tr>
+            <tr id="row-halogen-I">
+              <td><span class="en">Iodide</span><span class="zh">碘化物</span></td>
+              <td>-I</td>
+              <td><span class="en">Iodo-</span><span class="zh">碘代-</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Help & Guide Modal/Footer -->
+  <footer>
+    <div class="footer-content">
+      <p class="zh">💡 <strong>提示：</strong>在挑戰模式中，如果你遇到困難，可以隨時切換回「自由探索模式」進行繪製和學習，對照命名解析，然後再回到挑戰模式答題！</p>
+      <p class="en">💡 <strong>Tip:</strong> In challenge mode, if you get stuck, you can always switch back to "Free Explore" to build, learn and read the steps, then switch back to answer!</p>
+      <p class="copyright">© 2026 Virtual Organic Chemistry Lab. Designed for HK Senior Secondary Students. Perfect on Google Chrome.</p>
+    </div>
+  </footer>
+
+  <!-- Include Core Application Logic -->
+  <script src="game.js?v=methylpropane"></script>
+</body>
+</html>

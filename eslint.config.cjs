@@ -15,6 +15,7 @@ module.exports = [
       "three.min.js",
       "generate_*.js",
       "patch_html.js",
+      "temp_*.js",
     ],
   },
   js.configs.recommended,
