@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>極致化學：離子化合物立體拼圖學堂 (Aesthetic Ionic Compound Puzzle Lab)</title>
-    <!-- 引入科幛字體及標準 Montserrat 字體 -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Orbitron:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- 引入科幛字體及標準 Calibri 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/calibri" rel="stylesheet">
     <!-- FontAwesome 圖標庫 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- KaTeX 化學與數學公式軔染器 -->
@@ -14,20 +15,39 @@
 
     <style>
         :root {
-            --bg-cyber: #050814;
-            --sidebar-bg: #0b1126;
-            --card-glass: rgba(16, 22, 47, 0.65);
-            --card-border: rgba(0, 168, 255, 0.2);
-            --accent-blue: #00a8ff;
-            --accent-gold: #ffaa00;
-            --neon-green: #39ff14;
-            --neon-red: #ff3366;
-            --text-main: #f0f3ff;
-            --text-secondary: #8a9fc4;
+            --bg-cyber: #f1f3f9;               /* Soft bright slate-white background */
+            --sidebar-bg: #ffffff;             /* Crisp clean white sidebar */
+            --card-glass: rgba(255, 255, 255, 0.85); /* Pure white glass card with backdrop blur */
+            --card-border: rgba(0, 102, 204, 0.12);  /* Muted blue-grey border */
+            --accent-blue: #0066cc;            /* Vibrant Cobalt Blue (better contrast on white) */
+            --accent-gold: #d97706;            /* Rich Amber Gold (better contrast on white) */
+            --neon-green: #10b981;             /* Fresh Emerald Green (better contrast on white) */
+            --neon-red: #ef4444;               /* Vibrant Crimson Red (better contrast on white) */
+            --text-main: #1e293b;              /* Dark slate-grey for excellent readability */
+            --text-secondary: #475569;         /* Muted grey-blue for subtitles and descriptions */
+            
+            /* Helper variables for clean light mode rendering */
+            --glass-shadow: 0 8px 32px 0 rgba(148, 163, 184, 0.12);
+            --sidebar-shadow: 10px 0 30px rgba(148, 163, 184, 0.08);
+            --btn-active-bg: linear-gradient(135deg, var(--accent-blue), #4f46e5);
+            --btn-inactive-bg: rgba(0, 0, 0, 0.05);
+            --btn-inactive-border: 1px solid rgba(0, 0, 0, 0.08);
+            --btn-inactive-color: rgba(0, 0, 0, 0.55);
+            --svg-label-color: #1e293b;
+            --svg-shell-color: rgba(0, 0, 0, 0.08);
+            --svg-plus-color: rgba(30, 41, 59, 0.4);
+            --vessel-bg: rgba(255, 255, 255, 0.8);
+            --vessel-border: rgba(0, 102, 204, 0.15);
+            --vessel-grid: rgba(0, 0, 0, 0.02);
+            --ion-card-bg: rgba(0, 0, 0, 0.015);
+            --ion-card-border: rgba(0, 0, 0, 0.05);
+            --ion-card-hover-bg: rgba(0, 0, 0, 0.04);
+            --ion-card-hover-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            --scale-string-color: rgba(0, 0, 0, 0.18);
         }
 
         body {
-            font-family: 'Noto Sans TC', 'Montserrat', sans-serif;
+            font-family: 'Calibri', sans-serif; /* Default to English Calibri */
             margin: 0;
             padding: 0;
             background-color: var(--bg-cyber);
@@ -36,41 +56,49 @@
             height: 100vh;
             overflow: hidden;
             background-image: 
-                radial-gradient(at 10% 20%, rgba(0, 168, 255, 0.1) 0px, transparent 50%),
-                radial-gradient(at 90% 80%, rgba(255, 170, 0, 0.08) 0px, transparent 50%);
+                radial-gradient(at 10% 20%, rgba(0, 102, 204, 0.05) 0px, transparent 50%),
+                radial-gradient(at 90% 80%, rgba(217, 119, 6, 0.04) 0px, transparent 50%);
+        }
+
+        body.lang-en-active {
+            font-family: 'Calibri', sans-serif;
+        }
+
+        body.lang-zh-active {
+            font-family: 'Noto Sans TC', 'Calibri', sans-serif;
         }
 
         #sidebar {
             width: 320px;
             background-color: var(--sidebar-bg);
-            border-right: 2px solid rgba(0, 168, 255, 0.2);
+            border-right: 1px solid var(--card-border);
             padding: 30px 20px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             gap: 20px;
             z-index: 10;
-            box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+            box-shadow: var(--sidebar-shadow);
         }
 
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-weight: 900;
             font-size: 1.4em;
             background: linear-gradient(45deg, var(--accent-blue), #9b51e0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            border-bottom: 2px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
             padding-bottom: 20px;
             margin-bottom: 10px;
         }
 
         .logo i {
             font-size: 1.4em;
-            filter: drop-shadow(0 0 8px var(--accent-blue));
+            filter: drop-shadow(0 0 8px rgba(0, 102, 204, 0.25));
             animation: rotateAtom 10s linear infinite;
             background: initial;
             -webkit-background-clip: initial;
@@ -85,8 +113,8 @@
 
         .nav-item {
             padding: 14px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--ion-card-bg);
+            border: 1px solid var(--ion-card-border);
             color: var(--text-secondary);
             cursor: pointer;
             border-radius: 12px;
@@ -98,30 +126,30 @@
         }
 
         .nav-item:hover {
-            background: rgba(0, 168, 255, 0.1);
+            background: rgba(0, 102, 204, 0.05);
             border-color: var(--accent-blue);
-            color: var(--text-main);
+            color: var(--accent-blue);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 168, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.06);
         }
 
         .nav-item.active {
-            background: linear-gradient(135deg, rgba(0, 168, 255, 0.2), rgba(155, 81, 224, 0.2));
+            background: var(--btn-active-bg);
             border-color: var(--accent-blue);
             color: #ffffff;
-            box-shadow: 0 0 15px rgba(0, 168, 255, 0.25);
-            text-shadow: 0 0 5px rgba(255,255,255,0.5);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
+            text-shadow: none;
         }
 
         .divider {
             height: 1px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(0,0,0,0.06);
             margin: 10px 0;
         }
 
         .stat-box {
-            background: rgba(0,0,0,0.3);
-            border: 1px dashed rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.5);
+            border: 1px dashed rgba(0, 102, 204, 0.12);
             border-radius: 12px;
             padding: 15px;
             margin-top: auto;
@@ -140,7 +168,7 @@
             font-weight: 700;
             color: var(--neon-green);
             margin-top: 5px;
-            text-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+            text-shadow: none;
         }
 
         #main-content {
@@ -172,7 +200,7 @@
             border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 24px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            box-shadow: var(--glass-shadow);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             margin-bottom: 20px;
@@ -190,27 +218,28 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            background: rgba(11, 17, 38, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.45);
+            border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 15px;
             overflow-y: auto;
         }
 
         .ion-pool h3 {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
+            text-anchor: middle;
             text-align: center;
             margin: 0;
             padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
         }
 
-        .pool-cation h3 { color: var(--accent-blue); text-shadow: 0 0 8px rgba(0, 168, 255, 0.3); }
-        .pool-anion h3 { color: var(--accent-gold); text-shadow: 0 0 8px rgba(255, 170, 0, 0.3); }
+        .pool-cation h3 { color: var(--accent-blue); text-shadow: none; }
+        .pool-anion h3 { color: var(--accent-gold); text-shadow: none; }
 
         .ion-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: var(--ion-card-bg);
+            border: 1px solid var(--ion-card-border);
             border-radius: 10px;
             padding: 8px 12px;
             cursor: pointer;
@@ -224,13 +253,13 @@
         }
 
         .ion-card:hover {
-            background: rgba(255,255,255,0.07);
+            background: var(--ion-card-hover-bg);
             transform: scale(1.03);
-            box-shadow: 0 4px 15px rgba(255,255,255,0.05);
+            box-shadow: var(--ion-card-hover-shadow);
         }
 
-        .ion-card.cation-hover:hover { border-color: var(--accent-blue); box-shadow: 0 0 10px rgba(0, 168, 255, 0.2); }
-        .ion-card.anion-hover:hover { border-color: var(--accent-gold); box-shadow: 0 0 10px rgba(255, 170, 0, 0.2); }
+        .ion-card.cation-hover:hover { border-color: var(--accent-blue); box-shadow: 0 0 10px rgba(0, 102, 204, 0.15); }
+        .ion-card.anion-hover:hover { border-color: var(--accent-gold); box-shadow: 0 0 10px rgba(217, 119, 6, 0.15); }
 
         .ion-sym-badge {
             font-family: 'Orbitron', sans-serif;
@@ -247,8 +276,8 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            background: rgba(3, 6, 17, 0.8);
-            border: 2px dashed rgba(0, 168, 255, 0.15);
+            background: var(--vessel-bg);
+            border: 2px dashed var(--vessel-border);
             border-radius: 20px;
             padding: 20px;
             position: relative;
@@ -262,8 +291,8 @@
             top: 0; left: 0; right: 0; bottom: 0;
             background-size: 30px 30px;
             background-image: 
-                linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
+                linear-gradient(to right, var(--vessel-grid) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--vessel-grid) 1px, transparent 1px);
             pointer-events: none;
         }
 
@@ -341,7 +370,7 @@
             position: absolute;
             width: 2px;
             height: 30px;
-            background: rgba(255,255,255,0.3);
+            background: var(--scale-string-color);
             top: -30px;
         }
         .scale-string-left { left: 10px; transform: rotate(15deg); transform-origin: left bottom; }
@@ -387,7 +416,7 @@
         }
 
         .ion-svg-element {
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
             transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
             cursor: grab;
         }
@@ -400,10 +429,19 @@
             justify-content: center;
             align-items: center;
             gap: 15px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: var(--card-glass);
+            border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 15px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .crystal-projection h3 {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        body.lang-en-active .crystal-projection h3 {
+            font-family: 'Calibri', sans-serif;
         }
 
         .lattice-container {
@@ -423,14 +461,15 @@
         }
 
         .formula-display-bar {
-            background: rgba(11, 17, 38, 0.8);
-            border: 1px solid rgba(0, 168, 255, 0.2);
+            background: var(--card-glass);
+            border: 1px solid var(--card-border);
             border-radius: 12px;
             padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 1.2em;
+            box-shadow: var(--glass-shadow);
         }
 
         .math-tex {
@@ -446,14 +485,14 @@
         }
 
         .quest-target-card {
-            background: linear-gradient(135deg, rgba(0, 168, 255, 0.1), rgba(255, 170, 0, 0.1));
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.04), rgba(217, 119, 6, 0.04));
             border: 2px solid var(--accent-blue);
             border-radius: 16px;
             padding: 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 168, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 102, 204, 0.06);
         }
 
         .quest-target-title {
@@ -465,15 +504,15 @@
 
         .quest-target-name {
             font-size: 2.2em;
-            font-family: 'Orbitron', 'Noto Sans TC', sans-serif;
+            font-family: 'Orbitron', 'Calibri', 'Noto Sans TC', sans-serif;
             font-weight: 900;
-            color: #ffffff;
+            color: var(--text-main);
             margin: 10px 0;
-            text-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
+            text-shadow: none;
         }
 
         .cyber-btn {
-            background: linear-gradient(135deg, var(--accent-blue), #5f27cd);
+            background: linear-gradient(135deg, var(--accent-blue), #4f46e5);
             color: white;
             border: none;
             padding: 12px 24px;
@@ -481,9 +520,9 @@
             border-radius: 10px;
             cursor: pointer;
             font-weight: bold;
-            font-family: 'Orbitron', 'Noto Sans TC', sans-serif;
+            font-family: 'Orbitron', 'Calibri', 'Noto Sans TC', sans-serif;
             letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(0, 168, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: inline-flex;
             align-items: center;
@@ -492,7 +531,7 @@
 
         .cyber-btn:hover {
             transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(0, 168, 255, 0.5);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
             filter: brightness(1.1);
         }
 
@@ -501,29 +540,30 @@
         }
 
         .cyber-btn-gold {
-            background: linear-gradient(135deg, var(--accent-gold), #ff5e00);
-            box-shadow: 0 4px 15px rgba(255, 170, 0, 0.3);
+            background: linear-gradient(135deg, var(--accent-gold), #ea580c);
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);
         }
 
         .cyber-btn-gold:hover {
-            box-shadow: 0 6px 20px rgba(255, 170, 0, 0.5);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
         }
 
         .cyber-btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: var(--btn-inactive-bg);
+            border: var(--btn-inactive-border);
+            color: var(--btn-inactive-color);
             box-shadow: none;
         }
         .cyber-btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.08);
             box-shadow: none;
         }
 
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(15px);
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(8px);
             z-index: 100;
             display: none;
             justify-content: center;
@@ -536,10 +576,10 @@
             border: 2px solid var(--accent-blue);
             border-radius: 20px;
             width: 100%;
-            max-width: 550px;
+            max-width: 680px;
             padding: 30px;
             box-sizing: border-box;
-            box-shadow: 0 10px 40px rgba(0,168,255,0.3);
+            box-shadow: 0 10px 40px rgba(0, 102, 204, 0.15);
             text-align: center;
             transform: scale(0.9);
             opacity: 0;
@@ -552,31 +592,32 @@
         }
 
         .modal-card h2 {
-            font-family: 'Orbitron', 'Noto Sans TC', sans-serif;
-            color: var(--neon-green);
+            font-family: 'Orbitron', 'Calibri', 'Noto Sans TC', sans-serif;
+            color: var(--accent-blue);
             font-size: 2em;
             margin-top: 0;
-            text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+            text-shadow: none;
         }
 
         .modal-formula {
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.03);
             padding: 15px;
             border-radius: 12px;
             margin: 20px 0;
             font-size: 1.5em;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .crystal-fact-container {
             text-align: left;
-            background: rgba(255,255,255,0.02);
+            background: rgba(0, 102, 204, 0.02);
             padding: 15px;
             border-radius: 12px;
             border-left: 4px solid var(--accent-blue);
             margin-bottom: 20px;
             font-size: 0.95em;
             line-height: 1.6;
+            color: var(--text-secondary);
         }
 
         .settings-grid {
@@ -586,15 +627,16 @@
         }
 
         .settings-card {
-            background: rgba(11, 17, 38, 0.5);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 20px;
+            box-shadow: var(--glass-shadow);
         }
 
         .settings-card h3 {
             color: var(--accent-blue);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
             padding-bottom: 10px;
             margin-top: 0;
         }
@@ -613,7 +655,7 @@
             align-items: center;
             gap: 6px;
             font-size: 0.78em;
-            background: rgba(255,255,255,0.02);
+            background: rgba(0,0,0,0.015);
             padding: 6px 10px;
             border-radius: 6px;
             cursor: pointer;
@@ -622,13 +664,14 @@
             word-wrap: break-word;
             word-break: break-word;
             min-height: 38px;
+            border: 1px solid rgba(0,0,0,0.04);
         }
-        .checkbox-item:hover { background: rgba(255,255,255,0.07); }
+        .checkbox-item:hover { background: rgba(0,0,0,0.04); }
         .checkbox-item input { cursor: pointer; }
 
         .hint-box {
-            background: rgba(255, 170, 0, 0.08);
-            border: 1px solid rgba(255, 170, 0, 0.2);
+            background: rgba(217, 119, 6, 0.05);
+            border: 1px solid rgba(217, 119, 6, 0.12);
             color: var(--text-main);
             padding: 12px;
             border-radius: 10px;
@@ -644,11 +687,11 @@
             background: transparent;
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.08);
             border-radius: 3px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255,255,255,0.25);
+            background: rgba(0,0,0,0.18);
         }
 
         /* Bilingual switcher visibility rules */
@@ -668,13 +711,13 @@
             justify-content: center;
             gap: 15px;
             margin: 20px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             padding-bottom: 12px;
         }
 
         .modal-tab-btn {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             color: var(--text-secondary);
             padding: 8px 18px;
             border-radius: 8px;
@@ -685,21 +728,20 @@
             gap: 8px;
             font-size: 0.9em;
             transition: all 0.3s ease;
-            font-family: 'Noto Sans TC', 'Montserrat', sans-serif;
         }
 
         .modal-tab-btn:hover {
-            background: rgba(0, 168, 255, 0.08);
-            border-color: rgba(0, 168, 255, 0.3);
+            background: rgba(0, 102, 204, 0.04);
+            border-color: rgba(0, 102, 204, 0.15);
             color: var(--text-main);
         }
 
         .modal-tab-btn.active {
-            background: rgba(0, 168, 255, 0.15);
+            background: rgba(0, 102, 204, 0.08);
             border-color: var(--accent-blue);
-            color: #ffffff;
-            box-shadow: 0 0 12px rgba(0, 168, 255, 0.25);
-            text-shadow: 0 0 5px rgba(255,255,255,0.5);
+            color: var(--accent-blue);
+            box-shadow: 0 0 12px rgba(0, 102, 204, 0.08);
+            text-shadow: none;
         }
 
         .modal-panel {
@@ -717,23 +759,23 @@
         }
 
         .electron-diagram-container {
-            background: rgba(0, 0, 0, 0.45);
-            border: 1px solid rgba(0, 168, 255, 0.15);
+            background: rgba(0, 0, 0, 0.015);
+            border: 1px solid var(--card-border);
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 20px;
-            min-height: 250px;
+            min-height: 320px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
             overflow: visible;
         }
 
         .electron-diagram-container svg {
             width: 100%;
             height: auto;
-            max-height: 320px;
+            max-height: 400px;
             overflow: visible;
         }
     </style>
@@ -782,7 +824,7 @@
             <div style="font-size: 0.8em; color: var(--text-secondary); margin-top: 5px;">
                 <span class="lang-zh">正確率：</span>
                 <span class="lang-en" style="display:none;">Accuracy: </span>
-                <span id="quest-accuracy" style="color: white; font-weight: bold;">100%</span>
+                <span id="quest-accuracy" style="color: var(--accent-blue); font-weight: bold;">100%</span>
             </div>
         </div>
     </div>
@@ -879,12 +921,12 @@
                 <!-- 陽離子池 (闖關預設) -->
                 <div class="ion-pool pool-cation" style="display:flex; flex-direction:column; gap:15px; height:100%; box-sizing:border-box;">
                     <div style="flex:1; display:flex; flex-direction:column; min-height:0;">
-                        <h3 class="pool-cation" style="color:var(--accent-blue); text-shadow:0 0 8px rgba(0,168,255,0.3); margin:0 0 10px 0; text-align:center; font-family:'Orbitron', sans-serif;">Cations (+)</h3>
+                        <h3 class="pool-cation" style="color:var(--accent-blue); margin:0 0 10px 0; text-align:center;">Cations (+)</h3>
                         <div id="quest-cation-list" style="display:flex; flex-direction:column; gap:10px; overflow-y:auto; flex:1;"></div>
                     </div>
-                    <div class="divider" style="height:1px; background:rgba(255,255,255,0.1); margin:5px 0;"></div>
+                    <div class="divider" style="height:1px; background:rgba(0,0,0,0.06); margin:5px 0;"></div>
                     <div style="flex:1; display:flex; flex-direction:column; min-height:0;">
-                        <h3 class="pool-anion" style="color:var(--accent-gold); text-shadow:0 0 8px rgba(255,170,0,0.3); margin:0 0 10px 0; text-align:center; font-family:'Orbitron', sans-serif;">Anions (-)</h3>
+                        <h3 class="pool-anion" style="color:var(--accent-gold); margin:0 0 10px 0; text-align:center;">Anions (-)</h3>
                         <div id="quest-anion-list" style="display:flex; flex-direction:column; gap:10px; overflow-y:auto; flex:1;"></div>
                     </div>
                 </div>
@@ -932,7 +974,7 @@
 
                 <!-- 晶體投影與微觀圖 -->
                 <div class="crystal-projection glass-card">
-                    <h3 style="font-family:'Orbitron', sans-serif; margin:0; color:var(--accent-blue); text-shadow:0 0 5px rgba(0,168,255,0.3); font-size:1.1em;">
+                    <h3 style="margin:0; color:var(--accent-blue); font-size:1.1em;">
                         <span class="lang-zh">晶格點陣投影</span>
                         <span class="lang-en" style="display:none;">Crystal Lattice Projection</span>
                     </h3>
@@ -956,8 +998,8 @@
                     <span class="lang-en" style="display:none;">System Configuration & Ion Database</span>
                 </h2>
                 <p style="color:var(--text-secondary);">
-                    <span class="lang-zh">在這裡你可以啟用/停用特定的離子、調整音效及自訂題目。</span>
-                    <span class="lang-en" style="display:none;">Enable/disable specific ions, toggle sound effects, and customize features.</span>
+                    <span class="lang-zh">在這裡你可以啟用/停用特定的離子及自訂題目。</span>
+                    <span class="lang-en" style="display:none;">Enable/disable specific ions and customize features.</span>
                 </p>
             </div>
 
@@ -998,25 +1040,6 @@
                         </button>
                     </div>
                     <div class="checkbox-container" id="settings-anion-container"></div>
-                </div>
-
-                <!-- 功能選項 -->
-                <div class="settings-card" style="grid-column: span 2;">
-                    <h3>其他進階功能選項</h3>
-                    <div style="display:flex; gap:30px; align-items:center;">
-                        <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
-                            <input type="checkbox" id="setting-sound" checked style="width:18px; height:18px;">
-                            <span>啟用合成音效</span>
-                        </label>
-                        <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
-                            <input type="checkbox" id="setting-particles" checked style="width:18px; height:18px;">
-                            <span>啟用粒子爆炸特效</span>
-                        </label>
-                        <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
-                            <input type="checkbox" id="setting-hint-auto" checked style="width:18px; height:18px;">
-                            <span>答錯時自動彊出提示</span>
-                        </label>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1076,7 +1099,7 @@
         var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         
         function playSound(type) {
-            if (!document.getElementById('setting-sound').checked) return;
+            if (document.getElementById('setting-sound') && !document.getElementById('setting-sound').checked) return;
             try {
                 if (audioCtx.state === 'suspended') {
                     audioCtx.resume();
@@ -1228,8 +1251,8 @@
                 systemEn: "Monoclinic Crystal System",
                 structureZh: "層狀堆積結構 (Layered Octahedral Grid)",
                 structureEn: "Layered Octahedral Grid",
-                factZh: "硫酸鋁在水中電離出 Al3+ 與 SO4 2-。在拼圖結構中，為了達到電中性，需要 2 個鋁離子對應 3 個硫酸根，拼圖高度達到 360 像素！在淨水工程中，帶 3+ 高電荷的 Al3+ 能強力吸附水中帶負電荷的膠體雜質，形成羽狀沉澱，這正是幾何多電荷互鎖帶來的微觀化學工程奇蹟。",
-                factEn: "Aluminium sulphate dissociates into Al3+ and SO4 2- in water. In the puzzle structure, to achieve electrical neutrality, 2 aluminium ions pair with 3 sulphate ions, reaching a puzzle height of 360 pixels! In water purification, the highly charged Al3+ strongly adsorbs negatively charged colloidal impurities to form flocs. This is a microscopic chemical engineering miracle brought by multi-charge geometric interlocking."
+                factZh: "硫酸鋁在水中電離出 Al3+ 與 SO4 2-。在拼圖結構中，為了達到電中性，需要 2 個鋁離子對應 3 個硫酸根，拼圖高度達到 480 像素！在淨水工程中，帶 3+ 高電荷的 Al3+ 能強力吸附水中帶負電荷的膠體雜質，形成羽狀沉澱，這正是幾何多電荷互鎖帶來的微觀化學工程奇蹟。",
+                factEn: "Aluminium sulphate dissociates into Al3+ and SO4 2- in water. In the puzzle structure, to achieve electrical neutrality, 2 aluminium ions pair with 3 sulphate ions, reaching a puzzle height of 480 pixels! In water purification, the highly charged Al3+ strongly adsorbs negatively charged colloidal impurities to form flocs. This is a microscopic chemical engineering miracle brought by multi-charge geometric interlocking."
             },
             "KMnO4": {
                 nameZh: "高錳酸鉀 (Potassium Permanganate)",
@@ -1282,7 +1305,7 @@
 
     <!-- 6. 核心 JS 拼圖運算引擎 & 反應控制 -->
     <script>
-        var currentLang = 'zh';
+        var currentLang = 'en';
         var activeTab = 'lab';
 
         function setLanguage(lang) {
@@ -1295,17 +1318,17 @@
                 document.body.classList.add('lang-zh-active');
                 
                 // Highlight ZH as active, EN as inactive
-                btnZh.style.background = 'linear-gradient(135deg, var(--accent-blue), #5f27cd)';
+                btnZh.style.background = 'var(--btn-active-bg)';
                 btnZh.style.border = 'none';
                 btnZh.style.color = '#ffffff';
                 btnZh.style.setProperty('-webkit-text-fill-color', '#ffffff', 'important');
                 btnZh.style.opacity = '1';
-                btnZh.style.boxShadow = '0 0 10px rgba(0, 168, 255, 0.4)';
+                btnZh.style.boxShadow = '0 4px 10px rgba(0, 102, 204, 0.2)';
                 
-                btnEn.style.background = 'rgba(255, 255, 255, 0.05)';
-                btnEn.style.border = '1px solid rgba(255, 255, 255, 0.15)';
-                btnEn.style.color = 'rgba(255, 255, 255, 0.6)';
-                btnEn.style.setProperty('-webkit-text-fill-color', 'rgba(255, 255, 255, 0.6)', 'important');
+                btnEn.style.background = 'var(--btn-inactive-bg)';
+                btnEn.style.border = 'var(--btn-inactive-border)';
+                btnEn.style.color = 'var(--btn-inactive-color)';
+                btnEn.style.setProperty('-webkit-text-fill-color', 'var(--btn-inactive-color)', 'important');
                 btnEn.style.opacity = '0.7';
                 btnEn.style.boxShadow = 'none';
             } else {
@@ -1313,17 +1336,17 @@
                 document.body.classList.add('lang-en-active');
                 
                 // Highlight EN as active, ZH as inactive
-                btnEn.style.background = 'linear-gradient(135deg, var(--accent-blue), #5f27cd)';
+                btnEn.style.background = 'var(--btn-active-bg)';
                 btnEn.style.border = 'none';
                 btnEn.style.color = '#ffffff';
                 btnEn.style.setProperty('-webkit-text-fill-color', '#ffffff', 'important');
                 btnEn.style.opacity = '1';
-                btnEn.style.boxShadow = '0 0 10px rgba(0, 168, 255, 0.4)';
+                btnEn.style.boxShadow = '0 4px 10px rgba(0, 102, 204, 0.2)';
                 
-                btnZh.style.background = 'rgba(255, 255, 255, 0.05)';
-                btnZh.style.border = '1px solid rgba(255, 255, 255, 0.15)';
-                btnZh.style.color = 'rgba(255, 255, 255, 0.6)';
-                btnZh.style.setProperty('-webkit-text-fill-color', 'rgba(255, 255, 255, 0.6)', 'important');
+                btnZh.style.background = 'var(--btn-inactive-bg)';
+                btnZh.style.border = 'var(--btn-inactive-border)';
+                btnZh.style.color = 'var(--btn-inactive-color)';
+                btnZh.style.setProperty('-webkit-text-fill-color', 'var(--btn-inactive-color)', 'important');
                 btnZh.style.opacity = '0.7';
                 btnZh.style.boxShadow = 'none';
             }
@@ -1363,6 +1386,8 @@
         var currentQuestIndex = 0;
         var questVesselCations = [];
         var questVesselAnions = [];
+        var currentQuestCations = [];
+        var currentQuestAnions = [];
         var questSuccessCount = 0;
         var questTotalAttempts = 0;
 
@@ -1429,19 +1454,19 @@
 
         function generateIonSVG(ion, isCation, indexInVessel) {
             if (indexInVessel === undefined) indexInVessel = -1;
-            var unitHeight = 60;
-            var width = 120;
+            var unitHeight = 80;
+            var width = 160;
             var charge = ion.charge;
             var height = charge * unitHeight;
-            var radius = 12;
+            var radius = 16;
 
             var path = "";
             if (isCation) {
                 path += 'M 0 0';
                 path += ' L ' + width + ' 0';
                 for (var i = 0; i < charge; i++) {
-                    var y1 = i * unitHeight + 18;
-                    var y2 = i * unitHeight + 42;
+                    var y1 = i * unitHeight + 24;
+                    var y2 = i * unitHeight + 56;
                     path += ' L ' + width + ' ' + y1;
                     path += ' A ' + radius + ' ' + radius + ' 0 0 0 ' + width + ' ' + y2;
                 }
@@ -1451,8 +1476,8 @@
             } else {
                 path += 'M 0 0';
                 for (var i = 0; i < charge; i++) {
-                    var y1 = i * unitHeight + 18;
-                    var y2 = i * unitHeight + 42;
+                    var y1 = i * unitHeight + 24;
+                    var y2 = i * unitHeight + 56;
                     path += ' L 0 ' + y1;
                     path += ' A ' + radius + ' ' + radius + ' 0 0 0 0 ' + y2;
                 }
@@ -1463,17 +1488,17 @@
             }
 
             var color = getIonColor(ion, isCation);
-            var textY = height / 2 + 5;
+            var textY = height / 2 + 6;
             
             var alignmentMarkers = "";
             for (var i = 0; i < charge; i++) {
-                var markY = i * unitHeight + 30;
+                var markY = i * unitHeight + 40;
                 if (isCation) {
-                    alignmentMarkers += '<circle cx="' + (width - 15) + '" cy="' + markY + '" r="4" fill="#00a8ff" opacity="0.8" />' +
-                                        '<text x="' + (width - 15) + '" y="' + (markY + 3) + '" fill="#ffffff" font-size="10" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="bold">+</text>';
+                    alignmentMarkers += '<circle cx="' + (width - 20) + '" cy="' + markY + '" r="5" fill="#00a8ff" opacity="0.8" />' +
+                                        '<text x="' + (width - 20) + '" y="' + (markY + 4) + '" fill="#ffffff" font-size="12" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="bold">+</text>';
                 } else {
-                    alignmentMarkers += '<circle cx="15" cy="' + markY + '" r="4" fill="#ffaa00" opacity="0.8" />' +
-                                        '<text x="15" y="' + (markY + 3) + '" fill="#ffffff" font-size="10" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="bold">-</text>';
+                    alignmentMarkers += '<circle cx="20" cy="' + markY + '" r="5" fill="#ffaa00" opacity="0.8" />' +
+                                        '<text x="20" y="' + (markY + 4) + '" fill="#ffffff" font-size="12" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="bold">-</text>';
                 }
             }
 
@@ -1494,9 +1519,9 @@
                    '<path d="' + path + '" fill="url(#grad-' + ion.id + '-' + indexInVessel + ')" stroke="' + color.border + '" stroke-width="2" filter="url(#glow-' + ion.id + '-' + indexInVessel + ')" />' +
                    alignmentMarkers +
                    '<g transform="translate(' + (width/2) + ', ' + textY + ')">' +
-                   '<text text-anchor="middle" dominant-baseline="middle" fill="' + color.text + '" font-family="Orbitron, sans-serif" font-weight="900" font-size="18">' + formatChemicalFormulaSVG(ion.sym) + '</text>' +
-                   '<text x="16" y="-12" fill="' + color.text + '" font-family="Orbitron, sans-serif" font-size="11" font-weight="bold">' + (charge === 1 ? '' : charge) + (isCation ? '+' : '-') + '</text>' +
-                   '<text x="0" y="18" fill="' + color.textSecondary + '" font-family="Noto Sans TC, sans-serif" font-size="9" text-anchor="middle" font-weight="bold">' + (currentLang === 'zh' ? ion.nameZh : ion.name) + '</text>' +
+                   '<text text-anchor="middle" dominant-baseline="middle" fill="' + color.text + '" font-family="Orbitron, sans-serif" font-weight="900" font-size="24">' + formatChemicalFormulaSVG(ion.sym) + '</text>' +
+                   '<text x="22" y="-16" fill="' + color.text + '" font-family="Orbitron, sans-serif" font-size="14" font-weight="bold">' + (charge === 1 ? '' : charge) + (isCation ? '+' : '-') + '</text>' +
+                   '<text x="0" y="24" fill="' + color.textSecondary + '" font-family="' + (currentLang === 'zh' ? 'Noto Sans TC, sans-serif' : 'Calibri, sans-serif') + '" font-size="12" text-anchor="middle" font-weight="bold">' + (currentLang === 'zh' ? ion.nameZh : ion.name) + '</text>' +
                    '</g>' +
                    '</svg>' +
                    '</div>';
@@ -1508,17 +1533,31 @@
             catList.innerHTML = '';
             anList.innerHTML = '';
 
+            var activeCationId = vesselCations.length > 0 ? vesselCations[0].id : null;
+            var activeAnionId = vesselAnions.length > 0 ? vesselAnions[0].id : null;
+
             dbCations.forEach(function(c) {
                 var checkbox = document.getElementById('cb-cat-' + c.id);
                 if (checkbox && !checkbox.checked) return;
 
                 var card = document.createElement('div');
                 card.className = 'ion-card cation-hover';
+                
+                var isDisabled = activeCationId !== null && activeCationId !== c.id;
+                if (isDisabled) {
+                    card.style.opacity = '0.35';
+                    card.style.cursor = 'not-allowed';
+                    card.style.pointerEvents = 'none';
+                }
+
                 var displayName = currentLang === 'zh' ? c.nameZh : c.name;
                 var fontSize = displayName.length > 15 ? '0.78em' : (displayName.length > 10 ? '0.85em' : '0.9em');
                 card.innerHTML = '<div style="flex:1; min-width:0;"><div style="font-weight:bold; font-size:' + fontSize + '; line-height:1.2; word-wrap:break-word; word-break:break-word;">' + displayName + '</div></div>' +
                                  '<div class="ion-sym-badge" style="color:var(--accent-blue); flex-shrink:0;">' + formatChemicalFormulaHTML(c.sym) + '<sup>' + (c.charge > 1 ? c.charge : '') + '+</sup></div>';
-                card.onclick = function() { addIon(c, true); };
+                
+                if (!isDisabled) {
+                    card.onclick = function() { addIon(c, true); };
+                }
                 catList.appendChild(card);
             });
 
@@ -1528,11 +1567,22 @@
 
                 var card = document.createElement('div');
                 card.className = 'ion-card anion-hover';
+
+                var isDisabled = activeAnionId !== null && activeAnionId !== a.id;
+                if (isDisabled) {
+                    card.style.opacity = '0.35';
+                    card.style.cursor = 'not-allowed';
+                    card.style.pointerEvents = 'none';
+                }
+
                 var displayName = currentLang === 'zh' ? a.nameZh : a.name;
                 var fontSize = displayName.length > 15 ? '0.78em' : (displayName.length > 10 ? '0.85em' : '0.9em');
                 card.innerHTML = '<div style="flex:1; min-width:0;"><div style="font-weight:bold; font-size:' + fontSize + '; line-height:1.2; word-wrap:break-word; word-break:break-word;">' + displayName + '</div></div>' +
                                  '<div class="ion-sym-badge" style="color:var(--accent-gold); flex-shrink:0;">' + formatChemicalFormulaHTML(a.sym) + '<sup>' + (a.charge > 1 ? a.charge : '') + '-</sup></div>';
-                card.onclick = function() { addIon(a, false); };
+                
+                if (!isDisabled) {
+                    card.onclick = function() { addIon(a, false); };
+                }
                 anList.appendChild(card);
             });
         }
@@ -1540,8 +1590,14 @@
         function addIon(ion, isCation) {
             playSound('add');
             if (isCation) {
+                if (vesselCations.length > 0 && vesselCations[0].id !== ion.id) {
+                    return;
+                }
                 vesselCations.push(ion);
             } else {
+                if (vesselAnions.length > 0 && vesselAnions[0].id !== ion.id) {
+                    return;
+                }
                 vesselAnions.push(ion);
             }
             updateVesselUI();
@@ -1602,6 +1658,7 @@
             }
 
             updateEquationLaTeX();
+            renderLabPools();
         }
 
         function safeRenderLaTeX(elementId, texString, fallbackHtml) {
@@ -1669,15 +1726,41 @@
         }
 
         function generateCompoundLaTeX(cat, an, catCount, anCount) {
-            var catPart = cat.poly && catCount > 1 ? '(' + formatChemicalFormulaLaTeX(cat.sym) + ')_{' + catCount + '}' : formatChemicalFormulaLaTeX(cat.sym) + (catCount > 1 ? '_{' + catCount + '}' : '');
-            var anPart = an.poly && anCount > 1 ? '(' + formatChemicalFormulaLaTeX(an.sym) + ')_{' + anCount + '}' : formatChemicalFormulaLaTeX(an.sym) + (anCount > 1 ? '_{' + anCount + '}' : '');
-            return catPart + anPart;
+            var gcd = getGCD(catCount, anCount);
+            var simCat = catCount / gcd;
+            var simAn = anCount / gcd;
+            var coef = gcd > 1 ? gcd + ' ' : '';
+            
+            // Special case for Hydrogen (H+) and Hydroxide (OH-) forming Water (H2O)
+            if (cat.sym === "H" && an.sym === "OH") {
+                var hCount = simCat + simAn; // 1 + 1 = 2
+                var oCount = simAn; // 1
+                var waterPart = "H_{" + (hCount > 1 ? hCount : '') + "}O" + (oCount > 1 ? "_{" + oCount + "}" : '');
+                return coef + waterPart;
+            }
+            
+            var catPart = cat.poly && simCat > 1 ? '(' + formatChemicalFormulaLaTeX(cat.sym) + ')_{' + simCat + '}' : formatChemicalFormulaLaTeX(cat.sym) + (simCat > 1 ? '_{' + simCat + '}' : '');
+            var anPart = an.poly && simAn > 1 ? '(' + formatChemicalFormulaLaTeX(an.sym) + ')_{' + simAn + '}' : formatChemicalFormulaLaTeX(an.sym) + (simAn > 1 ? '_{' + simAn + '}' : '');
+            return coef + catPart + anPart;
         }
 
         function generateCompoundHTML(cat, an, catCount, anCount) {
-            var catPart = cat.poly && catCount > 1 ? '(' + formatChemicalFormulaHTML(cat.sym) + ')<sub>' + catCount + '</sub>' : formatChemicalFormulaHTML(cat.sym) + (catCount > 1 ? '<sub>' + catCount + '</sub>' : '');
-            var anPart = an.poly && anCount > 1 ? '(' + formatChemicalFormulaHTML(an.sym) + ')<sub>' + anCount + '</sub>' : formatChemicalFormulaHTML(an.sym) + (anCount > 1 ? '<sub>' + anCount + '</sub>' : '');
-            return catPart + anPart;
+            var gcd = getGCD(catCount, anCount);
+            var simCat = catCount / gcd;
+            var simAn = anCount / gcd;
+            var coef = gcd > 1 ? gcd + ' ' : '';
+            
+            // Special case for Hydrogen (H+) and Hydroxide (OH-) forming Water (H2O)
+            if (cat.sym === "H" && an.sym === "OH") {
+                var hCount = simCat + simAn; // 1 + 1 = 2
+                var oCount = simAn; // 1
+                var waterPart = "H" + (hCount > 1 ? "<sub>" + hCount + "</sub>" : '') + "O" + (oCount > 1 ? "<sub>" + oCount + "</sub>" : '');
+                return coef + waterPart;
+            }
+            
+            var catPart = cat.poly && simCat > 1 ? '(' + formatChemicalFormulaHTML(cat.sym) + ')<sub>' + simCat + '</sub>' : formatChemicalFormulaHTML(cat.sym) + (simCat > 1 ? '<sub>' + simCat + '</sub>' : '');
+            var anPart = an.poly && simAn > 1 ? '(' + formatChemicalFormulaHTML(an.sym) + ')<sub>' + simAn + '</sub>' : formatChemicalFormulaHTML(an.sym) + (simAn > 1 ? '<sub>' + simAn + '</sub>' : '');
+            return coef + catPart + anPart;
         }
 
         function checkSynthesis() {
@@ -1702,6 +1785,62 @@
                     '電荷不平衡！正電荷為 +' + totalPos + '，負電荷為 -' + totalNeg + '。請添加或移除離子使它們達到平衡。' : 
                     'Charge unbalanced! Positive charge is +' + totalPos + ', negative charge is -' + totalNeg + '. Please add or remove ions to balance them.';
                 alert(msg);
+            }
+        }
+
+        function renderQuestPools() {
+            var catList = document.getElementById('quest-cation-list');
+            if (catList) {
+                catList.innerHTML = '';
+                var activeCationId = questVesselCations.length > 0 ? questVesselCations[0].id : null;
+                currentQuestCations.forEach(function(c) {
+                    var cardC = document.createElement('div');
+                    cardC.className = 'ion-card cation-hover';
+                    cardC.style.justifyContent = 'center';
+                    cardC.style.minHeight = '50px';
+
+                    var isDisabled = activeCationId !== null && activeCationId !== c.id;
+                    if (isDisabled) {
+                        cardC.style.opacity = '0.35';
+                        cardC.style.cursor = 'not-allowed';
+                        cardC.style.pointerEvents = 'none';
+                    }
+
+                    cardC.innerHTML = '<div class="ion-sym-badge" style="color:var(--accent-blue); font-size: 1.25em; font-family:\'Orbitron\', sans-serif; font-weight: bold;">' + 
+                                      formatChemicalFormulaHTML(c.sym) + '<sup>' + (c.charge > 1 ? c.charge : '') + '+</sup>' +
+                                      '</div>';
+                    if (!isDisabled) {
+                        cardC.onclick = function() { addQuestIon(c, true); };
+                    }
+                    catList.appendChild(cardC);
+                });
+            }
+
+            var anList = document.getElementById('quest-anion-list');
+            if (anList) {
+                anList.innerHTML = '';
+                var activeAnionId = questVesselAnions.length > 0 ? questVesselAnions[0].id : null;
+                currentQuestAnions.forEach(function(a) {
+                    var cardA = document.createElement('div');
+                    cardA.className = 'ion-card anion-hover';
+                    cardA.style.justifyContent = 'center';
+                    cardA.style.minHeight = '50px';
+
+                    var isDisabled = activeAnionId !== null && activeAnionId !== a.id;
+                    if (isDisabled) {
+                        cardA.style.opacity = '0.35';
+                        cardA.style.cursor = 'not-allowed';
+                        cardA.style.pointerEvents = 'none';
+                    }
+
+                    cardA.innerHTML = '<div class="ion-sym-badge" style="color:var(--accent-gold); font-size: 1.25em; font-family:\'Orbitron\', sans-serif; font-weight: bold;">' + 
+                                      formatChemicalFormulaHTML(a.sym) + '<sup>' + (a.charge > 1 ? a.charge : '') + '-</sup>' +
+                                      '</div>';
+                    if (!isDisabled) {
+                        cardA.onclick = function() { addQuestIon(a, false); };
+                    }
+                    anList.appendChild(cardA);
+                });
             }
         }
 
@@ -1737,7 +1876,7 @@
                 distractorCations.push(otherCations.splice(randIdx, 1)[0]);
             }
             // Shuffle the correct cation and distractors
-            var questCations = [cat].concat(distractorCations).sort(function() { return 0.5 - Math.random(); });
+            currentQuestCations = [cat].concat(distractorCations).sort(function() { return 0.5 - Math.random(); });
 
             // Generate 3 distractor anions that are different from the correct one
             var otherAnions = dbAnions.filter(function(a) { return a.id !== an.id; });
@@ -1747,39 +1886,7 @@
                 distractorAnions.push(otherAnions.splice(randIdx, 1)[0]);
             }
             // Shuffle the correct anion and distractors
-            var questAnions = [an].concat(distractorAnions).sort(function() { return 0.5 - Math.random(); });
-
-            // Render Shuffled Cations (Formulas Only for Gamified Challenge!)
-            var catList = document.getElementById('quest-cation-list');
-            catList.innerHTML = '';
-            questCations.forEach(function(c) {
-                var cardC = document.createElement('div');
-                cardC.className = 'ion-card cation-hover';
-                cardC.style.justifyContent = 'center'; // Center the formula badge
-                cardC.style.minHeight = '50px';
-                
-                cardC.innerHTML = '<div class="ion-sym-badge" style="color:var(--accent-blue); font-size: 1.25em; font-family:\'Orbitron\', sans-serif; font-weight: bold;">' + 
-                                  formatChemicalFormulaHTML(c.sym) + '<sup>' + (c.charge > 1 ? c.charge : '') + '+</sup>' +
-                                  '</div>';
-                cardC.onclick = function() { addQuestIon(c, true); };
-                catList.appendChild(cardC);
-            });
-
-            // Render Shuffled Anions (Formulas Only for Gamified Challenge!)
-            var anList = document.getElementById('quest-anion-list');
-            anList.innerHTML = '';
-            questAnions.forEach(function(a) {
-                var cardA = document.createElement('div');
-                cardA.className = 'ion-card anion-hover';
-                cardA.style.justifyContent = 'center'; // Center the formula badge
-                cardA.style.minHeight = '50px';
-                
-                cardA.innerHTML = '<div class="ion-sym-badge" style="color:var(--accent-gold); font-size: 1.25em; font-family:\'Orbitron\', sans-serif; font-weight: bold;">' + 
-                                  formatChemicalFormulaHTML(a.sym) + '<sup>' + (a.charge > 1 ? a.charge : '') + '-</sup>' +
-                                  '</div>';
-                cardA.onclick = function() { addQuestIon(a, false); };
-                anList.appendChild(cardA);
-            });
+            currentQuestAnions = [an].concat(distractorAnions).sort(function() { return 0.5 - Math.random(); });
 
             updateQuestVesselUI();
         }
@@ -1787,8 +1894,14 @@
         function addQuestIon(ion, isCation) {
             playSound('add');
             if (isCation) {
+                if (questVesselCations.length > 0 && questVesselCations[0].id !== ion.id) {
+                    return;
+                }
                 questVesselCations.push(ion);
             } else {
+                if (questVesselAnions.length > 0 && questVesselAnions[0].id !== ion.id) {
+                    return;
+                }
                 questVesselAnions.push(ion);
             }
             updateQuestVesselUI();
@@ -1855,6 +1968,7 @@
             }
 
             drawLatticeProjection(totalPos, totalNeg);
+            renderQuestPools();
         }
 
         function drawLatticeProjection(posCharge, negCharge) {
@@ -1975,7 +2089,8 @@
                 }
             } else {
                 playSound('error');
-                if (document.getElementById('setting-hint-auto').checked) {
+                var hintEnabled = !document.getElementById('setting-hint-auto') || document.getElementById('setting-hint-auto').checked;
+                if (hintEnabled) {
                     showQuestHint();
                 } else {
                     var msg = currentLang === 'zh' ?
@@ -2076,11 +2191,16 @@
             switchModalTab('electron');
             renderElectronDiagram(cat, an, catCount, anCount);
             
-            var key = cat.sym + (catCount > 1 ? catCount : '') + an.sym + (anCount > 1 ? anCount : '');
+            var gcd = getGCD(catCount, anCount);
+            var simCat = catCount / gcd;
+            var simAn = anCount / gcd;
+            var key = cat.sym + (simCat > 1 ? simCat : '') + an.sym + (simAn > 1 ? simAn : '');
             var crystalInfo = dbCrystals[key] || dbCrystals[cat.sym + an.sym] || dbCrystals["default"];
 
             var compName = '';
-            if (crystalInfo !== dbCrystals["default"]) {
+            if (cat.sym === "H" && an.sym === "OH") {
+                compName = currentLang === 'zh' ? '水 (Water)' : 'Water';
+            } else if (crystalInfo !== dbCrystals["default"]) {
                 compName = currentLang === 'zh' ? crystalInfo.nameZh : crystalInfo.nameEn;
             } else {
                 var cnName = getChineseCompoundName(cat, an);
@@ -2204,7 +2324,7 @@
         }
 
         function triggerCelebration() {
-            if (!document.getElementById('setting-particles').checked) return;
+            if (document.getElementById('setting-particles') && !document.getElementById('setting-particles').checked) return;
             resizeCanvas();
             var centerX = canvas.width / 2;
             var centerY = canvas.height / 2;
@@ -2617,9 +2737,9 @@
         }
 
         function drawSatelliteLonePairs(g, satX, satY, rOuter, bx, by, numUnshared, color, numCrosses) {
-            var outwardAng = Math.atan2(-by, -bx);
+            var outwardAng = Math.atan2(by, bx);
             var pairs = Math.ceil(numUnshared / 2);
-            var spacing = 45 * Math.PI / 180;
+            var spacing = 90 * Math.PI / 180;
             var crossesDrawn = 0;
             numCrosses = numCrosses || 0;
             
@@ -2627,10 +2747,15 @@
                 var angleOffset = (p - (pairs - 1) / 2) * spacing;
                 var pairAng = outwardAng + angleOffset;
                 
-                var ex1 = satX + rOuter * Math.cos(pairAng - 0.08);
-                var ey1 = satY + rOuter * Math.sin(pairAng - 0.08);
-                var ex2 = satX + rOuter * Math.cos(pairAng + 0.08);
-                var ey2 = satY + rOuter * Math.sin(pairAng + 0.08);
+                var ux = Math.cos(pairAng);
+                var uy = Math.sin(pairAng);
+                var px = -uy;
+                var py = ux;
+                
+                var ex1 = satX + rOuter * Math.cos(pairAng) - 5 * px;
+                var ey1 = satY + rOuter * Math.sin(pairAng) - 5 * py;
+                var ex2 = satX + rOuter * Math.cos(pairAng) + 5 * px;
+                var ey2 = satY + rOuter * Math.sin(pairAng) + 5 * py;
                 
                 // ex1
                 if (crossesDrawn < numCrosses) {
@@ -2712,7 +2837,7 @@
             text.setAttribute("fill", textColor);
             text.setAttribute("font-size", "20px");
             text.setAttribute("font-weight", "bold");
-            text.setAttribute("font-family", "'Orbitron', sans-serif");
+            text.setAttribute("font-family", "'Calibri', sans-serif");
             text.style.textShadow = textShadow;
             text.textContent = chargeText;
             svg.appendChild(text);
@@ -2721,22 +2846,13 @@
         function drawMonoatomicIon(g, cx, cy, ion, config, isCation) {
             var colorTheme = isCation ? "#00a8ff" : "#ffaa00";
             
-            var nucleus = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            nucleus.setAttribute("cx", cx);
-            nucleus.setAttribute("cy", cy);
-            nucleus.setAttribute("r", "28");
-            nucleus.setAttribute("fill", isCation ? "rgba(0,168,255,0.08)" : "rgba(255,170,0,0.08)");
-            nucleus.setAttribute("stroke", colorTheme);
-            nucleus.setAttribute("stroke-width", "2");
-            g.appendChild(nucleus);
-            
             var label = document.createElementNS("http://www.w3.org/2000/svg", "text");
             label.setAttribute("x", cx);
             label.setAttribute("y", cy + 8);
-            label.setAttribute("fill", "#ffffff");
+            label.setAttribute("fill", "var(--text-main)");
             label.setAttribute("font-size", "20px");
             label.setAttribute("font-weight", "bold");
-            label.setAttribute("font-family", "'Orbitron', sans-serif");
+            label.setAttribute("font-family", "'Calibri', sans-serif");
             label.setAttribute("text-anchor", "middle");
             label.textContent = ion.sym;
             g.appendChild(label);
@@ -2746,13 +2862,13 @@
             var shells = config.shells;
             var numElec = (shells.length > 0) ? shells[shells.length - 1] : 0;
             
-            if (numElec > 0) {
+            if (numElec > 0 && !isCation) {
                 var shellCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
                 shellCircle.setAttribute("cx", cx);
                 shellCircle.setAttribute("cy", cy);
                 shellCircle.setAttribute("r", r);
                 shellCircle.setAttribute("fill", "none");
-                shellCircle.setAttribute("stroke", "rgba(255, 255, 255, 0.12)");
+                shellCircle.setAttribute("stroke", "var(--svg-shell-color)");
                 shellCircle.setAttribute("stroke-width", "1.2");
                 g.appendChild(shellCircle);
                 
@@ -2763,226 +2879,55 @@
                     var ex = cx + r * Math.cos(angleRad);
                     var ey = cy + r * Math.sin(angleRad);
                     
-                    if (isCation) {
-                        drawCross(g, ex, ey, "#00a8ff", "2");
+                    var originalValenceCount = config.valence;
+                    if (e >= originalValenceCount) {
+                        var boxSize = 16;
+                        var box = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        box.setAttribute("x", ex - boxSize/2);
+                        box.setAttribute("y", ey - boxSize/2);
+                        box.setAttribute("width", boxSize);
+                        box.setAttribute("height", boxSize);
+                        box.setAttribute("rx", "2.5");
+                        box.setAttribute("ry", "2.5");
+                        box.setAttribute("fill", "rgba(0, 168, 255, 0.22)");
+                        box.setAttribute("stroke", "rgba(0, 168, 255, 0.4)");
+                        box.setAttribute("stroke-width", "0.8");
+                        g.appendChild(box);
+                        
+                        drawCross(g, ex, ey, "#00a8ff", "2.2");
                     } else {
-                        var originalValenceCount = config.valence;
-                        if (e >= originalValenceCount) {
-                            var boxSize = 16;
-                            var box = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                            box.setAttribute("x", ex - boxSize/2);
-                            box.setAttribute("y", ey - boxSize/2);
-                            box.setAttribute("width", boxSize);
-                            box.setAttribute("height", boxSize);
-                            box.setAttribute("rx", "2.5");
-                            box.setAttribute("ry", "2.5");
-                            box.setAttribute("fill", "rgba(0, 168, 255, 0.22)");
-                            box.setAttribute("stroke", "rgba(0, 168, 255, 0.4)");
-                            box.setAttribute("stroke-width", "0.8");
-                            g.appendChild(box);
-                            
-                            drawCross(g, ex, ey, "#00a8ff", "2.2");
-                        } else {
-                            drawDot(g, ex, ey, "#ffaa00");
-                        }
+                        drawDot(g, ex, ey, "#ffaa00");
                     }
                 }
             }
         }
 
         function drawPolyatomicIon(g, cx, cy, ion, config, isCation) {
-            var colorTheme = isCation ? "#00a8ff" : "#ffaa00";
-            var electronColor = isCation ? "#00a8ff" : "#ffaa00";
-            
-            var nucleus = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            nucleus.setAttribute("cx", cx);
-            nucleus.setAttribute("cy", cy);
-            nucleus.setAttribute("r", "25"); // Enlarged polyatomic core nucleus from 18 to 25
-            nucleus.setAttribute("fill", isCation ? "rgba(0,168,255,0.06)" : "rgba(255,170,0,0.06)");
-            nucleus.setAttribute("stroke", colorTheme);
-            nucleus.setAttribute("stroke-width", "1.5");
-            g.appendChild(nucleus);
-            
             var label = document.createElementNS("http://www.w3.org/2000/svg", "text");
             label.setAttribute("x", cx);
-            label.setAttribute("y", cy + 7);
-            label.setAttribute("fill", "#ffffff");
-            label.setAttribute("font-size", "18px"); // Enlarged label text
+            label.setAttribute("y", cy + 8);
+            label.setAttribute("fill", "var(--text-main)");
+            label.setAttribute("font-size", "22px"); // Nice clear font size for the formula label
             label.setAttribute("font-weight", "bold");
-            label.setAttribute("font-family", "'Orbitron', sans-serif");
+            label.setAttribute("font-family", "'Calibri', sans-serif");
             label.setAttribute("text-anchor", "middle");
-            label.textContent = config.center;
+            label.innerHTML = formatChemicalFormulaSVG(ion.sym);
             g.appendChild(label);
-            
-            // To reduce visual complexity, we DO NOT draw inner electron shells of polyatomic ions!
-            // This leaves only the valence (outermost) shell clearly visible.
-            var innerShells = config.innerShells || [2];
-            // Scaled up outer orbital spacing: multiplied factor by 1.35 to fill bracket dead space!
-            var rCentralOuter = ((innerShells.length * 16) + 20) * 1.35;
-            var centralOuterCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            centralOuterCircle.setAttribute("cx", cx);
-            centralOuterCircle.setAttribute("cy", cy);
-            centralOuterCircle.setAttribute("r", rCentralOuter);
-            centralOuterCircle.setAttribute("fill", "none");
-            centralOuterCircle.setAttribute("stroke", "rgba(255, 255, 255, 0.12)");
-            centralOuterCircle.setAttribute("stroke-width", "1.2");
-            g.appendChild(centralOuterCircle);
-            
-            var satPositions = [];
-            
-            config.satellites.forEach(function(sat, idx) {
-                var satX, satY;
-                var baseDistance = sat.distance || 52;
-                var scaledDistance = baseDistance * 1.35; // Scaled up distance by 1.35
-                
-                if (sat.relativeToIdx !== undefined) {
-                    var parentPos = satPositions[sat.relativeToIdx];
-                    var satAngRad = (sat.angle * Math.PI) / 180;
-                    satX = parentPos.x + 48 * Math.cos(satAngRad); // Scaled nested bond length from 36 to 48
-                    satY = parentPos.y + 48 * Math.sin(satAngRad);
-                } else {
-                    var satAngRad = (sat.angle * Math.PI) / 180;
-                    satX = cx + scaledDistance * Math.cos(satAngRad);
-                    satY = cy + scaledDistance * Math.sin(satAngRad);
-                }
-                
-                satPositions.push({ x: satX, y: satY, sym: sat.sym });
-                
-                var rSatNucleus = sat.sym === "H" ? 15 : 19; // Enlarged satellite core nuclei (11->15, 14->19)
-                var satNucleus = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                satNucleus.setAttribute("cx", satX);
-                satNucleus.setAttribute("cy", satY);
-                satNucleus.setAttribute("r", rSatNucleus);
-                satNucleus.setAttribute("fill", isCation ? "rgba(0,168,255,0.06)" : "rgba(255,170,0,0.06)");
-                satNucleus.setAttribute("stroke", colorTheme);
-                satNucleus.setAttribute("stroke-width", "1.2");
-                g.appendChild(satNucleus);
-                
-                var satLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                satLabel.setAttribute("x", satX);
-                satLabel.setAttribute("y", satY + 5);
-                satLabel.setAttribute("fill", "#ffffff");
-                satLabel.setAttribute("font-size", sat.sym === "H" ? "13px" : "14px"); // Enlarged label text
-                satLabel.setAttribute("font-weight", "bold");
-                satLabel.setAttribute("font-family", "'Orbitron', sans-serif");
-                satLabel.setAttribute("text-anchor", "middle");
-                satLabel.textContent = sat.sym;
-                g.appendChild(satLabel);
-                
-                var rSatOuter = sat.sym === "H" ? 24 : 36; // Enlarged satellite outer shells (18->24, 28->36)
-                var satOuterCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                satOuterCircle.setAttribute("cx", satX);
-                satOuterCircle.setAttribute("cy", satY);
-                satOuterCircle.setAttribute("r", rSatOuter);
-                satOuterCircle.setAttribute("fill", "none");
-                satOuterCircle.setAttribute("stroke", "rgba(255, 255, 255, 0.1)");
-                satOuterCircle.setAttribute("stroke-width", "1");
-                g.appendChild(satOuterCircle);
-                
-                // Outer-shell ONLY: No inner shell circles or inner electrons on satellites!
-                
-                var bondOriginX = cx, bondOriginY = cy;
-                if (sat.relativeToIdx !== undefined) {
-                    var parentPos = satPositions[sat.relativeToIdx];
-                    bondOriginX = parentPos.x;
-                    bondOriginY = parentPos.y;
-                }
-                
-                var dx = satX - bondOriginX;
-                var dy = satY - bondOriginY;
-                var dist = Math.sqrt(dx * dx + dy * dy);
-                var ux = dx / dist;
-                var uy = dy / dist;
-                var px = -uy;
-                var py = ux;
-                
-                var rParentOuter = 36;
-                
-                var overlapMidX = bondOriginX + ux * (dist * 0.58);
-                var overlapMidY = bondOriginY + uy * (dist * 0.58);
-                if (sat.sym === "H") {
-                    overlapMidX = bondOriginX + ux * (dist - 14); // Adjusted overlap midpoint for enlarged Hydrogen shell
-                    overlapMidY = bondOriginY + uy * (dist - 14);
-                }
-                
-                var bondPairs = sat.bondPairs || 1;
-                if (bondPairs === 1) {
-                    var dotX = overlapMidX - 5.5 * ux;
-                    var dotY = overlapMidY - 5.5 * uy;
-                    var crossX = overlapMidX + 5.5 * ux;
-                    var crossY = overlapMidY + 5.5 * uy;
-                    
-                    drawDot(g, dotX, dotY, "#ffaa00");
-                    drawCross(g, crossX, crossY, "#00a8ff", "1.5");
-                } else if (bondPairs === 2) {
-                    var offsets = [-4.5, 4.5];
-                    offsets.forEach(function(offset) {
-                        var bmidX = overlapMidX + offset * px;
-                        var bmidY = overlapMidY + offset * py;
-                        
-                        var dotX = bmidX - 5.5 * ux;
-                        var dotY = bmidY - 5.5 * uy;
-                        var crossX = bmidX + 5.5 * ux;
-                        var crossY = bmidY + 5.5 * uy;
-                        
-                        drawDot(g, dotX, dotY, "#ffaa00");
-                        drawCross(g, crossX, crossY, "#00a8ff", "1.5");
-                    });
-                } else if (bondPairs === 3) {
-                    var offsets = [-6, 0, 6];
-                    offsets.forEach(function(offset) {
-                        var bmidX = overlapMidX + offset * px;
-                        var bmidY = overlapMidY + offset * py;
-                        
-                        var dotX = bmidX - 5.5 * ux;
-                        var dotY = bmidY - 5.5 * uy;
-                        var crossX = bmidX + 5.5 * ux;
-                        var crossY = bmidY + 5.5 * uy;
-                        
-                        drawDot(g, dotX, dotY, "#ffaa00");
-                        drawCross(g, crossX, crossY, "#00a8ff", "1.5");
-                    });
-                }
-                
-                if (sat.sym === "O") {
-                    var numUnshared = (bondPairs === 1) ? 6 : 4;
-                    drawSatelliteLonePairs(g, satX, satY, rSatOuter, ux, uy, numUnshared, electronColor);
-                } else if (sat.sym === "N" && bondPairs === 3) {
-                    drawSatelliteLonePairs(g, satX, satY, rSatOuter, ux, uy, 2, electronColor);
-                }
-            });
-            
-            if (ion.id === "a2") {
-                // For hydroxide (OH-), the 6 unshared electrons are located on Oxygen (central core).
-                // They should be distributed on the side opposite to the O-H bond (to the left, i.e., bx = -1).
-                // Out of the 6 unshared, exactly 1 is the gained electron (cyan cross in blue box).
-                drawSatelliteLonePairs(g, cx, cy, rCentralOuter, -1, 0, 6, electronColor, ion.charge);
-            } else if (ion.id === "a10") {
-                drawSatelliteLonePairs(g, cx, cy, rCentralOuter, -1, 0, 2, electronColor, ion.charge);
-            }
         }
 
         function getIonMaxRadius(ion, isPoly, config) {
+            var isCation = ion.id.startsWith("c");
             if (!isPoly) {
                 // Monatomic ion
-                return (config && config.shells && config.shells.length > 0) ? config.shells.length * 25 + 10 : 35;
-            } else {
-                // Polyatomic ion - calculate based on satellites
-                var polyConfig = polyatomicIonsConfig[ion.id] || getFallbackPolyatomicConfig(ion);
-                var maxD = 0;
-                if (polyConfig && polyConfig.satellites) {
-                    polyConfig.satellites.forEach(function(sat) {
-                        var satR = sat.sym === "H" ? 18 : 28;
-                        var dist = sat.distance || 52;
-                        if (sat.relativeToIdx !== undefined) {
-                            dist += 36; // approximate nested distance
-                        }
-                        if (dist + satR > maxD) {
-                            maxD = dist + satR;
-                        }
-                    });
+                if (isCation) {
+                    return 35;
                 }
-                return maxD > 0 ? maxD + 4 : 80;
+                // Since drawMonoatomicIon scales up and hardcodes the anion's outer valence shell radius to 65,
+                // we return 65 so that the brackets perfectly enclose the shell and its valence electrons.
+                return 65;
+            } else {
+                // Polyatomic ion - now rendered as a single centered formula label (e.g. OH, NO3, SO4)
+                return 35;
             }
         }
 
@@ -2992,7 +2937,7 @@
             container.innerHTML = '';
             
             var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            svg.setAttribute("viewBox", "0 0 600 280");
+            svg.setAttribute("viewBox", "0 0 600 320");
             svg.setAttribute("width", "100%");
             svg.setAttribute("height", "100%");
             svg.style.overflow = "visible";
@@ -3010,14 +2955,14 @@
             var rightLimit = 275;
             var cationCenter = {
                 x: leftLimit + (rightLimit - leftLimit) / 2,
-                y: 140
+                y: 160
             };
 
             var anLeftLimit = 325 + (anCount > 1 ? 25 : 0);
             var anRightLimit = 585;
             var anionCenter = {
                 x: anLeftLimit + (anRightLimit - anLeftLimit) / 2,
-                y: 140
+                y: 160
             };
             
             var cationG = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -3035,24 +2980,25 @@
                 var coefText = document.createElementNS("http://www.w3.org/2000/svg", "text");
                 coefText.setAttribute("x", cationCenter.x - cationMaxR - 25);
                 coefText.setAttribute("y", cationCenter.y + 8);
-                coefText.setAttribute("fill", "#ffffff");
+                coefText.setAttribute("fill", "var(--text-main)");
                 coefText.setAttribute("font-size", "24px");
                 coefText.setAttribute("font-weight", "bold");
-                coefText.setAttribute("font-family", "'Orbitron', sans-serif");
+                coefText.setAttribute("font-family", "'Calibri', sans-serif");
                 coefText.setAttribute("text-anchor", "middle");
                 coefText.textContent = catCount;
                 svg.appendChild(coefText);
             }
             
-            drawBracket(svg, cationCenter.x, cationCenter.y, cationMaxR + 8, cationMaxR * 2 + 10, cat.charge + "+", true);
+            var catChargeText = cat.charge === 1 ? "+" : cat.charge + "+";
+            drawBracket(svg, cationCenter.x, cationCenter.y, cationMaxR + 8, cationMaxR * 2 + 10, catChargeText, true);
             
             var plusText = document.createElementNS("http://www.w3.org/2000/svg", "text");
             plusText.setAttribute("x", 300);
-            plusText.setAttribute("y", 148);
-            plusText.setAttribute("fill", "rgba(255,255,255,0.4)");
+            plusText.setAttribute("y", 168);
+            plusText.setAttribute("fill", "var(--svg-plus-color)");
             plusText.setAttribute("font-size", "28px");
             plusText.setAttribute("font-weight", "bold");
-            plusText.setAttribute("font-family", "'Montserrat', sans-serif");
+            plusText.setAttribute("font-family", "'Calibri', sans-serif");
             plusText.setAttribute("text-anchor", "middle");
             plusText.textContent = "+";
             svg.appendChild(plusText);
@@ -3072,16 +3018,17 @@
                 var coefText = document.createElementNS("http://www.w3.org/2000/svg", "text");
                 coefText.setAttribute("x", anionCenter.x - anionMaxR - 25);
                 coefText.setAttribute("y", anionCenter.y + 8);
-                coefText.setAttribute("fill", "#ffffff");
+                coefText.setAttribute("fill", "var(--text-main)");
                 coefText.setAttribute("font-size", "24px");
                 coefText.setAttribute("font-weight", "bold");
-                coefText.setAttribute("font-family", "'Orbitron', sans-serif");
+                coefText.setAttribute("font-family", "'Calibri', sans-serif");
                 coefText.setAttribute("text-anchor", "middle");
                 coefText.textContent = anCount;
                 svg.appendChild(coefText);
             }
             
-            drawBracket(svg, anionCenter.x, anionCenter.y, anionMaxR + 8, anionMaxR * 2 + 10, an.charge + "-", false);
+            var anChargeText = an.charge === 1 ? "-" : an.charge + "-";
+            drawBracket(svg, anionCenter.x, anionCenter.y, anionMaxR + 8, anionMaxR * 2 + 10, anChargeText, false);
             
             container.appendChild(svg);
         }
@@ -3097,7 +3044,7 @@
             if (urlLang === 'en' || urlLang === 'zh') {
                 setLanguage(urlLang);
             } else {
-                setLanguage('zh');
+                setLanguage('en');
             }
             window.addEventListener('message', function(event) {
                 var data = event.data;
