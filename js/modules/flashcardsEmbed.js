@@ -31,6 +31,10 @@ const DECKS = {
     en: "./public/flashcards/topic-8-chemical-reactions-and-energy/en/flashcards-study.html",
     zh: "./public/flashcards/topic-8-chemical-reactions-and-energy/zh-hk/flashcards-study.html",
   },
+  "topic-9-rates-of-reactions": {
+    en: "./public/flashcards/topic-9-rates-of-reactions/en/flashcards-study.html",
+    zh: "./public/flashcards/topic-9-rates-of-reactions/zh-hk/flashcards-study.html",
+  },
 };
 
 const TITLES = {
@@ -41,6 +45,7 @@ const TITLES = {
   "topic-6-microscopic-world-ii": "Topic 6: Microscopic World II Flashcards",
   "topic-7-redox-reactions-chemical-cells-and-electrolysis": "Topic 7: Redox Reactions, Chemical Cells and Electrolysis Flashcards",
   "topic-8-chemical-reactions-and-energy": "Topic 8: Chemical Reactions and Energy Flashcards",
+  "topic-9-rates-of-reactions": "Topic 9: Rates of Reactions Flashcards",
 };
 
 export function initFlashcardsEmbed() {
