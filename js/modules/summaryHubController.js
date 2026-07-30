@@ -4,7 +4,7 @@
 
 import { applyStaticTranslations } from "./langController.js";
 
-const SUMMARY_TOPICS = ["2", "3", "4", "5", "6", "7"];
+const SUMMARY_TOPICS = ["2", "3", "4", "5", "6", "7", "8"];
 
 const PANEL_ID_BY_TOPIC = {
   2: "summary-panel-topic-2",
@@ -13,6 +13,7 @@ const PANEL_ID_BY_TOPIC = {
   5: "summary-panel-topic-5",
   6: "summary-panel-topic-6",
   7: "summary-panel-topic-7",
+  8: "summary-panel-topic-8",
 };
 
 function getShell() {
