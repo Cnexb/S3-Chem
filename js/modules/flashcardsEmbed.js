@@ -27,6 +27,10 @@ const DECKS = {
     en: "./public/flashcards/topic-7-redox-reactions-chemical-cells-and-electrolysis/en/flashcards-study.html",
     zh: "./public/flashcards/topic-7-redox-reactions-chemical-cells-and-electrolysis/zh-hk/flashcards-study.html",
   },
+  "topic-8-chemical-reactions-and-energy": {
+    en: "./public/flashcards/topic-8-chemical-reactions-and-energy/en/flashcards-study.html",
+    zh: "./public/flashcards/topic-8-chemical-reactions-and-energy/zh-hk/flashcards-study.html",
+  },
 };
 
 const TITLES = {
@@ -36,6 +40,7 @@ const TITLES = {
   "topic-5-fossil-fuels-and-carbon-compounds": "Topic 5: Fossil Fuels and Carbon Compounds Flashcards",
   "topic-6-microscopic-world-ii": "Topic 6: Microscopic World II Flashcards",
   "topic-7-redox-reactions-chemical-cells-and-electrolysis": "Topic 7: Redox Reactions, Chemical Cells and Electrolysis Flashcards",
+  "topic-8-chemical-reactions-and-energy": "Topic 8: Chemical Reactions and Energy Flashcards",
 };
 
 export function initFlashcardsEmbed() {
