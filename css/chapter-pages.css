@@ -153,7 +153,8 @@
 #summary-panel-topic-5 .chapter-section-stack,
 #summary-panel-topic-6 .chapter-section-stack,
 #summary-panel-topic-7 .chapter-section-stack,
-#summary-panel-topic-8 .chapter-section-stack {
+#summary-panel-topic-8 .chapter-section-stack,
+#summary-panel-topic-9 .chapter-section-stack {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem 1rem;
@@ -166,7 +167,8 @@
 #summary-panel-topic-5 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
 #summary-panel-topic-6 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
 #summary-panel-topic-7 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
-#summary-panel-topic-8 .chapter-section:has(.summary-infographic-card + .summary-infographic-card) {
+#summary-panel-topic-8 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
+#summary-panel-topic-9 .chapter-section:has(.summary-infographic-card + .summary-infographic-card) {
   grid-column: 1 / -1;
 }
 
@@ -176,7 +178,8 @@
 #summary-panel-topic-5 .summary-subtopic-stack,
 #summary-panel-topic-6 .summary-subtopic-stack,
 #summary-panel-topic-7 .summary-subtopic-stack,
-#summary-panel-topic-8 .summary-subtopic-stack {
+#summary-panel-topic-8 .summary-subtopic-stack,
+#summary-panel-topic-9 .summary-subtopic-stack {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
@@ -188,7 +191,8 @@
 #summary-panel-topic-5 .summary-subtopic-stack:has(> :only-child),
 #summary-panel-topic-6 .summary-subtopic-stack:has(> :only-child),
 #summary-panel-topic-7 .summary-subtopic-stack:has(> :only-child),
-#summary-panel-topic-8 .summary-subtopic-stack:has(> :only-child) {
+#summary-panel-topic-8 .summary-subtopic-stack:has(> :only-child),
+#summary-panel-topic-9 .summary-subtopic-stack:has(> :only-child) {
   grid-template-columns: 1fr;
 }
 
@@ -199,7 +203,8 @@
   #summary-panel-topic-5 .chapter-section-stack,
   #summary-panel-topic-6 .chapter-section-stack,
   #summary-panel-topic-7 .chapter-section-stack,
-  #summary-panel-topic-8 .chapter-section-stack {
+  #summary-panel-topic-8 .chapter-section-stack,
+  #summary-panel-topic-9 .chapter-section-stack {
     grid-template-columns: 1fr;
   }
 
@@ -209,7 +214,8 @@
   #summary-panel-topic-5 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
   #summary-panel-topic-6 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
   #summary-panel-topic-7 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
-  #summary-panel-topic-8 .chapter-section:has(.summary-infographic-card + .summary-infographic-card) {
+  #summary-panel-topic-8 .chapter-section:has(.summary-infographic-card + .summary-infographic-card),
+  #summary-panel-topic-9 .chapter-section:has(.summary-infographic-card + .summary-infographic-card) {
     grid-column: auto;
   }
 }
@@ -232,7 +238,8 @@
 #summary-panel-topic-5 .summary-infographic-media,
 #summary-panel-topic-6 .summary-infographic-media,
 #summary-panel-topic-7 .summary-infographic-media,
-#summary-panel-topic-8 .summary-infographic-media {
+#summary-panel-topic-8 .summary-infographic-media,
+#summary-panel-topic-9 .summary-infographic-media {
   max-height: none !important;
   overflow: visible !important;
 }
@@ -240,7 +247,8 @@
 #summary-panel-topic-5 .summary-infographic-img,
 #summary-panel-topic-6 .summary-infographic-img,
 #summary-panel-topic-7 .summary-infographic-img,
-#summary-panel-topic-8 .summary-infographic-img {
+#summary-panel-topic-8 .summary-infographic-img,
+#summary-panel-topic-9 .summary-infographic-img {
   max-height: none !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -835,7 +843,8 @@ button.summary-topic-card {
 #summary-panel-topic-5.summary-panel,
 #summary-panel-topic-6.summary-panel,
 #summary-panel-topic-7.summary-panel,
-#summary-panel-topic-8.summary-panel {
+#summary-panel-topic-8.summary-panel,
+#summary-panel-topic-9.summary-panel {
   display: none !important;
   flex-direction: column;
   position: absolute;
@@ -855,7 +864,8 @@ button.summary-topic-card {
 .summary-shell--detail #summary-panel-topic-5.summary-panel:not([hidden]),
 .summary-shell--detail #summary-panel-topic-6.summary-panel:not([hidden]),
 .summary-shell--detail #summary-panel-topic-7.summary-panel:not([hidden]),
-.summary-shell--detail #summary-panel-topic-8.summary-panel:not([hidden]) {
+.summary-shell--detail #summary-panel-topic-8.summary-panel:not([hidden]),
+.summary-shell--detail #summary-panel-topic-9.summary-panel:not([hidden]) {
   display: flex !important;
 }
 
