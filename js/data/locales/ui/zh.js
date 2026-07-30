@@ -314,10 +314,10 @@ export const zhUI = {
     "topic9S4Alt": "气体在室温室压下的摩尔体积摘要",
     "topic9S5Title": "有效碰撞",
     "topic9S5Alt": "有效碰撞摘要",
-    "topic9S6Title": "影响反应速率的因素 - 表面积和温度",
-    "topic9S6Alt": "影响反应速率的因素 - 表面积和温度摘要",
-    "topic9S7Title": "影响反应速率的因素 - 催化剂和浓度",
-    "topic9S7Alt": "影响反应速率的因素 - 催化剂和浓度摘要"
+    "topic9S6Title": "影响反应速率的因素 - 催化剂和浓度",
+    "topic9S6Alt": "影响反应速率的因素 - 催化剂和浓度摘要",
+    "topic9S7Title": "影响反应速率的因素 - 表面积和温度",
+    "topic9S7Alt": "影响反应速率的因素 - 表面积和温度摘要"
   },
   "search": {
     "placeholder": "搜索...",

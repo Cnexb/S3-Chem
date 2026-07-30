@@ -314,10 +314,10 @@ export const enUI = {
     "topic9S4Alt": "Molar Volume of Gases at RTP summary",
     "topic9S5Title": "Effective Collisions",
     "topic9S5Alt": "Effective Collisions summary",
-    "topic9S6Title": "Factors Affecting Rate - Surface Area & Temperature",
-    "topic9S6Alt": "Factors Affecting Rate - Surface Area & Temperature summary",
-    "topic9S7Title": "Factors Affecting Rate - Catalyst & Concentration",
-    "topic9S7Alt": "Factors Affecting Rate - Catalyst & Concentration summary"
+    "topic9S6Title": "Factors Affecting Rate - Catalyst & Concentration",
+    "topic9S6Alt": "Factors Affecting Rate - Catalyst & Concentration summary",
+    "topic9S7Title": "Factors Affecting Rate - Surface Area & Temperature",
+    "topic9S7Alt": "Factors Affecting Rate - Surface Area & Temperature summary"
   },
   "search": {
     "placeholder": "Search...",

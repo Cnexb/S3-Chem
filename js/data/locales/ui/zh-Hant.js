@@ -314,10 +314,10 @@ export const zhHantUI = {
     "topic9S4Alt": "氣體在室溫室壓下的摩爾體積摘要",
     "topic9S5Title": "有效碰撞",
     "topic9S5Alt": "有效碰撞摘要",
-    "topic9S6Title": "影響反應速率的因素 - 表面積和溫度",
-    "topic9S6Alt": "影響反應速率的因素 - 表面積和溫度摘要",
-    "topic9S7Title": "影響反應速率的因素 - 催化劑和濃度",
-    "topic9S7Alt": "影響反應速率的因素 - 催化劑和濃度摘要"
+    "topic9S6Title": "影響反應速率的因素 - 催化劑和濃度",
+    "topic9S6Alt": "影響反應速率的因素 - 催化劑和濃度摘要",
+    "topic9S7Title": "影響反應速率的因素 - 表面積和溫度",
+    "topic9S7Alt": "影響反應速率的因素 - 表面積和溫度摘要"
   },
   "search": {
     "placeholder": "搜尋...",
