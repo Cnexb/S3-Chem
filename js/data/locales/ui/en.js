@@ -422,11 +422,12 @@ export const enUI = {
   },
   "lab": {
     "pageTitle": "Interactive Lab",
-    "hubSubtitle": "Choose a lab by topic — bonding, metals, acids and bases, redox, or fossil fuels and carbon compounds.",
+    "hubSubtitle": "Choose a lab by topic — bonding, metals, acids and bases, redox, rates of reactions, or fossil fuels and carbon compounds.",
     "catMicroscopicWorldI": "Microscopic world I",
     "catMetals": "Metals",
     "catAcidsAndBases": "Acids and bases",
     "catRedoxCellsElectrolysis": "Redox reactions, chemical cells and electrolysis",
+    "catRatesOfReactions": "Rates of reactions",
     "catFossilFuelsCarbonCompounds": "Fossil fuels and carbon compounds",
     "ionicName": "Ionic",
     "ionicDesc": "Build ionic lattice structures and explore ionic compound formation.",
@@ -442,6 +443,8 @@ export const enUI = {
     "rustingDesc": "Explore iron rusting conditions, indicator experiments, and corrosion protection.",
     "chemicalCellsElectrolysisName": "Chemical Cells & Electrolysis",
     "chemicalCellsElectrolysisDesc": "Interactive chemical cells and electrolysis with ECS, preferential discharge, and live observations.",
+    "ratesOfReactionName": "Rates of Reaction",
+    "ratesOfReactionDesc": "Investigate how concentration, temperature, and dilution affect the rate of the sodium thiosulphate–acid disappearing-cross experiment.",
     "organicChemistryName": "Organic Chemistry Lab",
     "organicChemistryDesc": "Build carbon compounds, practise IUPAC naming, and draw structures (F4 / DSE)."
   },

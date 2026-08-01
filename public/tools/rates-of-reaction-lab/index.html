@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page.title">HKDSE 化學反應速率模擬器 | Rates of Reaction Simulator</title>
+  <link rel="stylesheet" href="css/lab.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="main-header">
+      <div class="header-content">
+        <h1 data-i18n="header.title">HKDSE 硫代硫酸鈉與酸的反應速率實驗室</h1>
+        <p data-i18n="header.subtitle">探究濃度、溫度及稀釋對反應速率的影響 (消失的十字起點實驗)</p>
+      </div>
+      <div class="header-controls">
+        <button type="button" id="lang-toggle-btn" class="btn-lang">EN</button>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="lab-grid">
+      <!-- Left Column: Visualizations -->
+      <section class="visual-panel" aria-label="Visualizations">
+        <div class="panel-header">
+          <span data-i18n="panel.visual">微觀粒子與宏觀現象模擬</span>
+          <button type="button" id="toggle-settings-btn" class="btn-toggle-settings" data-i18n="btn.hideSettings">隱藏實驗控制</button>
+        </div>
+        
+        <div class="visual-container">
+          <!-- Top-Down Beaker View (The Disappearing Cross) -->
+          <div class="beaker-card top-down-card">
+            <h3 data-i18n="view.topdown">俯視圖：消失的十字 (Macroscopic View)</h3>
+            <div class="beaker-view-wrapper">
+              <div id="heating-cooling-effect" class="environment-effect"></div>
+              <div class="top-down-beaker-container">
+                <!-- Paper with Cross -->
+                <div class="paper-base">
+                  <div class="black-cross" id="paper-cross"></div>
+                </div>
+                <!-- Beaker Liquid -->
+                <div class="beaker-rim">
+                  <div class="beaker-liquid" id="beaker-liquid-td"></div>
+                </div>
+              </div>
+            </div>
+            <div class="beaker-caption">
+              <div class="caption-row">
+                <span data-i18n="caption.light">透光度 (Light Transmission): </span>
+                <strong id="transmission-display">100.0%</strong>
+              </div>
+              <div class="caption-row">
+                <span data-i18n="reading.time">流逝時間 (Time): </span>
+                <strong id="read-time">0.0</strong> s
+              </div>
+              <div class="caption-row">
+                <span data-i18n="reading.status">實驗狀態 (Status): </span>
+                <strong id="read-status" class="status-ready" data-i18n="status.ready">就緒 (Ready)</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side-View Particle Simulation -->
+          <div class="beaker-card side-view-card">
+            <h3 data-i18n="view.side">側視圖：微觀離子碰撞 (Microscopic View)</h3>
+            <div class="canvas-wrapper">
+              <canvas id="canvas-side-simulation" width="360" height="280"></canvas>
+              <!-- Dynamic heating burner or ice bath overlay -->
+              <div id="burner-flame" class="burner-flame"></div>
+              <div id="ice-bath" class="ice-bath"></div>
+            </div>
+            <div class="particle-legend">
+              <div class="legend-item"><span class="legend-dot thiosulphate"></span><span>S₂O₃²⁻</span></div>
+              <div class="legend-item"><span class="legend-dot hydrogen"></span><span>H⁺</span></div>
+              <div class="legend-item"><span class="legend-dot sulphur"></span><span>S(s)</span></div>
+              <div class="legend-item"><span class="legend-dot gas"></span><span>SO₂ (g)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Footer: Speed Control and Skip Experiment -->
+        <div class="visual-footer">
+          <div class="speed-control-field">
+            <span class="speed-label" data-i18n="label.speed">模擬速度 (Speed):</span>
+            <input type="range" id="slider-speed" min="1" max="10" step="1" value="1">
+            <span class="speed-value-display"><span id="val-speed">1</span>x</span>
+          </div>
+          <button type="button" id="btn-skip" class="btn btn-skip" data-i18n="btn.skip" disabled>跳過實驗 (Skip)</button>
+        </div>
+      </section>
+
+      <!-- Right Column: Controls & Readings -->
+      <section class="control-panel" aria-label="Controls">
+        <div class="panel-header">
+          <span data-i18n="panel.controls">實驗控制與即時數據</span>
+        </div>
+        
+        <div class="control-body">
+          <!-- Reactants Configuration -->
+          <div class="control-group">
+            <h3 class="reactants-header">
+              <span data-i18n="group.reactants">1. 配製反應溶液 (Reactants Setup)</span>
+              <span class="total-vol-badge"><span data-i18n="reading.mixture-vol">混合物總體積</span>: <span id="read-total-vol">60</span> mL</span>
+            </h3>
+            
+            <!-- Sodium Thiosulphate Slider -->
+            <div class="slider-field">
+              <div class="slider-label-row">
+                <span data-i18n="label.thiosulphate-conc">硫代硫酸鈉濃度 [Na₂S₂O₃]:</span>
+                <span class="value-display"><input type="number" id="input-thiosulphate-conc" class="num-input" min="0.01" max="0.20" step="0.01" value="0.10"> M</span>
+              </div>
+              <input type="range" id="slider-thiosulphate-conc" min="0.01" max="0.20" step="0.01" value="0.10">
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-label-row">
+                <span data-i18n="label.thiosulphate-vol">硫代硫酸鈉體積 (Volume):</span>
+                <span class="value-display"><input type="number" id="input-thiosulphate-vol" class="num-input" min="10" max="100" step="5" value="40"> mL</span>
+              </div>
+              <input type="range" id="slider-thiosulphate-vol" min="10" max="100" step="5" value="40">
+            </div>
+
+            <!-- Distilled Water Slider -->
+            <div class="slider-field water-field">
+              <div class="slider-label-row">
+                <span data-i18n="label.water-vol">加入蒸餾水體積 (Distilled Water):</span>
+                <span class="value-display"><input type="number" id="input-water-vol" class="num-input" min="0" max="100" step="5" value="10"> mL</span>
+              </div>
+              <input type="range" id="slider-water-vol" min="0" max="100" step="5" value="10">
+            </div>
+
+            <!-- Acid Slider -->
+            <div class="slider-field acid-field">
+              <div class="slider-label-row">
+                <span data-i18n="label.acid-type">選擇酸液種類 (Acid Type):</span>
+                <select id="select-acid-type">
+                  <option value="HCl" data-i18n="acid.hcl">鹽酸 HCl (強單質子酸)</option>
+                  <option value="H2SO4" data-i18n="acid.h2so4">硫酸 H₂SO₄ (強雙質子酸)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-label-row">
+                <span data-i18n="label.acid-conc">酸液濃度 (Acid Conc.):</span>
+                <span class="value-display"><input type="number" id="input-acid-conc" class="num-input" min="0.1" max="2.0" step="0.1" value="1.0"> M</span>
+              </div>
+              <input type="range" id="slider-acid-conc" min="0.1" max="2.0" step="0.1" value="1.0">
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-label-row">
+                <span data-i18n="label.acid-vol">酸液體積 (Acid Volume):</span>
+                <span class="value-display"><input type="number" id="input-acid-vol" class="num-input" min="5" max="50" step="5" value="10"> mL</span>
+              </div>
+              <input type="range" id="slider-acid-vol" min="5" max="50" step="5" value="10">
+            </div>
+          </div>
+
+          <!-- Environmental Factors -->
+          <div class="control-group">
+            <h3 data-i18n="group.environment">2. 環境因素 (Environmental Factors)</h3>
+            <div class="slider-field">
+              <div class="slider-label-row">
+                <span data-i18n="label.temperature">反應溫度 (Temperature):</span>
+                <span class="value-display"><input type="number" id="input-temperature" class="num-input" min="5" max="70" step="1" value="25"> °C</span>
+              </div>
+              <input type="range" id="slider-temperature" min="5" max="70" step="1" value="25">
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-row">
+            <button type="button" id="btn-start" class="btn btn-primary" data-i18n="btn.start">開始反應 (Start)</button>
+            <button type="button" id="btn-pause" class="btn btn-secondary" data-i18n="btn.pause" disabled>暫停 (Pause)</button>
+            <button type="button" id="btn-reset" class="btn btn-danger" data-i18n="btn.reset">重設 (Reset)</button>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Section: Graphs and Historical Data -->
+    <section class="analysis-section" aria-label="Analysis">
+      <div class="panel-header">
+        <span data-i18n="panel.analysis">數據分析與速率曲線圖</span>
+      </div>
+      
+      <div class="analysis-grid">
+        <!-- Real-time Plot Card -->
+        <div class="graph-card">
+          <h3 data-i18n="graph.transmission">即時透光度變化曲線 (Transmission vs. Time)</h3>
+          <div class="canvas-container">
+            <canvas id="canvas-graph-transmission" width="480" height="240"></canvas>
+          </div>
+        </div>
+
+        <!-- Historical Rate vs. Temp Card -->
+        <div class="graph-card">
+          <h3 data-i18n="graph.rate-temp">速率與溫度關係圖 (Rate 1/t vs. Temperature)</h3>
+          <div class="canvas-container">
+            <canvas id="canvas-graph-rate-temp" width="480" height="240"></canvas>
+          </div>
+        </div>
+
+        <!-- Historical Rate vs. Conc Card -->
+        <div class="graph-card">
+          <h3 data-i18n="graph.rate-conc">速率與濃度關係圖 (Rate 1/t vs. Concentration)</h3>
+          <div class="canvas-container">
+            <canvas id="canvas-graph-rate-conc" width="480" height="240"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recorded Trials Table -->
+      <div class="trials-table-container">
+        <div class="table-header-row">
+          <h3 data-i18n="table.title">已記錄的實驗數據 (Recorded Trials)</h3>
+          <button type="button" id="btn-clear-trials" class="btn btn-sm btn-danger" data-i18n="btn.clear-trials">清除所有記錄</button>
+        </div>
+        <div class="table-wrapper">
+          <table class="trials-table" id="trials-table">
+            <thead>
+              <tr>
+                <th data-i18n="th.trial">試次 (Trial)</th>
+                <th data-i18n="th.temp">溫度 (°C)</th>
+                <th data-i18n="th.thiosulphate">Na₂S₂O₃ 濃度 (M)</th>
+                <th data-i18n="th.acid">酸濃度 (M) / 種類</th>
+                <th data-i18n="th.total-vol">總體積 (mL)</th>
+                <th data-i18n="th.time">消失時間 (s)</th>
+                <th data-i18n="th.rate">速率 1/t (s⁻¹)</th>
+              </tr>
+            </thead>
+            <tbody id="trials-table-body">
+              <!-- Dynamically populated -->
+              <tr class="empty-row">
+                <td colspan="7" data-i18n="table.empty">尚無實驗記錄，請點擊「開始反應」進行測試。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <p data-i18n="footer.text">HKDSE 化學 課題九 反應速率 — 適用於 Google Chrome · 薈進教育中心 Unit Education</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/chemistry.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/graphs.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

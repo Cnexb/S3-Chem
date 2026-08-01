@@ -31,6 +31,10 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/chemical-cells-electrolysis-simulator/index.html",
     titleKey: "lab.chemicalCellsElectrolysisName",
   },
+  "rates-of-reaction-lab": {
+    path: "public/tools/rates-of-reaction-lab/index.html",
+    titleKey: "lab.ratesOfReactionName",
+  },
   "organic-chemistry-lab": {
     path: "public/tools/organic-chemistry-lab/index.html",
     titleKey: "lab.organicChemistryName",

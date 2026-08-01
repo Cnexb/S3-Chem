@@ -422,11 +422,12 @@ export const zhUI = {
   },
   "lab": {
     "pageTitle": "互动实验室",
-    "hubSubtitle": "按课题选择实验室：键合、金属、酸与碱、氧化还原，或化石燃料与碳化合物。",
+    "hubSubtitle": "按课题选择实验室：键合、金属、酸与碱、氧化还原、反应速率，或化石燃料与碳化合物。",
     "catMicroscopicWorldI": "微观世界 I",
     "catMetals": "金属",
     "catAcidsAndBases": "酸与碱",
     "catRedoxCellsElectrolysis": "氧化还原反应、化学电池与电解",
+    "catRatesOfReactions": "反应速率",
     "catFossilFuelsCarbonCompounds": "化石燃料与碳化合物",
     "ionicName": "离子",
     "ionicDesc": "搭建离子晶格结构，探索离子化合物形成。",
@@ -442,6 +443,8 @@ export const zhUI = {
     "rustingDesc": "探究铁生锈条件、指示剂实验与防锈保护。",
     "chemicalCellsElectrolysisName": "化学电池与电解",
     "chemicalCellsElectrolysisDesc": "互动化学电池与电解模拟：电化学序列、优先放电，以及即时观察现象。",
+    "ratesOfReactionName": "反应速率",
+    "ratesOfReactionDesc": "探究浓度、温度与稀释如何影响硫代硫酸钠与酸的「消失的十字」反应速率。",
     "organicChemistryName": "有机化学实验室",
     "organicChemistryDesc": "建构碳化合物、练习 IUPAC 命名与结构绘图（中四／文凭试）。"
   },
