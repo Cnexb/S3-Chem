@@ -56,6 +56,8 @@ jobs:
           test -f dist/public/flashcards/topic-8-chemical-reactions-and-energy/en/js/flashcardData.js
           test -f dist/public/flashcards/topic-9-rates-of-reactions/en/flashcards-study.html
           test -f dist/public/flashcards/topic-9-rates-of-reactions/en/js/flashcardData.js
+          test -f dist/public/flashcards/topic-10-chemical-equilibrium/en/flashcards-study.html
+          test -f dist/public/flashcards/topic-10-chemical-equilibrium/en/js/flashcardData.js
           test -f dist/public/notes/topic-01-planet-earth.pdf
           grep -q 'notes-pdf-frame' dist/index.html
           grep -q 'summary-hub' dist/index.html
