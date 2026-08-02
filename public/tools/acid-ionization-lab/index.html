@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page.title">HKDSE 酸的電離模擬器 | HKDSE Acid Ionization Simulator</title>
+  <link rel="stylesheet" href="css/lab.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div>
+        <h1 data-i18n="header.title">HKDSE 酸與鹼的電離模擬器</h1>
+        <p data-i18n="header.subtitle">酸鹼電離度、濃度、強度與導電性互動探究實驗室</p>
+      </div>
+      <div class="lang-switch">
+        <button type="button" data-lang="zh" class="lang-btn active">中文</button>
+        <button type="button" data-lang="en" class="lang-btn">English</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tab-bar">
+    <div class="tab-container">
+      <button type="button" class="tab-btn active" data-tab="single" data-i18n="tab.single">單一溶液探究</button>
+      <button type="button" class="tab-btn" data-tab="compare" data-i18n="tab.compare">強弱對比實驗</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ================= SINGLE SOLUTION TAB ================= -->
+    <div id="tab-content-single" class="tab-content active">
+      <div class="grid-layout">
+        <!-- Left Panel: Beaker Visuals -->
+        <section class="lab-panel" aria-label="Laboratory apparatus">
+          <div class="panel-header">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span data-i18n="panel.visual">微觀電離粒子模擬</span>
+            </div>
+          </div>
+          <div class="lab-scene">
+            <!-- Beaker Apparatus -->
+            <div class="beaker-container-wrapper">
+              <div class="beaker-container single-beaker">
+                <svg class="beaker-svg" viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Clip path for liquid and particles -->
+                  <defs>
+                    <clipPath id="beaker-clip-single">
+                      <path d="M 61 75 L 61 245 Q 61 259 72 259 L 248 259 Q 259 259 259 245 L 259 75 Z" />
+                    </clipPath>
+                  </defs>
+
+                  <!-- Beaker Liquid -->
+                  <rect id="liquid-single" x="61" y="120" width="198" height="140" fill="rgba(224, 242, 254, 0.55)" clip-path="url(#beaker-clip-single)" style="transition: fill 0.5s ease, y 0.3s ease, height 0.3s ease;" />
+
+                  <g id="beaker-glass-svg-group">
+                    <!-- Beaker Markings (Left Inside Wall graduated 100ml scale) -->
+                    <g stroke="#94a3b8" stroke-width="1.5" opacity="0.6">
+                      <line x1="61" y1="110" x2="71" y2="110" />
+                      <line x1="61" y1="140" x2="68" y2="140" />
+                      <line x1="61" y1="170" x2="71" y2="170" />
+                      <line x1="61" y1="200" x2="68" y2="200" />
+                      <line x1="61" y1="230" x2="71" y2="230" />
+                    </g>
+                    <g fill="#64748b" font-size="8.5" font-weight="bold" font-family="sans-serif">
+                      <text x="75" y="113" text-anchor="start">100 ml</text>
+                      <text x="75" y="143" text-anchor="start">80 ml</text>
+                      <text x="75" y="173" text-anchor="start">60 ml</text>
+                      <text x="75" y="203" text-anchor="start">40 ml</text>
+                      <text x="75" y="233" text-anchor="start">20 ml</text>
+                    </g>
+
+                    <!-- Tabletop Shadow -->
+                    <ellipse cx="160" cy="263" rx="105" ry="10" fill="rgba(15, 23, 42, 0.1)" />
+
+                    <!-- Beaker Glass Outline -->
+                    <path class="beaker-glass-outline" d="M 52 70 Q 51 64 45 64 Q 40 64 46 72 L 58 80 L 58 245 Q 58 261 72 261 L 248 261 Q 262 261 262 245 L 262 80 L 274 72 Q 280 64 275 64 Q 269 64 268 70 L 260 80 L 60 80 Z" fill="none" stroke="#475569" stroke-width="4.5" stroke-linejoin="round" />
+                    <path d="M 61 80 L 61 245 Q 61 259 72 259 L 248 259 Q 259 259 259 245 L 259 80" fill="none" stroke="#94a3b8" stroke-width="1.5" />
+
+                    <!-- Realistic Glass Glares and Reflections -->
+                    <!-- Vertical rim highlights -->
+                    <path d="M 65 82 L 65 243 Q 65 254 74 254" fill="none" stroke="rgba(255, 255, 255, 0.45)" stroke-width="2.5" stroke-linecap="round" />
+                    <path d="M 255 82 L 255 243 Q 255 254 246 254" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" stroke-linecap="round" />
+                    <!-- Diagonal glass glare highlights -->
+                    <line x1="72" y1="95" x2="88" y2="127" stroke="rgba(255, 255, 255, 0.35)" stroke-width="2" stroke-linecap="round" />
+                    <line x1="78" y1="95" x2="84" y2="107" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" stroke-linecap="round" />
+                    <line x1="240" y1="180" x2="248" y2="196" stroke="rgba(255, 255, 255, 0.15)" stroke-width="2" stroke-linecap="round" />
+                    <!-- Subtle top rim -->
+                    <ellipse cx="160" cy="80" rx="98" ry="4" fill="none" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1" />
+                  </g>
+                </svg>
+
+                <!-- Canvas representing particles -->
+                <canvas id="canvas-single" width="320" height="280" class="particle-canvas" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; touch-action: none;"></canvas>
+
+                <!-- Floating Drag Hint Tip -->
+                <div id="drag-tip" class="drag-tip">
+                  <span data-i18n="tip.drag">拖動以旋轉 3D 視角</span>
+                  <button type="button" id="close-drag-tip" class="close-tip-btn" aria-label="Dismiss tip">&times;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- pH Meter Overlaid in the top right corner of lab-scene -->
+            <div class="ph-meter-device single-ph-meter">
+              <div class="ph-display" id="ph-display-single">1.00</div>
+              <span class="ph-meter-label">pH Meter</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Panel: Controls -->
+        <section class="control-panel" aria-label="Controls">
+          <div class="panel-header" data-i18n="panel.controls">實驗控制</div>
+          <div class="control-body">
+            <!-- Chemical Selection -->
+            <div class="field">
+              <label for="chem-select-single" data-i18n="select.chemical">選擇溶液</label>
+              <select id="chem-select-single">
+                <!-- Will be populated dynamically with acids and alkalis -->
+              </select>
+            </div>
+
+            <!-- Molarity Slider -->
+            <div class="field">
+              <div class="slider-header">
+                <label for="conc-slider-single" data-i18n="label.molarity">溶液濃度 (Molarity)</label>
+                <span class="range-val" id="conc-val-single">0.100 M</span>
+              </div>
+              <input type="range" id="conc-slider-single" min="0.001" max="10" step="0.001" value="0.1">
+              <div class="quick-vals">
+                <button type="button" class="btn-quick" data-val="0.001">0.001M</button>
+                <button type="button" class="btn-quick" data-val="0.01">0.01M</button>
+                <button type="button" class="btn-quick" data-val="0.1">0.1M</button>
+                <button type="button" class="btn-quick" data-val="1.0">1.0M</button>
+                <button type="button" class="btn-quick" data-val="5.0">5.0M</button>
+              </div>
+            </div>
+
+            <!-- Volume Slider -->
+            <div class="field">
+              <div class="slider-header">
+                <label for="vol-slider-single" data-i18n="label.volume">溶液體積 (Volume)</label>
+                <span class="range-val" id="vol-val-single">50.0 cm³</span>
+              </div>
+              <input type="range" id="vol-slider-single" min="10" max="100" step="1" value="50">
+            </div>
+
+            <!-- Explanation Card -->
+            <div class="data-card">
+              <div class="explanation-box" id="chem-explanation-single" style="margin-top: 0;">
+                <!-- Populated dynamically based on chemical properties -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ================= COMPARATIVE EXPERIMENTS TAB ================= -->
+    <div id="tab-content-compare" class="tab-content">
+      <div class="compare-presets-header">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; flex-grow: 1; min-width: 280px;">
+            <select id="compare-preset-select" class="preset-select" style="margin-bottom: 0; flex-grow: 1;">
+              <option value="preset-conduct" data-i18n="preset.conduct">Conduction</option>
+              <option value="preset-dibasic" data-i18n="preset.dibasic">Dibasic</option>
+              <option value="preset-alkali" data-i18n="preset.alkali">Alkali</option>
+              <option value="preset-same-ph" data-i18n="preset.samePh">Same pH</option>
+            </select>
+          </div>
+          <button type="button" id="btn-reset-compare" class="btn-secondary" data-i18n="btn.resetCompare" style="padding: 0.5rem 1rem;">還原預設實驗參數</button>
+        </div>
+        <p class="preset-description" id="compare-preset-desc" style="margin-top: 0.75rem;"></p>
+      </div>
+
+      <div class="compare-grid">
+        <!-- Beaker A -->
+        <section class="lab-panel compact-panel" aria-label="Beaker A">
+          <div class="panel-header text-center">
+            <span id="beaker-title-a" class="beaker-badge badge-blue">燒杯 A (Beaker A)</span>
+          </div>
+          <div class="lab-scene compact-scene">
+            <div class="beaker-container compact-beaker">
+              <svg class="beaker-svg compact-beaker-svg" viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <clipPath id="beaker-clip-compare-a">
+                    <path d="M 43 55 L 43 162 Q 43 172 51 172 L 169 172 Q 177 172 177 162 L 177 55 Z" />
+                  </clipPath>
+                </defs>
+
+                <!-- Liquid Rect -->
+                <rect id="liquid-compare-a" x="43" y="92" width="134" height="80" fill="rgba(224, 242, 254, 0.55)" clip-path="url(#beaker-clip-compare-a)" style="transition: fill 0.5s ease, y 0.3s ease, height 0.3s ease;" />
+
+                <!-- Compact Wires -->
+                <line x1="73" y1="25" x2="73" y2="55" stroke="#000" stroke-width="2" />
+                <line x1="147" y1="25" x2="147" y2="55" stroke="#000" stroke-width="2" />
+                <line x1="73" y1="25" x2="95" y2="25" stroke="#000" stroke-width="2" />
+                <line x1="105" y1="25" x2="115" y2="25" stroke="#000" stroke-width="2" />
+                <line x1="135" y1="25" x2="147" y2="25" stroke="#000" stroke-width="2" />
+
+                <!-- Compact Battery -->
+                <g class="battery-symbol">
+                  <line x1="97" y1="14" x2="97" y2="36" stroke="#000" stroke-width="2" />
+                  <line x1="103" y1="20" x2="103" y2="30" stroke="#000" stroke-width="4.5" />
+                  <text x="95" y="12" font-size="8" font-weight="bold" font-family="sans-serif" text-anchor="end">+</text>
+                  <text x="105" y="12" font-size="8" font-weight="bold" font-family="sans-serif" text-anchor="start">-</text>
+                </g>
+
+                <!-- Compact Circular Bulb -->
+                <g class="schematic-bulb-group">
+                  <rect x="122" y="22" width="6" height="6" fill="#64748b" stroke="#000" stroke-width="1" />
+                  <circle cx="125" cy="14" r="9" fill="#e2e8f0" stroke="#000" stroke-width="1.2" class="bulb-circle-bg" />
+                  <circle id="bulb-glow-compare-a" cx="125" cy="14" r="8" fill="#facc15" opacity="0" class="bulb-glow-circle" />
+                  <path d="M 123 17 L 125 11 L 127 17" fill="none" stroke="#000" stroke-width="0.8" />
+                  
+                  <!-- Rays -->
+                  <g class="bulb-rays" id="bulb-rays-compare-a" opacity="0" style="transition: opacity 0.15s ease;">
+                    <line x1="125" y1="2" x2="125" y2="0" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="133" y1="6" x2="135" y2="4" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="136" y1="14" x2="138" y2="14" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="133" y1="22" x2="135" y2="24" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="117" y1="22" x2="115" y2="24" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="114" y1="14" x2="112" y2="14" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="117" y1="6" x2="115" y2="4" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                  </g>
+                </g>
+
+                <!-- Thick Graphite Rods -->
+                <rect class="graphite-rod" x="67" y="55" width="12" height="90" fill="#1e293b" stroke="#000" stroke-width="1.5" rx="1" />
+                <rect class="graphite-rod" x="141" y="55" width="12" height="90" fill="#1e293b" stroke="#000" stroke-width="1.5" rx="1" />
+
+                <!-- Leader Lines pointing to Graphite Rods -->
+                <g stroke="#000" stroke-width="1">
+                  <line x1="28" y1="90" x2="67" y2="90" />
+                  <circle cx="67" cy="90" r="2" fill="#000" />
+                  <line x1="192" y1="90" x2="153" y2="90" />
+                  <circle cx="153" cy="90" r="2" fill="#000" />
+                </g>
+                <g font-size="7.5" font-weight="bold" font-family="sans-serif" fill="#000">
+                  <text x="25" y="92" text-anchor="end" data-i18n="circuit.graphite">石墨棒</text>
+                  <text x="195" y="92" text-anchor="start" data-i18n="circuit.graphite">石墨棒</text>
+                </g>
+
+                <!-- Beaker Glass Outline -->
+                <path class="beaker-glass-outline" d="M 36 52 Q 35 50 31 50 Q 28 50 32 55 L 40 60 L 40 162 Q 40 174 50 174 L 170 174 Q 180 174 180 162 L 180 60 L 188 55 Q 192 50 189 50 Q 185 50 184 52 L 178 60 L 42 60 Z" fill="none" stroke="#475569" stroke-width="3" stroke-linejoin="round" />
+                <path d="M 43 60 L 43 162 Q 43 172 51 172 L 169 172 Q 177 172 177 162 L 177 60" fill="none" stroke="#94a3b8" stroke-width="1" />
+              </svg>
+
+              <!-- Canvas representing particles -->
+              <canvas id="canvas-compare-a" width="220" height="190" class="particle-canvas" style="position: absolute; left: 0; top: 0; width: 220px; height: 190px;"></canvas>
+            </div>
+            <!-- Captions under Beaker A -->
+            <div class="setup-caption">
+              <div class="setup-title" id="setup-title-compare-a" data-i18n="setup.one">裝置 I (Set-up I)</div>
+              <div class="setup-formula" id="setup-formula-compare-a">HCl(aq)</div>
+            </div>
+            <div class="ph-meter-device compact-ph">
+              <div class="ph-display" id="ph-display-compare-a">1.00</div>
+              <div class="ph-probe"></div>
+            </div>
+          </div>
+          <div class="beaker-slider-container" style="padding: 1rem; border-top: 1px solid var(--border);">
+            <div class="field">
+              <label for="slider-compare-a" id="label-compare-a">燒杯 A 濃度</label>
+              <input type="range" id="slider-compare-a" min="0.001" max="2" step="0.001" value="0.1">
+              <span class="range-val" id="val-compare-a">0.100 M</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Beaker B -->
+        <section class="lab-panel compact-panel" aria-label="Beaker B">
+          <div class="panel-header text-center">
+            <span id="beaker-title-b" class="beaker-badge badge-orange">燒杯 B (Beaker B)</span>
+          </div>
+          <div class="lab-scene compact-scene">
+            <div class="beaker-container compact-beaker">
+              <svg class="beaker-svg compact-beaker-svg" viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <clipPath id="beaker-clip-compare-b">
+                    <path d="M 43 55 L 43 162 Q 43 172 51 172 L 169 172 Q 177 172 177 162 L 177 55 Z" />
+                  </clipPath>
+                </defs>
+
+                <!-- Liquid Rect -->
+                <rect id="liquid-compare-b" x="43" y="92" width="134" height="80" fill="rgba(224, 242, 254, 0.55)" clip-path="url(#beaker-clip-compare-b)" style="transition: fill 0.5s ease, y 0.3s ease, height 0.3s ease;" />
+
+                <!-- Compact Wires -->
+                <line x1="73" y1="25" x2="73" y2="55" stroke="#000" stroke-width="2" />
+                <line x1="147" y1="25" x2="147" y2="55" stroke="#000" stroke-width="2" />
+                <line x1="73" y1="25" x2="95" y2="25" stroke="#000" stroke-width="2" />
+                <line x1="105" y1="25" x2="115" y2="25" stroke="#000" stroke-width="2" />
+                <line x1="135" y1="25" x2="147" y2="25" stroke="#000" stroke-width="2" />
+
+                <!-- Compact Battery -->
+                <g class="battery-symbol">
+                  <line x1="97" y1="14" x2="97" y2="36" stroke="#000" stroke-width="2" />
+                  <line x1="103" y1="20" x2="103" y2="30" stroke="#000" stroke-width="4.5" />
+                  <text x="95" y="12" font-size="8" font-weight="bold" font-family="sans-serif" text-anchor="end">+</text>
+                  <text x="105" y="12" font-size="8" font-weight="bold" font-family="sans-serif" text-anchor="start">-</text>
+                </g>
+
+                <!-- Compact Circular Bulb -->
+                <g class="schematic-bulb-group">
+                  <rect x="122" y="22" width="6" height="6" fill="#64748b" stroke="#000" stroke-width="1" />
+                  <circle cx="125" cy="14" r="9" fill="#e2e8f0" stroke="#000" stroke-width="1.2" class="bulb-circle-bg" />
+                  <circle id="bulb-glow-compare-b" cx="125" cy="14" r="8" fill="#facc15" opacity="0" class="bulb-glow-circle" />
+                  <path d="M 123 17 L 125 11 L 127 17" fill="none" stroke="#000" stroke-width="0.8" />
+                  
+                  <!-- Rays -->
+                  <g class="bulb-rays" id="bulb-rays-compare-b" opacity="0" style="transition: opacity 0.15s ease;">
+                    <line x1="125" y1="2" x2="125" y2="0" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="133" y1="6" x2="135" y2="4" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="136" y1="14" x2="138" y2="14" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="133" y1="22" x2="135" y2="24" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="117" y1="22" x2="115" y2="24" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="114" y1="14" x2="112" y2="14" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="117" y1="6" x2="115" y2="4" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" />
+                  </g>
+                </g>
+
+                <!-- Thick Graphite Rods -->
+                <rect class="graphite-rod" x="67" y="55" width="12" height="90" fill="#1e293b" stroke="#000" stroke-width="1.5" rx="1" />
+                <rect class="graphite-rod" x="141" y="55" width="12" height="90" fill="#1e293b" stroke="#000" stroke-width="1.5" rx="1" />
+
+                <!-- Leader Lines pointing to Graphite Rods -->
+                <g stroke="#000" stroke-width="1">
+                  <line x1="28" y1="90" x2="67" y2="90" />
+                  <circle cx="67" cy="90" r="2" fill="#000" />
+                  <line x1="192" y1="90" x2="153" y2="90" />
+                  <circle cx="153" cy="90" r="2" fill="#000" />
+                </g>
+                <g font-size="7.5" font-weight="bold" font-family="sans-serif" fill="#000">
+                  <text x="25" y="92" text-anchor="end" data-i18n="circuit.graphite">石墨棒</text>
+                  <text x="195" y="92" text-anchor="start" data-i18n="circuit.graphite">石墨棒</text>
+                </g>
+
+                <!-- Beaker Glass Outline -->
+                <path class="beaker-glass-outline" d="M 36 52 Q 35 50 31 50 Q 28 50 32 55 L 40 60 L 40 162 Q 40 174 50 174 L 170 174 Q 180 174 180 162 L 180 60 L 188 55 Q 192 50 189 50 Q 185 50 184 52 L 178 60 L 42 60 Z" fill="none" stroke="#475569" stroke-width="3" stroke-linejoin="round" />
+                <path d="M 43 60 L 43 162 Q 43 172 51 172 L 169 172 Q 177 172 177 162 L 177 60" fill="none" stroke="#94a3b8" stroke-width="1" />
+              </svg>
+
+              <!-- Canvas representing particles -->
+              <canvas id="canvas-compare-b" width="220" height="190" class="particle-canvas" style="position: absolute; left: 0; top: 0; width: 220px; height: 190px;"></canvas>
+            </div>
+            <!-- Captions under Beaker B -->
+            <div class="setup-caption">
+              <div class="setup-title" id="setup-title-compare-b" data-i18n="setup.two">裝置 II (Set-up II)</div>
+              <div class="setup-formula" id="setup-formula-compare-b">CH₃COOH(aq)</div>
+            </div>
+            <div class="ph-meter-device compact-ph">
+              <div class="ph-display" id="ph-display-compare-b">1.00</div>
+              <div class="ph-probe"></div>
+            </div>
+          </div>
+          <div class="beaker-slider-container" style="padding: 1rem; border-top: 1px solid var(--border);">
+            <div class="field">
+              <label for="slider-compare-b" id="label-compare-b">燒杯 B 濃度</label>
+              <input type="range" id="slider-compare-b" min="0.001" max="2" step="0.001" value="0.1">
+              <span class="range-val" id="val-compare-b">0.100 M</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </main>
+
+  <footer data-i18n="footer">HKDSE 化學 課題四 酸與鹼 — 適用於 Google Chrome · 薈進教育中心</footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/chemistry.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -438,6 +438,8 @@ export const zhUI = {
     "sandboxDesc": "模拟微观结构，比较共价物质性质。",
     "titrationName": "滴定",
     "titrationDesc": "模拟酸碱滴定实验，练习读数、指示剂选择及当量点计算。",
+    "acidIonizationName": "酸碱电离",
+    "acidIonizationDesc": "探究酸碱电离度、浓度、强度、指示剂与导电性，并以粒子模拟对比强弱酸／碱。",
     "metalReactivityName": "金属反应",
     "metalReactivityDesc": "互动模拟金属与氧气、水／蒸汽、酸及置换溶液的反应。",
     "rustingName": "生锈",

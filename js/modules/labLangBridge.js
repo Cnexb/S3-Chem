@@ -19,6 +19,10 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/titration-lab/index.html",
     titleKey: "lab.titrationName",
   },
+  "acid-ionization-lab": {
+    path: "public/tools/acid-ionization-lab/index.html",
+    titleKey: "lab.acidIonizationName",
+  },
   "metal-reactions-lab": {
     path: "public/tools/metal-reactions-lab/index.html",
     titleKey: "lab.metalReactivityName",

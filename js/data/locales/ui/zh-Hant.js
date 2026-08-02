@@ -437,6 +437,8 @@ export const zhHantUI = {
     "sandboxDesc": "模擬微觀結構，比較共價物質性質。",
     "titrationName": "滴定",
     "titrationDesc": "模擬酸鹼滴定實驗，練習讀數、指示劑選擇及當量點計算。",
+    "acidIonizationName": "酸鹼電離",
+    "acidIonizationDesc": "探究酸鹼電離度、濃度、強度、指示劑與導電性，並以粒子模擬對比強弱酸／鹼。",
     "metalReactivityName": "金屬反應",
     "metalReactivityDesc": "互動模擬金屬與氧氣、水／蒸汽、酸及置換溶液的反應。",
     "rustingName": "生銹",

@@ -438,6 +438,8 @@ export const enUI = {
     "sandboxDesc": "Simulate micro-structure and compare covalent substance properties.",
     "titrationName": "Titration",
     "titrationDesc": "Simulate acid-base titration with burette readings, indicators, and equivalence points.",
+    "acidIonizationName": "Acid Ionization",
+    "acidIonizationDesc": "Explore acid–base ionization degree, concentration, strength, indicators, and conductivity with particle simulations.",
     "metalReactivityName": "Metal Reactivity",
     "metalReactivityDesc": "Interactive metal reactions with oxygen, water/steam, acids, and displacement solutions.",
     "rustingName": "Rusting",
