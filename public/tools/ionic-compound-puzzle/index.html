@@ -1094,7 +1094,10 @@
             </div>
 
             <div style="display:flex; justify-content:center; gap:15px;">
-                <button class="cyber-btn cyber-btn-secondary" onclick="closeSuccessModal()">留在這研究</button>
+                <button class="cyber-btn cyber-btn-secondary" id="btn-stay-study" onclick="closeSuccessModal()">
+                    <span class="lang-zh">留在這研究</span>
+                    <span class="lang-en" style="display:none;">Stay Here to Study</span>
+                </button>
                 <button class="cyber-btn" id="btn-next-level" onclick="nextQuestLevel()">下一關挑戰 <i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
@@ -2236,6 +2239,20 @@
                 '&bull; <b>' + systemTitle + '</b> ' + sysText + '<br>' +
                 '&bull; <b>' + structureTitle + '</b> ' + structText + '<br>' +
                 '&bull; <b>' + factTitle + '</b><br>' + factText;
+
+            document.getElementById('modal-title').innerHTML = currentLang === 'zh' ? '<i class="fa-solid fa-circle-check pulse"></i> 合成成功！' : '<i class="fa-solid fa-circle-check pulse"></i> Synthesis Successful!';
+            
+            var btnStayZh = document.querySelector('#btn-stay-study .lang-zh');
+            var btnStayEn = document.querySelector('#btn-stay-study .lang-en');
+            if (btnStayZh && btnStayEn) {
+                if (currentLang === 'zh') {
+                    btnStayZh.style.display = 'inline';
+                    btnStayEn.style.display = 'none';
+                } else {
+                    btnStayZh.style.display = 'none';
+                    btnStayEn.style.display = 'inline';
+                }
+            }
 
             var btnNext = document.getElementById('btn-next-level');
             if (isQuest) {
