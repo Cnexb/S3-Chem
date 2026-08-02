@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>極致化學：離子化合物立體拼圖學堂 (Aesthetic Ionic Compound Puzzle Lab)</title>
     <!-- 引入科幛字體及標準 Calibri 字體 -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/calibri" rel="stylesheet">
     <!-- FontAwesome 圖標庫 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -163,7 +163,7 @@
         }
 
         .stat-val {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-size: 1.8em;
             font-weight: 700;
             color: var(--neon-green);
@@ -262,7 +262,7 @@
         .ion-card.anion-hover:hover { border-color: var(--accent-gold); box-shadow: 0 0 10px rgba(217, 119, 6, 0.15); }
 
         .ion-sym-badge {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-weight: bold;
             font-size: 1.1em;
         }
@@ -386,7 +386,7 @@
         .scale-weight-indicator {
             position: absolute;
             top: 5px;
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-size: 1.4em;
             font-weight: 900;
         }
@@ -437,7 +437,7 @@
         }
 
         .crystal-projection h3 {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
         }
 
         body.lang-en-active .crystal-projection h3 {
@@ -473,7 +473,7 @@
         }
 
         .math-tex {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-weight: 700;
         }
 
@@ -504,7 +504,7 @@
 
         .quest-target-name {
             font-size: 2.2em;
-            font-family: 'Orbitron', 'Calibri', 'Noto Sans TC', sans-serif;
+            font-family: 'Calibri', 'Noto Sans TC', sans-serif;
             font-weight: 900;
             color: var(--text-main);
             margin: 10px 0;
@@ -520,7 +520,7 @@
             border-radius: 10px;
             cursor: pointer;
             font-weight: bold;
-            font-family: 'Orbitron', 'Calibri', 'Noto Sans TC', sans-serif;
+            font-family: 'Calibri', 'Noto Sans TC', sans-serif;
             letter-spacing: 1px;
             box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -592,7 +592,7 @@
         }
 
         .modal-card h2 {
-            font-family: 'Orbitron', 'Calibri', 'Noto Sans TC', sans-serif;
+            font-family: 'Calibri', 'Noto Sans TC', sans-serif;
             color: var(--accent-blue);
             font-size: 2em;
             margin-top: 0;
@@ -1495,10 +1495,10 @@
                 var markY = i * unitHeight + 40;
                 if (isCation) {
                     alignmentMarkers += '<circle cx="' + (width - 20) + '" cy="' + markY + '" r="5" fill="#00a8ff" opacity="0.8" />' +
-                                        '<text x="' + (width - 20) + '" y="' + (markY + 4) + '" fill="#ffffff" font-size="12" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="bold">+</text>';
+                                        '<text x="' + (width - 20) + '" y="' + (markY + 4) + '" fill="#ffffff" font-size="12" text-anchor="middle" font-family="Calibri, sans-serif" font-weight="bold">+</text>';
                 } else {
                     alignmentMarkers += '<circle cx="20" cy="' + markY + '" r="5" fill="#ffaa00" opacity="0.8" />' +
-                                        '<text x="20" y="' + (markY + 4) + '" fill="#ffffff" font-size="12" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="bold">-</text>';
+                                        '<text x="20" y="' + (markY + 4) + '" fill="#ffffff" font-size="12" text-anchor="middle" font-family="Calibri, sans-serif" font-weight="bold">-</text>';
                 }
             }
 
@@ -1519,8 +1519,8 @@
                    '<path d="' + path + '" fill="url(#grad-' + ion.id + '-' + indexInVessel + ')" stroke="' + color.border + '" stroke-width="2" filter="url(#glow-' + ion.id + '-' + indexInVessel + ')" />' +
                    alignmentMarkers +
                    '<g transform="translate(' + (width/2) + ', ' + textY + ')">' +
-                   '<text text-anchor="middle" dominant-baseline="middle" fill="' + color.text + '" font-family="Orbitron, sans-serif" font-weight="900" font-size="24">' + formatChemicalFormulaSVG(ion.sym) + '</text>' +
-                   '<text x="22" y="-16" fill="' + color.text + '" font-family="Orbitron, sans-serif" font-size="14" font-weight="bold">' + (charge === 1 ? '' : charge) + (isCation ? '+' : '-') + '</text>' +
+                   '<text text-anchor="middle" dominant-baseline="middle" fill="' + color.text + '" font-family="Calibri, sans-serif" font-weight="900" font-size="24">' + formatChemicalFormulaSVG(ion.sym) + '</text>' +
+                   '<text x="22" y="-16" fill="' + color.text + '" font-family="Calibri, sans-serif" font-size="14" font-weight="bold">' + (charge === 1 ? '' : charge) + (isCation ? '+' : '-') + '</text>' +
                    '<text x="0" y="24" fill="' + color.textSecondary + '" font-family="' + (currentLang === 'zh' ? 'Noto Sans TC, sans-serif' : 'Calibri, sans-serif') + '" font-size="12" text-anchor="middle" font-weight="bold">' + (currentLang === 'zh' ? ion.nameZh : ion.name) + '</text>' +
                    '</g>' +
                    '</svg>' +
@@ -1806,7 +1806,7 @@
                         cardC.style.pointerEvents = 'none';
                     }
 
-                    cardC.innerHTML = '<div class="ion-sym-badge" style="color:var(--accent-blue); font-size: 1.25em; font-family:\'Orbitron\', sans-serif; font-weight: bold;">' + 
+                    cardC.innerHTML = '<div class="ion-sym-badge" style="color:var(--accent-blue); font-size: 1.25em; font-family:\'Calibri\', sans-serif; font-weight: bold;">' + 
                                       formatChemicalFormulaHTML(c.sym) + '<sup>' + (c.charge > 1 ? c.charge : '') + '+</sup>' +
                                       '</div>';
                     if (!isDisabled) {
@@ -1833,7 +1833,7 @@
                         cardA.style.pointerEvents = 'none';
                     }
 
-                    cardA.innerHTML = '<div class="ion-sym-badge" style="color:var(--accent-gold); font-size: 1.25em; font-family:\'Orbitron\', sans-serif; font-weight: bold;">' + 
+                    cardA.innerHTML = '<div class="ion-sym-badge" style="color:var(--accent-gold); font-size: 1.25em; font-family:\'Calibri\', sans-serif; font-weight: bold;">' + 
                                       formatChemicalFormulaHTML(a.sym) + '<sup>' + (a.charge > 1 ? a.charge : '') + '-</sup>' +
                                       '</div>';
                     if (!isDisabled) {
@@ -2023,7 +2023,7 @@
                                      'display: flex;' +
                                      'align-items: center;' +
                                      'justify-content: center;' +
-                                     'font-family: Orbitron, sans-serif;' +
+                                     'font-family: Calibri, sans-serif;' +
                                      'font-size: 6px;' +
                                      'font-weight: bold;' +
                                      'color: #ffffff;' +
