@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>極致化學：共價鍵與共價化合物互動學堂 (Aesthetic Covalent Bonding Lab)</title>
+    <script>
+        // Set default theme to light (bright white)
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    <title>極致化學：共價鍵與共價化合物互動學堂 (Covalent Bonding Lab)</title>
     <!-- 引入字體 -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Orbitron:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- FontAwesome 圖標庫 -->
@@ -38,10 +43,17 @@
             --cl-color: #10b981;
             --br-color: #f43f5e;
             --i-color: #a855f7;
+
+            /* SVG Drawing Variables */
+            --svg-bond-fill: rgba(255, 255, 255, 0.45);
+            --svg-bond-stroke: rgba(255, 255, 255, 0.35);
+            --svg-hash-stroke: rgba(255, 255, 255, 0.4);
+            --svg-line-stroke: rgba(255, 255, 255, 0.35);
+            --svg-bg-circle-fill: #030712;
         }
 
         body {
-            font-family: 'Noto Sans TC', 'Montserrat', sans-serif;
+            font-family: 'Calibri', 'Montserrat', 'Noto Sans TC', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg-cyber);
@@ -72,7 +84,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-weight: 900;
             font-size: 1.3em;
             background: linear-gradient(45deg, var(--accent-blue), #9b51e0);
@@ -106,6 +118,8 @@
             cursor: pointer;
             border-radius: 12px;
             font-weight: 600;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -149,7 +163,7 @@
         }
 
         .stat-val {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-size: 1.6em;
             font-weight: 700;
             color: var(--neon-green);
@@ -190,6 +204,14 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card h3 {
+            font-size: 1.1em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-top: 0;
+            margin-bottom: 10px;
         }
 
         /* Compact overrides specifically for Tab 1 to fit selector & calculator simultaneously */
@@ -248,7 +270,7 @@
             padding: 10px 20px;
             border-radius: 8px;
             font-weight: 700;
-            font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+            font-family: 'Calibri', 'Montserrat', 'Noto Sans TC', sans-serif;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
@@ -327,7 +349,7 @@
             background: rgba(13, 20, 41, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 8px;
-            padding: 3px 4px;
+            padding: 6px 4px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -353,13 +375,13 @@
             top: 1px;
             left: 3px;
             font-size: 0.55em;
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             color: var(--text-secondary);
         }
 
         .periodic-sym {
             font-size: 1.05em;
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-weight: 700;
             color: var(--el-color);
             margin: 1px 0;
@@ -418,7 +440,7 @@
 
         .calc-atom-slot .slot-sym {
             font-size: 1.20em;
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-weight: 700;
             color: var(--el-color);
             text-shadow: 0 0 6px var(--el-color-shadow);
@@ -433,6 +455,100 @@
             padding: 5px 12px !important;
             font-size: 0.8em !important;
             border-radius: 6px !important;
+        }
+
+        /* Pop-up white toolbar for element selection */
+        .calc-popup-menu {
+            position: absolute;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.15);
+            width: 220px;
+            z-index: 1000;
+            display: none;
+            padding: 6px;
+            color: #0f172a;
+            font-family: 'Calibri', 'Montserrat', 'Noto Sans TC', sans-serif;
+            text-align: left;
+        }
+
+        .popup-header {
+            font-size: 0.72em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #64748b;
+            padding: 6px 8px;
+            border-bottom: 1px solid #f1f5f9;
+            margin-bottom: 4px;
+        }
+
+        .popup-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            max-height: 240px;
+            overflow-y: auto;
+        }
+
+        .popup-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+
+        .popup-item:hover {
+            background: #f1f5f9;
+        }
+
+        .popup-badge {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: 800;
+            color: #ffffff;
+            font-family: 'Calibri', sans-serif;
+        }
+
+        .popup-name {
+            font-size: 0.8em;
+            font-weight: 600;
+            color: #1e293b;
+            flex-grow: 1;
+        }
+
+        .popup-en {
+            font-size: 0.75em;
+            font-family: 'Calibri', sans-serif;
+            font-weight: 700;
+            color: #64748b;
+        }
+
+        .popup-divider {
+            height: 1px;
+            background: #f1f5f9;
+            margin: 4px 0;
+        }
+
+        .popup-clear {
+            color: var(--neon-red) !important;
+            font-weight: 600;
+            font-size: 0.8em;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        .popup-clear:hover {
+            background: #fef2f2;
         }
 
         /* 儀表板指針樣式 */
@@ -527,7 +643,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-weight: bold;
             font-size: 0.9em;
             color: #ffffff;
@@ -541,7 +657,7 @@
         }
 
         .pool-atom-info .sym {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-weight: 700;
             color: var(--text-main);
             font-size: 0.95em;
@@ -616,7 +732,7 @@
         .workspace-zoom-label {
             min-width: 38px;
             text-align: center;
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-size: 0.85em;
             color: var(--accent-blue);
         }
@@ -642,7 +758,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Calibri', sans-serif;
             font-weight: bold;
             font-size: 1.1em;
             color: #ffffff;
@@ -909,15 +1025,18 @@
             background: none;
             border: none;
             color: var(--text-secondary);
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
+            height: 32px;
+            border-radius: 16px;
+            padding: 0 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.2s ease;
-            font-size: 0.9em;
+            font-size: 0.85em;
+            font-weight: 600;
+            gap: 6px;
+            white-space: nowrap;
         }
 
         .builder-3d-btn:hover {
@@ -940,19 +1059,29 @@
             color: #ffffff;
         }
 
+        .builder-3d-help {
+            transition: all 0.3s ease;
+        }
+
+        html[data-theme="light"] .builder-3d-help {
+            background: rgba(255, 255, 255, 0.95) !important;
+            border: 1px solid rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+        }
+
         .builder-3d-palette {
             position: absolute;
-            bottom: 8px;
+            bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 5px;
+            gap: 6px;
             background: rgba(11, 17, 38, 0.85);
-            border: 1px solid rgba(0, 168, 255, 0.2);
-            border-radius: 15px;
-            padding: 3px 6px;
+            border: 1.5px solid rgba(0, 168, 255, 0.25);
+            border-radius: 20px;
+            padding: 4px 8px;
             z-index: 10;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             align-items: center;
             transition: opacity 0.3s ease, transform 0.3s ease;
             opacity: 0;
@@ -965,18 +1094,19 @@
         }
 
         .element-3d-dot {
-            width: 20px;
-            height: 20px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.65em;
+            font-size: 0.8em;
             font-weight: bold;
             color: #ffffff;
+            background: var(--el-color);
             cursor: pointer;
             transition: all 0.2s ease;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1.5px solid rgba(255,255,255,0.15);
             text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         }
 
@@ -1008,12 +1138,286 @@
                 overflow: visible;
             }
             .right-sidebar { order: -1; }
+            .builder-3d-btn span {
+                display: none !important;
+            }
+            .builder-3d-btn {
+                width: 32px;
+                padding: 0;
+                border-radius: 50%;
+            }
         }
 
         @media (max-width: 600px) {
             .cyber-btn { min-height: 44px; }
             .quest-list-panel { max-height: 200px; }
             .vessel-workspace { min-height: 200px !important; }
+        }
+
+        /* --- Light Theme Overrides --- */
+        html[data-theme="light"] {
+            --bg-cyber: #f8fafc;
+            --sidebar-bg: #ffffff;
+            --card-glass: rgba(255, 255, 255, 0.85);
+            --card-border: rgba(0, 168, 255, 0.15);
+            --accent-blue: #0284c7;
+            --accent-gold: #d97706;
+            --neon-green: #16a34a;
+            --neon-red: #dc2626;
+            --text-main: #0f172a;
+            --text-secondary: #475569;
+
+            /* Light theme element colors for better contrast */
+            --h-color: #0284c7;
+            --b-color: #e11d48;
+            --c-color: #475569;
+            --n-color: #4f46e5;
+            --o-color: #ea580c;
+            --f-color: #d97706;
+            --si-color: #0891b2;
+            --p-color: #db2777;
+            --s-color: #ca8a04;
+            --cl-color: #16a34a;
+            --br-color: #be123c;
+            --i-color: #7c3aed;
+
+            /* SVG Drawing Variables */
+            --svg-bond-fill: rgba(15, 23, 42, 0.45);
+            --svg-bond-stroke: rgba(15, 23, 42, 0.35);
+            --svg-hash-stroke: rgba(15, 23, 42, 0.4);
+            --svg-line-stroke: rgba(15, 23, 42, 0.35);
+            --svg-bg-circle-fill: #ffffff;
+        }
+
+        html[data-theme="light"] body {
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(2, 132, 199, 0.08) 0px, transparent 50%),
+                radial-gradient(at 90% 80%, rgba(217, 119, 6, 0.06) 0px, transparent 50%);
+        }
+
+        html[data-theme="light"] #sidebar {
+            box-shadow: 10px 0 30px rgba(0,0,0,0.05);
+            border-right: 2px solid rgba(0, 168, 255, 0.1);
+        }
+
+        html[data-theme="light"] .periodic-cell {
+            background: rgba(241, 245, 249, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        html[data-theme="light"] .periodic-cell:hover {
+            background: rgba(241, 245, 249, 1);
+            box-shadow: 0 4px 12px var(--el-color-shadow);
+        }
+
+        html[data-theme="light"] .periodic-cell.selected {
+            background: rgba(226, 232, 240, 1);
+            box-shadow: 0 0 15px var(--el-color-shadow);
+        }
+
+        html[data-theme="light"] .calc-atom-slot {
+            background: rgba(241, 245, 249, 0.8);
+            border: 1.5px dashed rgba(0, 0, 0, 0.12);
+        }
+
+        html[data-theme="light"] .calc-atom-slot.filled {
+            background: rgba(226, 232, 240, 0.9);
+            border: 1.5px solid var(--el-color);
+        }
+
+        html[data-theme="light"] .bohr-svg-container,
+        html[data-theme="light"] .lewis-svg-card,
+        html[data-theme="light"] .canvas-3d-card,
+        html[data-theme="light"] .math-tex-card {
+            background: rgba(241, 245, 249, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        html[data-theme="light"] .atom-pool,
+        html[data-theme="light"] .quest-list-panel {
+            background: rgba(241, 245, 249, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        html[data-theme="light"] .pool-atom-card,
+        html[data-theme="light"] .quest-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        html[data-theme="light"] .pool-atom-card:hover,
+        html[data-theme="light"] .quest-item:hover {
+            background: rgba(2, 132, 199, 0.05);
+        }
+
+        html[data-theme="light"] .nav-item {
+            background: rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        html[data-theme="light"] .nav-item:hover {
+            background: rgba(2, 132, 199, 0.06);
+        }
+
+        html[data-theme="light"] .nav-item.active {
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(124, 58, 237, 0.12));
+            color: #0f172a;
+        }
+
+        html[data-theme="light"] .divider {
+            background: rgba(0, 0, 0, 0.06);
+        }
+
+        html[data-theme="light"] .stat-box {
+            background: rgba(241, 245, 249, 0.8);
+            border: 1px dashed rgba(0, 0, 0, 0.12);
+        }
+
+        html[data-theme="light"] .vessel-toolbar {
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        html[data-theme="light"] .workspace-zoom-controls,
+        html[data-theme="light"] .builder-3d-toolbar,
+        html[data-theme="light"] .builder-3d-palette {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        html[data-theme="light"] .workspace-zoom-btn {
+            background: rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        html[data-theme="light"] .workspace-zoom-btn:hover {
+            background: rgba(2, 132, 199, 0.1);
+        }
+
+        html[data-theme="light"] .builder-3d-btn:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        html[data-theme="light"] .reaction-vessel {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1.5px solid rgba(2, 132, 199, 0.15);
+        }
+
+        html[data-theme="light"] .vessel-workspace {
+            background-image: 
+                radial-gradient(rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+                radial-gradient(rgba(2, 132, 199, 0.04) 1px, transparent 1px);
+        }
+
+        html[data-theme="light"] .tooltip {
+            background: rgba(255, 255, 255, 0.98);
+            border: 1px solid var(--accent-blue);
+            color: #0f172a;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        html[data-theme="light"] .modal-overlay {
+            background: rgba(15, 23, 42, 0.4);
+        }
+
+        html[data-theme="light"] #modal-canvas-3d {
+            background: rgba(241, 245, 249, 0.6) !important;
+        }
+
+        html[data-theme="light"] .gauge-container {
+            background: rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        html[data-theme="light"] .gauge-pin {
+            background: #0f172a;
+            box-shadow: 0 0 6px rgba(0,0,0,0.2);
+        }
+
+        html[data-theme="light"] .logo {
+            border-bottom: 2px solid rgba(0,0,0,0.05);
+        }
+
+        html[data-theme="light"] .lang-btn,
+        html[data-theme="light"] .cyber-btn-secondary {
+            background: rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+
+        html[data-theme="light"] .lang-btn:hover,
+        html[data-theme="light"] .cyber-btn-secondary:hover {
+            background: rgba(0,0,0,0.08);
+        }
+
+        html[data-theme="light"] ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        html[data-theme="light"] ::-webkit-scrollbar-thumb {
+            background: rgba(2, 132, 199, 0.2);
+        }
+
+        html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+            background: rgba(2, 132, 199, 0.4);
+        }
+
+        html[data-theme="light"] #calc-prediction-box {
+            background: rgba(0,0,0,0.03) !important;
+            border: 1px solid rgba(0,0,0,0.06) !important;
+        }
+
+        html[data-theme="light"] .builder-3d-toolbar div[style*="background: rgba(255,255,255,0.2)"] {
+            background: rgba(0,0,0,0.1) !important;
+        }
+
+        html[data-theme="light"] div[style*="color:rgba(255,255,255,0.25)"] {
+            color: rgba(0,0,0,0.3) !important;
+        }
+
+        html[data-theme="light"] div[style*="background: rgba(11, 17, 38, 0.85)"] {
+            background: rgba(255, 255, 255, 0.9) !important;
+            border-bottom: 1px solid rgba(2, 132, 199, 0.15) !important;
+        }
+
+        html[data-theme="light"] div[style*="background: rgba(255,255,255,0.15)"] {
+            background: rgba(0,0,0,0.1) !important;
+        }
+
+        html[data-theme="light"] #quest-details-card {
+            background: rgba(0,0,0,0.03) !important;
+            border: 1px solid rgba(0,0,0,0.06) !important;
+        }
+
+        html[data-theme="light"] div[style*="background: rgba(0,0,0,0.2)"] {
+            background: rgba(0,0,0,0.03) !important;
+            border: 1px solid rgba(0,0,0,0.06) !important;
+        }
+
+        html[data-theme="light"] #calc-katex-desc {
+            color: #334155 !important;
+        }
+
+        /* Inline styles overrides for light theme */
+        html[data-theme="light"] tr[style*="border-bottom"] {
+            border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+        }
+        html[data-theme="light"] div[style*="border-top"] {
+            border-top-color: rgba(0, 0, 0, 0.08) !important;
+        }
+        html[data-theme="light"] div[style*="border-bottom"] {
+            border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+        }
+        html[data-theme="light"] div[style*="background: rgba(255,255,255,0.15)"],
+        html[data-theme="light"] div[style*="background: rgba(255,255,255,0.2)"] {
+            background: rgba(0, 0, 0, 0.08) !important;
+        }
+        html[data-theme="light"] div[style*="border: 1px solid rgba(255, 255, 255, 0.05)"],
+        html[data-theme="light"] div[style*="border:1px solid rgba(255,255,255,0.05)"] {
+            border-color: rgba(0, 0, 0, 0.08) !important;
+        }
+        html[data-theme="light"] div[style*="border: 1px solid rgba(255,255,255,0.05)"] {
+            border-color: rgba(0, 0, 0, 0.08) !important;
         }
     </style>
 </head>
@@ -1037,7 +1441,7 @@
         <div class="nav-item" id="nav-lab" onclick="switchTab('lab')">
             <i class="fa-solid fa-flask-vial"></i>
             <span class="lang-zh">共價鍵拼圖室</span>
-            <span class="lang-en" style="display:none;">Covalent Puzzle Lab</span>
+            <span class="lang-en" style="display:none;">Covalent Bonding Lab</span>
         </div>
 
         <div class="nav-item" id="nav-quest" onclick="switchTab('quest')">
@@ -1065,12 +1469,19 @@
         <div class="header-bar">
             <div class="header-title" id="page-main-title">
                 <span class="lang-zh">極致化學：共價鍵互動學堂</span>
-                <span class="lang-en" style="display:none;">Aesthetic Covalent Bonding Lab</span>
+                <span class="lang-en" style="display:none;">Covalent Bonding Lab</span>
             </div>
-            <button class="lang-btn" onclick="toggleLanguage()">
-                <i class="fa-solid fa-globe"></i>
-                <span id="lang-btn-text">English</span>
-            </button>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button class="lang-btn" id="theme-toggle-btn" onclick="toggleTheme()">
+                    <i class="fa-solid fa-moon"></i>
+                    <span class="lang-zh">深色模式</span>
+                    <span class="lang-en" style="display:none;">Dark Mode</span>
+                </button>
+                <button class="lang-btn" onclick="toggleLanguage()">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="lang-btn-text">繁體中文</span>
+                </button>
+            </div>
         </div>
 
         <!-- TAB 1: 原子與週期表 -->
@@ -1100,60 +1511,61 @@
                             <span class="lang-en" style="display:none;">Covalent & Electronegativity Calculator</span>
                         </h3>
                         <p style="font-size: 0.8em; color: var(--text-secondary); margin-bottom: 4px; margin-top: 1px; line-height: 1.35;">
-                            <span class="lang-zh">將兩個原子分別設為元素 A 與 元素 B。本計算器將自動計算電負性差值 (Δχ)，並預測化學鍵類型。</span>
-                            <span class="lang-en" style="display:none;">Set two elements as Atom A and Atom B. The calculator determines electronegativity difference (Δχ) and predicts bond character.</span>
+                            <span class="lang-zh">點擊元素 A 或 元素 B 插槽，從彈出的工具列中選擇元素。計算器將自動計算電負性差值 (Δχ)。</span>
+                            <span class="lang-en" style="display:none;">Click on Slot A or Slot B to select an element from the pop-up toolbar. The calculator determines electronegativity difference (Δχ).</span>
                         </p>
-                        <div class="en-calculator">
+                        <div class="en-calculator" style="position: relative;">
                             <div class="calc-atoms-row">
-                                <div class="calc-atom-slot" id="slot-atom-a" onclick="clearSlot('A')">
-                                    <div style="color: var(--text-secondary); font-size: 0.8em; text-align:center;">
-                                        <span class="lang-zh">元素 A<br>點擊清除</span>
-                                        <span class="lang-en" style="display:none;">Atom A<br>Click Clear</span>
+                                <div class="calc-atom-slot" id="slot-atom-a" onclick="openElementSelector(event, 'A')">
+                                    <div style="color: var(--text-secondary); font-size: 0.75em; text-align:center; line-height: 1.2;">
+                                        <span class="lang-zh">點擊<br>選擇 A</span>
+                                        <span class="lang-en" style="display:none;">Click to<br>select A</span>
                                     </div>
                                 </div>
-                                <div style="font-family: 'Orbitron', sans-serif; font-weight: bold; font-size: 2em; color: var(--text-secondary);">
+                                <div style="font-family: 'Calibri', sans-serif; font-weight: bold; font-size: 2em; color: var(--text-secondary);">
                                     <i class="fa-solid fa-circle-minus"></i>
                                 </div>
-                                <div class="calc-atom-slot" id="slot-atom-b" onclick="clearSlot('B')">
-                                    <div style="color: var(--text-secondary); font-size: 0.8em; text-align:center;">
-                                        <span class="lang-zh">元素 B<br>點擊清除</span>
-                                        <span class="lang-en" style="display:none;">Atom B<br>Click Clear</span>
+                                <div class="calc-atom-slot" id="slot-atom-b" onclick="openElementSelector(event, 'B')">
+                                    <div style="color: var(--text-secondary); font-size: 0.75em; text-align:center; line-height: 1.2;">
+                                        <span class="lang-zh">點擊<br>選擇 B</span>
+                                        <span class="lang-en" style="display:none;">Click to<br>select B</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div style="display: flex; gap: 8px; justify-content: center; margin-top: 4px;">
-                                <button class="cyber-btn cyber-btn-secondary btn-compact" onclick="assignSlot('A')">
-                                    <span class="lang-zh">設為元素 A</span>
-                                    <span class="lang-en" style="display:none;">Set as Atom A</span>
-                                </button>
-                                <button class="cyber-btn cyber-btn-secondary btn-compact" onclick="assignSlot('B')">
-                                    <span class="lang-zh">設為元素 B</span>
-                                    <span class="lang-en" style="display:none;">Set as Atom B</span>
-                                </button>
-                            </div>
+                            <!-- Pop-up white toolbar for element selection -->
+                            <div id="calc-popup-menu" class="calc-popup-menu"></div>
 
                             <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 4px; margin-top: 2px;">
                                 <div style="display:flex; justify-content:space-between; margin-bottom: 2px;">
                                     <span class="lang-zh" style="font-weight: 600;">電負性差值 (&Delta;&chi;):</span>
                                     <span class="lang-en" style="display:none; font-weight:600;">Electronegativity Diff (&Delta;&chi;):</span>
-                                    <span id="calc-diff-text" style="font-family:'Orbitron', sans-serif; font-weight:700; color:var(--accent-gold); font-size: 1.1em;">-</span>
+                                    <span id="calc-diff-text" style="font-family:'Calibri', sans-serif; font-weight:700; color:var(--accent-gold); font-size: 1.1em;">-</span>
                                 </div>
                                 
                                 <div class="gauge-container">
-                                    <div class="gauge-section" style="width: 12%; background: linear-gradient(90deg, #10b981, #34d399); flex-shrink: 0;" title="&Delta;&chi; < 0.4">
-                                        <span class="lang-zh">非極性</span>
-                                        <span class="lang-en" style="display:none; white-space:nowrap;">Non-polar</span>
-                                    </div>
-                                    <div class="gauge-section" style="width: 38%; background: linear-gradient(90deg, #34d399, #f59e0b); flex-shrink: 0;" title="0.4 &le; &Delta;&chi; &le; 1.7">
-                                        <span class="lang-zh">極性共債</span>
-                                        <span class="lang-en" style="display:none; white-space:nowrap;">Polar</span>
-                                    </div>
-                                    <div class="gauge-section" style="width: 50%; background: linear-gradient(90deg, #f59e0b, #ef4444); flex-shrink: 0;" title="&Delta;&chi; > 1.7">
-                                        <span class="lang-zh">離子鍵</span>
-                                        <span class="lang-en" style="display:none; white-space:nowrap;">Ionic</span>
-                                    </div>
+                                    <div class="gauge-section" style="width: 12%; background: linear-gradient(90deg, #10b981, #34d399); flex-shrink: 0;" title="&Delta;&chi; < 0.4"></div>
+                                    <div class="gauge-section" style="width: 38%; background: linear-gradient(90deg, #34d399, #f59e0b); flex-shrink: 0;" title="0.4 &le; &Delta;&chi; &le; 1.7"></div>
+                                    <div class="gauge-section" style="width: 50%; background: linear-gradient(90deg, #f59e0b, #ef4444); flex-shrink: 0;" title="&Delta;&chi; > 1.7"></div>
                                     <div class="gauge-pin" id="calc-gauge-pin" style="left: 0%;"></div>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; font-size: 0.72em; margin-top: 6px; font-weight: 600; gap: 4px; flex-wrap: wrap;">
+                                    <div style="display: flex; align-items: center; gap: 4px; color: #10b981;">
+                                        <span style="width: 6px; height: 6px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+                                        <span class="lang-zh">非極性共價 (&Delta;&chi; < 0.4)</span>
+                                        <span class="lang-en" style="display:none;">Non-polar (&Delta;&chi; < 0.4)</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 4px; color: #f59e0b;">
+                                        <span style="width: 6px; height: 6px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+                                        <span class="lang-zh">極性共價 (0.4 - 1.7)</span>
+                                        <span class="lang-en" style="display:none;">Polar Covalent (0.4 - 1.7)</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 4px; color: #ef4444;">
+                                        <span style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                                        <span class="lang-zh">離子鍵 (&Delta;&chi; > 1.7)</span>
+                                        <span class="lang-en" style="display:none;">Ionic (&Delta;&chi; > 1.7)</span>
+                                    </div>
                                 </div>
 
                                 <div style="margin-top: 8px; background: rgba(0,0,0,0.15); padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.02);" id="calc-prediction-box">
@@ -1193,7 +1605,7 @@
                                     <span class="lang-zh">元素符號</span>
                                     <span class="lang-en" style="display:none;">Symbol</span>
                                 </td>
-                                <td id="det-sym" style="text-align: right; font-weight: 700; font-family: 'Orbitron', sans-serif;">H</td>
+                                <td id="det-sym" style="text-align: right; font-weight: 700; font-family: 'Calibri', sans-serif;">H</td>
                             </tr>
                             <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                                 <td style="padding: 10px 0; color: var(--text-secondary);">
@@ -1207,28 +1619,28 @@
                                     <span class="lang-zh">原子序數 (Protons)</span>
                                     <span class="lang-en" style="display:none;">Atomic Number</span>
                                 </td>
-                                <td id="det-num" style="text-align: right; font-family: 'Orbitron', sans-serif;">1</td>
+                                <td id="det-num" style="text-align: right; font-family: 'Calibri', sans-serif;">1</td>
                             </tr>
                             <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                                 <td style="padding: 10px 0; color: var(--text-secondary);">
                                     <span class="lang-zh">價電子數 (Valence Electrons)</span>
                                     <span class="lang-en" style="display:none;">Valence Electrons</span>
                                 </td>
-                                <td id="det-valence" style="text-align: right; font-family: 'Orbitron', sans-serif; color: var(--accent-gold); font-weight: 700;">1</td>
+                                <td id="det-valence" style="text-align: right; font-family: 'Calibri', sans-serif; color: var(--accent-gold); font-weight: 700;">1</td>
                             </tr>
                             <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                                 <td style="padding: 10px 0; color: var(--text-secondary);">
                                     <span class="lang-zh">核外電子排布</span>
                                     <span class="lang-en" style="display:none;">Electron Config</span>
                                 </td>
-                                <td id="det-config" style="text-align: right; font-family: 'Orbitron', sans-serif;">1</td>
+                                <td id="det-config" style="text-align: right; font-family: 'Calibri', sans-serif;">1</td>
                             </tr>
                             <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                                 <td style="padding: 10px 0; color: var(--text-secondary);">
                                     <span class="lang-zh">電負性 (Electronegativity)</span>
                                     <span class="lang-en" style="display:none;">Electronegativity</span>
                                 </td>
-                                <td id="det-en" style="text-align: right; font-family: 'Orbitron', sans-serif; font-weight: 700; color: var(--neon-green);">2.20</td>
+                                <td id="det-en" style="text-align: right; font-family: 'Calibri', sans-serif; font-weight: 700; color: var(--neon-green);">2.20</td>
                             </tr>
                         </table>
                     </div>
@@ -1241,26 +1653,123 @@
             <div class="lab-layout">
                 <!-- 中央：反應室 (3D 分子立體反應室) -->
                 <div class="reaction-vessel">
+                    <!-- Lab Title & Instructions Banner -->
+                    <div style="background: rgba(11, 17, 38, 0.85); border-bottom: 1px solid rgba(0, 168, 255, 0.2); padding: 10px 15px; display:flex; justify-content:space-between; align-items:center; z-index:12;">
+                        <div>
+                            <div style="font-size: 0.75em; color: var(--accent-blue); text-transform: uppercase; letter-spacing:1px; font-weight:700;">SANDBOX BUILDER</div>
+                            <h3 style="margin: 2px 0 0 0; font-family:'Calibri', 'Noto Sans TC', sans-serif; font-size:1.15em;">
+                                <span class="lang-zh">共價鍵拼圖室</span>
+                                <span class="lang-en" style="display:none;">Covalent Bonding Lab</span>
+                            </h3>
+                        </div>
+                        <!-- Instructions Tab -->
+                        <button class="builder-3d-btn" id="btn-lab-help-toggle" onclick="toggleLabHelpCard()" title="Toggle Instructions / 切換操作指南" style="border: 1px solid rgba(0, 168, 255, 0.3);">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span>
+                                <span class="lang-zh">操作指南</span>
+                                <span class="lang-en" style="display:none;">Instructions</span>
+                            </span>
+                        </button>
+                    </div>
+
                     <!-- 3D Builder Canvas Workspace -->
                     <div class="vessel-workspace" id="lab-3d-workspace-container" style="flex-grow:1; position:relative; overflow:hidden;">
                         <!-- 3D Builder Toolbar -->
                         <div class="builder-3d-toolbar" id="lab-3d-toolbar">
-                            <button class="builder-3d-btn active" id="btn-3d-mode-view" onclick="setLab3DMode('view')" title="View Mode / 觀察模式">
-                                <i class="fa-solid fa-eye"></i>
-                            </button>
-                            <button class="builder-3d-btn" id="btn-3d-mode-add" onclick="setLab3DMode('add')" title="Add/Sprout Atom / 增加/衍生原子">
+                            <button class="builder-3d-btn active" id="btn-3d-mode-add" onclick="setLab3DMode('add')" title="Add/Sprout Atom / 增加/衍生原子">
                                 <i class="fa-solid fa-plus"></i>
+                                <span>
+                                    <span class="lang-zh">添加原子</span>
+                                    <span class="lang-en" style="display:none;">Add Atom</span>
+                                </span>
                             </button>
-                            <button class="builder-3d-btn" id="btn-3d-mode-bond" onclick="setLab3DMode('bond')" title="Bond Mode / 鍵結模式">
+                            <button class="builder-3d-btn" id="btn-3d-mode-bond" onclick="setLab3DMode('bond')" title="Form Bond / 建立鍵結">
                                 <i class="fa-solid fa-link"></i>
+                                <span>
+                                    <span class="lang-zh">建立鍵結</span>
+                                    <span class="lang-en" style="display:none;">Form Bond</span>
+                                </span>
                             </button>
-                            <button class="builder-3d-btn" id="btn-3d-mode-delete" onclick="setLab3DMode('delete')" title="Delete Mode / 刪除模式">
+                            <button class="builder-3d-btn" id="btn-3d-mode-delete" onclick="setLab3DMode('delete')" title="Delete / 刪除">
                                 <i class="fa-solid fa-eraser"></i>
+                                <span>
+                                    <span class="lang-zh">刪除</span>
+                                    <span class="lang-en" style="display:none;">Delete</span>
+                                </span>
                             </button>
                             <div style="width: 1px; height: 16px; background: rgba(255,255,255,0.2); margin: 0 4px;"></div>
                             <button class="builder-3d-btn btn-optimize" onclick="optimizeLab3DGeometry()" title="Optimize Geometry (VSEPR) / 優化幾何結構 (VSEPR)">
                                 <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span>
+                                    <span class="lang-zh">優化結構</span>
+                                    <span class="lang-en" style="display:none;">Optimize</span>
+                                </span>
                             </button>
+                        </div>
+
+                        <!-- 3D Builder Help Card -->
+                        <div class="builder-3d-help" id="lab-3d-help" style="position: absolute; top: 8px; right: 8px; z-index: 10; width: 260px; background: rgba(11, 17, 38, 0.9); border: 1px solid rgba(0, 168, 255, 0.3); border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); font-size: 0.8em; color: var(--text-main); display: none;">
+                            <div style="display: flex; align-items: center; margin-bottom: 6px; border-bottom: 1px solid rgba(0, 168, 255, 0.2); padding-bottom: 4px;">
+                                <span style="font-weight: 700; color: var(--accent-blue); display: flex; align-items: center; gap: 6px;">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="lang-zh">操作指南</span>
+                                    <span class="lang-en" style="display:none;">Instructions</span>
+                                </span>
+                            </div>
+                            <div id="lab-help-content" style="display: flex; flex-direction: column; gap: 6px; max-height: 250px; overflow-y: auto;">
+                                <div>
+                                    <strong style="color: var(--accent-gold);">
+                                        <span class="lang-zh">添加原子模式 (Add)</span>
+                                        <span class="lang-en" style="display:none;">Add Atom Mode</span>
+                                    </strong>
+                                    <ul style="margin: 2px 0; padding-left: 15px; color: var(--text-secondary);">
+                                        <li>
+                                            <span class="lang-zh">點擊空白處：生成新原子</span>
+                                            <span class="lang-en" style="display:none;">Click empty space: Spawn atom</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong style="color: var(--accent-gold);">
+                                        <span class="lang-zh">建立鍵結模式 (Bond)</span>
+                                        <span class="lang-en" style="display:none;">Form Bond</span>
+                                    </strong>
+                                    <ul style="margin: 2px 0; padding-left: 15px; color: var(--text-secondary);">
+                                        <li>
+                                            <span class="lang-zh">依序點擊兩原子：建立鍵結</span>
+                                            <span class="lang-en" style="display:none;">Click two atoms: Create bond</span>
+                                        </li>
+                                        <li>
+                                            <span class="lang-zh">點擊化學鍵：切換為雙鍵或三鍵</span>
+                                            <span class="lang-en" style="display:none;">Click bond: Double or triple the bond</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong style="color: var(--accent-gold);">
+                                        <span class="lang-zh">刪除 (Delete)</span>
+                                        <span class="lang-en" style="display:none;">Delete</span>
+                                    </strong>
+                                    <ul style="margin: 2px 0; padding-left: 15px; color: var(--text-secondary);">
+                                        <li>
+                                            <span class="lang-zh">點擊原子或化學鍵即可刪除</span>
+                                            <span class="lang-en" style="display:none;">Click atom or bond to delete</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong style="color: var(--accent-gold);">
+                                        <span class="lang-zh">優化結構 (Optimize)</span>
+                                        <span class="lang-en" style="display:none;">Optimize</span>
+                                    </strong>
+                                    <ul style="margin: 2px 0; padding-left: 15px; color: var(--text-secondary);">
+                                        <li>
+                                            <span class="lang-zh">點擊優化結構：利用 VSEPR 理論自動排布 3D 空間</span>
+                                            <span class="lang-en" style="display:none;">Click Optimize: Automatically rearrange your structure into 3D geometry using VSEPR theory</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- 3D Element Palette (shown in Add mode) -->
@@ -1280,12 +1789,6 @@
                         </div>
 
                         <canvas id="lab-canvas-3d" style="width:100%; height:100%; cursor:grab;"></canvas>
-
-                        <div style="position:absolute; bottom:15px; left:15px; color:rgba(255,255,255,0.25); font-size:0.8em; pointer-events:none; z-index:1;">
-                            <i class="fa-solid fa-arrows-spin"></i>
-                            <span class="lang-zh">滑鼠拖曳旋轉，滾輪縮放。使用上方工具欄可在 3D 視圖中直接增刪原子與鍵結！</span>
-                            <span class="lang-en" style="display:none;">Drag to rotate, scroll to zoom. Use the toolbar to build/edit molecules directly in 3D!</span>
-                        </div>
                     </div>
 
                     <!-- 操作工具欄 -->
@@ -1388,30 +1891,116 @@
                         <div style="background: rgba(11, 17, 38, 0.85); border-bottom: 1px solid rgba(0, 168, 255, 0.2); padding: 10px 15px; display:flex; justify-content:space-between; align-items:center; z-index:12;">
                             <div>
                                 <div style="font-size: 0.75em; color: var(--accent-blue); text-transform: uppercase; letter-spacing:1px; font-weight:700;" id="quest-stage-indicator">STAGE 1 / 21</div>
-                                <h3 style="margin: 2px 0 0 0; font-family:'Orbitron', 'Noto Sans TC', sans-serif; font-size:1.15em;" id="quest-title-text">H2 - 氫氣</h3>
+                                <h3 style="margin: 2px 0 0 0; font-family:'Calibri', 'Noto Sans TC', sans-serif; font-size:1.15em;" id="quest-title-text">H2 - 氫氣</h3>
                             </div>
+                            <!-- Instructions Tab -->
+                            <button class="builder-3d-btn" id="btn-quest-help-toggle" onclick="toggleQuestHelpCard()" title="Toggle Instructions / 切換操作指南" style="border: 1px solid rgba(0, 168, 255, 0.3);">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <span>
+                                    <span class="lang-zh">操作指南</span>
+                                    <span class="lang-en" style="display:none;">Instructions</span>
+                                </span>
+                            </button>
                         </div>
 
                         <!-- 3D Builder Canvas Workspace -->
                         <div class="vessel-workspace" id="quest-3d-workspace-container" style="flex-grow:1; position:relative; overflow:hidden;">
                             <!-- 3D Builder Toolbar -->
                             <div class="builder-3d-toolbar" id="quest-3d-toolbar">
-                                <button class="builder-3d-btn active" id="btn-quest-3d-mode-view" onclick="setQuest3DMode('view')" title="View Mode / 觀察模式">
-                                    <i class="fa-solid fa-arrows-spin"></i>
-                                </button>
-                                <button class="builder-3d-btn" id="btn-quest-3d-mode-add" onclick="setQuest3DMode('add')" title="Add/Sprout Atom / 增加/衍生原子">
+                                <button class="builder-3d-btn active" id="btn-quest-3d-mode-add" onclick="setQuest3DMode('add')" title="Add/Sprout Atom / 增加/衍生原子">
                                     <i class="fa-solid fa-plus"></i>
+                                    <span>
+                                        <span class="lang-zh">添加原子</span>
+                                        <span class="lang-en" style="display:none;">Add Atom</span>
+                                    </span>
                                 </button>
-                                <button class="builder-3d-btn" id="btn-quest-3d-mode-bond" onclick="setQuest3DMode('bond')" title="Bond Mode / 鍵結模式">
+                                <button class="builder-3d-btn" id="btn-quest-3d-mode-bond" onclick="setQuest3DMode('bond')" title="Form Bond / 建立鍵結">
                                     <i class="fa-solid fa-link"></i>
+                                    <span>
+                                        <span class="lang-zh">建立鍵結</span>
+                                        <span class="lang-en" style="display:none;">Form Bond</span>
+                                    </span>
                                 </button>
-                                <button class="builder-3d-btn" id="btn-quest-3d-mode-delete" onclick="setQuest3DMode('delete')" title="Delete Mode / 刪除模式">
+                                <button class="builder-3d-btn" id="btn-quest-3d-mode-delete" onclick="setQuest3DMode('delete')" title="Delete / 刪除">
                                     <i class="fa-solid fa-trash-can"></i>
+                                    <span>
+                                        <span class="lang-zh">刪除</span>
+                                        <span class="lang-en" style="display:none;">Delete</span>
+                                    </span>
                                 </button>
                                 <div style="width: 1px; height: 16px; background: rgba(255,255,255,0.15); margin: 0 4px;"></div>
                                 <button class="builder-3d-btn btn-optimize" onclick="optimizeQuest3DGeometry()" title="Optimize Geometry (VSEPR) / 優化幾何結構 (VSEPR)">
                                     <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    <span>
+                                        <span class="lang-zh">優化結構</span>
+                                        <span class="lang-en" style="display:none;">Optimize</span>
+                                    </span>
                                 </button>
+                            </div>
+
+                            <!-- 3D Builder Help Card -->
+                            <div class="builder-3d-help" id="quest-3d-help" style="position: absolute; top: 8px; right: 8px; z-index: 10; width: 260px; background: rgba(11, 17, 38, 0.9); border: 1px solid rgba(0, 168, 255, 0.3); border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); font-size: 0.8em; color: var(--text-main); display: none;">
+                                <div style="display: flex; align-items: center; margin-bottom: 6px; border-bottom: 1px solid rgba(0, 168, 255, 0.2); padding-bottom: 4px;">
+                                    <span style="font-weight: 700; color: var(--accent-blue); display: flex; align-items: center; gap: 6px;">
+                                        <i class="fa-solid fa-circle-question"></i>
+                                        <span class="lang-zh">操作指南</span>
+                                        <span class="lang-en" style="display:none;">Instructions</span>
+                                    </span>
+                                </div>
+                                <div id="quest-help-content" style="display: flex; flex-direction: column; gap: 6px; max-height: 250px; overflow-y: auto;">
+                                    <div>
+                                        <strong style="color: var(--accent-gold);">
+                                            <span class="lang-zh">添加原子模式 (Add)</span>
+                                            <span class="lang-en" style="display:none;">Add Atom Mode</span>
+                                        </strong>
+                                        <ul style="margin: 2px 0; padding-left: 15px; color: var(--text-secondary);">
+                                            <li>
+                                                <span class="lang-zh">點擊空白處：生成新原子</span>
+                                                <span class="lang-en" style="display:none;">Click empty space: Spawn atom</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong style="color: var(--accent-gold);">
+                                            <span class="lang-zh">建立鍵結模式 (Bond)</span>
+                                            <span class="lang-en" style="display:none;">Form Bond</span>
+                                        </strong>
+                                        <ul style="margin: 2px 0; padding-left: 15px; color: var(--text-secondary);">
+                                            <li>
+                                                <span class="lang-zh">依序點擊兩原子：建立鍵結</span>
+                                                <span class="lang-en" style="display:none;">Click two atoms: Create bond</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-zh">點擊化學鍵：切換為雙鍵或三鍵</span>
+                                                <span class="lang-en" style="display:none;">Click bond: Double or triple the bond</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong style="color: var(--accent-gold);">
+                                            <span class="lang-zh">刪除 (Delete)</span>
+                                            <span class="lang-en" style="display:none;">Delete</span>
+                                        </strong>
+                                        <ul style="margin: 2px 0; padding-left: 15px; color: var(--text-secondary);">
+                                            <li>
+                                                <span class="lang-zh">點擊原子或化學鍵即可刪除</span>
+                                                <span class="lang-en" style="display:none;">Click atom or bond to delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong style="color: var(--accent-gold);">
+                                            <span class="lang-zh">優化結構 (Optimize)</span>
+                                            <span class="lang-en" style="display:none;">Optimize</span>
+                                        </strong>
+                                        <ul style="margin: 2px 0; padding-left: 15px; color: var(--text-secondary);">
+                                            <li>
+                                                <span class="lang-zh">點擊優化結構：利用 VSEPR 理論自動排布 3D 空間</span>
+                                                <span class="lang-en" style="display:none;">Click Optimize: Automatically rearrange your structure into 3D geometry using VSEPR theory</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- 3D Element Palette (shown in Add mode) -->
@@ -1431,13 +2020,6 @@
                             </div>
 
                             <canvas id="quest-canvas-3d" style="width:100%; height:100%; cursor:grab;"></canvas>
-
-                            <!-- 3D instructions overlay -->
-                            <div style="position:absolute; bottom:15px; left:15px; color:rgba(255,255,255,0.25); font-size:0.8em; pointer-events:none; z-index:1;">
-                                <i class="fa-solid fa-arrows-spin"></i>
-                                <span class="lang-zh">滑鼠拖曳旋轉，滾輪縮放。使用上方工具欄可在 3D 視圖中直接添加、鍵結或刪除！</span>
-                                <span class="lang-en" style="display:none;">Drag to rotate, scroll to zoom. Use the toolbar to add, bond, or delete directly in 3D!</span>
-                            </div>
                         </div>
 
                         <!-- Bottom toolbar -->
@@ -1521,7 +2103,7 @@
             <button class="modal-close" onclick="closeSuccessModal()">&times;</button>
             <div style="text-align: center; margin-bottom: 20px;">
                 <i class="fa-solid fa-circle-check" style="font-size: 3.5em; color: var(--neon-green); filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.4));"></i>
-                <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.8em; margin: 12px 0 3px 0;" id="modal-success-title">SYNTHESIS SUCCESS!</h2>
+                <h2 style="font-family: 'Calibri', sans-serif; font-size: 1.8em; margin: 12px 0 3px 0;" id="modal-success-title">SYNTHESIS SUCCESS!</h2>
                 <div style="color: var(--accent-gold); font-weight: bold; font-size: 1.1em;" id="modal-stars">
                     <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
                 </div>
@@ -1560,7 +2142,7 @@
 // AESTHETIC COVALENT BONDING LAB - ENGINE JS
 // ==========================================
 
-var currentLang = 'zh'; // 'zh' or 'en'
+var currentLang = 'en'; // 'zh' or 'en'
 var activeTab = 'periodic';
 
 // ==========================================
@@ -1581,6 +2163,41 @@ const DB_ELEMENTS = {
     'Br': { name_zh: '溴', name_en: 'Bromine', sym: 'Br', num: 35, val: 7, config: '2, 8, 18, 7', en: 2.96, color: '#ec4899', colorShadow: 'rgba(236, 72, 153, 0.4)', shells: [2, 8, 18, 7] },
     'I': { name_zh: '碘', name_en: 'Iodine', sym: 'I', num: 53, val: 7, config: '2, 8, 18, 18, 7', en: 2.66, color: '#a855f7', colorShadow: 'rgba(168, 85, 247, 0.4)', shells: [2, 8, 18, 18, 7] }
 };
+
+function getElementColor(sym) {
+    const el = DB_ELEMENTS[sym];
+    if (!el) return '#ffffff';
+    const theme = document.documentElement.getAttribute('data-theme') || 'light';
+    if (theme === 'light') {
+        const lightColors = {
+            'H': '#0284c7',  // Darker blue
+            'B': '#e11d48',  // Darker rose
+            'C': '#475569',  // Darker slate
+            'N': '#4f46e5',  // Darker indigo
+            'O': '#ea580c',  // Darker orange
+            'F': '#d97706',  // Darker amber
+            'Si': '#0891b2', // Darker cyan/blue
+            'P': '#db2777',  // Darker pink
+            'S': '#ca8a04',  // Darker yellow/gold
+            'Cl': '#16a34a', // Darker emerald
+            'Br': '#be123c', // Darker red/pink
+            'I': '#7c3aed'   // Darker purple
+        };
+        return lightColors[sym] || el.color;
+    }
+    return el.color;
+}
+
+function getElementColorShadow(sym) {
+    const color = getElementColor(sym);
+    if (color.startsWith('#')) {
+        const r = parseInt(color.slice(1, 3), 16);
+        const g = parseInt(color.slice(3, 5), 16);
+        const b = parseInt(color.slice(5, 7), 16);
+        return `rgba(${r}, ${g}, ${b}, 0.25)`;
+    }
+    return 'rgba(0, 168, 255, 0.2)';
+}
 
 const IONIC_THRESHOLD = 1.7;
 const POLAR_MIN = 0.4;
@@ -1928,7 +2545,7 @@ class Molecule3DViewer {
         this.projectedAtoms = [];
         this.projectedBonds = [];
         this.activeElement = 'H';
-        this.mode = 'view'; // 'view', 'add', 'bond', 'delete'
+        this.mode = 'add'; // 'view', 'add', 'bond', 'delete'
         this.bondAnimations = [];
 
         this.initEvents();
@@ -2068,88 +2685,7 @@ class Molecule3DViewer {
             this.isCustomBuilt = true;
 
             if (this.mode === 'add') {
-                if (clickedAtomIdx !== -1) {
-                    // Sprout atom from clicked atom
-                    const clickedAtom = this.atoms[clickedAtomIdx];
-                    
-                    // Calculate sprout direction in 3D
-                    let sproutDir = { x: 1, y: 0, z: 0 };
-                    let neighbors = [];
-                    this.bonds.forEach(b => {
-                        if (b.atom1 === clickedAtomIdx) neighbors.push(this.atoms[b.atom2]);
-                        else if (b.atom2 === clickedAtomIdx) neighbors.push(this.atoms[b.atom1]);
-                    });
-
-                    if (neighbors.length > 0) {
-                        let avgDir = { x: 0, y: 0, z: 0 };
-                        neighbors.forEach(n => {
-                            avgDir.x += (n.x - clickedAtom.x);
-                            avgDir.y += (n.y - clickedAtom.y);
-                            avgDir.z += (n.z - clickedAtom.z);
-                        });
-                        let len = Math.sqrt(avgDir.x * avgDir.x + avgDir.y * avgDir.y + avgDir.z * avgDir.z);
-                        if (len > 0.001) {
-                            // Point opposite to average neighbor direction
-                            sproutDir = { x: -avgDir.x / len, y: -avgDir.y / len, z: -avgDir.z / len };
-                        }
-                    } else {
-                        // Sprout to screen-right
-                        let cosX = Math.cos(this.angleX);
-                        let sinX = Math.sin(this.angleX);
-                        let cosY = Math.cos(this.angleY);
-                        let sinY = Math.sin(this.angleY);
-                        let x1 = 50 / (1.6 * this.zoom);
-                        let y1 = 0;
-                        let z1 = -x1 * sinY;
-                        sproutDir = {
-                            x: x1 * cosY,
-                            y: 0,
-                            z: z1
-                        };
-                        let len = Math.sqrt(sproutDir.x * sproutDir.x + sproutDir.y * sproutDir.y + sproutDir.z * sproutDir.z);
-                        if (len > 0) {
-                            sproutDir.x /= len;
-                            sproutDir.y /= len;
-                            sproutDir.z /= len;
-                        }
-                    }
-
-                    const sproutDist = 45;
-                    const newX3d = clickedAtom.x + sproutDir.x * sproutDist;
-                    const newY3d = clickedAtom.y + sproutDir.y * sproutDist;
-                    const newZ3d = clickedAtom.z + sproutDir.z * sproutDist;
-
-                    // Add to questAtoms
-                    const newId = questAtomIdCounter++;
-                    const proj2D = projectQuest3DTo2D(newX3d, newY3d, newZ3d);
-                    const newAtom = {
-                        id: newId,
-                        sym: this.activeElement,
-                        x3d: newX3d,
-                        y3d: newY3d,
-                        z3d: newZ3d,
-                        x: proj2D.x,
-                        y: proj2D.y,
-                        el: null
-                    };
-                    questAtoms.push(newAtom);
-                    createAtomDOM(newAtom, 'quest-workspace-scene', 'quest');
-
-                    // Find the original ID of the clicked atom
-                    const origClickedAtom = questAtoms.find(a => a.id === clickedAtom.origId);
-                    if (origClickedAtom) {
-                        // Add bond
-                        questBonds.push({
-                            id: questBondIdCounter++,
-                            a1_id: origClickedAtom.id,
-                            a2_id: newId,
-                            order: 1
-                        });
-                        this.triggerBondAnimation(origClickedAtom.id, newId, 1);
-                    }
-                    sfx.playLink();
-                    redrawQuestWorkspace();
-                } else {
+                if (clickedAtomIdx === -1) {
                     // Add standalone atom in empty space
                     const cx = this.canvas.width / 2;
                     const cy = this.canvas.height / 2;
@@ -2244,89 +2780,7 @@ class Molecule3DViewer {
             ensureLabAtoms3DCoordinates();
             this.isCustomBuilt = true;
 
-            if (clickedAtomIdx !== -1) {
-                // Sprout atom from clicked atom
-                const clickedAtom = this.atoms[clickedAtomIdx];
-                
-                // Calculate sprout direction in 3D
-                let sproutDir = { x: 1, y: 0, z: 0 };
-                let neighbors = [];
-                this.bonds.forEach(b => {
-                    if (b.atom1 === clickedAtomIdx) neighbors.push(this.atoms[b.atom2]);
-                    else if (b.atom2 === clickedAtomIdx) neighbors.push(this.atoms[b.atom1]);
-                });
-
-                if (neighbors.length > 0) {
-                    let avgDir = { x: 0, y: 0, z: 0 };
-                    neighbors.forEach(n => {
-                        avgDir.x += (n.x - clickedAtom.x);
-                        avgDir.y += (n.y - clickedAtom.y);
-                        avgDir.z += (n.z - clickedAtom.z);
-                    });
-                    let len = Math.sqrt(avgDir.x * avgDir.x + avgDir.y * avgDir.y + avgDir.z * avgDir.z);
-                    if (len > 0.001) {
-                        // Point opposite to average neighbor direction
-                        sproutDir = { x: -avgDir.x / len, y: -avgDir.y / len, z: -avgDir.z / len };
-                    }
-                } else {
-                    // Sprout to screen-right
-                    let cosX = Math.cos(this.angleX);
-                    let sinX = Math.sin(this.angleX);
-                    let cosY = Math.cos(this.angleY);
-                    let sinY = Math.sin(this.angleY);
-                    // Screen right in rotated coordinates is x1 = 50, y2 = 0, z2 = 0
-                    let x1 = 50 / (1.6 * this.zoom);
-                    let y1 = 0;
-                    let z1 = -x1 * sinY;
-                    sproutDir = {
-                        x: x1 * cosY,
-                        y: 0,
-                        z: z1
-                    };
-                    let len = Math.sqrt(sproutDir.x * sproutDir.x + sproutDir.y * sproutDir.y + sproutDir.z * sproutDir.z);
-                    if (len > 0) {
-                        sproutDir.x /= len;
-                        sproutDir.y /= len;
-                        sproutDir.z /= len;
-                    }
-                }
-
-                const sproutDist = 45;
-                const newX3d = clickedAtom.x + sproutDir.x * sproutDist;
-                const newY3d = clickedAtom.y + sproutDir.y * sproutDist;
-                const newZ3d = clickedAtom.z + sproutDir.z * sproutDist;
-
-                // Add to labAtoms
-                const newId = labAtomIdCounter++;
-                const proj2D = project3DTo2D(newX3d, newY3d, newZ3d);
-                const newAtom = {
-                    id: newId,
-                    sym: this.activeElement,
-                    x3d: newX3d,
-                    y3d: newY3d,
-                    z3d: newZ3d,
-                    x: proj2D.x,
-                    y: proj2D.y,
-                    el: null
-                };
-                labAtoms.push(newAtom);
-                createAtomDOM(newAtom, 'lab-workspace-scene', 'lab');
-
-                // Find the original ID of the clicked atom
-                const origClickedAtom = labAtoms.find(a => a.id === clickedAtom.origId);
-                if (origClickedAtom) {
-                    // Add bond
-                    labBonds.push({
-                        id: labBondIdCounter++,
-                        a1_id: origClickedAtom.id,
-                        a2_id: newId,
-                        order: 1
-                    });
-                    this.triggerBondAnimation(origClickedAtom.id, newId, 1);
-                }
-                sfx.playLink();
-                redrawLabWorkspace();
-            } else {
+            if (clickedAtomIdx === -1) {
                 // Add standalone atom in empty space (unprojected)
                 const cx = this.canvas.width / 2;
                 const cy = this.canvas.height / 2;
@@ -2770,6 +3224,9 @@ class Molecule3DViewer {
         ctx.beginPath();
         ctx.arc(a.px, a.py, a.r, 0, Math.PI * 2);
         
+        const theme = document.documentElement.getAttribute('data-theme') || 'light';
+        const darkStop = theme === 'light' ? '#0f172a' : '#020512';
+        
         // Shiny glossy radial gradient
         let gradient = ctx.createRadialGradient(
             a.px - a.r * 0.3, a.py - a.r * 0.3, a.r * 0.1,
@@ -2777,17 +3234,17 @@ class Molecule3DViewer {
         );
         gradient.addColorStop(0, '#ffffff');
         gradient.addColorStop(0.2, a.color);
-        gradient.addColorStop(1, '#020512');
+        gradient.addColorStop(1, darkStop);
         
         ctx.fillStyle = gradient;
-        ctx.shadowColor = a.color;
-        ctx.shadowBlur = 10;
+        ctx.shadowColor = theme === 'light' ? 'rgba(0, 0, 0, 0.15)' : a.color;
+        ctx.shadowBlur = theme === 'light' ? 6 : 10;
         ctx.fill();
         ctx.shadowBlur = 0; // reset
 
         // Label
         ctx.fillStyle = '#ffffff';
-        ctx.font = `bold ${Math.max(10, a.r * 0.75)}px 'Orbitron', sans-serif`;
+        ctx.font = `bold ${Math.max(10, a.r * 0.75)}px 'Calibri', sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(a.symbol, a.px, a.py);
@@ -2796,10 +3253,10 @@ class Molecule3DViewer {
         if (this.selectedAtomId !== null && a.origId === this.selectedAtomId && this.mode === 'bond') {
             ctx.beginPath();
             ctx.arc(a.px, a.py, a.r + 6, 0, Math.PI * 2);
-            ctx.strokeStyle = '#00f0ff';
+            ctx.strokeStyle = theme === 'light' ? '#0284c7' : '#00f0ff';
             ctx.lineWidth = 3;
-            ctx.shadowColor = '#00f0ff';
-            ctx.shadowBlur = 12;
+            ctx.shadowColor = theme === 'light' ? 'rgba(2, 132, 199, 0.4)' : '#00f0ff';
+            ctx.shadowBlur = theme === 'light' ? 6 : 12;
             ctx.stroke();
             ctx.shadowBlur = 0;
         }
@@ -3756,8 +4213,8 @@ function initPeriodicTable() {
         cell.style.gridColumn = item.grid_pos[1];
         
         // Colors
-        cell.style.setProperty('--el-color', el.color);
-        cell.style.setProperty('--el-color-shadow', el.colorShadow);
+        cell.style.setProperty('--el-color', getElementColor(item.sym));
+        cell.style.setProperty('--el-color-shadow', getElementColorShadow(item.sym));
 
         cell.innerHTML = `
             <div class="periodic-num">${el.num}</div>
@@ -3792,14 +4249,14 @@ function selectElement(sym) {
     if (detailsBox) {
         detailsBox.style.display = 'block';
         document.getElementById('det-sym').innerText = el.sym;
-        document.getElementById('det-sym').style.color = el.color;
-        document.getElementById('det-sym').style.textShadow = `0 0 10px ${el.colorShadow}`;
+        document.getElementById('det-sym').style.color = getElementColor(sym);
+        document.getElementById('det-sym').style.textShadow = `0 0 10px ${getElementColorShadow(sym)}`;
         document.getElementById('det-name').innerText = `${el.sym} / ${getTranslation(el.name_zh, el.name_en)}`;
         document.getElementById('det-num').innerText = el.num;
         document.getElementById('det-valence').innerText = el.val;
         document.getElementById('det-config').innerText = el.config;
         document.getElementById('det-en').innerText = el.en.toFixed(2);
-        document.getElementById('det-en').style.color = el.color;
+        document.getElementById('det-en').style.color = getElementColor(sym);
     }
 
     drawBohrModel(sym);
@@ -3895,10 +4352,10 @@ function drawBohrModel(sym) {
     nucleusCircle.setAttribute("cx", cx);
     nucleusCircle.setAttribute("cy", cy);
     nucleusCircle.setAttribute("r", nucleusRadius);
-    nucleusCircle.setAttribute("fill", el.color);
+    nucleusCircle.setAttribute("fill", getElementColor(sym));
     nucleusCircle.setAttribute("stroke", "#ffffff");
     nucleusCircle.setAttribute("stroke-width", "1.5");
-    nucleusCircle.style.filter = "drop-shadow(0px 0px 8px " + el.color + ")";
+    nucleusCircle.style.filter = "drop-shadow(0px 0px 8px " + getElementColor(sym) + ")";
     nucleusG.appendChild(nucleusCircle);
 
     const nucleusText = document.createElementNS(svgNS, "text");
@@ -3933,10 +4390,11 @@ function drawBohrModel(sym) {
             electronCircle.setAttribute("r", 4.5);
             // Highlighting outer valence electrons
             const isValence = (sIdx === shells.length - 1);
-            electronCircle.setAttribute("fill", isValence ? "#f59e0b" : "#00f0ff");
+            const eColor = isValence ? getElementColor('F') : getElementColor('H');
+            electronCircle.setAttribute("fill", eColor);
             electronCircle.setAttribute("stroke", "#ffffff");
             electronCircle.setAttribute("stroke-width", "1");
-            electronCircle.style.filter = "drop-shadow(0px 0px 4px " + (isValence ? "#f59e0b" : "#00f0ff") + ")";
+            electronCircle.style.filter = "drop-shadow(0px 0px 4px " + eColor + ")";
 
             electronG.appendChild(electronCircle);
         }
@@ -4180,10 +4638,11 @@ function drawCovalentBondFormationBohr(symA, symB) {
             electron.setAttribute("cx", ex);
             electron.setAttribute("cy", ey);
             electron.setAttribute("r", 4.5);
-            electron.setAttribute("fill", "#f59e0b");
+            const eColor = getElementColor('F');
+            electron.setAttribute("fill", eColor);
             electron.setAttribute("stroke", "#ffffff");
             electron.setAttribute("stroke-width", "1");
-            electron.style.filter = "drop-shadow(0px 0px 4px #f59e0b)";
+            electron.style.filter = "drop-shadow(0px 0px 4px " + eColor + ")";
             nonShareG.appendChild(electron);
         }
         groupA.appendChild(nonShareG);
@@ -4200,10 +4659,11 @@ function drawCovalentBondFormationBohr(symA, symB) {
     electronShareA.setAttribute("cy", eyShareA);
     electronShareA.setAttribute("r", 5);
     // In covalent/polar, color it cyan matching Atom A's electrons, contrasting with B's orange electron
-    electronShareA.setAttribute("fill", bondType === 'ionic' ? "#ef4444" : "#00f0ff");
+    const shareColorA = bondType === 'ionic' ? getElementColor('O') : getElementColor('H');
+    electronShareA.setAttribute("fill", shareColorA);
     electronShareA.setAttribute("stroke", "#ffffff");
     electronShareA.setAttribute("stroke-width", "1.2");
-    electronShareA.style.filter = bondType === 'ionic' ? "drop-shadow(0px 0px 6px #ef4444)" : "drop-shadow(0px 0px 6px #00f0ff)";
+    electronShareA.style.filter = "drop-shadow(0px 0px 6px " + shareColorA + ")";
     sharingGA.appendChild(electronShareA);
     groupA.appendChild(sharingGA);
 
@@ -4214,10 +4674,10 @@ function drawCovalentBondFormationBohr(symA, symB) {
     nucleusCircleA.setAttribute("cx", cxA);
     nucleusCircleA.setAttribute("cy", cyA);
     nucleusCircleA.setAttribute("r", nucleusRadius);
-    nucleusCircleA.setAttribute("fill", elA.color);
+    nucleusCircleA.setAttribute("fill", getElementColor(symA));
     nucleusCircleA.setAttribute("stroke", "#ffffff");
     nucleusCircleA.setAttribute("stroke-width", "1.5");
-    nucleusCircleA.style.filter = "drop-shadow(0px 0px 8px " + elA.color + ")";
+    nucleusCircleA.style.filter = "drop-shadow(0px 0px 8px " + getElementColor(symA) + ")";
     nucleusG_A.appendChild(nucleusCircleA);
 
     const nucleusTextA = document.createElementNS(svgNS, "text");
@@ -4302,10 +4762,11 @@ function drawCovalentBondFormationBohr(symA, symB) {
             electron.setAttribute("cx", ex);
             electron.setAttribute("cy", ey);
             electron.setAttribute("r", 4.5);
-            electron.setAttribute("fill", "#f59e0b");
+            const eColor = getElementColor('F');
+            electron.setAttribute("fill", eColor);
             electron.setAttribute("stroke", "#ffffff");
             electron.setAttribute("stroke-width", "1");
-            electron.style.filter = "drop-shadow(0px 0px 4px #f59e0b)";
+            electron.style.filter = "drop-shadow(0px 0px 4px " + eColor + ")";
             nonShareG.appendChild(electron);
         }
         groupB.appendChild(nonShareG);
@@ -4322,10 +4783,11 @@ function drawCovalentBondFormationBohr(symA, symB) {
     electronShareB.setAttribute("cy", eyShareB);
     electronShareB.setAttribute("r", 5);
     // In covalent/polar, color it orange matching Atom B's non-sharing valence electrons
-    electronShareB.setAttribute("fill", bondType === 'ionic' ? "#ef4444" : "#f59e0b");
+    const shareColorB = bondType === 'ionic' ? getElementColor('O') : getElementColor('F');
+    electronShareB.setAttribute("fill", shareColorB);
     electronShareB.setAttribute("stroke", "#ffffff");
     electronShareB.setAttribute("stroke-width", "1.2");
-    electronShareB.style.filter = bondType === 'ionic' ? "drop-shadow(0px 0px 6px #ef4444)" : "drop-shadow(0px 0px 6px #f59e0b)";
+    electronShareB.style.filter = "drop-shadow(0px 0px 6px " + shareColorB + ")";
     sharingGB.appendChild(electronShareB);
     groupB.appendChild(sharingGB);
 
@@ -4335,10 +4797,10 @@ function drawCovalentBondFormationBohr(symA, symB) {
     nucleusCircleB.setAttribute("cx", cxB);
     nucleusCircleB.setAttribute("cy", cyB);
     nucleusCircleB.setAttribute("r", nucleusRadius);
-    nucleusCircleB.setAttribute("fill", elB.color);
+    nucleusCircleB.setAttribute("fill", getElementColor(symB));
     nucleusCircleB.setAttribute("stroke", "#ffffff");
     nucleusCircleB.setAttribute("stroke-width", "1.5");
-    nucleusCircleB.style.filter = "drop-shadow(0px 0px 8px " + elB.color + ")";
+    nucleusCircleB.style.filter = "drop-shadow(0px 0px 8px " + getElementColor(symB) + ")";
     nucleusG_B.appendChild(nucleusCircleB);
 
     const nucleusTextB = document.createElementNS(svgNS, "text");
@@ -4397,7 +4859,96 @@ function drawCovalentBondFormationBohr(symA, symB) {
 
 // ELECTRONEGATIVITY CALCULATOR LOGIC
 
+function openElementSelector(event, slotId) {
+    event.stopPropagation();
+    const slot = document.getElementById(`slot-atom-${slotId.toLowerCase()}`);
+    const popup = document.getElementById('calc-popup-menu');
+    if (!slot || !popup) return;
+
+    // Build the popup content dynamically!
+    // Allowed elements: H, B, C, N, O, F, Cl, Br, I (Si, P, S are NOT allowed)
+    const allowedSyms = ['H', 'B', 'C', 'N', 'O', 'F', 'Cl', 'Br', 'I'];
+    
+    let html = `<div class="popup-header">`;
+    if (currentLang === 'zh') {
+        html += `選擇元素 ${slotId}`;
+    } else {
+        html += `Select Element ${slotId}`;
+    }
+    html += `</div>`;
+
+    html += `<div class="popup-list">`;
+    allowedSyms.forEach(sym => {
+        const el = DB_ELEMENTS[sym];
+        const color = getElementColor(sym);
+        const name = currentLang === 'zh' ? `${el.name_zh} (${el.name_en})` : `${el.name_en}`;
+        html += `
+            <div class="popup-item" onclick="selectElementForSlot('${slotId}', '${sym}')">
+                <span class="popup-badge" style="background-color: ${color}; box-shadow: 0 0 6px ${getElementColorShadow(sym)};">${sym}</span>
+                <span class="popup-name">${name}</span>
+                <span class="popup-en">${el.en.toFixed(2)}</span>
+            </div>
+        `;
+    });
+    html += `</div>`;
+
+    // Add a clear option if the slot is currently filled
+    const currentVal = slotId === 'A' ? calculatorAtomA : calculatorAtomB;
+    if (currentVal) {
+        html += `
+            <div class="popup-divider"></div>
+            <div class="popup-item popup-clear" onclick="clearSlotFromPopup('${slotId}')">
+                <i class="fa-solid fa-trash-can"></i>
+                <span>${currentLang === 'zh' ? '清除此插槽' : 'Clear Slot'}</span>
+            </div>
+        `;
+    }
+
+    popup.innerHTML = html;
+    popup.style.display = 'block';
+
+    // Position the popup relative to the offsetParent (.en-calculator)
+    let left = slot.offsetLeft + (slot.offsetWidth / 2) - 110; // center it (width is 220px)
+    let top = slot.offsetTop + slot.offsetHeight + 6;
+
+    // Ensure it doesn't go off parent boundaries
+    if (left < 4) left = 4;
+    const parentWidth = slot.offsetParent ? slot.offsetParent.clientWidth : 300;
+    if (left + 220 > parentWidth - 4) {
+        left = parentWidth - 224;
+    }
+    
+    popup.style.left = `${left}px`;
+    popup.style.top = `${top}px`;
+}
+window.openElementSelector = openElementSelector;
+
+function selectElementForSlot(slotId, sym) {
+    if (slotId === 'A') {
+        calculatorAtomA = sym;
+    } else {
+        calculatorAtomB = sym;
+    }
+    const popup = document.getElementById('calc-popup-menu');
+    if (popup) popup.style.display = 'none';
+    updateElectronegativityCalculator();
+}
+window.selectElementForSlot = selectElementForSlot;
+
+function clearSlotFromPopup(slotId) {
+    if (slotId === 'A') {
+        calculatorAtomA = null;
+    } else {
+        calculatorAtomB = null;
+    }
+    const popup = document.getElementById('calc-popup-menu');
+    if (popup) popup.style.display = 'none';
+    updateElectronegativityCalculator();
+}
+window.clearSlotFromPopup = clearSlotFromPopup;
+
 function assignSlot(slotId) {
+    // Legacy fallback, in case any other code calls it
     if (slotId === 'A') {
         calculatorAtomA = selectedElementSym;
     } else {
@@ -4405,7 +4956,7 @@ function assignSlot(slotId) {
     }
     updateElectronegativityCalculator();
 }
-window.assignSlot = assignSlot; // export
+window.assignSlot = assignSlot;
 
 function clearSlot(slotId) {
     if (slotId === 'A') {
@@ -4415,27 +4966,28 @@ function clearSlot(slotId) {
     }
     updateElectronegativityCalculator();
 }
-window.clearSlot = clearSlot; // export
+window.clearSlot = clearSlot;
 
 function updateElectronegativityCalculator() {
     const slotA = document.getElementById('slot-atom-a');
     const slotB = document.getElementById('slot-atom-b');
+    if (!slotA || !slotB) return;
 
     // Reset Slots
     if (calculatorAtomA) {
         const elA = DB_ELEMENTS[calculatorAtomA];
         slotA.classList.add('filled');
-        slotA.style.setProperty('--el-color', elA.color);
+        slotA.style.setProperty('--el-color', getElementColor(calculatorAtomA));
         slotA.innerHTML = `
-            <div class="slot-sym" style="color: ${elA.color}; text-shadow: 0 0 6px ${elA.colorShadow}">${elA.sym}</div>
+            <div class="slot-sym" style="color: ${getElementColor(calculatorAtomA)}; text-shadow: 0 0 6px ${getElementColorShadow(calculatorAtomA)}">${elA.sym}</div>
             <div class="slot-val">${elA.en.toFixed(2)}</div>
         `;
     } else {
         slotA.classList.remove('filled');
         slotA.innerHTML = `
-            <div style="color: var(--text-secondary); font-size: 0.8em; text-align: center;">
-                <span class="lang-zh">選定 A<br>點擊指派</span>
-                <span class="lang-en" style="display:none">Atom A<br>Click Set</span>
+            <div style="color: var(--text-secondary); font-size: 0.75em; text-align: center; line-height: 1.2;">
+                <span class="lang-zh">點擊<br>選擇 A</span>
+                <span class="lang-en" style="display:none">Click to<br>select A</span>
             </div>
         `;
     }
@@ -4443,17 +4995,17 @@ function updateElectronegativityCalculator() {
     if (calculatorAtomB) {
         const elB = DB_ELEMENTS[calculatorAtomB];
         slotB.classList.add('filled');
-        slotB.style.setProperty('--el-color', elB.color);
+        slotB.style.setProperty('--el-color', getElementColor(calculatorAtomB));
         slotB.innerHTML = `
-            <div class="slot-sym" style="color: ${elB.color}; text-shadow: 0 0 6px ${elB.colorShadow}">${elB.sym}</div>
+            <div class="slot-sym" style="color: ${getElementColor(calculatorAtomB)}; text-shadow: 0 0 6px ${getElementColorShadow(calculatorAtomB)}">${elB.sym}</div>
             <div class="slot-val">${elB.en.toFixed(2)}</div>
         `;
     } else {
         slotB.classList.remove('filled');
         slotB.innerHTML = `
-            <div style="color: var(--text-secondary); font-size: 0.8em; text-align: center;">
-                <span class="lang-zh">選定 B<br>點擊指派</span>
-                <span class="lang-en" style="display:none">Atom B<br>Click Set</span>
+            <div style="color: var(--text-secondary); font-size: 0.75em; text-align: center; line-height: 1.2;">
+                <span class="lang-zh">點擊<br>選擇 B</span>
+                <span class="lang-en" style="display:none">Click to<br>select B</span>
             </div>
         `;
     }
@@ -4572,6 +5124,7 @@ function initLabSandbox() {
     if (!lab3DViewer) {
         lab3DViewer = new Molecule3DViewer('lab-canvas-3d');
     }
+    setLab3DMode('add');
     initWorkspaceZoomWheel();
     redrawLabWorkspace();
 }
@@ -4629,7 +5182,7 @@ function createAtomDOM(atomObj, containerId, mode) {
     }
 
     atomDiv.innerHTML = `
-        <div style="font-family: 'Orbitron', sans-serif; font-weight: bold; font-size: 1.1em; pointer-events: none;">${atomObj.sym}</div>
+        <div style="font-family: 'Calibri', sans-serif; font-weight: bold; font-size: 1.1em; pointer-events: none;">${atomObj.sym}</div>
         <div class="valence-bar-indicator" id="${mode}-val-bar-${atomObj.id}"></div>
     `;
 
@@ -4741,7 +5294,7 @@ function clearLabWorkspace() {
         lab3DViewer.isCustomBuilt = false;
         lab3DViewer.selectedAtomId = null;
         lab3DViewer.autoRotateEnabled = false;
-        setLab3DMode('view');
+        setLab3DMode('add');
     }
 
     redrawLabWorkspace();
@@ -5336,8 +5889,8 @@ function drawWedgeBond(svg, x1, y1, x2, y2) {
     const wedgeW = 12;
     const path = document.createElementNS(DIAGRAM_SVG_NS, 'path');
     path.setAttribute('d', `M ${x1 + ux * start} ${y1 + uy * start} L ${x2 + px * wedgeW / 2} ${y2 + py * wedgeW / 2} L ${x2 - px * wedgeW / 2} ${y2 - py * wedgeW / 2} Z`);
-    path.setAttribute('fill', 'rgba(255, 255, 255, 0.45)');
-    path.setAttribute('stroke', 'rgba(255, 255, 255, 0.35)');
+    path.setAttribute('fill', 'var(--svg-bond-fill)');
+    path.setAttribute('stroke', 'var(--svg-bond-stroke)');
     path.setAttribute('stroke-width', '0.5');
     svg.appendChild(path);
 }
@@ -5361,7 +5914,7 @@ function drawHashBond(svg, x1, y1, x2, y2) {
         line.setAttribute('y1', y1 + uy * t0 - py * w / 2);
         line.setAttribute('x2', x1 + ux * t1 + px * w / 2);
         line.setAttribute('y2', y1 + uy * t1 + py * w / 2);
-        line.setAttribute('stroke', 'rgba(255, 255, 255, 0.4)');
+        line.setAttribute('stroke', 'var(--svg-hash-stroke)');
         line.setAttribute('stroke-width', '1.2');
         svg.appendChild(line);
     }
@@ -5395,7 +5948,7 @@ function drawAtomSymbol(svg, x, y, sym) {
     bgCircle.setAttribute('cx', x);
     bgCircle.setAttribute('cy', y);
     bgCircle.setAttribute('r', 9);
-    bgCircle.setAttribute('fill', '#030712');
+    bgCircle.setAttribute('fill', 'var(--svg-bg-circle-fill)');
     textG.appendChild(bgCircle);
     const text = document.createElementNS(DIAGRAM_SVG_NS, 'text');
     text.setAttribute('x', x);
@@ -5829,7 +6382,7 @@ function drawSimpleLine(svg, x1, y1, x2, y2, width) {
     line.setAttribute("y1", y1);
     line.setAttribute("x2", x2);
     line.setAttribute("y2", y2);
-    line.setAttribute("stroke", "rgba(255, 255, 255, 0.35)");
+    line.setAttribute("stroke", "var(--svg-line-stroke)");
     line.setAttribute("stroke-width", width);
     svg.appendChild(line);
 }
@@ -5849,13 +6402,12 @@ function updateLab3DProjection() {
         // Use custom built 3D coordinates from labAtoms
         ensureLabAtoms3DCoordinates();
         let customAtoms = labAtoms.map(a => {
-            const el = DB_ELEMENTS[a.sym];
             return {
                 x: a.x3d,
                 y: a.y3d,
                 z: a.z3d,
                 symbol: a.sym,
-                color: el.color,
+                color: getElementColor(a.sym),
                 radius: (a.sym === 'H') ? 22 : 35,
                 origId: a.id
             };
@@ -5882,14 +6434,13 @@ function updateLab3DProjection() {
         // High quality pre-defined coordinates!
         let tempViewer = new Molecule3DViewer();
         tempViewer.atoms = match.atoms.map((sym, idx) => {
-            const el = DB_ELEMENTS[sym];
             let coords = getGeometryCoords(match.geometry, idx, match.atoms.length);
             return {
                 x: coords[0],
                 y: coords[1],
                 z: coords[2],
                 symbol: sym,
-                color: el.color,
+                color: getElementColor(sym),
                 radius: (sym === 'H') ? 22 : 35
             };
         });
@@ -5903,7 +6454,6 @@ function updateLab3DProjection() {
     } else {
         // Fallback for custom formulas: radial spring layout projection
         let customAtoms = labAtoms.map((a, idx) => {
-            const el = DB_ELEMENTS[a.sym];
             // Position in a circular sphere layout based on order
             let angle = (idx * 2 * Math.PI) / labAtoms.length;
             let radius = 45;
@@ -5915,7 +6465,7 @@ function updateLab3DProjection() {
                 y: y,
                 z: z,
                 symbol: a.sym,
-                color: el.color,
+                color: getElementColor(a.sym),
                 radius: (a.sym === 'H') ? 22 : 35,
                 origId: a.id
             };
@@ -5946,13 +6496,12 @@ function updateQuest3DProjection() {
     ensureQuestAtoms3DCoordinates();
 
     let customAtoms = questAtoms.map(a => {
-        const el = DB_ELEMENTS[a.sym];
         return {
             x: a.x3d,
             y: a.y3d,
             z: a.z3d,
             symbol: a.sym,
-            color: el.color,
+            color: getElementColor(a.sym),
             radius: (a.sym === 'H') ? 22 : 35,
             origId: a.id
         };
@@ -6098,7 +6647,7 @@ function initQuestMode() {
 
         item.innerHTML = `
             <div style="display:flex; flex-direction:column; gap:2px;">
-                <div style="font-size: 0.7em; color: var(--accent-blue); font-weight: bold; font-family: 'Orbitron', sans-serif;">LVL ${idx+1}</div>
+                <div style="font-size: 0.7em; color: var(--accent-blue); font-weight: bold; font-family: 'Calibri', sans-serif;">LVL ${idx+1}</div>
                 <div class="quest-item-title">${getTranslation(lvl.name_zh, lvl.name_en)} (${formatFormulaHTML(lvl.formula)})</div>
             </div>
             <div class="quest-item-stars">${starHtml}</div>
@@ -6117,7 +6666,7 @@ function initQuestMode() {
     document.getElementById('quest-stage-indicator').innerText = `STAGE ${currentQuestLevel + 1} / ${QUEST_LEVELS_DB.length}`;
     document.getElementById('quest-title-text').innerHTML = `${formatFormulaHTML(activeLevel.formula)} - ${getTranslation(activeLevel.name_zh, activeLevel.name_en)}`;
     document.getElementById('quest-target-purpose').innerHTML = `
-        <div style="color: var(--accent-blue); font-weight: bold; font-family: 'Orbitron', sans-serif; margin-bottom: 5px;">${getTranslation('任務描述', 'QUEST DESCRIPTION')}</div>
+        <div style="color: var(--accent-blue); font-weight: bold; font-family: 'Calibri', sans-serif; margin-bottom: 5px;">${getTranslation('任務描述', 'QUEST DESCRIPTION')}</div>
         <div style="margin-bottom: 10px;">${getTranslation(activeLevel.desc_zh, activeLevel.desc_en)}</div>
     `;
 
@@ -6137,7 +6686,7 @@ function initQuestMode() {
             y: coords[1],
             z: coords[2],
             symbol: sym,
-            color: DB_ELEMENTS[sym].color,
+            color: getElementColor(sym),
             radius: (sym === 'H') ? 22 : 35
         };
     });
@@ -6146,7 +6695,7 @@ function initQuestMode() {
     });
 
     questTarget3DViewer.setMolecule(previewAtoms, previewBonds);
-    setQuest3DMode('view');
+    setQuest3DMode('add');
 
     // 3. Clear workbench and generate inventory cards
     resetQuestCurrent();
@@ -6426,7 +6975,7 @@ function openSuccessModal(stars, customData = null) {
                 y: coords[1],
                 z: coords[2],
                 symbol: sym,
-                color: DB_ELEMENTS[sym].color,
+                color: getElementColor(sym),
                 radius: (sym === 'H') ? 22 : 35
             };
         });
@@ -6506,7 +7055,6 @@ function verifySynthesisLab() {
             desc_zh: '這是一個符合八隅體規則（氫符合雙電子結構）的穩定共價化合物！你在工作區成功組裝出了不屬於預設關卡的特殊共價鍵模型，展現了高超的化學創造力！',
             desc_en: 'This is a stable covalent compound satisfying the octet rule (hydrogen satisfies the duplet structure). You successfully assembled a unique covalent model in the sandbox, showing great chemical creativity!',
             atoms: labAtoms.map((a, idx) => {
-                const el = DB_ELEMENTS[a.sym];
                 if (lab3DViewer && lab3DViewer.isCustomBuilt) {
                     ensureLabAtoms3DCoordinates();
                     return {
@@ -6514,7 +7062,7 @@ function verifySynthesisLab() {
                         y: a.y3d,
                         z: a.z3d,
                         symbol: a.sym,
-                        color: el.color,
+                        color: getElementColor(a.sym),
                         radius: (a.sym === 'H') ? 22 : 35
                     };
                 }
@@ -6528,7 +7076,7 @@ function verifySynthesisLab() {
                     y: y,
                     z: z,
                     symbol: a.sym,
-                    color: el.color,
+                    color: getElementColor(a.sym),
                     radius: (a.sym === 'H') ? 22 : 35
                 };
             }),
@@ -6709,12 +7257,16 @@ window.resetWholeQuestProgress = resetWholeQuestProgress;
 // ==========================================
 
 function refreshLanguageDisplay() {
+    const langBtnText = document.getElementById('lang-btn-text');
+    if (langBtnText) {
+        langBtnText.innerText = (currentLang === 'zh') ? 'English' : '繁體中文';
+    }
     if (currentLang === 'zh') {
-        document.querySelectorAll('.lang-zh').forEach(el => el.style.display = 'inline-block');
+        document.querySelectorAll('.lang-zh').forEach(el => el.style.display = 'inline');
         document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
     } else {
         document.querySelectorAll('.lang-zh').forEach(el => el.style.display = 'none');
-        document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'inline-block');
+        document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'inline');
     }
 }
 
@@ -6745,6 +7297,67 @@ function toggleLanguage() {
 }
 window.toggleLanguage = toggleLanguage; // export
 
+function toggleLabHelpCard() {
+    const card = document.getElementById('lab-3d-help');
+    const btn = document.getElementById('btn-lab-help-toggle');
+    if (!card || !btn) return;
+    if (card.style.display === 'none') {
+        card.style.display = 'block';
+        btn.classList.add('active');
+    } else {
+        card.style.display = 'none';
+        btn.classList.remove('active');
+    }
+}
+window.toggleLabHelpCard = toggleLabHelpCard;
+
+function toggleQuestHelpCard() {
+    const card = document.getElementById('quest-3d-help');
+    const btn = document.getElementById('btn-quest-help-toggle');
+    if (!card || !btn) return;
+    if (card.style.display === 'none') {
+        card.style.display = 'block';
+        btn.classList.add('active');
+    } else {
+        card.style.display = 'none';
+        btn.classList.remove('active');
+    }
+}
+window.toggleQuestHelpCard = toggleQuestHelpCard;
+
+function updateThemeUI(theme) {
+    const btn = document.getElementById('theme-toggle-btn');
+    if (!btn) return;
+    const isLight = theme === 'light';
+    
+    // Update icon
+    const icon = btn.querySelector('i');
+    if (icon) {
+        icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+    }
+    
+    // Update text
+    const zhSpan = btn.querySelector('.lang-zh');
+    const enSpan = btn.querySelector('.lang-en');
+    
+    if (zhSpan) {
+        zhSpan.innerText = isLight ? '深色模式' : '淺色模式';
+    }
+    if (enSpan) {
+        enSpan.innerText = isLight ? 'Dark Mode' : 'Light Mode';
+    }
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeUI(newTheme);
+}
+window.toggleTheme = toggleTheme;
+window.updateThemeUI = updateThemeUI;
+
 function initLabLangBridge() {
     const params = new URLSearchParams(window.location.search);
     const urlLang = params.get('lang');
@@ -6763,8 +7376,23 @@ function initLabLangBridge() {
 
 window.onload = () => {
     initLabLangBridge();
+    // Initialize theme UI
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    updateThemeUI(currentTheme);
     // Load initial tab
     switchTab('periodic');
+
+    // Close calculator element selector popup when clicking outside
+    document.addEventListener('click', (event) => {
+        const popup = document.getElementById('calc-popup-menu');
+        if (popup && popup.style.display === 'block') {
+            const isClickInside = popup.contains(event.target) || 
+                                  event.target.closest('.calc-atom-slot');
+            if (!isClickInside) {
+                popup.style.display = 'none';
+            }
+        }
+    });
 };
 
 
