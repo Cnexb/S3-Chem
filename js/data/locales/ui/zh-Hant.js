@@ -421,12 +421,13 @@ export const zhHantUI = {
   },
   "lab": {
     "pageTitle": "互動實驗室",
-    "hubSubtitle": "按課題選擇實驗室：鍵合、金屬、酸與鹼、氧化還原、反應速率，或化石燃料與碳化合物。",
+    "hubSubtitle": "按課題選擇實驗室：鍵合、金屬、酸與鹼、氧化還原、反應速率、化學平衡，或化石燃料與碳化合物。",
     "catMicroscopicWorldI": "微觀世界 I",
     "catMetals": "金屬",
     "catAcidsAndBases": "酸與鹼",
     "catRedoxCellsElectrolysis": "氧化還原反應、化學電池與電解",
     "catRatesOfReactions": "反應速率",
+    "catChemicalEquilibrium": "化學平衡",
     "catFossilFuelsCarbonCompounds": "化石燃料與碳化合物",
     "ionicName": "離子",
     "ionicDesc": "搭建離子晶格結構，探索離子化合物形成。",
@@ -444,6 +445,8 @@ export const zhHantUI = {
     "chemicalCellsElectrolysisDesc": "互動化學電池與電解模擬：電化學序列、優先放電，以及即時觀察現象。",
     "ratesOfReactionName": "反應速率",
     "ratesOfReactionDesc": "探究濃度、溫度與稀釋如何影響硫代硫酸鈉與酸的「消失的十字」反應速率。",
+    "chemicalEquilibriumName": "化學平衡實驗室",
+    "chemicalEquilibriumDesc": "干擾 Fe³⁺/SCN⁻ 與 NO₂/N₂O₄ 平衡，即時觀察顏色、圖表與微觀粒子移動。",
     "organicChemistryName": "有機化學實驗室",
     "organicChemistryDesc": "建構碳化合物、練習 IUPAC 命名與結構繪圖（中四／文憑試）。"
   },

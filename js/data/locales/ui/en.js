@@ -422,12 +422,13 @@ export const enUI = {
   },
   "lab": {
     "pageTitle": "Interactive Lab",
-    "hubSubtitle": "Choose a lab by topic — bonding, metals, acids and bases, redox, rates of reactions, or fossil fuels and carbon compounds.",
+    "hubSubtitle": "Choose a lab by topic — bonding, metals, acids and bases, redox, rates of reactions, chemical equilibrium, or fossil fuels and carbon compounds.",
     "catMicroscopicWorldI": "Microscopic world I",
     "catMetals": "Metals",
     "catAcidsAndBases": "Acids and bases",
     "catRedoxCellsElectrolysis": "Redox reactions, chemical cells and electrolysis",
     "catRatesOfReactions": "Rates of reactions",
+    "catChemicalEquilibrium": "Chemical equilibrium",
     "catFossilFuelsCarbonCompounds": "Fossil fuels and carbon compounds",
     "ionicName": "Ionic",
     "ionicDesc": "Build ionic lattice structures and explore ionic compound formation.",
@@ -445,6 +446,8 @@ export const enUI = {
     "chemicalCellsElectrolysisDesc": "Interactive chemical cells and electrolysis with ECS, preferential discharge, and live observations.",
     "ratesOfReactionName": "Rates of Reaction",
     "ratesOfReactionDesc": "Investigate how concentration, temperature, and dilution affect the rate of the sodium thiosulphate–acid disappearing-cross experiment.",
+    "chemicalEquilibriumName": "Chemical Equilibrium Lab",
+    "chemicalEquilibriumDesc": "Disturb Fe³⁺/SCN⁻ and NO₂/N₂O₄ equilibria — watch colour, graphs, and microscopic shifts in real time.",
     "organicChemistryName": "Organic Chemistry Lab",
     "organicChemistryDesc": "Build carbon compounds, practise IUPAC naming, and draw structures (F4 / DSE)."
   },

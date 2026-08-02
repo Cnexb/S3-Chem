@@ -35,6 +35,10 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/rates-of-reaction-lab/index.html",
     titleKey: "lab.ratesOfReactionName",
   },
+  "chemical-equilibrium-lab": {
+    path: "public/tools/chemical-equilibrium-lab/index.html",
+    titleKey: "lab.chemicalEquilibriumName",
+  },
   "organic-chemistry-lab": {
     path: "public/tools/organic-chemistry-lab/index.html",
     titleKey: "lab.organicChemistryName",

@@ -1,0 +1,2564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemical Equilibrium Lab </title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f1f5f9; /* Soft, clean slate gray/white background */
+      color: #1e293b; /* Deep slate dark text for high readability */
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    .neon-border-blue {
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .neon-border-red {
+      box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    .tab-active {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: white !important;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    
+    /* Shifting Arrow Animations */
+    @keyframes shiftRightAnim {
+      0% { transform: translateX(-4px); opacity: 0.3; }
+      50% { transform: translateX(4px); opacity: 1; }
+      100% { transform: translateX(-4px); opacity: 0.3; }
+    }
+    @keyframes shiftLeftAnim {
+      0% { transform: translateX(4px); opacity: 0.3; }
+      50% { transform: translateX(-4px); opacity: 1; }
+      100% { transform: translateX(4px); opacity: 0.3; }
+    }
+    .animate-shift-right {
+      animation: shiftRightAnim 1.5s infinite ease-in-out;
+    }
+    .animate-shift-left {
+      animation: shiftLeftAnim 1.5s infinite ease-in-out;
+    }
+    
+    /* Disturbance Flash Animations */
+    @keyframes flashIncrease {
+      0%, 100% { box-shadow: 0 0 0 0px rgba(16, 185, 129, 0.7); transform: scale(1); }
+      50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.4); transform: scale(1.1); }
+    }
+    @keyframes flashDecrease {
+      0%, 100% { box-shadow: 0 0 0 0px rgba(239, 68, 68, 0.7); transform: scale(1); }
+      50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0.4); transform: scale(0.9); }
+    }
+    .flash-increase {
+      animation: flashIncrease 0.8s ease-in-out;
+    }
+    .flash-decrease {
+      animation: flashDecrease 0.8s ease-in-out;
+    }
+    body.embed-mode #lang-switcher,
+    html.embed-mode #lang-switcher {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen xl:h-screen xl:overflow-hidden flex flex-col overflow-x-hidden">
+
+  <!-- TOP HEADER BAR -->
+  <header class="w-full bg-white border-b border-slate-200 py-2 px-4 flex flex-col lg:flex-row justify-between items-center gap-4 shadow-sm">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-xl text-white shadow-md shadow-blue-500/20">
+        ⇌
+      </div>
+      <div>
+        <h1 class="text-lg font-extrabold bg-gradient-to-r from-blue-600 via-indigo-600 to-indigo-700 bg-clip-text text-transparent">
+          <span class="lang-en">Chemical Equilibrium Laboratory</span>
+          <span class="lang-zh hidden">化學平衡互動實驗室</span>
+        </h1>
+        <p class="text-xs text-slate-500 font-semibold">
+          <span class="lang-en">DSE Topic 10 Simulator</span>
+          <span class="lang-zh hidden">DSE 課題十互動模擬器</span>
+        </p>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <!-- LANGUAGE SWITCHER -->
+      <div id="lang-switcher" class="flex bg-slate-100 p-1 rounded-xl border border-slate-200">
+        <button onclick="setLanguage('en')" id="lang-btn-en" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-150 bg-white text-blue-600 shadow-sm">
+          English
+        </button>
+        <button onclick="setLanguage('zh')" id="lang-btn-zh" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-150 text-slate-500 hover:text-slate-800">
+          繁體中文 
+        </button>
+      </div>
+
+      <!-- AUDIO CONTROLLER -->
+      <button onclick="toggleAudio()" id="audioToggle" class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl border border-slate-200 transition duration-150" title="Toggle Sound FX">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path id="audioIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M12 18.75V5.25L7.75 9H4.5v6h3.25L12 18.75z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN DASHBOARD CONTAINER -->
+  <main class="flex-1 min-h-0 flex flex-col w-full max-w-[1800px] mx-auto p-3 lg:p-4 gap-4">
+    
+    <!-- RIGHT PANEL: CONTENT SECTION -->
+    <section class="w-full flex-1 min-h-0 flex flex-col min-w-0 bg-white rounded-3xl border border-slate-200 p-3 lg:p-4 shadow-sm">
+
+      <!-- ================= TAB 1: VIRTUAL LAB SIMULATOR ================= -->
+      <div id="tab-simulator" class="tab-content flex-1 min-h-0 flex flex-col space-y-4">
+        
+        <!-- Tab Intro -->
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border-b border-slate-100 pb-2">
+          <div>
+            <h2 class="text-2xl font-bold text-slate-800 flex items-center space-x-2">
+              <span>🧪</span>
+              <span>
+                <span class="lang-en">Virtual Simulation of Equilibrium</span>
+                <span class="lang-zh hidden">化學平衡虛擬模擬</span>
+              </span>
+            </h2>
+            <p class="text-sm text-slate-500 mt-1">
+              <span class="lang-en">Select a system, disturb its equilibrium in real-time, and watch both macroscopic (color, graphs) and microscopic (molecules) responses!</span>
+              <span class="lang-zh hidden">選擇不同的反應系統，實時干擾其平衡，並觀測宏觀（顏色、圖表）與微觀（粒子碰撞）的聯動響應！</span>
+            </p>
+          </div>
+          <!-- Selector & Speed Controls Wrapper -->
+          <div class="flex flex-wrap items-center gap-3 self-start lg:self-center shrink-0">
+            <!-- System Selector -->
+            <!-- System Choice Tabs -->
+            <div class="flex space-x-1.5 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
+              <button onclick="changeSimSystem('A')" id="system-btn-A" class="px-3 py-2 rounded-lg text-xs font-bold transition duration-150 bg-blue-600 text-white shadow-sm">
+                <span class="lang-en">System A (Fe³⁺/SCN⁻)</span>
+                <span class="lang-zh hidden">系統 A (Fe³⁺/SCN⁻ 溶液)</span>
+              </button>
+              <button onclick="changeSimSystem('B')" id="system-btn-B" class="px-3 py-2 rounded-lg text-xs font-bold transition duration-150 text-slate-500 hover:bg-slate-200">
+                <span class="lang-en">System B (NO₂/N₂O₄)</span>
+                <span class="lang-zh hidden">系統 B (NO₂/N₂O₄ 氣體)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONSOLIDATED INTERACTIVE CHEMICAL EQUATION & EQUILIBRIUM ANALYZER -->
+        <div class="glass-card rounded-xl p-3 border border-slate-200 bg-white shadow-sm flex flex-col space-y-3">
+          <!-- Top: Full-Width Interactive Chemical Equation & Controls -->
+          <div class="w-full flex flex-col md:flex-row items-center justify-between bg-slate-50/50 px-4 py-3 rounded-lg border border-slate-100 min-h-[76px] gap-4">
+            <div id="interactive-equation-container" class="flex-1 flex flex-wrap items-start justify-center gap-2 text-sm sm:text-base font-extrabold tracking-wide select-none">
+              <!-- Rendered dynamically by JS -->
+            </div>
+          <!-- General Simulation Controls (Catalyst & Reset) -->
+            <div class="flex items-center space-x-2 shrink-0 border-t md:border-t-0 md:border-l border-slate-200/80 pt-3 md:pt-0 md:pl-4 w-full md:w-auto justify-center md:justify-start">
+              <!-- Add Water Button for System A (Dilution control) -->
+              <button onclick="addChemical('H2O')" id="water-btn" class="bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-600 px-3 py-1.5 rounded-xl text-xs font-extrabold transition duration-150 flex items-center space-x-1 shadow-sm">
+                <span>💧</span>
+                <span>
+                  <span class="lang-en">Add Water (dilution)</span>
+                  <span class="lang-zh hidden">加水稀釋</span>
+                </span>
+              </button>
+              <button onclick="applyCatalyst()" id="catalyst-btn" class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-600 px-3 py-1.5 rounded-xl text-xs font-extrabold transition duration-150 flex items-center space-x-1 shadow-sm">
+                <span>⚡</span>
+                <span>
+                  <span class="lang-en">Inject Catalyst</span>
+                  <span class="lang-zh hidden">注入催化劑</span>
+                </span>
+              </button>
+              <button onclick="resetSimulation()" class="bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-600 px-3 py-1.5 rounded-xl text-xs font-extrabold transition duration-150 flex items-center space-x-1 shadow-sm">
+                <span>🔄</span>
+                <span>
+                  <span class="lang-en">Reset System</span>
+                  <span class="lang-zh hidden">重置系統</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bottom: Analyzer Row with Status & Quotient Gauge -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch">
+            <!-- Left: Shift Status & Explanation (lg:col-span-8) -->
+            <div class="lg:col-span-8 flex flex-col justify-between space-y-1 bg-slate-50/50 p-2.5 rounded-lg border border-slate-100">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[9px] text-slate-400 font-extrabold uppercase tracking-wider">
+                  <span class="lang-en">Shift Status</span>
+                  <span class="lang-zh hidden">平衡移動狀態</span>
+                </span>
+                <div id="shift-status-badge" class="px-2 py-0.5 rounded-full text-[10px] font-extrabold flex items-center space-x-1 transition-all duration-300">
+                  <!-- Will be updated dynamically -->
+                </div>
+              </div>
+              <div id="shift-explanation-banner" class="p-1.5 rounded border text-[10px] font-medium leading-relaxed transition-all duration-300">
+                <!-- Rendered dynamically by JS -->
+              </div>
+              <!-- Catalyst Active Reminder -->
+              <div id="catalyst-reminder" class="hidden text-[10px] text-emerald-700 font-medium leading-relaxed bg-emerald-50/80 border border-emerald-200/50 rounded-lg p-2 mt-1 shadow-sm animate-pulse">
+                <span class="lang-en">
+                  <strong>⚡ Catalyst Active:</strong> Both forward and backward reaction rates are boosted to the same extent. Notice on the Reaction-Time Graph how both rates spike upward equally, resulting in no shift in equilibrium yield, but a much faster relaxation time!
+                </span>
+                <span class="lang-zh hidden">
+                  <strong>⚡ 催化劑已作用：</strong> 正向與逆向反應速率均被同等程度地加速。請在反應速率圖表中觀察，兩種速率均同等向上激增，因此平衡產率不會發生任何移動，但系統達到平衡的時間大大縮短！
+                </span>
+              </div>
+            </div>
+
+            <!-- Right: Dynamic Quotient Gauge (lg:col-span-4) -->
+            <div class="lg:col-span-4 flex flex-col justify-between bg-slate-50/50 p-2.5 rounded-lg border border-slate-100 space-y-1">
+              <div class="flex justify-between items-center text-[9px]">
+                <span class="text-slate-400 font-extrabold uppercase tracking-wider">Qc vs Kc</span>
+                <span class="font-bold text-slate-500 bg-slate-100 px-1.5 py-0.2 rounded" id="qc-kc-numerical-ratio">Qc/Kc = 1.00</span>
+              </div>
+              <!-- Gauge Track & Needle pointer -->
+              <div class="relative pt-2 pb-1">
+                <div class="h-1.5 w-full bg-gradient-to-r from-amber-500 via-emerald-500 to-indigo-500 rounded-full relative">
+                  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-3 bg-slate-700 rounded-full border border-white z-10"></div>
+                </div>
+                <div id="gauge-needle" class="absolute top-0 left-1/2 -translate-x-1/2 transition-all duration-300 z-20 flex flex-col items-center" style="left: 50%;">
+                  <div class="w-2.5 h-2.5 rounded-full bg-slate-800 border border-white shadow-md"></div>
+                  <div class="w-0.5 h-2 bg-slate-800"></div>
+                </div>
+              </div>
+              <!-- Real-time values -->
+              <div class="flex justify-between text-[9px] font-mono font-bold text-slate-500">
+                <div>Qc: <span id="gauge-qc-val" class="text-slate-700 font-extrabold">0.0000</span></div>
+                <div>Kc: <span id="gauge-kc-val" class="text-blue-600 font-extrabold">0.0000</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulator Core Layout -->
+        <div class="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-12 xl:grid-cols-[1.75fr_3.5fr_6.75fr] gap-6">
+          
+          <!-- MACROSCOPIC CONTAINER -->
+          <div class="glass-card rounded-2xl p-3 flex flex-col items-center justify-between min-h-[300px] xl:min-h-0 xl:h-full w-full md:col-span-4 xl:col-span-1 relative bg-slate-50/50">
+              <div class="absolute top-2.5 left-3 bg-blue-50 text-blue-600 text-[9px] font-extrabold px-2 py-0.5 rounded-full border border-blue-200">
+                <span class="lang-en">Color Change</span>
+                <span class="lang-zh hidden">顏色變化</span>
+              </div>
+              
+              <!-- System A Visualizer (Realistic 3D Glass Test Tube) -->
+              <div id="visualizer-system-A" class="flex flex-col items-center justify-center h-full w-full py-1.5">
+                <div class="relative w-14 h-56 flex flex-col items-center select-none filter drop-shadow-md">
+                  <!-- 3D Glass Rim/Lip with perspective -->
+                  <div class="absolute -top-1 w-[62px] h-3 border-[3px] border-slate-300/80 bg-white/20 rounded-full z-30 shadow-sm"></div>
+                  <!-- Flare neck transition -->
+                  <div class="absolute top-1.5 w-[56px] h-1.5 bg-gradient-to-b from-slate-300/80 to-slate-200/50 z-20"></div>
+                  
+                  <!-- Test Tube Outer Glass Body -->
+                  <div class="relative w-14 h-52 border-[4px] border-slate-300/80 border-t-0 rounded-b-full bg-white/5 overflow-hidden flex items-end justify-center z-10 shadow-inner">
+                    <!-- Liquid level with 3D meniscus curved surface -->
+                    <div id="test-tube-liquid" class="absolute w-full h-[70%] rounded-b-full transition-all duration-300 flex items-end justify-center overflow-hidden" style="background-color: rgb(150, 40, 20); box-shadow: inset 0 -20px 30px rgba(0,0,0,0.3);">
+                      <!-- Meniscus curved surface shadow -->
+                      <div class="absolute top-0 left-0 right-0 h-3 bg-black/15 rounded-full z-15"></div>
+                      <div class="absolute top-0.5 left-1 right-1 h-2 bg-white/10 rounded-full z-15"></div>
+                      
+                      <!-- Liquid Level Label -->
+                      <span class="text-white/80 text-[10px] font-extrabold pb-4 uppercase tracking-wider z-20 shadow-sm" id="liquid-volume-label">200 mL</span>
+                    </div>
+
+                    <!-- 3D Realistic Glossy Sheen Highlights & Glares -->
+                    <!-- Left vertical glass reflection shine -->
+                    <div class="absolute left-1.5 top-0 bottom-4 w-2 bg-gradient-to-r from-white/35 via-white/15 to-transparent rounded-full z-20 pointer-events-none"></div>
+                    <!-- Right subtle glass edge highlight -->
+                    <div class="absolute right-1 top-0 bottom-4 w-1 bg-gradient-to-l from-white/20 to-transparent z-20 pointer-events-none"></div>
+                    <!-- Bottom glass round shadow/shine curve -->
+                    <div class="absolute bottom-1 left-2 right-2 h-4 border-b-2 border-white/20 rounded-b-full z-25 pointer-events-none"></div>
+                    <!-- Central soft light refraction -->
+                    <div class="absolute left-[40%] top-0 bottom-6 w-1 bg-white/10 rounded-full z-20 pointer-events-none"></div>
+                    <!-- Ambient glass shading -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-black/5 pointer-events-none z-25"></div>
+                  </div>
+                </div>
+                <div class="mt-2 text-center">
+                  <div class="text-xs font-bold text-slate-700">
+                    <span class="lang-en">Solution Mixture Color</span>
+                    <span class="lang-zh hidden">混合溶液顏色</span>
+                  </div>
+                  <div class="text-[10px] text-slate-500 mt-0.5 font-medium" id="system-A-color-desc">
+                    Moderately Dark Red (at Equilibrium)
+                  </div>
+                </div>
+              </div>
+
+              <!-- System B Visualizer (Gas Syringe) -->
+              <div id="visualizer-system-B" class="hidden flex flex-col items-center justify-center h-full w-full py-1.5">
+                <!-- Gas Syringe -->
+                <div class="relative w-48 h-12 border-2 border-slate-300 rounded-xl flex items-center justify-start bg-slate-100 overflow-hidden shadow-inner" id="syringe-body" style="width: 180px;">
+                  <!-- Syringe Plunger -->
+                  <div id="syringe-plunger" class="absolute h-full bg-slate-400 border-r-4 border-slate-500 flex items-center justify-end px-1 transition-all duration-300" style="left: 0; width: 60%; z-index: 10;">
+                    <div class="h-6 w-1 bg-slate-300"></div>
+                  </div>
+                  <!-- Syringe Gas Area -->
+                  <div id="syringe-gas" class="absolute h-full right-0 transition-all duration-300" style="left: 60%; background-color: rgba(180, 83, 9, 0.35);">
+                    <div class="w-full h-full flex items-center justify-center">
+                      <span class="text-[9px] font-extrabold text-white/75 uppercase tracking-wider rotate-12 select-none" id="gas-volume-label">2.0 dm³</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-1.5 text-center">
+                  <div class="text-xs font-bold text-slate-700">
+                    <span class="lang-en">Gas Syringe Color</span>
+                    <span class="lang-zh hidden">注射器內氣體顏色</span>
+                  </div>
+                  <div class="text-[10px] text-slate-500 mt-0.5 font-medium" id="system-B-color-desc">
+                    Brown NO₂ & Colorless N₂O₄ Mixture
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <!-- MICROSCOPIC VIEW (PARTICLE CANVAS) -->
+            <div class="glass-card rounded-2xl p-3 flex flex-col min-h-[300px] xl:min-h-0 xl:h-full w-full md:col-span-8 xl:col-span-1 relative bg-slate-50/50">
+              <div class="absolute top-2.5 left-3 bg-blue-50 text-blue-600 text-[9px] font-extrabold px-2 py-0.5 rounded-full border border-blue-200">
+                <span class="lang-en">Microscopic View (Collisions & Dynamic Equilibrium)</span>
+                <span class="lang-zh hidden">微觀視角（分子碰撞與動態平衡）</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-center mt-1.5 min-h-0">
+                <!-- Light styled canvas for clean lab look -->
+                <canvas id="micro-canvas" width="400" height="200" class="flex-1 w-full bg-white rounded-xl border border-slate-200 shadow-inner min-h-0"></canvas>
+                
+                <!-- Legend list -->
+                <div id="micro-legend" class="mt-2 flex flex-wrap gap-4 justify-center text-[10px] font-semibold text-slate-600 shrink-0">
+                  <!-- System A Legends -->
+                  <span class="flex items-center space-x-1.5 sim-legend-A">
+                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 border border-yellow-500 inline-block"></span>
+                    <span>Fe³⁺</span>
+                  </span>
+                  <span class="flex items-center space-x-1.5 sim-legend-A">
+                    <span class="w-2.5 h-2.5 rounded-full border border-slate-400 inline-block bg-white shadow-sm"></span>
+                    <span>SCN⁻</span>
+                  </span>
+                  <span class="flex items-center space-x-1.5 sim-legend-A">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-600 border border-red-800 inline-block shadow-sm"></span>
+                    <span>Fe(SCN)²⁺</span>
+                  </span>
+
+                  <!-- System B Legends -->
+                  <span class="flex items-center space-x-1.5 sim-legend-B hidden">
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-800 border border-amber-950 inline-block"></span>
+                    <span>NO₂</span>
+                  </span>
+                  <span class="flex items-center space-x-1.5 sim-legend-B hidden">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-400 border border-blue-600 inline-block"></span>
+                    <span>N₂O₄</span>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+
+          <!-- Column 2: Dashboard Control Panel & Real-time Plotting -->
+          <div class="md:col-span-12 xl:col-span-1 flex flex-col space-y-6 min-h-0">
+            
+            <!-- PLOTS PANEL: LIVE GRAPHS -->
+            <div class="glass-card rounded-2xl p-3 flex flex-col min-h-[380px] xl:min-h-0 xl:h-full relative bg-white">
+              <!-- Graph type toggle -->
+              <div class="flex justify-between items-center mb-2 border-b border-slate-100 pb-1 flex-wrap gap-2">
+                <div class="flex items-center space-x-3">
+                  <h3 class="text-sm font-bold text-slate-800 flex items-center space-x-1.5">
+                    <span>📈</span>
+                    <span id="graph-title-label">
+                      <span class="lang-en">Graphs</span>
+                      <span class="lang-zh hidden">圖表</span>
+                    </span>
+                  </h3>
+                </div>
+                <div class="flex items-center space-x-1.5">
+                  <button onclick="togglePauseGraph()" id="plot-btn-pause" class="px-2.5 py-1 rounded-lg text-[10px] font-bold transition flex items-center space-x-1 bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-800 shadow-sm">
+                    <span id="pause-btn-icon">⏸️</span>
+                    <span class="lang-en">Pause</span>
+                    <span class="lang-zh hidden">暫停</span>
+                  </button>
+                  <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
+                    <button onclick="switchPlotView('conc')" id="plot-btn-conc" class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-white text-blue-600 shadow-sm transition">
+                      <span class="lang-en">conc-time graph</span>
+                      <span class="lang-zh hidden">濃度-時間圖</span>
+                    </button>
+                    <button onclick="switchPlotView('rates')" id="plot-btn-rate" class="px-2.5 py-1 rounded-md text-[10px] font-bold text-slate-500 hover:text-slate-800 transition">
+                      <span class="lang-en">rate-time graph</span>
+                      <span class="lang-zh hidden">速率-時間圖</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex-1 min-h-0 relative flex flex-col gap-2">
+                <!-- Live Canvas Plotter (Bright Light grid theme) -->
+                <canvas id="live-plot-canvas" width="800" height="280" class="flex-1 w-full bg-slate-50 rounded-xl border border-slate-200 shadow-inner min-h-0"></canvas>
+                
+                <!-- Quick stats bar under plot -->
+                <div class="grid grid-cols-3 gap-2 text-center text-xs font-bold py-2 bg-slate-50 rounded-lg border border-slate-200/60 shrink-0" id="sim-stats-bar">
+                  <!-- Dynamically populated -->
+                </div>
+
+                <!-- Live Dynamic Legend under Stats Bar -->
+                <div id="dynamic-graph-legend" class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 py-1.5 px-3 bg-slate-50/50 rounded-lg border border-slate-100 text-[10px] font-bold text-slate-600 shrink-0 select-none">
+                  <!-- Dynamically populated by JS depending on active system and graph view choice -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+  <!-- BOTTOM FOOTER -->
+  <footer class="w-full bg-white border-t border-slate-200 py-3 text-center text-xs text-slate-400 font-semibold mt-auto shadow-inner">
+    <span class="lang-en">Advanced Chemistry Lab Interactive Application | Built for Google Chrome</span>
+    <span class="lang-zh hidden">高級互動化學實驗室課堂工具 | 專為 Google Chrome 瀏覽器設計及優化</span>
+  </footer>
+
+  <!-- ================= VIRTUAL SIMULATION & CHALLENGES JAVASCRIPT ================= -->
+  <script>
+    // LANGUAGE STATE MANAGER
+    let currentLang = 'en';
+    let isEmbed = false;
+
+    function applyEmbedMode() {
+      if (!isEmbed) return;
+      document.body.classList.add('embed-mode');
+      document.documentElement.classList.add('embed-mode');
+    }
+
+    function setLanguage(lang, options = {}) {
+      if (lang !== 'en' && lang !== 'zh') return;
+      const { silent = false } = options;
+      if (!silent) playSound('click');
+      currentLang = lang;
+
+      const btnEn = document.getElementById('lang-btn-en');
+      const btnZh = document.getElementById('lang-btn-zh');
+
+      if (lang === 'en') {
+        if (btnEn && btnZh) {
+          btnEn.classList.add('bg-white', 'text-blue-600', 'shadow-sm');
+          btnEn.classList.remove('text-slate-500', 'hover:text-slate-800');
+          btnZh.classList.remove('bg-white', 'text-blue-600', 'shadow-sm');
+          btnZh.classList.add('text-slate-500', 'hover:text-slate-800');
+        }
+
+        document.querySelectorAll('.lang-en').forEach(el => el.classList.remove('hidden'));
+        document.querySelectorAll('.lang-zh').forEach(el => el.classList.add('hidden'));
+      } else {
+        if (btnEn && btnZh) {
+          btnZh.classList.add('bg-white', 'text-blue-600', 'shadow-sm');
+          btnZh.classList.remove('text-slate-500', 'hover:text-slate-800');
+          btnEn.classList.remove('bg-white', 'text-blue-600', 'shadow-sm');
+          btnEn.classList.add('text-slate-500', 'hover:text-slate-800');
+        }
+
+        document.querySelectorAll('.lang-en').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.lang-zh').forEach(el => el.classList.remove('hidden'));
+      }
+
+      // Update interactive chemical equation and shifting status
+      if (typeof renderInteractiveEquation === 'function') renderInteractiveEquation();
+      if (typeof updateEquilibriumShiftStatus === 'function') updateEquilibriumShiftStatus();
+      if (typeof updateCatalystButton === 'function') updateCatalystButton();
+    }
+
+    (function initHostLangBridge() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('embed') === '1') {
+          isEmbed = true;
+          applyEmbedMode();
+        }
+        const urlLang = params.get('lang');
+        if (urlLang === 'en' || urlLang === 'zh') {
+          setLanguage(urlLang, { silent: true });
+        }
+      } catch (e) { /* ignore */ }
+
+      window.addEventListener('message', function (event) {
+        const data = event.data;
+        if (data && data.type === 'uniplus:setLang' && (data.lang === 'en' || data.lang === 'zh')) {
+          setLanguage(data.lang, { silent: true });
+        }
+      });
+    })();
+
+    // AUDIO FX CONTROLLER (Synth Beeps)
+    let audioCtx = null;
+    let audioMuted = false;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function toggleAudio() {
+      audioMuted = !audioMuted;
+      const icon = document.getElementById('audioIcon');
+      if (audioMuted) {
+        icon.setAttribute('d', 'M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25M12 18.75V5.25L7.75 9H4.5v6h3.25L12 18.75z');
+        document.getElementById('audioToggle').classList.add('bg-red-50', 'text-red-500', 'border-red-200');
+      } else {
+        icon.setAttribute('d', 'M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M12 18.75V5.25L7.75 9H4.5v6h3.25L12 18.75z');
+        document.getElementById('audioToggle').classList.remove('bg-red-50', 'text-red-500', 'border-red-200');
+      }
+    }
+
+    function playSound(type) {
+      if (audioMuted) return;
+      initAudio();
+      if (!audioCtx) return;
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      const now = audioCtx.currentTime;
+
+      if (type === 'success') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(523.25, now); // C5
+        osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
+        osc.frequency.setValueAtTime(783.99, now + 0.2); // G5
+        osc.frequency.setValueAtTime(1046.50, now + 0.3); // C6
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } else if (type === 'fail') {
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, now); // A3
+        osc.frequency.setValueAtTime(147, now + 0.15); // D3
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+        osc.start(now);
+        osc.stop(now + 0.4);
+      } else if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now); // A4
+        gain.gain.setValueAtTime(0.06, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      } else if (type === 'catalyst') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(880, now);
+        osc.frequency.exponentialRampToValueAtTime(1760, now + 0.4);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+        osc.start(now);
+        osc.stop(now + 0.4);
+      } else if (type === 'reaction') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(659.25, now); // E5
+        gain.gain.setValueAtTime(0.03, now);
+        gain.gain.exponentialRampToValueAtTime(0.005, now + 0.06);
+        osc.start(now);
+        osc.stop(now + 0.06);
+      }
+    }
+
+
+    // ==========================================
+    // SIMULATION STATE & KINETIC ENGINE
+    // ==========================================
+    let currentSystem = 'A'; // 'A', 'B'
+    let isRunning = true;
+    let catalystActive = false;
+    let inertGasActive = false;
+    let simSpeedMultiplier = 5.0; // Fixed default speed of the microscopic view is 5x
+    let graphSpeedMultiplier = 1.5; // Controls the scrolling speed of the graph
+    let graphUpdateAccumulator = 0.0;
+    let debugFrameCount = 0;
+
+    function setGraphSpeedSlider(speedVal) {
+      const speed = parseFloat(speedVal);
+      graphSpeedMultiplier = speed;
+      
+      const valEl = document.getElementById('speed-slider-val');
+      if (valEl) {
+        valEl.innerText = `${speed.toFixed(1)}x`;
+      }
+      
+      const slider = document.getElementById('speed-slider');
+      if (slider && parseFloat(slider.value) !== speed) {
+        slider.value = speed;
+      }
+    }
+
+    function renderInteractiveEquation() {
+      const container = document.getElementById('interactive-equation-container');
+      if (!container) return;
+
+      let html = '';
+
+      if (currentSystem === 'A') {
+        html = `
+          <div class="flex flex-col items-center justify-start space-y-1">
+            <div class="flex items-center space-x-1.5">
+              <div class="inline-flex items-center space-x-1.5 bg-yellow-50 border border-yellow-300 rounded-xl px-2.5 py-1 shadow-sm select-none" title="Fe³⁺">
+                <span id="species-Fe3+" class="text-yellow-600 text-sm sm:text-base font-extrabold">Fe³⁺<span class="text-[10px] font-semibold text-slate-400 font-sans ml-0.5">(aq)</span></span>
+              </div>
+
+              <span class="text-slate-400 text-sm sm:text-base font-bold">+</span>
+
+              <div class="inline-flex items-center space-x-1.5 bg-slate-50 border border-slate-300 rounded-xl px-2.5 py-1 shadow-sm select-none" title="SCN⁻">
+                <span id="species-SCN-" class="text-slate-600 text-sm sm:text-base font-extrabold">SCN⁻<span class="text-[10px] font-semibold text-slate-400 font-sans ml-0.5">(aq)</span></span>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-1.5">
+              <button onclick="addBothReactants()" class="text-[9px] font-bold text-blue-600 hover:text-blue-700 bg-blue-50/50 hover:bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-lg shadow-sm transition duration-150 transform hover:scale-[1.03] active:scale-95">
+                <span class="lang-en">Add both</span>
+                <span class="lang-zh hidden">加入兩者</span>
+              </button>
+              <button onclick="removeBothReactants()" class="text-[9px] font-bold text-red-600 hover:text-red-700 bg-red-50/50 hover:bg-red-50 border border-red-200 px-2 py-0.5 rounded-lg shadow-sm transition duration-150 transform hover:scale-[1.03] active:scale-95">
+                <span class="lang-en">Remove both</span>
+                <span class="lang-zh hidden">移除兩者</span>
+              </button>
+            </div>
+          </div>
+          
+          <div class="flex flex-col items-center justify-start px-4 select-none">
+            <!-- Heat Label on top of controls (Exothermic) -->
+            <div class="text-[9px] font-extrabold text-orange-600 bg-orange-50 px-1 rounded border border-orange-200 mb-1 leading-none py-0.5 flex flex-col items-center">
+              <span>+ Heat (Exo)</span>
+              <span id="temp-indicator-val" class="text-[8px] text-slate-500 font-bold font-mono mt-0.5">${stateA.T} K</span>
+            </div>
+            <!-- Direct Temperature controls under Heat Label but above Arrows -->
+            <div class="flex items-center space-x-0.5 mb-1">
+              <button onclick="adjustTemp(-100)" class="bg-orange-400 hover:bg-orange-500 text-white w-4 h-4 rounded text-[10px] font-bold transition flex items-center justify-center shadow-sm" title="Decrease Temperature">-</button>
+              <button onclick="adjustTemp(100)" class="bg-orange-500 hover:bg-orange-600 text-white w-4 h-4 rounded text-[10px] font-bold transition flex items-center justify-center shadow-sm" title="Increase Temperature">+</button>
+            </div>
+            <div class="flex flex-col items-center justify-center space-y-0.5">
+              <svg id="arrow-forward" class="w-20 h-3 text-slate-400 transition-all duration-300" fill="none" viewBox="0 0 60 12" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6h56M50 2l8 4-8 4" />
+              </svg>
+              <svg id="arrow-backward" class="w-20 h-3 text-slate-400 transition-all duration-300" fill="none" viewBox="0 0 60 12" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M58 6H2M10 2L2 6l8 4" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="inline-flex items-center space-x-1.5 bg-red-50 border border-red-300 rounded-xl px-2.5 py-1 shadow-sm">
+            <span id="species-FeSCN2+" class="text-red-600 text-sm sm:text-base font-extrabold">Fe(SCN)²⁺<span class="text-[10px] font-semibold text-slate-400 font-sans ml-0.5">(aq)</span></span>
+            <div class="flex items-center space-x-0.5 border-l border-red-200 pl-1.5 ml-1.5">
+              <button onclick="addChemical('FeSCN2+')" class="bg-red-500 hover:bg-red-600 text-white w-5 h-5 rounded text-xs font-bold transition flex items-center justify-center shadow-sm" title="Add Fe(SCN)²⁺">+</button>
+              <button onclick="removeFeSCN()" class="bg-red-600 hover:bg-red-700 text-white w-5 h-5 rounded text-xs font-bold transition flex items-center justify-center shadow-sm" title="Remove Fe(SCN)²⁺">-</button>
+            </div>
+          </div>
+
+          <div class="inline-flex items-center bg-rose-50/80 border border-rose-200 rounded-xl px-2.5 py-1 shadow-sm select-none" title="Exothermic Reaction (放出能量 / 放熱反應)">
+            <span class="text-rose-600 text-xs font-black">ΔH &lt; 0</span>
+          </div>
+        `;
+      } else if (currentSystem === 'B') {
+        html = `
+          <div class="inline-flex items-center space-x-1.5 bg-blue-50 border border-blue-300 rounded-xl px-2.5 py-1 shadow-sm">
+            <span id="species-N2O4" class="text-blue-600 text-sm sm:text-base font-extrabold">N₂O₄<span class="text-[10px] font-semibold text-slate-400 font-sans ml-0.5">(g)</span></span>
+            <div class="flex items-center space-x-0.5 border-l border-blue-200 pl-1.5 ml-1.5">
+              <button onclick="addChemicalB('N2O4')" class="bg-blue-500 hover:bg-blue-600 text-white w-5 h-5 rounded text-xs font-bold transition flex items-center justify-center shadow-sm" title="Add N₂O₄ Gas">+</button>
+              <button onclick="removeChemicalB('N2O4')" class="bg-red-500 hover:bg-red-600 text-white w-5 h-5 rounded text-xs font-bold transition flex items-center justify-center shadow-sm" title="Remove N₂O₄ Gas">-</button>
+            </div>
+          </div>
+          
+          <!-- Equilibrium Arrows & Heat underneath -->
+          <div class="flex flex-col items-center justify-center px-4 select-none">
+            <!-- Heat Label on top of controls (Endothermic) -->
+            <div class="text-[9px] font-extrabold text-orange-600 bg-orange-50 px-1 rounded border border-orange-200 mb-1 leading-none py-0.5 flex flex-col items-center">
+              <span>Heat (Endo)</span>
+              <span id="temp-indicator-val" class="text-[8px] text-slate-500 font-bold font-mono mt-0.5">${stateB.T} K</span>
+            </div>
+            <!-- Direct Temperature controls under Heat Label but above Arrows -->
+            <div class="flex items-center space-x-0.5 mb-1">
+              <button onclick="adjustTemp(-100)" class="bg-orange-400 hover:bg-orange-500 text-white w-4 h-4 rounded text-[10px] font-bold transition flex items-center justify-center shadow-sm" title="Decrease Temperature">-</button>
+              <button onclick="adjustTemp(100)" class="bg-orange-500 hover:bg-orange-600 text-white w-4 h-4 rounded text-[10px] font-bold transition flex items-center justify-center shadow-sm" title="Increase Temperature">+</button>
+            </div>
+            <div class="flex flex-col items-center justify-center space-y-0.5">
+              <svg id="arrow-forward" class="w-20 h-3 text-slate-400 transition-all duration-300" fill="none" viewBox="0 0 60 12" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6h56M50 2l8 4-8 4" />
+              </svg>
+              <svg id="arrow-backward" class="w-20 h-3 text-slate-400 transition-all duration-300" fill="none" viewBox="0 0 60 12" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M58 6H2M10 2L2 6l8 4" />
+              </svg>
+            </div>
+          </div>
+
+          <span class="text-slate-700 text-sm sm:text-base font-extrabold mr-1">2</span>
+          <div class="inline-flex items-center space-x-1.5 bg-amber-50 border border-amber-300 rounded-xl px-2.5 py-1 shadow-sm">
+            <span id="species-NO2" class="text-amber-700 text-sm sm:text-base font-extrabold">NO₂<span class="text-[10px] font-semibold text-slate-400 font-sans ml-0.5">(g)</span></span>
+            <div class="flex items-center space-x-0.5 border-l border-amber-200 pl-1.5 ml-1.5">
+              <button onclick="addChemicalB('NO2')" class="bg-amber-500 hover:bg-amber-600 text-white w-5 h-5 rounded text-xs font-bold transition flex items-center justify-center shadow-sm" title="Add NO₂ Gas">+</button>
+              <button onclick="removeChemicalB('NO2')" class="bg-red-500 hover:bg-red-600 text-white w-5 h-5 rounded text-xs font-bold transition flex items-center justify-center shadow-sm" title="Remove NO₂ Gas">-</button>
+            </div>
+          </div>
+
+          <span class="text-slate-400 text-sm sm:text-base font-bold">|</span>
+
+          <!-- Volume Pill Widget -->
+          <div class="inline-flex items-center space-x-1.5 bg-indigo-50 border border-indigo-300 rounded-xl px-2.5 py-1 shadow-sm">
+            <div class="flex flex-col items-center">
+              <span class="text-indigo-700 text-[10px] font-extrabold uppercase leading-none">Vol (V)</span>
+              <span id="volume-indicator-val" class="text-[10px] text-slate-600 font-extrabold font-mono mt-0.5">${stateB.V.toFixed(1)} dm³</span>
+            </div>
+            <div class="flex items-center space-x-0.5 border-l border-indigo-200 pl-1.5 ml-1.5">
+              <button onclick="adjustVolume('decrease')" class="bg-indigo-500 hover:bg-indigo-600 text-white w-5 h-5 rounded text-xs font-bold transition flex items-center justify-center shadow-sm" title="Compress">-</button>
+              <button onclick="adjustVolume('increase')" class="bg-indigo-600 hover:bg-indigo-700 text-white w-5 h-5 rounded text-xs font-bold transition flex items-center justify-center shadow-sm" title="Expand">+</button>
+            </div>
+          </div>
+
+          <div class="inline-flex items-center bg-orange-50/80 border border-orange-200 rounded-xl px-2.5 py-1 shadow-sm select-none" title="Endothermic Reaction (吸收能量 / 吸熱反應)">
+            <span class="text-orange-600 text-xs font-black">ΔH &gt; 0</span>
+          </div>
+        `;
+      }
+
+      container.innerHTML = html;
+    }
+
+    function flashSpecies(key, type = 'increase') {
+      const el = document.getElementById(`species-${key}`);
+      if (!el) return;
+      
+      const className = type === 'increase' ? 'flash-increase' : 'flash-decrease';
+      el.classList.remove('flash-increase', 'flash-decrease');
+      void el.offsetWidth; // Trigger reflow to restart animation
+      el.classList.add(className);
+      
+      setTimeout(() => {
+        el.classList.remove(className);
+      }, 800);
+    }
+
+    function updateEquilibriumShiftStatus() {
+      let Qc = 0;
+      let Kc = 0;
+      let ratio = 1.0;
+
+      if (currentSystem === 'A' && stateA.V === 0.0) {
+        Kc = stateA.Kc;
+        Qc = 0.0;
+        ratio = 0.0;
+
+        // Update numerical values in the gauge
+        const qcValEl = document.getElementById('gauge-qc-val');
+        const kcValEl = document.getElementById('gauge-kc-val');
+        const ratioEl = document.getElementById('qc-kc-numerical-ratio');
+        
+        if (qcValEl) qcValEl.innerText = '0.0000';
+        if (kcValEl) kcValEl.innerText = Kc.toFixed(4);
+        if (ratioEl) ratioEl.innerText = `Qc/Kc = 0.00`;
+
+        // Update Gauge Needle position to the far left
+        const needle = document.getElementById('gauge-needle');
+        if (needle) {
+          needle.style.left = '10%';
+        }
+
+        // Update Shift Status Badge & Explanation Banner & Arrows
+        const badge = document.getElementById('shift-status-badge');
+        const banner = document.getElementById('shift-explanation-banner');
+        const arrowForward = document.getElementById('arrow-forward');
+        const arrowBackward = document.getElementById('arrow-backward');
+
+        if (badge) {
+          badge.className = "self-start sm:self-center px-3 py-1 rounded-full text-xs font-extrabold flex items-center space-x-1.5 transition-all duration-300 bg-slate-500 text-white shadow-sm shadow-slate-500/20";
+          badge.innerHTML = `
+            <span>
+              <span class="lang-en">Empty Tube</span>
+              <span class="lang-zh hidden">空試管</span>
+            </span>
+          `;
+        }
+
+        if (banner) {
+          banner.className = "p-3 rounded-lg text-xs font-medium leading-relaxed border transition-all duration-300 bg-slate-50 border-slate-200 text-slate-700";
+          banner.innerHTML = currentLang === 'en' ? 
+            `<strong>Empty Test Tube:</strong> There is no solution in the test tube yet. Add <strong>Fe³⁺</strong> and/or <strong>SCN⁻</strong> using the buttons in the chemical equation above to start the reaction and observe chemical equilibrium!` :
+            `<strong>空試管：</strong>試管中目前沒有溶液。請使用上方化學方程式中的按鈕加入 <strong>Fe³⁺</strong> 和/或 <strong>SCN⁻</strong>，以開始反應並觀察化學平衡！`;
+        }
+
+        if (arrowForward) {
+          arrowForward.setAttribute('class', 'w-20 h-3 text-slate-300 opacity-30 transition-all duration-300');
+        }
+        if (arrowBackward) {
+          arrowBackward.setAttribute('class', 'w-20 h-3 text-slate-300 opacity-30 transition-all duration-300');
+        }
+        return;
+      }
+
+      if (currentSystem === 'A') {
+        Kc = stateA.Kc;
+        const denom = stateA.Fe * stateA.SCN;
+        Qc = denom > 0 ? stateA.FeSCN / denom : 999999;
+      } else if (currentSystem === 'B') {
+        Kc = stateB.Kc;
+        const denom = stateB.N2O4;
+        Qc = denom > 0 ? (stateB.NO2 * stateB.NO2) / denom : 999999;
+      }
+
+      ratio = Kc > 0 ? Qc / Kc : 1.0;
+
+      // Update numerical values in the gauge
+      const qcValEl = document.getElementById('gauge-qc-val');
+      const kcValEl = document.getElementById('gauge-kc-val');
+      const ratioEl = document.getElementById('qc-kc-numerical-ratio');
+      
+      if (qcValEl) qcValEl.innerText = Qc > 10000 ? '9999+' : Qc.toFixed(4);
+      if (kcValEl) kcValEl.innerText = Kc.toFixed(4);
+      if (ratioEl) ratioEl.innerText = `Qc/Kc = ${ratio > 10000 ? '9999+' : ratio.toFixed(2)}`;
+
+      // Update Gauge Needle position
+      // Map ratio to 10% - 90% range, with 50% being ratio = 1.0
+      const needle = document.getElementById('gauge-needle');
+      if (needle) {
+        let percentage = 50;
+        if (ratio > 0) {
+          const logRatio = Math.log10(ratio); // log10(1) = 0, log10(10) = 1, log10(0.1) = -1
+          // Map logRatio from [-1.5, 1.5] to [-40, 40]
+          const offset = Math.max(-40, Math.min(40, logRatio * 26.67));
+          percentage = 50 + offset;
+        }
+        needle.style.left = `${percentage}%`;
+      }
+
+      // Determine shift direction based on 1.5% tolerance
+      const tolerance = 0.015;
+      let shift = 'equilibrium'; // 'right', 'left', 'equilibrium'
+      if (ratio < 1.0 - tolerance) {
+        shift = 'right';
+      } else if (ratio > 1.0 + tolerance) {
+        shift = 'left';
+      }
+
+      // Update Shift Status Badge & Explanation Banner & Arrows
+      const badge = document.getElementById('shift-status-badge');
+      const banner = document.getElementById('shift-explanation-banner');
+      const arrowForward = document.getElementById('arrow-forward');
+      const arrowBackward = document.getElementById('arrow-backward');
+
+      if (shift === 'right') {
+        // Badge
+        if (badge) {
+          badge.className = "self-start sm:self-center px-3 py-1 rounded-full text-xs font-extrabold flex items-center space-x-1.5 transition-all duration-300 bg-amber-500 text-white shadow-sm shadow-amber-500/20";
+          badge.innerHTML = `
+            <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+            <span>
+              <span class="lang-en">Shifting Right ➔</span>
+              <span class="lang-zh hidden">平衡向右移動 ➔</span>
+            </span>
+          `;
+        }
+        // Banner
+        if (banner) {
+          banner.className = "p-3 rounded-lg text-xs font-medium leading-relaxed border transition-all duration-300 bg-amber-50 border-amber-200 text-amber-800";
+          banner.innerHTML = currentLang === 'en' ? 
+            `<strong>Le Chatelier's Principle:</strong> As <strong>Qc &lt; Kc</strong>, the forward reaction rate &gt; backward rate.` :
+            `<strong>勒沙特列原理：</strong>由於 <strong>Qc &lt; Kc</strong>，正反應速率 &gt; 逆反應速率。`;
+        }
+        // Arrows
+        if (arrowForward) {
+          arrowForward.setAttribute('class', 'w-20 h-3 text-amber-500 opacity-100 animate-shift-right transition-all duration-300');
+        }
+        if (arrowBackward) {
+          arrowBackward.setAttribute('class', 'w-20 h-3 text-slate-300 opacity-30 transition-all duration-300');
+        }
+      } else if (shift === 'left') {
+        // Badge
+        if (badge) {
+          badge.className = "self-start sm:self-center px-3 py-1 rounded-full text-xs font-extrabold flex items-center space-x-1.5 transition-all duration-300 bg-indigo-600 text-white shadow-sm shadow-indigo-500/20";
+          badge.innerHTML = `
+            <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+            <span>
+              <span class="lang-en">➔ Shifting Left</span>
+              <span class="lang-zh hidden">➔ 平衡向左移動</span>
+            </span>
+          `;
+        }
+        // Banner
+        if (banner) {
+          banner.className = "p-3 rounded-lg text-xs font-medium leading-relaxed border transition-all duration-300 bg-indigo-50 border-indigo-200 text-indigo-800";
+          banner.innerHTML = currentLang === 'en' ? 
+            `<strong>Le Chatelier's Principle:</strong> As <strong>Qc &gt; Kc</strong>, the backward reaction rate &gt; forward rate.` :
+            `<strong>勒沙特列原理：</strong>由於 <strong>Qc &gt; Kc</strong>，逆反應速率 &gt; 正反應速率。`;
+        }
+        // Arrows
+        if (arrowForward) {
+          arrowForward.setAttribute('class', 'w-20 h-3 text-slate-300 opacity-30 transition-all duration-300');
+        }
+        if (arrowBackward) {
+          arrowBackward.setAttribute('class', 'w-20 h-3 text-indigo-500 opacity-100 animate-shift-left transition-all duration-300');
+        }
+      } else {
+        // At Equilibrium
+        // Badge
+        if (badge) {
+          badge.className = "self-start sm:self-center px-3 py-1 rounded-full text-xs font-extrabold flex items-center space-x-1.5 transition-all duration-300 bg-emerald-600 text-white shadow-sm shadow-emerald-500/20";
+          badge.innerHTML = `
+            <span>✓</span>
+            <span>
+              <span class="lang-en">At Equilibrium</span>
+              <span class="lang-zh hidden">已達至平衡</span>
+            </span>
+          `;
+        }
+        // Banner
+        if (banner) {
+          banner.className = "p-3 rounded-lg text-xs font-medium leading-relaxed border transition-all duration-300 bg-emerald-50 border-emerald-200 text-emerald-800";
+          banner.innerHTML = currentLang === 'en' ? 
+            `<strong>Dynamic Equilibrium:</strong> The system is at equilibrium (<strong>Qc ≈ Kc</strong>).` :
+            `<strong>動態平衡：</strong>系統已達至平衡狀態（<strong>Qc ≈ Kc</strong>）。`;
+        }
+        // Arrows
+        if (arrowForward) {
+          arrowForward.setAttribute('class', 'w-20 h-3 text-emerald-500 opacity-90 transition-all duration-300');
+        }
+        if (arrowBackward) {
+          arrowBackward.setAttribute('class', 'w-20 h-3 text-emerald-500 opacity-90 transition-all duration-300');
+        }
+      }
+    }
+
+    // Concentrations & quantities over time (the timeline history)
+    let historyLength = 150;
+    let timePoints = Array.from({length: historyLength}, (_, i) => i);
+    let plotHistory = {
+      Fe: Array(historyLength).fill(0),
+      SCN: Array(historyLength).fill(0),
+      FeSCN: Array(historyLength).fill(0),
+      NO2: Array(historyLength).fill(0),
+      N2O4: Array(historyLength).fill(0),
+      forwardRate: Array(historyLength).fill(0),
+      backwardRate: Array(historyLength).fill(0)
+    };
+
+    // System A (Fe3+ + SCN- <=> Fe(SCN)2+)
+    // Kc at 298K = 1080. Exothermic (dH < 0)
+    let stateA = {
+      Fe: 0.015,         // Molarity
+      SCN: 0.015,        // Molarity
+      FeSCN: 0.0,       // Molarity
+      V: 0.1,           // Volume in dm3 (100 mL)
+      T: 298,           // Temperature in K
+      kb: 0.08,         // Rate constants
+      kf: 0,            // kf = Kc * kb
+      Kc: 1080
+    };
+
+    // System B (N2O4 <=> 2NO2)
+    // Kc at 298K = 0.02. Endothermic (dH > 0)
+    let stateB = {
+      NO2: 0.0,         // Molarity
+      N2O4: 0.08,       // Molarity
+      V: 2.0,          // Volume in dm3
+      T: 298,
+      kb: 1.0,
+      kf: 0,
+      Kc: 0.02
+    };
+
+
+    // Active plot view mode: 'conc' or 'rates'
+    let activePlotView = 'conc';
+
+    // Particle rendering configs
+    const canvas = document.getElementById('micro-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    class Particle {
+      constructor(type, x, y) {
+        this.type = type; // 'Fe', 'SCN', 'FeSCN' etc.
+        this.radius = type === 'Catalyst' ? 12 : (type.includes('FeSCN') || type === 'N2O4' || type === 'HI' ? 9 : 6);
+        this.currentSpeedFactor = 1.0;
+        this.cooldown = 0; // Cooldown to prevent immediate recombination
+
+        if (x !== undefined && y !== undefined) {
+          this.x = x;
+          this.y = y;
+          this.vx = (Math.random() - 0.5) * 1.5;
+          this.vy = (Math.random() - 0.5) * 1.5;
+        } else {
+          // Spawn particles randomly distributed across the entire canvas
+          // This prevents them from starting clumped or stuck in the middle.
+          this.x = this.radius + Math.random() * (canvas.width - this.radius * 2);
+          this.y = this.radius + Math.random() * (canvas.height - this.radius * 2);
+          
+          let angle = Math.random() * Math.PI * 2;
+          let speed = 0.5 + Math.random() * 1.0;
+          this.vx = Math.cos(angle) * speed;
+          this.vy = Math.sin(angle) * speed;
+        }
+      }
+
+      update() {
+        let temp = 298;
+        let baseTemp = 298;
+        let sensitivity = 0.015;
+        if (currentSystem === 'A') {
+          temp = stateA.T;
+          baseTemp = 298;
+          sensitivity = 0.015;
+        } else if (currentSystem === 'B') {
+          temp = stateB.T;
+          baseTemp = 298;
+          sensitivity = 0.015;
+        }
+
+        let tempFactor = 1.0 + (temp - baseTemp) * sensitivity;
+        let catalystFactor = catalystActive ? 1.8 : 1.0;
+        let systemFactor = 1.0;
+        this.currentSpeedFactor = tempFactor * catalystFactor * systemFactor;
+
+        if (this.cooldown > 0) {
+          this.cooldown -= 0.016 * simSpeedMultiplier;
+        }
+
+        this.x += this.vx * simSpeedMultiplier * this.currentSpeedFactor;
+        this.y += this.vy * simSpeedMultiplier * this.currentSpeedFactor;
+
+        // Wall collisions
+        if (this.x - this.radius < 0 || this.x + this.radius > canvas.width) {
+          this.vx *= -1;
+          this.x = Math.max(this.radius, Math.min(canvas.width - this.radius, this.x));
+        }
+        if (this.y - this.radius < 0 || this.y + this.radius > canvas.height) {
+          this.vy *= -1;
+          this.y = Math.max(this.radius, Math.min(canvas.height - this.radius, this.y));
+        }
+      }
+
+      draw() {
+        // Draw energetic aura if speed factor is high (high temperature or catalyst active)
+        if (this.currentSpeedFactor > 1.25 && this.type !== 'Catalyst') {
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius + 3, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(251, 146, 60, 0.15)'; // Soft orange glow
+          ctx.strokeStyle = 'rgba(251, 146, 60, 0.3)';
+          ctx.lineWidth = 1;
+          ctx.fill();
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        
+        if (currentSystem === 'A') {
+          if (this.type === 'Fe') {
+            ctx.fillStyle = '#facc15'; // Bright Yellow
+            ctx.strokeStyle = '#eab308';
+            ctx.lineWidth = 1;
+            ctx.fill();
+            ctx.stroke();
+          } else if (this.type === 'SCN') {
+            ctx.strokeStyle = '#475569'; // Dark Slate hollow outline
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+          } else if (this.type === 'FeSCN') {
+            ctx.fillStyle = '#dc2626'; // Deep Crimson Red
+            ctx.strokeStyle = '#991b1b';
+            ctx.lineWidth = 1;
+            ctx.fill();
+            ctx.stroke();
+          }
+        } else if (currentSystem === 'B') {
+          if (this.type === 'NO2') {
+            ctx.fillStyle = '#c2410c'; // Brown
+            ctx.strokeStyle = '#7c2d12';
+            ctx.lineWidth = 1;
+            ctx.fill();
+            ctx.stroke();
+          } else if (this.type === 'N2O4') {
+            ctx.fillStyle = '#60a5fa'; // Vibrant sky blue dimer (highly visible)
+            ctx.strokeStyle = '#2563eb'; // Strong blue border
+            ctx.lineWidth = 1.5;
+            ctx.fill();
+            ctx.stroke();
+          }
+        }
+
+        if (this.type === 'Catalyst') {
+          ctx.save();
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = '#10b981';
+          ctx.fillStyle = '#34d399';
+          ctx.strokeStyle = '#059669';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.fillStyle = '#ffffff';
+          ctx.font = 'bold 13px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('⚡', this.x, this.y);
+          ctx.restore();
+        }
+      }
+    }
+
+    // Sync microscopic counts to match current concentrations
+    function syncParticles() {
+      let targetCounts = {};
+      if (currentSystem === 'A') {
+        targetCounts.Fe = Math.round(stateA.Fe * 2000);
+        targetCounts.SCN = Math.round(stateA.SCN * 2000);
+        targetCounts.FeSCN = Math.round(stateA.FeSCN * 2000);
+      } else if (currentSystem === 'B') {
+        targetCounts.NO2 = Math.round(stateB.NO2 * 300);
+        targetCounts.N2O4 = Math.round(stateB.N2O4 * 300);
+      }
+
+      // Add catalyst particles if active
+      targetCounts.Catalyst = catalystActive ? 6 : 0;
+
+      // Check differences and adjust
+      for (const [type, target] of Object.entries(targetCounts)) {
+        let currentCount = particles.filter(p => p.type === type).length;
+        if (currentCount < target) {
+          for (let i = 0; i < target - currentCount; i++) {
+            particles.push(new Particle(type));
+          }
+        } else if (currentCount > target) {
+          let countToRemove = currentCount - target;
+          for (let i = particles.length - 1; i >= 0 && countToRemove > 0; i--) {
+            if (particles[i].type === type) {
+              particles.splice(i, 1);
+              countToRemove--;
+            }
+          }
+        }
+      }
+    }
+
+    // ==========================================
+    // INITIALIZATION & KINETICS CALCULATOR
+    // ==========================================
+    function initSimulation() {
+      // Force initial canvas layout sync before resetting and spawning default System A particles
+      if (canvas.clientWidth && canvas.clientHeight) {
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
+      }
+      resetSimulation();
+      requestAnimationFrame(simLoop);
+    }
+
+    function resetSimulation() {
+      playSound('click');
+      catalystActive = false;
+      inertGasActive = false;
+      updateCatalystButton();
+      setGraphPaused(false);
+      const reminder = document.getElementById('catalyst-reminder');
+      if (reminder) {
+        reminder.classList.add('hidden');
+      }
+
+      // Reset speed slider to 1.5x
+      setGraphSpeedSlider(1.5);
+
+      // Reset System A values
+      stateA.Fe = 0.015;
+      stateA.SCN = 0.015;
+      stateA.FeSCN = 0.0;
+      stateA.V = 0.1; // 100 mL
+      stateA.T = 298;
+      stateA.Kc = 1080;
+
+      // Reset System B values
+      stateB.NO2 = 0.0;
+      stateB.N2O4 = 0.08;
+      stateB.V = 2.0;
+      stateB.T = 298;
+      stateB.kb = 1.0;
+      stateB.Kc = 0.02;
+
+
+      // Pre-populate timeline history with values near equilibrium to ensure smooth start
+      let initSteps = 3000;
+      for (let i = 0; i < initSteps; i++) {
+        runKineticStep(0.016);
+      }
+
+      // Fill remaining history
+      for (let i = 0; i < historyLength; i++) {
+        updateHistoryPlot();
+      }
+
+      particles = [];
+      syncParticles();
+      renderInteractiveEquation();
+      updateEquilibriumShiftStatus();
+
+      // Show/Hide "Add Water" button next to Inject Catalyst depending on active system (only System A gets it)
+      const waterBtn = document.getElementById('water-btn');
+      if (waterBtn) {
+        if (currentSystem === 'A') {
+          waterBtn.classList.remove('hidden');
+        } else {
+          waterBtn.classList.add('hidden');
+        }
+      }
+
+      // Reset volume displays/controllers
+      const gasLabelB = document.getElementById('gas-volume-label');
+      if (gasLabelB) {
+        gasLabelB.innerText = `2.0 dm³`;
+      }
+      const plunger = document.getElementById('syringe-plunger');
+      const gas = document.getElementById('syringe-gas');
+      if (plunger && gas) {
+        plunger.style.width = '60%';
+        gas.style.left = '60%';
+      }
+
+    }
+
+    function runKineticStep(dt) {
+      let maxMicroDt = 0.0001; // extremely stable step size for Euler integration to prevent stiff oscillations
+      let steps = Math.ceil(dt / maxMicroDt);
+      let microDt = dt / steps;
+      let mult = catalystActive ? 5.0 : 1.0;
+
+      // Always update thermodynamic constants for all systems so gauges are live
+      stateA.Kc = 1080 * Math.exp(-0.025 * (stateA.T - 298));
+      stateA.kf = 1080 * 0.08 * Math.exp(0.015 * (stateA.T - 298));
+      stateA.kb = 0.08 * Math.exp(0.040 * (stateA.T - 298));
+
+      stateB.Kc = 0.02 * Math.exp(0.020 * (stateB.T - 298));
+      stateB.kb = 1.0 * Math.exp(0.015 * (stateB.T - 298));
+      stateB.kf = stateB.Kc * stateB.kb;
+
+      // Smooth simulation of System A kinetics using adaptive sub-stepping
+      for (let i = 0; i < steps; i++) {
+        let rf = stateA.kf * stateA.Fe * stateA.SCN * mult;
+        let rb = stateA.kb * stateA.FeSCN * mult;
+        let diff = (rf - rb) * microDt;
+        
+        stateA.FeSCN += diff;
+        stateA.Fe -= diff;
+        stateA.SCN -= diff;
+
+        stateA.Fe = Math.max(0, stateA.Fe);
+        stateA.SCN = Math.max(0, stateA.SCN);
+        stateA.FeSCN = Math.max(0, stateA.FeSCN);
+      }
+
+      // Smooth simulation of System B kinetics using adaptive sub-stepping
+      let kineticSpeedUpB = 25.0;
+      for (let i = 0; i < steps; i++) {
+        let rf = stateB.kf * stateB.N2O4 * mult * kineticSpeedUpB;
+        let rb = stateB.kb * stateB.NO2 * stateB.NO2 * mult * kineticSpeedUpB;
+        let diff = (rf - rb) * microDt;
+
+        stateB.N2O4 -= diff;
+        stateB.NO2 += 2 * diff;
+
+        stateB.NO2 = Math.max(0, stateB.NO2);
+        stateB.N2O4 = Math.max(0, stateB.N2O4);
+      }
+
+    }
+
+    let isGraphPaused = false;
+
+    function setGraphPaused(paused) {
+      isGraphPaused = paused;
+      const btn = document.getElementById('plot-btn-pause');
+      if (!btn) return;
+      const icon = document.getElementById('pause-btn-icon');
+      
+      if (isGraphPaused) {
+        if (icon) icon.innerText = '▶️';
+        btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+        btn.classList.add('bg-amber-50', 'text-amber-700', 'border-amber-300');
+        
+        const enLabel = btn.querySelector('.lang-en');
+        const zhLabel = btn.querySelector('.lang-zh');
+        if (enLabel) enLabel.innerText = 'Resume';
+        if (zhLabel) zhLabel.innerText = '繼續';
+      } else {
+        if (icon) icon.innerText = '⏸️';
+        btn.classList.remove('bg-amber-50', 'text-amber-700', 'border-amber-300');
+        btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+        
+        const enLabel = btn.querySelector('.lang-en');
+        const zhLabel = btn.querySelector('.lang-zh');
+        if (enLabel) enLabel.innerText = 'Pause';
+        if (zhLabel) zhLabel.innerText = '暫停';
+      }
+    }
+
+    function togglePauseGraph() {
+      playSound('click');
+      setGraphPaused(!isGraphPaused);
+    }
+
+    function updateHistoryPlot() {
+      if (isGraphPaused) return;
+      for (const key of Object.keys(plotHistory)) {
+        plotHistory[key].shift();
+      }
+
+      let mult = catalystActive ? 5.0 : 1.0;
+
+      plotHistory.Fe.push(stateA.Fe);
+      plotHistory.SCN.push(stateA.SCN);
+      plotHistory.FeSCN.push(stateA.FeSCN);
+
+      plotHistory.NO2.push(stateB.NO2);
+      plotHistory.N2O4.push(stateB.N2O4);
+
+      if (currentSystem === 'A') {
+        plotHistory.forwardRate.push(stateA.kf * stateA.Fe * stateA.SCN * mult);
+        plotHistory.backwardRate.push(stateA.kb * stateA.FeSCN * mult);
+      } else if (currentSystem === 'B') {
+        let kineticSpeedUpB = 25.0;
+        plotHistory.forwardRate.push(stateB.kf * stateB.N2O4 * mult * kineticSpeedUpB);
+        plotHistory.backwardRate.push(stateB.kb * stateB.NO2 * stateB.NO2 * mult * kineticSpeedUpB);
+      }
+    }
+
+    // ==========================================
+    // DISTURBANCE TRIGGER ACTIONS
+    // ==========================================
+    function adjustTemp(amount) {
+      let tNum;
+      if (currentSystem === 'A' || currentSystem === 'B') {
+        const allowedTemps = [198, 298, 398];
+        let currentT = currentSystem === 'A' ? stateA.T : stateB.T;
+
+        let curIdx = allowedTemps.indexOf(currentT);
+        if (curIdx === -1) {
+          currentT = 298;
+          curIdx = 1;
+        }
+        if (amount < 0) {
+          if (curIdx > 0) tNum = allowedTemps[curIdx - 1];
+          else tNum = allowedTemps[0];
+        } else {
+          if (curIdx < allowedTemps.length - 1) tNum = allowedTemps[curIdx + 1];
+          else tNum = allowedTemps[allowedTemps.length - 1];
+        }
+      }
+      changeTemperature(tNum);
+      const ind = document.getElementById('temp-indicator-val');
+      if (ind) ind.innerText = `${tNum} K`;
+    }
+
+    function adjustVolume(dir) {
+      if (currentSystem === 'B') {
+        let vols = [1.0, 2.0, 4.0];
+        let curIdx = vols.indexOf(stateB.V);
+        if (curIdx === -1) curIdx = 1;
+        
+        let nextV = stateB.V;
+        if (dir === 'decrease' && curIdx > 0) nextV = vols[curIdx - 1];
+        else if (dir === 'increase' && curIdx < 2) nextV = vols[curIdx + 1];
+        else if (dir === 'reset') nextV = 2.0;
+        
+        changeVolume(nextV);
+        const ind = document.getElementById('volume-indicator-val');
+        if (ind) ind.innerText = `${nextV.toFixed(1)} dm³`;
+      }
+    }
+
+    function addChemical(type) {
+      if (type === 'Fe3+' || type === 'SCN-') {
+        playSound('success');
+        let oldV = stateA.V;
+        let newV = oldV + 0.1; // Add 100 mL
+        stateA.V = newV;
+
+        if (oldV === 0.0) {
+          if (type === 'Fe3+') {
+            stateA.Fe = 0.005;
+            stateA.SCN = 0.0;
+            stateA.FeSCN = 0.0;
+            flashSpecies('Fe3+', 'increase');
+          } else {
+            stateA.SCN = 0.005;
+            stateA.Fe = 0.0;
+            stateA.FeSCN = 0.0;
+            flashSpecies('SCN-', 'increase');
+          }
+        } else {
+          // Dilution math
+          let dilFactor = oldV / newV;
+          if (type === 'Fe3+') {
+            stateA.Fe = (stateA.Fe * oldV + 0.005 * 0.1) / newV;
+            stateA.SCN *= dilFactor;
+            stateA.FeSCN *= dilFactor;
+            flashSpecies('Fe3+', 'increase');
+            flashSpecies('SCN-', 'decrease');
+            flashSpecies('FeSCN2+', 'decrease');
+          } else {
+            stateA.SCN = (stateA.SCN * oldV + 0.005 * 0.1) / newV;
+            stateA.Fe *= dilFactor;
+            stateA.FeSCN *= dilFactor;
+            flashSpecies('SCN-', 'increase');
+            flashSpecies('Fe3+', 'decrease');
+            flashSpecies('FeSCN2+', 'decrease');
+          }
+        }
+      } else if (type === 'FeSCN2+') {
+        playSound('success');
+        stateA.FeSCN += 0.005;
+        flashSpecies('FeSCN2+', 'increase');
+        syncParticles();
+        updateHistoryPlot();
+      } else if (type === 'SO32-') {
+        if (stateA.V === 0.0) {
+          playSound('click');
+          return;
+        }
+        playSound('success');
+        stateA.Fe = Math.max(0.0001, stateA.Fe - 0.008);
+        flashSpecies('Fe3+', 'decrease');
+      } else if (type === 'Ag+') {
+        if (stateA.V === 0.0) {
+          playSound('click');
+          return;
+        }
+        playSound('success');
+        stateA.SCN = Math.max(0.0001, stateA.SCN - 0.008);
+        flashSpecies('SCN-', 'decrease');
+      } else if (type === 'H2O') {
+        if (stateA.V === 0.0) {
+          playSound('click');
+          return;
+        }
+        playSound('success');
+        let oldV = stateA.V;
+        stateA.V += 0.1;
+        let dilFactor = oldV / stateA.V;
+        stateA.Fe *= dilFactor;
+        stateA.SCN *= dilFactor;
+        stateA.FeSCN *= dilFactor;
+
+        flashSpecies('Fe3+', 'decrease');
+        flashSpecies('SCN-', 'decrease');
+        flashSpecies('FeSCN2+', 'decrease');
+      }
+      syncParticles();
+    }
+
+    function addBothReactants() {
+      playSound('success');
+      stateA.Fe += 0.005;
+      stateA.SCN += 0.005;
+      flashSpecies('Fe3+', 'increase');
+      flashSpecies('SCN-', 'increase');
+      syncParticles();
+      updateHistoryPlot();
+    }
+
+    function removeBothReactants() {
+      if (stateA.Fe <= 0.001 || stateA.SCN <= 0.001) {
+        playSound('click');
+        return;
+      }
+      playSound('success');
+      stateA.Fe = Math.max(0.0001, stateA.Fe - 0.005);
+      stateA.SCN = Math.max(0.0001, stateA.SCN - 0.005);
+      flashSpecies('Fe3+', 'decrease');
+      flashSpecies('SCN-', 'decrease');
+      syncParticles();
+      updateHistoryPlot();
+    }
+
+    function removeFeSCN() {
+      if (stateA.FeSCN <= 0.001) {
+        playSound('click');
+        return;
+      }
+      playSound('success');
+      stateA.FeSCN = Math.max(0.0001, stateA.FeSCN - 0.005);
+      flashSpecies('FeSCN2+', 'decrease');
+      syncParticles();
+      updateHistoryPlot();
+    }
+
+    function addChemicalB(type) {
+      playSound('success');
+      if (type === 'NO2') {
+        stateB.NO2 += 0.05;
+        flashSpecies('NO2', 'increase');
+      } else if (type === 'N2O4') {
+        stateB.N2O4 += 0.05;
+        flashSpecies('N2O4', 'increase');
+      }
+      syncParticles();
+      updateHistoryPlot();
+    }
+
+    function removeChemicalB(type) {
+      if (type === 'NO2') {
+        if (stateB.NO2 <= 0.001) {
+          playSound('click');
+          return;
+        }
+        playSound('success');
+        stateB.NO2 = Math.max(0.001, stateB.NO2 - 0.05);
+        flashSpecies('NO2', 'decrease');
+      } else if (type === 'N2O4') {
+        if (stateB.N2O4 <= 0.001) {
+          playSound('click');
+          return;
+        }
+        playSound('success');
+        stateB.N2O4 = Math.max(0.001, stateB.N2O4 - 0.05);
+        flashSpecies('N2O4', 'decrease');
+      }
+      syncParticles();
+      updateHistoryPlot();
+    }
+
+
+    function changeVolume(newVol) {
+      playSound('success');
+      let oldV = stateB.V;
+      if (oldV === newVol) return;
+
+      // Record the state immediately before the volume change to create a clean vertical line
+      updateHistoryPlot();
+
+      stateB.V = newVol;
+      let dilFactor = oldV / newVol;
+      
+      stateB.NO2 *= dilFactor;
+      stateB.N2O4 *= dilFactor;
+
+      const volLabel = document.getElementById('gas-volume-label');
+      if (volLabel) {
+        volLabel.innerText = `${newVol.toFixed(1)} dm³`;
+      }
+      const plunger = document.getElementById('syringe-plunger');
+      const gas = document.getElementById('syringe-gas');
+      
+      if (plunger && gas) {
+        if (newVol === 1.0) {
+          plunger.style.width = '80%';
+          gas.style.left = '80%';
+        } else if (newVol === 4.0) {
+          plunger.style.width = '20%';
+          gas.style.left = '20%';
+        } else {
+          plunger.style.width = '60%';
+          gas.style.left = '60%';
+        }
+      }
+
+      if (newVol < oldV) {
+        flashSpecies('NO2', 'increase');
+        flashSpecies('N2O4', 'increase');
+      } else if (newVol > oldV) {
+        flashSpecies('NO2', 'decrease');
+        flashSpecies('N2O4', 'decrease');
+      }
+
+      syncParticles();
+      // Record the state immediately after the volume change to complete the vertical line
+      updateHistoryPlot();
+    }
+
+
+    function changeTemperature(val) {
+      playSound('click');
+      let tNum = parseFloat(val);
+      let oldT = 298;
+      if (currentSystem === 'A') {
+        oldT = stateA.T;
+        if (oldT !== tNum) {
+          updateHistoryPlot();
+          stateA.T = tNum;
+          stateA.Kc = 1080 * Math.exp(-0.025 * (stateA.T - 298));
+          stateA.kf = 1080 * 0.08 * Math.exp(0.015 * (stateA.T - 298));
+          stateA.kb = 0.08 * Math.exp(0.040 * (stateA.T - 298));
+          updateHistoryPlot();
+        }
+      } else if (currentSystem === 'B') {
+        oldT = stateB.T;
+        if (oldT !== tNum) {
+          updateHistoryPlot();
+          stateB.T = tNum;
+          stateB.Kc = 0.02 * Math.exp(0.020 * (stateB.T - 298));
+          stateB.kb = 1.0 * Math.exp(0.015 * (stateB.T - 298));
+          stateB.kf = stateB.Kc * stateB.kb;
+          updateHistoryPlot();
+        }
+      }
+
+      const ind = document.getElementById('temp-indicator-val');
+      if (ind) ind.innerText = `${tNum} K`;
+
+      if (tNum > oldT) {
+        flashSpecies('heat', 'increase');
+      } else if (tNum < oldT) {
+        flashSpecies('heat', 'decrease');
+      }
+    }
+
+    function updateCatalystButton() {
+      const btn = document.getElementById('catalyst-btn');
+      if (!btn) return;
+      if (catalystActive) {
+        btn.className = "bg-red-50 hover:bg-red-100 border border-red-200 text-red-600 px-3 py-1.5 rounded-xl text-xs font-extrabold transition duration-150 flex items-center space-x-1 shadow-sm";
+        btn.innerHTML = `
+          <span>⚡</span>
+          <span>
+            <span class="lang-en ${currentLang === 'en' ? '' : 'hidden'}">Remove Catalyst</span>
+            <span class="lang-zh ${currentLang === 'zh' ? '' : 'hidden'}">移除催化劑</span>
+          </span>
+        `;
+      } else {
+        btn.className = "bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-600 px-3 py-1.5 rounded-xl text-xs font-extrabold transition duration-150 flex items-center space-x-1 shadow-sm";
+        btn.innerHTML = `
+          <span>⚡</span>
+          <span>
+            <span class="lang-en ${currentLang === 'en' ? '' : 'hidden'}">Inject Catalyst</span>
+            <span class="lang-zh ${currentLang === 'zh' ? '' : 'hidden'}">注入催化劑</span>
+          </span>
+        `;
+      }
+    }
+
+    function applyCatalyst() {
+      playSound('catalyst');
+      const reminder = document.getElementById('catalyst-reminder');
+      if (catalystActive) {
+        catalystActive = false;
+        if (reminder) {
+          reminder.classList.add('hidden');
+        }
+      } else {
+        catalystActive = true;
+        if (reminder) {
+          reminder.classList.remove('hidden');
+        }
+      }
+      syncParticles();
+      updateCatalystButton();
+    }
+
+    function changeSimSystem(sys) {
+      playSound('click');
+      currentSystem = sys;
+
+      // Toggle macroscopic containers
+      document.getElementById('visualizer-system-A').classList.add('hidden');
+      document.getElementById('visualizer-system-B').classList.add('hidden');
+      document.getElementById(`visualizer-system-${sys}`).classList.remove('hidden');
+
+      // Toggle tab buttons styles
+      ['A', 'B'].forEach(s => {
+        const btn = document.getElementById(`system-btn-${s}`);
+        btn.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+        btn.classList.add('text-slate-500', 'hover:bg-slate-200');
+      });
+      document.getElementById(`system-btn-${sys}`).classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+      document.getElementById(`system-btn-${sys}`).classList.remove('text-slate-500', 'hover:bg-slate-200');
+
+      // Legend update
+      document.querySelectorAll('.sim-legend-A').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.sim-legend-B').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll(`.sim-legend-${sys}`).forEach(el => el.classList.remove('hidden'));
+
+      particles = [];
+      syncParticles();
+
+      // Render interactive chemical equation and update shift status
+      renderInteractiveEquation();
+      updateEquilibriumShiftStatus();
+
+      // Show/Hide "Add Water" button next to Inject Catalyst depending on active system (only System A gets it)
+      const waterBtn = document.getElementById('water-btn');
+      if (waterBtn) {
+        if (sys === 'A') {
+          waterBtn.classList.remove('hidden');
+        } else {
+          waterBtn.classList.add('hidden');
+        }
+      }
+    }
+
+    function switchPlotView(view) {
+      playSound('click');
+      activePlotView = view;
+      
+      const btnConc = document.getElementById('plot-btn-conc');
+      const btnRate = document.getElementById('plot-btn-rate');
+      
+      if (view === 'conc') {
+        btnConc.classList.add('bg-white', 'text-blue-600', 'shadow-sm');
+        btnConc.classList.remove('text-slate-500', 'hover:text-slate-800');
+        btnRate.classList.remove('bg-white', 'text-blue-600', 'shadow-sm');
+        btnRate.classList.add('text-slate-500', 'hover:text-slate-800');
+        
+        document.getElementById('graph-title-label').innerHTML = currentLang === 'en' ? 
+          "<span>Graphs</span>" : "<span>圖表</span>";
+      } else {
+        btnRate.classList.add('bg-white', 'text-blue-600', 'shadow-sm');
+        btnRate.classList.remove('text-slate-500', 'hover:text-slate-800');
+        btnConc.classList.remove('bg-white', 'text-blue-600', 'shadow-sm');
+        btnConc.classList.add('text-slate-500', 'hover:text-slate-800');
+
+        document.getElementById('graph-title-label').innerHTML = currentLang === 'en' ? 
+          "<span>Graphs</span>" : "<span>圖表</span>";
+      }
+    }
+
+    let reactionEffects = [];
+
+    function addReactionEffect(x, y, color) {
+      reactionEffects.push({
+        x: x,
+        y: y,
+        radius: 2,
+        maxRadius: 25,
+        color: color,
+        alpha: 1.0,
+        life: 1.0
+      });
+    }
+
+    function updateAndDrawEffects() {
+      reactionEffects = reactionEffects.filter(eff => {
+        eff.radius += (eff.maxRadius - eff.radius) * 0.15;
+        eff.alpha -= 0.05;
+        eff.life -= 0.05;
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(eff.x, eff.y, eff.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = eff.color;
+        ctx.globalAlpha = Math.max(0, eff.alpha);
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(eff.x, eff.y, eff.radius * 0.6, 0, Math.PI * 2);
+        ctx.fillStyle = eff.color;
+        ctx.globalAlpha = Math.max(0, eff.alpha * 0.35);
+        ctx.fill();
+
+        ctx.restore();
+        return eff.life > 0;
+      });
+    }
+
+    function getSystemAEquilibriumFeSCN() {
+      let C_Fe = stateA.Fe + stateA.FeSCN;
+      let C_SCN = stateA.SCN + stateA.FeSCN;
+      let Kc = stateA.Kc;
+      if (Kc <= 0) return 0;
+      let b = -(C_Fe + C_SCN + 1 / Kc);
+      let c = C_Fe * C_SCN;
+      let disc = b * b - 4 * c;
+      if (disc < 0) return 0;
+      let x_eq = (-b - Math.sqrt(disc)) / 2;
+      return Math.max(0, Math.min(Math.min(C_Fe, C_SCN), x_eq));
+    }
+
+    function handleParticleCollisions(dt) {
+      let mult = catalystActive ? 5.0 : 1.0;
+
+      // 1. Elastic collisions and overlap resolution between all pairs of particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          let p1 = particles[i];
+          let p2 = particles[j];
+
+          let dx = p2.x - p1.x;
+          let dy = p2.y - p1.y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          let minDist = p1.radius + p2.radius;
+
+          if (dist < minDist) {
+            // Overlap resolution (push apart)
+            if (dist === 0) {
+              p1.x -= p1.radius;
+              p2.x += p2.radius;
+              dx = p2.x - p1.x;
+              dy = p2.y - p1.y;
+              dist = Math.sqrt(dx * dx + dy * dy);
+            }
+            let overlap = minDist - dist;
+            let nx = dx / dist;
+            let ny = dy / dist;
+
+            // In System B, do not resolve overlaps or push apart N2O4 with other N2O4 particles (they pass through each other)
+            if (currentSystem === 'B' && p1.type === 'N2O4' && p2.type === 'N2O4') {
+              // Skip overlap push
+            } else {
+              p1.x -= nx * overlap * 0.5;
+              p1.y -= ny * overlap * 0.5;
+              p2.x += nx * overlap * 0.5;
+              p2.y += ny * overlap * 0.5;
+            }
+
+            // Elastic collision velocity change
+            let rvx = p2.vx - p1.vx;
+            let rvy = p2.vy - p1.vy;
+            let velAlongNormal = rvx * nx + rvy * ny;
+
+            if (velAlongNormal < 0) {
+              // Moving towards each other
+              // In System B, do not let N2O4 collide elastically with other N2O4 particles (they pass through each other)
+              if (currentSystem === 'B' && p1.type === 'N2O4' && p2.type === 'N2O4') {
+                // Skip elastic impulse to let them pass through
+              } else {
+                let impulse = -velAlongNormal;
+                p1.vx -= nx * impulse;
+                p1.vy -= ny * impulse;
+                p2.vx += nx * impulse;
+                p2.vy += ny * impulse;
+              }
+            }
+
+            // 2. Chemical reactions upon collision
+            if (currentSystem === 'A') {
+              if ((p1.type === 'Fe' && p2.type === 'SCN') || (p1.type === 'SCN' && p2.type === 'Fe')) {
+                let eqFeSCN = getSystemAEquilibriumFeSCN();
+                let targetFeSCN = Math.round(eqFeSCN * 2000);
+                let currentFeSCN = particles.filter(p => p.type === 'FeSCN').length;
+
+                // Stop colliding to form FeSCN²⁺ once equilibrium is reached (current particles >= target particles)
+                if (currentFeSCN < targetFeSCN) {
+                  let midX = (p1.x + p2.x) / 2;
+                  let midY = (p1.y + p2.y) / 2;
+
+                  // #region agent log
+                  fetch('http://127.0.0.1:7522/ingest/8ad3b2e5-53f7-4146-8ada-5057d8d3f8c9', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '2b05b0' },
+                    body: JSON.stringify({
+                      sessionId: '2b05b0',
+                      location: 'index.html:handleParticleCollisions:SystemA',
+                      message: 'Reactant collision reaction triggered automatically below equilibrium threshold',
+                      hypothesisId: 'H2',
+                      data: {
+                        system: 'A',
+                        midX: midX,
+                        midY: midY,
+                        currentFeSCN: currentFeSCN,
+                        targetFeSCN: targetFeSCN,
+                        stateA_FeSCN: stateA.FeSCN
+                      },
+                      timestamp: Date.now()
+                    })
+                  }).catch(()=>{});
+                  // #endregion
+
+                  particles.splice(j, 1);
+                  particles.splice(i, 1);
+                  i--;
+
+                  let newP = new Particle('FeSCN', midX, midY);
+                  newP.vx = (p1.vx + p2.vx) / 2;
+                  newP.vy = (p1.vy + p2.vy) / 2;
+                  particles.push(newP);
+
+                  addReactionEffect(midX, midY, '#dc2626');
+                  playSound('reaction');
+                  break;
+                }
+              }
+            } else if (currentSystem === 'B') {
+              if (p1.type === 'NO2' && p2.type === 'NO2') {
+                if (p1.cooldown <= 0 && p2.cooldown <= 0) {
+                  let targetN2O4 = Math.round(stateB.N2O4 * 300);
+                  let currentN2O4 = particles.filter(p => p.type === 'N2O4').length;
+                  let reactionProb = 6.0 * stateB.kf * mult * 0.15; // Scaled down to match decomposition rate
+
+                  if (currentN2O4 < targetN2O4 || Math.random() < reactionProb) {
+                    let midX = (p1.x + p2.x) / 2;
+                    let midY = (p1.y + p2.y) / 2;
+
+                    // #region agent log
+                    fetch('http://127.0.0.1:7522/ingest/8ad3b2e5-53f7-4146-8ada-5057d8d3f8c9', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '2b05b0' },
+                      body: JSON.stringify({
+                        sessionId: '2b05b0',
+                        location: 'index.html:handleParticleCollisions:SystemB',
+                        message: 'Reactant collision reaction triggered',
+                        hypothesisId: 'H2',
+                        data: {
+                          system: 'B',
+                          midX: midX,
+                          midY: midY,
+                          currentN2O4: currentN2O4,
+                          targetN2O4: targetN2O4,
+                          reactionProb: reactionProb,
+                          stateB_N2O4: stateB.N2O4
+                        },
+                        timestamp: Date.now()
+                      })
+                    }).catch(()=>{});
+                    // #endregion
+
+                    particles.splice(j, 1);
+                    particles.splice(i, 1);
+                    i--;
+
+                    let newP = new Particle('N2O4', midX, midY);
+                    newP.vx = (p1.vx + p2.vx) / 2;
+                    newP.vy = (p1.vy + p2.vy) / 2;
+                    particles.push(newP);
+
+                    addReactionEffect(midX, midY, '#2563eb');
+                    playSound('reaction');
+                    break;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // 3. Spontaneous decompositions of product particles
+      if (currentSystem === 'A') {
+        // When FeSCN is added, if current counts exceed equilibrium, let it decompose to Fe3+ and SCN-
+        let eqFeSCN = getSystemAEquilibriumFeSCN();
+        let targetFeSCN = Math.round(eqFeSCN * 2000);
+        let currentFeSCN = particles.filter(p => p.type === 'FeSCN').length;
+
+        if (currentFeSCN > targetFeSCN) {
+          let decompProb = 0.05 * mult * dt; // slow visual decomposition
+          for (let i = particles.length - 1; i >= 0; i--) {
+            let p = particles[i];
+            if (p.type === 'FeSCN') {
+              if (currentFeSCN > targetFeSCN || Math.random() < decompProb) {
+                particles.splice(i, 1);
+
+                let theta = Math.random() * Math.PI * 2;
+                let speed = 1.0;
+                let p1 = new Particle('Fe', p.x - Math.cos(theta) * 6, p.y - Math.sin(theta) * 6);
+                p1.vx = -Math.cos(theta) * speed;
+                p1.vy = -Math.sin(theta) * speed;
+
+                let p2 = new Particle('SCN', p.x + Math.cos(theta) * 6, p.y + Math.sin(theta) * 6);
+                p2.vx = Math.cos(theta) * speed;
+                p2.vy = Math.sin(theta) * speed;
+
+                particles.push(p1, p2);
+                currentFeSCN--;
+              }
+            }
+          }
+        }
+      } else if (currentSystem === 'B') {
+        let decompProb = stateB.kb * mult * dt * 0.15; // Scaled down so N2O4 particles are stable and visible
+        let targetN2O4 = Math.round(stateB.N2O4 * 300);
+        let currentN2O4 = particles.filter(p => p.type === 'N2O4').length;
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+          let p = particles[i];
+          if (p.type === 'N2O4') {
+            if (currentN2O4 > targetN2O4 || Math.random() < decompProb) {
+              particles.splice(i, 1);
+
+              let theta = Math.random() * Math.PI * 2;
+              let speed = 1.0;
+              let p1 = new Particle('NO2', p.x - Math.cos(theta) * 6, p.y - Math.sin(theta) * 6);
+              p1.vx = -Math.cos(theta) * speed;
+              p1.vy = -Math.sin(theta) * speed;
+              p1.cooldown = 0.5; // 0.5s cooldown to prevent immediate recombination
+
+              let p2 = new Particle('NO2', p.x + Math.cos(theta) * 6, p.y + Math.sin(theta) * 6);
+              p2.vx = Math.cos(theta) * speed;
+              p2.vy = Math.sin(theta) * speed;
+              p2.cooldown = 0.5; // 0.5s cooldown to prevent immediate recombination
+
+              particles.push(p1, p2);
+
+              currentN2O4--;
+            }
+          }
+        }
+      }
+    }
+
+    // ==========================================
+    // RENDERING & SIMULATION LOOP
+    // ==========================================
+    function simLoop() {
+      // #region agent log
+      debugFrameCount++;
+      if (debugFrameCount % 120 === 0) {
+        let outsideCount = 0;
+        particles.forEach(p => {
+          if (p.x - p.radius < 0 || p.x + p.radius > canvas.width || p.y - p.radius < 0 || p.y + p.radius > canvas.height) {
+            outsideCount++;
+          }
+        });
+        let currentConcA = { Fe: stateA.Fe, SCN: stateA.SCN, FeSCN: stateA.FeSCN };
+        let currentConcB = { NO2: stateB.NO2, N2O4: stateB.N2O4 };
+        fetch('http://127.0.0.1:7522/ingest/8ad3b2e5-53f7-4146-8ada-5057d8d3f8c9', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Debug-Session-Id': '2b05b0'
+          },
+          body: JSON.stringify({
+            sessionId: '2b05b0',
+            location: 'index.html:simLoop',
+            message: 'Periodic simulation check',
+            hypothesisId: 'H1_H2_H3',
+            data: {
+              frameCount: debugFrameCount,
+              currentSystem: currentSystem,
+              particleCount: particles.length,
+              outsideBoundariesCount: outsideCount,
+              concA: currentConcA,
+              concB: currentConcB,
+              catalystActive: catalystActive,
+              inertGasActive: inertGasActive,
+              canvasWidth: canvas.width,
+              canvasHeight: canvas.height
+            },
+            timestamp: Date.now()
+          })
+        }).catch(()=>{});
+      }
+      // #endregion
+
+      // Prevent visual stretching of particles when canvas dimensions adapt dynamically
+      if (canvas.width !== canvas.clientWidth || canvas.height !== canvas.clientHeight) {
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
+      }
+
+      // Synchronize physical simulation step and graph history update in slices to prevent duplicate sampling (ladder/wiggle artifacts)
+      let totalDt = 0.016 * simSpeedMultiplier;
+      let effectiveGraphSpeed = Math.max(0.1, graphSpeedMultiplier);
+      let sliceDt = totalDt / effectiveGraphSpeed;
+
+      graphUpdateAccumulator += graphSpeedMultiplier;
+      while (graphUpdateAccumulator >= 1.0) {
+        runKineticStep(sliceDt);
+        updateHistoryPlot();
+        graphUpdateAccumulator -= 1.0;
+      }
+
+      syncParticles();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw gridlines in the microscopic canvas for a clinical lab design
+      ctx.strokeStyle = '#f1f5f9';
+      ctx.lineWidth = 1;
+      for (let i = 20; i < canvas.width; i += 20) {
+        ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke();
+      }
+      for (let i = 20; i < canvas.height; i += 20) {
+        ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke();
+      }
+
+      // Draw background catalytic active sites
+      if (catalystActive) {
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.15)';
+        ctx.lineWidth = 1.2;
+        for (let x = 40; x < canvas.width; x += 80) {
+          for (let y = 30; y < canvas.height; y += 60) {
+            ctx.beginPath();
+            ctx.arc(x, y, 4, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x - 6, y); ctx.lineTo(x + 6, y);
+            ctx.moveTo(x, y - 6); ctx.lineTo(x, y + 6);
+            ctx.stroke();
+          }
+        }
+      }
+
+      particles.forEach(p => {
+        p.update();
+      });
+
+      handleParticleCollisions(0.016 * simSpeedMultiplier);
+
+      particles.forEach(p => {
+        p.draw();
+      });
+
+      updateAndDrawEffects();
+
+      // Draw top-left corner particle speed status banner on the canvas
+      if (canvas.width >= 360) {
+        let tempVal = 298;
+        let baseTempVal = 298;
+        let sensVal = 0.015;
+        if (currentSystem === 'A') {
+          tempVal = stateA.T;
+          baseTempVal = 298;
+          sensVal = 0.015;
+        } else if (currentSystem === 'B') {
+          tempVal = stateB.T;
+          baseTempVal = 298;
+          sensVal = 0.015;
+        }
+        let tFactor = 1.0 + (tempVal - baseTempVal) * sensVal;
+        let cFactor = catalystActive ? 1.8 : 1.0;
+        let totFactor = tFactor * cFactor;
+
+        ctx.save();
+        let bannerBg = 'rgba(59, 130, 246, 0.05)';
+        let bannerBorder = 'rgba(59, 130, 246, 0.2)';
+        let bannerText = '#1d4ed8';
+        if (totFactor > 1.25) {
+          bannerBg = 'rgba(249, 115, 22, 0.08)';
+          bannerBorder = 'rgba(249, 115, 22, 0.35)';
+          bannerText = '#ea580c';
+        } else if (totFactor < 0.85) {
+          bannerBg = 'rgba(14, 165, 233, 0.08)';
+          bannerBorder = 'rgba(14, 165, 233, 0.35)';
+          bannerText = '#0284c7';
+        }
+
+        ctx.fillStyle = bannerBg;
+        ctx.strokeStyle = bannerBorder;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.rect(6, 6, 145, 22);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = bannerText;
+        ctx.font = 'bold 9px sans-serif';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        
+        let speedLabel = '';
+        if (currentLang === 'en') {
+          speedLabel = `🏃 Particle Speed: ${totFactor.toFixed(1)}x`;
+        } else {
+          speedLabel = `🏃 粒子速度: ${totFactor.toFixed(1)}x`;
+        }
+        ctx.fillText(speedLabel, 12, 17);
+        ctx.restore();
+      }
+
+      // Draw top-right corner catalyst status banner on the canvas
+      if (catalystActive) {
+        ctx.save();
+        ctx.fillStyle = 'rgba(16, 185, 129, 0.08)';
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.35)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.rect(canvas.width - 195, 6, 188, 22);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = '#059669'; // Emerald-600
+        ctx.font = 'bold 9px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(currentLang === 'en' ? '⚡ Catalyst: Lowered Ea (5x Rate)' : '⚡ 催化劑：已降低活化能 (5倍速率)', canvas.width - 101, 17);
+        ctx.restore();
+      }
+
+      updateMacroscopicVisuals();
+      drawGraphs();
+      updateStatsBar();
+      updateEquilibriumShiftStatus();
+
+      requestAnimationFrame(simLoop);
+    }
+
+    function updateMacroscopicVisuals() {
+      if (currentSystem === 'A') {
+        const liquid = document.getElementById('test-tube-liquid');
+        const volLabel = document.getElementById('liquid-volume-label');
+        
+        if (stateA.V === 0.0) {
+          if (liquid) {
+            liquid.style.height = '0%';
+            liquid.style.opacity = '0';
+          }
+          if (volLabel) {
+            volLabel.innerText = '0 mL';
+          }
+          document.getElementById('system-A-color-desc').innerText = currentLang === 'en' ? 
+            "Empty (No solution added yet)" : "空 (尚未加入溶液)";
+        } else {
+          let ratio = stateA.FeSCN / 0.01;
+          ratio = Math.max(0, Math.min(1, ratio));
+          
+          let r = Math.round(230 + ratio * 25);  // 230 to 255
+          let g = Math.round(220 - ratio * 210); // 220 to 10
+          let b = Math.round(30 - ratio * 25);   // 30 to 5
+          let color = `rgb(${r}, ${g}, ${b})`;
+          
+          if (liquid) {
+            liquid.style.backgroundColor = color;
+            liquid.style.boxShadow = `inset 0 -20px 30px rgba(0,0,0,0.15), 0 0 15px rgba(${r}, ${g}, ${b}, 0.4)`;
+            let heightPercent = Math.min(95, (stateA.V / 0.2) * 70);
+            liquid.style.height = `${heightPercent}%`;
+            liquid.style.opacity = '1';
+          }
+          
+          if (volLabel) {
+            volLabel.innerText = `${Math.round(stateA.V * 1000)} mL`;
+          }
+          
+          let desc = currentLang === 'en' ? 
+            "Vibrant Yellow (Low Product Yield)" : "鮮黃色 (生成物產率極低)";
+          if (ratio > 0.7) {
+            desc = currentLang === 'en' ? 
+              "Extremely Deep Blood Red (High Product Yield)" : "極深血紅色 (生成物產率高)";
+          } else if (ratio > 0.3) {
+            desc = currentLang === 'en' ? 
+              "Moderately Dark Red (at Equilibrium)" : "中等紅褐色 (處於平衡狀態)";
+          } else {
+            desc = currentLang === 'en' ? 
+              "Vibrant Yellow (Low Product Yield)" : "鮮黃色 (生成物產率極低)";
+          }
+          document.getElementById('system-A-color-desc').innerText = desc;
+        }
+
+      } else if (currentSystem === 'B') {
+        let ratio = stateB.NO2 / 0.15;
+        ratio = Math.max(0.05, Math.min(1, ratio));
+        let alpha = 0.15 + ratio * 0.7;
+        
+        const gas = document.getElementById('syringe-gas');
+        if (gas) {
+          gas.style.backgroundColor = `rgba(180, 83, 9, ${alpha})`; // Beautiful amber brown
+        }
+        
+        let desc = currentLang === 'en' ? 
+          "Light Brown/Amber (Low [NO₂])" : "淺褐色 (極低 [NO₂] 濃度)";
+        if (ratio > 0.8) {
+          desc = currentLang === 'en' ? 
+            "Very Deep Red-Brown (Highly Crowded/Hot [NO₂])" : "極深紅褐色 (高 [NO₂] / 受熱狀態)";
+        } else if (ratio > 0.4) {
+          desc = currentLang === 'en' ? 
+            "Medium Brown Gas (at Equilibrium)" : "中等褐色氣體 (處於平衡狀態)";
+        } else {
+          desc = currentLang === 'en' ? 
+            "Light Brown/Amber (Low [NO₂])" : "淺褐色 (極低 [NO₂] 濃度)";
+        }
+        document.getElementById('system-B-color-desc').innerText = desc;
+
+      }
+    }
+
+    function drawGraphs() {
+      const gCanvas = document.getElementById('live-plot-canvas');
+      // Prevent visual stretching of graph canvas by matching its drawing resolution to CSS display size
+      if (gCanvas.width !== gCanvas.clientWidth || gCanvas.height !== gCanvas.clientHeight) {
+        gCanvas.width = gCanvas.clientWidth;
+        gCanvas.height = gCanvas.clientHeight;
+      }
+      const gCtx = gCanvas.getContext('2d');
+      gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+
+      let w = gCanvas.width;
+      let h = gCanvas.height;
+      let paddingLeft = 45;
+      let paddingRight = 45;
+      let paddingTop = 25;
+      let paddingBottom = 25;
+
+      // Draw light-gray grids (graph paper style for white theme)
+      gCtx.strokeStyle = '#e2e8f0';
+      gCtx.lineWidth = 1;
+      
+      for (let i = 1; i <= 4; i++) {
+        let yLine = paddingTop + ((h - paddingTop - paddingBottom) / 4) * i;
+        gCtx.beginPath(); gCtx.moveTo(paddingLeft, yLine); gCtx.lineTo(w - paddingRight, yLine); gCtx.stroke();
+      }
+      for (let i = 1; i <= 8; i++) {
+        let xLine = paddingLeft + ((w - paddingLeft - paddingRight) / 8) * i;
+        gCtx.beginPath(); gCtx.moveTo(xLine, paddingTop); gCtx.lineTo(xLine, h - paddingBottom); gCtx.stroke();
+      }
+
+      gCtx.strokeStyle = '#94a3b8';
+      gCtx.lineWidth = 1.5;
+      gCtx.beginPath();
+      gCtx.moveTo(paddingLeft, paddingTop);
+      gCtx.lineTo(paddingLeft, h - paddingBottom);
+      gCtx.lineTo(w - paddingRight, h - paddingBottom);
+      gCtx.stroke();
+
+      gCtx.fillStyle = '#64748b';
+      gCtx.font = 'bold 9px sans-serif';
+      gCtx.fillText(currentLang === 'en' ? "Time →" : "時間 →", w - paddingRight - 40, h - paddingBottom + 12);
+      
+      if (activePlotView === 'conc') {
+        gCtx.save();
+        gCtx.textAlign = 'left';
+        gCtx.fillText(currentLang === 'en' ? "Conc. (mol dm⁻³)" : "濃度 (mol dm⁻³)", paddingLeft, paddingTop - 10);
+        gCtx.restore();
+
+        let maxVal = 0.015;
+        if (currentSystem === 'A') {
+          let maxHistory = Math.max(...plotHistory.Fe, ...plotHistory.SCN, ...plotHistory.FeSCN);
+          maxVal = Math.max(0.001, maxHistory * 1.15);
+        } else if (currentSystem === 'B') {
+          let maxHistory = Math.max(...plotHistory.NO2, ...plotHistory.N2O4);
+          maxVal = Math.max(0.01, maxHistory * 1.15);
+        }
+
+        // Draw dynamic Y-axis labels
+        gCtx.save();
+        gCtx.fillStyle = '#64748b';
+        gCtx.font = '9px sans-serif';
+        gCtx.textAlign = 'right';
+        for (let i = 0; i <= 4; i++) {
+          let yLine = paddingTop + ((h - paddingTop - paddingBottom) / 4) * i;
+          let val = maxVal * (4 - i) / 4;
+          let labelStr = "";
+          if (val === 0) {
+            labelStr = "0";
+          } else if (val < 0.01) {
+            // Convert e.g. 1.2e-3 to "1.2×10⁻³"
+            let expParts = val.toExponential(1).split('e');
+            let base = expParts[0];
+            let exponent = parseInt(expParts[1]);
+            let superscriptMap = {
+              '-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'
+            };
+            let superExp = exponent.toString().split('').map(char => superscriptMap[char] || char).join('');
+            labelStr = `${base}×10${superExp}`;
+          } else if (val < 1) {
+            labelStr = val.toFixed(3);
+          } else {
+            labelStr = val.toFixed(1);
+          }
+          gCtx.fillText(labelStr, paddingLeft - 5, yLine + 3);
+        }
+        gCtx.restore();
+
+        const drawLine = (dataArr, color) => {
+          gCtx.beginPath();
+          gCtx.strokeStyle = color;
+          gCtx.lineWidth = 2.5;
+          for (let i = 0; i < dataArr.length; i++) {
+            let cx = paddingLeft + (i / (historyLength - 1)) * (w - paddingLeft - paddingRight);
+            let cy = h - paddingBottom - (dataArr[i] / maxVal) * (h - paddingTop - paddingBottom);
+            if (i === 0) gCtx.moveTo(cx, cy);
+            else gCtx.lineTo(cx, cy);
+          }
+          gCtx.stroke();
+        };
+
+        if (currentSystem === 'A') {
+          drawLine(plotHistory.Fe, '#eab308');    // Fe3+ (bright yellow)
+          drawLine(plotHistory.SCN, '#475569');   // SCN- (slate)
+          drawLine(plotHistory.FeSCN, '#dc2626'); // FeSCN2+ (crimson)
+        } else if (currentSystem === 'B') {
+          drawLine(plotHistory.NO2, '#c2410c');   // NO2 (brown)
+          drawLine(plotHistory.N2O4, '#2563eb');  // N2O4 (blue)
+        }
+      } else {
+        gCtx.save();
+        gCtx.textAlign = 'left';
+        gCtx.fillText(currentLang === 'en' ? "Rate / 速率" : "反應速率 Rate", paddingLeft, paddingTop - 10);
+        gCtx.restore();
+
+        let maxHistory = Math.max(...plotHistory.forwardRate, ...plotHistory.backwardRate);
+        let defaultMin = currentSystem === 'A' ? 0.0012 : 0.00005;
+        if (catalystActive) defaultMin *= 5;
+        let maxVal = Math.max(defaultMin, maxHistory * 1.15);
+
+        // Draw dynamic Y-axis labels
+        gCtx.save();
+        gCtx.fillStyle = '#64748b';
+        gCtx.font = '9px sans-serif';
+        gCtx.textAlign = 'right';
+        for (let i = 0; i <= 4; i++) {
+          let yLine = paddingTop + ((h - paddingTop - paddingBottom) / 4) * i;
+          let val = maxVal * (4 - i) / 4;
+          let labelStr = "";
+          if (val === 0) {
+            labelStr = "0";
+          } else if (val < 0.01) {
+            // Convert e.g. 1.2e-3 to "1.2×10⁻³"
+            let expParts = val.toExponential(1).split('e');
+            let base = expParts[0];
+            let exponent = parseInt(expParts[1]);
+            let superscriptMap = {
+              '-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'
+            };
+            let superExp = exponent.toString().split('').map(char => superscriptMap[char] || char).join('');
+            labelStr = `${base}×10${superExp}`;
+          } else if (val < 1) {
+            labelStr = val.toFixed(3);
+          } else {
+            labelStr = val.toFixed(1);
+          }
+          gCtx.fillText(labelStr, paddingLeft - 5, yLine + 3);
+        }
+        gCtx.restore();
+
+        const drawLine = (dataArr, color) => {
+          gCtx.beginPath();
+          gCtx.strokeStyle = color;
+          gCtx.lineWidth = 2.5;
+          for (let i = 0; i < dataArr.length; i++) {
+            let cx = paddingLeft + (i / (historyLength - 1)) * (w - paddingLeft - paddingRight);
+            let cy = h - paddingBottom - (dataArr[i] / maxVal) * (h - paddingTop - paddingBottom);
+            if (i === 0) gCtx.moveTo(cx, cy);
+            else gCtx.lineTo(cx, cy);
+          }
+          gCtx.stroke();
+        };
+
+        drawLine(plotHistory.forwardRate, '#059669'); // Forward rate (emerald)
+        drawLine(plotHistory.backwardRate, '#dc2626'); // Backward rate (crimson)
+      }
+    }
+
+    function updateStatsBar() {
+      const bar = document.getElementById('sim-stats-bar');
+      const legendDiv = document.getElementById('dynamic-graph-legend');
+
+      if (currentSystem === 'A') {
+        bar.innerHTML = `
+          <div>
+            <div class="text-[10px] text-slate-400 font-bold uppercase">${currentLang === 'en' ? 'Total Volume' : '混合液總體積'}</div>
+            <div class="text-xs font-extrabold text-slate-700">${stateA.V.toFixed(2)} dm³</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-slate-400 font-bold uppercase">${currentLang === 'en' ? 'Product [Fe(SCN)²⁺]' : '生成物 [Fe(SCN)²⁺]'}</div>
+            <div class="text-xs font-extrabold text-red-600">${stateA.FeSCN.toFixed(5)} M</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-slate-400 font-bold uppercase">${currentLang === 'en' ? 'Current Kc' : '平衡常數 Kc'} (at ${stateA.T} K)</div>
+            <div class="text-xs font-extrabold text-blue-600">${stateA.Kc.toFixed(1)}</div>
+          </div>
+        `;
+
+        if (activePlotView === 'conc') {
+          legendDiv.innerHTML = `
+            <span class="flex items-center space-x-1.5">
+              <span class="w-3 h-0.5 inline-block bg-[#eab308]"></span>
+              <span class="text-slate-700">${currentLang === 'en' ? 'yellow line: Fe³⁺' : '黃線: Fe³⁺ 濃度'}</span>
+            </span>
+            <span class="flex items-center space-x-1.5">
+              <span class="w-3 h-0.5 inline-block bg-[#475569]"></span>
+              <span class="text-slate-700">${currentLang === 'en' ? 'slate line: SCN⁻' : '灰線: SCN⁻ 濃度'}</span>
+            </span>
+            <span class="flex items-center space-x-1.5">
+              <span class="w-3 h-0.5 inline-block bg-[#dc2626]"></span>
+              <span class="text-slate-700">${currentLang === 'en' ? 'red line: Fe(SCN)²⁺' : '紅線: Fe(SCN)²⁺ 濃度'}</span>
+            </span>
+          `;
+        } else {
+          legendDiv.innerHTML = `
+            <span class="flex items-center space-x-1.5">
+              <span class="w-3 h-0.5 inline-block bg-[#059669]"></span>
+              <span class="text-emerald-700">${currentLang === 'en' ? 'emerald line: Forward Rate' : '綠線: 正反應速率'}</span>
+            </span>
+            <span class="flex items-center space-x-1.5">
+              <span class="w-3 h-0.5 inline-block bg-[#dc2626]"></span>
+              <span class="text-red-600">${currentLang === 'en' ? 'red line: Backward Rate' : '紅線: 逆反應速率'}</span>
+            </span>
+          `;
+        }
+
+      } else if (currentSystem === 'B') {
+        bar.innerHTML = `
+          <div>
+            <div class="text-[10px] text-slate-400 font-bold uppercase">${currentLang === 'en' ? 'Container Volume' : '容器總體積'}</div>
+            <div class="text-xs font-extrabold text-slate-700">${stateB.V.toFixed(2)} dm³</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-slate-400 font-bold uppercase">${currentLang === 'en' ? 'Reactant [N₂O₄]' : '反應物 [N₂O₄]'}</div>
+            <div class="text-xs font-extrabold text-blue-600">${stateB.N2O4.toFixed(4)} M</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-slate-400 font-bold uppercase">${currentLang === 'en' ? 'Current Kc' : '平衡常數 Kc'} (at ${stateB.T} K)</div>
+            <div class="text-xs font-extrabold text-blue-600">${stateB.Kc.toFixed(4)}</div>
+          </div>
+        `;
+
+        if (activePlotView === 'conc') {
+          legendDiv.innerHTML = `
+            <span class="flex items-center space-x-1.5">
+              <span class="w-3 h-0.5 inline-block bg-[#2563eb]"></span>
+              <span class="text-slate-700">${currentLang === 'en' ? 'blue line: N₂O₄' : '藍線: N₂O₄ 濃度'}</span>
+            </span>
+            <span class="flex items-center space-x-1.5">
+              <span class="w-3 h-0.5 inline-block bg-[#c2410c]"></span>
+              <span class="text-slate-700">${currentLang === 'en' ? 'brown line: NO₂' : '褐線: NO₂ 濃度'}</span>
+            </span>
+          `;
+        } else {
+          legendDiv.innerHTML = `
+            <span class="flex items-center space-x-1.5">
+              <span class="w-3 h-0.5 inline-block bg-[#059669]"></span>
+              <span class="text-emerald-700">${currentLang === 'en' ? 'emerald line: Forward Rate' : '綠線: 正反應速率'}</span>
+            </span>
+            <span class="flex items-center space-x-1.5">
+              <span class="w-3 h-0.5 inline-block bg-[#dc2626]"></span>
+              <span class="text-red-600">${currentLang === 'en' ? 'red line: Backward Rate' : '紅線: 逆反應速率'}</span>
+            </span>
+          `;
+        }
+
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+    // ==========================================
+    // GLOBAL STARTUP
+    // ==========================================
+    window.onload = () => {
+      initSimulation();
+      setLanguage('en'); // default to English
+    };
+  </script>
+</body>
+</html>
