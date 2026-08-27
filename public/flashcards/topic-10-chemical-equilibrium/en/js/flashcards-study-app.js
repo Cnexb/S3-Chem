@@ -160,6 +160,25 @@ function stripHtml(html) {
   return d.textContent || "";
 }
 
+// ---- UNI+ tracker: 送 flashcard 自評結果去 uni-tracker.js ----
+function trackFlashcardAttempt(isCorrect) {
+  const card = session.getCurrentCard();
+  if (!card) return;
+  try {
+    window.postMessage({
+      type: "uniplus:flashcardAttempt",
+      subject: "CHEM",
+      deck: CHAPTER_TITLE,
+      topic: card.subtopic || null,
+      cardId: String(card.id),
+      questionText: stripHtml(card.front),
+      answerText: stripHtml(card.back),
+      selfRatedCorrect: isCorrect,
+      attemptedAt: new Date().toISOString(),
+    }, "*");
+  } catch (_) {}
+}
+
 function render() {
   const studying = session.phase === "study" && !session.sessionComplete;
   els.studyPanel.classList.toggle("hidden", !studying);
@@ -200,9 +219,11 @@ function initControls() {
     render();
   });
   els.btnAgain.addEventListener("click", () => {
+    trackFlashcardAttempt(false);
     if (session.rateAgain()) render();
   });
   els.btnGotIt.addEventListener("click", () => {
+    trackFlashcardAttempt(true);
     if (session.rateGotIt()) render();
   });
   els.btnNextRound.addEventListener("click", () => {
@@ -240,8 +261,10 @@ function initKeyboard() {
     }
 
     if (e.key === "ArrowLeft" || e.key === "1") {
+      trackFlashcardAttempt(false);
       if (session.rateAgain()) render();
     } else if (e.key === "ArrowRight" || e.key === "2") {
+      trackFlashcardAttempt(true);
       if (session.rateGotIt()) render();
     }
   });
