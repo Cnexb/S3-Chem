@@ -165,7 +165,7 @@ function trackFlashcardAttempt(isCorrect) {
   const card = session.getCurrentCard();
   if (!card) return;
   try {
-    window.postMessage({
+    window.parent.postMessage({
       type: "uniplus:flashcardAttempt",
       subject: "CHEM",
       deck: CHAPTER_TITLE,
