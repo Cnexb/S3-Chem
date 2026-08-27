@@ -21,6 +21,7 @@ const els = {
   cardFront: document.getElementById("card-front-text"),
   cardBack: document.getElementById("card-back-text"),
   cardImage: document.getElementById("card-back-img"),
+
   ratingHint: document.getElementById("rating-hint"),
   btnPrev: document.getElementById("btn-prev"),
   btnNext: document.getElementById("btn-next"),
@@ -172,7 +173,7 @@ function trackFlashcardAttempt(isCorrect) {
   const card = session.getCurrentCard();
   if (!card) return;
   try {
-    window.postMessage({
+    window.parent.postMessage({
       type: "uniplus:flashcardAttempt",
       subject: "CHEM",
       deck: CHAPTER_TITLE,
