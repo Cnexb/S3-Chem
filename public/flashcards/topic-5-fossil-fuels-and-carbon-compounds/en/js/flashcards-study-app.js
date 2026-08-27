@@ -1,4 +1,4 @@
-import { FLASHCARD_TAGS, FLASHCARD_DECK } from "./flashcardData.js";
+ import { FLASHCARD_TAGS, FLASHCARD_DECK } from "./flashcardData.js";
 import { FlashcardSession } from "./flashcardSession.js";
 
 const CHAPTER_TITLE = "Topic 5: Fossil Fuels and Carbon Compounds";
@@ -168,6 +168,25 @@ function stripHtml(html) {
   return d.textContent || "";
 }
 
+// ---- UNI+ tracker: 送 flashcard 自評結果去 uni-tracker.js（經 parent frame relay）----
+function trackFlashcardAttempt(isCorrect) {
+  const card = session.getCurrentCard();
+  if (!card) return;
+  try {
+    window.parent.postMessage({
+      type: "uniplus:flashcardAttempt",
+      subject: "CHEM",
+      deck: CHAPTER_TITLE,
+      topic: card.subtopic || null,
+      cardId: String(card.id),
+      questionText: stripHtml(card.front),
+      answerText: stripHtml(card.back),
+      selfRatedCorrect: isCorrect,
+      attemptedAt: new Date().toISOString(),
+    }, "*");
+  } catch (_) {}
+}
+
 function applyCardTextSize(el, text, isHtml = false, side = "front") {
   el.classList.remove("card-text-long", "card-text-compact");
   const plain = (isHtml ? stripHtml(text) : text).trim();
@@ -228,9 +247,11 @@ function initControls() {
     render();
   });
   els.btnAgain.addEventListener("click", () => {
+    trackFlashcardAttempt(false);
     if (session.rateAgain()) render();
   });
   els.btnGotIt.addEventListener("click", () => {
+    trackFlashcardAttempt(true);
     if (session.rateGotIt()) render();
   });
   els.btnNextRound.addEventListener("click", () => {
@@ -268,8 +289,10 @@ function initKeyboard() {
     }
 
     if (e.key === "ArrowLeft" || e.key === "1") {
+      trackFlashcardAttempt(false);
       if (session.rateAgain()) render();
     } else if (e.key === "ArrowRight" || e.key === "2") {
+      trackFlashcardAttempt(true);
       if (session.rateGotIt()) render();
     }
   });
