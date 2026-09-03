@@ -1,0 +1,50 @@
+---
+description: How to add or edit S3 Chem quiz sections and questions.json
+globs: scripts/quiz/**/questions.json,scripts/quiz/**/build_quiz.py,scripts/quiz/**/validate.py
+alwaysApply: false
+---
+
+# Chem quiz content
+
+Source of truth is `questions.json` plus `CHAPTER_META`. Do not hand-edit generated `public/quiz/**/js/quizData.js`.
+
+## New topic
+
+In `scripts/quiz/microscopic-world-i/build_quiz.py`, add to `CHAPTER_META`:
+
+```python
+9: ("acids-bases", "Acids and Bases", "酸與鹼", "acid"),
+```
+
+Tuple is `(sectionId, English label, 繁中 label, id prefix)`. `"ch"` in JSON must be that integer key (`9` here). `id prefix` plus `"n"` becomes `acid-1`.
+
+Update the `len(data) != 40` check to the new total. If `write_manifest` still assumes `"count": 10` per chapter, set it to the real count for each chapter.
+
+## New question
+
+Append in `scripts/quiz/microscopic-world-i/questions.json`:
+
+```json
+{
+  "ch": 9,
+  "n": 1,
+  "stem": "Question in English",
+  "stemZh": "繁體中文題目",
+  "options": ["Option A", "Option B", "Option C", "Option D"],
+  "answer": "B",
+  "hint": "Brief explanation"
+}
+```
+
+`options` is four strings, not `{ key, text }` objects. Optional `"image"` only if `FIGURE_FILES` in `build_quiz.py` already maps that key and the file is in `scripts/quiz/microscopic-world-i/figures/`.
+
+Then run:
+
+```bash
+python3 scripts/quiz/microscopic-world-i/build_quiz.py
+python3 scripts/quiz/microscopic-world-i/validate.py
+```
+
+## Remove a topic
+
+Delete those questions from `questions.json`, remove the `CHAPTER_META` row, fix the expected count, rebuild, then commit source + generated `quizData.js` together.
