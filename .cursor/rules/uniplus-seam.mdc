@@ -1,0 +1,27 @@
+---
+description: Chem UniPlus seam — quiz, flashcard, note, UI, and content edits must not touch tracking or generated quiz JS
+alwaysApply: true
+---
+
+# Chem content seam
+
+This repo is the S3 Chemistry site inside a UniPlus iframe. Teachers may add and rewrite teaching content freely. Generated quiz JS and platform wiring stay frozen.
+
+## Do this
+
+For the live MCQ quiz, edit source then rebuild:
+
+1. `scripts/quiz/microscopic-world-i/questions.json`
+2. `CHAPTER_META` (and the expected question count) in `scripts/quiz/microscopic-world-i/build_quiz.py`
+3. Run `python3 scripts/quiz/microscopic-world-i/build_quiz.py`
+4. Run `python3 scripts/quiz/microscopic-world-i/validate.py`
+
+New questions get new `"n"` (and a new `"ch"` if it is a new topic). Never reuse or renumber an existing `"ch"` + `"n"` pair that is already published.
+
+## Stop and ask the technical owner if the task needs
+
+`public/quiz/**/js/quizData.js` (generated), `quizApp.js`, `quizUtils.js`, `quizExport.js`, `quizEffects.js`, `quizSummary.js`, `uni-tracker.js`, `postMessage`, `uniplus:*` payloads, `functions/`, `.github/`, Supabase, `fetch` / XHR, `uniplus_session`, or a new quiz data format.
+
+## Before finishing
+
+`build_quiz.py` must succeed. Confirm `public/quiz/microscopic-world-i/js/quizData.js` changed only because the script rewrote it. If a runner or tracking file is in the diff, revert it. Do not push.
