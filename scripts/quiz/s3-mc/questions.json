@@ -1,0 +1,6278 @@
+[
+  {
+    "ch": 1,
+    "n": 1,
+    "code": "Earth1Aa",
+    "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X, Y and Z is correct?",
+    "stemZh": "",
+    "options": [
+      "X: triple beam balance; Y: glass rod; Z: crucible",
+      "X: electronic balance; Y: spatula; Z: crucible",
+      "X: triple beam balance; Y: glass rod; Z: mortar",
+      "X: electronic balance; Y: spatula; Z: mortar"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "earth1aa-1"
+  },
+  {
+    "ch": 1,
+    "n": 2,
+    "code": "Earth1Aa",
+    "stem": "Which of the following apparatus is used to transfer a small amount of solution?",
+    "stemZh": "",
+    "options": [
+      "Spatula",
+      "Glass rod",
+      "Dropper",
+      "Tongs"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 1,
+    "n": 3,
+    "code": "Earth1Aa",
+    "stem": "Which of the following apparatus is used to transfer solid chemicals?",
+    "stemZh": "",
+    "options": [
+      "Dropper",
+      "Mortar and pestle",
+      "Spatula",
+      "Wire gauze"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 1,
+    "n": 4,
+    "code": "Earth1Aa",
+    "stem": "Which of the following apparatus is used to make rough measurements of volumes of liquids?",
+    "stemZh": "",
+    "options": [
+      "Dropper",
+      "Measuring cylinder",
+      "Mortar and pestle",
+      "Reagent bottle"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 1,
+    "n": 5,
+    "code": "Earth1Aa",
+    "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X and Y is correct?",
+    "stemZh": "",
+    "options": [
+      "X: evaporating dish; Y: rack",
+      "X: petri dish; Y: tripod",
+      "X: petri dish; Y: rack",
+      "X: evaporating dish; Y: tripod"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "earth1aa-5"
+  },
+  {
+    "ch": 1,
+    "n": 6,
+    "code": "Earth1Aa",
+    "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X, Y and Z is correct?",
+    "stemZh": "",
+    "options": [
+      "X: glass rod; Y: stand; Z: filter funnel",
+      "X: thermometer; Y: stand; Z: separating funnel",
+      "X: glass rod; Y: tripod; Z: filter funnel",
+      "X: thermometer; Y: tripod; Z: separating funnel"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "earth1aa-6"
+  },
+  {
+    "ch": 1,
+    "n": 7,
+    "code": "Earth1Aa",
+    "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X and Y is correct?",
+    "stemZh": "",
+    "options": [
+      "X: crucible; Y: pipe-clay triangle",
+      "X: crucible; Y: wire gauze",
+      "X: mortar; Y: pipe-clay triangle",
+      "X: mortar; Y: wire gauze"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "earth1aa-7"
+  },
+  {
+    "ch": 2,
+    "n": 1,
+    "code": "Earth1Ab",
+    "stem": "Which of the following gas(es) can be collected by the set-up shown?\n(1) Hydrogen\n(2) Chlorine\n(3) Carbon dioxide",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "earth1ab-1"
+  },
+  {
+    "ch": 2,
+    "n": 2,
+    "code": "Earth1Ab",
+    "stem": "Which of the following set-ups can be used to collect nitrogen prepared in an experiment?",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "earth1ab-2"
+  },
+  {
+    "ch": 2,
+    "n": 3,
+    "code": "Earth1Ab",
+    "stem": "Which of the following set-ups can be used to dry a moist gas?",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "earth1ab-3"
+  },
+  {
+    "ch": 3,
+    "n": 1,
+    "code": "Earth1Ac",
+    "stem": "Which of the following sequence of steps is correct for obtaining a non-luminous flame?\n(1) Fully open the air hole.\n(2) Put the burning match just above the top of the chimney.\n(3) Close the air hole.\n(4) Turn on the gas tap.",
+    "stemZh": "",
+    "options": [
+      "(1) → (2) → (4) → (3)",
+      "(2) → (3) → (4) → (1)",
+      "(3) → (2) → (4) → (1)",
+      "(4) → (2) → (1) → (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 3,
+    "n": 2,
+    "code": "Earth1Ac",
+    "stem": "Which of the following may lead to ‘striking back’ of a Bunsen flame?",
+    "stemZh": "",
+    "options": [
+      "Supply of gas: insufficient; Air hole: half open",
+      "Supply of gas: insufficient; Air hole: fully open",
+      "Supply of gas: sufficient; Air hole: closed",
+      "Supply of gas: sufficient; Air hole: fully open"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 3,
+    "n": 3,
+    "code": "Earth1Ac",
+    "stem": "Which of the following might occur when a Bunsen flame 'strikes back'?\n(1) Obvious sound occurred.\n(2) The chimney becomes hot.\n(3) The supply of gas is too much.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 3,
+    "n": 4,
+    "code": "Earth1Ac",
+    "stem": "The following diagram shows an experimental set-up for collecting a gas produced in a certain reaction.\nWhich of the following actions can prevent 'sucking back' of water?\n(1) Take the delivery tube away from water before removing the flame.\n(2) Remove the flame before taking the delivery tube away from water.\n(3) Decrease the amount of water in the trough.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "earth1ac-4"
+  },
+  {
+    "ch": 4,
+    "n": 1,
+    "code": "Earth1Ba",
+    "stem": "What is the meaning of the following hazard warning label?",
+    "stemZh": "",
+    "options": [
+      "Carcinogenic",
+      "Flammable",
+      "Corrosive",
+      "Oxidizing"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "earth1ba-1"
+  },
+  {
+    "ch": 4,
+    "n": 2,
+    "code": "Earth1Ba",
+    "stem": "Which of the following should NOT be done when heating a chemical in a test tube?\n(1) Look down at the test tube directly.\n(2) Keep swirling the test tube.\n(3) Point the mouth of the test tube towards others.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 4,
+    "n": 3,
+    "code": "Earth1Ba",
+    "stem": "Which of the following precautions should be taken when working with a toxic reagent?\n(1) Avoid friction.\n(2) Wear protective gloves.\n(3) Avoid breathing in its vapours.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 5,
+    "n": 1,
+    "code": "Earth1Bb",
+    "stem": "Which of the following hazard warning labels should be displayed on a bottle of aqueous chlorine?",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "earth1bb-1"
+  },
+  {
+    "ch": 5,
+    "n": 2,
+    "code": "Earth1Bb",
+    "stem": "Which of the following hazard warning labels should be displayed on a metal cylinder containing liquefied petroleum gas?",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "earth1bb-2"
+  },
+  {
+    "ch": 5,
+    "n": 3,
+    "code": "Earth1Bb",
+    "stem": "Which of the following should NOT be done in a laboratory?",
+    "stemZh": "",
+    "options": [
+      "Wash hands after experiments.",
+      "Keep flammable chemicals away from naked flames.",
+      "Close all windows when doing experiments.",
+      "Put the Bunsen burner on a fireproof mat when using it."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 5,
+    "n": 4,
+    "code": "Earth1Bb",
+    "stem": "4. A student conducts an experiment using concentrated hydrochloric acid. concentrated hydrochloric acid Which of the following precautions the student should take when working with the acid? (1) Wear safety glasses. (2) Wear protective gloves. (3) Do not warm the acid. A (1) and",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 6,
+    "n": 1,
+    "code": "Earth1Bc",
+    "stem": "Which of the following hazard warning labels should be displayed on a metal cylinder containing carbon monoxide gas?",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "earth1bc-1"
+  },
+  {
+    "ch": 6,
+    "n": 2,
+    "code": "Earth1Bc",
+    "stem": "A reagent bottle carries both the corrosive and toxic hazard labels. Which precautions must be taken?\n(1) Wear protective gloves.\n(2) Avoid breathing in the vapours.\n(3) Point the mouth of a heated test tube towards yourself.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 6,
+    "n": 3,
+    "code": "Earth1Bc",
+    "stem": "Which sequence of steps is correct when lighting a Bunsen burner?",
+    "stemZh": "",
+    "options": [
+      "Open the air hole → turn on the gas tap → put a lighted match at the top of the barrel.",
+      "Close the air hole → put a lighted match near the top of the barrel → turn on the gas tap → open the air hole slowly.",
+      "Turn on the gas tap with the air hole fully open, then light with a match.",
+      "Open the air hole fully, then put a lighted match inside the barrel."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 7,
+    "n": 1,
+    "code": "Earth2Aa",
+    "stem": "Which of the following substances is a mixture?",
+    "stemZh": "",
+    "options": [
+      "Diamond",
+      "Dry ice",
+      "Distilled water",
+      "Soda water"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 7,
+    "n": 2,
+    "code": "Earth2Aa",
+    "stem": "Which of the following substances is a pure substance?",
+    "stemZh": "",
+    "options": [
+      "Beer",
+      "Brass",
+      "Distilled water",
+      "Pond water"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 7,
+    "n": 3,
+    "code": "Earth2Aa",
+    "stem": "Which of the following is an element?",
+    "stemZh": "",
+    "options": [
+      "Air",
+      "Distilled water",
+      "Sodium",
+      "Sodium chloride"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 8,
+    "n": 1,
+    "code": "Earth2Ab",
+    "stem": "Which of the following diagrams can represent a compound formed from two elements?\n(In these diagrams ● and ○ represent an oxygen atom and a hydrogen atom respectively.)",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "earth2ab-1"
+  },
+  {
+    "ch": 8,
+    "n": 2,
+    "code": "Earth2Ab",
+    "stem": "Which of the following statements about elements is correct?",
+    "stemZh": "",
+    "options": [
+      "There are thousands of elements on Earth.",
+      "Compounds can join together chemically to form elements.",
+      "Elements cannot be broken down into anything simpler by chemical methods.",
+      "Water is an element."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 8,
+    "n": 3,
+    "code": "Earth2Ab",
+    "stem": "Which of the following statements about compounds is correct?",
+    "stemZh": "",
+    "options": [
+      "Sugar is a compound.",
+      "All compounds occur naturally in pure state.",
+      "Compounds have chemical properties similar to those of their constituent elements.",
+      "Compounds can only be separated into its constituents by physical methods."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 8,
+    "n": 4,
+    "code": "Earth2Ab",
+    "stem": "Which of the following diagrams can represent a mixture of two elements?\n(In these diagrams ● and ○ represent a nitrogen atom and an oxygen atom respectively.)",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "earth2ab-4"
+  },
+  {
+    "ch": 9,
+    "n": 1,
+    "code": "Earth2Ac",
+    "stem": "Upon heating, a mixture of iron and sulphur gives a dark brown substance. Which of the following\nstatements about the substance is correct?",
+    "stemZh": "",
+    "options": [
+      "It is soluble in water.",
+      "It is attracted to a magnet.",
+      "It reacts with dilute hydrochloric acid to give a gas with a bad egg smell.",
+      "It can be separated into iron and sulphur by simple physical methods."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 9,
+    "n": 2,
+    "code": "Earth2Ac",
+    "stem": "Which of the following comparisons between ironII) sulphide and a mixture of iron and sulphur is\ncorrect?\nIron(II) sulphide",
+    "stemZh": "",
+    "options": [
+      "mixture of iron and sulphur elements in it have a fixed ratio only iron is attracted to magnet has a sharp melting point constituents can be separated by physical methods",
+      "attracted to magnet",
+      "does not have a sharp melting point",
+      "constituents can be separated by chemical methods"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 9,
+    "n": 3,
+    "code": "Earth2Ac",
+    "stem": "Which of the following substances has a sharp boiling point?",
+    "stemZh": "",
+    "options": [
+      "Liquid air",
+      "Molten copper",
+      "Red wine",
+      "Soft drink"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 9,
+    "n": 4,
+    "code": "Earth2Ac",
+    "stem": "Which of the following statements about pure water are correct?\n(1) It has a sharp boiling point.\n(2) It is formed from elements.\n(3) It can be broken down into something simpler by physical methods.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 9,
+    "n": 5,
+    "code": "Earth2Ac",
+    "stem": "In which of the following substances are the particles furthest apart from each other at room\ntemperature and pressure?",
+    "stemZh": "",
+    "options": [
+      "Nitrogen",
+      "Calcium carbonate",
+      "Sodium chloride",
+      "Water"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 9,
+    "n": 6,
+    "code": "Earth2Ac",
+    "stem": "In a certain experiment, a student placed a piece of potassium permanganate crystal in a beaker of water\nas shown below.\n• water\n- potassium permanganate\ncrystal\nWhich of the following statements about the experiment is / are correct?\n(1) A yellow colour spread in the beaker.\n(2) The potassium permanganate particles mixed with the water particles.\n(3) A chemical change occurred.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 9,
+    "n": 7,
+    "code": "Earth2Ac",
+    "stem": "In a certain experiment, a student placed a jar of air upside down on top of another jar containing\nbromine vapour as shown below.\nWhich of the following statements about the experiment is / are correct?\n(1) Bromine particles mix with the air particles.\n(2) The jar containing bromine vapour will darken.\n(3) The mixing process is called particle theory.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "earth2ac-7"
+  },
+  {
+    "ch": 10,
+    "n": 1,
+    "code": "Earth2Ba",
+    "stem": "Consider the following diagram of changes of states of a substance.\nWhich of the following combinations is correct?",
+    "stemZh": "",
+    "options": [
+      "X: deposition; Y: condensation; Z: freezing",
+      "X: sublimation; Y: condensation; Z: melting",
+      "X: deposition; Y: boiling; Z: freezing",
+      "X: sublimation; Y: boiling; Z: melting"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "earth2ba-1"
+  },
+  {
+    "ch": 10,
+    "n": 2,
+    "code": "Earth2Ba",
+    "stem": "Which of the following is NOT an example of physical properties?",
+    "stemZh": "",
+    "options": [
+      "Sodium chloride dissolves in water to form a solution.",
+      "Ice melts into water at 0 °C.",
+      "Pure copper wire can conduct electricity.",
+      "Adding dilute hydrochloric acid into iron(II) sulphide produces a gas with a bad egg smell."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 10,
+    "n": 3,
+    "code": "Earth2Ba",
+    "stem": "Which of the following statements describes a chemical property of iron?",
+    "stemZh": "",
+    "options": [
+      "It can be bent into different shapes.",
+      "It may rust.",
+      "It sinks in water.",
+      "It has a shiny surface."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 11,
+    "n": 1,
+    "code": "Earth2Bb",
+    "stem": "Which of the following processes is a chemical change?",
+    "stemZh": "",
+    "options": [
+      "Passing electricity through a copper wire",
+      "Dissolving sugar in water",
+      "Bleaching the hair",
+      "Melting butter"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 11,
+    "n": 2,
+    "code": "Earth2Bb",
+    "stem": "Which of the following processes involve physical changes?\n(1) Spoiling food\n(2) Hammering wood together to build a playhouse\n(3) Squeezing oranges to prepare orange juice",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 11,
+    "n": 3,
+    "code": "Earth2Bb",
+    "stem": "18. Substance W Melting point (°C) - 200 10 50 - 100 Boiling point (°C) 54 120 320 13 Which of the above substances is / are liquid(s) at room temperature? A X only B Y only C W and X only D Y and Z only\nWhich of the above substances is / are liquid(s) at room temperature?",
+    "stemZh": "",
+    "options": [
+      "X only",
+      "Y only",
+      "W and X only",
+      "Y and Z only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 12,
+    "n": 1,
+    "code": "Earth2Bc",
+    "stem": "In a certain experiment, a mixture of iron and sulphur was heated to give solid X. Which of the\nfollowing statements about the process are correct?\n(1) The process involves a chemical change.\n(2) Solid X is a compound.\n(3) Solid X gives hydrogen when mixed with dilute hydrochloric acid.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 12,
+    "n": 2,
+    "code": "Earth2Bc",
+    "stem": "Which of the following substances can undergo sublimation at normal pressure?\n(1) Iodine\n(2) Nitrogen\n(3) Carbon dioxide",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 12,
+    "n": 3,
+    "code": "Earth2Bc",
+    "stem": "Which of the following processes involve a chemical change?\n(1) Electrolysis of molten sodium chloride\n(2) Dissolving sugar in water\n(3) Strong heating of limestone to give calcium oxide",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 13,
+    "n": 1,
+    "code": "Earth2Ca",
+    "stem": "Which of the following gases is LEAST likely to be found in air?",
+    "stemZh": "",
+    "options": [
+      "Argon",
+      "Hydrogen",
+      "Nitrogen",
+      "Carbon dioxide"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 13,
+    "n": 2,
+    "code": "Earth2Ca",
+    "stem": "Which of the following statements about nitrogen are correct?\n(1) It is an odourless gas.\n(2) It is used to fill the packets of potato chips.\n(3) It is an element.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 13,
+    "n": 3,
+    "code": "Earth2Ca",
+    "stem": "Why can gases in air be separated by the fractional distillation of liquid air?",
+    "stemZh": "",
+    "options": [
+      "The gases have different boiling points.",
+      "The gases have different melting points.",
+      "The gases have different percentages by volume in air.",
+      "The gases have different chemical properties."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 13,
+    "n": 4,
+    "code": "Earth2Ca",
+    "stem": "Which of the following is / are use(s) of oxygen?\n(1) As a fuel for large rockets\n(2) Aiding the respiration of premature babies\n(3) Filling electric light bulbs",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 13,
+    "n": 5,
+    "code": "Earth2Ca",
+    "stem": "Which of the following shows the presence of oxygen in a gas jar?",
+    "stemZh": "",
+    "options": [
+      "It gives a 'pop' sound with a burning splint.",
+      "It turns limewater milky.",
+      "It relights a glowing splint.",
+      "It extinguishes a burning splint."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 14,
+    "n": 1,
+    "code": "Earth2Cb",
+    "stem": "Which of the following statements about air are correct?\n(1) Nitrogen has the highest composition by volume in air.\n(2) Air contains elements and compounds.\n(3) The amount of water vapour in air varies according to different weathers.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 14,
+    "n": 2,
+    "code": "Earth2Cb",
+    "stem": "The following table gives some information of the components in a sample of liquefied gases:\nIn what order would the components separate out when the sample undergoes fractional distillation?",
+    "stemZh": "",
+    "options": [
+      "X, Y, Z",
+      "X, Z, Y",
+      "Z, X, Y",
+      "Z, Y, X"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 14,
+    "n": 3,
+    "code": "Earth2Cb",
+    "stem": "Which of the following statements about fractional distillation is / are correct?\n(1) In fractionating column, the upper part has lower temperature.\n(2) Before distilling the liquid air, carbon dioxide and argon vapour should be removed.\n(3) Oxygen would be collected in the upper part of a fractionating column than that of nitrogen",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 14,
+    "n": 4,
+    "code": "Earth2Cb",
+    "stem": "Which of the following statements about oxygen is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "Oxygen relights a glowing splint.",
+      "Oxygen is a constituent element of sugar.",
+      "Oxygen is colourless.",
+      "Air contains 78% of oxygen by volume."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 15,
+    "n": 1,
+    "code": "Earth2Cc",
+    "stem": "Why must carbon dioxide and water vapour be removed from air before the fractional distillation of\nliquid air?",
+    "stemZh": "",
+    "options": [
+      "They share a rather high volume percentage in air.",
+      "They will freeze when the air is cooled, and will block the pipes.",
+      "They have different melting points.",
+      "They will react during the fractional distillation of liquid air."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 15,
+    "n": 2,
+    "code": "Earth2Cc",
+    "stem": "Which of the following statements about A and B are correct?\n(1) Gas A takes the greatest percentage of air by volume.\n(2) Gas A gives a 'pop' sound when tested with a burning splint.\n(3) The boiling point of B is higher than that of A.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "earth2cc-2"
+  },
+  {
+    "ch": 15,
+    "n": 3,
+    "code": "Earth2Cc",
+    "stem": "Which of the following statements about oxygen are correct?\n(1) Oxygen is colourless.\n(2) Oxygen is produced in the photosynthesis process.\n(3) A metal cylinder of oxygen should bear the hazard warning label shown below.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "earth2cc-3"
+  },
+  {
+    "ch": 16,
+    "n": 1,
+    "code": "Earth3Aa",
+    "stem": "Which of the following salts has the HIGHEST percentage by mass in sea water?",
+    "stemZh": "",
+    "options": [
+      "Sodium chloride",
+      "Magnesium chloride",
+      "Sodium sulphate",
+      "Calcium chloride"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 16,
+    "n": 2,
+    "code": "Earth3Aa",
+    "stem": "Which of the following processes can be used to obtain pure water from muddy sea water?",
+    "stemZh": "",
+    "options": [
+      "Filtration followed by distillation",
+      "Filtration followed by crystallization",
+      "Crystallization followed by filtration",
+      "Crystallization followed by distillation"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 16,
+    "n": 3,
+    "code": "Earth3Aa",
+    "stem": "Which of the following is NOT a major element found in sea water?",
+    "stemZh": "",
+    "options": [
+      "Sodium",
+      "Chlorine",
+      "Oxygen",
+      "Nitrogen"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 17,
+    "n": 1,
+    "code": "Earth3Ab",
+    "stem": "The diagram below shows a piece of apparatus containing two immiscible liquids P and Q.\nWhich of the following statements is / are correct?\n(1) The apparatus shown is a tap funnel.\n(2) P is less dense than Q.\n(3) The apparatus can be used to separate a mixture of oil and water.\n(2) only",
+    "stemZh": "",
+    "options": [
+      "(I) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "earth3ab-1"
+  },
+  {
+    "ch": 17,
+    "n": 2,
+    "code": "Earth3Ab",
+    "stem": "Which of the following substances has the HIGHEST percentage in the ocean?",
+    "stemZh": "",
+    "options": [
+      "Common salt",
+      "Magnesium chloride",
+      "Mineral",
+      "Water"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 17,
+    "n": 3,
+    "code": "Earth3Ab",
+    "stem": "Which of the following statements about sea water is / are correct?\n(1) Sea water is a mixture.\n(2) Sodium chloride in it is a solvent.\n(3) It has a sharp boiling point.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 17,
+    "n": 4,
+    "code": "Earth3Ab",
+    "stem": "Which of the following processes occur in distillation?",
+    "stemZh": "",
+    "options": [
+      "Condensation followed by crystallization",
+      "Sublimation followed by evaporation",
+      "Evaporation followed by condensation",
+      "Evaporation followed by sublimation"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 18,
+    "n": 1,
+    "code": "Earth3Ac",
+    "stem": "Which of the following are major salts found in sea water?\n(1) Calcium sulphate\n(2) Magnesium chloride\n(3) Sodium chloride",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 18,
+    "n": 2,
+    "code": "Earth3Ac",
+    "stem": "Which of the following techniques of crystallization can obtain large crystals?",
+    "stemZh": "",
+    "options": [
+      "Rapid cooling of a hot concentrated solution",
+      "Rapid cooling of a hot dilute solution",
+      "Slow evaporation of a hot concentrated solution at room temperature",
+      "Slow evaporation of a hot dilute solution at room temperature"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 18,
+    "n": 3,
+    "code": "Earth3Ac",
+    "stem": "Some physical properties of a compound X are listed below:\nMelting point: 90 °C\nBoiling point: 230 °C\nSolubility in water: soluble\nWhich of the following methods is the most suitable for obtaining X from a solution of X in water?",
+    "stemZh": "",
+    "options": [
+      "Crystallization",
+      "Decantation",
+      "Filtration",
+      "Fractional distillation"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 18,
+    "n": 4,
+    "code": "Earth3Ac",
+    "stem": "Which of the following statements about the evaporation of sea water is / are correct?\n(1) Evaporation is a heat absorbing process.\n(2) Pure water can be obtained.\n(3) Pure sodium chloride can be obtained.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 18,
+    "n": 5,
+    "code": "Earth3Ac",
+    "stem": "Consider the following pieces of apparatus:\nWhich of the following processes can be performed by using some or all of the above apparatus?\n(1) Obtaining pure water from sea water\n(2) Separating oil and water\n(3) Obtaining hydrogen from water",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "earth3ac-5"
+  },
+  {
+    "ch": 18,
+    "n": 6,
+    "code": "Earth3Ac",
+    "stem": "Which of the following mixtures can be separated by adding water, stirring and filtering?",
+    "stemZh": "",
+    "options": [
+      "Calcium carbonate and magnesium chloride",
+      "Copper and magnesium",
+      "Diamond and graphite",
+      "Silver chloride and calcium oxide"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 19,
+    "n": 1,
+    "code": "Earth3Ba",
+    "stem": "Which of the following is the correct sequence of steps for flame test?\n(1) Put the end of the nichrome wire in the Bunsen flame.\n(2) Dip the nichrome wire into the solid sample.\n(3) Observe the colour of the flame.\n(4) Dip a clean nichrome wire into concentrated hydrochloric acid.",
+    "stemZh": "",
+    "options": [
+      "(1) → (4) → (2) → (3)",
+      "(2) → (1) → (3)→ (4)",
+      "(4) → (1) → (3) → (2)",
+      "(4) → (2) → (1) → (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 19,
+    "n": 2,
+    "code": "Earth3Ba",
+    "stem": "Which of the following combinations is INCORRECT?\nCompound of\nFlame colour",
+    "stemZh": "",
+    "options": [
+      "Compound of: sodium; Flame colour: golden yellow",
+      "Compound of: potassium; Flame colour: lilac",
+      "Compound of: calcium; Flame colour: bluish white",
+      "Compound of: copper; Flame colour: bluish green"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 19,
+    "n": 3,
+    "code": "Earth3Ba",
+    "stem": "What would be observed if a sodium chloride solution is added to a solution containing dilute nitric\nacid and silver nitrate solution?",
+    "stemZh": "",
+    "options": [
+      "Effervescence occurs.",
+      "There is no observable change.",
+      "The solution becomes blue in colour.",
+      "A white precipitate forms."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 19,
+    "n": 4,
+    "code": "Earth3Ba",
+    "stem": "Which of the following substances CANNOT be obtained in the electrolysis of sea water?",
+    "stemZh": "",
+    "options": [
+      "Argon",
+      "Hydrogen",
+      "Chlorine",
+      "Sodium hydroxide"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 19,
+    "n": 5,
+    "code": "Earth3Ba",
+    "stem": "Which of the following is NOT a major use of hydrogen?",
+    "stemZh": "",
+    "options": [
+      "As rocket fuel",
+      "Manufacture of ammonia",
+      "Manufacture of hydrochloric acid",
+      "Manufacture of plastics"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 19,
+    "n": 6,
+    "code": "Earth3Ba",
+    "stem": "Which of the following substances is / are used to manufacture bleach?\n(1) Sodium hydroxide\n(2) Hydrogen\n(3) Chlorine",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 19,
+    "n": 7,
+    "code": "Earth3Ba",
+    "stem": "30.|\nWhich of the following are major uses of chlorine?\n(1) Sterilizing swimming pool water\n(2) Manufacture of soap\n(3) Manufacture of hydrochloric acid",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 19,
+    "n": 8,
+    "code": "Earth3Ba",
+    "stem": "31.|\nWhich of the following is / are major use(s) of sodium hydroxide?\n(1) Manufacture of bleach\n(2) As a fuel\n(3) Manufacture of soap",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 20,
+    "n": 1,
+    "code": "Earth3Bb",
+    "stem": "Which of the following methods can be used to distinguish between copper(Il) sulphate crystals and\nsodium chloride crystals?\n(1) Perform a flame test.\n(2) Add dilute nitric acid followed by silver nitrate solution to their solutions.\n(3) Observe their colours.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 20,
+    "n": 2,
+    "code": "Earth3Bb",
+    "stem": "Which of the following methods can be used to distinguish between solid calcium chloride and solid\npotassium chloride?\n(1) Add dilute hydrochloric acid.\n(2) Perform a flame test.\n(3) Dissolve the solids in water.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 20,
+    "n": 3,
+    "code": "Earth3Bb",
+    "stem": "Which of the following combinations is correct?\nTest method",
+    "stemZh": "",
+    "options": [
+      "Test method: a burning splint; Species: oxygen",
+      "Test method: a glowing splint; Species: nitrogen",
+      "Test method: C blue cobalt(II) chloride paper; Species: water vapour",
+      "Test method: limewater; Species: Ammonia"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 20,
+    "n": 4,
+    "code": "Earth3Bb",
+    "stem": "Which of the following statements about water are correct?\n(1) It is a compound.\n(2) It turns dry cobaltII) chloride paper pink.\n(3) It turns anhydrous copperII) sulphate blue.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 20,
+    "n": 5,
+    "code": "Earth3Bb",
+    "stem": "Which of the following statements about the electrolysis of sea water is correct?",
+    "stemZh": "",
+    "options": [
+      "It involves a chemical change.",
+      "It produces oxygen.",
+      "It gives pure sodium chloride.",
+      "It gives elements only."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 20,
+    "n": 6,
+    "code": "Earth3Bb",
+    "stem": "Which of the following items require the use of products obtained from the electrolysis of sea water?\n(1) Manufacture of hydrochloric acid\n(2) Manufacture of PVC\n(3) Manufacture of soaps",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 21,
+    "n": 1,
+    "code": "Earth3Bc",
+    "stem": "23. A solid X gives a lilac flame in flame test. X reacts with dilute hydrochloric acid to give a gas. X could be A potassium carbonate. B potassium chloride. C sodium carbonate. D sodium chloride.",
+    "stemZh": "",
+    "options": [
+      "potassium carbonate.",
+      "potassium chloride.",
+      "sodium carbonate.",
+      "sodium chloride."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 21,
+    "n": 2,
+    "code": "Earth3Bc",
+    "stem": "When dilute nitric acid and silver nitrate solution are added to a beaker containing an unknown\nsolution, a white precipitate forms. The unknown solution could be\n(1) sodium nitrate solution.\n(2) potassium chloride solution.\n(3) sea water.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 21,
+    "n": 3,
+    "code": "Earth3Bc",
+    "stem": "Which of the following combinations about the gases obtained by electrolysis of water is correct?\nPositive electrode\nNegative electrode",
+    "stemZh": "",
+    "options": [
+      "Positive electrode: oxygen; Negative electrode: hydrogen",
+      "Positive electrode: chlorine; Negative electrode: hydrogen",
+      "Positive electrode: hydrogen; Negative electrode: chlorine",
+      "Positive electrode: nitrogen; Negative electrode: oxygen"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 21,
+    "n": 4,
+    "code": "Earth3Bc",
+    "stem": "To identify an unknown powder, a student heated the powder in a Bunsen flame. A brick-red flame was\nobserved. When the powder was added to dilute hydrochloric acid, it dissolved without any observable\nchanges. What might the powder be?",
+    "stemZh": "",
+    "options": [
+      "Calcium carbonate",
+      "Sodium carbonate",
+      "Calcium chloride",
+      "Sodium chloride"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 21,
+    "n": 5,
+    "code": "Earth3Bc",
+    "stem": "Which of the following methods can be used to distinguish between solid sodium chloride and solid\ncalcium carbonate?\n(1) Testing the solubility of the solids in water\n(2) Observing the colour of the solids\n(3) Adding dilute nitric acid followed by silver nitrate solution",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 22,
+    "n": 1,
+    "code": "Earth4Aa",
+    "stem": "Potassium can be obtained from potassium chloride by",
+    "stemZh": "",
+    "options": [
+      "electrolysis of molten potassium chloride.",
+      "heating the chloride strongly.",
+      "heating the chloride with carbon.",
+      "heating the chloride with iron powder."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 22,
+    "n": 2,
+    "code": "Earth4Aa",
+    "stem": "Which of the following is / are source(s) of metals?\n(1) Earth's crust\n(2) Atmosphere\n(3) Ocean",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 22,
+    "n": 3,
+    "code": "Earth4Aa",
+    "stem": "Which metal is extracted by electrolysis of its molten ore?",
+    "stemZh": "",
+    "options": [
+      "Iron",
+      "Zinc",
+      "Aluminium",
+      "Copper"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 23,
+    "n": 1,
+    "code": "Earth4Ab",
+    "stem": "Arrange procedures for the extraction of a metal from its ore in order.\n(1) Extraction of metal from ore\n(2) Mining of the ore\n(3) Separation of useful ore from waste materials\n(4) Refining of impure metal",
+    "stemZh": "",
+    "options": [
+      "(2) → (3) → (4) → (1)",
+      "(3) → (4) → (2) → (1)",
+      "(3) → (1) → (2) → (4)",
+      "(2) → (3) → (1) → (4)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 23,
+    "n": 2,
+    "code": "Earth4Ab",
+    "stem": "Which of the following combinations about the extraction of metals from their ores is / are correct?",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 23,
+    "n": 3,
+    "code": "Earth4Ab",
+    "stem": "According to the methods of extraction of metals from ores, aluminium is obtained by",
+    "stemZh": "",
+    "options": [
+      "panning (mechanical separation).",
+      "heating the ore alone.",
+      "electrolysis of the molten ore.",
+      "heating the ore with carbon."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 24,
+    "n": 1,
+    "code": "Earth4Ac",
+    "stem": "In which of the following processes would a metal be produced?\n(1) Electrolyzing a molten ore of magnesium\n(2) Heating aluminium with carbon\n(3) Heating sulphide of mercury in air",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 24,
+    "n": 2,
+    "code": "Earth4Ac",
+    "stem": "Which of the following metals CANNOT be extracted by heating the metal oxide with carbon?\n(1) Sodium\n(2) Iron\n(3) Potassium",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 24,
+    "n": 3,
+    "code": "Earth4Ac",
+    "stem": "Which combination of metal and extraction method is correct?",
+    "stemZh": "",
+    "options": [
+      "sodium — electrolysis of molten ore; gold — occurs native",
+      "sodium — heating oxide with carbon; gold — electrolysis of molten ore",
+      "iron — occurs native; gold — heating oxide with carbon",
+      "potassium — heating oxide with carbon; iron — occurs native"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 25,
+    "n": 1,
+    "code": "Earth4Ba",
+    "stem": "Which of the following combinations is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "Substance: limestone; Main compound: calcium carbonate",
+      "Substance: quicklime; Main compound: calcium oxide",
+      "Substance: slaked lime; Main compound: calcium hydroxide",
+      "Substance: limewater; Main compound: calcium hydrogencarbonate"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 25,
+    "n": 2,
+    "code": "Earth4Ba",
+    "stem": "35. The diagram shows a kiln used to heat limestone.\nWhat is the following combinations about the product and waste gas is correct?",
+    "stemZh": "",
+    "options": [
+      "Product: quicklime; Waste gas: carbon monoxide",
+      "Product: quicklime; Waste gas: carbon dioxide",
+      "Product: slaked lime; Waste gas: carbon dioxide",
+      "Product: slaked lime; Waste gas: carbon monoxide"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "earth4ba-2"
+  },
+  {
+    "ch": 25,
+    "n": 3,
+    "code": "Earth4Ba",
+    "stem": "Carbon dioxide turns limewater milky due to the formation of",
+    "stemZh": "",
+    "options": [
+      "calcium carbonate",
+      "calcium hydrogencarbonate",
+      "calcium hydroxide",
+      "calcium oxide"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 26,
+    "n": 1,
+    "code": "Earth4Bb",
+    "stem": "What would be observed when water is added to solid calcium oxide?",
+    "stemZh": "",
+    "options": [
+      "Effervescence occurs.",
+      "Solid calcium oxide falls apart.",
+      "Solid calcium oxide becomes pink in colour.",
+      "There is no observable change."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 26,
+    "n": 2,
+    "code": "Earth4Bb",
+    "stem": "When calcium carbonate is strongly heated, a solid is obtained. Which of the following statements\nabout the solid is correct?",
+    "stemZh": "",
+    "options": [
+      "It is black in colour.",
+      "It reacts with water to give slaked lime.",
+      "It is calcium hydroxide.",
+      "It is an element."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 26,
+    "n": 3,
+    "code": "Earth4Bb",
+    "stem": "Which of the following statements are correct?\n(1) Calcite is composed of calcium carbonate.\n(2) Strong heating of calcium carbonate gives a white solid.\n(3) Saturated calcium hydroxide solution can be used to test for carbon dioxide",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 26,
+    "n": 4,
+    "code": "Earth4Bb",
+    "stem": "Which of the following statements about the products formed from heating limestone are true?\n(1) The gas evolved turns limewater milky.\n(2) Slaked lime is formed.\n(3) The solid product gives a brick-red flame in flame test.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 27,
+    "n": 1,
+    "code": "Earth4Bc",
+    "stem": "What could gas X and solid Y be?",
+    "stemZh": "",
+    "options": [
+      "X: carbon dioxide; Y: calcium carbonate",
+      "X: oxygen; Y: calcium carbonate",
+      "X: carbon dioxide; Y: calcium oxide",
+      "X: hydrogen; Y: calcium oxide"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "earth4bc-1"
+  },
+  {
+    "ch": 27,
+    "n": 2,
+    "code": "Earth4Bc",
+    "stem": "Limestone is heated strongly for about 15 minutes in an experiment.\nWhich of the following statements about the experiment are correct?\n(1) Effervescence occurs.\n(2) A white solid remains in the test tube after heating.\n(3) The limewater turns milky.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "earth4bc-2"
+  },
+  {
+    "ch": 27,
+    "n": 3,
+    "code": "Earth4Bc",
+    "stem": "Which of the following explain(s) why rainwater can erode limestone?\n(1) Limestone is soluble in water.\n(2) Carbon dioxide in air dissolves in rainwater to form carbonic acid which dissolves\nlimestone.\n(3) Limestone reacts with water to form soluble calcium hydroxide.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 28,
+    "n": 1,
+    "code": "MW1Aa",
+    "stem": "Which of the following combinations about the atomic structure of a sulphur atom is correct?",
+    "stemZh": "",
+    "options": [
+      "Number of neutrons: 15; Number of protons: 15; Number of electrons: 17",
+      "Number of neutrons: 15; Number of protons: 15; Number of electrons: 16",
+      "Number of neutrons: 16; Number of protons: 16; Number of electrons: 16",
+      "Number of neutrons: 18; Number of protons: 17; Number of electrons: 17"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 28,
+    "n": 2,
+    "code": "MW1Aa",
+    "stem": "Which of the following combinations about the charges on neutron, proton and electron is correct?",
+    "stemZh": "",
+    "options": [
+      "Neutron: positive; Proton: positive; Electron: negative",
+      "Neutron: positive; Proton: neutral; Electron: positive",
+      "Neutron: neutral; Proton: neutral; Electron: positive",
+      "Neutron: neutral; Proton: positive; Electron: negative"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 28,
+    "n": 3,
+    "code": "MW1Aa",
+    "stem": "Atoms of the same element must have",
+    "stemZh": "",
+    "options": [
+      "the same number of neutrons.",
+      "the same number of electrons.",
+      "the same number of protons and neutrons.",
+      "different number of neutrons."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 28,
+    "n": 4,
+    "code": "MW1Aa",
+    "stem": "The atomic number and mass number of an atom of an element is 9 and 19 respectively. The atom\ncontains",
+    "stemZh": "",
+    "options": [
+      "9 electrons and 10 neutrons.",
+      "9 neutrons and 10 electrons.",
+      "9 protons and 10 electrons.",
+      "9 protons and 19 neutrons."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 28,
+    "n": 5,
+    "code": "MW1Aa",
+    "stem": "An atom has 23 electrons and 28 neutrons. Which of the following combinations about the atom is correct?",
+    "stemZh": "",
+    "options": [
+      "Atomic number: 23; Mass number: 28",
+      "Atomic number: 23; Mass number: 51",
+      "Atomic number: 28; Mass number: 51",
+      "Atomic number: 28; Mass number: 56"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 28,
+    "n": 6,
+    "code": "MW1Aa",
+    "stem": "The number of electrons in the first two shells of a chlorine atom adds up to",
+    "stemZh": "",
+    "options": [
+      "8",
+      "10",
+      "15",
+      "17"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 28,
+    "n": 7,
+    "code": "MW1Aa",
+    "stem": "Which of the following pairs of atoms have the same number of occupied electron shells?\n(1) Aluminium atom and argon atom\n(2) Carbon atom and neon atom\n(3) Silicon atom and potassium atom",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 28,
+    "n": 8,
+    "code": "MW1Aa",
+    "stem": "Which of the following combinations is INCORRECT?\nElement\nIts atom has",
+    "stemZh": "",
+    "options": [
+      "Element: bromine; Its atom has: 7 outermost shell electrons",
+      "Element: chlorine; Its atom has: 4 occupied electron shells",
+      "Element: carbon; Its atom has: 4 outermost shell electrons",
+      "Element: oxygen; Its atom has: 2 occupied electron shells"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 29,
+    "n": 1,
+    "code": "MW1Ab",
+    "stem": "Which of the following atoms has the SMALLEST number of neutrons?",
+    "stemZh": "",
+    "options": [
+      "⁵⁰Ti",
+      "⁵⁰V",
+      "⁶⁴Ni",
+      "⁶⁴Zn"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 29,
+    "n": 2,
+    "code": "MW1Ab",
+    "stem": "Atoms are electrically neutral because",
+    "stemZh": "",
+    "options": [
+      "neutrons are neutral.",
+      "they have the same number of neutrons and protons.",
+      "they have the same number of protons and electrons.",
+      "all subatomic particles are neutral."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 29,
+    "n": 3,
+    "code": "MW1Ab",
+    "stem": "An atom of element X contains 57 protons and 139 neutrons. This atom can be represented as",
+    "stemZh": "",
+    "options": [
+      "¹³⁹₅₇X",
+      "¹⁹⁶₁₃₉X",
+      "¹⁹⁶₅₇X",
+      "⁵⁷₁₃₉X"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 29,
+    "n": 4,
+    "code": "MW1Ab",
+    "stem": "Which of the following statements about the zinc atom 3ôZn is correct?",
+    "stemZh": "",
+    "options": [
+      "It has 30 protons.",
+      "Its mass number is 34.",
+      "It has 64 neutrons.",
+      "Its atomic number is 94."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 29,
+    "n": 5,
+    "code": "MW1Ab",
+    "stem": "Which of the following statements about subatomic particles are correct?\n(1) Atoms of all elements must contain protons and electrons.\n(2) Atoms of the same element must contain the same number of protons.\n(3) Protons and neutrons have almost the same mass.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 29,
+    "n": 6,
+    "code": "MW1Ab",
+    "stem": "The following is an electron diagram of an atom of element Y:\n(Only electrons in the outermost shell are shown.)\nThe atomic number of Y could be",
+    "stemZh": "",
+    "options": [
+      "5",
+      "7",
+      "11",
+      "13"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw1ab-6"
+  },
+  {
+    "ch": 29,
+    "n": 7,
+    "code": "MW1Ab",
+    "stem": "Which of the following represents the electronic arrangement of an atom of a non-metal?",
+    "stemZh": "",
+    "options": [
+      "2,1",
+      "2,2",
+      "2,3",
+      "2,4"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 30,
+    "n": 1,
+    "code": "MW1Ac",
+    "stem": "Which of the following statements about the structure of an atom is correct?",
+    "stemZh": "",
+    "options": [
+      "The nucleus is composed of electrons and neutrons.",
+      "Most of an atom is empty space.",
+      "Protons move outside the nucleus at a high speed.",
+      "Neutrons and protons are much lighter than electrons."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 30,
+    "n": 2,
+    "code": "MW1Ac",
+    "stem": "Which of the following statements about an atom is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "The number of protons must equal the number of electrons.",
+      "The number of electrons must equal the number of neutrons.",
+      "The atomic number must equal the number of protons.",
+      "The mass number must equal the number of electrons plus the number of neutrons."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 30,
+    "n": 3,
+    "code": "MW1Ac",
+    "stem": "Which of the following combinations represents an atom with a mass number of 40?",
+    "stemZh": "",
+    "options": [
+      "Number of protons: 18; Number of neutrons: 22; Number of electrons: 18",
+      "Number of protons: 19; Number of neutrons: 21; Number of electrons: 18",
+      "Number of protons: 20; Number of neutrons: 20; Number of electrons: 18",
+      "Number of protons: 20; Number of neutrons: 21; Number of electrons: 20"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 30,
+    "n": 4,
+    "code": "MW1Ac",
+    "stem": "The atom of an element X contains 35 neutrons. The electronic arrangement of the atom is 2, 8, 18, 2. Which of the following combinations about the atom is correct?",
+    "stemZh": "",
+    "options": [
+      "Atomic number: 30; Mass number: 35",
+      "Atomic number: 30; Mass number: 65",
+      "Atomic number: 35; Mass number: 30",
+      "Atomic number: 35; Mass number: 65"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 31,
+    "n": 1,
+    "code": "MW1Ba",
+    "stem": "Different isotopes of an element have",
+    "stemZh": "",
+    "options": [
+      "similar chemical properties.",
+      "the same mass number.",
+      "the same physical properties.",
+      "the same number of electrons."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 31,
+    "n": 2,
+    "code": "MW1Ba",
+    "stem": "The species 232U and 232U",
+    "stemZh": "",
+    "options": [
+      "have different chemical properties.",
+      "have the same physical properties.",
+      "have different number of protons.",
+      "have different number of neutrons."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 31,
+    "n": 3,
+    "code": "MW1Ba",
+    "stem": "Which of the following is most likely to represent an isotope of ⁵²₂₄X?",
+    "stemZh": "",
+    "options": [
+      "⁵²₂₃X",
+      "⁵²₂₄X",
+      "⁵³₂₄X",
+      "⁷²₂₅X"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 31,
+    "n": 4,
+    "code": "MW1Ba",
+    "stem": "The following table shows the relative abundance of the isotopes of strontium (Sr):\nThe relative atomic mass of strontium is",
+    "stemZh": "",
+    "options": [
+      "87.2.",
+      "87.6.",
+      "87.2 g.",
+      "87.6 g."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 31,
+    "n": 5,
+    "code": "MW1Ba",
+    "stem": "Which of the following statements about 147Ag and 14%Ag are correct?\n(1) They are isotopes.\n(2) They have the same chemical properties.\n(3) They have the same number of electrons.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 31,
+    "n": 6,
+    "code": "MW1Ba",
+    "stem": "Oxygen has three isotopes. Their mass numbers are 16, 17 and 18 respectively. Which of the following\nstatements about the three isotopes is / are correct?\n(1) The isotope O-16 contains 16 electrons.\n(2) The isotope O-17 contains 9 neutrons\n(3) The isotope O-18 contains 10 protons.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 32,
+    "n": 1,
+    "code": "MW1Bb",
+    "stem": "Which of the following statements about 19X and igY is / are correct?\n(1) They are the same element.\n(2) They have the same physical properties.\n(3) They have the same chemical properties.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 32,
+    "n": 2,
+    "code": "MW1Bb",
+    "stem": "The atomic number and mass number of an atom of element X are 17 and 35 respectively. Which of the\nfollowing statements about X is / are correct?\n(1) An atom of X contains 17 neutrons.\n(2) X is a gas at room temperature and pressure.\n(3) X is used as a sterilizing agent.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 32,
+    "n": 3,
+    "code": "MW1Bb",
+    "stem": "Element X occurs in nature as two isotopes, ⁶X and ⁷X. If the relative atomic mass of X is 6.93, what is the relative abundance of the ⁷X isotope?",
+    "stemZh": "",
+    "options": [
+      "25%",
+      "69%",
+      "75%",
+      "93%"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 32,
+    "n": 4,
+    "code": "MW1Bb",
+    "stem": "Consider the following atoms:\nWhich of the following pairs are isotopes?",
+    "stemZh": "",
+    "options": [
+      "W and X",
+      "W and Z",
+      "X and Y",
+      "Y and Z"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 32,
+    "n": 5,
+    "code": "MW1Bb",
+    "stem": "Different isotopes of an element have the same\n(1) atomic number.\n(2) electronic arrangement.\n(3) chemical properties",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 33,
+    "n": 1,
+    "code": "MW1Bc",
+    "stem": "Consider the information of three atoms given in the table below:\nWhich of the following statements about the atoms is / are correct?\n(1) X and Y have the same atomic number.\n(2) Y and Z are atoms of the same element.\n(3) X and Z have the same mass.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 33,
+    "n": 2,
+    "code": "MW1Bc",
+    "stem": "Why are the relative atomic masses of elements seldom whole numbers?\nThe reason is that different atoms of the same element have",
+    "stemZh": "",
+    "options": [
+      "the same mass number.",
+      "different masses.",
+      "different numbers of electrons.",
+      "the same atomic number."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 33,
+    "n": 3,
+    "code": "MW1Bc",
+    "stem": "The atomic mass of element X is 114.8. X has two isotopes, ¹¹³X and ᵃX, and the relative abundance of ¹¹³X is 10.0%. What is the value of a?",
+    "stemZh": "",
+    "options": [
+      "112",
+      "114",
+      "115",
+      "116"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 33,
+    "n": 4,
+    "code": "MW1Bc",
+    "stem": "Consider the information of four atoms given in the table below.\nWhich of the following statements about the atoms is / are correct?\n(1) W and X have the same mass.\n(2) W and Y are isotopes.\n(3) Y and Z have the same atomic number.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 33,
+    "n": 5,
+    "code": "MW1Bc",
+    "stem": "Element X has two isotopes: 39X and 4'X. Which of the following statements is / are correct?\n(1) The isotopes have the same physical properties.\n(2) The isotopes have the same electronic arrangement.\n(3) The relative atomic mass of X is between 39 and 41.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 33,
+    "n": 6,
+    "code": "MW1Bc",
+    "stem": "Consider the following atoms:\nWhich of the following statements about the atoms is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "W and X belong to the same period.",
+      "W and Y have two occupied electron shells.",
+      "X and Y have the same chemical properties.",
+      "Y and Z are isotopes."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 34,
+    "n": 1,
+    "code": "MW2Aa",
+    "stem": "Which of the following elements is a metalloid?",
+    "stemZh": "",
+    "options": [
+      "Boron",
+      "Beryllium",
+      "Chlorine",
+      "Argon"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 34,
+    "n": 2,
+    "code": "MW2Aa",
+    "stem": "Which of the following substances is NOT an element?",
+    "stemZh": "",
+    "options": [
+      "Diamond",
+      "Glucose",
+      "Oxygen",
+      "Sodium"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 34,
+    "n": 3,
+    "code": "MW2Aa",
+    "stem": "Which of the following are metals?\n(1) Ag\n(2) K\n(3) Na",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 34,
+    "n": 4,
+    "code": "MW2Aa",
+    "stem": "Which of the following elements is a transition metal?",
+    "stemZh": "",
+    "options": [
+      "Aluminium",
+      "Calcium",
+      "Copper",
+      "Phosphorus"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 34,
+    "n": 5,
+    "code": "MW2Aa",
+    "stem": "Which of the following are liquid elements?\n(1) Mercury\n(2) Water\n(3) Bromine",
+    "stemZh": "",
+    "options": [
+      "(L) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 35,
+    "n": 1,
+    "code": "MW2Ab",
+    "stem": "Which of the following substances is NOT an element?",
+    "stemZh": "",
+    "options": [
+      "Diamond",
+      "Glucose",
+      "Oxygen",
+      "Sodium"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 35,
+    "n": 2,
+    "code": "MW2Ab",
+    "stem": "Which of the following statements about copper is correct?",
+    "stemZh": "",
+    "options": [
+      "It is a poor conductor of heat.",
+      "It has a shiny appearance.",
+      "It is brittle.",
+      "It has a low boiling point."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 35,
+    "n": 3,
+    "code": "MW2Ab",
+    "stem": "An element with the chemical symbol Fe",
+    "stemZh": "",
+    "options": [
+      "is a non-metal.",
+      "is a solid at room temperature and pressure.",
+      "has a low melting point.",
+      "is a metalloid."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 35,
+    "n": 4,
+    "code": "MW2Ab",
+    "stem": "Which of the following statements about elements are correct?\n(1) Elements can be classified as metals, non-metals and metalloids.\n(2) An element is a substance which cannot be broken down into anything simpler by chemical\nmethods.\n(3) Ammonia is an element.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 35,
+    "n": 5,
+    "code": "MW2Ab",
+    "stem": "The symbol of an element is Al. Which of the following statements about the element are correct?\n(1) It is a good conductor of electricity.\n(2) It can be hammered into shape.\n(3) It has a shiny appearance.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 35,
+    "n": 6,
+    "code": "MW2Ab",
+    "stem": "Which of the following pairs of atomic numbers corresponds to a pair of metals?",
+    "stemZh": "",
+    "options": [
+      "4, 10",
+      "12, 15",
+      "5, 19",
+      "3, 20"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 35,
+    "n": 7,
+    "code": "MW2Ab",
+    "stem": "20. Element W X Y Melting point (°C) 760 -58 -189 45 Boiling point (°C) 1 210 37 -186 96 Which element is a gas at room temperature and pressure? A W B C D Y Z\nWhich element is a gas at room temperature and pressure?",
+    "stemZh": "",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 35,
+    "n": 8,
+    "code": "MW2Ab",
+    "stem": "Which of the following statements about bromine and mercury are correct?\n(1) Both are liquids at room temperature and pressure.\n(2) They are good conductors of heat.\n(3) Mercury is a metal while bromine is a non-metal.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 35,
+    "n": 9,
+    "code": "MW2Ab",
+    "stem": "Element X is a Period 4 metalloid. It forms a fluoride with the chemical formula of XF4. Which of the\nfollowing statements about X are correct?\n(1) X belongs to Group IV of the periodic table.\n(2) The chemical formula of its oxide is XO2.\n(3) Its fluoride has a simple molecular structure.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 36,
+    "n": 1,
+    "code": "MW2Ac",
+    "stem": "Which of the following statements about metals and non-metals at room temperature and pressure is\ncorrect?",
+    "stemZh": "",
+    "options": [
+      "All metals are solids.",
+      "All non-metals are non-conductors of electricity.",
+      "Non-metals are either gases or solids.",
+      "All metals are conductors of electricity."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 36,
+    "n": 2,
+    "code": "MW2Ac",
+    "stem": "Which of the following statements about silicon is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "Its properties are in between metals and non-metals.",
+      "It is brittle.",
+      "Its crystalline form can conduct electricity.",
+      "Its melting point is quite low."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 36,
+    "n": 3,
+    "code": "MW2Ac",
+    "stem": "Which of the following statements about metals are correct?\n(1) Metals are usually shiny.\n(2) Metals are good conductors of electricity.\n(3) All metals have high melting points.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 36,
+    "n": 4,
+    "code": "MW2Ac",
+    "stem": "Which of the following substances are good conductors of electricity?\n(1) Solid aluminium\n(2) Graphite\n(3) Molten sodium",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 36,
+    "n": 5,
+    "code": "MW2Ac",
+    "stem": "Which of the following statements about oxygen are correct?\n(1) It is a colourless gas.\n(2) It is a non-metal.\n(3) The following hazard warning symbol should be displayed on a metal cylinder containing it.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 36,
+    "n": 6,
+    "code": "MW2Ac",
+    "stem": "The table shows the melting points and boiling points of four substances at 1 atm pressure.\nWhich substance exists as a liquid at −50 °C and 1 atm pressure?",
+    "stemZh": "",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 36,
+    "n": 7,
+    "code": "MW2Ac",
+    "stem": "Consider the following properties of four elements, W, X, Y and Z.\nWhich of the following elements could be sulphur?",
+    "stemZh": "",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 36,
+    "n": 8,
+    "code": "MW2Ac",
+    "stem": "Some physical properties of three elements, X, Y and Z, are given below:\nTo which groups do the elements belong?",
+    "stemZh": "",
+    "options": [
+      "X: I; Y: II; Z: 0",
+      "X: II; Y: 0; Z: VII",
+      "X: VII; Y: I; Z: 0",
+      "X: 0; Y: II; Z: I"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 37,
+    "n": 1,
+    "code": "MW2Ba",
+    "stem": "The atomic number of element X is 26. To which period does X belong?",
+    "stemZh": "",
+    "options": [
+      "Period 1",
+      "Period 2",
+      "Period 3",
+      "Period 4"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 37,
+    "n": 2,
+    "code": "MW2Ba",
+    "stem": "Elements in the same group of the periodic table have",
+    "stemZh": "",
+    "options": [
+      "similar chemical properties.",
+      "the same physical properties.",
+      "the same number of occupied electron shells in their atoms.",
+      "the same number of electrons in their atoms."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 37,
+    "n": 3,
+    "code": "MW2Ba",
+    "stem": "The elements in the periodic table are arranged according to",
+    "stemZh": "",
+    "options": [
+      "atomic numbers.",
+      "atomic masses.",
+      "neutron number.",
+      "mass numbers."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 37,
+    "n": 4,
+    "code": "MW2Ba",
+    "stem": "Which of the following combinations is INCORRECT?\nElement\nSpecial name\niron\ntransition metal",
+    "stemZh": "",
+    "options": [
+      "Element: iron; Special name: transition metal",
+      "Element: argon; Special name: noble gas",
+      "Element: fluorine; Special name: halogen",
+      "Element: aluminium; Special name: alkali metal"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 37,
+    "n": 5,
+    "code": "MW2Ba",
+    "stem": "Elements in the same group of the periodic table",
+    "stemZh": "",
+    "options": [
+      "have the same electronic arrangement in their atoms.",
+      "have similar chemical properties.",
+      "have the same physical properties.",
+      "have the same number of occupied electron shells in their atoms."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 37,
+    "n": 6,
+    "code": "MW2Ba",
+    "stem": "The chemical properties of an element depend on",
+    "stemZh": "",
+    "options": [
+      "the number of isotopes.",
+      "its relative atomic mass.",
+      "the number of occupied electron shells in its atom.",
+      "the number of outermost shell electrons in its atom."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 37,
+    "n": 7,
+    "code": "MW2Ba",
+    "stem": "Which of the following pairs of atomic numbers corresponds to elements with similar chemical\nproperties?",
+    "stemZh": "",
+    "options": [
+      "10, 16",
+      "12, 22",
+      "17, 25",
+      "20, 38"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 37,
+    "n": 8,
+    "code": "MW2Ba",
+    "stem": "A part of the periodic table is shown below.\nWhich of the following statements are correct?\n(1) a is an alkali metal.\n(2) b can be found in the air.\n(3) c is a metalloid.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "mw2ba-8"
+  },
+  {
+    "ch": 38,
+    "n": 1,
+    "code": "MW2Bb",
+    "stem": "The atomic number of element X is 18. Element Y is the next element in the periodic table.\nWhich of the following statements about X and Y is / are correct?\n(1) An atom of Y has one more outermost shell electron than an atom of X.\n(2) An atom of Y has one more occupied electron shell than an atom of X.\n(3) X and Y are in the same period of the periodic table.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 38,
+    "n": 2,
+    "code": "MW2Bb",
+    "stem": "Which of the following statements about the periodic table is / are correct?\n(1) Chromium is an example of transition metals.\n(2) Across a period, from left to right, the melting point of elements increases.\n(3) The lower the element located in each group, the more reactive the element is.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 38,
+    "n": 3,
+    "code": "MW2Bb",
+    "stem": "An atom of element X has electronic arrangement 2,8,6. Which statement is correct?",
+    "stemZh": "",
+    "options": [
+      "X is in Group VI and Period 3.",
+      "X is in Group VI and Period 2.",
+      "X is in Group III and Period 3.",
+      "X is in Group 0 and Period 3."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 39,
+    "n": 1,
+    "code": "MW2Bc",
+    "stem": "In the periodic table, the most reactive metals are in",
+    "stemZh": "",
+    "options": [
+      "the upper left corner.",
+      "the upper right corner.",
+      "the lower left corner.",
+      "the lower right corner."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 39,
+    "n": 2,
+    "code": "MW2Bc",
+    "stem": "The atomic number of an element X is 15. Which of the following statements about X is\nINCORRECT?",
+    "stemZh": "",
+    "options": [
+      "X is a non-metal.",
+      "X belongs to Period 3 of the periodic table.",
+      "X is a gas at room temperature and pressure.",
+      "X belongs to Group V of the periodic table."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 39,
+    "n": 3,
+    "code": "MW2Bc",
+    "stem": "Consider the elements in the second period of the periodic table, from lithium to fluorine. Which of the\nfollowing statements is correct?",
+    "stemZh": "",
+    "options": [
+      "They show a gradual increase in atomic size.",
+      "They show a gradual decrease in melting point.",
+      "They show a gradual increase in the number of occupied electron shells in their atoms.",
+      "They show a gradual change from having metallic property to having non-metallic property."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 39,
+    "n": 4,
+    "code": "MW2Bc",
+    "stem": "A part of the periodic table is shown below.\nWhich of the following atoms has the SMALLEST number of electrons?\n(1) The outermost electron shell of an atom of a has an octet structure.\n(2) Atoms of b and e have the same number of outermost shell electrons.\n(3) c and d are metalloids.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "mw2bc-4"
+  },
+  {
+    "ch": 39,
+    "n": 5,
+    "code": "MW2Bc",
+    "stem": "Consider the following properties of three elements, X, Y and Z.\nWhich of the following statements are correct?\n(1) Element X is a metal.\n(2) Element Y is a non-metal.\n(3) Element Z is a gas at room temperature and pressure.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 40,
+    "n": 1,
+    "code": "MW2Ca",
+    "stem": "Group I metals are stored under paraffin oil because they",
+    "stemZh": "",
+    "options": [
+      "are radioactive.",
+      "react readily with air and water.",
+      "are too hard to cut.",
+      "dissolve in oil."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 40,
+    "n": 2,
+    "code": "MW2Ca",
+    "stem": "When a small piece of sodium is added to water,",
+    "stemZh": "",
+    "options": [
+      "hydrogen is given off and an alkaline solution is formed.",
+      "oxygen is given off and an acidic solution is formed.",
+      "no gas is given off.",
+      "a white precipitate forms and no gas is given off."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 40,
+    "n": 3,
+    "code": "MW2Ca",
+    "stem": "Atoms of Group II elements have",
+    "stemZh": "",
+    "options": [
+      "1 outermost shell electron.",
+      "2 outermost shell electrons.",
+      "7 outermost shell electrons.",
+      "8 outermost shell electrons."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 41,
+    "n": 1,
+    "code": "MW2Cb",
+    "stem": "Which of the following statements about alkali metals is correct?",
+    "stemZh": "",
+    "options": [
+      "They react with water to give an alkaline solution.",
+      "They are hard.",
+      "They have high melting points.",
+      "They exist as free elements in nature."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 41,
+    "n": 2,
+    "code": "MW2Cb",
+    "stem": "Calcium and magnesium have similar chemical properties because",
+    "stemZh": "",
+    "options": [
+      "they are metals.",
+      "they have the same number of outermost shell electrons in their atoms.",
+      "they have the same number of occupied electron shells in their atoms.",
+      "their atoms have the same electronic arrangement."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 41,
+    "n": 3,
+    "code": "MW2Cb",
+    "stem": "Barium is an alkaline earth metal below calcium in the periodic table. Which of the following\nstatements about barium are correct?\n(1) Its atom has 2 outermost shell electrons.\n(2) It is less reactive than calcium.\n(3) It reacts with non-metals to form salts.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 41,
+    "n": 4,
+    "code": "MW2Cb",
+    "stem": "Which of the following pairs of elements in Groups I and VII of the periodic table would react with\neach other most vigorously?\nGroup I\nGroup VII\nsodium\nchlorine",
+    "stemZh": "",
+    "options": [
+      "Group I | Group VII",
+      "sodium | chlorine",
+      "sodium | fluorine",
+      "potassium | fluorine"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 42,
+    "n": 1,
+    "code": "MW2Cc",
+    "stem": "Which of the following statements about potassium and calcium is correct?",
+    "stemZh": "",
+    "options": [
+      "The reactivity of calcium is higher than that of potassium.",
+      "The melting point of calcium is higher than that of potassium.",
+      "They are less dense than water.",
+      "They are stored in paraffin oil."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 42,
+    "n": 2,
+    "code": "MW2Cc",
+    "stem": "Metallic elements X and Y are in the same group of the periodic table. Element X has a greater atomic\nnumber. Which of the following statements is / are correct?\n(1) The atomic size of X is larger than that of Y.\n(2) X is less reactive than Y.\n(3) The relative atomic mass of X is smaller than that of Y.",
+    "stemZh": "",
+    "options": [
+      "(I) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 42,
+    "n": 3,
+    "code": "MW2Cc",
+    "stem": "Caesium is a Group I element. Which of the following statements about caesium are correct?\n(1) It reacts explosively with water.\n(2) It gives a characteristic flame colour in flame test.\n(3) It is a soft metal.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 42,
+    "n": 4,
+    "code": "MW2Cc",
+    "stem": "Strontium is below calcium in Group Il of the periodic table. Which of the following statements about\nstrontium is / are correct?\n(2) combine wil to prom a one compound.\n(3) It forms an ion carrying two negative charges.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 43,
+    "n": 1,
+    "code": "MW2Da",
+    "stem": "Which halogen is a reddish-brown liquid at room temperature and pressure?",
+    "stemZh": "",
+    "options": [
+      "Fluorine",
+      "Chlorine",
+      "Bromine",
+      "Iodine"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 43,
+    "n": 2,
+    "code": "MW2Da",
+    "stem": "Noble gases are unreactive because their atoms",
+    "stemZh": "",
+    "options": [
+      "have a stable electronic arrangement in the outermost shell.",
+      "have no electrons.",
+      "are metals.",
+      "have a half-filled outermost shell."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 43,
+    "n": 3,
+    "code": "MW2Da",
+    "stem": "Which statement about the reaction of Group VII elements with hydrogen is correct?",
+    "stemZh": "",
+    "options": [
+      "Fluorine reacts explosively even in the dark.",
+      "Iodine reacts explosively even in the dark.",
+      "Chlorine has almost no reaction with hydrogen even on strong heating.",
+      "Bromine is unreactive towards hydrogen under all conditions."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 44,
+    "n": 1,
+    "code": "MW2Db",
+    "stem": "The atomic number of element X is 35. Which of the following elements has chemical properties\nsimilar to those of element X?",
+    "stemZh": "",
+    "options": [
+      "Oxygen",
+      "Calcium",
+      "Fluorine",
+      "Nitrogen"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 44,
+    "n": 2,
+    "code": "MW2Db",
+    "stem": "Which of the following statements about halogens is correct?",
+    "stemZh": "",
+    "options": [
+      "All of them have the same colour.",
+      "They have the same number of occupied electron shells in their atoms.",
+      "Their reactivity decreases down the group.",
+      "Bromine is the only liquid element at room temperature and pressure."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 44,
+    "n": 3,
+    "code": "MW2Db",
+    "stem": "A and B are halogens. If the atomic number of A is x, then the atomic number of B could be",
+    "stemZh": "",
+    "options": [
+      "x + 9",
+      "x − 10",
+      "x + 18",
+      "x + 20"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 44,
+    "n": 4,
+    "code": "MW2Db",
+    "stem": "Which of the following statements about Group 0 is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "They are unreactive.",
+      "They are found in the air.",
+      "All of their atoms have an octet structure in the outermost shells.",
+      "They are colourless gases at room temperature and pressure."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 44,
+    "n": 5,
+    "code": "MW2Db",
+    "stem": "Which of the following statements about iodine are correct?\n(1) It is a black solid at room conditions.\n(2) It is in Period 4 of the periodic table.\n(3) It can react with metals to form salts.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 44,
+    "n": 6,
+    "code": "MW2Db",
+    "stem": "Which of the following statements about Group 0 elements are correct?\n(1) They are all colourless gases at room temperature and pressure.\n(2) They have 8 outermost shell electrons in their atoms.\n(3) Their atomic sizes increase down the group.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 44,
+    "n": 7,
+    "code": "MW2Db",
+    "stem": "The atomic number of the element astatine (At) is 85. Which of the following statements about astatine\nis / are correct?\n(1) It is a gas at room temperature and pressure.\n(2) It is soluble in non-aqueous solvents.\n(3) It has a giant covalent structure.",
+    "stemZh": "",
+    "options": [
+      "(I) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 45,
+    "n": 1,
+    "code": "MW2Dc",
+    "stem": "The element astatine is below iodine in Group VII of the periodic table. Which of the following\nstatements about astatine is / are correct?\n(1) It is a coloured solid at room conditions.\n(2) It is more reactive than chlorine.\n(3) It is a Period 5 element.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 45,
+    "n": 2,
+    "code": "MW2Dc",
+    "stem": "The element krypton (Kr) is below argon in Group 0 of the periodic table. Which of the following\nstatements about krypton are correct?\n(1) Its atom has an octet structure in the outermost shell.\n(2) It is in Period 4 of the periodic table.\n(3) Its density is higher than that of argon.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 45,
+    "n": 3,
+    "code": "MW2Dc",
+    "stem": "Astatine is below iodine in Group VII. Which statement is most likely to be correct?",
+    "stemZh": "",
+    "options": [
+      "Astatine is a colourless gas at room temperature.",
+      "Astatine is more reactive than iodine.",
+      "Astatine is less reactive than iodine and is darker in colour.",
+      "Astatine is a noble gas."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 46,
+    "n": 1,
+    "code": "MW3Aa",
+    "stem": "Metallic bonding is the electrostatic attraction between",
+    "stemZh": "",
+    "options": [
+      "metal cations and a sea of delocalized electrons.",
+      "metal atoms and non-metal atoms.",
+      "oppositely charged ions only.",
+      "shared pairs of electrons between two atoms."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 46,
+    "n": 2,
+    "code": "MW3Aa",
+    "stem": "Metals can conduct electricity in the solid state because they contain",
+    "stemZh": "",
+    "options": [
+      "mobile ions.",
+      "delocalized electrons.",
+      "water of crystallization.",
+      "covalent bonds between atoms."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 46,
+    "n": 3,
+    "code": "MW3Aa",
+    "stem": "Metals are malleable because",
+    "stemZh": "",
+    "options": [
+      "layers of metal ions can slide over one another.",
+      "metallic bonds are very weak.",
+      "metals have low melting points.",
+      "metals exist as simple molecules."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 47,
+    "n": 1,
+    "code": "MW3Ab",
+    "stem": "Metals have high melting points because",
+    "stemZh": "",
+    "options": [
+      "metal ions are held by weak van der Waals’ forces.",
+      "metal ions and delocalized electrons are held by strong metallic bonds.",
+      "metals have a simple molecular structure.",
+      "metals contain water of crystallization."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 47,
+    "n": 2,
+    "code": "MW3Ab",
+    "stem": "When a force is applied, layers of metal ions can slide, but the piece of metal does not fall apart. This is because",
+    "stemZh": "",
+    "options": [
+      "the metallic bonds are non-directional and still hold the metal ions together.",
+      "ionic bonds form between the layers.",
+      "van der Waals’ forces between molecules are strong.",
+      "each metal atom shares a pair of electrons with one neighbouring atom only."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 47,
+    "n": 3,
+    "code": "MW3Ab",
+    "stem": "Which statement about metallic bonding is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "It is non-directional.",
+      "It is formed by sharing a pair of electrons between two non-metal atoms.",
+      "It helps to explain why metals conduct heat.",
+      "The strength of the metallic bond affects the melting point."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 48,
+    "n": 1,
+    "code": "MW3Ac",
+    "stem": "Which of the following statements about metallic bonding is / are correct?\n(1) This type of bonding involves metal atoms sharing their outermost shell electrons.\n(2) This type of bonding involves metallic ions attracted by mobile electrons.\n(3) This type of bonding exists in tungsten.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 48,
+    "n": 2,
+    "code": "MW3Ac",
+    "stem": "Calcium has a higher melting point than potassium because\n(1) potassium ion is smaller than calcium ion.\n(2) calcium has a stronger metallic bond.\n(3) the relative atomic mass of calcium is higher than that of potassium.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 48,
+    "n": 3,
+    "code": "MW3Ac",
+    "stem": "Why is there no chemical change when a metal conducts electricity?",
+    "stemZh": "",
+    "options": [
+      "The number of electrons in the metal remains unchanged: electrons leave at one end and an equal number enter at the other end.",
+      "Metal ions move through the lattice and are replaced by new atoms.",
+      "The metal melts and then solidifies again.",
+      "Covalent bonds between metal atoms are broken and reformed."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 49,
+    "n": 1,
+    "code": "MW3Ba",
+    "stem": "Which of the following ions contains the same number of electrons as an argon atom?",
+    "stemZh": "",
+    "options": [
+      "K⁺",
+      "Mg²⁺",
+      "O²⁻",
+      "N³⁻"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 49,
+    "n": 2,
+    "code": "MW3Ba",
+    "stem": "Rubidium is an alkali metal. When a rubidium atom changes to a rubidium ion, the rubidium atom",
+    "stemZh": "",
+    "options": [
+      "loses one proton.",
+      "gains one proton.",
+      "loses one electron.",
+      "gains one electron."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 49,
+    "n": 3,
+    "code": "MW3Ba",
+    "stem": "The ions Ca * and K* have same electronic arrangement as that of an atom of",
+    "stemZh": "",
+    "options": [
+      "neon.",
+      "argon.",
+      "krypton.",
+      "xenon."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 49,
+    "n": 4,
+    "code": "MW3Ba",
+    "stem": "In which of the following species has / have an octet in the outermost shells)?\n(1) He\n(2) N3-\n(3) K*",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 49,
+    "n": 5,
+    "code": "MW3Ba",
+    "stem": "Consider the following atoms:\nWhich atom is likely to lose electron(s) during reactions?",
+    "stemZh": "",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 50,
+    "n": 1,
+    "code": "MW3Bb",
+    "stem": "Species X contains the following subatomic particles:\nNumber of protons = 38\nNumber of electrons = 36\nNumber of neutrons = 52\nWhich of the following statements about species X is correct?",
+    "stemZh": "",
+    "options": [
+      "It is a cation.",
+      "It is an anion.",
+      "It is a neutral atom.",
+      "Its mass number is 88."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 50,
+    "n": 2,
+    "code": "MW3Bb",
+    "stem": "The atomic number and mass number of an element X is 7 and 14 respectively. How many electrons does the anion X³⁻ have?",
+    "stemZh": "",
+    "options": [
+      "4",
+      "10",
+      "11",
+      "17"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 50,
+    "n": 3,
+    "code": "MW3Bb",
+    "stem": "Arsenic (⁷⁵₃₃As) forms an As³⁺ ion. Which of the following correctly describes the number of subatomic particles in the ion?",
+    "stemZh": "",
+    "options": [
+      "Number of electrons: 30; Number of neutrons: 33",
+      "Number of electrons: 30; Number of neutrons: 42",
+      "Number of electrons: 60; Number of neutrons: 33",
+      "Number of electrons: 60; Number of neutrons: 42"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 50,
+    "n": 4,
+    "code": "MW3Bb",
+    "stem": "Atom X forms an anion X . Atom X and anion X- have the same",
+    "stemZh": "",
+    "options": [
+      "number of protons.",
+      "number of electrons.",
+      "chemical properties.",
+      "electronic arrangement."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 50,
+    "n": 5,
+    "code": "MW3Bb",
+    "stem": "Which of the following statements about the phosphide ion 15p3- and sulphide ion 1252- are\ncorrect?\n(1) They have the same number of neutrons.\n(2) They have the same number of protons.\n(3) They have the same number of electrons.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 50,
+    "n": 6,
+    "code": "MW3Bb",
+    "stem": "Which of the following pairs of species have the same number of outermost shell electrons?\n(1) Chlorine atom and sulphide ion\n(2) Calcium atom and magnesium atom\n(3) Nitride ion and argon atom",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 50,
+    "n": 7,
+    "code": "MW3Bb",
+    "stem": "Which of the following statements about sulphur atom and sulphide ion (S?) is / are correct?\n(1) They have the same number of protons.\n(2) They have the same number of electrons.\n(3) They have the same number of occupied electron shells.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 50,
+    "n": 8,
+    "code": "MW3Bb",
+    "stem": "X is an element. It can form a stable ion X* with an electronic arrangement of 2,8,8. Which of the\nfollowing statements is / are correct?\n(1) X is a Period 4 element.\n(2) X is an alkali metal.\n(3) The ion X2* contains 18 protons.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 50,
+    "n": 9,
+    "code": "MW3Bb",
+    "stem": "When lithium combines with nitrogen to form lithium nitride,",
+    "stemZh": "",
+    "options": [
+      "each lithium atom loses two electrons while each nitrogen atom gains one electron.",
+      "each lithium atom loses one electron while each nitrogen atom gains three",
+      "each lithium atom gains two electrons while each nitrogen atom loses one electron.",
+      "each lithium atom gains one electron while each nitrogen atom loses three electron. electrons."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 51,
+    "n": 1,
+    "code": "MW3Bc",
+    "stem": "In which species are the numbers of electrons and neutrons equal?",
+    "stemZh": "",
+    "options": [
+      "⁹₄Be",
+      "¹⁹₉F",
+      "²³₁₁Na⁺",
+      "¹⁸₈O²⁻"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 51,
+    "n": 2,
+    "code": "MW3Bc",
+    "stem": "Atom X forms an anion X²⁻ with 36 electrons and 45 neutrons. What is the mass number of atom X?",
+    "stemZh": "",
+    "options": [
+      "45",
+      "77",
+      "79",
+      "81"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 51,
+    "n": 3,
+    "code": "MW3Bc",
+    "stem": "Consider the following species\nWhich of the following statements is correct?",
+    "stemZh": "",
+    "options": [
+      "X is an anion of Y.",
+      "Y is a cation of X.",
+      "X and Y are isotopes.",
+      "X and Y are atoms of different elements."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 51,
+    "n": 4,
+    "code": "MW3Bc",
+    "stem": "X, Y and Z are three consecutive elements in the periodic table. X forms a stable anion X, while Z\nforms a stable cation Z*. Which of the following statements about X, Y and Z is correct?",
+    "stemZh": "",
+    "options": [
+      "X, Y and Z are elements in the same period of the periodic table.",
+      "Anion X- and atom of Y have the same electronic arrangement.",
+      "Atom of Y and cation Z* have the same number of protons.",
+      "X and Z are both electrical conductors at room temperature and pressure."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 51,
+    "n": 5,
+    "code": "MW3Bc",
+    "stem": "Consider the following species.\nWhich of the following statements about the species is correct?",
+    "stemZh": "",
+    "options": [
+      "W and Y have the same mass.",
+      "X and Y have the same charge.",
+      "W and Z have the same electronic arrangement.",
+      "X is a cation of Y."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 51,
+    "n": 6,
+    "code": "MW3Bc",
+    "stem": "Electricity is passed through molten lead(II) bromide as shown below. A reddish brown gas is formed at the positive electrode while a white shiny solid is formed at the negative electrode.\nWhich of the following can be deduced from the experimental results?",
+    "stemZh": "",
+    "options": [
+      "Solid lead(II) bromide can conduct electricity.",
+      "Molten lead(II) bromide contains mobile electrons.",
+      "Molten lead(II) bromide can be decomposed by electricity.",
+      "Lead(II) bromide has covalent bonds."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "mw3bc-6"
+  },
+  {
+    "ch": 51,
+    "n": 7,
+    "code": "MW3Bc",
+    "stem": "Four elements W, X, Y, Z have atomic numbers .x-1, x, x+1 and x+2 respectively. It is known that x = 9.\nWhich of the following pairs of elements will form an ionic compound upon combination?",
+    "stemZh": "",
+    "options": [
+      "W and X",
+      "X and Y",
+      "X and Z",
+      "Y and Z"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 51,
+    "n": 8,
+    "code": "MW3Bc",
+    "stem": "Which of the following ions has the same number of protons as an ammonium ion, NH₄⁺?",
+    "stemZh": "",
+    "options": [
+      "O²⁻",
+      "F⁻",
+      "Na⁺",
+      "Mg²⁺"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 52,
+    "n": 1,
+    "code": "MW3Ca",
+    "stem": "Which of the following is NOT an ionic compound?",
+    "stemZh": "",
+    "options": [
+      "KMnO₄",
+      "NaH",
+      "Li₂O",
+      "BF₃"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 52,
+    "n": 2,
+    "code": "MW3Ca",
+    "stem": "Which of the following is an electron diagram of calcium iodide (showing electrons in the outermost shells)?",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "mw3ca-2"
+  },
+  {
+    "ch": 52,
+    "n": 3,
+    "code": "MW3Ca",
+    "stem": "Which of the following statements about sodium sulphide are correct?\n(1) Electrostatic forces of attraction hold the ions in the compound together.\n(2) The compound contains Nations.\n(3) The compound contains S ions.",
+    "stemZh": "",
+    "options": [
+      "(I) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 53,
+    "n": 1,
+    "code": "MW3Cb",
+    "stem": "The compound formed between two elements X and Y has the following electronic structure:\nHow many electrons are there in the outermost shell of an atom of X and that of Y?",
+    "stemZh": "",
+    "options": [
+      "X: 1; Y: 6",
+      "X: 1; Y: 8",
+      "X: 3; Y: 6",
+      "X: 3; Y: 8"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw3cb-1"
+  },
+  {
+    "ch": 53,
+    "n": 2,
+    "code": "MW3Cb",
+    "stem": "The following table lists the atomic numbers of four elements.\nWhich pair of elements would combine to form an ionic compound?",
+    "stemZh": "",
+    "options": [
+      "W and X",
+      "W and Y",
+      "X and Z",
+      "Y and Z"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 53,
+    "n": 3,
+    "code": "MW3Cb",
+    "stem": "The element with atomic number 9 will form ionic bonds readily with an element whose atomic\nnumber is",
+    "stemZh": "",
+    "options": [
+      "7.",
+      "12.",
+      "15.",
+      "17."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 53,
+    "n": 4,
+    "code": "MW3Cb",
+    "stem": "In which of the following compounds do both ions have the same electronic arrangement as an argon\natom?",
+    "stemZh": "",
+    "options": [
+      "Calcium sulphide",
+      "Magnesium iodide",
+      "Potassium fluoride",
+      "Sodium chloride"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 54,
+    "n": 1,
+    "code": "MW3Cc",
+    "stem": "The positions of five elements in the periodic table are shown by the letters V, W, X, Y and Z.\nWhich of the following statements about these elements is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "V reacts more vigorously with water than Y does.",
+      "V, Y and Z are all metals.",
+      "W exists as diatomic molecules.",
+      "X is used to fill electric light bulbs."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "mw3cc-1"
+  },
+  {
+    "ch": 54,
+    "n": 2,
+    "code": "MW3Cc",
+    "stem": "In the formation of aluminium oxide, each aluminium atom and each oxygen atom",
+    "stemZh": "",
+    "options": [
+      "Al loses 3 electrons; O gains 2 electrons.",
+      "Al loses 2 electrons; O gains 3 electrons.",
+      "share 3 electrons to form covalent bonds.",
+      "Al gains 3 electrons; O loses 2 electrons."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 54,
+    "n": 3,
+    "code": "MW3Cc",
+    "stem": "Which description of the electron diagram of magnesium chloride (outermost shells only) is correct?",
+    "stemZh": "",
+    "options": [
+      "Mg loses 2 electrons and each Cl gains 1 electron; the formula is MgCl₂.",
+      "Mg loses 1 electron and each Cl gains 2 electrons; the formula is MgCl.",
+      "Electrons are shared between Mg and Cl to give MgCl₂ molecules.",
+      "The compound contains Mg²⁺ and Cl₂⁻ ions."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 55,
+    "n": 1,
+    "code": "MW3Da",
+    "stem": "How many elements does potassium dichromate consist of?",
+    "stemZh": "",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 55,
+    "n": 2,
+    "code": "MW3Da",
+    "stem": "The atomic numbers of X and Y are 3 and 7 respectively. What is the chemical formula of the\ncompound formed between X and Y?",
+    "stemZh": "",
+    "options": [
+      "X₂Y",
+      "XY₂",
+      "XY₃",
+      "X₃Y"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 55,
+    "n": 3,
+    "code": "MW3Da",
+    "stem": "Consider the following compounds. Which of the underlined particles does NOT have an octet structure in the outermost shell?",
+    "stemZh": "",
+    "options": [
+      "Li₂O",
+      "CaF₂",
+      "Mg₃N₂",
+      "Na₂S"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 56,
+    "n": 1,
+    "code": "MW3Db",
+    "stem": "Elements X and Y react to form an ionic compound with a chemical formula of X2Y. If X belongs to\nGroup I of the periodic table, to which group would Y belong?",
+    "stemZh": "",
+    "options": [
+      "II",
+      "III",
+      "VI",
+      "VII"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 56,
+    "n": 2,
+    "code": "MW3Db",
+    "stem": "Consider the following information about three elements X, Y and Z.\nWhich of the following statements about X, Y and Z are correct?\n(1) X and Y react to form an ionic compound.\n(2) Y and Z belong to the same period of the periodic table.\n(3) Z forms an ion carrying two negative charges.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 56,
+    "n": 3,
+    "code": "MW3Db",
+    "stem": "The chemical formula of an ionic compound is XY3. The compound could be",
+    "stemZh": "",
+    "options": [
+      "calcium nitride.",
+      "copperII) sulphide.",
+      "iron(III) chloride.",
+      "sodium hydride."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 56,
+    "n": 4,
+    "code": "MW3Db",
+    "stem": "The chemical formula of the oxide of indium (In) is In₂O₃. What is the chemical formula of indium nitrate?",
+    "stemZh": "",
+    "options": [
+      "InNO₃",
+      "In₂(NO₃)₂",
+      "In(NO₃)₂",
+      "In(NO₃)₃"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 56,
+    "n": 5,
+    "code": "MW3Db",
+    "stem": "X is an element. It can form of an ion X2* which has an electronic arrangement of 2,8,8. Which of the\nfollowing statements about X is / are correct?\n(1) X is a Period 3 element.\n(2) The chloride of X is colourless.\n(3) The chemical formula of the oxide of X is X20.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 56,
+    "n": 6,
+    "code": "MW3Db",
+    "stem": "Element X (atomic number 12) combines with element Y (atomic number 7) to form compound Z.\nnich of the following statements is / are correct?\n(1) & forms a stable ion carrying two positive charges.\n(2) Y forms a stable ion carrying one negative charge.\n(3) The chemical formula of Z is X3Y2.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 56,
+    "n": 7,
+    "code": "MW3Db",
+    "stem": "Element X reacts with chlorine to form a compound with the chemical formula of XCl. The electronic\narrangement of an atom of X may be",
+    "stemZh": "",
+    "options": [
+      "2,5.",
+      "2,6.",
+      "2,8,8,1.",
+      "2,8,8,6."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 56,
+    "n": 8,
+    "code": "MW3Db",
+    "stem": "X is an element in the second period of the periodic table. The chemical formula of the compound\nformed between magnesium and X is Mg3X2. Which of the following electron diagrams best represents\nthe compound formed between X and hydrogen?\n(Only electrons in the outermost shells are shown.)",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw3db-8"
+  },
+  {
+    "ch": 56,
+    "n": 9,
+    "code": "MW3Db",
+    "stem": "Elements X and Y have 1 and 6 outermost shell electrons in their atoms respectively. Which of the following combinations about the compound they form is correct?",
+    "stemZh": "",
+    "options": [
+      "Chemical formula: XY₂; Type of bond: covalent",
+      "Chemical formula: X₂Y; Type of bond: covalent",
+      "Chemical formula: X₂Y; Type of bond: ionic",
+      "Chemical formula: XY₂; Type of bond: ionic"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 56,
+    "n": 10,
+    "code": "MW3Db",
+    "stem": "Caesium (Cs) is a Group I element. Which of the following statements about caesium oxide are correct?\n(1) It chemical formula is Cs2O.\n(2) It is a brittle solid.\n(3) It is soluble in water.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 57,
+    "n": 1,
+    "code": "MW3Dc",
+    "stem": "Scandium (Sc) is a metal. The chemical formula of scandium hydroxide is Sc(OH)3. Which of the\nfollowing is the chemical formula of scandium carbonate?",
+    "stemZh": "",
+    "options": [
+      "ScCO3",
+      "Sc(CO3)2",
+      "Sc2(CОз)з",
+      "Sc3(CO3)2"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 57,
+    "n": 2,
+    "code": "MW3Dc",
+    "stem": "An atom of element X has 12 protons while an atom of element Y has 7 electrons. What is the chemical\nformula of the compound formed between X and Y?",
+    "stemZh": "",
+    "options": [
+      "XY",
+      "X₂Y",
+      "X₂Y₃",
+      "X₃Y₂"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 57,
+    "n": 3,
+    "code": "MW3Dc",
+    "stem": "An ionic compound has a chemical formula of XY. All ions in the compound have the electronic arrangement as a neon atom. What are elements X and Y?",
+    "stemZh": "",
+    "options": [
+      "X: sodium; Y: chlorine",
+      "X: magnesium; Y: oxygen",
+      "X: calcium; Y: bromine",
+      "X: lithium; Y: fluorine"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 57,
+    "n": 4,
+    "code": "MW3Dc",
+    "stem": "W, X, Y and Z are four consecutive elements of the periodic table. X is a noble gas. Which of the\nfollowing chemical formulae is correct?",
+    "stemZh": "",
+    "options": [
+      "Y₂W",
+      "YW₂",
+      "ZW₂",
+      "Z₂W"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 58,
+    "n": 1,
+    "code": "MW3Ea",
+    "stem": "Which of the following combinations about the colours of ions in aqueous solution is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "lons: copper(II) ion; Colour: reddish brown",
+      "lons: cobalt(II) ion; Colour: pink",
+      "lons: dichromate ion; Colour: orange",
+      "lons: permanganate ion; Colour: purple"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 58,
+    "n": 2,
+    "code": "MW3Ea",
+    "stem": "41. coloured crystal moistened filter paper microscope slide 20 V d.c. power supply A colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be A chromium(I) sulphate. B iron(III) chloride. C potassium permanganate. D sodium sulphate.\nA colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be",
+    "stemZh": "",
+    "options": [
+      "chromium(III) sulphate.",
+      "iron(III) chloride.",
+      "potassium permanganate.",
+      "sodium sulphate."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "mw3ea-2"
+  },
+  {
+    "ch": 58,
+    "n": 3,
+    "code": "MW3Ea",
+    "stem": "The power supply in the following set-up is connected for about 30 minutes.\nWhich of the following statements about the set-up is / are correct?\n(1) A purple colour develops near electrode X.\n(2) A blue colour develops near electrode Y.\n(3) Sulphate ions move towards electrode Y.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "mw3ea-3"
+  },
+  {
+    "ch": 59,
+    "n": 1,
+    "code": "MW3Eb",
+    "stem": "The colour of an aqueous solution containing Cu²⁺ is",
+    "stemZh": "",
+    "options": [
+      "blue.",
+      "green.",
+      "purple.",
+      "colourless."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 59,
+    "n": 2,
+    "code": "MW3Eb",
+    "stem": "The colour of an aqueous solution containing Fe³⁺ is",
+    "stemZh": "",
+    "options": [
+      "pale green.",
+      "yellow.",
+      "purple.",
+      "blue."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 59,
+    "n": 3,
+    "code": "MW3Eb",
+    "stem": "In a migration of ions experiment, a blue colour moves towards the negative electrode. The ion responsible is",
+    "stemZh": "",
+    "options": [
+      "Cu²⁺.",
+      "SO₄²⁻.",
+      "Cl⁻.",
+      "OH⁻."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 60,
+    "n": 1,
+    "code": "MW3Ec",
+    "stem": "The table below shows the colour of the aqueous solutions of three ionic compounds.\nWhich of the following combinations about the colour of the ions is most likely to be correct?",
+    "stemZh": "",
+    "options": [
+      "W²⁺(aq): colourless; X²⁻(aq): colourless; Y²⁺(aq): colourless; Z²⁻(aq): colourless",
+      "W²⁺(aq): colourless; X²⁻(aq): yellow; Y²⁺(aq): purple; Z²⁻(aq): colourless",
+      "W²⁺(aq): yellow; X²⁻(aq): colourless; Y²⁺(aq): colourless; Z²⁻(aq): purple",
+      "W²⁺(aq): yellow; X²⁻(aq): yellow; Y²⁺(aq): purple; Z²⁻(aq): purple"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 60,
+    "n": 2,
+    "code": "MW3Ec",
+    "stem": "A purple aqueous solution of potassium permanganate is used in an ion-migration experiment. The purple colour moves towards the",
+    "stemZh": "",
+    "options": [
+      "positive electrode, because MnO₄⁻ is negatively charged.",
+      "negative electrode, because K⁺ is purple.",
+      "negative electrode, because MnO₄⁻ is positively charged.",
+      "neither electrode, because the compound is covalent."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 60,
+    "n": 3,
+    "code": "MW3Ec",
+    "stem": "Which combination about the colour of the aqueous ion is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "Cu²⁺ — blue",
+      "Cr₂O₇²⁻ — orange",
+      "MnO₄⁻ — purple",
+      "Na⁺ — yellow"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 61,
+    "n": 1,
+    "code": "MW4Aa",
+    "stem": "What is the number of electrons in a molecule of methane (CH4)?",
+    "stemZh": "",
+    "options": [
+      "6",
+      "8",
+      "•10",
+      "12"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 61,
+    "n": 2,
+    "code": "MW4Aa",
+    "stem": "An element X exists as molecules and it has an atomic number of 8. Which of the following is the electron diagram of a molecule of X?\n(Only electrons in the outermost shells are shown.)",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "mw4aa-2"
+  },
+  {
+    "ch": 61,
+    "n": 3,
+    "code": "MW4Aa",
+    "stem": "Nitrogen and fluorine form a compound by",
+    "stemZh": "",
+    "options": [
+      "gaining electrons.",
+      "losing electrons.",
+      "sharing electrons.",
+      "both sharing and transferring electrons."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 61,
+    "n": 4,
+    "code": "MW4Aa",
+    "stem": "Which of the following pairs of elements will form a covalent compound?",
+    "stemZh": "",
+    "options": [
+      "Carbon and oxygen",
+      "Mercury and fluorine",
+      "Sodium and hydrogen",
+      "Potassium and sulphur"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 61,
+    "n": 5,
+    "code": "MW4Aa",
+    "stem": "The atomic number of elements X and Y are 7 and 17 respectively. Which of the following electron\ndiagrams best represents the compound formed between X and Y?\n(Only electrons in the outermost shells are shown.)",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "mw4aa-5"
+  },
+  {
+    "ch": 61,
+    "n": 6,
+    "code": "MW4Aa",
+    "stem": "The atomic number of an element X is 9. The chemical formula of the compound formed between X\nand oxygen is",
+    "stemZh": "",
+    "options": [
+      "X2O.",
+      "в хо.",
+      "X02.",
+      "X203."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 61,
+    "n": 7,
+    "code": "MW4Aa",
+    "stem": "Which of the following statements about covalent bond are correct?\n(1) It is formed by the sharing of electrons between the bonded atoms.\n(2) It must contain ions.\n(3) It is a type of electrostatic forces of attraction.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 61,
+    "n": 8,
+    "code": "MW4Aa",
+    "stem": "Which of the following electron diagrams is correct?\n(Only electrons in the outermost shells are shown.)",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "mw4aa-8"
+  },
+  {
+    "ch": 61,
+    "n": 9,
+    "code": "MW4Aa",
+    "stem": "Which of the following electron diagrams are correct?\n(Only electrons in the outermost shells are shown.)",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "mw4aa-9"
+  },
+  {
+    "ch": 61,
+    "n": 10,
+    "code": "MW4Aa",
+    "stem": "In which of the following groups do the substances have the same bonding type?\n(1) Aluminium, mercury, sodium\n(2) Fluorine, iodine, oxygen\n(3) Calcium chloride, magnesium chloride, silver chloride",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 61,
+    "n": 11,
+    "code": "MW4Aa",
+    "stem": "Which of the following statements about an ammonia molecule is / are correct?\n(l) The number of bonding electrons contributed by the nitrogen atom in the molecule is s.\n(2) The number of bonding electron contributed by each hydrogen atom in the\nmolecule is 1.\n(3) The molecule can form a dative covalent bond with a hydrogen ion.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 61,
+    "n": 12,
+    "code": "MW4Aa",
+    "stem": "Which of the following is NOT a covalent substance?",
+    "stemZh": "",
+    "options": [
+      "PCl₃",
+      "NH₄Cl",
+      "I₂",
+      "SiO₂"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 62,
+    "n": 1,
+    "code": "MW4Ab",
+    "stem": "Which of the following molecules has the GREATEST number of lone pairs of electrons?",
+    "stemZh": "",
+    "options": [
+      "HCl",
+      "Cl₂",
+      "NH₃",
+      "H₂O"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 62,
+    "n": 2,
+    "code": "MW4Ab",
+    "stem": "The table below lists the electronic arrangements of the atoms of three elements.\nWhich of the following elements exist(s) as separate molecules?",
+    "stemZh": "",
+    "options": [
+      "X only",
+      "Y only",
+      "X and Z only",
+      "Y and Z only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 62,
+    "n": 3,
+    "code": "MW4Ab",
+    "stem": "Which of the following molecules contains a triple bond?",
+    "stemZh": "",
+    "options": [
+      "CO₂",
+      "N₂",
+      "PF₃",
+      "SiCl₄"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 62,
+    "n": 4,
+    "code": "MW4Ab",
+    "stem": "The electron diagram of a compound formed between element X and element Y is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following combinations is correct?",
+    "stemZh": "",
+    "options": [
+      "X: carbon; Y: chlorine",
+      "X: carbon; Y: oxygen",
+      "X: sulphur; Y: oxygen",
+      "X: sulphur; Y: chlorine"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw4ab-4"
+  },
+  {
+    "ch": 62,
+    "n": 5,
+    "code": "MW4Ab",
+    "stem": "Which of the following molecules does NOT contain a single covalent bond?",
+    "stemZh": "",
+    "options": [
+      "CS₂",
+      "CH₄",
+      "H₂S",
+      "HCl"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 62,
+    "n": 6,
+    "code": "MW4Ab",
+    "stem": "The following is an electron diagram of the compound formed between element X and hydrogen.\n(Only electrons in the outermost shells are shown.)\nHow many electrons are there in the outermost shell of an atom of X?",
+    "stemZh": "",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw4ab-6"
+  },
+  {
+    "ch": 62,
+    "n": 7,
+    "code": "MW4Ab",
+    "stem": "The electron diagram of a compound formed between element X and fluorine is shown below:\n(Only electrons in the outermost shells are shown.)\nWhat would be the chemical formula of the compound formed between calcium and X?",
+    "stemZh": "",
+    "options": [
+      "CaX",
+      "CaX₂",
+      "Ca₂X",
+      "Ca₂X₃"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw4ab-7"
+  },
+  {
+    "ch": 62,
+    "n": 8,
+    "code": "MW4Ab",
+    "stem": "Which of the following statements about a carbon dioxide molecule is / are correct?\n(1) The number of bonding electrons contributed by the carbon atom in the molecule is 2.\n(2) The number of bonding electrons contributed by each oxygen atom in the molecule is 2.\n(3) The total number of electrons in the molecule is 16.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 62,
+    "n": 9,
+    "code": "MW4Ab",
+    "stem": "X and Y are two different elements. The electron diagram of a compound formed between X and Y is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements are correct?\n(1) There are 6 electrons in the outermost shell of an atom of X.\n(2) There are 7 electrons in the outermost shell of an atom of Y.\n(3) Each atom of Y in the above compound has three lone pairs of electrons.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw4ab-9"
+  },
+  {
+    "ch": 62,
+    "n": 10,
+    "code": "MW4Ab",
+    "stem": "X, Y and Z are three different elements. The electron diagram of a compound formed by X, Y and Z is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements is / are correct?\n(1) There are 4 electrons in the outermost shell of an atom of X.\n(2) There are 8 electrons in the outermost shell of an atom of Y.\n(3) There are 6 electrons in the outermost shell of an atom of Z.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw4ab-10"
+  },
+  {
+    "ch": 62,
+    "n": 11,
+    "code": "MW4Ab",
+    "stem": "X, Y and Z are three different elements. The electron diagram of a compound containing X, Y and Z is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements are correct?\n(1) There are 4 electrons in the outermost shell of an atom of Y.\n(2) There are 7 electrons in the outermost shell of an atom of Z.\n(3) Dative covalent bond exists in the above compound.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw4ab-11"
+  },
+  {
+    "ch": 62,
+    "n": 12,
+    "code": "MW4Ab",
+    "stem": "Consider the following three elements:\nWhich of the following statements about X, Y and Z is / are correct?\n(1) X and Y combine to form a covalent compound.\n(2) X and Z form a compound by electron transfer.\n(3) Y and Z belong to the same period of the periodic table.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 63,
+    "n": 1,
+    "code": "MW4Ac",
+    "stem": "Which of the following statements about oxygen is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "It can exist as diatomic molecules only.",
+      "Its atomic number is 8.",
+      "It is a Period 2 element.",
+      "It is a non-metal."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 63,
+    "n": 2,
+    "code": "MW4Ac",
+    "stem": "Consider the following elements.\nWhich of the elements exists as diatomic molecules with triple covalent bonds?",
+    "stemZh": "",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 63,
+    "n": 3,
+    "code": "MW4Ac",
+    "stem": "Which of the following molecules contains a triple covalent bond?",
+    "stemZh": "",
+    "options": [
+      "F₂O",
+      "NF₃",
+      "HCN",
+      "O₂"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 63,
+    "n": 4,
+    "code": "MW4Ac",
+    "stem": "Which of the following pairs of molecules have the same number of lone pairs of electrons?",
+    "stemZh": "",
+    "options": [
+      "Nitrogen, water",
+      "Oxygen, fluorine",
+      "Chlorine, hydrogen chloride",
+      "Hydrogen, carbon dioxide"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 63,
+    "n": 5,
+    "code": "MW4Ac",
+    "stem": "Which of the following bonds exist in potassium nitrate?\n(1) Covalent bond\n(2) Ionic bond\n(3) Metallic bond",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 63,
+    "n": 6,
+    "code": "MW4Ac",
+    "stem": "M is a Group VI element while N is a Group VII element. They combine to form a compound MₓNᵧ.\nWhich of the following combinations is correct?",
+    "stemZh": "",
+    "options": [
+      "x: 1; y: 2; Type of bond: ionic",
+      "x: 1; y: 2; Type of bond: covalent",
+      "x: 2; y: 1; Type of bond: ionic",
+      "x: 2; y: 1; Type of bond: covalent"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 63,
+    "n": 7,
+    "code": "MW4Ac",
+    "stem": "Which of the following combinations about substance and the type of bonding are correct?",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 63,
+    "n": 8,
+    "code": "MW4Ac",
+    "stem": "Two elements X and Y form a compound with a chemical formula of XY₂. Which of the following electronic arrangements for atoms of X and Y are correct?",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 63,
+    "n": 9,
+    "code": "MW4Ac",
+    "stem": "Element X is in Period 2 of the periodic table. The electron diagram of an ion containing carbon and X is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements is correct?",
+    "stemZh": "",
+    "options": [
+      "There are 5 electrons in the outermost shell of an atom of X.",
+      "The carbon atom in the ion has 4 bond pairs of electrons.",
+      "The total number of electrons in the ion is 10.",
+      "The ion contains the same number of protons as a Mg²⁺ ion."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "mw4ac-9"
+  },
+  {
+    "ch": 64,
+    "n": 1,
+    "code": "MW4Ba",
+    "stem": "A dative covalent bond is formed when",
+    "stemZh": "",
+    "options": [
+      "each bonded atom contributes one electron to the shared pair.",
+      "one atom provides both electrons of the shared pair.",
+      "electrons are transferred from a metal to a non-metal.",
+      "metal ions attract a sea of delocalized electrons."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 64,
+    "n": 2,
+    "code": "MW4Ba",
+    "stem": "When NH₃ reacts with H⁺ to form NH₄⁺, the extra bond to hydrogen is",
+    "stemZh": "",
+    "options": [
+      "ionic.",
+      "metallic.",
+      "a dative covalent bond.",
+      "a hydrogen bond."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 64,
+    "n": 3,
+    "code": "MW4Ba",
+    "stem": "Which species contains a dative covalent bond?",
+    "stemZh": "",
+    "options": [
+      "H₂",
+      "Cl₂",
+      "H₃O⁺",
+      "NaCl"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 65,
+    "n": 1,
+    "code": "MW4Bb",
+    "stem": "When gaseous NH₃ and gaseous XY₃ react together, a solid is formed. The electron diagram of the solid is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements are correct?\n(1) There are 6 electrons in the outermost shell of an atom of X.\n(2) There are 7 electrons in the outermost shell of an atom of Y.\n(3) Dative covalent bond exists in the solid.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw4bb-1"
+  },
+  {
+    "ch": 65,
+    "n": 2,
+    "code": "MW4Bb",
+    "stem": "Which of the following reactions involves the formation of a dative covalent bond?",
+    "stemZh": "",
+    "options": [
+      "NH₃ + H⁺ → NH₄⁺",
+      "Na + Cl₂ → 2NaCl",
+      "C + O₂ → CO₂ (equal sharing of electrons only)",
+      "CaCO₃ → CaO + CO₂"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 65,
+    "n": 3,
+    "code": "MW4Bb",
+    "stem": "In the formation of H₃O⁺ from H₂O and H⁺,",
+    "stemZh": "",
+    "options": [
+      "oxygen in water provides a lone pair to H⁺.",
+      "hydrogen provides a lone pair to oxygen.",
+      "electrons are transferred to form O²⁻.",
+      "a metallic bond is formed."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 66,
+    "n": 1,
+    "code": "MW4Bc",
+    "stem": "Which description of the formation of H₃O⁺ is correct?",
+    "stemZh": "",
+    "options": [
+      "H₂O has lone pairs on oxygen; H⁺ accepts a pair of electrons from oxygen to form a dative covalent bond.",
+      "H⁺ provides a pair of electrons to oxygen.",
+      "Electrons are transferred from H to O to form an ionic bond only.",
+      "A metallic bond is formed between H and O."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 66,
+    "n": 2,
+    "code": "MW4Bc",
+    "stem": "BF₃ accepts a lone pair from NH₃ to form F₃B←NH₃. In this adduct,",
+    "stemZh": "",
+    "options": [
+      "boron provides both electrons of the B–N bond.",
+      "nitrogen provides both electrons of the B–N bond.",
+      "the B–N link is an ionic bond between B³⁺ and N³⁻.",
+      "no covalent bond is formed."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 66,
+    "n": 3,
+    "code": "MW4Bc",
+    "stem": "Which of the following contain dative covalent bonds?\n(1) NH₄⁺\n(2) H₃O⁺\n(3) CH₄",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 67,
+    "n": 1,
+    "code": "MW4Ca",
+    "stem": "What is the formula mass of magnesium nitrate?\n(Relative atomic masses: N = 14.0, O = 16.0, Mg = 24.3)",
+    "stemZh": "",
+    "options": [
+      "232.3",
+      "148.3",
+      "120.2",
+      "88.2"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 67,
+    "n": 2,
+    "code": "MW4Ca",
+    "stem": "What is the formula mass of CO₂?\n(Relative atomic masses: C = 12.0, O = 16.0)",
+    "stemZh": "",
+    "options": [
+      "28.0",
+      "32.0",
+      "44.0",
+      "48.0"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 67,
+    "n": 3,
+    "code": "MW4Ca",
+    "stem": "What is the formula mass of NaCl?\n(Relative atomic masses: Na = 23.0, Cl = 35.5)",
+    "stemZh": "",
+    "options": [
+      "23.0",
+      "35.5",
+      "58.5",
+      "71.0"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 68,
+    "n": 1,
+    "code": "MW4Cb",
+    "stem": "Consider the following information:\nThe formula mass of the compound formed between X and Y is",
+    "stemZh": "",
+    "options": [
+      "52.3.",
+      "76.6.",
+      "100.9.",
+      "114.9."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 68,
+    "n": 2,
+    "code": "MW4Cb",
+    "stem": "Consider the following two elements:\nElements P and Q combine to form a compound. Which of the following statements about the compound is / are correct?\n(1) It is formed by electron sharing.\n(2) It contains giant molecules.\n(3) Its relative molecular mass is 85.0.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 68,
+    "n": 3,
+    "code": "MW4Cb",
+    "stem": "What is the formula mass of Ca(OH)₂?\n(Relative atomic masses: H = 1.0, O = 16.0, Ca = 40.1)",
+    "stemZh": "",
+    "options": [
+      "57.1",
+      "74.1",
+      "96.1",
+      "114.2"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 69,
+    "n": 1,
+    "code": "MW4Cc",
+    "stem": "Which of the following statements is / are correct?\n(1) The relative molecular mass of a molecule is the relative mass of the molecule based on the\n12C = 12.00 scale.\n(2) The formula mass of a compound is always a whole number.\n(3) The formula mass of magnesium oxide is 40.3 g.\n(Relative atomic masses: 0 = 16.0, Mg = 24.3)",
+    "stemZh": "",
+    "options": [
+      "(I) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 69,
+    "n": 2,
+    "code": "MW4Cc",
+    "stem": "The formula mass of a compound X₂O is 62.0. If the relative atomic mass of O is 16.0, the relative atomic mass of X is",
+    "stemZh": "",
+    "options": [
+      "23.0",
+      "31.0",
+      "46.0",
+      "14.0"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 69,
+    "n": 3,
+    "code": "MW4Cc",
+    "stem": "What is the formula mass of aluminium oxide, Al₂O₃?\n(Relative atomic masses: O = 16.0, Al = 27.0)",
+    "stemZh": "",
+    "options": [
+      "43.0",
+      "102.0",
+      "70.0",
+      "86.0"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 70,
+    "n": 1,
+    "code": "MW5Aa",
+    "stem": "Which of the following substances conducts electricity in both solid and molten states?",
+    "stemZh": "",
+    "options": [
+      "Copper",
+      "Quartz",
+      "Sodium oxide",
+      "Phosphorus"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 70,
+    "n": 2,
+    "code": "MW5Aa",
+    "stem": "Metals usually have high densities because",
+    "stemZh": "",
+    "options": [
+      "most metals are solids.",
+      "metal ions are closely packed together.",
+      "metals are ductile.",
+      "most metals are hard."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 70,
+    "n": 3,
+    "code": "MW5Aa",
+    "stem": "Which description of giant metallic structure matches the notes?",
+    "stemZh": "",
+    "options": [
+      "Neutral metal atoms are held together by sharing electron pairs between two atoms.",
+      "A giant lattice of positive metal ions is surrounded by a sea of delocalized electrons.",
+      "The lattice is made of molecules held by van der Waals’ forces.",
+      "The lattice points are anions only."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 71,
+    "n": 1,
+    "code": "MW5Ab",
+    "stem": "Consider the information listed below:\nWhich of the following combinations is correct?",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 71,
+    "n": 2,
+    "code": "MW5Ab",
+    "stem": "Metals usually have high densities because",
+    "stemZh": "",
+    "options": [
+      "the metal cations are closely packed.",
+      "metallic bonds are weak.",
+      "there are large empty spaces in the lattice.",
+      "metals exist as gases at room temperature."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 71,
+    "n": 3,
+    "code": "MW5Ab",
+    "stem": "A metal conducts electricity in both the solid and molten states because",
+    "stemZh": "",
+    "options": [
+      "delocalized electrons are present in both states.",
+      "ions become mobile only when the metal melts.",
+      "water must be present.",
+      "metals have a simple molecular structure."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 72,
+    "n": 1,
+    "code": "MW5Ac",
+    "stem": "Metals are ductile because\n(1) strong electrostatic forces exist between metal ions.\n(2) layers of metal ions can slip over one another.\n(3) the delocalized electrons hold the layers of metal ions together.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 72,
+    "n": 2,
+    "code": "MW5Ac",
+    "stem": "How do metals conduct electricity when connected to a battery?",
+    "stemZh": "",
+    "options": [
+      "Delocalized electrons move towards the positive pole of the battery.",
+      "Metal cations move towards the positive pole.",
+      "Molecules of the metal move through the wire.",
+      "Electrons are transferred from metal atoms to form anions."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 72,
+    "n": 3,
+    "code": "MW5Ac",
+    "stem": "Which property is NOT explained by the giant metallic structure of a typical metal?",
+    "stemZh": "",
+    "options": [
+      "Malleability",
+      "Electrical conductivity in the solid state",
+      "High melting point of most metals",
+      "High solubility in water"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 73,
+    "n": 1,
+    "code": "MW5Ba",
+    "stem": "Why does molten lead(II) bromide conduct electricity?",
+    "stemZh": "",
+    "options": [
+      "It contains metallic lead.",
+      "It contains mobile ions.",
+      "It contains free bromine.",
+      "It contains free electrons."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 73,
+    "n": 2,
+    "code": "MW5Ba",
+    "stem": "Which of the following substances does NOT have a giant ionic structure?",
+    "stemZh": "",
+    "options": [
+      "Calcium hydride",
+      "Ammonium bromide",
+      "Magnesium oxide",
+      "Hydrogen chloride"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 73,
+    "n": 3,
+    "code": "MW5Ba",
+    "stem": "Which of the following diagrams best represents the giant structure of a caesium chloride crystal? (In\nthese diagrams, • represents a Cs* ion and ° represents a Cl ion.)",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation",
+    "image": "mw5ba-3"
+  },
+  {
+    "ch": 73,
+    "n": 4,
+    "code": "MW5Ba",
+    "stem": "Magnesium chloride conducts electricity in aqueous solution because",
+    "stemZh": "",
+    "options": [
+      "magnesium chloride forms ions when dissolved in water.",
+      "ions are free to move in the aqueous solution.",
+      "electrons are free to move in the aqueous solution.",
+      "magnesium chloride is electrically neutral."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 73,
+    "n": 5,
+    "code": "MW5Ba",
+    "stem": "Solid sodium chloride does NOT conduct electricity because",
+    "stemZh": "",
+    "options": [
+      "it is a non-electrolyte.",
+      "it is a covalent compound.",
+      "its ions are not mobile.",
+      "sodium conducts electricity but chlorine does not."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 73,
+    "n": 6,
+    "code": "MW5Ba",
+    "stem": "Ionic compounds have high melting points because",
+    "stemZh": "",
+    "options": [
+      "the attractions between electrons and ions are strong.",
+      "the attractions between ions are strong.",
+      "ions are packed regularly in crystals.",
+      "ionic compounds are made of metals which have high melting points."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 73,
+    "n": 7,
+    "code": "MW5Ba",
+    "stem": "Which of the following chloride(s) conduct(s) electricity when molten?\n(1) Calcium chloride\n(2) Nitrogen trichloride\n(3) Silicon tetrachloride",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 73,
+    "n": 8,
+    "code": "MW5Ba",
+    "stem": "Substance X has a high melting point and does not conduct electricity when in solid state. Substance X\nmay be\n(l) copper.\n(2) zinc oxide.\n(3) diamond.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 74,
+    "n": 1,
+    "code": "MW5Bb",
+    "stem": "Which of the following substances can conduct electricity in molten state but NOT in solid state?",
+    "stemZh": "",
+    "options": [
+      "Silver",
+      "Lead(II) bromide",
+      "Sugar",
+      "Quartz"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 74,
+    "n": 2,
+    "code": "MW5Bb",
+    "stem": "Which of the following statements about zinc chloride is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "It is soluble in water.",
+      "It conducts electricity in molten state.",
+      "It is a solid at room temperature and pressure.",
+      "Its melting point is below 100 °C."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 74,
+    "n": 3,
+    "code": "MW5Bb",
+    "stem": "The table below lists the ability of four substances W, X, Y and Z to conduct electricity.\n(In the table, ✓ and ✗ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.)\nWhich of the substances is likely to be calcium chloride?",
+    "stemZh": "",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 74,
+    "n": 4,
+    "code": "MW5Bb",
+    "stem": "Substance Y has high melting and boiling points. It can conduct electricity when molten or in aqueous\nsolution and at the same time decomposed by electricity. Substance Y may be",
+    "stemZh": "",
+    "options": [
+      "carbon dioxide",
+      "silicon dioxide",
+      "graphite",
+      "magnesium bromide"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 74,
+    "n": 5,
+    "code": "MW5Bb",
+    "stem": "The atomic number of elements X and Y are 3 and 8 respectively. Which of the following properties\ndoes the compound formed from X and Y have?\n(1) The compound has a simple molecular structure.\n(2) The compound is a solid at room temperature.\n(3) The compound can conduct electricity when molten.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 75,
+    "n": 1,
+    "code": "MW5Bc",
+    "stem": "Which of the following statements about the structure of sodium chloride are correct?\n(1) Sodium ions are smaller than chloride ions.\n(2) Each sodium ion is surrounded by six chloride ions.\n(3) The structure consists of separate ion pairs.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 75,
+    "n": 2,
+    "code": "MW5Bc",
+    "stem": "The table lists the electrical conductivities of three substances.\nWhich of the following combinations is correct?",
+    "stemZh": "",
+    "options": [
+      "X: HCl; Y: NaCl; Z: P",
+      "X: NaBr; Y: P; Z: H₂SO₄",
+      "X: H₂SO₄; Y: NaBr; Z: Pb",
+      "X: NaBr; Y: Pb; Z: PCl₃"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 75,
+    "n": 3,
+    "code": "MW5Bc",
+    "stem": "67. A substance melts at 1 074 °C and boils at 1 740 °C. Passing an electric current through the molten substance results in electrolysis. What type of structure is present in the substance? A Ionic B Metallic C Covalent molecular D Covalent network",
+    "stemZh": "",
+    "options": [
+      "Ionic",
+      "Metallic",
+      "Covalent molecular",
+      "Covalent network"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 75,
+    "n": 4,
+    "code": "MW5Bc",
+    "stem": "68. Substance Melting point (°C) W 1 565 Electrical conductivity solid state molten state non- conductor conductor x 1610 non- conductor non- conductor Y 40 Z 1 670 non- conductor conductor non- conductor conductor Which of the following statements is correct? A W is malleable. B\nWhich of the following statements is correct?",
+    "stemZh": "",
+    "options": [
+      "W is malleable.",
+      "X is soluble in heptane (a non-aqueous solvent).",
+      "Y is a liquid at room temperature and pressure.",
+      "The compound formed between Z and chlorine conducts electricity in molten state."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 75,
+    "n": 5,
+    "code": "MW5Bc",
+    "stem": "The atomic numbers of two elements A and B are 13 and 8 respectively. The compound formed\nbetween A and B",
+    "stemZh": "",
+    "options": [
+      "is very soluble in non-aqueous solvents.",
+      "is a liquid at room temperature and pressure.",
+      "contains giant molecules.",
+      "conducts electricity in its molten state."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 75,
+    "n": 6,
+    "code": "MW5Bc",
+    "stem": "The table lists some properties of four solids, W, X, Y and Z.\nWhat is the correct classification of the solids?",
+    "stemZh": "",
+    "options": [
+      "Metallic: W; Covalent network: X; Ionic: Y; Simple molecular: Z",
+      "Metallic: X; Covalent network: Y; Ionic: Z; Simple molecular: W",
+      "Metallic: Y; Covalent network: Z; Ionic: W; Simple molecular: X",
+      "Metallic: Z; Covalent network: W; Ionic: X; Simple molecular: Y"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 75,
+    "n": 7,
+    "code": "MW5Bc",
+    "stem": "Consider the following information about four substances, W, X, Y and Z:\nWhich substance has a simple molecular structure and is a solid at room temperature?",
+    "stemZh": "",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 75,
+    "n": 8,
+    "code": "MW5Bc",
+    "stem": "X and Y are two different elements. The melting points of their bromides are given below:\nWhich of the following statements are correct?\n(1) The bromide of X is soluble in non-aqueous solvents.\n(2) The bromide of Y has a giant ionic structure.\n(3) The bromide of X is a solid at room temperature and pressure.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 75,
+    "n": 9,
+    "code": "MW5Bc",
+    "stem": "X and Y are two different elements. The melting points and boiling points of their oxides are given below.\nWhich of the following statements is / are correct?\n(1) X is a non-metal.\n(2) The oxide of Y is a liquid at room temperature.\n(3) The oxide of X is an ionic crystal.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 76,
+    "n": 1,
+    "code": "MW5Ca",
+    "stem": "Why does argon exist as a gas at room temperature and pressure?",
+    "stemZh": "",
+    "options": [
+      "Argon is unreactive.",
+      "The forces between argon atoms are weak.",
+      "Argon has a simple molecular structure.",
+      "Argon is a Group 0 element."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 76,
+    "n": 2,
+    "code": "MW5Ca",
+    "stem": "Which of the following chlorides is most likely to be soluble in tetrachloromethane (CCl₄)?",
+    "stemZh": "",
+    "options": [
+      "BaCl₂",
+      "NCl₃",
+      "NaCl",
+      "ZnCl₂"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 76,
+    "n": 3,
+    "code": "MW5Ca",
+    "stem": "Silicon tetrachloride is a liquid of low boiling point. Which of the following types of forces exist in it?\n(1) Covalent bonding\n(2) Dative covalent bonding\n(3) Van der Waals' forces",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 76,
+    "n": 4,
+    "code": "MW5Ca",
+    "stem": "70. A substance melts at 17 °C and boils at 43 °C. The substance (1) has weak van der Waals' forces between molecules. (2) has a simple molecular structure. (3) is a liquid at room temperature and pressure. A (1) and (2) only B (1) and (3) only C (2) and (3) only D (1), (2) and (",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 77,
+    "n": 1,
+    "code": "MW5Cb",
+    "stem": "Which of the following substances is a nonconductor of electricity?",
+    "stemZh": "",
+    "options": [
+      "Graphite",
+      "Magnesium",
+      "Molten calcium chloride",
+      "Molten sulphur"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 77,
+    "n": 2,
+    "code": "MW5Cb",
+    "stem": "Which of the following compounds has the LOWEST melting point?",
+    "stemZh": "",
+    "options": [
+      "Carbon dioxide",
+      "Quartz",
+      "Sodium iodide",
+      "Tetrachloromethane"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 77,
+    "n": 3,
+    "code": "MW5Cb",
+    "stem": "Sodium chloride is a solid while hydrogen chloride is a gas at room temperature because",
+    "stemZh": "",
+    "options": [
+      "the ionic bonds in sodium chloride are stronger than the covalent bonds in hydrogen chloride molecules.",
+      "ionic substances are usually solids while covalent substances are usually gases.",
+      "the ionic bonds in sodium chloride are stronger than the attractive forces among hydrogen chloride molecules.",
+      "the attractive forces among molecules in sodium chloride are stronger than those in hydrogen chloride."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 77,
+    "n": 4,
+    "code": "MW5Cb",
+    "stem": "Consider the following table which gives some information about the solubilities of four substances in water and heptane (a non-aqueous solvent):\nWhich of the above substances could be iodine?",
+    "stemZh": "",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 77,
+    "n": 5,
+    "code": "MW5Cb",
+    "stem": "The table below lists the information about the electrical conductivities of four substances, W, X, Y and Z:\nWhich of the substances is likely to be copper?",
+    "stemZh": "",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 77,
+    "n": 6,
+    "code": "MW5Cb",
+    "stem": "Which of the following statements about simple molecular substances are correct?\n(1) They usually have low melting points.\n(2) They are usually soluble in non-aqueous solvents.\n(3) They all conduct electricity in aqueous solution.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 77,
+    "n": 7,
+    "code": "MW5Cb",
+    "stem": "84. A substance X is soluble in hexane (a non-aqueous solvent) but insoluble in water. X probably has a A giant ionic structure. B simple molecular structure. giant covalent structure. giant metallic structure.",
+    "stemZh": "",
+    "options": [
+      "giant ionic structure.",
+      "simple molecular structure.",
+      "giant covalent structure.",
+      "giant metallic structure."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 78,
+    "n": 1,
+    "code": "MW5Cc",
+    "stem": "Which of the following diagrams best represents the arrangement of particles in a sample of argon at\nroom temperature and pressure?",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "mw5cc-1"
+  },
+  {
+    "ch": 78,
+    "n": 2,
+    "code": "MW5Cc",
+    "stem": "Hydrogen and sulphur react to give hydrogen sulphide. Which of the following diagrams can represent\nthe particles in a sample of hydrogen sulphide at room temperature and pressure?",
+    "stemZh": "",
+    "options": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "mw5cc-2"
+  },
+  {
+    "ch": 78,
+    "n": 3,
+    "code": "MW5Cc",
+    "stem": "Which of the following combinations about the strength of the bonds between chlorine atoms and that of the forces between chlorine molecules is correct?",
+    "stemZh": "",
+    "options": [
+      "Strength of bonds between chlorine atoms: strong; Strength of forces between chlorine molecules: weak",
+      "Strength of bonds between chlorine atoms: strong; Strength of forces between chlorine molecules: strong",
+      "Strength of bonds between chlorine atoms: weak; Strength of forces between chlorine molecules: strong",
+      "Strength of bonds between chlorine atoms: weak; Strength of forces between chlorine molecules: weak"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 78,
+    "n": 4,
+    "code": "MW5Cc",
+    "stem": "The diagram below shows the structure of dry ice:\nWhich of the following statements about dry ice is correct?\nB It has a giant covalent structure.\nC The atoms in its molecules are held together by van der Waals' forces.\nIts molecules are held together by covalent bonds.",
+    "stemZh": "",
+    "options": [
+      "It can sublime.",
+      "It has a giant covalent structure.",
+      "The atoms in its molecules are held together by van der Waals' forces.",
+      "Its molecules are held together by covalent bonds."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "mw5cc-4"
+  },
+  {
+    "ch": 78,
+    "n": 5,
+    "code": "MW5Cc",
+    "stem": "Which of the following combinations about substances and attractions between particles is / are correct?",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 78,
+    "n": 6,
+    "code": "MW5Cc",
+    "stem": "62. Melting Boiling Substance point (°C) point (°C) Neon (Ne) -249 -246 Chlorine (Clz) -101 -34 Phosphine (PH3) -134 -87 Sulphur dioxide (SOz) -75 -10 Which of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure? (1) Van der Waals' forces (2) \nWhich of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure?\n(1) Van der Waals’ forces\n(2) Metallic bond\n(3) Covalent bond",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 78,
+    "n": 7,
+    "code": "MW5Cc",
+    "stem": "The atomic numbers of elements X and Y are 14 and 17 respectively. They combine to form compound\nZ. Which of the following statements about compound Z is / are correct?\n(1) Z has a giant covalent structure.\n(2) The chemical formula of Z is XY4.\n(3) Z does not carry any charge.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 78,
+    "n": 8,
+    "code": "MW5Cc",
+    "stem": "Elements X and Y combine to form a compound with a chemical formula of XY2. If Y is a Group VII\nelement and XYz does not conduct electricity in liquid state, then X is a",
+    "stemZh": "",
+    "options": [
+      "Group I element.",
+      "Group Il element.",
+      "Group I element.",
+      "Group VI element."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 79,
+    "n": 1,
+    "code": "MW5Da",
+    "stem": "Which of the following pairs of species react to give a compound with a giant covalent structure?",
+    "stemZh": "",
+    "options": [
+      "Silicon and oxygen",
+      "Calcium and silicon",
+      "Sodium and bromine",
+      "Iron and steel"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 79,
+    "n": 2,
+    "code": "MW5Da",
+    "stem": "Diamond has a high melting point because",
+    "stemZh": "",
+    "options": [
+      "it is the hardest element in the world.",
+      "it does not conduct electricity.",
+      "the atoms in it are bonded by strong covalent bonds.",
+      "the atoms in it are held together by van der Waals' forces."
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 79,
+    "n": 3,
+    "code": "MW5Da",
+    "stem": "Diamond has a very high melting point because",
+    "stemZh": "",
+    "options": [
+      "it has a giant covalent structure with strong C–C covalent bonds throughout the lattice.",
+      "it is held by weak van der Waals’ forces.",
+      "it contains delocalized electrons like a metal.",
+      "it is an ionic compound."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Foundation"
+  },
+  {
+    "ch": 80,
+    "n": 1,
+    "code": "MW5Db",
+    "stem": "Silicon and carbon react to form silicon carbide. The structure of silicon carbide is shown below:\nWhich of the following statements about silicon carbide is INCORRECT?",
+    "stemZh": "",
+    "options": [
+      "It can be used as an abrasive.",
+      "It has a high melting point.",
+      "It is chemically inert.",
+      "It is quite soluble in water."
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard",
+    "image": "mw5db-1"
+  },
+  {
+    "ch": 80,
+    "n": 2,
+    "code": "MW5Db",
+    "stem": "Which of the following properties of magnesium chloride is / are evidence(s) to support that ionic\nbonds are strong?\n(1) It is an electrolyte.\n(2) It has a high melting point.\n(3) It is soluble in water.",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 80,
+    "n": 3,
+    "code": "MW5Db",
+    "stem": "Silicon dioxide has a high melting point while carbon dioxide has a low melting point because",
+    "stemZh": "",
+    "options": [
+      "silicon dioxide has a giant covalent structure while carbon dioxide has a simple molecular structure.",
+      "there are strong covalent bonds between silicon and oxygen atoms while there are weak van der Waals' forces between carbon and oxygen atoms.",
+      "silicon dioxide is an ionic compound while carbon dioxide is a covalent compound.",
+      "the relative atomic mass of silicon is greater than that of carbon."
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 80,
+    "n": 4,
+    "code": "MW5Db",
+    "stem": "Consider the information below:\nWhich of the following solids is likely to be graphite?",
+    "stemZh": "",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 80,
+    "n": 5,
+    "code": "MW5Db",
+    "stem": "85. A substance W melts at 3 550 °C and it does NOT conduct electricity in solid state and molten state. W probably has a A giant ionic structure. B giant covalent structure. C simple molecular structure. D giant metallic structure.",
+    "stemZh": "",
+    "options": [
+      "giant ionic structure.",
+      "giant covalent structure.",
+      "simple molecular structure.",
+      "giant metallic structure."
+    ],
+    "answer": "B",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 80,
+    "n": 6,
+    "code": "MW5Db",
+    "stem": "Which of the following shows the correct descending order of the melting points of diamond, zinc\nbromide and sulphur dioxide?",
+    "stemZh": "",
+    "options": [
+      "Diamond > zinc bromide > sulphur dioxide",
+      "Zinc bromide > diamond > sulphur dioxide",
+      "Diamond > sulphur dioxide > zinc bromide",
+      "Zinc bromide > sulphur dioxide > diamond"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Standard"
+  },
+  {
+    "ch": 81,
+    "n": 1,
+    "code": "MW5Dc",
+    "stem": "Scientists have recently developed a method to produce large sheets of a substance called graphene.\nGraphene is made from carbon and is a single layer of graphite just one atom thick.\nThe diagram below shows the structure of graphene.\nWhich of the following statements about graphene is / are correct?\n(1) It is a good conductor of electricity.\n(2) It has a low melting point.\n(3) It is strong.\n(2) only\n(1) and\n(3) only",
+    "stemZh": "",
+    "options": [
+      "(1) only",
+      "(2) only",
+      "(1) and (3) only",
+      "(2) and (3) only"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "mw5dc-1"
+  },
+  {
+    "ch": 81,
+    "n": 2,
+    "code": "MW5Dc",
+    "stem": "Which of the following substances have giant structures?\n(1) Calcium\n(2) Magnesium oxide\n(3) Graphite",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "D",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 81,
+    "n": 3,
+    "code": "MW5Dc",
+    "stem": "The atomic number of elements X and Y are 14 and 8 respectively. Which of the following statements\nabout the compound formed between X and Y are correct?\n(1) It has a low melting point.\n(2) It has a giant covalent structure.\n(3) It is insoluble in water.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "C",
+    "hint": "",
+    "difficulty": "Applied"
+  },
+  {
+    "ch": 81,
+    "n": 4,
+    "code": "MW5Dc",
+    "stem": "77. The diagram below shows the structure of a form of boron nitride which is similar to that of graphite.\nWhich of the following statements about this compound are correct?\n(1) It has a high melting point.\n(2) It is slippery.\n(3) It is very hard.",
+    "stemZh": "",
+    "options": [
+      "(1) and (2) only",
+      "(1) and (3) only",
+      "(2) and (3) only",
+      "(1), (2) and (3)"
+    ],
+    "answer": "A",
+    "hint": "",
+    "difficulty": "Applied",
+    "image": "mw5dc-4"
+  }
+]

@@ -1,0 +1,712 @@
+{
+  "title": "S3 Chemistry MCQ (Earth & Microscopic World)",
+  "titleZh": "中三化學選擇題（地球與微觀世界）",
+  "questionsFile": "questions.json",
+  "figuresDir": "figures",
+  "questionCount": 389,
+  "sections": [
+    {
+      "ch": 1,
+      "code": "Earth1Aa",
+      "sectionId": "earth1aa",
+      "label": "Laboratory Apparatus (Easy)",
+      "labelZh": "實驗室儀器（容易）",
+      "count": 7
+    },
+    {
+      "ch": 2,
+      "code": "Earth1Ab",
+      "sectionId": "earth1ab",
+      "label": "Laboratory Apparatus (Medium)",
+      "labelZh": "實驗室儀器（中等）",
+      "count": 3
+    },
+    {
+      "ch": 3,
+      "code": "Earth1Ac",
+      "sectionId": "earth1ac",
+      "label": "Laboratory Apparatus (Difficult)",
+      "labelZh": "實驗室儀器（困難）",
+      "count": 4
+    },
+    {
+      "ch": 4,
+      "code": "Earth1Ba",
+      "sectionId": "earth1ba",
+      "label": "Laboratory Safety (Easy)",
+      "labelZh": "實驗室安全（容易）",
+      "count": 3
+    },
+    {
+      "ch": 5,
+      "code": "Earth1Bb",
+      "sectionId": "earth1bb",
+      "label": "Laboratory Safety (Medium)",
+      "labelZh": "實驗室安全（中等）",
+      "count": 4
+    },
+    {
+      "ch": 6,
+      "code": "Earth1Bc",
+      "sectionId": "earth1bc",
+      "label": "Laboratory Safety (Difficult)",
+      "labelZh": "實驗室安全（困難）",
+      "count": 3
+    },
+    {
+      "ch": 7,
+      "code": "Earth2Aa",
+      "sectionId": "earth2aa",
+      "label": "Matters (Easy)",
+      "labelZh": "物質（容易）",
+      "count": 3
+    },
+    {
+      "ch": 8,
+      "code": "Earth2Ab",
+      "sectionId": "earth2ab",
+      "label": "Matters (Medium)",
+      "labelZh": "物質（中等）",
+      "count": 4
+    },
+    {
+      "ch": 9,
+      "code": "Earth2Ac",
+      "sectionId": "earth2ac",
+      "label": "Matters (Difficult)",
+      "labelZh": "物質（困難）",
+      "count": 7
+    },
+    {
+      "ch": 10,
+      "code": "Earth2Ba",
+      "sectionId": "earth2ba",
+      "label": "Physical And Chemical Change (Easy)",
+      "labelZh": "物理及化學變化（容易）",
+      "count": 3
+    },
+    {
+      "ch": 11,
+      "code": "Earth2Bb",
+      "sectionId": "earth2bb",
+      "label": "Physical And Chemical Change (Medium)",
+      "labelZh": "物理及化學變化（中等）",
+      "count": 3
+    },
+    {
+      "ch": 12,
+      "code": "Earth2Bc",
+      "sectionId": "earth2bc",
+      "label": "Physical And Chemical Change (Difficult)",
+      "labelZh": "物理及化學變化（困難）",
+      "count": 3
+    },
+    {
+      "ch": 13,
+      "code": "Earth2Ca",
+      "sectionId": "earth2ca",
+      "label": "Air (Easy)",
+      "labelZh": "空氣（容易）",
+      "count": 5
+    },
+    {
+      "ch": 14,
+      "code": "Earth2Cb",
+      "sectionId": "earth2cb",
+      "label": "Air (Medium)",
+      "labelZh": "空氣（中等）",
+      "count": 4
+    },
+    {
+      "ch": 15,
+      "code": "Earth2Cc",
+      "sectionId": "earth2cc",
+      "label": "Air (Difficult)",
+      "labelZh": "空氣（困難）",
+      "count": 3
+    },
+    {
+      "ch": 16,
+      "code": "Earth3Aa",
+      "sectionId": "earth3aa",
+      "label": "Physical Separation (Easy)",
+      "labelZh": "物理分離（容易）",
+      "count": 3
+    },
+    {
+      "ch": 17,
+      "code": "Earth3Ab",
+      "sectionId": "earth3ab",
+      "label": "Physical Separation (Medium)",
+      "labelZh": "物理分離（中等）",
+      "count": 4
+    },
+    {
+      "ch": 18,
+      "code": "Earth3Ac",
+      "sectionId": "earth3ac",
+      "label": "Physical Separation (Difficult)",
+      "labelZh": "物理分離（困難）",
+      "count": 6
+    },
+    {
+      "ch": 19,
+      "code": "Earth3Ba",
+      "sectionId": "earth3ba",
+      "label": "Chemical Tests And Electrolysis (Easy)",
+      "labelZh": "化學測試及電解（容易）",
+      "count": 8
+    },
+    {
+      "ch": 20,
+      "code": "Earth3Bb",
+      "sectionId": "earth3bb",
+      "label": "Chemical Tests And Electrolysis (Medium)",
+      "labelZh": "化學測試及電解（中等）",
+      "count": 6
+    },
+    {
+      "ch": 21,
+      "code": "Earth3Bc",
+      "sectionId": "earth3bc",
+      "label": "Chemical Tests And Electrolysis (Difficult)",
+      "labelZh": "化學測試及電解（困難）",
+      "count": 5
+    },
+    {
+      "ch": 22,
+      "code": "Earth4Aa",
+      "sectionId": "earth4aa",
+      "label": "Extraction Of Metals (Easy)",
+      "labelZh": "金屬提取（容易）",
+      "count": 3
+    },
+    {
+      "ch": 23,
+      "code": "Earth4Ab",
+      "sectionId": "earth4ab",
+      "label": "Extraction Of Metals (Medium)",
+      "labelZh": "金屬提取（中等）",
+      "count": 3
+    },
+    {
+      "ch": 24,
+      "code": "Earth4Ac",
+      "sectionId": "earth4ac",
+      "label": "Extraction Of Metals (Difficult)",
+      "labelZh": "金屬提取（困難）",
+      "count": 3
+    },
+    {
+      "ch": 25,
+      "code": "Earth4Ba",
+      "sectionId": "earth4ba",
+      "label": "Lime Cycle (Easy)",
+      "labelZh": "石灰循環（容易）",
+      "count": 3
+    },
+    {
+      "ch": 26,
+      "code": "Earth4Bb",
+      "sectionId": "earth4bb",
+      "label": "Lime Cycle (Medium)",
+      "labelZh": "石灰循環（中等）",
+      "count": 4
+    },
+    {
+      "ch": 27,
+      "code": "Earth4Bc",
+      "sectionId": "earth4bc",
+      "label": "Lime Cycle (Difficult)",
+      "labelZh": "石灰循環（困難）",
+      "count": 3
+    },
+    {
+      "ch": 28,
+      "code": "MW1Aa",
+      "sectionId": "mw1aa",
+      "label": "Atomic Structure (Easy)",
+      "labelZh": "原子結構（容易）",
+      "count": 8
+    },
+    {
+      "ch": 29,
+      "code": "MW1Ab",
+      "sectionId": "mw1ab",
+      "label": "Atomic Structure (Medium)",
+      "labelZh": "原子結構（中等）",
+      "count": 7
+    },
+    {
+      "ch": 30,
+      "code": "MW1Ac",
+      "sectionId": "mw1ac",
+      "label": "Atomic Structure (Difficult)",
+      "labelZh": "原子結構（困難）",
+      "count": 4
+    },
+    {
+      "ch": 31,
+      "code": "MW1Ba",
+      "sectionId": "mw1ba",
+      "label": "Isotope (Easy)",
+      "labelZh": "同位素（容易）",
+      "count": 6
+    },
+    {
+      "ch": 32,
+      "code": "MW1Bb",
+      "sectionId": "mw1bb",
+      "label": "Isotope (Medium)",
+      "labelZh": "同位素（中等）",
+      "count": 5
+    },
+    {
+      "ch": 33,
+      "code": "MW1Bc",
+      "sectionId": "mw1bc",
+      "label": "Isotope (Difficult)",
+      "labelZh": "同位素（困難）",
+      "count": 6
+    },
+    {
+      "ch": 34,
+      "code": "MW2Aa",
+      "sectionId": "mw2aa",
+      "label": "Metals, Semi-Metals And Non-Metals (Easy)",
+      "labelZh": "金屬、半金屬及非金屬（容易）",
+      "count": 5
+    },
+    {
+      "ch": 35,
+      "code": "MW2Ab",
+      "sectionId": "mw2ab",
+      "label": "Metals, Semi-Metals And Non-Metals (Medium)",
+      "labelZh": "金屬、半金屬及非金屬（中等）",
+      "count": 9
+    },
+    {
+      "ch": 36,
+      "code": "MW2Ac",
+      "sectionId": "mw2ac",
+      "label": "Metals, Semi-Metals And Non-Metals (Difficult)",
+      "labelZh": "金屬、半金屬及非金屬（困難）",
+      "count": 8
+    },
+    {
+      "ch": 37,
+      "code": "MW2Ba",
+      "sectionId": "mw2ba",
+      "label": "Periodic Table (Easy)",
+      "labelZh": "週期表（容易）",
+      "count": 8
+    },
+    {
+      "ch": 38,
+      "code": "MW2Bb",
+      "sectionId": "mw2bb",
+      "label": "Periodic Table (Medium)",
+      "labelZh": "週期表（中等）",
+      "count": 3
+    },
+    {
+      "ch": 39,
+      "code": "MW2Bc",
+      "sectionId": "mw2bc",
+      "label": "Periodic Table (Difficult)",
+      "labelZh": "週期表（困難）",
+      "count": 5
+    },
+    {
+      "ch": 40,
+      "code": "MW2Ca",
+      "sectionId": "mw2ca",
+      "label": "Group I And Group Ii (Easy)",
+      "labelZh": "第I族及第II族（容易）",
+      "count": 3
+    },
+    {
+      "ch": 41,
+      "code": "MW2Cb",
+      "sectionId": "mw2cb",
+      "label": "Group I And Group Ii (Medium)",
+      "labelZh": "第I族及第II族（中等）",
+      "count": 4
+    },
+    {
+      "ch": 42,
+      "code": "MW2Cc",
+      "sectionId": "mw2cc",
+      "label": "Group I And Group Ii (Difficult)",
+      "labelZh": "第I族及第II族（困難）",
+      "count": 4
+    },
+    {
+      "ch": 43,
+      "code": "MW2Da",
+      "sectionId": "mw2da",
+      "label": "Group Vii And Group 0 (Easy)",
+      "labelZh": "第VII族及第0族（容易）",
+      "count": 3
+    },
+    {
+      "ch": 44,
+      "code": "MW2Db",
+      "sectionId": "mw2db",
+      "label": "Group Vii And Group 0 (Medium)",
+      "labelZh": "第VII族及第0族（中等）",
+      "count": 7
+    },
+    {
+      "ch": 45,
+      "code": "MW2Dc",
+      "sectionId": "mw2dc",
+      "label": "Group Vii And Group 0 (Difficult)",
+      "labelZh": "第VII族及第0族（困難）",
+      "count": 3
+    },
+    {
+      "ch": 46,
+      "code": "MW3Aa",
+      "sectionId": "mw3aa",
+      "label": "Metallic Bond (Easy)",
+      "labelZh": "金屬鍵（容易）",
+      "count": 3
+    },
+    {
+      "ch": 47,
+      "code": "MW3Ab",
+      "sectionId": "mw3ab",
+      "label": "Metallic Bond (Medium)",
+      "labelZh": "金屬鍵（中等）",
+      "count": 3
+    },
+    {
+      "ch": 48,
+      "code": "MW3Ac",
+      "sectionId": "mw3ac",
+      "label": "Metallic Bond (Difficult)",
+      "labelZh": "金屬鍵（困難）",
+      "count": 3
+    },
+    {
+      "ch": 49,
+      "code": "MW3Ba",
+      "sectionId": "mw3ba",
+      "label": "Ions Formation (Easy)",
+      "labelZh": "離子的形成（容易）",
+      "count": 5
+    },
+    {
+      "ch": 50,
+      "code": "MW3Bb",
+      "sectionId": "mw3bb",
+      "label": "Ions Formation (Medium)",
+      "labelZh": "離子的形成（中等）",
+      "count": 9
+    },
+    {
+      "ch": 51,
+      "code": "MW3Bc",
+      "sectionId": "mw3bc",
+      "label": "Ions Formation (Difficult)",
+      "labelZh": "離子的形成（困難）",
+      "count": 8
+    },
+    {
+      "ch": 52,
+      "code": "MW3Ca",
+      "sectionId": "mw3ca",
+      "label": "Ionic Bond Electron Diagram (Easy)",
+      "labelZh": "離子鍵電子圖（容易）",
+      "count": 3
+    },
+    {
+      "ch": 53,
+      "code": "MW3Cb",
+      "sectionId": "mw3cb",
+      "label": "Ionic Bond Electron Diagram (Medium)",
+      "labelZh": "離子鍵電子圖（中等）",
+      "count": 4
+    },
+    {
+      "ch": 54,
+      "code": "MW3Cc",
+      "sectionId": "mw3cc",
+      "label": "Ionic Bond Electron Diagram (Difficult)",
+      "labelZh": "離子鍵電子圖（困難）",
+      "count": 3
+    },
+    {
+      "ch": 55,
+      "code": "MW3Da",
+      "sectionId": "mw3da",
+      "label": "Naming Of Ionic Compound (Easy)",
+      "labelZh": "離子化合物的命名（容易）",
+      "count": 3
+    },
+    {
+      "ch": 56,
+      "code": "MW3Db",
+      "sectionId": "mw3db",
+      "label": "Naming Of Ionic Compound (Medium)",
+      "labelZh": "離子化合物的命名（中等）",
+      "count": 10
+    },
+    {
+      "ch": 57,
+      "code": "MW3Dc",
+      "sectionId": "mw3dc",
+      "label": "Naming Of Ionic Compound (Difficult)",
+      "labelZh": "離子化合物的命名（困難）",
+      "count": 4
+    },
+    {
+      "ch": 58,
+      "code": "MW3Ea",
+      "sectionId": "mw3ea",
+      "label": "Color Of Ions (Easy)",
+      "labelZh": "離子的顏色（容易）",
+      "count": 3
+    },
+    {
+      "ch": 59,
+      "code": "MW3Eb",
+      "sectionId": "mw3eb",
+      "label": "Color Of Ions (Medium)",
+      "labelZh": "離子的顏色（中等）",
+      "count": 3
+    },
+    {
+      "ch": 60,
+      "code": "MW3Ec",
+      "sectionId": "mw3ec",
+      "label": "Color Of Ions (Difficult)",
+      "labelZh": "離子的顏色（困難）",
+      "count": 3
+    },
+    {
+      "ch": 61,
+      "code": "MW4Aa",
+      "sectionId": "mw4aa",
+      "label": "Covalent Bond Electron Diagram (Easy)",
+      "labelZh": "共價鍵電子圖（容易）",
+      "count": 12
+    },
+    {
+      "ch": 62,
+      "code": "MW4Ab",
+      "sectionId": "mw4ab",
+      "label": "Covalent Bond Electron Diagram (Medium)",
+      "labelZh": "共價鍵電子圖（中等）",
+      "count": 12
+    },
+    {
+      "ch": 63,
+      "code": "MW4Ac",
+      "sectionId": "mw4ac",
+      "label": "Covalent Bond Electron Diagram (Difficult)",
+      "labelZh": "共價鍵電子圖（困難）",
+      "count": 9
+    },
+    {
+      "ch": 64,
+      "code": "MW4Ba",
+      "sectionId": "mw4ba",
+      "label": "Dative Covalent Bond (Easy)",
+      "labelZh": "配位共價鍵（容易）",
+      "count": 3
+    },
+    {
+      "ch": 65,
+      "code": "MW4Bb",
+      "sectionId": "mw4bb",
+      "label": "Dative Covalent Bond (Medium)",
+      "labelZh": "配位共價鍵（中等）",
+      "count": 3
+    },
+    {
+      "ch": 66,
+      "code": "MW4Bc",
+      "sectionId": "mw4bc",
+      "label": "Dative Covalent Bond (Difficult)",
+      "labelZh": "配位共價鍵（困難）",
+      "count": 3
+    },
+    {
+      "ch": 67,
+      "code": "MW4Ca",
+      "sectionId": "mw4ca",
+      "label": "Formula Masses (Easy)",
+      "labelZh": "式量（容易）",
+      "count": 3
+    },
+    {
+      "ch": 68,
+      "code": "MW4Cb",
+      "sectionId": "mw4cb",
+      "label": "Formula Masses (Medium)",
+      "labelZh": "式量（中等）",
+      "count": 3
+    },
+    {
+      "ch": 69,
+      "code": "MW4Cc",
+      "sectionId": "mw4cc",
+      "label": "Formula Masses (Difficult)",
+      "labelZh": "式量（困難）",
+      "count": 3
+    },
+    {
+      "ch": 70,
+      "code": "MW5Aa",
+      "sectionId": "mw5aa",
+      "label": "Giant Metallic Structure (Easy)",
+      "labelZh": "巨型金屬結構（容易）",
+      "count": 3
+    },
+    {
+      "ch": 71,
+      "code": "MW5Ab",
+      "sectionId": "mw5ab",
+      "label": "Giant Metallic Structure (Medium)",
+      "labelZh": "巨型金屬結構（中等）",
+      "count": 3
+    },
+    {
+      "ch": 72,
+      "code": "MW5Ac",
+      "sectionId": "mw5ac",
+      "label": "Giant Metallic Structure (Difficult)",
+      "labelZh": "巨型金屬結構（困難）",
+      "count": 3
+    },
+    {
+      "ch": 73,
+      "code": "MW5Ba",
+      "sectionId": "mw5ba",
+      "label": "Giant Ionic Structure (Easy)",
+      "labelZh": "巨型離子結構（容易）",
+      "count": 8
+    },
+    {
+      "ch": 74,
+      "code": "MW5Bb",
+      "sectionId": "mw5bb",
+      "label": "Giant Ionic Structure (Medium)",
+      "labelZh": "巨型離子結構（中等）",
+      "count": 5
+    },
+    {
+      "ch": 75,
+      "code": "MW5Bc",
+      "sectionId": "mw5bc",
+      "label": "Giant Ionic Structure (Difficult)",
+      "labelZh": "巨型離子結構（困難）",
+      "count": 9
+    },
+    {
+      "ch": 76,
+      "code": "MW5Ca",
+      "sectionId": "mw5ca",
+      "label": "Simple Molecular Structure (Easy)",
+      "labelZh": "簡單分子結構（容易）",
+      "count": 4
+    },
+    {
+      "ch": 77,
+      "code": "MW5Cb",
+      "sectionId": "mw5cb",
+      "label": "Simple Molecular Structure (Medium)",
+      "labelZh": "簡單分子結構（中等）",
+      "count": 7
+    },
+    {
+      "ch": 78,
+      "code": "MW5Cc",
+      "sectionId": "mw5cc",
+      "label": "Simple Molecular Structure (Difficult)",
+      "labelZh": "簡單分子結構（困難）",
+      "count": 8
+    },
+    {
+      "ch": 79,
+      "code": "MW5Da",
+      "sectionId": "mw5da",
+      "label": "Giant Covalent Structure (Easy)",
+      "labelZh": "巨型共價結構（容易）",
+      "count": 3
+    },
+    {
+      "ch": 80,
+      "code": "MW5Db",
+      "sectionId": "mw5db",
+      "label": "Giant Covalent Structure (Medium)",
+      "labelZh": "巨型共價結構（中等）",
+      "count": 6
+    },
+    {
+      "ch": 81,
+      "code": "MW5Dc",
+      "sectionId": "mw5dc",
+      "label": "Giant Covalent Structure (Difficult)",
+      "labelZh": "巨型共價結構（困難）",
+      "count": 4
+    }
+  ],
+  "imageIds": [
+    "earth1aa-1",
+    "earth1aa-5",
+    "earth1aa-6",
+    "earth1aa-7",
+    "earth1ab-1",
+    "earth1ab-2",
+    "earth1ab-3",
+    "earth1ac-4",
+    "earth1ba-1",
+    "earth1bb-1",
+    "earth1bb-2",
+    "earth1bc-1",
+    "earth2ab-1",
+    "earth2ab-4",
+    "earth2ac-7",
+    "earth2ba-1",
+    "earth2cc-2",
+    "earth2cc-3",
+    "earth3ab-1",
+    "earth3ac-5",
+    "earth4ba-2",
+    "earth4bc-1",
+    "earth4bc-2",
+    "mw1ab-6",
+    "mw2ba-8",
+    "mw2bc-4",
+    "mw3bc-6",
+    "mw3ca-2",
+    "mw3cb-1",
+    "mw3cc-1",
+    "mw3db-8",
+    "mw3ea-2",
+    "mw3ea-3",
+    "mw4aa-2",
+    "mw4aa-5",
+    "mw4aa-8",
+    "mw4aa-9",
+    "mw4ab-10",
+    "mw4ab-11",
+    "mw4ab-4",
+    "mw4ab-6",
+    "mw4ab-7",
+    "mw4ab-9",
+    "mw4ac-9",
+    "mw4bb-1",
+    "mw5ba-3",
+    "mw5cc-1",
+    "mw5cc-2",
+    "mw5cc-4",
+    "mw5db-1",
+    "mw5dc-1",
+    "mw5dc-4"
+  ],
+  "note": "Old public/quiz/microscopic-world-i remains on disk but is hidden from the Quiz page."
+}
