@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gas preparation simulation</title>
+  <link rel="stylesheet" href="./shared.css" />
+  <style>
+    .visual-panel { padding: 0.7rem 0.7rem 0.9rem; }
+    .canvas-wrap {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px #e4e9ef;
+    }
+    #simCanvas { width: 100%; max-width: 100%; height: auto; display: block; }
+    .exp-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.4rem; }
+    .exp-pill { text-align: center; }
+    .exp-pill small { display: block; font-weight: 600; opacity: 0.8; font-size: 0.72rem; }
+    .seg button:disabled, .exp-pill:disabled { opacity: 0.55; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <span class="kicker">Topic 01 · Lab skill</span>
+        <h1 id="uiTitle">氣體製備模擬</h1>
+        <p id="uiLead">揀實驗、試管角度同收集方法，睇吓裝置啱唔啱。</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="ghost-link" href="./index.html" id="back">← 目錄</a>
+        <button class="lang-btn" type="button" onclick="toggleLanguage()">EN / 中文</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section class="panel control-panel">
+      <div>
+        <span class="seg-label" id="uiLabelExp">選擇實驗</span>
+        <div class="exp-row" id="expPills"></div>
+      </div>
+
+      <div class="eq-box" id="equationDisplay"></div>
+      <div class="desc-box">
+        <h3 id="descTitle">實驗原理</h3>
+        <ul id="descList"></ul>
+      </div>
+
+      <div>
+        <span class="seg-label" id="uiLabelAngle">1. 加熱試管角度</span>
+        <div class="seg" id="angleSeg"></div>
+      </div>
+      <div>
+        <span class="seg-label" id="uiLabelMethod">2. 收集方法</span>
+        <div class="seg" id="methodSeg"></div>
+      </div>
+
+      <div class="btn-row">
+        <button id="startBtn" class="primary-btn" type="button" onclick="startSimulation()">開始實驗</button>
+        <button id="resetBtn" class="reset-btn" type="button" onclick="resetSimulation()">重置</button>
+      </div>
+      <div id="feedback" class="status-box info"></div>
+    </section>
+
+    <section class="panel visual-panel">
+      <div class="canvas-wrap">
+        <canvas id="simCanvas" width="800" height="450"></canvas>
+      </div>
+      <div class="legend">
+        <span id="legGas"></span>
+        <span id="legH2O" style="display:none"><span class="dot" style="background:#3498db"></span><span id="txtH2O">冷凝水</span></span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const experiments = {
+      nh3: {
+        id: "nh3",
+        density: "light",
+        solubility: "high",
+        producesWater: true,
+        color: "#2ecc71",
+        equationHTML: "2NH<sub>4</sub>Cl(s) + Ca(OH)<sub>2</sub>(s) <span style='color:#e74c3c'>Δ</span> → CaCl<sub>2</sub>(s) + <strong>2H<sub>2</sub>O(l)</strong> + <strong>2NH<sub>3</sub>(g)</strong>",
+        gasName: { zh: "氨氣 (NH₃)", en: "Ammonia (NH₃)" },
+        pill: { zh: ["NH₃", "有水生成"], en: ["NH₃", "Produces water"] },
+        desc: {
+          zh: [
+            "<b>加熱：</b> 必須<b>向下傾斜</b>。反應生成水，防止冷凝水倒流回熱底部導致試管炸裂。",
+            "<b>收集：</b> 氨氣密度比空氣低，且極易溶於水。用<b>向上導氣法</b>。"
+          ],
+          en: [
+            "<b>Heating:</b> Must tilt <b>downwards</b>. Water is produced; this stops condensate running back onto hot glass.",
+            "<b>Collection:</b> Ammonia is less dense than air and very soluble. Use <b>upward delivery</b>."
+          ]
+        }
+      },
+      co2: {
+        id: "co2",
+        density: "heavy",
+        solubility: "high",
+        producesWater: false,
+        color: "#7f8c8d",
+        equationHTML: "CuCO<sub>3</sub>(s) <span style='color:#e74c3c'>Δ</span> → CuO(s) + <strong>CO<sub>2</sub>(g)</strong>",
+        gasName: { zh: "二氧化碳 (CO₂)", en: "Carbon dioxide (CO₂)" },
+        pill: { zh: ["CO₂", "無水生成"], en: ["CO₂", "No water"] },
+        desc: {
+          zh: [
+            "<b>加熱：</b> 乾燥固體應<b>水平放置</b>，增加受熱面積。",
+            "<b>收集：</b> CO₂ 密度比空氣高。用<b>向下導氣法</b>。"
+          ],
+          en: [
+            "<b>Heating:</b> Place the tube <b>horizontally</b> to heat a shallow layer of solid.",
+            "<b>Collection:</b> CO₂ is denser than air. Use <b>downward delivery</b>."
+          ]
+        }
+      },
+      cracking: {
+        id: "cracking",
+        density: "mix",
+        solubility: "low",
+        producesWater: false,
+        color: "#f39c12",
+        equationHTML: "C<sub>x</sub>H<sub>y</sub>(l) <span style='color:#e74c3c'>Δ</span> → <strong>C<sub>2</sub>H<sub>4</sub>(g)</strong> + <strong>C<sub>4</sub>H<sub>10</sub>(g)</strong>",
+        gasName: { zh: "乙烯 + 丁烷", en: "Ethene + butane" },
+        pill: { zh: ["裂解", "液體反應物"], en: ["Cracking", "Liquid reactant"] },
+        desc: {
+          zh: [
+            "<b>加熱：</b> 必須<b>水平放置</b>。熱源要喺<b>催化劑</b>下方，唔係油嗰邊。",
+            "<b>收集：</b> 混合氣體（丁烷較重、乙烯同空氣相若），唔可以用排氣法，要用<b>排水法</b>。"
+          ],
+          en: [
+            "<b>Heating:</b> Keep the tube <b>flat</b>. Heat under the <b>catalyst</b>, not the oil.",
+            "<b>Collection:</b> Mixed gases (butane heavier; ethene similar to air). Use <b>water displacement</b>."
+          ]
+        }
+      }
+    };
+
+    const translations = {
+      zh: {
+        title: "氣體製備模擬",
+        lead: "揀實驗、試管角度同收集方法，睇吓裝置啱唔啱。",
+        back: "← 目錄",
+        labelExp: "選擇實驗",
+        labelAngle: "1. 加熱試管角度",
+        labelMethod: "2. 收集方法",
+        descTitle: "實驗原理",
+        optAngleDown: "試管口向下傾斜",
+        optAngleFlat: "試管水平放置",
+        optMethodUp: "向上導氣法",
+        optMethodDown: "向下導氣法",
+        optMethodWater: "排水法",
+        btnStart: "開始實驗",
+        btnReset: "重置",
+        txtH2O: "冷凝水 (H₂O)",
+        fbNeutral: "揀好實驗、角度同收集方法，然後撳開始。",
+        fbRunning: "反應進行緊……",
+        fbCrack: "<strong>實驗失敗！</strong> 反應生成水。試管未向下傾斜，冷凝水倒流回熱底部，試管炸裂。",
+        fbFailLiquidFlow: "<strong>實驗失敗！</strong> 試管傾斜，油未經過催化劑就流出，反應停咗。",
+        fbFailAngleCO2: "<strong>裝置錯誤：</strong> 乾燥固體分解（CO₂）應水平放置，唔應向下傾斜。",
+        fbFailAngleNH3: "<strong>裝置錯誤：</strong> 有水生成（NH₃）必須向下傾斜，否則有炸裂風險。",
+        fbSuccess: "<strong>成功！</strong> 裝置正確，氣體已收集。",
+        fbFailDensityLight: "<strong>收集失敗：</strong> 氣體比空氣輕，會由上方逸出（應用向上導氣法）。",
+        fbFailDensityHeavy: "<strong>收集失敗：</strong> 氣體比空氣重，會由下方流失（應用向下導氣法）。",
+        fbFailSoluble: "<strong>收集失敗：</strong> 氣體易溶於水，唔可以用排水法。",
+        fbFailCrackAir: "<strong>收集失敗：</strong> 裂解產物含丁烷（重）同乙烯（同空氣相若），唔可以用排氣法。",
+        cvMethodUp: "向上導氣法",
+        cvMethodDown: "向下導氣法",
+        cvMethodWater: "排水法",
+        labelOil: "油",
+        labelCat: "催化劑"
+      },
+      en: {
+        title: "Gas preparation simulation",
+        lead: "Choose the experiment, tube angle and collection method, then watch the setup.",
+        back: "← Hub",
+        labelExp: "Select experiment",
+        labelAngle: "1. Heating-tube angle",
+        labelMethod: "2. Collection method",
+        descTitle: "Key ideas",
+        optAngleDown: "Mouth tilted down",
+        optAngleFlat: "Horizontal",
+        optMethodUp: "Upward delivery",
+        optMethodDown: "Downward delivery",
+        optMethodWater: "Water displacement",
+        btnStart: "Start",
+        btnReset: "Reset",
+        txtH2O: "Condensed water",
+        fbNeutral: "Select experiment, angle and method, then click Start.",
+        fbRunning: "Reaction in progress…",
+        fbCrack: "<strong>Failed!</strong> Water is produced. The tube was not tilted down, so condensate ran back and cracked the glass.",
+        fbFailLiquidFlow: "<strong>Failed!</strong> Oil ran out without passing the catalyst.",
+        fbFailAngleCO2: "<strong>Setup error:</strong> For a dry solid (CO₂), keep the tube horizontal.",
+        fbFailAngleNH3: "<strong>Setup error:</strong> Water is produced (NH₃). Tilt the mouth down to prevent cracking.",
+        fbSuccess: "<strong>Success!</strong> Correct setup. Gas collected.",
+        fbFailDensityLight: "<strong>Failed:</strong> The gas is lighter than air and escapes (use upward delivery).",
+        fbFailDensityHeavy: "<strong>Failed:</strong> The gas is heavier than air and falls out (use downward delivery).",
+        fbFailSoluble: "<strong>Failed:</strong> The gas dissolves in water.",
+        fbFailCrackAir: "<strong>Failed:</strong> Cracking gives a mixture (butane heavy, ethene similar to air). Do not use air displacement.",
+        cvMethodUp: "Upward delivery",
+        cvMethodDown: "Downward delivery",
+        cvMethodWater: "Water displacement",
+        labelOil: "Oil",
+        labelCat: "Catalyst"
+      }
+    };
+
+    let currentLang = "zh";
+    let currentExpKey = "nh3";
+    let currentAngle = "down";
+    let currentMethod = "upward_delivery";
+    let currentFeedbackState = "neutral";
+    let isSuccess = false;
+    let isRunning = false;
+    let isCracked = false;
+    let isOilFlowFail = false;
+    let frameCount = 0;
+    let particles = [];
+    let waterDroplets = [];
+    let oilDroplets = [];
+    let animationId;
+    let uiLocked = false;
+
+    const TUBE_X = 250, TUBE_Y = 250, TUBE_LEN = 200, TUBE_W = 36;
+    const canvas = document.getElementById("simCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function fitCanvas() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = 800 * dpr;
+      canvas.height = 450 * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function tr() { return translations[currentLang]; }
+
+    function makeSeg(container, items, getValue, setValue) {
+      container.innerHTML = "";
+      items.forEach(([value, label]) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = label;
+        btn.setAttribute("aria-pressed", getValue() === value ? "true" : "false");
+        btn.addEventListener("click", () => {
+          if (uiLocked) return;
+          setValue(value);
+          refreshControls();
+          drawScene();
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    function refreshControls() {
+      const t = tr();
+      const exp = experiments[currentExpKey];
+      document.getElementById("expPills").innerHTML = "";
+      ["nh3", "co2", "cracking"].forEach((key) => {
+        const e = experiments[key];
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "exp-pill";
+        btn.setAttribute("aria-pressed", currentExpKey === key ? "true" : "false");
+        btn.innerHTML = e.pill[currentLang][0] + "<small>" + e.pill[currentLang][1] + "</small>";
+        btn.addEventListener("click", () => {
+          if (isRunning) return;
+          currentExpKey = key;
+          applyExperiment();
+        });
+        document.getElementById("expPills").appendChild(btn);
+      });
+
+      makeSeg(document.getElementById("angleSeg"), [
+        ["down", t.optAngleDown],
+        ["flat", t.optAngleFlat]
+      ], () => currentAngle, (v) => { currentAngle = v; });
+
+      makeSeg(document.getElementById("methodSeg"), [
+        ["upward_delivery", t.optMethodUp],
+        ["downward_delivery", t.optMethodDown],
+        ["water_displacement", t.optMethodWater]
+      ], () => currentMethod, (v) => { currentMethod = v; });
+
+      document.getElementById("equationDisplay").innerHTML = exp.equationHTML;
+      const descList = document.getElementById("descList");
+      descList.innerHTML = "";
+      exp.desc[currentLang].forEach((item) => {
+        const li = document.createElement("li");
+        li.innerHTML = item;
+        descList.appendChild(li);
+      });
+      document.getElementById("legGas").innerHTML = '<span class="dot" style="background:' + exp.color + '"></span>' + exp.gasName[currentLang];
+      document.getElementById("legH2O").style.display = exp.producesWater ? "inline-block" : "none";
+      if (uiLocked) setLocked(true);
+    }
+
+    function applyExperiment() {
+      if (uiLocked) return;
+      refreshControls();
+      resetSimulation();
+    }
+
+    function updateUIText() {
+      const t = tr();
+      document.documentElement.lang = currentLang === "zh" ? "zh-HK" : "en";
+      document.getElementById("uiTitle").textContent = t.title;
+      document.getElementById("uiLead").textContent = t.lead;
+      document.getElementById("back").textContent = t.back;
+      document.getElementById("uiLabelExp").textContent = t.labelExp;
+      document.getElementById("uiLabelAngle").textContent = t.labelAngle;
+      document.getElementById("uiLabelMethod").textContent = t.labelMethod;
+      document.getElementById("descTitle").textContent = t.descTitle;
+      document.getElementById("startBtn").textContent = t.btnStart;
+      document.getElementById("resetBtn").textContent = t.btnReset;
+      document.getElementById("txtH2O").textContent = t.txtH2O;
+      refreshControls();
+      updateFeedback(currentFeedbackState);
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === "zh" ? "en" : "zh";
+      updateUIText();
+      drawScene();
+    }
+
+    function updateFeedback(state) {
+      currentFeedbackState = state;
+      const fb = document.getElementById("feedback");
+      const t = tr();
+      const map = {
+        neutral: ["fbNeutral", "info"],
+        running: ["fbRunning", "info"],
+        crack: ["fbCrack", "wrong"],
+        fail_oil: ["fbFailLiquidFlow", "wrong"],
+        fail_angle_co2: ["fbFailAngleCO2", "warn"],
+        fail_angle_nh3: ["fbFailAngleNH3", "warn"],
+        success: ["fbSuccess", "correct"],
+        fail_light: ["fbFailDensityLight", "warn"],
+        fail_heavy: ["fbFailDensityHeavy", "warn"],
+        fail_soluble: ["fbFailSoluble", "warn"],
+        fail_crack_air: ["fbFailCrackAir", "warn"]
+      };
+      const [key, cls] = map[state] || map.neutral;
+      fb.className = "status-box " + cls;
+      fb.innerHTML = t[key];
+    }
+
+    function setLocked(locked) {
+      uiLocked = locked;
+      document.getElementById("startBtn").disabled = locked;
+      document.querySelectorAll(".seg button, .exp-pill").forEach((b) => { b.disabled = locked; });
+    }
+
+    function startSimulation() {
+      if (isRunning) return;
+      isRunning = true;
+      isCracked = false;
+      isOilFlowFail = false;
+      isSuccess = false;
+      setLocked(true);
+      updateFeedback("running");
+      const exp = experiments[currentExpKey];
+      if (exp.id === "cracking" && currentAngle === "down") {
+        isOilFlowFail = true;
+        for (let i = 0; i < 10; i++) {
+          oilDroplets.push({ x: -TUBE_LEN / 2 + 25 + Math.random() * 10, y: (Math.random() - 0.5) * 10 });
+        }
+      }
+      animate();
+    }
+
+    function resetSimulation() {
+      cancelAnimationFrame(animationId);
+      isRunning = false;
+      isCracked = false;
+      isOilFlowFail = false;
+      isSuccess = false;
+      frameCount = 0;
+      particles = [];
+      waterDroplets = [];
+      oilDroplets = [];
+      setLocked(false);
+      drawScene();
+      updateFeedback("neutral");
+    }
+
+    function getPathPoints() {
+      const rot = currentAngle === "down" ? 15 * Math.PI / 180 : 0;
+      const p0 = {
+        x: TUBE_X + Math.cos(rot) * (TUBE_LEN / 2),
+        y: TUBE_Y + Math.sin(rot) * (TUBE_LEN / 2)
+      };
+      const collectX = 650, collectY = 300;
+      const points = [p0];
+      if (currentMethod === "upward_delivery") {
+        points.push({ x: p0.x + 40, y: p0.y }, { x: collectX, y: p0.y }, { x: collectX, y: collectY - 120 });
+      } else if (currentMethod === "downward_delivery") {
+        points.push({ x: p0.x + 40, y: p0.y }, { x: collectX, y: p0.y }, { x: collectX, y: collectY + 80 });
+      } else {
+        points.push({ x: p0.x + 20, y: p0.y }, { x: collectX - 50, y: collectY + 50 });
+      }
+      return points;
+    }
+
+    function animate() {
+      if (!isRunning) return;
+      frameCount++;
+      updatePhysics();
+      drawScene();
+      if (isCracked) {
+        updateFeedback("crack");
+        isRunning = false;
+      } else if (isOilFlowFail && frameCount > 100) {
+        updateFeedback("fail_oil");
+        isRunning = false;
+      } else {
+        animationId = requestAnimationFrame(animate);
+      }
+    }
+
+    function updatePhysics() {
+      const exp = experiments[currentExpKey];
+      let setupCorrect = false;
+      if (exp.id === "nh3" && currentMethod === "upward_delivery") setupCorrect = true;
+      if (exp.id === "co2" && currentMethod === "downward_delivery") setupCorrect = true;
+      if (exp.id === "cracking" && currentMethod === "water_displacement") setupCorrect = true;
+
+      if (!isOilFlowFail && frameCount % 5 === 0) {
+        const startX = exp.id === "cracking" ? -10 : -TUBE_LEN / 2 + 40;
+        particles.push({ type: "gas", stage: "tube", x: startX, y: (Math.random() - 0.5) * 10, pathIndex: 0, pathProgress: 0, offset: (Math.random() - 0.5) * 4 });
+        if (exp.producesWater) {
+          particles.push({ type: "steam", stage: "tube", x: startX, y: (Math.random() - 0.5) * 10 });
+        }
+      }
+
+      if (isOilFlowFail) {
+        oilDroplets.forEach((oil) => {
+          oil.x += 1.5;
+          oil.y += (Math.random() - 0.5) * 0.5;
+          if (oil.x > TUBE_LEN / 2 - 20) oil.x = TUBE_LEN / 2 - 20;
+        });
+      }
+
+      const points = getPathPoints();
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        if (p.stage === "tube") {
+          p.x += 2;
+          p.y += (Math.random() - 0.5);
+          if (p.type === "steam") {
+            if (p.x > TUBE_LEN / 2 - 80 && Math.random() > 0.85) {
+              waterDroplets.push({ x: p.x, y: TUBE_W / 2 - 2 });
+              particles.splice(i, 1);
+              continue;
+            }
+            if (p.x > TUBE_LEN / 2 - 10) { particles.splice(i, 1); continue; }
+          }
+          if (p.type === "gas" && p.x > TUBE_LEN / 2) {
+            p.stage = "delivery";
+            p.pathIndex = 0;
+            p.pathProgress = 0;
+          }
+        } else if (p.stage === "delivery") {
+          p.pathProgress += 0.03;
+          if (p.pathProgress >= 1) { p.pathIndex++; p.pathProgress = 0; }
+          if (p.pathIndex >= points.length - 1) {
+            handleCollectionPhysics(p, i, exp, setupCorrect);
+          } else {
+            const p1 = points[p.pathIndex];
+            const p2 = points[p.pathIndex + 1];
+            p.worldX = p1.x + (p2.x - p1.x) * p.pathProgress;
+            p.worldY = p1.y + (p2.y - p1.y) * p.pathProgress;
+            if (Math.abs(p2.x - p1.x) > Math.abs(p2.y - p1.y)) p.worldY += p.offset;
+            else p.worldX += p.offset;
+          }
+        }
+      }
+
+      if (exp.producesWater) {
+        for (let i = waterDroplets.length - 1; i >= 0; i--) {
+          const d = waterDroplets[i];
+          if (currentAngle === "down") {
+            d.x += 0.5;
+            if (d.x > TUBE_LEN / 2) waterDroplets.splice(i, 1);
+          } else {
+            d.x -= 0.3;
+            d.y += (Math.random() - 0.5);
+            if (d.x < -TUBE_LEN / 2 + 60) isCracked = true;
+          }
+        }
+      }
+
+      if (frameCount === 200 && !isCracked && !isOilFlowFail) evaluateResult(exp);
+    }
+
+    function handleCollectionPhysics(p, index, exp, isCorrect) {
+      const collectY = 300, collectX = 650;
+      if (isCorrect) {
+        if (currentMethod === "upward_delivery") {
+          p.worldY -= 1; p.worldX += (Math.random() - 0.5) * 2;
+          p.worldY = Math.max(p.worldY, collectY - 145);
+          p.worldX = Math.min(Math.max(p.worldX, collectX - 12), collectX + 12);
+        } else if (currentMethod === "downward_delivery") {
+          p.worldY += 1; p.worldX += (Math.random() - 0.5) * 2;
+          p.worldY = Math.min(p.worldY, collectY + 95);
+          p.worldX = Math.min(Math.max(p.worldX, collectX - 18), collectX + 18);
+        } else {
+          p.worldY -= 1; p.worldX += (Math.random() - 0.5) * 2;
+          p.worldY = Math.max(p.worldY, collectY - 55);
+          p.worldX = Math.min(Math.max(p.worldX, collectX - 12), collectX + 12);
+        }
+      } else if (currentMethod === "upward_delivery") {
+        if (exp.density === "heavy" || exp.density === "mix") {
+          p.worldY += 2;
+          if (p.worldY > collectY + 50) particles.splice(index, 1);
+        } else particles.splice(index, 1);
+      } else if (currentMethod === "downward_delivery") {
+        if (exp.density === "light" || exp.density === "mix") {
+          p.worldY -= 2;
+          if (p.worldY < collectY - 100) particles.splice(index, 1);
+        } else particles.splice(index, 1);
+      } else if (exp.solubility === "high") {
+        particles.splice(index, 1);
+      }
+    }
+
+    function evaluateResult(exp) {
+      if (exp.id === "co2" && currentAngle === "down") { updateFeedback("fail_angle_co2"); return; }
+      if (exp.id === "cracking" && currentAngle === "down") { updateFeedback("fail_oil"); return; }
+      if (exp.id === "nh3" && currentAngle === "flat") { updateFeedback("fail_angle_nh3"); return; }
+      let collectionCorrect = false;
+      if (exp.id === "nh3" && currentMethod === "upward_delivery") collectionCorrect = true;
+      if (exp.id === "co2" && currentMethod === "downward_delivery") collectionCorrect = true;
+      if (exp.id === "cracking" && currentMethod === "water_displacement") collectionCorrect = true;
+      if (collectionCorrect) {
+        updateFeedback("success");
+        isSuccess = true;
+      } else if (exp.id === "cracking") {
+        updateFeedback("fail_crack_air");
+      } else if (currentMethod === "water_displacement" && exp.solubility === "high") {
+        updateFeedback("fail_soluble");
+      } else if (currentMethod === "upward_delivery" && exp.density === "heavy") {
+        updateFeedback("fail_heavy");
+      } else if (currentMethod === "downward_delivery" && exp.density === "light") {
+        updateFeedback("fail_light");
+      } else {
+        updateFeedback(exp.density === "heavy" ? "fail_heavy" : "fail_light");
+      }
+    }
+
+    function roundRect(x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    function drawLabel(text, x, y) {
+      ctx.font = "700 13px Trebuchet MS, sans-serif";
+      const w = ctx.measureText(text).width + 16;
+      ctx.fillStyle = "rgba(255,255,255,0.92)";
+      roundRect(x - 8, y - 14, w, 22, 11);
+      ctx.fill();
+      ctx.fillStyle = "#17152a";
+      ctx.fillText(text, x, y + 2);
+    }
+
+    function drawGlassTubePath(points) {
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.strokeStyle = "rgba(160, 184, 196, 0.95)";
+      ctx.lineWidth = 7;
+      ctx.beginPath();
+      ctx.moveTo(points[0].x, points[0].y);
+      points.slice(1).forEach((p) => ctx.lineTo(p.x, p.y));
+      ctx.stroke();
+      ctx.strokeStyle = "rgba(255,255,255,0.55)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(points[0].x, points[0].y - 2);
+      points.slice(1).forEach((p) => ctx.lineTo(p.x, p.y - 2));
+      ctx.stroke();
+    }
+
+    function drawScene() {
+      const exp = experiments[currentExpKey];
+      ctx.clearRect(0, 0, 800, 450);
+      const g = ctx.createLinearGradient(0, 0, 0, 450);
+      g.addColorStop(0, "#f7fbff");
+      g.addColorStop(1, "#e7eef5");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, 800, 450);
+      ctx.fillStyle = "#cbbba3";
+      ctx.fillRect(0, 420, 800, 30);
+      ctx.fillStyle = "#b7a48a";
+      ctx.fillRect(0, 416, 800, 6);
+
+      drawStand();
+      drawBurner(exp);
+      ctx.save();
+      ctx.translate(TUBE_X, TUBE_Y);
+      ctx.rotate(currentAngle === "down" ? 15 * Math.PI / 180 : 0);
+      drawTestTube();
+      drawReactants(exp);
+      drawParticlesInTube(exp);
+      ctx.restore();
+      drawDeliverySystem();
+      drawParticlesInDelivery(exp);
+      if (isCracked) drawCrackEffect();
+    }
+
+    function drawStand() {
+      ctx.strokeStyle = "#4a5560";
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.moveTo(TUBE_X, TUBE_Y + 150);
+      ctx.lineTo(TUBE_X, TUBE_Y - 56);
+      ctx.stroke();
+      ctx.fillStyle = "#2d3436";
+      roundRect(TUBE_X - 46, TUBE_Y + 148, 92, 12, 3);
+      ctx.fill();
+      ctx.fillStyle = "#7f8c8d";
+      roundRect(TUBE_X - 7, TUBE_Y - 12, 14, 24, 3);
+      ctx.fill();
+      ctx.strokeStyle = "#7f8c8d";
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(TUBE_X, TUBE_Y);
+      ctx.lineTo(TUBE_X + 22, TUBE_Y);
+      ctx.stroke();
+    }
+
+    function drawBurner(exp) {
+      let burnerX = exp.id === "cracking" ? TUBE_X - 20 : TUBE_X - 70;
+      const burnerY = TUBE_Y + 100;
+      if (isRunning && !isCracked && !isOilFlowFail) {
+        ctx.beginPath();
+        ctx.moveTo(burnerX, burnerY);
+        ctx.quadraticCurveTo(burnerX + 6, burnerY - 58 - Math.random() * 8, burnerX + 12, burnerY);
+        ctx.fillStyle = "rgba(41, 98, 255, 0.55)";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(burnerX + 2, burnerY);
+        ctx.quadraticCurveTo(burnerX + 6, burnerY - 36 - Math.random() * 5, burnerX + 10, burnerY);
+        ctx.fillStyle = "rgba(125, 211, 252, 0.85)";
+        ctx.fill();
+      }
+      ctx.fillStyle = "#5d6d7e";
+      roundRect(burnerX - 4, burnerY, 16, 48, 2);
+      ctx.fill();
+      ctx.fillStyle = "#2c3e50";
+      roundRect(burnerX - 16, burnerY + 46, 40, 8, 3);
+      ctx.fill();
+    }
+
+    function drawTestTube() {
+      const halfLen = TUBE_LEN / 2, halfW = TUBE_W / 2;
+      ctx.strokeStyle = "#9bb0bc";
+      ctx.lineWidth = 3;
+      ctx.fillStyle = "rgba(255,255,255,0.28)";
+      ctx.beginPath();
+      ctx.moveTo(halfLen, -halfW);
+      ctx.lineTo(-halfLen + halfW, -halfW);
+      ctx.arc(-halfLen + halfW, 0, halfW, 1.5 * Math.PI, 0.5 * Math.PI, true);
+      ctx.lineTo(halfLen, halfW);
+      ctx.fill();
+      ctx.stroke();
+      ctx.strokeStyle = "rgba(255,255,255,0.7)";
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(-halfLen + 18, -halfW + 4);
+      ctx.lineTo(halfLen - 12, -halfW + 4);
+      ctx.stroke();
+      ctx.fillStyle = "#8d99a6";
+      roundRect(halfLen - 6, -halfW + 2, 14, TUBE_W - 4, 3);
+      ctx.fill();
+    }
+
+    function drawReactants(exp) {
+      const halfLen = TUBE_LEN / 2;
+      const t = tr();
+      if (exp.id === "co2") {
+        ctx.fillStyle = "#27ae60";
+        ctx.beginPath();
+        ctx.moveTo(-halfLen + 10, 10);
+        ctx.lineTo(-halfLen + 64, 12);
+        ctx.lineTo(-halfLen + 18, 16);
+        ctx.fill();
+      } else if (exp.id === "cracking") {
+        ctx.fillStyle = "#f1c40f";
+        ctx.beginPath();
+        ctx.ellipse(-halfLen + 20, 0, 15, 12, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "rgba(255,255,255,0.45)";
+        ctx.beginPath();
+        ctx.ellipse(-halfLen + 20, 0, 15, 12, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#ecf0f1";
+        ctx.beginPath();
+        ctx.arc(-20, 5, 8, 0, Math.PI * 2);
+        ctx.arc(-10, -5, 7, 0, Math.PI * 2);
+        ctx.arc(0, 0, 8, 0, Math.PI * 2);
+        ctx.fill();
+        if (frameCount < 120) {
+          ctx.fillStyle = "#17152a";
+          ctx.font = "700 11px Trebuchet MS, sans-serif";
+          ctx.fillText(t.labelCat, -34, -22);
+          ctx.fillText(t.labelOil, -halfLen + 8, -22);
+        }
+      } else {
+        ctx.fillStyle = "#bdc3c7";
+        ctx.beginPath();
+        ctx.moveTo(-halfLen + 10, 10);
+        ctx.lineTo(-halfLen + 64, 12);
+        ctx.lineTo(-halfLen + 18, 16);
+        ctx.fill();
+      }
+    }
+
+    function drawDeliverySystem() {
+      const points = getPathPoints();
+      const collectX = 650, collectY = 300;
+      const t = tr();
+      drawGlassTubePath(points);
+      if (currentMethod === "upward_delivery") drawUpwardDeliveryJar(collectX, collectY, t.cvMethodUp);
+      else if (currentMethod === "downward_delivery") drawDownwardDeliveryJar(collectX, collectY, t.cvMethodDown);
+      else drawWaterTrough(collectX, collectY, t.cvMethodWater);
+    }
+
+    function drawUpwardDeliveryJar(x, y, label) {
+      ctx.strokeStyle = "#5d6d7e";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(x + 42, y + 100);
+      ctx.lineTo(x + 42, y - 150);
+      ctx.moveTo(x + 42, y - 120);
+      ctx.lineTo(x + 16, y - 120);
+      ctx.stroke();
+      ctx.strokeStyle = "#9bb0bc";
+      ctx.lineWidth = 3;
+      ctx.fillStyle = "rgba(255,255,255,0.28)";
+      ctx.beginPath();
+      ctx.moveTo(x - 16, y - 50);
+      ctx.lineTo(x - 16, y - 150);
+      ctx.arc(x, y - 150, 16, Math.PI, 0);
+      ctx.lineTo(x + 16, y - 50);
+      ctx.fill();
+      ctx.stroke();
+      drawLabel(label, x - 28, y + 118);
+    }
+
+    function drawDownwardDeliveryJar(x, y, label) {
+      ctx.strokeStyle = "#9bb0bc";
+      ctx.lineWidth = 3;
+      ctx.fillStyle = "rgba(255,255,255,0.28)";
+      ctx.beginPath();
+      ctx.moveTo(x - 22, y + 100);
+      ctx.lineTo(x - 22, y + 18);
+      ctx.lineTo(x + 22, y + 18);
+      ctx.lineTo(x + 22, y + 100);
+      ctx.arc(x, y + 100, 22, 0, Math.PI);
+      ctx.fill();
+      ctx.stroke();
+      drawLabel(label, x - 28, y + 138);
+    }
+
+    function drawWaterTrough(x, y, label) {
+      ctx.fillStyle = "rgba(52, 152, 219, 0.28)";
+      roundRect(x - 64, y + 18, 128, 64, 8);
+      ctx.fill();
+      ctx.strokeStyle = "#3498db";
+      ctx.stroke();
+      ctx.strokeStyle = "#9bb0bc";
+      ctx.fillStyle = "rgba(255,255,255,0.45)";
+      ctx.beginPath();
+      ctx.moveTo(x - 15, y + 40);
+      ctx.lineTo(x - 15, y - 60);
+      ctx.arc(x, y - 60, 15, Math.PI, 0);
+      ctx.lineTo(x + 15, y + 40);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = "rgba(52, 152, 219, 0.35)";
+      ctx.fillRect(x - 14, y - 60, 28, 100);
+      drawLabel(label, x - 18, y + 100);
+    }
+
+    function drawParticlesInTube(exp) {
+      particles.forEach((p) => {
+        if (p.stage !== "tube") return;
+        ctx.fillStyle = p.type === "gas" ? exp.color : "rgba(200,220,255,0.7)";
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 3.2, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.fillStyle = "#3498db";
+      waterDroplets.forEach((d) => {
+        ctx.beginPath();
+        ctx.arc(d.x, TUBE_W / 2 - 3, 4, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.fillStyle = "#f1c40f";
+      oilDroplets.forEach((o) => {
+        ctx.beginPath();
+        ctx.arc(o.x, TUBE_W / 2 - 3, 3, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    function drawParticlesInDelivery(exp) {
+      ctx.fillStyle = exp.color;
+      particles.forEach((p) => {
+        if (p.stage !== "delivery") return;
+        ctx.beginPath();
+        ctx.arc(p.worldX, p.worldY, 3.2, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    function drawCrackEffect() {
+      ctx.save();
+      ctx.translate(TUBE_X, TUBE_Y);
+      ctx.rotate(currentAngle === "down" ? 15 * Math.PI / 180 : 0);
+      ctx.strokeStyle = "#e74c3c";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      const crackX = -TUBE_LEN / 2 + 50;
+      ctx.moveTo(crackX, 0);
+      ctx.lineTo(crackX + 10, -15);
+      ctx.lineTo(crackX + 20, 10);
+      ctx.lineTo(crackX + 30, -5);
+      ctx.stroke();
+      ctx.fillStyle = "#e74c3c";
+      ctx.font = "800 22px Trebuchet MS, sans-serif";
+      ctx.fillText("CRACK!", crackX, -30);
+      ctx.restore();
+    }
+
+    fitCanvas();
+    updateUIText();
+    drawScene();
+    window.addEventListener("resize", () => { fitCanvas(); drawScene(); });
+  </script>
+</body>
+</html>

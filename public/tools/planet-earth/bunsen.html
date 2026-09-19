@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bunsen burner · lighting sequence</title>
+  <link rel="stylesheet" href="./shared.css" />
+  <style>
+    .visual-panel { position: relative; }
+    .main-svg {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      overflow: visible;
+    }
+    .label-text {
+      font-size: 13px;
+      font-weight: 800;
+      fill: #4a4660;
+      pointer-events: none;
+    }
+    .flame-group { transform-origin: 168px 208px; opacity: 0; }
+    .flame-group.active { opacity: 1; }
+    .flame-group.luminous { animation: flicker-luminous 0.14s infinite alternate; }
+    .flame-group.non-luminous { animation: flicker-blue 0.1s infinite alternate; }
+    @keyframes flicker-luminous {
+      0% { transform: scale(0.98, 1.12) skewX(-1.5deg); }
+      100% { transform: scale(1.04, 1.28) skewX(2deg); }
+    }
+    @keyframes flicker-blue {
+      0% { transform: scale(0.92, 0.96) skewX(-1deg); }
+      100% { transform: scale(0.98, 1.05) skewX(1deg); }
+    }
+    .soot { opacity: 0; }
+    .flame-group.luminous .soot {
+      opacity: 0.55;
+      animation: soot-up 1.4s linear infinite;
+    }
+    @keyframes soot-up {
+      0% { transform: translateY(0); opacity: 0.5; }
+      100% { transform: translateY(-28px); opacity: 0; }
+    }
+    #match-stick {
+      opacity: 0;
+      pointer-events: none;
+      transform-origin: center;
+      transition: transform 0.55s ease-out, opacity 0.2s;
+    }
+    #match-flame { opacity: 0; }
+    .match-lit #match-flame {
+      opacity: 1;
+      animation: match-flicker 0.12s infinite alternate;
+    }
+    @keyframes match-flicker {
+      0% { transform: scale(1) skewX(-3deg); }
+      100% { transform: scale(1.12) skewX(3deg); }
+    }
+    .flame-badge {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: #fff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      box-shadow: 0 6px 16px rgba(23, 16, 75, 0.12);
+      display: none;
+    }
+    .flame-badge.show { display: block; }
+    .flame-badge.yellow { color: #9a4b00; border: 2px solid var(--orange); }
+    .flame-badge.blue { color: #0b5f7a; border: 2px solid var(--cyan); }
+    .recap {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .recap.show { display: grid; }
+    .recap article {
+      padding: 0.65rem 0.75rem;
+      border-radius: 12px;
+      background: #faf7f2;
+      border-top: 4px solid var(--orange);
+    }
+    .recap article.blue { border-top-color: var(--cyan); }
+    .recap h3 { margin: 0 0 0.2rem; font-size: 0.92rem; }
+    .recap p { margin: 0; font-size: 0.82rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <span class="kicker">Topic 01 · Lab skill</span>
+        <h1 id="title">實驗技巧：本生燈</h1>
+        <p id="lead">按次序操作。氣孔控制空氣；煤氣掣控制燃料。</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="ghost-link" href="./index.html" id="back">← 目錄</a>
+        <button class="lang-btn" type="button" onclick="toggleLanguage()">EN / 中文</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section class="panel control-panel">
+      <div id="status-display" class="status-box info">準備開始。氣孔而家係全開。</div>
+
+      <ol class="step-list">
+        <li class="step-item active" id="step1"><span class="step-num">1</span><span class="step-label" id="s1">關閉氣孔</span></li>
+        <li class="step-item" id="step2"><span class="step-num">2</span><span class="step-label" id="s2">點燃火柴</span></li>
+        <li class="step-item" id="step3"><span class="step-num">3</span><span class="step-label" id="s3">打開煤氣</span></li>
+        <li class="step-item" id="step4"><span class="step-num">4</span><span class="step-label" id="s4">將氣孔打開一半</span></li>
+      </ol>
+
+      <button class="primary-btn" type="button" id="match-btn" onclick="interactMatch()">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.66 11.2C17.43 10.9 17.15 10.64 16.89 10.38C16.22 9.78 15.46 9.35 14.82 8.72C13.33 7.26 13 4.85 13.95 3C13 3.23 12.17 3.75 11.46 4.32C8.92 6.4 7.9 9.07 9.25 12.25C9.53 12.89 9.28 13.65 8.62 13.93C8.24 14.1 7.8 14.1 7.42 13.9C7.69 14.69 8.1 15.42 8.67 16.06C9.79 17.35 11.44 18.16 13.16 18.16C13.74 18.16 14.31 18.08 14.86 17.93C17.29 17.23 18.95 15.18 19 12.83C19 12.22 18.43 11.67 17.66 11.2M13 16C12.45 16 12 15.55 12 15C12 14.45 12.45 14 13 14C13.55 14 14 14.45 14 15C14 15.55 13.55 16 13 16Z"/></svg>
+        <span id="label-match-btn">點火</span>
+      </button>
+      <button class="reset-btn" type="button" onclick="resetSim()" id="reset-btn">重置</button>
+      <p class="hint" id="hint">提示：先撳圖入面嘅氣孔同煤氣掣；火柴用左邊按鈕。</p>
+
+      <div class="recap" id="recap">
+        <article>
+          <h3 id="r1t">有光焰（安全焰）</h3>
+          <p id="r1p">氣孔關閉 · 黃色 · 較凍 · 容易見到</p>
+        </article>
+        <article class="blue">
+          <h3 id="r2t">無光焰（加熱用）</h3>
+          <p id="r2p">氣孔打開 · 藍色 · 較熱 · 適合加熱</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel visual-panel">
+      <div class="flame-badge" id="flame-badge"></div>
+      <svg class="main-svg" viewBox="0 0 440 540" role="img" aria-label="Bunsen burner">
+        <defs>
+          <linearGradient id="grad-yellow" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#3b6bd6" stop-opacity="0.55"/>
+            <stop offset="18%" stop-color="#e67e22"/>
+            <stop offset="55%" stop-color="#f4c430"/>
+            <stop offset="100%" stop-color="#fff3a0"/>
+          </linearGradient>
+          <linearGradient id="grad-blue-outer" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#0b1d4a" stop-opacity="0"/>
+            <stop offset="18%" stop-color="#1d4ed8" stop-opacity="0.85"/>
+            <stop offset="70%" stop-color="#67e8f9" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="0.15"/>
+          </linearGradient>
+          <linearGradient id="mat-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4f7a58"/>
+            <stop offset="100%" stop-color="#355540"/>
+          </linearGradient>
+          <linearGradient id="barrel-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#9aa3ab"/>
+            <stop offset="35%" stop-color="#e8eef2"/>
+            <stop offset="100%" stop-color="#7b868e"/>
+          </linearGradient>
+          <linearGradient id="base-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#5aa0e0"/>
+            <stop offset="100%" stop-color="#2d6aa8"/>
+          </linearGradient>
+        </defs>
+
+        <rect x="0" y="478" width="440" height="62" fill="#cbbba3"/>
+        <rect x="0" y="472" width="440" height="8" fill="#b7a48a"/>
+        <rect x="42" y="444" width="250" height="32" rx="5" fill="url(#mat-grad)"/>
+        <rect x="50" y="450" width="234" height="6" rx="2" fill="#6b9473" opacity="0.35"/>
+
+        <g id="flame-group" class="flame-group">
+          <path id="outer-flame" d="M154,208 C148,150 156,92 168,58 C180,92 188,150 182,208 C175,220 161,220 154,208 Z" fill="url(#grad-yellow)"/>
+          <path id="inner-flame" d="M160,208 C158,176 164,138 168,118 C172,138 178,176 176,208 C173,214 163,214 160,208 Z" fill="#fff7c2" opacity="0.55"/>
+          <circle class="soot" cx="160" cy="70" r="2.2" fill="#4a4038"/>
+          <circle class="soot" cx="176" cy="86" r="1.8" fill="#4a4038"/>
+          <circle class="soot" cx="166" cy="54" r="1.5" fill="#4a4038"/>
+        </g>
+
+        <rect x="156" y="208" width="24" height="188" rx="2" fill="url(#barrel-grad)" stroke="#6f7a82" stroke-width="1.5"/>
+        <rect x="160" y="216" width="5" height="172" fill="#fff" opacity="0.28"/>
+        <ellipse cx="168" cy="208" rx="12" ry="4.2" fill="#dce3e8" stroke="#6f7a82" stroke-width="1.2"/>
+        <ellipse cx="168" cy="208" rx="7.5" ry="2.4" fill="#1b1b1b"/>
+
+        <g id="air-collar" class="clickable" tabindex="0" role="button" onclick="interactAirHole()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();interactAirHole();}">
+          <ellipse class="hit-ring" cx="168" cy="366" rx="36" ry="38" fill="transparent" stroke="transparent"/>
+          <rect x="152" y="348" width="32" height="38" rx="4" fill="#8b969c" stroke="#5f6a70"/>
+          <rect x="155" y="351" width="6" height="32" fill="#c5ced2" opacity="0.55"/>
+          <path id="air-hole-path" d="M 168,357 A 7,7 0 1,1 168,371 A 7,7 0 1,1 168,357" fill="#1b1b1b"/>
+          <line x1="152" y1="366" x2="78" y2="366" stroke="#9a93a8"/>
+          <text x="28" y="371" class="label-text" id="label-airhole">氣孔（撳）</text>
+        </g>
+
+        <path d="M 188 412 C 236 412 258 434 300 434 L 352 434" fill="none" stroke="#1f2a33" stroke-width="12" stroke-linecap="round"/>
+        <path d="M 188 412 C 236 412 258 434 300 434 L 352 434" fill="none" stroke="#34495e" stroke-width="7" stroke-linecap="round"/>
+
+        <ellipse cx="168" cy="446" rx="54" ry="11" fill="#24527c"/>
+        <path d="M118,432 L218,432 L204,400 L132,400 Z" fill="url(#base-grad)"/>
+        <ellipse cx="168" cy="400" rx="36" ry="8" fill="#7fb3e6"/>
+
+        <g id="gas-tap" class="clickable" tabindex="0" role="button" onclick="interactGas()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();interactGas();}">
+          <ellipse class="hit-ring" cx="364" cy="412" rx="42" ry="48" fill="transparent" stroke="transparent"/>
+          <rect x="352" y="418" width="24" height="48" rx="3" fill="#7f8c8d"/>
+          <rect x="348" y="462" width="32" height="8" rx="2" fill="#4a5560"/>
+          <ellipse id="gas-knob" cx="364" cy="418" rx="16" ry="6" fill="#1b2834"/>
+          <line x1="364" y1="412" x2="364" y2="348" stroke="#9a93a8"/>
+          <text x="318" y="338" class="label-text" id="label-gas">煤氣掣（撳）</text>
+        </g>
+
+        <g id="match-stick" transform="translate(370, 230) rotate(-40)">
+          <rect x="0" y="0" width="72" height="5" rx="1.5" fill="#e2b13c"/>
+          <circle cx="0" cy="2.5" r="5" fill="#b03a2e"/>
+          <g id="match-flame" transform="translate(0,2.5)">
+            <path d="M-4,0 Q-8,-22 2,-26 Q10,-10 4,0 Z" fill="#f39c12"/>
+            <path d="M-1,0 Q-3,-14 2,-16 Q6,-6 2,0 Z" fill="#fff3a0"/>
+          </g>
+        </g>
+      </svg>
+    </section>
+  </main>
+
+  <script>
+    let currentLang = "zh";
+    let step = 0;
+    let airHoleState = "open";
+    let isGasOn = false;
+    let isMatchLit = false;
+    let lastStatus = { key: "start", type: "info" };
+
+    const textData = {
+      zh: {
+        title: "實驗技巧：本生燈",
+        lead: "按次序操作。氣孔控制空氣；煤氣掣控制燃料。",
+        back: "← 目錄",
+        steps: ["關閉氣孔", "點燃火柴", "打開煤氣", "將氣孔打開一半（無光焰）"],
+        labels: { airhole: "氣孔（撳）", gas: "煤氣掣（撳）", reset: "重置", matchBtn: "點火", hint: "提示：先撳圖入面嘅氣孔同煤氣掣；火柴用左邊按鈕。" },
+        recap: { t1: "有光焰（安全焰）", p1: "氣孔關閉 · 黃色 · 較凍 · 容易見到", t2: "無光焰（加熱用）", p2: "氣孔打開 · 藍色 · 較熱 · 適合加熱" },
+        badge: { yellow: "有光焰 · 黃色", blue: "無光焰 · 藍色" },
+        status: {
+          start: "準備開始。氣孔而家係全開。",
+          closedHole: "氣孔已關閉。下一步：點火柴。",
+          matchLit: "火柴已點着。請盡快打開煤氣。",
+          gasOn: "煤氣已開。而家係黃色有光焰（安全焰）。",
+          success: "完成！藍色無光焰適合加熱。",
+          errorGasFirst: "危險！切勿喺點火前打開煤氣！",
+          errorHoleOpen: "警告：點火前必須先關閉氣孔！",
+          errorSequence: "請按照正確順序操作。"
+        }
+      },
+      en: {
+        title: "Lab skill: Bunsen burner",
+        lead: "Follow the sequence. The air hole controls air; the gas tap controls fuel.",
+        back: "← Hub",
+        steps: ["Close the air hole", "Light the match", "Turn on the gas", "Open the air hole halfway (non-luminous)"],
+        labels: { airhole: "Air hole (click)", gas: "Gas tap (click)", reset: "Reset", matchBtn: "Light match", hint: "Hint: click the air hole and gas tap on the diagram; use the left button for the match." },
+        recap: { t1: "Luminous flame (safety)", p1: "Air hole closed · yellow · cooler · easy to see", t2: "Non-luminous flame (heating)", p2: "Air hole open · blue · hotter · used for heating" },
+        badge: { yellow: "Luminous · yellow", blue: "Non-luminous · blue" },
+        status: {
+          start: "Ready. The air hole is fully open.",
+          closedHole: "Air hole closed. Next: light the match.",
+          matchLit: "Match is lit. Turn on the gas quickly.",
+          gasOn: "Gas is on. Yellow luminous flame (safety flame).",
+          success: "Done! The blue non-luminous flame is for heating.",
+          errorGasFirst: "DANGER: never turn on the gas before lighting the match!",
+          errorHoleOpen: "WARNING: close the air hole before lighting!",
+          errorSequence: "Please follow the correct sequence."
+        }
+      }
+    };
+
+    function t() { return textData[currentLang]; }
+
+    function interactAirHole() {
+      if (step === 0) {
+        airHoleState = "closed";
+        step = 1;
+        setStatus("closedHole", "correct");
+      } else if (step === 3) {
+        airHoleState = "half";
+        step = 4;
+        setStatus("success", "correct");
+      } else if (step === 1 || step === 2) {
+        airHoleState = "open";
+        step = 0;
+        setStatus("errorHoleOpen", "wrong");
+      }
+      renderVisuals();
+      updateStepList();
+    }
+
+    function interactMatch() {
+      if (isMatchLit) return;
+      if (step === 1) {
+        isMatchLit = true;
+        moveMatchToBurner();
+        step = 2;
+        setStatus("matchLit", "correct");
+      } else if (step === 0) {
+        setStatus("errorHoleOpen", "wrong");
+      } else if (!isGasOn) {
+        setStatus("errorSequence", "wrong");
+      }
+      updateStepList();
+      renderVisuals();
+    }
+
+    function interactGas() {
+      if (isGasOn) return;
+      if (step === 2) {
+        isGasOn = true;
+        step = 3;
+        setStatus("gasOn", "correct");
+        setTimeout(() => {
+          isMatchLit = false;
+          const match = document.getElementById("match-stick");
+          match.style.opacity = "0";
+          match.classList.remove("match-lit");
+        }, 900);
+      } else if (step === 0 || step === 1) {
+        setStatus("errorGasFirst", "wrong");
+        const knob = document.getElementById("gas-knob");
+        knob.setAttribute("fill", "#c0392b");
+        setTimeout(() => knob.setAttribute("fill", "#1b2834"), 900);
+      } else {
+        setStatus("errorSequence", "wrong");
+      }
+      renderVisuals();
+      updateStepList();
+    }
+
+    function renderVisuals() {
+      const hole = document.getElementById("air-hole-path");
+      if (airHoleState === "open") {
+        hole.setAttribute("d", "M 168,357 A 7,7 0 1,1 168,371 A 7,7 0 1,1 168,357");
+        hole.setAttribute("fill", "#1b1b1b");
+      } else if (airHoleState === "closed") {
+        hole.setAttribute("d", "M 168,357 A 7,7 0 1,1 168,371 A 7,7 0 1,1 168,357");
+        hole.setAttribute("fill", "#8b969c");
+      } else {
+        hole.setAttribute("d", "M 168,357 A 7,7 0 0,1 168,371 L 168,357 Z");
+        hole.setAttribute("fill", "#1b1b1b");
+      }
+
+      const knob = document.getElementById("gas-knob");
+      if (isGasOn) {
+        knob.setAttribute("rx", "6");
+        knob.setAttribute("ry", "16");
+      } else {
+        knob.setAttribute("rx", "16");
+        knob.setAttribute("ry", "6");
+      }
+
+      const flame = document.getElementById("flame-group");
+      const outer = document.getElementById("outer-flame");
+      const inner = document.getElementById("inner-flame");
+      const badge = document.getElementById("flame-badge");
+      if (isGasOn) {
+        flame.classList.add("active");
+        if (airHoleState === "closed") {
+          flame.className = "flame-group active luminous";
+          outer.setAttribute("fill", "url(#grad-yellow)");
+          inner.setAttribute("fill", "#fff7c2");
+          inner.setAttribute("opacity", "0.55");
+          badge.className = "flame-badge show yellow";
+          badge.textContent = t().badge.yellow;
+        } else {
+          flame.className = "flame-group active non-luminous";
+          outer.setAttribute("fill", "url(#grad-blue-outer)");
+          inner.setAttribute("fill", "#dbeafe");
+          inner.setAttribute("opacity", "0.9");
+          badge.className = "flame-badge show blue";
+          badge.textContent = t().badge.blue;
+        }
+      } else {
+        flame.className = "flame-group";
+        badge.className = "flame-badge";
+      }
+
+      document.getElementById("air-collar").classList.toggle("pulse-target", step === 0 || step === 3);
+      document.getElementById("gas-tap").classList.toggle("pulse-target", step === 2);
+      document.getElementById("match-btn").classList.toggle("pulse-target", step === 1);
+      document.getElementById("recap").classList.toggle("show", step === 4);
+    }
+
+    function moveMatchToBurner() {
+      const match = document.getElementById("match-stick");
+      match.classList.add("match-lit");
+      match.style.opacity = "1";
+      match.style.transform = "translate(196px, 188px) rotate(12deg)";
+    }
+
+    function setStatus(key, type) {
+      lastStatus = { key, type };
+      const el = document.getElementById("status-display");
+      el.textContent = t().status[key];
+      el.className = "status-box " + type;
+    }
+
+    function updateStepList() {
+      for (let i = 1; i <= 4; i++) {
+        const el = document.getElementById("step" + i);
+        el.className = "step-item";
+        if (i < step + 1) el.classList.add("done");
+        if (i === step + 1) el.classList.add("active");
+      }
+    }
+
+    function updateText() {
+      const d = t();
+      document.documentElement.lang = currentLang === "zh" ? "zh-HK" : "en";
+      document.getElementById("title").textContent = d.title;
+      document.getElementById("lead").textContent = d.lead;
+      document.getElementById("back").textContent = d.back;
+      document.getElementById("s1").textContent = d.steps[0];
+      document.getElementById("s2").textContent = d.steps[1];
+      document.getElementById("s3").textContent = d.steps[2];
+      document.getElementById("s4").textContent = d.steps[3];
+      document.getElementById("label-airhole").textContent = d.labels.airhole;
+      document.getElementById("label-gas").textContent = d.labels.gas;
+      document.getElementById("reset-btn").textContent = d.labels.reset;
+      document.getElementById("label-match-btn").textContent = d.labels.matchBtn;
+      document.getElementById("hint").textContent = d.labels.hint;
+      document.getElementById("r1t").textContent = d.recap.t1;
+      document.getElementById("r1p").textContent = d.recap.p1;
+      document.getElementById("r2t").textContent = d.recap.t2;
+      document.getElementById("r2p").textContent = d.recap.p2;
+      setStatus(lastStatus.key, lastStatus.type);
+      if (isGasOn) renderVisuals();
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === "zh" ? "en" : "zh";
+      updateText();
+    }
+
+    function resetSim() {
+      step = 0;
+      airHoleState = "open";
+      isGasOn = false;
+      isMatchLit = false;
+      const match = document.getElementById("match-stick");
+      match.style.transform = "translate(370px, 230px) rotate(-40deg)";
+      match.style.opacity = "0";
+      match.classList.remove("match-lit");
+      setStatus("start", "info");
+      renderVisuals();
+      updateStepList();
+    }
+
+    updateText();
+    renderVisuals();
+  </script>
+</body>
+</html>

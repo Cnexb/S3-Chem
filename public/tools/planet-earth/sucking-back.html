@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prevent sucking back</title>
+  <link rel="stylesheet" href="./shared.css" />
+  <style>
+    .visual-panel { padding: 0.7rem 0.7rem 0.9rem; }
+    .canvas-wrap {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px #e4e9ef;
+      position: relative;
+    }
+    #simCanvas { width: 100%; max-width: 100%; height: auto; display: block; cursor: pointer; }
+    .pressure-badge {
+      position: absolute;
+      top: 0.7rem;
+      right: 0.7rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      background: #fff;
+      font-weight: 800;
+      font-size: 0.8rem;
+      box-shadow: 0 6px 16px rgba(23, 16, 75, 0.12);
+      border: 2px solid var(--line);
+      z-index: 2;
+    }
+    .pressure-badge.low { border-color: var(--red); color: #a51b1f; }
+    .pressure-badge.ok { border-color: var(--green); color: #1d6b45; }
+    .action-row { display: grid; gap: 0.45rem; position: relative; z-index: 3; }
+    .action-row button {
+      width: 100%;
+      padding: 0.75rem 0.85rem;
+      border-radius: 12px;
+      border: 2px solid var(--line);
+      background: #fff;
+      font-weight: 800;
+      cursor: pointer;
+      text-align: left;
+      pointer-events: auto;
+      position: relative;
+      z-index: 3;
+    }
+    .action-row button:hover:not(:disabled) { border-color: var(--navy); }
+    .action-row button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .action-row button.done {
+      border-color: var(--green);
+      background: var(--ok-soft);
+      color: #1d6b45;
+    }
+    .action-row button.danger:hover:not(:disabled) {
+      border-color: var(--red);
+      background: var(--danger-soft);
+    }
+    .logic-step { opacity: 0.4; transition: opacity 0.2s, background 0.2s; margin: 0.25rem 0; }
+    .logic-step.active {
+      opacity: 1;
+      background: #fff8d6;
+      border-radius: 10px;
+      padding: 0.35rem 0.5rem;
+      margin-left: -0.5rem;
+      margin-right: -0.5rem;
+    }
+    .logic-step.done { opacity: 1; color: var(--green); }
+    .particle-box {
+      padding: 0.7rem 0.8rem 0.75rem;
+      border-radius: 14px;
+      background: #f4f8fc;
+      border: 1px solid #d5e3ee;
+    }
+    .particle-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .particle-head h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+    .temp-pill {
+      flex: 0 0 auto;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .temp-pill.cool {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+    .temp-pill.vacuum {
+      background: #fdecea;
+      color: #a51b1f;
+    }
+    #particleCanvas {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px #e4e9ef;
+    }
+    .particle-caption {
+      margin: 0.45rem 0 0;
+      font-size: 0.84rem;
+      color: #4a4660;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <span class="kicker">Topic 01 · Lab safety</span>
+        <h1 id="uiTitle">防止倒吸（Sucking back）</h1>
+        <p id="uiLead">只將水槽端尖端移離水面；試管端保持接駁，唔好拔開。</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="ghost-link" href="./index.html" id="back">← 目錄</a>
+        <button class="lang-btn" type="button" onclick="toggleLanguage()">EN / 中文</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section class="panel control-panel">
+      <div id="feedback" class="status-box info"></div>
+
+      <div class="desc-box">
+        <h3 id="descTitle">倒吸原理</h3>
+        <ol id="logicList" style="margin:0;padding-left:1.15rem"></ol>
+      </div>
+
+      <div>
+        <span class="seg-label" id="uiLabelAction">你而家可以：</span>
+        <div class="action-row">
+          <button type="button" id="btnRemoveTube" onclick="removeTube()"></button>
+          <button type="button" id="btnStopHeat" class="danger" onclick="stopHeat()"></button>
+        </div>
+      </div>
+
+      <div class="particle-box">
+        <div class="particle-head">
+          <h3 id="particleTitle">熱脹冷縮 · 粒子模型</h3>
+          <span class="temp-pill" id="tempPill">熱</span>
+        </div>
+        <canvas id="particleCanvas" width="360" height="150"></canvas>
+        <p class="particle-caption" id="particleCaption"></p>
+      </div>
+
+      <div class="btn-row">
+        <button class="reset-btn" type="button" id="resetBtn" onclick="resetSim()" style="flex:1">重置</button>
+      </div>
+      <p class="hint" id="hint"></p>
+    </section>
+
+    <section class="panel visual-panel">
+      <div class="canvas-wrap">
+        <div class="pressure-badge ok" id="pressureBadge">P</div>
+        <canvas id="simCanvas" width="860" height="500"></canvas>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:#2ecc71"></span><span id="legGas">氣體</span></span>
+        <span><span class="dot" style="background:#3498db"></span><span id="legWater">水</span></span>
+        <span id="legNote" style="color:var(--muted);font-size:0.85rem"></span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    /**
+     * Textbook layout matching gas-prep / notes:
+     *  heated TEST TUBE + delivery tube (bung stays connected)
+     *  → trough of water → inverted gas jar
+     * Risk: stop heat while tip still under water → vacuum → water sucks back → crack
+     * Safe: lift tip out of water first, then stop heat
+     */
+    const copy = {
+      zh: {
+        title: "防止倒吸（Sucking back）",
+        lead: "只將水槽端嘅導氣管尖端移離水面；試管嗰邊保持接駁，唔好拔開。",
+        back: "← 目錄",
+        descTitle: "倒吸原理",
+        logic: [
+          "加熱時，熱氣體經導氣管進入倒立集氣瓶，排水收集。",
+          "若先熄火焰：水蒸氣冷凝，氣體冷卻收縮。",
+          "試管內形成局部真空（partial vacuum）。",
+          "水槽端尖端仍浸水 → 水被倒吸入熱試管 → 可能炸裂。"
+        ],
+        labelAction: "你而家可以：",
+        btnRemove: "① 只將水槽端尖端移離水面",
+        btnStop: "② 先熄火焰／停止加熱",
+        btnRemoveDone: "✓ 水槽端尖端已離水（試管端仍接駁）",
+        btnStopDone: "✓ 加熱已停止",
+        reset: "重置",
+        hint: "正確：提起水槽端尖端離水 → 再熄火。試管嗰邊嘅導氣管要一直接住，拔開會好危險。",
+        legGas: "氣體",
+        legWater: "水",
+        legNote: "只移水槽端；試管端保持接駁",
+        pressure: "試管內壓力",
+        pressureLow: "壓力急降 · 真空！",
+        fbStart: "排水法收集中。水槽端尖端浸水；試管端仍接駁。請揀停火次序。",
+        fbTubeOut: "好。只提起咗水槽端尖端；試管嗰邊仍然接住。而家可以安全熄火。",
+        fbSafe: "<strong>成功！</strong> 先提起水槽端尖端，再熄火焰。試管端冇拔開，亦冇倒吸。",
+        fbDanger: "<strong>危險！</strong> 先熄火而水槽端仍浸水 → 水倒吸回熱試管 → 玻璃炸裂！",
+        fbHeatOffEarly: "火焰已熄。觀察：冷凝 → 真空 → 水沿導氣管倒流……",
+        lblFlask: "試管（加熱）",
+        lblTube: "導氣管",
+        lblTrough: "水槽",
+        lblJar: "集氣瓶（倒立）",
+        lblUnder: "水槽端：尖端仍浸水",
+        lblOut: "水槽端：尖端已離水 ✓",
+        lblKeep: "試管端：保持接駁",
+        lblCrack: "炸裂！",
+        particleTitle: "熱脹冷縮 · 粒子模型",
+        tempHot: "熱 · 脹",
+        tempCool: "冷 · 縮",
+        tempVacuum: "局部真空",
+        particleHot: "熱：粒子動能高、運動快 → 氣體脹大 → 壓力高，氣體被推出導氣管。",
+        particleCool: "冷：粒子動能低、運動慢 → 氣體收縮 → 壓力下降。",
+        particleVacuum: "氣體收縮留下空間（局部真空）→ 外面大氣壓把水壓入導氣管（倒吸）。",
+        particleSafe: "尖端已離水：即使冷卻收縮，水都唔會被壓入導氣管。",
+        particleLabelHot: "熱脹",
+        particleLabelCool: "冷縮",
+        particleLabelEmpty: "真空空間"
+      },
+      en: {
+        title: "Prevent sucking back",
+        lead: "Lift only the trough-end tip out of water; keep the tube connected to the heated test tube.",
+        back: "← Hub",
+        descTitle: "Why sucking back happens",
+        logic: [
+          "While heating, hot gas travels through the delivery tube into an inverted jar over water.",
+          "If you stop heating first: vapour condenses and the gas cools and contracts.",
+          "A partial vacuum forms in the hot test tube.",
+          "If the trough-end tip is still under water → water is sucked into hot glass → cracking."
+        ],
+        labelAction: "Choose your next action:",
+        btnRemove: "① Lift only the trough-end tip out of water",
+        btnStop: "② Stop heating / put out the flame first",
+        btnRemoveDone: "✓ Trough-end tip above water (test-tube end still connected)",
+        btnStopDone: "✓ Heating stopped",
+        reset: "Reset",
+        hint: "Correct: lift the trough-end tip out of water → then stop heat. Never disconnect the delivery tube from the hot test tube — that is dangerous.",
+        legGas: "Gas",
+        legWater: "Water",
+        legNote: "Move trough end only; keep test-tube end connected",
+        pressure: "Pressure in test tube",
+        pressureLow: "Pressure falling · vacuum!",
+        fbStart: "Collecting over water. Trough-end tip under water; test-tube end stays connected. Choose how to stop.",
+        fbTubeOut: "Good. Only the trough-end tip was lifted; the test-tube end is still connected. Safe to stop heat.",
+        fbSafe: "<strong>Safe!</strong> Trough-end tip lifted first, then heat stopped. Test-tube end stayed connected; no sucking back.",
+        fbDanger: "<strong>Danger!</strong> Heat stopped with trough-end tip still under water → water sucked into hot test tube → glass cracked!",
+        fbHeatOffEarly: "Flame out. Watch: condensation → vacuum → water climbs the delivery tube…",
+        lblFlask: "Test tube (heated)",
+        lblTube: "Delivery tube",
+        lblTrough: "Trough",
+        lblJar: "Gas jar (inverted)",
+        lblUnder: "Trough end: tip still under water",
+        lblOut: "Trough end: tip above water ✓",
+        lblKeep: "Test-tube end: stay connected",
+        lblCrack: "CRACK!",
+        particleTitle: "Expansion & contraction · particle model",
+        tempHot: "Hot · expand",
+        tempCool: "Cool · contract",
+        tempVacuum: "Partial vacuum",
+        particleHot: "Hot: particles move fast → gas expands → high pressure; gas is pushed out the delivery tube.",
+        particleCool: "Cool: particles move slowly → gas contracts → pressure falls.",
+        particleVacuum: "Contraction leaves empty space (partial vacuum) → outside air pressure pushes water into the tube (sucking back).",
+        particleSafe: "Tip is out of water: even if the gas cools and contracts, water cannot be pushed into the tube.",
+        particleLabelHot: "Expand",
+        particleLabelCool: "Contract",
+        particleLabelEmpty: "Vacuum space"
+      }
+    };
+
+    // Geometry — classic gas-prep style: heated test tube + delivery tube + water trough + inverted jar
+    const W = 860, H = 500;
+    const TUBE_X = 200, TUBE_Y = 235, TUBE_LEN = 200, TUBE_W = 36;
+    const WATER_Y = 350;
+    const TROUGH = { x: 430, y: 320, w: 380, h: 108 };
+    const JAR = { cx: 630, mouthY: 370, topY: 175, r: 36 };
+    // Only the WATER-END tip moves. Test-tube bung end stays fixed.
+    const TIP_IN = { x: 630, y: 378 };
+    const TIP_OUT = { x: 555, y: 318 };
+
+    let lang = "zh";
+    let tubeInWater = true;
+    let heating = true;
+    let phase = "heating";
+    let pressure = 1;
+    let suckProg = 0;
+    let waterInTube = 0;
+    let jarGasFrac = 0.2;
+    let tipLift = 0;
+    let frame = 0;
+    let bubbles = [];
+    let gasParticles = [];
+    let animId = null;
+
+    const canvas = document.getElementById("simCanvas");
+    const ctx = canvas.getContext("2d");
+    const pCanvas = document.getElementById("particleCanvas");
+    const pctx = pCanvas.getContext("2d");
+    const PW = 360, PH = 150;
+
+    function t() { return copy[lang]; }
+
+    function tipPos() {
+      return {
+        x: TIP_IN.x + (TIP_OUT.x - TIP_IN.x) * tipLift,
+        y: TIP_IN.y + (TIP_OUT.y - TIP_IN.y) * tipLift
+      };
+    }
+
+    /** Fixed bung joint on the test-tube mouth — never disconnect while hot */
+    function vesselJoint() {
+      return { x: TUBE_X + TUBE_LEN / 2 + 6, y: TUBE_Y };
+    }
+
+    /**
+     * Delivery path stays joined to the test tube.
+     * Path matches notes: across → down over trough rim → under inverted jar mouth.
+     * Only the trough-end tip lifts out of water.
+     */
+    function deliveryPath(tip) {
+      const joint = vesselJoint();
+      const across = { x: TROUGH.x - 10, y: joint.y };
+      const down = { x: TROUGH.x + 30, y: WATER_Y + 22 };
+      const under = { x: tip.x - 35, y: tip.y };
+      return [joint, across, down, under, tip];
+    }
+
+    function fitCanvas() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      pCanvas.width = PW * dpr;
+      pCanvas.height = PH * dpr;
+      pctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function initGasParticles() {
+      gasParticles = [];
+      for (let i = 0; i < 18; i++) {
+        gasParticles.push({
+          x: 40 + Math.random() * 140,
+          y: 35 + Math.random() * 80,
+          vx: (Math.random() - 0.5) * 2,
+          vy: (Math.random() - 0.5) * 2
+        });
+      }
+    }
+
+    function particleMode() {
+      if (phase === "cooling" || phase === "sucking" || phase === "cracked") return "cool";
+      if (phase === "done" && !heating) return tipLift > 0.5 ? "safe" : "cool";
+      if (!heating) return tipLift > 0.5 ? "safe" : "cool";
+      return "hot";
+    }
+
+    function updateParticleUI() {
+      const mode = particleMode();
+      const pill = document.getElementById("tempPill");
+      const cap = document.getElementById("particleCaption");
+      document.getElementById("particleTitle").textContent = t().particleTitle;
+      if (mode === "hot") {
+        pill.className = "temp-pill";
+        pill.textContent = t().tempHot;
+        cap.textContent = t().particleHot;
+      } else if (mode === "safe") {
+        pill.className = "temp-pill cool";
+        pill.textContent = t().tempCool;
+        cap.textContent = t().particleSafe;
+      } else if (phase === "sucking" || phase === "cracked") {
+        pill.className = "temp-pill vacuum";
+        pill.textContent = t().tempVacuum;
+        cap.textContent = t().particleVacuum;
+      } else {
+        pill.className = "temp-pill cool";
+        pill.textContent = t().tempCool;
+        cap.textContent = t().particleCool;
+      }
+    }
+
+    function tickParticles() {
+      const mode = particleMode();
+      const speed = mode === "hot" ? 2.4 : 0.55;
+      // Hot: particles fill most of box. Cool/vacuum: shrink toward centre-left, leave empty space on right.
+      const box = mode === "hot"
+        ? { x: 28, y: 28, w: 200, h: 95 }
+        : { x: 28, y: 38, w: 110, h: 75 };
+
+      gasParticles.forEach((p) => {
+        p.vx += (Math.random() - 0.5) * 0.35;
+        p.vy += (Math.random() - 0.5) * 0.35;
+        const mag = Math.hypot(p.vx, p.vy) || 1;
+        p.vx = (p.vx / mag) * speed * (0.7 + Math.random() * 0.6);
+        p.vy = (p.vy / mag) * speed * (0.7 + Math.random() * 0.6);
+        p.x += p.vx;
+        p.y += p.vy;
+        // Soft pull into target region when cooling (contraction)
+        if (mode !== "hot") {
+          const cx = box.x + box.w * 0.5;
+          const cy = box.y + box.h * 0.5;
+          p.x += (cx - p.x) * 0.04;
+          p.y += (cy - p.y) * 0.04;
+        }
+        if (p.x < box.x + 6) { p.x = box.x + 6; p.vx *= -1; }
+        if (p.x > box.x + box.w - 6) { p.x = box.x + box.w - 6; p.vx *= -1; }
+        if (p.y < box.y + 6) { p.y = box.y + 6; p.vy *= -1; }
+        if (p.y > box.y + box.h - 6) { p.y = box.y + box.h - 6; p.vy *= -1; }
+      });
+    }
+
+    function drawParticleBox() {
+      const mode = particleMode();
+      pctx.clearRect(0, 0, PW, PH);
+      pctx.fillStyle = "#ffffff";
+      pctx.fillRect(0, 0, PW, PH);
+
+      // Vessel outline (zoomed gas space)
+      const vessel = { x: 22, y: 22, w: 210, h: 106 };
+      pctx.fillStyle = mode === "hot" ? "rgba(254, 226, 226, 0.55)" : "rgba(219, 234, 254, 0.55)";
+      roundRectP(vessel.x, vessel.y, vessel.w, vessel.h, 12);
+      pctx.fill();
+      pctx.strokeStyle = "#6f8794";
+      pctx.lineWidth = 2.5;
+      pctx.stroke();
+
+      // Empty vacuum region when cool
+      if (mode !== "hot") {
+        pctx.fillStyle = "rgba(241, 245, 249, 0.95)";
+        roundRectP(148, 34, 72, 82, 8);
+        pctx.fill();
+        pctx.setLineDash([4, 4]);
+        pctx.strokeStyle = "#94a3b8";
+        pctx.lineWidth = 1.5;
+        pctx.stroke();
+        pctx.setLineDash([]);
+        pctx.fillStyle = "#64748b";
+        pctx.font = "700 11px Trebuchet MS, PingFang HK, sans-serif";
+        pctx.fillText(t().particleLabelEmpty, 152, 78);
+      }
+
+      // Particles + velocity streaks
+      gasParticles.forEach((p) => {
+        if (mode === "hot") {
+          pctx.strokeStyle = "rgba(239, 68, 68, 0.35)";
+          pctx.lineWidth = 1.5;
+          pctx.beginPath();
+          pctx.moveTo(p.x, p.y);
+          pctx.lineTo(p.x - p.vx * 2.2, p.y - p.vy * 2.2);
+          pctx.stroke();
+        }
+        pctx.fillStyle = mode === "hot" ? "#e11d48" : "#2563eb";
+        pctx.beginPath();
+        pctx.arc(p.x, p.y, mode === "hot" ? 4.2 : 3.6, 0, Math.PI * 2);
+        pctx.fill();
+      });
+
+      // Side key
+      pctx.fillStyle = "#17152a";
+      pctx.font = "800 12px Trebuchet MS, PingFang HK, sans-serif";
+      pctx.fillText(mode === "hot" ? t().particleLabelHot : t().particleLabelCool, 250, 40);
+
+      // Mini arrows for expand / contract
+      pctx.strokeStyle = mode === "hot" ? "#e11d48" : "#2563eb";
+      pctx.fillStyle = mode === "hot" ? "#e11d48" : "#2563eb";
+      pctx.lineWidth = 2;
+      if (mode === "hot") {
+        // expand arrows outward
+        [[260, 70, 290, 55], [260, 90, 290, 105], [250, 80, 285, 80]].forEach(([x1, y1, x2, y2]) => {
+          pctx.beginPath();
+          pctx.moveTo(x1, y1);
+          pctx.lineTo(x2, y2);
+          pctx.stroke();
+          pctx.beginPath();
+          pctx.moveTo(x2, y2);
+          pctx.lineTo(x2 - 6, y2 - 4);
+          pctx.lineTo(x2 - 6, y2 + 4);
+          pctx.closePath();
+          pctx.fill();
+        });
+        pctx.fillStyle = "#9f1239";
+        pctx.font = "700 11px Trebuchet MS, sans-serif";
+        pctx.fillText("P ↑", 300, 84);
+      } else {
+        // contract arrows inward
+        [[295, 55, 265, 70], [295, 105, 265, 90], [300, 80, 268, 80]].forEach(([x1, y1, x2, y2]) => {
+          pctx.beginPath();
+          pctx.moveTo(x1, y1);
+          pctx.lineTo(x2, y2);
+          pctx.stroke();
+          pctx.beginPath();
+          pctx.moveTo(x2, y2);
+          pctx.lineTo(x2 + 6, y2 - 4);
+          pctx.lineTo(x2 + 6, y2 + 4);
+          pctx.closePath();
+          pctx.fill();
+        });
+        pctx.fillStyle = "#1d4ed8";
+        pctx.font = "700 11px Trebuchet MS, sans-serif";
+        pctx.fillText("P ↓", 300, 84);
+        if (phase === "sucking" || phase === "cracked") {
+          pctx.fillStyle = "#a51b1f";
+          pctx.font = "800 11px Trebuchet MS, PingFang HK, sans-serif";
+          pctx.fillText(lang === "zh" ? "大氣壓把水壓入 →" : "Air pushes water in →", 248, 128);
+        }
+      }
+    }
+
+    function roundRectP(x, y, w, h, r) {
+      pctx.beginPath();
+      pctx.moveTo(x + r, y);
+      pctx.arcTo(x + w, y, x + w, y + h, r);
+      pctx.arcTo(x + w, y + h, x, y + h, r);
+      pctx.arcTo(x, y + h, x, y, r);
+      pctx.arcTo(x, y, x + w, y, r);
+      pctx.closePath();
+    }
+
+    function setFeedback(key, cls) {
+      const el = document.getElementById("feedback");
+      el.className = "status-box " + (cls || "info");
+      el.innerHTML = t()[key];
+    }
+
+    function updateLogic() {
+      let active = 0;
+      if (phase === "cooling") active = 1;
+      if (phase === "sucking") active = 2;
+      if (phase === "cracked") active = 3;
+      if (phase === "done") active = 3;
+      const items = t().logic;
+      document.getElementById("logicList").innerHTML = items.map((txt, i) => {
+        let cls = "logic-step";
+        if (phase === "cracked" || phase === "done") cls += i <= 3 ? " done" : "";
+        else if (i === active) cls += " active";
+        else if (i < active) cls += " done";
+        return `<li class="${cls}">${txt}</li>`;
+      }).join("");
+    }
+
+    function updatePressureBadge() {
+      const badge = document.getElementById("pressureBadge");
+      if (pressure < 0.5) {
+        badge.className = "pressure-badge low";
+        badge.textContent = t().pressureLow;
+      } else {
+        badge.className = "pressure-badge ok";
+        badge.textContent = t().pressure + " · " + Math.round(pressure * 100) + "%";
+      }
+    }
+
+    function updateButtons() {
+      const rm = document.getElementById("btnRemoveTube");
+      const st = document.getElementById("btnStopHeat");
+      const locked = ["cracked", "done", "cooling", "sucking"].includes(phase);
+      rm.disabled = !tubeInWater || locked;
+      st.disabled = !heating || phase === "cracked" || phase === "done";
+      rm.textContent = tubeInWater ? t().btnRemove : t().btnRemoveDone;
+      st.textContent = heating ? t().btnStop : t().btnStopDone;
+      rm.classList.toggle("done", !tubeInWater);
+      st.classList.toggle("done", !heating);
+    }
+
+    function updateUI() {
+      document.documentElement.lang = lang === "zh" ? "zh-HK" : "en";
+      document.getElementById("uiTitle").textContent = t().title;
+      document.getElementById("uiLead").textContent = t().lead;
+      document.getElementById("back").textContent = t().back;
+      document.getElementById("descTitle").textContent = t().descTitle;
+      document.getElementById("uiLabelAction").textContent = t().labelAction;
+      document.getElementById("resetBtn").textContent = t().reset;
+      document.getElementById("hint").textContent = t().hint;
+      document.getElementById("legGas").textContent = t().legGas;
+      document.getElementById("legWater").textContent = t().legWater;
+      document.getElementById("legNote").textContent = t().legNote;
+      updateButtons();
+      updatePressureBadge();
+      updateLogic();
+      updateParticleUI();
+    }
+
+    function toggleLanguage() {
+      lang = lang === "zh" ? "en" : "zh";
+      updateUI();
+      drawScene();
+    }
+
+    function removeTube() {
+      if (!tubeInWater || ["cracked", "done", "cooling", "sucking"].includes(phase)) return;
+      tubeInWater = false;
+      phase = "tube_out";
+      setFeedback("fbTubeOut", "correct");
+      updateUI();
+      if (!heating) finishSafe();
+    }
+
+    function stopHeat() {
+      if (!heating || phase === "cracked" || phase === "done") return;
+      heating = false;
+      if (tubeInWater && tipLift < 0.5) {
+        phase = "cooling";
+        setFeedback("fbHeatOffEarly", "wrong");
+        updateUI();
+      } else {
+        finishSafe();
+      }
+    }
+
+    function finishSafe() {
+      phase = "done";
+      setFeedback("fbSafe", "correct");
+      updateUI();
+    }
+
+    function resetSim() {
+      cancelAnimationFrame(animId);
+      tubeInWater = true;
+      heating = true;
+      phase = "heating";
+      pressure = 1;
+      suckProg = 0;
+      waterInTube = 0;
+      jarGasFrac = 0.25;
+      tipLift = 0;
+      frame = 0;
+      bubbles = [];
+      initGasParticles();
+      setFeedback("fbStart", "info");
+      updateUI();
+      loop();
+    }
+
+    function tickPhysics() {
+      frame++;
+
+      // Animate tip lift
+      const tipTarget = tubeInWater ? 0 : 1;
+      tipLift += (tipTarget - tipLift) * 0.12;
+      if (Math.abs(tipLift - tipTarget) < 0.01) tipLift = tipTarget;
+
+      if (phase === "heating" || phase === "tube_out") {
+        pressure = Math.min(1, pressure + 0.02);
+        if (heating && tipLift < 0.2 && frame % 10 === 0) {
+          bubbles.push({ progress: 0, r: 3 + Math.random() * 2, side: Math.random() - 0.5 });
+        }
+        if (heating && tipLift < 0.2) {
+          jarGasFrac = Math.min(0.72, jarGasFrac + 0.0012);
+        }
+      }
+
+      if (phase === "cooling") {
+        pressure = Math.max(0.1, pressure - 0.012);
+        if (pressure < 0.45 && tubeInWater) phase = "sucking";
+      }
+
+      if (phase === "sucking") {
+        suckProg = Math.min(1, suckProg + 0.012);
+        pressure = Math.max(0.06, pressure - 0.006);
+        if (suckProg > 0.85) waterInTube = Math.min(1, waterInTube + 0.02);
+        if (waterInTube >= 1) {
+          phase = "cracked";
+          setFeedback("fbDanger", "wrong");
+          updateUI();
+        }
+      }
+
+      bubbles.forEach((b) => { b.progress += 0.018; });
+      bubbles = bubbles.filter((b) => b.progress < 1);
+
+      tickParticles();
+      updatePressureBadge();
+      if (phase === "cooling" || phase === "sucking") {
+        updateLogic();
+        updateParticleUI();
+      }
+    }
+
+    function roundRect(x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    function drawPolyline(pts, width, color) {
+      ctx.strokeStyle = color;
+      ctx.lineWidth = width;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+      ctx.stroke();
+    }
+
+    function drawScene() {
+      ctx.clearRect(0, 0, W, H);
+      const g = ctx.createLinearGradient(0, 0, 0, H);
+      g.addColorStop(0, "#f8fbff");
+      g.addColorStop(1, "#e8eef5");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, W, H);
+
+      // Bench
+      ctx.fillStyle = "#cbbba3";
+      ctx.fillRect(0, 448, W, 52);
+      ctx.fillStyle = "#b7a48a";
+      ctx.fillRect(0, 444, W, 6);
+
+      drawStandAndTestTube();
+      drawBurner();
+      drawTroughAndJar();
+      drawDeliveryTube();
+      drawBubblesAndSuck();
+      drawLabels();
+      if (phase === "cracked") drawCrack();
+      drawParticleBox();
+    }
+
+    function drawStandAndTestTube() {
+      // Retort stand
+      ctx.strokeStyle = "#4a5560";
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.moveTo(TUBE_X, 440);
+      ctx.lineTo(TUBE_X, 110);
+      ctx.stroke();
+      ctx.fillStyle = "#2d3436";
+      roundRect(TUBE_X - 42, 438, 84, 12, 3);
+      ctx.fill();
+      // Clamp
+      ctx.fillStyle = "#7f8c8d";
+      roundRect(TUBE_X - 7, TUBE_Y - 12, 14, 24, 3);
+      ctx.fill();
+      ctx.fillRect(TUBE_X, TUBE_Y - 4, 22, 8);
+
+      const hl = TUBE_LEN / 2, hw = TUBE_W / 2;
+      ctx.save();
+      ctx.translate(TUBE_X, TUBE_Y);
+
+      // Horizontal test tube (closed end left, mouth right)
+      ctx.strokeStyle = "#9bb0bc";
+      ctx.lineWidth = 3;
+      ctx.fillStyle = "rgba(255,255,255,0.28)";
+      ctx.beginPath();
+      ctx.moveTo(hl, -hw);
+      ctx.lineTo(-hl + hw, -hw);
+      ctx.arc(-hl + hw, 0, hw, 1.5 * Math.PI, 0.5 * Math.PI, true);
+      ctx.lineTo(hl, hw);
+      ctx.fill();
+      ctx.stroke();
+      // Glass highlight
+      ctx.strokeStyle = "rgba(255,255,255,0.7)";
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(-hl + 18, -hw + 4);
+      ctx.lineTo(hl - 14, -hw + 4);
+      ctx.stroke();
+
+      // Rubber bung in mouth (delivery tube stays through this)
+      ctx.fillStyle = "#6b4f35";
+      roundRect(hl - 4, -hw + 2, 14, TUBE_W - 4, 3);
+      ctx.fill();
+
+      // Solid reactant
+      ctx.fillStyle = "#95a5a6";
+      ctx.beginPath();
+      ctx.moveTo(-hl + 12, 8);
+      ctx.lineTo(-hl + 70, 10);
+      ctx.lineTo(-hl + 20, 14);
+      ctx.fill();
+
+      // Water sucked back into hot test tube
+      if (waterInTube > 0) {
+        ctx.fillStyle = "rgba(41, 128, 185, 0.72)";
+        ctx.fillRect(hl - 10 - (hl - 20) * waterInTube, -hw + 3, (hl - 20) * waterInTube, TUBE_W - 6);
+      }
+
+      ctx.restore();
+    }
+
+    function drawBurner() {
+      const bx = TUBE_X - 55, by = TUBE_Y + 95;
+      if (heating) {
+        ctx.beginPath();
+        ctx.moveTo(bx - 6, by);
+        ctx.quadraticCurveTo(bx, by - 46 - Math.sin(frame / 3) * 4, bx + 6, by);
+        ctx.fillStyle = "rgba(41, 98, 255, 0.55)";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(bx - 3, by);
+        ctx.quadraticCurveTo(bx, by - 28, bx + 3, by);
+        ctx.fillStyle = "rgba(125, 211, 252, 0.9)";
+        ctx.fill();
+      }
+      ctx.fillStyle = "#5d6d7e";
+      roundRect(bx - 7, by, 14, 40, 2);
+      ctx.fill();
+      ctx.fillStyle = "#2c3e50";
+      roundRect(bx - 16, by + 38, 32, 8, 2);
+      ctx.fill();
+    }
+
+    function drawTroughAndJar() {
+      const { x, y, w, h } = TROUGH;
+
+      ctx.strokeStyle = "#5d6d7e";
+      ctx.lineWidth = 3;
+      ctx.fillStyle = "#f4f7fa";
+      roundRect(x, y, w, h, 6);
+      ctx.fill();
+      ctx.stroke();
+
+      // Inverted gas jar — open mouth DOWN under water (notes style)
+      const { cx, mouthY, topY, r } = JAR;
+      const jarH = mouthY - topY;
+      const gasH = jarH * jarGasFrac;
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(cx - r, mouthY);
+      ctx.lineTo(cx - r, topY + r);
+      ctx.arc(cx, topY + r, r, Math.PI, 0);
+      ctx.lineTo(cx + r, mouthY);
+      ctx.closePath();
+      ctx.clip();
+      ctx.fillStyle = "rgba(46, 204, 113, 0.2)";
+      ctx.fillRect(cx - r, topY, r * 2, gasH);
+      ctx.fillStyle = "rgba(52, 152, 219, 0.45)";
+      ctx.fillRect(cx - r, topY + gasH, r * 2, jarH - gasH + 12);
+      ctx.strokeStyle = "rgba(36, 113, 163, 0.55)";
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(cx - r, topY + gasH);
+      ctx.lineTo(cx + r, topY + gasH);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.strokeStyle = "#6f8794";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(cx - r, mouthY);
+      ctx.lineTo(cx - r, topY + r);
+      ctx.arc(cx, topY + r, r, Math.PI, 0);
+      ctx.lineTo(cx + r, mouthY);
+      ctx.stroke();
+      ctx.strokeStyle = "#4a5560";
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(cx - r - 3, mouthY);
+      ctx.lineTo(cx + r + 3, mouthY);
+      ctx.stroke();
+
+      // Beehive / supports under jar mouth
+      ctx.fillStyle = "#95a5a6";
+      roundRect(cx - r - 4, mouthY + 2, 10, 12, 2);
+      ctx.fill();
+      roundRect(cx + r - 6, mouthY + 2, 10, 12, 2);
+      ctx.fill();
+
+      // Free water in trough
+      ctx.fillStyle = "rgba(52, 152, 219, 0.3)";
+      ctx.fillRect(x + 3, WATER_Y, w - 6, y + h - WATER_Y - 3);
+      ctx.strokeStyle = "rgba(41, 128, 185, 0.75)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(x + 4, WATER_Y);
+      ctx.lineTo(x + w - 4, WATER_Y);
+      ctx.stroke();
+      ctx.fillStyle = "#2471a3";
+      ctx.font = "700 12px Trebuchet MS, PingFang HK, sans-serif";
+      ctx.fillText(lang === "zh" ? "水" : "water", x + 14, WATER_Y + 22);
+    }
+
+    function drawDeliveryTube() {
+      const tip = tipPos();
+      const pts = deliveryPath(tip);
+      const joint = vesselJoint();
+
+      // Outer glass wall
+      drawPolyline(pts, 12, "#8aa0ad");
+      // Bore
+      drawPolyline(pts, 6, "#dcecf3");
+      // Highlight along top
+      drawPolyline(pts, 2, "rgba(255,255,255,0.75)");
+
+      // Fixed joint through stopper (never disconnects)
+      ctx.fillStyle = "#6b4f35";
+      ctx.beginPath();
+      ctx.arc(joint.x, joint.y, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "#3e2a18";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.fillStyle = "#dcecf3";
+      ctx.beginPath();
+      ctx.arc(joint.x, joint.y, 3, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Tip opening (only this end moves)
+      ctx.fillStyle = tipLift < 0.35 ? "#1b2834" : "#1e8449";
+      ctx.beginPath();
+      ctx.arc(tip.x, tip.y, 6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "#fff";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+
+    function drawBubblesAndSuck() {
+      const tip = tipPos();
+      const pts = deliveryPath(tip);
+
+      // Gas bubbles rising in jar during heating
+      if (heating && tipLift < 0.25) {
+        bubbles.forEach((b) => {
+          const x = JAR.cx + b.side * 18;
+          const y = tip.y - 8 - b.progress * (tip.y - JAR.topY - 40);
+          ctx.fillStyle = "rgba(46, 204, 113, 0.85)";
+          ctx.beginPath();
+          ctx.arc(x, y, b.r * (1 - b.progress * 0.3), 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
+
+      // Water climbing back along delivery tube
+      if (suckProg > 0) {
+        // Trace path from tip toward flask
+        const rev = [...pts].reverse();
+        const total = rev.length - 1;
+        const segs = [];
+        for (let i = 0; i < total; i++) {
+          const a = rev[i], b = rev[i + 1];
+          segs.push(Math.hypot(b.x - a.x, b.y - a.y));
+        }
+        const len = segs.reduce((s, v) => s + v, 0);
+        const reach = len * suckProg;
+        let traveled = 0;
+        ctx.strokeStyle = "#2980b9";
+        ctx.lineWidth = 5;
+        ctx.lineCap = "round";
+        ctx.beginPath();
+        ctx.moveTo(rev[0].x, rev[0].y);
+        for (let i = 0; i < total; i++) {
+          if (traveled + segs[i] >= reach) {
+            const f = (reach - traveled) / segs[i];
+            const x = rev[i].x + (rev[i + 1].x - rev[i].x) * f;
+            const y = rev[i].y + (rev[i + 1].y - rev[i].y) * f;
+            ctx.lineTo(x, y);
+            break;
+          }
+          ctx.lineTo(rev[i + 1].x, rev[i + 1].y);
+          traveled += segs[i];
+        }
+        ctx.stroke();
+
+        // Arrow showing direction of suck-back
+        if (suckProg > 0.15 && phase !== "cracked") {
+          const mid = rev[Math.min(2, rev.length - 1)];
+          ctx.fillStyle = "#c0392b";
+          ctx.font = "800 14px Trebuchet MS, sans-serif";
+          ctx.fillText(lang === "zh" ? "← 水倒吸" : "← water sucked back", mid.x - 40, mid.y - 14);
+        }
+      }
+    }
+
+    function drawLabels() {
+      ctx.font = "700 13px Trebuchet MS, PingFang HK, sans-serif";
+
+      ctx.fillStyle = "#17152a";
+      ctx.fillText(t().lblFlask, TUBE_X - 70, TUBE_Y - 55);
+
+      ctx.fillStyle = "#5d6d7e";
+      ctx.fillText(t().lblTube, TUBE_X + 90, TUBE_Y - 40);
+
+      ctx.fillStyle = "#17152a";
+      ctx.fillText(t().lblJar, JAR.cx - 36, JAR.topY - 12);
+
+      const joint = vesselJoint();
+      ctx.fillStyle = "#1d6b45";
+      ctx.font = "800 12px Trebuchet MS, PingFang HK, sans-serif";
+      ctx.fillText(t().lblKeep, joint.x - 10, joint.y - 18);
+
+      const tip = tipPos();
+      ctx.font = "800 13px Trebuchet MS, PingFang HK, sans-serif";
+      if (tubeInWater && tipLift < 0.4) {
+        ctx.fillStyle = "#a51b1f";
+        ctx.fillText(t().lblUnder, tip.x - 95, tip.y + 28);
+      } else if (tipLift > 0.7) {
+        ctx.fillStyle = "#1d6b45";
+        ctx.fillText(t().lblOut, tip.x - 80, tip.y - 14);
+      }
+    }
+
+    function drawCrack() {
+      ctx.save();
+      ctx.translate(TUBE_X, TUBE_Y);
+      ctx.strokeStyle = "#e74c3c";
+      ctx.lineWidth = 3;
+      const crackX = -TUBE_LEN / 2 + 50;
+      ctx.beginPath();
+      ctx.moveTo(crackX, 0);
+      ctx.lineTo(crackX + 10, -14);
+      ctx.lineTo(crackX + 20, 10);
+      ctx.lineTo(crackX + 30, -6);
+      ctx.stroke();
+      ctx.fillStyle = "#e74c3c";
+      ctx.font = "800 24px Trebuchet MS, sans-serif";
+      ctx.fillText(t().lblCrack, crackX - 8, -28);
+      ctx.restore();
+    }
+
+    function loop() {
+      tickPhysics();
+      drawScene();
+      if (phase !== "cracked") {
+        animId = requestAnimationFrame(loop);
+      } else {
+        drawScene();
+      }
+    }
+
+    function canvasPoint(ev) {
+      const r = canvas.getBoundingClientRect();
+      return {
+        x: (ev.clientX - r.left) * (W / r.width),
+        y: (ev.clientY - r.top) * (H / r.height)
+      };
+    }
+
+    canvas.addEventListener("click", (ev) => {
+      const p = canvasPoint(ev);
+      const tip = tipPos();
+      const bunsen = { x: TUBE_X - 55, y: TUBE_Y + 95 };
+      if (Math.hypot(p.x - tip.x, p.y - tip.y) < 48) {
+        removeTube();
+        return;
+      }
+      if (Math.hypot(p.x - bunsen.x, p.y - bunsen.y) < 42) {
+        stopHeat();
+      }
+    });
+
+    canvas.addEventListener("mousemove", (ev) => {
+      const p = canvasPoint(ev);
+      const tip = tipPos();
+      const bunsen = { x: TUBE_X - 55, y: TUBE_Y + 95 };
+      const overTip = Math.hypot(p.x - tip.x, p.y - tip.y) < 48;
+      const overFlame = Math.hypot(p.x - bunsen.x, p.y - bunsen.y) < 42;
+      canvas.style.cursor = (overTip || overFlame) ? "pointer" : "default";
+    });
+
+    fitCanvas();
+    resetSim();
+    window.addEventListener("resize", () => { fitCanvas(); drawScene(); });
+  </script>
+</body>
+</html>

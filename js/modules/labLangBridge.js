@@ -3,6 +3,26 @@
 // =============================================================================
 
 export const INTERACTIVE_LAB_TOOLS = {
+  "bunsen-lab": {
+    path: "public/tools/planet-earth/bunsen.html",
+    titleKey: "lab.bunsenName",
+  },
+  "gas-prep-lab": {
+    path: "public/tools/planet-earth/gas-prep.html",
+    titleKey: "lab.gasPrepName",
+  },
+  "sucking-back-lab": {
+    path: "public/tools/planet-earth/sucking-back.html",
+    titleKey: "lab.suckingBackName",
+  },
+  "matter-class-lab": {
+    path: "public/tools/planet-earth/matter-class.html",
+    titleKey: "lab.matterClassName",
+  },
+  "chem-lab-hq": {
+    path: "public/tools/planet-earth/chem-lab-hq/index.html",
+    titleKey: "lab.chemLabHqName",
+  },
   "ionic-compound-puzzle": {
     path: "public/tools/ionic-compound-puzzle/index.html",
     titleKey: "lab.ionicName",

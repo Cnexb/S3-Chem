@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Topic 01 · Lab safety webapps</title>
+  <link rel="stylesheet" href="./shared.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <span class="kicker">HKDSE Chem · Topic 01</span>
+        <h1 id="title">實驗室安全同儀器練習</h1>
+        <p id="lead">全部網頁練習都喺呢度打開：本生燈、氣體製備、倒吸、物質分類，同儀器認讀遊戲。</p>
+      </div>
+      <div class="topbar-actions">
+        <button class="lang-btn" type="button" onclick="toggleLanguage()">EN / 中文</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hub-section">
+      <h2 id="secSim">實驗模擬</h2>
+      <div class="hub-grid">
+        <a class="panel hub-card orange" href="bunsen.html">
+          <span class="kicker">Skill 1</span>
+          <h2 id="h1">Earth1B_Laboratory safety_(本生燈點火)</h2>
+          <p id="p1">按正確次序：關氣孔 → 點火柴 → 開煤氣 → 開氣孔。做錯會即時見到危險提示。</p>
+          <span class="go" id="g1">開始練習 →</span>
+        </a>
+        <a class="panel hub-card" href="gas-prep.html">
+          <span class="kicker">Skill 2</span>
+          <h2 id="h2">Earth3B_Chemical tests and electrolysis_(氣體製備同收集)</h2>
+          <p id="p2">氨氣、二氧化碳、裂解：揀試管角度同收集方法。錯機會見到倒流、炸裂或者氣體流失。</p>
+          <span class="go" id="g2">開始練習 →</span>
+        </a>
+        <a class="panel hub-card orange" href="sucking-back.html">
+          <span class="kicker">Skill 3</span>
+          <h2 id="h3">Earth3B_Chemical tests and electrolysis_(防止倒吸)</h2>
+          <p id="p3">排水法停火：只提起水槽端尖端離水，試管端保持接駁；次序錯會見倒吸炸裂。</p>
+          <span class="go" id="g3">開始練習 →</span>
+        </a>
+        <a class="panel hub-card" href="matter-class.html">
+          <span class="kicker">Skill 4</span>
+          <h2 id="h10">Earth2A_Matters_(物質微觀分類)</h2>
+          <p id="p10">睇粒子動畫分辨單原子元素、分子元素、化合物、純物質同混合物。說明文字可以隱藏。</p>
+          <span class="go" id="g10">開始練習 →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="hub-section">
+      <h2 id="secApp">儀器認讀</h2>
+      <div class="hub-grid">
+        <a class="panel hub-card" href="chem-lab-hq/index.html#learn">
+          <span class="kicker">Station 1</span>
+          <h2 id="h4">Earth1A_Laboratory apparatus_(Meet the Kit)</h2>
+          <p id="p4">先睇相片同截面圖，準備好再揭曉儀器名稱。</p>
+          <span class="go" id="g4">開始練習 →</span>
+        </a>
+        <a class="panel hub-card orange" href="chem-lab-hq/index.html#wall">
+          <span class="kicker">Station 2</span>
+          <h2 id="h5">Earth1A_Laboratory apparatus_(Notes Wall)</h2>
+          <p id="p5">打開裝置圖表閱讀，睇完再自我檢查。</p>
+          <span class="go" id="g5">開始練習 →</span>
+        </a>
+        <a class="panel hub-card" href="chem-lab-hq/index.html#name">
+          <span class="kicker">Station 3</span>
+          <h2 id="h6">Earth1A_Laboratory apparatus_(Name That Piece)</h2>
+          <p id="p6">睇托盤之後操練名稱、圖片同用途。</p>
+          <span class="go" id="g6">開始練習 →</span>
+        </a>
+        <a class="panel hub-card orange" href="chem-lab-hq/index.html#find">
+          <span class="kicker">Station 4</span>
+          <h2 id="h7">Earth1A_Laboratory apparatus_(Spot It)</h2>
+          <p id="p7">睇名稱，再揀對應相片或截面圖。</p>
+          <span class="go" id="g7">開始練習 →</span>
+        </a>
+        <a class="panel hub-card" href="chem-lab-hq/index.html#job">
+          <span class="kicker">Station 5</span>
+          <h2 id="h8">Earth1A_Laboratory apparatus_(What's It For?)</h2>
+          <p id="p8">由筆記學實驗室儀器用途，撳 1–4 揀答案。</p>
+          <span class="go" id="g8">開始練習 →</span>
+        </a>
+        <a class="panel hub-card orange" href="chem-lab-hq/index.html#build">
+          <span class="kicker">Station 6</span>
+          <h2 id="h9">Earth1A_Laboratory apparatus_(Build the Bench)</h2>
+          <p id="p9">將名稱同截面圖放到真實裝置相片上。</p>
+          <span class="go" id="g9">開始練習 →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let lang = "zh";
+    const copy = {
+      zh: {
+        title: "實驗室安全同儀器練習",
+        lead: "全部網頁練習都喺呢度打開：本生燈、氣體製備、倒吸、物質分類，同儀器認讀遊戲。",
+        secSim: "實驗模擬",
+        secApp: "儀器認讀",
+        h1: "Earth1B_Laboratory safety_(本生燈點火)",
+        p1: "按正確次序：關氣孔 → 點火柴 → 開煤氣 → 開氣孔。做錯會即時見到危險提示。",
+        g1: "開始練習 →",
+        h2: "Earth3B_Chemical tests and electrolysis_(氣體製備同收集)",
+        p2: "氨氣、二氧化碳、裂解：揀試管角度同收集方法。錯機會見到倒流、炸裂或者氣體流失。",
+        g2: "開始練習 →",
+        h3: "Earth3B_Chemical tests and electrolysis_(防止倒吸)",
+        p3: "排水法停火：只提起水槽端尖端離水，試管端保持接駁；次序錯會見倒吸炸裂。",
+        g3: "開始練習 →",
+        h10: "Earth2A_Matters_(物質微觀分類)",
+        p10: "睇粒子動畫分辨單原子元素、分子元素、化合物、純物質同混合物。說明文字可以隱藏。",
+        g10: "開始練習 →",
+        h4: "Earth1A_Laboratory apparatus_(Meet the Kit)",
+        p4: "先睇相片同截面圖，準備好再揭曉儀器名稱。",
+        g4: "開始練習 →",
+        h5: "Earth1A_Laboratory apparatus_(Notes Wall)",
+        p5: "打開裝置圖表閱讀，睇完再自我檢查。",
+        g5: "開始練習 →",
+        h6: "Earth1A_Laboratory apparatus_(Name That Piece)",
+        p6: "睇托盤之後操練名稱、圖片同用途。",
+        g6: "開始練習 →",
+        h7: "Earth1A_Laboratory apparatus_(Spot It)",
+        p7: "睇名稱，再揀對應相片或截面圖。",
+        g7: "開始練習 →",
+        h8: "Earth1A_Laboratory apparatus_(What's It For?)",
+        p8: "由筆記學實驗室儀器用途，撳 1–4 揀答案。",
+        g8: "開始練習 →",
+        h9: "Earth1A_Laboratory apparatus_(Build the Bench)",
+        p9: "將名稱同截面圖放到真實裝置相片上。",
+        g9: "開始練習 →"
+      },
+      en: {
+        title: "Lab safety and apparatus practice",
+        lead: "Open every Topic 01 webapp from here: Bunsen, gas prep, sucking back, matter classification, and apparatus games.",
+        secSim: "Lab simulations",
+        secApp: "Apparatus stations",
+        h1: "Earth1B_Laboratory safety_(Lighting a Bunsen burner)",
+        p1: "Follow the sequence: close the air hole → light a match → turn on the gas → open the air hole. Mistakes show a danger warning at once.",
+        g1: "Start practice →",
+        h2: "Earth3B_Chemical tests and electrolysis_(Gas preparation and collection)",
+        p2: "Ammonia, carbon dioxide, cracking: pick tube angle and collection method. Wrong setups show backflow, cracking, or gas escaping.",
+        g2: "Start practice →",
+        h3: "Earth3B_Chemical tests and electrolysis_(Prevent sucking back)",
+        p3: "Stop a water-displacement setup by lifting only the trough-end tip — keep the test-tube end connected. Wrong order shows sucking back and cracking.",
+        g3: "Start practice →",
+        h10: "Earth2A_Matters_(Microscopic matter classification)",
+        p10: "Watch particle animations of monatomic elements, molecular elements, compounds, pure substances, and mixtures. Hide the notes beside the demo if you want a larger view.",
+        g10: "Start practice →",
+        h4: "Earth1A_Laboratory apparatus_(Meet the Kit)",
+        p4: "See the photo and the 2D diagram first. Reveal the name when you are ready.",
+        g4: "Start practice →",
+        h5: "Earth1A_Laboratory apparatus_(Notes Wall)",
+        p5: "Open a chart to read it. Check yourself when you have looked at the set-ups.",
+        g5: "Start practice →",
+        h6: "Earth1A_Laboratory apparatus_(Name That Piece)",
+        p6: "Study the tray, then drill names, pictures, and uses.",
+        g6: "Start practice →",
+        h7: "Earth1A_Laboratory apparatus_(Spot It)",
+        p7: "Read the name, then tap the matching photo or diagram.",
+        g7: "Start practice →",
+        h8: "Earth1A_Laboratory apparatus_(What's It For?)",
+        p8: "Learn laboratory apparatus uses from your notes. Press 1–4 to choose.",
+        g8: "Start practice →",
+        h9: "Earth1A_Laboratory apparatus_(Build the Bench)",
+        p9: "Drop names and diagrams onto the real set-up photo.",
+        g9: "Start practice →"
+      }
+    };
+
+    function toggleLanguage() {
+      lang = lang === "zh" ? "en" : "zh";
+      const t = copy[lang];
+      document.documentElement.lang = lang === "zh" ? "zh-HK" : "en";
+      ["title", "lead", "secSim", "secApp"].forEach((id) => {
+        document.getElementById(id).textContent = t[id];
+      });
+      for (let i = 1; i <= 10; i++) {
+        document.getElementById("h" + i).textContent = t["h" + i];
+        document.getElementById("p" + i).textContent = t["p" + i];
+        document.getElementById("g" + i).textContent = t["g" + i];
+      }
+    }
+  </script>
+</body>
+</html>

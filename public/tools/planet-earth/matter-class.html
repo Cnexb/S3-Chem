@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matter Classification / 物質微觀分類</title>
+    <style>
+        :root {
+            --color-mono: #27ae60;
+            --color-mol: #c0392b;
+            --color-comp: #2980b9;
+            --color-mix: #8e44ad;
+            --bg-color: #f0f2f5;
+            --text-color: #333;
+            --navy: #17104b;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', 'PingFang HK', Arial, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-bar {
+            padding: 15px 30px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        h2 { margin: 0; color: #2c3e50; font-size: 1.4rem; }
+
+        .hub-link,
+        .lang-btn {
+            background: var(--navy);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            font-family: inherit;
+        }
+        .hub-link:hover,
+        .lang-btn:hover { background: #2c3e50; }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .main-layout {
+            display: flex;
+            flex-direction: row;
+            min-height: 550px;
+        }
+
+        .left-panel {
+            flex: 0 0 40%;
+            background: #f8f9fa;
+            padding: 30px;
+            border-right: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+
+        .main-layout.notes-hidden .left-panel {
+            display: none;
+        }
+
+        .desc-box {
+            border-left: 5px solid #ccc;
+            padding-left: 20px;
+            transition: border-color 0.3s;
+        }
+
+        .desc-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: block;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .desc-content {
+            color: #444;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .definition-box {
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+        .key-point {
+            font-weight: bold;
+            color: #c0392b;
+        }
+
+        .note-list {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .note-list li {
+            margin-bottom: 8px;
+        }
+
+        .right-panel {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 0;
+        }
+
+        .canvas-wrapper {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            background: #eef2f3;
+            border: 2px solid #bdc3c7;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+        }
+        canvas { display: block; width: 100%; height: 100%; }
+
+        .canvas-label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.95);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #333;
+            pointer-events: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 14px;
+            border-left: 4px solid #333;
+        }
+
+        .control-group { margin-bottom: 15px; }
+
+        .row-label {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .buttons-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button.mode-btn {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px 8px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.2s;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            line-height: 1.3;
+            font-family: inherit;
+        }
+
+        button.mode-btn small {
+            display: block;
+            font-size: 11px;
+            opacity: 0.85;
+            font-weight: normal;
+            margin-top: 3px;
+        }
+
+        .btn-mono { background-color: var(--color-mono); }
+        .btn-mol { background-color: var(--color-mol); }
+        .btn-comp { background-color: var(--color-comp); }
+        .btn-pure { background-color: #f39c12; }
+        .btn-mix { background-color: var(--color-mix); }
+
+        button.mode-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        button.mode-btn.active {
+            box-shadow: inset 0 3px 8px rgba(0,0,0,0.3);
+            transform: scale(0.98);
+            filter: brightness(0.9);
+            outline: 2px solid #333;
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout { flex-direction: column-reverse; }
+            .left-panel { border-right: none; border-top: 1px solid #eee; padding: 20px; width: auto; max-height: none; }
+            .right-panel { padding: 20px; }
+            .canvas-wrapper { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-bar">
+        <div class="header-left">
+            <a class="hub-link" href="./index.html" id="hubLink">← 目錄</a>
+            <h2 data-i18n="app_title">Earth2A_Matters_(物質微觀分類模擬器)</h2>
+        </div>
+        <div class="header-actions">
+            <button class="lang-btn" id="notesToggle" type="button" onclick="toggleNotes()">隱藏說明</button>
+            <button class="lang-btn" id="langSwitch" type="button" onclick="toggleLanguage()">Switch to English</button>
+        </div>
+    </div>
+
+    <div class="main-layout" id="mainLayout">
+        <div class="left-panel" id="leftPanel">
+            <div class="desc-box" id="descBox">
+                <span class="desc-title" id="descTitle">歡迎</span>
+                <div class="desc-content" id="descContent">
+                    載入中...
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="canvas-wrapper">
+                <canvas id="simCanvas"></canvas>
+                <div id="canvasLabel" class="canvas-label" style="border-color: #7f8c8d;">Mode</div>
+            </div>
+
+            <div class="control-section">
+                <div class="control-group">
+                    <span class="row-label" data-i18n="label_elements">1. 元素類型</span>
+                    <div class="buttons-row">
+                        <button class="mode-btn btn-mono" onclick="setMode('mono')">
+                            <span data-i18n="btn_mono">單原子元素</span><br>
+                            <small data-i18n="ex_mono">例：氖 Ne</small>
+                        </button>
+                        <button class="mode-btn btn-mol" onclick="setMode('molecular_element')">
+                            <span data-i18n="btn_mol">分子元素</span><br>
+                            <small data-i18n="ex_mol">例：氧 O₂</small>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <span class="row-label" data-i18n="label_substances">2. 物質組成</span>
+                    <div class="buttons-row">
+                        <button class="mode-btn btn-comp" onclick="setMode('compound')">
+                            <span data-i18n="btn_comp">化合物</span><br>
+                            <small data-i18n="ex_comp">例：水 H₂O</small>
+                        </button>
+                        <button class="mode-btn btn-pure" onclick="setMode('pure')">
+                            <span data-i18n="btn_pure">純物質 (隨機)</span><br>
+                            <small data-i18n="ex_pure">測試判斷力</small>
+                        </button>
+                        <button class="mode-btn btn-mix" onclick="setMode('mixture')">
+                            <span data-i18n="btn_mix">混合物</span><br>
+                            <small data-i18n="ex_mix">全部混合</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const translations = {
+        zh: {
+            app_title: "Earth2A_Matters_(物質微觀分類模擬器)",
+            switch_btn: "Switch to English",
+            hub_link: "← 目錄",
+            hide_notes: "隱藏說明",
+            show_notes: "顯示說明",
+            label_elements: "1. 元素的兩種類型",
+            label_substances: "2. 純物質與混合物",
+
+            btn_mono: "元素 (單原子)", ex_mono: "例如：氖氣 Ne",
+            btn_mol: "元素 (分子)", ex_mol: "例如：氧氣 O₂",
+            btn_comp: "化合物", ex_comp: "例如：水 H₂O",
+            btn_pure: "純物質 (隨機)", ex_pure: "測試你的判斷力",
+            btn_mix: "混合物", ex_mix: "無固定比例",
+
+            title_mono: "元素（單原子）",
+            desc_mono: `
+                <div class="definition-box">
+                    <strong>原子定義：</strong><br>原子是構成元素和物質的最基本粒子。
+                </div>
+                <div class="definition-box">
+                    <strong>元素定義：</strong><br>只由<span class="key-point">一種原子</span>組成的物質，稱為元素。
+                </div>
+                <ul class="note-list">
+                    <li><strong>特徵：</strong>一顆一顆單獨存在。</li>
+                    <li><strong>範例：</strong>惰性氣體（如氦 He、氖 Ne）。</li>
+                    <li><strong>說明：</strong>因為只有一種原子，所以它是元素。</li>
+                </ul>`,
+            label_mono: "元素（單原子）：氖氣 Ne",
+
+            title_mol: "元素（分子）",
+            desc_mol: `
+                <div class="definition-box">
+                    <strong>元素定義：</strong><br>只由<span class="key-point">一種原子</span>組成的物質，稱為元素。
+                </div>
+                <ul class="note-list">
+                    <li><strong>特徵：</strong>多顆<span class="key-point">相同種類</span>的原子黏在一起。</li>
+                    <li><strong>範例：</strong>氧氣 (O₂)、臭氧 (O₃)。</li>
+                    <li><strong>重點：</strong>雖然它們結合成一組（分子），但因為原子種類完全相同，所以仍是元素。</li>
+                </ul>`,
+            label_mol: "元素（分子）：氧氣 O₂",
+
+            title_comp: "化合物",
+            desc_comp: `
+                <div class="definition-box">
+                    <strong>化合物定義：</strong><br>由<span class="key-point">兩種以上的元素</span>，以<span class="key-point">固定的比例</span>，通過<span class="key-point">化學鍵</span>結合在一起的化學物質。
+                </div>
+                <ul class="note-list">
+                    <li><strong>範例：</strong>水 (H₂O)。</li>
+                    <li><strong>固定比例：</strong>例如水中，氫和氧的質量比例必定是 1:8。</li>
+                    <li><strong>性質：</strong>性質與組成元素的性質有頗多不同 (例如水能滅火，但氫氣易燃、氧氣助燃)。</li>
+                    <li><strong>分離：</strong>只能用<span class="key-point">化學方法</span>分離，不能用物理方法。</li>
+                </ul>`,
+            label_comp: "化合物：水 H₂O",
+
+            title_pure: "純物質",
+            desc_pure_intro: `
+                <div class="definition-box">
+                    <strong>純物質定義：</strong><br>容器內只有「一種」粒子 (無論是原子、分子或化合物分子)。
+                </div>
+                <p>具有固定的熔點和沸點。</p>
+                <hr>
+                <p><strong>目前顯示：</strong>`,
+            desc_pure_end: `</p>`,
+            pure_mono_text: "純氖氣 (單原子元素)。所有粒子都是獨立的綠色原子。",
+            pure_mol_text: "純氧氣 (分子元素)。所有粒子都是成對的紅色原子。",
+            pure_comp_text: "純水 (化合物)。所有粒子都是「一紅兩藍」的組合。",
+            label_pure_mono: "純物質：元素（單原子）",
+            label_pure_mol: "純物質：元素（分子）",
+            label_pure_comp: "純物質：化合物",
+
+            title_mix: "混合物",
+            desc_mix: `
+                <div class="definition-box">
+                    <strong>混合物定義：</strong><br>由兩種或以上的純物質在<span class="key-point">不涉及化學反應</span>的情況下混合而成。
+                </div>
+                <ul class="note-list">
+                    <li><strong>無固定比例：</strong>各成分彼此沒有固定比例。</li>
+                    <li><strong>無化學鍵：</strong>各成分之間沒有化學鍵連接。</li>
+                    <li><strong>性質：</strong>各組成物質與它原有的性質相同。</li>
+                    <li><strong>分離：</strong>可用<span class="key-point">物理方法</span>分離 (如過濾、蒸餾)。</li>
+                    <li><strong>熔沸點：</strong>沒有明確的熔點或沸點 (在一個溫度範圍內熔化或沸騰)。</li>
+                </ul>
+                <p><em>觀察右圖：氖原子、氧氣分子和水分子混在一起，沒有發生反應。</em></p>`,
+            label_mix: "混合物"
+        },
+        en: {
+            app_title: "Earth2A_Matters_(Microscopic Matter Classifier)",
+            switch_btn: "切換至中文",
+            hub_link: "← Hub",
+            hide_notes: "Hide notes",
+            show_notes: "Show notes",
+            label_elements: "1. Types of Elements",
+            label_substances: "2. Pure Substances vs Mixtures",
+
+            btn_mono: "Element (Monatomic)", ex_mono: "e.g., Neon (Ne)",
+            btn_mol: "Element (Molecular)", ex_mol: "e.g., Oxygen (O₂)",
+            btn_comp: "Compound", ex_comp: "e.g., Water (H₂O)",
+            btn_pure: "Pure Substance", ex_pure: "Random Test",
+            btn_mix: "Mixture", ex_mix: "No Fixed Ratio",
+
+            title_mono: "Element (Monatomic)",
+            desc_mono: `
+                <div class="definition-box">
+                    <strong>Atom Definition:</strong><br>The most basic particle that makes up elements and matter.
+                </div>
+                <div class="definition-box">
+                    <strong>Element Definition:</strong><br>A substance made up of only <span class="key-point">one type of atom</span>.
+                </div>
+                <ul class="note-list">
+                    <li><strong>Feature:</strong> Single atoms existing independently.</li>
+                    <li><strong>Example:</strong> Noble gases (e.g., Helium He, Neon Ne).</li>
+                    <li><strong>Note:</strong> Since there is only one type of atom, it is an element.</li>
+                </ul>`,
+            label_mono: "Element (Monatomic): Neon",
+
+            title_mol: "Element (Molecular)",
+            desc_mol: `
+                <div class="definition-box">
+                    <strong>Element Definition:</strong><br>A substance made up of only <span class="key-point">one type of atom</span>.
+                </div>
+                <ul class="note-list">
+                    <li><strong>Feature:</strong> Multiple atoms of the <span class="key-point">same type</span> bonded together.</li>
+                    <li><strong>Example:</strong> Oxygen (O₂), Ozone (O₃).</li>
+                    <li><strong>Key Point:</strong> Even though they form a group (molecule), the atoms are identical, so it remains an element.</li>
+                </ul>`,
+            label_mol: "Element (Molecular): Oxygen",
+
+            title_comp: "Compound",
+            desc_comp: `
+                <div class="definition-box">
+                    <strong>Compound Definition:</strong><br>A chemical substance formed by <span class="key-point">two or more different elements</span> bonded together by <span class="key-point">chemical bonds</span> in a <span class="key-point">fixed ratio</span>.
+                </div>
+                <ul class="note-list">
+                    <li><strong>Example:</strong> Water (H₂O).</li>
+                    <li><strong>Fixed Ratio:</strong> In water, the mass ratio of Hydrogen to Oxygen is always 1:8.</li>
+                    <li><strong>Properties:</strong> Very different from its constituent elements (e.g., Water puts out fire, but Hydrogen is flammable).</li>
+                    <li><strong>Separation:</strong> Can only be separated by <span class="key-point">chemical methods</span>, not physical ones.</li>
+                </ul>`,
+            label_comp: "Compound: Water",
+
+            title_pure: "Pure Substance",
+            desc_pure_intro: `
+                <div class="definition-box">
+                    <strong>Pure Substance Definition:</strong><br>Contains only ONE type of particle (whether atom, molecule, or compound).
+                </div>
+                <p>Has fixed melting and boiling points.</p>
+                <hr>
+                <p><strong>Currently Showing:</strong>`,
+            desc_pure_end: `</p>`,
+            pure_mono_text: "Pure Neon. All particles are independent green atoms.",
+            pure_mol_text: "Pure Oxygen. All particles are paired red atoms.",
+            pure_comp_text: "Pure Water. All particles are '1 Red + 2 Blue'.",
+            label_pure_mono: "Pure: Element (Monatomic)",
+            label_pure_mol: "Pure: Element (Molecular)",
+            label_pure_comp: "Pure: Compound",
+
+            title_mix: "Mixture",
+            desc_mix: `
+                <div class="definition-box">
+                    <strong>Mixture Definition:</strong><br>Formed by mixing two or more pure substances <span class="key-point">without chemical reaction</span>.
+                </div>
+                <ul class="note-list">
+                    <li><strong>No Fixed Ratio:</strong> Components can be mixed in any proportion.</li>
+                    <li><strong>No Chemical Bonds:</strong> No bonds between different components.</li>
+                    <li><strong>Properties:</strong> Retains the properties of its original components.</li>
+                    <li><strong>Separation:</strong> Can be separated by <span class="key-point">physical methods</span> (e.g., filtration, distillation).</li>
+                    <li><strong>Melting/Boiling Points:</strong> No sharp melting/boiling points (melts over a range).</li>
+                </ul>
+                <p><em>Observe: Neon atoms, Oxygen molecules, and Water molecules mixed together without reacting.</em></p>`,
+            label_mix: "Mixture"
+        }
+    };
+
+    let currentLang = 'zh';
+    let currentMode = 'mono';
+    let currentPureType = 'mono';
+
+    const canvas = document.getElementById('simCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    class Particle {
+        constructor(x, y, type, parent = null, offsetX = 0, offsetY = 0) {
+            this.x = x; this.y = y;
+            this.vx = (Math.random() - 0.5) * 2;
+            this.vy = (Math.random() - 0.5) * 2;
+            this.type = type;
+            this.parent = parent;
+            this.offsetX = offsetX; this.offsetY = offsetY;
+
+            if (type === 'H') { this.radius = 7; this.color = '#3498db'; }
+            else if (type === 'Ne') { this.radius = 13; this.color = '#27ae60'; }
+            else { this.radius = 11; this.color = '#e74c3c'; }
+        }
+
+        draw() {
+            let drawX = this.x;
+            let drawY = this.y;
+            if (this.parent) {
+                const angle = this.parent.angle;
+                drawX = this.parent.x + this.offsetX * Math.cos(angle) - this.offsetY * Math.sin(angle);
+                drawY = this.parent.y + this.offsetX * Math.sin(angle) + this.offsetY * Math.cos(angle);
+            }
+            ctx.beginPath();
+            ctx.arc(drawX, drawY, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(drawX - this.radius*0.3, drawY - this.radius*0.3, this.radius/3, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255,255,255,0.3)';
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(0,0,0,0.15)';
+            ctx.stroke();
+
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 10px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(this.type, drawX, drawY);
+        }
+
+        update() {
+            if (!this.parent) {
+                this.x += this.vx; this.y += this.vy;
+                if (this.x < this.radius || this.x > width - this.radius) this.vx *= -1;
+                if (this.y < this.radius || this.y > height - this.radius) this.vy *= -1;
+            }
+        }
+    }
+
+    class Molecule {
+        constructor(x, y, type) {
+            this.x = x; this.y = y;
+            this.vx = (Math.random() - 0.5) * 2.5;
+            this.vy = (Math.random() - 0.5) * 2.5;
+            this.angle = Math.random() * Math.PI * 2;
+            this.vAngle = (Math.random() - 0.5) * 0.05;
+            this.type = type;
+            this.atoms = [];
+
+            if (type === 'O2') {
+                this.atoms.push(new Particle(0, 0, 'O', this, -10, 0));
+                this.atoms.push(new Particle(0, 0, 'O', this, 10, 0));
+                this.radius = 22;
+            } else if (type === 'H2O') {
+                this.atoms.push(new Particle(0, 0, 'O', this, 0, 0));
+                this.atoms.push(new Particle(0, 0, 'H', this, -12, 12));
+                this.atoms.push(new Particle(0, 0, 'H', this, 12, 12));
+                this.radius = 24;
+            }
+        }
+
+        draw() {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.angle);
+            ctx.strokeStyle = '#95a5a6';
+            ctx.lineWidth = 6;
+            ctx.lineCap = 'round';
+            if (this.type === 'O2') {
+                ctx.beginPath(); ctx.moveTo(-10, 0); ctx.lineTo(10, 0); ctx.stroke();
+            } else if (this.type === 'H2O') {
+                ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-12, 12); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(12, 12); ctx.stroke();
+            }
+            ctx.restore();
+            this.atoms.forEach(atom => atom.draw());
+        }
+
+        update() {
+            this.x += this.vx; this.y += this.vy;
+            this.angle += this.vAngle;
+            if (this.x < this.radius || this.x > width - this.radius) this.vx *= -1;
+            if (this.y < this.radius || this.y > height - this.radius) this.vy *= -1;
+        }
+    }
+
+    function resize() {
+        const w = canvas.parentElement.clientWidth;
+        const h = canvas.parentElement.clientHeight;
+        if (w < 10 || h < 10) return false;
+        width = w;
+        height = h;
+        canvas.width = width;
+        canvas.height = height;
+        return true;
+    }
+
+    function clampParticles() {
+        particles.forEach(p => {
+            const r = p.radius || 20;
+            p.x = Math.min(Math.max(p.x, r), Math.max(r, width - r));
+            p.y = Math.min(Math.max(p.y, r), Math.max(r, height - r));
+        });
+    }
+
+    window.addEventListener('resize', () => {
+        if (resize()) clampParticles();
+    });
+
+    function notesHidden() {
+        return document.getElementById('mainLayout').classList.contains('notes-hidden');
+    }
+
+    function toggleNotes() {
+        document.getElementById('mainLayout').classList.toggle('notes-hidden');
+        updateNotesButton();
+        requestAnimationFrame(() => {
+            if (resize()) {
+                if (!particles.length) setMode(currentMode);
+                else clampParticles();
+            }
+        });
+    }
+
+    function updateNotesButton() {
+        const t = translations[currentLang];
+        document.getElementById('notesToggle').innerText = notesHidden() ? t.show_notes : t.hide_notes;
+    }
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'zh' ? 'en' : 'zh';
+        document.documentElement.lang = currentLang === 'zh' ? 'zh-HK' : 'en';
+        updateUIText();
+        updateInfoPanel();
+    }
+
+    function updateUIText() {
+        const t = translations[currentLang];
+        document.getElementById('langSwitch').innerText = t.switch_btn;
+        document.getElementById('hubLink').innerText = t.hub_link;
+        updateNotesButton();
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key]) el.innerText = t[key];
+        });
+    }
+
+    function updateInfoPanel() {
+        const t = translations[currentLang];
+        const titleEl = document.getElementById('descTitle');
+        const contentEl = document.getElementById('descContent');
+        const labelEl = document.getElementById('canvasLabel');
+        const descBox = document.getElementById('descBox');
+
+        let color = "#333";
+
+        if (currentMode === 'mono') {
+            titleEl.innerText = t.title_mono;
+            contentEl.innerHTML = t.desc_mono;
+            labelEl.innerText = t.label_mono;
+            color = "var(--color-mono)";
+        }
+        else if (currentMode === 'molecular_element') {
+            titleEl.innerText = t.title_mol;
+            contentEl.innerHTML = t.desc_mol;
+            labelEl.innerText = t.label_mol;
+            color = "var(--color-mol)";
+        }
+        else if (currentMode === 'compound') {
+            titleEl.innerText = t.title_comp;
+            contentEl.innerHTML = t.desc_comp;
+            labelEl.innerText = t.label_comp;
+            color = "var(--color-comp)";
+        }
+        else if (currentMode === 'pure') {
+            titleEl.innerText = t.title_pure;
+            color = "#f39c12";
+
+            let subText = "";
+            let subLabel = "";
+
+            if (currentPureType === 'mono') {
+                subText = t.pure_mono_text;
+                subLabel = t.label_pure_mono;
+            } else if (currentPureType === 'mol') {
+                subText = t.pure_mol_text;
+                subLabel = t.label_pure_mol;
+            } else {
+                subText = t.pure_comp_text;
+                subLabel = t.label_pure_comp;
+            }
+
+            contentEl.innerHTML = `${t.desc_pure_intro}${subText}<br>${t.desc_pure_end}`;
+            labelEl.innerText = subLabel;
+        }
+        else if (currentMode === 'mixture') {
+            titleEl.innerText = t.title_mix;
+            contentEl.innerHTML = t.desc_mix;
+            labelEl.innerText = t.label_mix;
+            color = "var(--color-mix)";
+        }
+
+        labelEl.style.borderColor = color;
+        descBox.style.borderLeftColor = color;
+    }
+
+    function setMode(mode) {
+        currentMode = mode;
+        particles = [];
+
+        document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+
+        if (mode === 'mono') {
+            document.querySelector('.btn-mono').classList.add('active');
+            for(let i=0; i<12; i++) particles.push(new Particle(Math.random()*(width-40)+20, Math.random()*(height-40)+20, 'Ne'));
+        }
+        else if (mode === 'molecular_element') {
+            document.querySelector('.btn-mol').classList.add('active');
+            for(let i=0; i<8; i++) particles.push(new Molecule(Math.random()*(width-40)+20, Math.random()*(height-40)+20, 'O2'));
+        }
+        else if (mode === 'compound') {
+            document.querySelector('.btn-comp').classList.add('active');
+            for(let i=0; i<7; i++) particles.push(new Molecule(Math.random()*(width-40)+20, Math.random()*(height-40)+20, 'H2O'));
+        }
+        else if (mode === 'pure') {
+            document.querySelector('.btn-pure').classList.add('active');
+            const r = Math.random();
+            if (r < 0.33) {
+                currentPureType = 'mono';
+                for(let i=0; i<12; i++) particles.push(new Particle(Math.random()*(width-40)+20, Math.random()*(height-40)+20, 'Ne'));
+            } else if (r < 0.66) {
+                currentPureType = 'mol';
+                for(let i=0; i<8; i++) particles.push(new Molecule(Math.random()*(width-40)+20, Math.random()*(height-40)+20, 'O2'));
+            } else {
+                currentPureType = 'comp';
+                for(let i=0; i<7; i++) particles.push(new Molecule(Math.random()*(width-40)+20, Math.random()*(height-40)+20, 'H2O'));
+            }
+        }
+        else if (mode === 'mixture') {
+            document.querySelector('.btn-mix').classList.add('active');
+            for(let i=0; i<5; i++) particles.push(new Particle(Math.random()*(width-40)+20, Math.random()*(height-40)+20, 'Ne'));
+            for(let i=0; i<3; i++) particles.push(new Molecule(Math.random()*(width-40)+20, Math.random()*(height-40)+20, 'O2'));
+            for(let i=0; i<3; i++) particles.push(new Molecule(Math.random()*(width-40)+20, Math.random()*(height-40)+20, 'H2O'));
+        }
+
+        updateInfoPanel();
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        ctx.strokeStyle = '#e6e6e6';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        const gridSize = 40;
+        for(let i=0; i<width; i+=gridSize) { ctx.moveTo(i,0); ctx.lineTo(i,height); }
+        for(let i=0; i<height; i+=gridSize) { ctx.moveTo(0,i); ctx.lineTo(width,i); }
+        ctx.stroke();
+
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animate);
+    }
+
+    function init() {
+        if (!resize()) {
+            requestAnimationFrame(init);
+            return;
+        }
+        setMode('mono');
+        updateUIText();
+        animate();
+    }
+    init();
+
+</script>
+
+</body>
+</html>
