@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Atom Builder · 原子建造器</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-mode="builder">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">HKDSE CHEMISTRY LAB</p>
+      <h1 data-i18n="title">Atom Builder</h1>
+      <p class="subtitle" data-i18n="subtitle">Build atoms, ions and isotopes interactively</p>
+    </div>
+    <div class="language-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中文</button>
+      <button type="button" data-lang="en" class="active">English</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card overview-card">
+      <div class="overview-main">
+        <div>
+          <p class="section-kicker" data-i18n="labTitle">Interactive atom laboratory</p>
+          <h2 id="labHeading" data-i18n="labHeadingBuilder">Build an atom</h2>
+        </div>
+        <div class="mode-toolbar">
+          <div class="mode-switch" role="group" aria-label="Mode">
+            <button type="button" data-mode="builder" class="active" data-i18n="builderMode">Builder mode</button>
+            <button type="button" data-mode="quest" data-i18n="questMode">Quest mode</button>
+          </div>
+        </div>
+      </div>
+      <div class="summary-chips" aria-live="polite">
+        <span class="chip"><span data-i18n="element">Element</span><strong id="topElement">Carbon</strong></span>
+        <span class="chip"><span data-i18n="mass">Mass</span><strong id="topMass">12</strong></span>
+        <span class="chip"><span data-i18n="charge">Charge</span><strong id="topCharge">0</strong></span>
+      </div>
+    </section>
+
+    <div class="app-grid">
+      <section class="card builder-card">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker" data-i18n="workspace">Workspace</p>
+            <h2 data-i18n="atomModel">Atom model</h2>
+          </div>
+          <button id="resetButton" class="secondary-button" type="button" data-i18n="reset">Reset</button>
+        </div>
+
+        <div id="atomDropZone" class="atom-stage" aria-label="Interactive atom model">
+          <canvas id="atomCanvas" width="640" height="500"></canvas>
+          <div class="atom-center-label" aria-hidden="true">
+            <strong id="stageSymbol">C</strong>
+            <span id="stageName">Carbon</span>
+          </div>
+          <p class="drop-hint" data-i18n="dropHint">Drag particles here or use the controls</p>
+        </div>
+
+        <div class="particle-tray" aria-label="Particle tray">
+          <button class="particle-token proton-token" draggable="true" data-particle="proton" type="button">
+            <span class="particle-icon">p<sup>+</sup></span>
+            <span data-i18n="proton">Proton</span>
+          </button>
+          <button class="particle-token neutron-token" draggable="true" data-particle="neutron" type="button">
+            <span class="particle-icon">n</span>
+            <span data-i18n="neutron">Neutron</span>
+          </button>
+          <button class="particle-token electron-token" draggable="true" data-particle="electron" type="button">
+            <span class="particle-icon">e<sup>−</sup></span>
+            <span data-i18n="electron">Electron</span>
+          </button>
+        </div>
+
+        <div class="counter-grid">
+          <article class="counter proton-counter">
+            <div><span class="dot proton-dot"></span><span data-i18n="protons">Protons</span></div>
+            <div class="stepper">
+              <button type="button" data-action="remove" data-particle="proton" aria-label="Remove proton">−</button>
+              <input id="protonCount" class="particle-input" type="number" min="0" max="18" step="1" inputmode="numeric" value="6" aria-label="Proton count">
+              <button type="button" data-action="add" data-particle="proton" aria-label="Add proton">+</button>
+            </div>
+          </article>
+          <article class="counter neutron-counter">
+            <div><span class="dot neutron-dot"></span><span data-i18n="neutrons">Neutrons</span></div>
+            <div class="stepper">
+              <button type="button" data-action="remove" data-particle="neutron" aria-label="Remove neutron">−</button>
+              <input id="neutronCount" class="particle-input" type="number" min="0" max="24" step="1" inputmode="numeric" value="6" aria-label="Neutron count">
+              <button type="button" data-action="add" data-particle="neutron" aria-label="Add neutron">+</button>
+            </div>
+          </article>
+          <article class="counter electron-counter">
+            <div><span class="dot electron-dot"></span><span data-i18n="electrons">Electrons</span></div>
+            <div class="stepper">
+              <button type="button" data-action="remove" data-particle="electron" aria-label="Remove electron">−</button>
+              <input id="electronCount" class="particle-input" type="number" min="0" max="18" step="1" inputmode="numeric" value="6" aria-label="Electron count">
+              <button type="button" data-action="add" data-particle="electron" aria-label="Add electron">+</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="presets">
+          <span data-i18n="quickBuild">Quick build</span>
+          <div id="presetButtons">
+            <button type="button" data-preset="hydrogen">H</button>
+            <button type="button" data-preset="helium">He</button>
+            <button type="button" data-preset="carbon">C</button>
+            <button type="button" data-preset="oxygen">O</button>
+            <button type="button" data-preset="sodiumIon">Na<sup>+</sup></button>
+            <button type="button" data-preset="chlorideIon">Cl<sup>−</sup></button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side-column">
+        <section class="card facts-card">
+          <div class="panel-heading compact">
+            <div>
+              <p id="factsKicker" class="section-kicker" data-i18n="liveResults">Live results</p>
+              <h2 id="factsTitle" data-i18n="atomIdentity">Atom identity</h2>
+            </div>
+            <span id="stabilityBadge" class="status-badge stable" data-i18n="stable">Stable</span>
+          </div>
+
+          <div class="identity-layout">
+            <div class="nuclide-card" aria-label="Nuclear symbol">
+              <span id="massNumber" class="mass-number">12</span>
+              <span id="atomicNumber" class="atomic-number">6</span>
+              <strong id="symbol">C</strong>
+              <span id="symbolCharge" class="symbol-charge"></span>
+            </div>
+            <div>
+              <h3 id="elementName">Carbon</h3>
+              <p id="classification" class="muted">Neutral atom · Carbon-12</p>
+              <p id="configuration" class="configuration">2, 4</p>
+            </div>
+          </div>
+
+          <dl class="data-grid">
+            <div><dt data-i18n="atomicNumber">Atomic number</dt><dd id="atomicNumberValue">6</dd></div>
+            <div><dt data-i18n="massNumber">Mass number</dt><dd id="massNumberValue">12</dd></div>
+            <div><dt data-i18n="netCharge">Net charge</dt><dd id="chargeValue">0</dd></div>
+            <div><dt data-i18n="particleType">Particle type</dt><dd id="particleTypeValue">Neutral atom</dd></div>
+          </dl>
+
+          <div class="learning-note">
+            <span aria-hidden="true">i</span>
+            <p id="learningNote">The number of protons determines the element.</p>
+          </div>
+        </section>
+
+        <section class="card quiz-card">
+          <div class="panel-heading compact">
+            <div>
+              <p class="section-kicker" data-i18n="challenge">Challenge</p>
+              <h2 data-i18n="quizTitle">Build challenge</h2>
+            </div>
+            <span class="score"><span data-i18n="score">Score</span> <strong id="scoreValue">0/0</strong></span>
+          </div>
+
+          <div id="quizPrompt" class="quiz-prompt" aria-live="polite"></div>
+          <p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p>
+          <div id="successCelebration" class="success-celebration" role="status" aria-live="assertive" hidden>
+            <span class="success-spark spark-one" aria-hidden="true"></span>
+            <span class="success-spark spark-two" aria-hidden="true"></span>
+            <span class="success-spark spark-three" aria-hidden="true"></span>
+            <span class="success-check" aria-hidden="true">✓</span>
+            <div>
+              <strong data-i18n="successTitle">Correct answer!</strong>
+              <span data-i18n="autoAdvance">Next challenge in 3 seconds…</span>
+            </div>
+          </div>
+          <div class="quiz-actions">
+            <button id="checkButton" class="primary-button" type="button" data-i18n="check">Check answer</button>
+            <button id="nextButton" class="secondary-button" type="button" data-i18n="skip">Skip challenge</button>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p data-i18n="footer">An original educational simulation for learning atomic structure.</p>
+  </footer>
+</body>
+</html>

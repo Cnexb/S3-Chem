@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Liquid Air Fractional Distillation · 液態空氣分餾</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">HKDSE CHEMISTRY LAB</p>
+      <h1 data-i18n="title">Liquid Air Fractional Distillation</h1>
+      <p class="subtitle" data-i18n="subtitle">Dynamic thermal simulation of purifying, liquefying and fractionating air</p>
+    </div>
+    <div class="language-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中文</button>
+      <button type="button" data-lang="en" class="active">English</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card overview-card">
+      <div class="overview-main">
+        <div>
+          <p class="section-kicker" data-i18n="labTitle">Interactive process laboratory</p>
+          <h2 id="labHeading" data-i18n="labHeading">Thermal process control</h2>
+        </div>
+        <div class="stage-tabs" role="tablist" aria-label="Process stages">
+          <button type="button" class="stage-tab active" data-stage="1" role="tab" aria-selected="true">
+            <span class="stage-num">1</span>
+            <span data-i18n="stage1Short">Purification</span>
+          </button>
+          <button type="button" class="stage-tab" data-stage="2" role="tab" aria-selected="false">
+            <span class="stage-num">2</span>
+            <span data-i18n="stage2Short">Liquefaction</span>
+          </button>
+          <button type="button" class="stage-tab" data-stage="3" role="tab" aria-selected="false">
+            <span class="stage-num">3</span>
+            <span data-i18n="stage3Short">Distillation</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="summary-chips" aria-live="polite">
+        <span class="chip"><span data-i18n="chipStage">Stage</span><strong id="chipStageValue">1</strong></span>
+        <span class="chip"><span data-i18n="chipTemp">Temperature</span><strong id="chipTempValue">25 °C</strong></span>
+        <span class="chip"><span data-i18n="chipPhase">Phase</span><strong id="chipPhaseValue">Cooling</strong></span>
+      </div>
+
+      <div class="controls-row">
+        <div class="transport">
+          <button id="autoButton" class="primary-button" type="button" data-i18n="auto" aria-pressed="false">Auto</button>
+          <button id="stepButton" class="secondary-button" type="button" data-i18n="step">Step</button>
+          <button id="resetButton" class="secondary-button" type="button" data-i18n="reset">Reset</button>
+        </div>
+        <label class="slider-block" for="progressSlider">
+          <span class="slider-label">
+            <span data-i18n="processProgress">Process progress</span>
+            <strong id="progressLabel">0%</strong>
+          </span>
+          <input id="progressSlider" type="range" min="0" max="1000" value="0" step="1">
+        </label>
+      </div>
+    </section>
+
+    <div class="app-grid">
+      <section class="card stage-card">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker" data-i18n="workspace">Workspace</p>
+            <h2 id="stageTitle">Stage 1 — Purification</h2>
+          </div>
+          <p class="temp-badge" id="stageTempBadge">25 °C</p>
+        </div>
+
+        <div class="canvas-wrap" aria-label="Process animation">
+          <canvas id="simCanvas" width="720" height="520"></canvas>
+        </div>
+
+        <div class="status-chips" id="statusChips" aria-live="polite"></div>
+        <p class="live-caption" id="liveCaption"></p>
+      </section>
+
+      <aside class="side-stack">
+        <section class="card info-card">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker" data-i18n="notes">Process notes</p>
+              <h2 data-i18n="whatHappening">What is happening</h2>
+            </div>
+          </div>
+          <p class="notes-body" id="notesBody"></p>
+          <ul class="notes-list" id="notesList"></ul>
+        </section>
+
+        <section class="card table-card">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker" data-i18n="data">Reference data</p>
+              <h2 data-i18n="bpTable">Boiling points</h2>
+            </div>
+          </div>
+          <table class="bp-table">
+            <thead>
+              <tr>
+                <th data-i18n="colGas">Gas</th>
+                <th data-i18n="colFormula">Formula</th>
+                <th data-i18n="colBp">b.p. / °C</th>
+                <th data-i18n="colState">State now</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="rowN2">
+                <td data-i18n="nitrogen">Nitrogen</td>
+                <td>N<sub>2</sub></td>
+                <td>−196</td>
+                <td id="stateN2">—</td>
+              </tr>
+              <tr id="rowAr">
+                <td data-i18n="argon">Argon</td>
+                <td>Ar</td>
+                <td>−185</td>
+                <td id="stateAr">—</td>
+              </tr>
+              <tr id="rowO2">
+                <td data-i18n="oxygen">Oxygen</td>
+                <td>O<sub>2</sub></td>
+                <td>−183</td>
+                <td id="stateO2">—</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="table-note" data-i18n="bpNote">In Stage 3, N₂ leaves first near −190 °C; Ar follows; O₂ stays liquid longest at the bottom.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

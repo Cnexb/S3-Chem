@@ -23,6 +23,18 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/planet-earth/chem-lab-hq/index.html",
     titleKey: "lab.chemLabHqName",
   },
+  "liquid-air-lab": {
+    path: "public/tools/liquid-air-fractional-distillation/index.html",
+    titleKey: "lab.liquidAirName",
+  },
+  "atom-builder-lab": {
+    path: "public/tools/atom-builder/index.html",
+    titleKey: "lab.atomBuilderName",
+  },
+  "ram-calculator-lab": {
+    path: "public/tools/ram-calculator/index.html",
+    titleKey: "lab.ramLabName",
+  },
   "ionic-compound-puzzle": {
     path: "public/tools/ionic-compound-puzzle/index.html",
     titleKey: "lab.ionicName",
