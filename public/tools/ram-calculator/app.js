@@ -18,6 +18,7 @@
       appTitle: "Relative Atomic Mass Laboratory",
       appSubtitle: "Interactive isotope weighted-average calculator",
       workspace: "CALCULATION WORKSPACE",
+      inputs: "Isotope data",
       modeMixture: "Isotope mixture",
       modeMass: "Find mass number",
       modeAbundances: "Find two abundances",
@@ -61,8 +62,47 @@
       abundanceUnit: "percentage abundance",
       chartTitle: "Isotope abundance profile",
       percentScale: "0–100% scale",
-      working: "Calculation working",
+      working: "Step by step",
       weightedMean: "Weighted mean",
+      kicker: "HKDSE CHEMISTRY",
+      hideData: "Hide data",
+      showData: "Show data",
+      hundredTitle: "These percentages add to 100%",
+      hundredHint: "Each colour is one isotope. The pieces must fill the whole bar.",
+      replay: "Replay",
+      questionLabel: "Question",
+      givenLabel: "Given",
+      unknownLabel: "Find",
+      rimHeading: "Relative isotopic mass",
+      abundanceHeading: "Abundance",
+      ramHeading: "Relative atomic mass",
+      stepLet: "1. Let",
+      stepFormula: "2. Formula",
+      hundredWhy: "÷ 100 because the abundances are in %.",
+      stepFind: "3. Find",
+      nextStep: "Next",
+      prevStep: "Back",
+      zoomAll: "All",
+      zoomQuestion: "Question",
+      zoomAnswer: "Answer",
+      zoomBar: "Bar",
+      zoomSteps: "Steps",
+      readQuestion: "Read what is given",
+      stepProgress: "Step {n} of 3",
+      gapLabel: "Still {n}% short of 100%",
+      overLabel: "{n}% past 100%",
+      exactLabel: "The parts add to 100%",
+      stepMultiply: "Multiply mass by its percentage",
+      stepAdd: "Add the contributions",
+      stepDivide: "Divide by 100",
+      stepDivideNote: "Abundances are percentages, so the total is out of 100.",
+      stepMassTarget: "The weighted total must equal Aᵣ × 100",
+      stepMassRemain: "Subtract the known contributions",
+      stepMassSolve: "Divide by this isotope's percentage",
+      stepSumRule: "The unknown percentages share what is left of 100%",
+      stepAbundEq: "Put the masses into the Aᵣ equation",
+      stepAbundSolve: "Solve the pair",
+      legendSum: "{parts} = {total}%",
       learningNoteMixture: "Relative atomic mass is the weighted average of an element's isotope masses. It has no unit and is usually not a whole number.",
       learningNoteMass: "When Aᵣ and all abundances are known, rearrange the weighted-average formula to find one missing isotope mass.",
       learningNoteAbundances: "When Aᵣ and all isotope masses are known, two unknown abundances can be found using the 100% total and the Aᵣ equation.",
@@ -117,6 +157,7 @@
       appTitle: "相對原子質量實驗室",
       appSubtitle: "互動同位素加權平均計算器",
       workspace: "計算工作區",
+      inputs: "同位素數據",
       modeMixture: "同位素混合物",
       modeMass: "求質量數",
       modeAbundances: "求兩個未知豐度",
@@ -160,8 +201,47 @@
       abundanceUnit: "百分豐度",
       chartTitle: "同位素豐度分佈",
       percentScale: "0–100% 比例",
-      working: "計算步驟",
+      working: "逐步計算",
       weightedMean: "加權平均",
+      kicker: "HKDSE 化學",
+      hideData: "隱藏數據",
+      showData: "顯示數據",
+      hundredTitle: "這些百分數加起來是 100%",
+      hundredHint: "每種顏色是一種同位素。色塊必須填滿整條棒。",
+      replay: "重播",
+      questionLabel: "題目",
+      givenLabel: "已知",
+      unknownLabel: "要求",
+      rimHeading: "相對同位素質量",
+      abundanceHeading: "豐度",
+      ramHeading: "相對原子質量",
+      stepLet: "1. 設",
+      stepFormula: "2. 公式",
+      hundredWhy: "÷ 100，因為豐度是百分數。",
+      stepFind: "3. 求出未知數",
+      nextStep: "下一步",
+      prevStep: "上一步",
+      zoomAll: "全頁",
+      zoomQuestion: "題目",
+      zoomAnswer: "答案",
+      zoomBar: "百分條",
+      zoomSteps: "步驟",
+      readQuestion: "先讀已知條件",
+      stepProgress: "第 {n} 步，共 3 步",
+      gapLabel: "還差 {n}% 才到 100%",
+      overLabel: "超出 100% 共 {n}%",
+      exactLabel: "各部分加起來是 100%",
+      stepMultiply: "質量乘以百分豐度",
+      stepAdd: "把各項貢獻加起來",
+      stepDivide: "除以 100",
+      stepDivideNote: "豐度是百分數，所以總和是以 100 為底。",
+      stepMassTarget: "加權總和必須等於 Aᵣ × 100",
+      stepMassRemain: "減去已知同位素的貢獻",
+      stepMassSolve: "除以這個同位素的百分豐度",
+      stepSumRule: "兩個未知百分數合共佔剩下的部分",
+      stepAbundEq: "把質量代入 Aᵣ 公式",
+      stepAbundSolve: "解出這一對未知數",
+      legendSum: "{parts} = {total}%",
       learningNoteMixture: "相對原子質量是元素各同位素質量的加權平均值。它沒有單位，而且通常不是整數。",
       learningNoteMass: "當已知 Aᵣ 及所有豐度時，可重排加權平均公式以求出一個未知同位素質量。",
       learningNoteAbundances: "當已知 Aᵣ 及所有同位素質量時，可利用豐度總和為 100% 及 Aᵣ 方程式求出兩個未知豐度。",
@@ -253,6 +333,8 @@
     lang: "en",
     mode: "mixture",
     activeElement: "Cl",
+    step: 0,
+    lesson: null,
     rows: [],
     arValue: null,
     isotopeMeta: null,
@@ -276,6 +358,11 @@
     return Number(value.toFixed(maxDecimals)).toLocaleString(state.lang === "zh" ? "zh-HK" : "en-GB", {
       maximumFractionDigits: maxDecimals
     });
+  }
+
+  function formatPlain(value, maxDecimals = 4) {
+    if (!Number.isFinite(value)) return "—";
+    return String(Number(value.toFixed(maxDecimals)));
   }
 
   function roundSigFig(value, sigFigs = 3) {
@@ -306,9 +393,9 @@
   function clearElementContext() {
     state.activeElement = null;
     state.isotopeMeta = null;
-    $("elementIsotopeSummary").hidden = true;
     updatePresetButtons();
     renderPeriodicSelection();
+    updateSelectedElementSummary();
   }
 
   function currentElement() {
@@ -418,34 +505,21 @@
     const element = currentElement();
     if (!element) {
       $("selectedElementSummary").textContent = "—";
+      $("heroElement").textContent = "";
       return;
     }
-    $("selectedElementSummary").innerHTML = t("selectedElement", {
-      name: element[state.lang === "zh" ? "zh" : "en"],
+    const name = element[state.lang === "zh" ? "zh" : "en"];
+    $("selectedElementSummary").textContent = t("selectedElement", {
+      name,
       symbol: element.symbol,
       ar: formatNumber(element.ar, 3)
-    }).replace("Aᵣ", "A<sub>r</sub>");
+    });
+    $("heroElement").textContent = `${name} (${element.symbol})`;
   }
 
-  function updateLearningNote() {
-    if (state.loadNote === "simplified") {
-      $("learningNoteText").textContent = t("simplifiedNote");
-      return;
-    }
-    const key = state.mode === "mass"
-      ? "learningNoteMass"
-      : state.mode === "abundances"
-        ? "learningNoteAbundances"
-        : "learningNoteMixture";
-    $("learningNoteText").textContent = t(key);
-  }
+  function updateLearningNote() {}
 
   function updateModeChrome() {
-    const titleKey = state.mode === "mass"
-      ? "workspaceTitleMass"
-      : state.mode === "abundances"
-        ? "workspaceTitleAbundances"
-        : "workspaceTitleMixture";
     const enterKey = state.mode === "mass"
       ? "enterValuesMass"
       : state.mode === "abundances"
@@ -462,31 +536,16 @@
         ? "calculateAbundances"
         : "calculate";
 
-    $("workspaceTitle").textContent = t(titleKey);
     $("inputTitle").textContent = t(enterKey);
     $("resultsTitle").textContent = t(resultsKey);
     $("calculateButton").textContent = t(calcKey);
     $("arLabelText").innerHTML = t("arLabel");
     $("arInputBlock").hidden = state.mode === "mixture";
-    $("modeHint").textContent = state.mode === "mass"
-      ? t("modeHintMass")
-      : state.mode === "abundances"
-        ? t("modeHintAbundances")
-        : "";
 
     document.querySelectorAll(".mode-tab").forEach(button => {
       const active = button.dataset.mode === state.mode;
       button.classList.toggle("active", active);
       button.setAttribute("aria-selected", active ? "true" : "false");
-    });
-
-    const chip = $("formulaChip");
-    chip.replaceChildren();
-    FORMULAS[state.mode].forEach(part => {
-      const span = document.createElement("span");
-      if (part.html) span.innerHTML = part.html;
-      else span.textContent = part.text;
-      chip.appendChild(span);
     });
 
     if (state.mode === "mixture") {
@@ -883,127 +942,494 @@
     return { valid: true };
   }
 
+  const PALETTE = ["#1d4ed8", "#0f9f8a", "#155e75", "#7c3aed", "#e11d48", "#0369a1", "#3f6212", "#be185d"];
+  let lastBoard = null;
+
+  function knownAbundance(row) {
+    return row.abundance === null || Number.isNaN(row.abundance) ? 0 : row.abundance;
+  }
+
+  function colorAt(index) {
+    return PALETTE[index % PALETTE.length];
+  }
+
+  function makeEq() {
+    const eq = document.createElement("div");
+    eq.className = "eq";
+    return eq;
+  }
+
+  function addText(parent, text, className) {
+    const span = document.createElement("span");
+    if (className) span.className = className;
+    span.textContent = text;
+    parent.appendChild(span);
+    return span;
+  }
+
+  function addMassChip(parent, mass, index) {
+    const chip = document.createElement("span");
+    chip.className = "mass-chip";
+    chip.style.background = colorAt(index);
+    chip.textContent = formatNumber(mass, 4);
+    parent.appendChild(chip);
+  }
+
+  function addPctChip(parent, abundance, index) {
+    const chip = document.createElement("span");
+    chip.className = "pct-chip";
+    chip.style.setProperty("--c", colorAt(index));
+    chip.style.setProperty("--w", `${Math.max(0, Math.min(100, abundance))}%`);
+    const fill = document.createElement("i");
+    const label = document.createElement("b");
+    label.textContent = `${formatNumber(abundance, 2)}%`;
+    chip.append(fill, label);
+    parent.appendChild(chip);
+  }
+
+  function addNum(parent, text) {
+    const chip = document.createElement("span");
+    chip.className = "num-chip";
+    chip.textContent = text;
+    parent.appendChild(chip);
+  }
+
   function updateAbundanceMeter() {
-    if (state.mode === "abundances") {
-      const knownTotal = state.rows.reduce((sum, row) => {
-        return sum + (row.abundance === null || Number.isNaN(row.abundance) ? 0 : row.abundance);
-      }, 0);
-      const remaining = 100 - knownTotal;
-      const percentage = Math.max(0, Math.min(100, knownTotal));
-      $("abundanceTotal").textContent = `${formatNumber(knownTotal, 2)}%`;
-      $("abundanceFill").style.width = `${percentage}%`;
-      $("totalStatus").textContent = t("totalPartial", {
-        total: formatNumber(knownTotal, 2),
-        remaining: formatNumber(Math.max(0, remaining), 2)
-      });
-      document.querySelector(".abundance-meter").classList.toggle("invalid", remaining < -TOTAL_TOLERANCE);
+    renderComposition(state.rows.map(row => ({
+      mass: row.mass,
+      abundance: knownAbundance(row)
+    })));
+  }
+
+  let compositionKey = "";
+
+  function renderComposition(rows) {
+    const key = `${state.lang}|${rows.map(row => [
+      row.mass, row.abundance, row.massText, row.pctText, row.unknown
+    ].join(":")).join("|")}`;
+    if (key === compositionKey) return;
+    compositionKey = key;
+    const chart = $("abundanceChart");
+    const legend = $("compositionLegend");
+    const section = document.querySelector(".hundred");
+    const ruler = document.querySelector(".ruler");
+    if (!rows.length) {
+      chart.replaceChildren();
+      legend.replaceChildren();
+      section.classList.remove("over", "short", "ready");
+      $("abundanceTotal").textContent = "";
+      $("gapNote").textContent = "";
+      chart.setAttribute("aria-label", "");
       return;
     }
-
-    const total = state.rows.reduce((sum, row) => {
-      return sum + (row.abundance === null || Number.isNaN(row.abundance) ? 0 : row.abundance);
-    }, 0);
-    const ready = Math.abs(total - 100) <= TOTAL_TOLERANCE;
-    const percentage = Math.max(0, Math.min(100, total));
-    $("abundanceTotal").textContent = `${formatNumber(total, 2)}%`;
-    $("abundanceFill").style.width = `${percentage}%`;
-    $("totalStatus").textContent = ready
-      ? t("totalReady")
-      : t("totalShort", { total: formatNumber(total, 2) });
-    document.querySelector(".abundance-meter").classList.toggle("invalid", !ready);
-  }
-
-  function renderChart(rows) {
-    const chart = $("abundanceChart");
     chart.replaceChildren();
+    legend.replaceChildren();
+
+    const total = rows.reduce((sum, row) => sum + knownAbundance(row), 0);
+    const over = total > 100 + TOTAL_TOLERANCE;
+    const short = total < 100 - TOTAL_TOLERANCE;
+    const ready = !over && !short;
+    section.classList.toggle("over", over);
+    section.classList.toggle("short", short);
+    section.classList.toggle("ready", ready);
+    ruler.classList.toggle("overflow", over);
+    if (over) ruler.style.setProperty("--mark", String(100 / total));
+
+    const widthOf = value => (over ? (value / total) * 100 : value);
     rows.forEach((row, index) => {
-      const item = document.createElement("div");
-      const value = document.createElement("span");
-      const bar = document.createElement("span");
+      const amount = knownAbundance(row);
+      if (amount <= 0) return;
+      const slice = document.createElement("div");
+      slice.className = "slice";
+      slice.style.width = `${widthOf(amount)}%`;
+      slice.style.background = colorAt(index);
+      const mass = document.createElement("span");
+      const pct = document.createElement("span");
+      mass.className = "slice-mass";
+      mass.textContent = row.massText || (row.mass === null ? "x" : formatNumber(row.mass, 3));
+      pct.textContent = row.pctText || `${formatNumber(amount, 2)}%`;
+      if (row.unknown) slice.classList.add("slice-unknown");
+      if (widthOf(amount) >= 8) slice.append(mass, pct);
+      chart.appendChild(slice);
+
+      const item = document.createElement("li");
+      const swatch = document.createElement("span");
+      swatch.className = "swatch";
+      swatch.style.background = colorAt(index);
+      item.append(swatch, document.createTextNode(`${mass.textContent} · ${pct.textContent}`));
+      legend.appendChild(item);
+    });
+
+    if (short) {
+      const gap = document.createElement("div");
+      gap.className = "slice-gap";
+      gap.style.width = `${100 - total}%`;
       const label = document.createElement("span");
-      item.className = "bar-item";
-      value.className = "bar-value";
-      bar.className = "bar";
-      label.className = "bar-label";
-      value.textContent = `${formatNumber(row.abundance, 2)}%`;
-      bar.style.height = `${Math.max(2, Math.min(100, row.abundance))}%`;
-      bar.style.background = `linear-gradient(180deg, ${COLORS[index % COLORS.length]}bb, ${COLORS[index % COLORS.length]})`;
-      label.textContent = `m = ${formatNumber(row.mass, 3)}`;
-      item.append(value, bar, label);
-      chart.appendChild(item);
-    });
+      label.className = "slice-mass";
+      label.textContent = `${formatNumber(100 - total, 2)}%`;
+      if ((100 - total) >= 8) gap.appendChild(label);
+      chart.appendChild(gap);
+    }
+    if (over) {
+      const extra = document.createElement("div");
+      extra.className = "slice-over";
+      extra.style.width = `${widthOf(total - 100)}%`;
+      chart.appendChild(extra);
+    }
+
+    const sum = document.createElement("li");
+    sum.className = ready ? "sum-chip" : "sum-chip bad";
+    sum.textContent = ready
+      ? t("exactLabel")
+      : over
+        ? t("overLabel", { n: formatNumber(total - 100, 2) })
+        : t("gapLabel", { n: formatNumber(Math.max(0, 100 - total), 2) });
+    legend.appendChild(sum);
+
+    $("gapNote").textContent = short ? t("gapLabel", { n: formatNumber(100 - total, 2) }) : "";
+    $("abundanceTotal").textContent = `${formatNumber(total, 2)}%`;
+    chart.setAttribute("aria-label", `${formatNumber(total, 2)}%`);
   }
 
-  function appendWorkingLines(lines) {
-    const working = $("workingSteps");
-    working.replaceChildren();
-    lines.forEach((text, index) => {
-      const line = document.createElement("p");
-      if (index === lines.length - 1) {
-        const strong = document.createElement("strong");
-        strong.textContent = text;
-        line.appendChild(strong);
-      } else {
-        line.textContent = text;
+  function isoName(mass) {
+    const element = currentElement();
+    if (mass === null || Number.isNaN(mass)) return element ? `x${element.symbol}` : "x";
+    const massText = formatPlain(mass, 4);
+    return element ? `${massText}${element.symbol}` : massText;
+  }
+
+  function elementWord() {
+    const element = currentElement();
+    if (!element) return state.lang === "zh" ? "此元素" : "this element";
+    return state.lang === "zh" ? element.zh : element.en;
+  }
+
+  function piece(kind, text, unknown = false) {
+    return { kind, text, unknown };
+  }
+
+  function words(text) {
+    return { kind: "text", text };
+  }
+
+  function highlightShown(step) {
+    return {
+      rim: step >= 1,
+      abundance: step >= 2,
+      ram: step >= 3
+    };
+  }
+
+  function renderPieces(parent, parts, shown) {
+    parent.replaceChildren();
+    (parts || []).forEach(part => {
+      if (part.kind === "text" || (shown && !shown[part.kind])) {
+        parent.append(document.createTextNode(part.text));
+        return;
       }
-      working.appendChild(line);
+      const mark = document.createElement("mark");
+      mark.className = `mark mark-${part.kind}${part.unknown ? " is-unknown" : ""}`;
+      mark.textContent = part.text;
+      parent.appendChild(mark);
     });
   }
 
-  function renderWorkingMixture(rows, calculation) {
-    const products = rows.map(row => {
-      const mass = formatNumber(row.mass, 4);
-      const abundance = formatNumber(row.abundance, 4);
-      return `(${mass} × ${abundance})`;
+  function fillSlot(list, items, kind) {
+    if (!list) return;
+    list.replaceChildren();
+    const shown = items || [];
+    const reserve = state.lesson && state.lesson.slots[kind] ? state.lesson.slots[kind].length : 0;
+    const count = Math.max(shown.length, reserve);
+    for (let index = 0; index < count; index += 1) {
+      const row = document.createElement("li");
+      if (shown[index]) {
+        row.className = `mark mark-${kind}${shown[index].unknown ? " is-unknown" : ""}`;
+        row.textContent = shown[index].text;
+      } else {
+        row.className = "fact-reserve";
+        row.textContent = "\u00a0";
+      }
+      list.appendChild(row);
+    }
+  }
+
+  function fractionNode(numerator, denominator) {
+    const wrap = document.createElement("span");
+    wrap.className = "fraction";
+    const top = document.createElement("span");
+    const bottom = document.createElement("span");
+    top.className = "frac-top";
+    bottom.className = "frac-bot";
+    if (Array.isArray(numerator)) renderPieces(top, numerator);
+    else top.textContent = numerator;
+    const hundred = document.createElement("mark");
+    hundred.className = "mark mark-abundance";
+    hundred.textContent = denominator;
+    bottom.appendChild(hundred);
+    wrap.append(top, bottom);
+    return wrap;
+  }
+
+  function appendLessonStep(list, number, title, lines, formula) {
+    const item = document.createElement("li");
+    item.className = number === 3 ? "step step-answer" : "step";
+    const badge = document.createElement("span");
+    badge.className = "step-no";
+    badge.textContent = String(number);
+    const body = document.createElement("div");
+    const heading = document.createElement("h3");
+    heading.textContent = title;
+    body.appendChild(heading);
+    lines.forEach(line => {
+      const p = document.createElement("p");
+      p.className = "lesson-line";
+      if (Array.isArray(line)) renderPieces(p, line);
+      else p.textContent = line;
+      body.appendChild(p);
     });
-    appendWorkingLines([
-      t("workingProductsSigFig", { products: products.join(" + ") }),
-      t("workingSumExact", { sum: formatNumber(calculation.productSum, 4) }),
-      t("workingResult", {
-        sum: formatNumber(calculation.productSum, 4),
-        result: formatNumber(calculation.relativeAtomicMass, 4)
-      })
-    ]);
+    if (formula) {
+      const eq = document.createElement("div");
+      eq.className = "eq";
+      if (formula.left && formula.left.kind) {
+        const left = document.createElement("mark");
+        left.className = `mark mark-${formula.left.kind}${formula.left.unknown ? " is-unknown" : ""}`;
+        left.textContent = formula.left.text;
+        eq.appendChild(left);
+      } else {
+        addText(eq, formula.left, "op");
+      }
+      addText(eq, "=", "op");
+      eq.appendChild(fractionNode(formula.numeratorParts || formula.numerator, "100"));
+      const row = document.createElement("div");
+      row.className = "formula-row";
+      const why = document.createElement("p");
+      why.className = "hint-red";
+      why.textContent = t("hundredWhy");
+      row.append(eq, why);
+      body.appendChild(row);
+    }
+    item.append(badge, body);
+    list.appendChild(item);
   }
 
-  function renderWorkingMass(result) {
-    appendWorkingLines([
-      t("workingMassSetup", { abundance: formatNumber(result.abundance, 4) }),
-      t("workingMassKnown", {
-        products: result.knownParts.join(" + ") || "0",
-        sum: formatNumber(result.knownProducts, 4)
-      }),
-      t("workingMassSolve", {
-        ar: formatNumber(result.ar, 4),
-        sum: formatNumber(result.knownProducts, 4),
-        abundance: formatNumber(result.abundance, 4),
-        result: formatNumber(result.mass, 4)
-      })
-    ]);
+  function term(mass, abundance) {
+    const massText = mass === null ? "x" : formatPlain(mass, 4);
+    const abundanceText = abundance === null ? "x" : formatPlain(abundance, 4);
+    return `(${massText})(${abundanceText})`;
   }
 
-  function renderWorkingAbundances(result) {
-    appendWorkingLines([
-      t("workingAbundSetup", {
-        massX: formatNumber(result.massX, 4),
-        massY: formatNumber(result.massY, 4)
-      }),
-      t("workingAbundSum", {
-        remaining: formatNumber(result.remaining, 4),
-        known: formatNumber(result.knownSum, 4)
-      }),
-      t("workingAbundEq", {
-        ar: formatNumber(result.ar, 4),
-        knownProducts: result.knownParts.join(" + ") || "0",
-        massX: formatNumber(result.massX, 4),
-        massY: formatNumber(result.massY, 4)
-      }),
-      t("workingAbundSolve", {
-        remaining: formatNumber(result.remaining, 4),
-        x: formatNumber(result.x, 4),
-        y: formatNumber(result.y, 4)
+  function buildLesson(payload) {
+    const element = currentElement();
+    const symbol = element ? element.symbol : "";
+    const name = elementWord();
+    const zh = state.lang === "zh";
+    if (state.mode === "mixture") {
+      const rows = payload.rows;
+      const questionParts = [words(zh
+        ? `${name}有 ${rows.length} 種天然同位素：`
+        : `${name} occurs naturally in ${rows.length} stable isotopes: `)];
+      rows.forEach((row, index) => {
+        if (index) questionParts.push(words(zh ? "、" : ", "));
+        questionParts.push(piece("rim", isoName(row.mass)));
+      });
+      questionParts.push(words(zh ? "。" : ". "));
+      rows.forEach((row, index) => {
+        questionParts.push(words(index === 0
+          ? (zh ? "豐度：" : "Abundance: ")
+          : (zh ? "，" : ", ")));
+        questionParts.push(piece("rim", isoName(row.mass)));
+        questionParts.push(words(zh ? " 是 " : " is "));
+        questionParts.push(piece("abundance", `${formatPlain(row.abundance, 4)}%`));
+      });
+      questionParts.push(words(zh ? "。求 " : ". Calculate the "));
+      questionParts.push(piece("ram", zh ? "相對原子質量" : "relative atomic mass", true));
+      questionParts.push(words(zh ? `（${symbol || name}）。` : ` of ${symbol || name}.`));
+      return {
+        questionParts,
+        slots: {
+          rim: rows.map(row => ({ text: isoName(row.mass) })),
+          abundance: rows.map(row => ({ text: `${formatPlain(row.abundance, 4)}%` })),
+          ram: [{ text: zh ? "相對原子質量 Aᵣ" : "relative atomic mass Aᵣ", unknown: true }]
+        },
+        letLines: [[
+          words(zh ? "已知豐度加起來是 " : "The given abundances add to "),
+          piece("abundance", `${formatPlain(payload.calculation.totalAbundance, 4)}%`),
+          words(zh ? "。" : ".")
+        ]],
+        formula: {
+          left: piece("ram", "Aᵣ", true),
+          numeratorParts: rows.flatMap((row, index) => [
+            ...(index ? [words(" + ")] : []),
+            piece("rim", `(${formatPlain(row.mass, 4)})`),
+            piece("abundance", `(${formatPlain(row.abundance, 4)})`)
+          ])
+        },
+        findLines: [zh
+          ? `Aᵣ = ${formatPlain(payload.calculation.relativeAtomicMass, 4)}`
+          : `Aᵣ = ${formatPlain(payload.calculation.relativeAtomicMass, 4)}`],
+        hero: formatPlain(payload.calculation.relativeAtomicMass, 4),
+        barRows: rows.map(row => ({ mass: row.mass, abundance: row.abundance }))
+      };
+    }
+    if (state.mode === "mass") {
+      const result = payload.result;
+      const unknown = state.rows[result.unknownIndex];
+      const knownRows = state.rows.filter((_, index) => index !== result.unknownIndex);
+      const complement = formatPlain(unknown.abundance, 4);
+      const knownSum = formatPlain(knownRows.reduce((sum, row) => sum + row.abundance, 0), 4);
+      const questionParts = [words(zh ? `${name}有同位素 ` : `${name} occurs naturally as `)];
+      knownRows.forEach((row, index) => {
+        if (index) questionParts.push(words(zh ? "、" : ", "));
+        questionParts.push(piece("rim", isoName(row.mass)));
+      });
+      questionParts.push(words(zh ? " 和 " : " and "));
+      questionParts.push(piece("rim", `x${symbol}`, true));
+      questionParts.push(words(zh ? "。豐度：" : ". Abundance: "));
+      knownRows.forEach((row, index) => {
+        if (index) questionParts.push(words(", "));
+        questionParts.push(piece("rim", isoName(row.mass)));
+        questionParts.push(words(" "));
+        questionParts.push(piece("abundance", `${formatPlain(row.abundance, 4)}%`));
+      });
+      questionParts.push(words(zh ? "。相對原子質量 " : ". Relative atomic mass "));
+      questionParts.push(piece("ram", `Aᵣ = ${formatPlain(result.ar, 4)}`));
+      questionParts.push(words(zh ? "。求 " : ". Calculate the "));
+      questionParts.push(piece("rim", zh ? `x${symbol} 的相對同位素質量` : `relative isotopic mass of x${symbol}`, true));
+      questionParts.push(words("."));
+      return {
+        questionParts,
+        slots: {
+          rim: [
+            ...knownRows.map(row => ({ text: isoName(row.mass) })),
+            { text: `x${symbol}`, unknown: true }
+          ],
+          abundance: [
+            ...knownRows.map(row => ({ text: `${isoName(row.mass)} ${formatPlain(row.abundance, 4)}%` })),
+            { text: `x${symbol} = 100% − ${knownSum}%`, unknown: true }
+          ],
+          ram: [{ text: `Aᵣ = ${formatPlain(result.ar, 4)}` }]
+        },
+        letLines: [[
+          words(zh ? `${`x${symbol}`} 的豐度 = 100% − ${knownSum}% = ` : `The abundance of x${symbol} is 100% − ${knownSum}% = `),
+          piece("abundance", `${complement}%`, true),
+          words(zh ? "。" : ".")
+        ]],
+        formula: {
+          left: piece("ram", formatPlain(result.ar, 4)),
+          numeratorParts: [
+            ...knownRows.flatMap((row, index) => [
+              ...(index ? [words(" + ")] : []),
+              piece("rim", `(${formatPlain(row.mass, 4)})`),
+              piece("abundance", `(${formatPlain(row.abundance, 4)})`)
+            ]),
+            words(" + "),
+            piece("rim", "(x)", true),
+            piece("abundance", `(${complement})`)
+          ]
+        },
+        findLines: [zh
+          ? `x = ${formatPlain(result.mass, 4)}（x${symbol} 的同位素質量是 ${formatPlain(result.mass, 4)}）`
+          : `x = ${formatPlain(result.mass, 4)} (the isotopic mass of x${symbol} is ${formatPlain(result.mass, 4)})`],
+        hero: formatPlain(result.mass, 4),
+        barRows: state.rows.map((row, index) => ({
+          mass: row.mass,
+          abundance: row.abundance,
+          massText: index === result.unknownIndex ? "x" : formatPlain(row.mass, 4),
+          unknown: index === result.unknownIndex
+        }))
+      };
+    }
+    const result = payload.result;
+    const [i, j] = result.indexes;
+    const knownRows = state.rows.filter((_, index) => index !== i && index !== j);
+    const knownText = knownRows.map(row => `${formatPlain(row.abundance, 4)}`).join(" + ") || "0";
+    const yExpr = `${formatPlain(result.remaining, 4)} − x`;
+    const questionParts = [words(zh ? `${name}有同位素 ` : `${name} occurs naturally as `)];
+    state.rows.forEach((row, index) => {
+      if (index) questionParts.push(words(zh ? "、" : ", "));
+      questionParts.push(piece("rim", isoName(row.mass)));
+    });
+    questionParts.push(words(zh ? "。豐度：" : ". Abundance: "));
+    knownRows.forEach((row, index) => {
+      if (index) questionParts.push(words(", "));
+      questionParts.push(piece("rim", isoName(row.mass)));
+      questionParts.push(words(" "));
+      questionParts.push(piece("abundance", `${formatPlain(row.abundance, 4)}%`));
+    });
+    questionParts.push(words(zh ? "。相對原子質量 " : ". Relative atomic mass "));
+    questionParts.push(piece("ram", `Aᵣ = ${formatPlain(result.ar, 4)}`));
+    questionParts.push(words(zh ? "。求豐度 " : ". Calculate the abundance "));
+    questionParts.push(piece("abundance", `${isoName(state.rows[i].mass)} = x%`, true));
+    questionParts.push(words(zh ? " 和 " : " and "));
+    questionParts.push(piece("abundance", `${isoName(state.rows[j].mass)} = y%`, true));
+    questionParts.push(words("."));
+    return {
+      questionParts,
+      slots: {
+        rim: state.rows.map(row => ({ text: isoName(row.mass) })),
+        abundance: [
+          ...knownRows.map(row => ({ text: `${isoName(row.mass)} ${formatPlain(row.abundance, 4)}%` })),
+          { text: `${isoName(state.rows[i].mass)} = x%`, unknown: true },
+          { text: `${isoName(state.rows[j].mass)} = y%`, unknown: true }
+        ],
+        ram: [{ text: `Aᵣ = ${formatPlain(result.ar, 4)}` }]
+      },
+      letLines: [[
+        words(zh ? "設 " : "Let "),
+        piece("abundance", "x%", true),
+        words(zh ? ` 為 ${isoName(state.rows[i].mass)} 的豐度，` : ` be the abundance of ${isoName(state.rows[i].mass)} and `),
+        piece("abundance", "y%", true),
+        words(zh
+          ? ` 為 ${isoName(state.rows[j].mass)} 的豐度。因為 ${knownText} + x + y = 100，所以 y = ${yExpr}。`
+          : ` be the abundance of ${isoName(state.rows[j].mass)}. Since ${knownText} + x + y = 100, y = ${yExpr}.`)
+      ]],
+      formula: {
+        left: piece("ram", formatPlain(result.ar, 4)),
+        numeratorParts: state.rows.flatMap((row, index) => {
+          const massPart = piece("rim", `(${formatPlain(row.mass, 4)})`);
+          const abundancePart = index === i
+            ? piece("abundance", "(x)", true)
+            : index === j
+              ? piece("abundance", `(${yExpr})`, true)
+              : piece("abundance", `(${formatPlain(row.abundance, 4)})`);
+          return [...(index ? [words(" + ")] : []), massPart, abundancePart];
+        })
+      },
+      findLines: [zh
+        ? `x = ${formatPlain(result.x, 4)}（${isoName(state.rows[i].mass)} 豐度 ${formatPlain(result.x, 4)}%），y = ${yExpr.replace("x", formatPlain(result.x, 4))} = ${formatPlain(result.y, 4)}（${isoName(state.rows[j].mass)} 豐度 ${formatPlain(result.y, 4)}%）`
+        : `x = ${formatPlain(result.x, 4)} (${isoName(state.rows[i].mass)} is ${formatPlain(result.x, 4)}%),  y = ${yExpr.replace("x", formatPlain(result.x, 4))} = ${formatPlain(result.y, 4)} (${isoName(state.rows[j].mass)} is ${formatPlain(result.y, 4)}%)`],
+      hero: `x = ${formatPlain(result.x, 4)}%    y = ${formatPlain(result.y, 4)}%`,
+      barBefore: [
+        ...knownRows.map(row => ({ mass: row.mass, abundance: row.abundance })),
+        {
+          mass: null,
+          abundance: result.remaining,
+          massText: "x + y",
+          pctText: `x + y = ${formatPlain(result.remaining, 4)}%`,
+          unknown: true
+        }
+      ],
+      barAfter: state.rows.map((row, index) => {
+        if (index === i) return { mass: row.mass, abundance: result.x, pctText: "x%" };
+        if (index === j) return { mass: row.mass, abundance: result.y, pctText: "y%" };
+        return { mass: row.mass, abundance: row.abundance };
       })
-    ]);
+    };
+  }
+
+  function setResultValue(value) {
+    const node = $("resultValue");
+    if (Array.isArray(value)) {
+      node.classList.add("result-pair");
+      node.replaceChildren(...value.map(line => {
+        const span = document.createElement("span");
+        span.textContent = line;
+        return span;
+      }));
+      return;
+    }
+    node.classList.remove("result-pair");
+    node.textContent = value;
   }
 
   function setResultValidity(valid) {
@@ -1013,77 +1439,168 @@
     badge.classList.toggle("invalid", !valid);
   }
 
-  function setResultValue(content) {
-    const target = $("resultValue");
-    if (typeof content === "string") {
-      target.classList.remove("result-value-stack");
-      target.textContent = content;
+  function measureFullBoard(board, width) {
+    if (!state.lesson) return board.offsetHeight;
+    const probe = board.cloneNode(true);
+    probe.style.position = "absolute";
+    probe.style.left = "0";
+    probe.style.top = "0";
+    probe.style.visibility = "hidden";
+    probe.style.pointerEvents = "none";
+    probe.style.transform = "none";
+    probe.style.width = `${width}px`;
+    probe.style.height = "auto";
+    probe.style.minHeight = "0";
+    probe.setAttribute("aria-hidden", "true");
+    const lesson = state.lesson;
+    const question = probe.querySelector("#questionText");
+    if (question) renderPieces(question, lesson.questionParts, highlightShown(6));
+    fillSlot(probe.querySelector("#rimList"), lesson.slots.rim, "rim");
+    fillSlot(probe.querySelector("#abundanceList"), lesson.slots.abundance, "abundance");
+    fillSlot(probe.querySelector("#ramList"), lesson.slots.ram, "ram");
+    const value = probe.querySelector("#resultValue");
+    if (value) {
+      value.classList.remove("result-pair");
+      value.textContent = String(lesson.hero).replace(/\n/g, "   ");
+    }
+    const list = probe.querySelector("#workingSteps");
+    if (list) {
+      list.replaceChildren();
+      appendLessonStep(list, 1, t("stepLet"), lesson.letLines);
+      if (lesson.formula) appendLessonStep(list, 2, t("stepFormula"), [], lesson.formula);
+      appendLessonStep(list, 3, t("stepFind"), lesson.findLines);
+    }
+    board.parentElement.appendChild(probe);
+    const height = probe.offsetHeight;
+    probe.remove();
+    return height;
+  }
+
+  function fitBoard() {
+    const slot = document.querySelector(".board-slot");
+    const board = document.querySelector(".board");
+    const stage = document.querySelector(".stage");
+    if (!slot || !board) return;
+    const touch = window.matchMedia("(max-width: 1100px)").matches;
+    const zoomed = stage.dataset.zoom !== "all";
+    board.style.transform = "none";
+    board.style.width = "";
+    board.style.height = "";
+    board.style.minHeight = "";
+    slot.style.overflow = "hidden";
+    const width = Math.max(slot.clientWidth, 1);
+    board.style.width = !zoomed && touch ? "100%" : `${width}px`;
+    const fullH = Math.max(measureFullBoard(board, width), 1);
+    board.style.minHeight = `${fullH}px`;
+    if (!zoomed && touch) {
+      slot.style.overflow = "auto";
       return;
     }
-    target.classList.add("result-value-stack");
-    target.replaceChildren();
-    content.forEach(line => {
-      const lineNode = document.createElement("div");
-      lineNode.textContent = line;
-      target.appendChild(lineNode);
-    });
+    const neededW = Math.max(board.scrollWidth, 1);
+    const scale = Math.min(1, slot.clientWidth / neededW, slot.clientHeight / fullH);
+    board.style.transformOrigin = "top center";
+    board.style.transform = `scale(${scale})`;
+  }
+
+  function barRowsForStep(lesson, step) {
+    const calc = step - 3;
+    const knownOnly = rows => (rows || []).filter(row => !row.unknown);
+    if (step < 2) return [];
+    if (calc < 1) return knownOnly(lesson.barBefore || lesson.barRows);
+    if (calc < 3) return lesson.barBefore || lesson.barRows;
+    if (lesson.barAfter) return lesson.barAfter;
+    return (lesson.barRows || []).map(row => (
+      row.unknown ? { ...row, massText: lesson.hero, unknown: false } : row
+    ));
+  }
+
+  function renderLesson() {
+    const lesson = state.lesson;
+    const step = state.step;
+    const marks = highlightShown(step);
+    const calc = step - 3;
+    renderPieces($("questionText"), lesson ? lesson.questionParts : [], marks);
+    fillSlot($("rimList"), lesson && marks.rim ? lesson.slots.rim : [], "rim");
+    fillSlot($("abundanceList"), lesson && marks.abundance ? lesson.slots.abundance : [], "abundance");
+    fillSlot($("ramList"), lesson && marks.ram ? lesson.slots.ram : [], "ram");
+    if (lesson) {
+      renderComposition(barRowsForStep(lesson, step));
+    }
+    const list = $("workingSteps");
+    list.replaceChildren();
+    if (lesson && calc >= 1) appendLessonStep(list, 1, t("stepLet"), lesson.letLines);
+    if (lesson && calc >= 2) appendLessonStep(list, 2, t("stepFormula"), [], lesson.formula);
+    if (lesson && calc >= 3) appendLessonStep(list, 3, t("stepFind"), lesson.findLines);
+    const highlightLabel = ["readQuestion", "rimHeading", "abundanceHeading", "ramHeading"][step];
+    const stepText = highlightLabel ? t(highlightLabel) : t("stepProgress", { n: calc });
+    document.querySelectorAll(".step-label").forEach(node => { node.textContent = stepText; });
+    document.querySelectorAll(".prev-step").forEach(node => { node.disabled = step === 0; });
+    document.querySelectorAll(".next-step").forEach(node => { node.disabled = !lesson || step >= 6; });
+    const hero = document.querySelector(".hero-result");
+    if (!lesson || calc < 3) {
+      hero.classList.add("is-waiting");
+      $("resultValue").classList.remove("result-pair");
+      $("resultValue").textContent = lesson ? "?" : "—";
+      const badge = $("resultStatus");
+      badge.textContent = lesson ? t("readQuestion") : t("checkData");
+      badge.classList.toggle("valid", Boolean(lesson));
+      badge.classList.toggle("invalid", !lesson);
+      fitBoard();
+      return;
+    }
+    hero.classList.remove("is-waiting");
+    if (lesson.hero.includes("\n")) setResultValue(lesson.hero.split("\n"));
+    else setResultValue(lesson.hero);
+    setResultValidity(true);
+    fitBoard();
+  }
+
+
+  function showWaitingBoard() {
+    state.lesson = null;
+    state.step = 0;
+    document.querySelector(".hero-result").classList.add("is-waiting");
+    $("resultValue").classList.remove("result-pair");
+    $("resultValue").textContent = "—";
+    renderLesson();
   }
 
   function calculateAndRender(event) {
     event?.preventDefault();
     const validation = validateRows();
-    updateAbundanceMeter();
     if (!validation.valid) {
       showValidation(validation.message);
       setResultValidity(false);
+      showWaitingBoard();
       return false;
     }
-
+    showValidation("");
     if (state.mode === "mixture") {
-      const calculation = calculateRelativeAtomicMass(state.rows);
-      setResultValue(formatNumber(calculation.relativeAtomicMass, 4));
-      renderChart(state.rows);
-      renderWorkingMixture(state.rows, calculation);
-      setResultValidity(true);
-      return true;
-    }
-
-    if (state.mode === "mass") {
+      state.lesson = buildLesson({
+        rows: state.rows,
+        calculation: calculateRelativeAtomicMass(state.rows)
+      });
+    } else if (state.mode === "mass") {
       const result = calculateUnknownMass(state.rows, state.arValue);
       if (result.error) {
         showValidation(t(result.error));
         setResultValidity(false);
+        showWaitingBoard();
         return false;
       }
-      setResultValue(formatNumber(result.mass, 4));
-      const chartRows = state.rows.map((row, index) => ({
-        mass: index === result.unknownIndex ? result.mass : row.mass,
-        abundance: row.abundance
-      }));
-      renderChart(chartRows);
-      renderWorkingMass(result);
-      setResultValidity(true);
-      return true;
+      state.lesson = buildLesson({ result });
+    } else {
+      const result = calculateTwoAbundances(state.rows, state.arValue);
+      if (result.error) {
+        showValidation(t(result.error));
+        setResultValidity(false);
+        showWaitingBoard();
+        return false;
+      }
+      state.lesson = buildLesson({ result });
     }
-
-    const result = calculateTwoAbundances(state.rows, state.arValue);
-    if (result.error) {
-      showValidation(t(result.error));
-      setResultValidity(false);
-      return false;
-    }
-    setResultValue([
-      `x = ${formatNumber(result.x, 4)}%`,
-      `y = ${formatNumber(result.y, 4)}%`
-    ]);
-    const chartRows = state.rows.map((row, index) => {
-      if (index === result.indexes[0]) return { mass: row.mass, abundance: result.x };
-      if (index === result.indexes[1]) return { mass: row.mass, abundance: result.y };
-      return { mass: row.mass, abundance: row.abundance };
-    });
-    renderChart(chartRows);
-    renderWorkingAbundances(result);
-    setResultValidity(true);
+    state.step = 0;
+    renderLesson();
     return true;
   }
 
@@ -1137,7 +1654,6 @@
     updatePresetButtons();
     renderPeriodicSelection();
     updateSelectedElementSummary();
-    renderIsotopeSummary(loadResult);
     updateLearningNote();
     clearInputErrors();
     updateAbundanceMeter();
@@ -1244,10 +1760,15 @@
     document.querySelectorAll("[data-i18n-placeholder]").forEach(node => {
       node.placeholder = t(node.dataset.i18nPlaceholder);
     });
+    document.querySelectorAll("[data-i18n-aria]").forEach(node => {
+      node.setAttribute("aria-label", t(node.dataset.i18nAria));
+    });
     document.querySelectorAll("[data-lang]").forEach(button => {
       button.classList.toggle("active", button.dataset.lang === state.lang);
     });
     $("closePeriodicTableButton").setAttribute("aria-label", state.lang === "zh" ? "關閉週期表" : "Close periodic table");
+    const controlsOpen = !document.querySelector(".lab-body").classList.contains("controls-hidden");
+    $("toggleControls").textContent = t(controlsOpen ? "hideData" : "showData");
     updateModeChrome();
   }
 
@@ -1260,7 +1781,6 @@
     renderCategoryLegend();
     renderPeriodicTable();
     updateSelectedElementSummary();
-    if (state.isotopeMeta && state.activeElement) renderIsotopeSummary(state.isotopeMeta);
     updateLearningNote();
     updateAbundanceMeter();
     calculateAndRender();
@@ -1295,6 +1815,42 @@
   document.querySelectorAll(".mode-tab").forEach(button => {
     button.addEventListener("click", () => switchMode(button.dataset.mode));
   });
+  $("toggleControls").addEventListener("click", () => {
+    const body = document.querySelector(".lab-body");
+    const open = body.classList.contains("controls-hidden");
+    body.classList.toggle("controls-hidden", !open);
+    $("toggleControls").setAttribute("aria-expanded", open ? "true" : "false");
+    $("toggleControls").textContent = t(open ? "hideData" : "showData");
+    fitBoard();
+  });
+  document.querySelectorAll(".next-step").forEach(button => {
+    button.addEventListener("click", () => {
+      if (!state.lesson || state.step >= 6) return;
+      state.step += 1;
+      renderLesson();
+    });
+  });
+  document.querySelectorAll(".prev-step").forEach(button => {
+    button.addEventListener("click", () => {
+      if (state.step <= 0) return;
+      state.step -= 1;
+      renderLesson();
+    });
+  });
+  document.querySelectorAll(".box-zoom").forEach(button => {
+    button.addEventListener("click", () => {
+      const stage = document.querySelector(".stage");
+      const next = stage.dataset.zoom === button.dataset.zoom ? "all" : button.dataset.zoom;
+      stage.dataset.zoom = next;
+      document.querySelectorAll(".box-zoom").forEach(item => {
+        const on = item.dataset.zoom === next;
+        item.setAttribute("aria-pressed", on ? "true" : "false");
+        item.textContent = on ? "–" : "+";
+      });
+      fitBoard();
+    });
+  });
+  window.addEventListener("resize", fitBoard);
 
   window.RAMCalculator = {
     calculate: rows => calculateRelativeAtomicMass(rows),
@@ -1398,6 +1954,11 @@
   });
 
   updateTranslations();
+  if (window.matchMedia("(max-width: 1100px)").matches) {
+    document.querySelector(".lab-body").classList.add("controls-hidden");
+    $("toggleControls").setAttribute("aria-expanded", "false");
+    $("toggleControls").textContent = t("showData");
+  }
   applyElement("Cl");
   renderPresetButtons();
   renderCategoryLegend();
