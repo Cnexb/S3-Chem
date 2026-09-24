@@ -38,6 +38,21 @@ const UI = {
     lblCount: "Full sets (fixed order)",
     btnGenerate: "Show selected sets",
     txtGenHint: "Select one or more codes (e.g. Earth1Aa). All questions in those sets appear in fixed bank order.",
+    lblFormats: "Question type",
+    bankSummaryTitle: "Question bank",
+    bankAvailable: "Available",
+    bankByTopic: "By topic",
+    bankByType: "By type",
+    bankMatrix: "Topic × type",
+    hExport: "Export",
+    txtExportHint: "Word: .doc for Microsoft Word. Use Print → Save as PDF for a PDF copy.",
+    btnDocQ: "Word — Questions",
+    btnDocA: "Word — Answers",
+    btnPrint: "Print / Save as PDF",
+    hPractice: "Practice",
+    txtPracticeHint: "Wrong answer: model answer shown immediately.",
+    btnSummary: "Session summary",
+    quizCheck: "Check answer",
     empty: "Choose quiz set(s) to begin.",
     alertNoQuiz: "Choose quiz set(s) first.",
     alertNoTypes: "Select at least one quiz set.",
@@ -252,10 +267,11 @@ export function initQuiz() {
       toggleLabel.textContent = open ? t("hideSettings") : t("showSettings");
     }
     initMeta();
-    if (!lastQuestions.length) {
-      generate();
-    } else {
+    if (lastQuestions.length) {
       renderQuiz();
+    } else if (els.quizArea) {
+      els.quizArea.className = "quiz-empty text-center text-on-surface-variant py-12 text-body-sm";
+      els.quizArea.textContent = t("empty");
     }
     const pageTitle = document.getElementById("page-title");
     if (pageTitle) {
@@ -354,7 +370,7 @@ export function initQuiz() {
     if (els.typeChecks) {
       els.typeChecks.innerHTML = QUIZ_SECTIONS.map((sec, i) => {
         const label = isChineseUI(lang) ? sec.labelZh : sec.label;
-        const isOn = prev.size ? prev.has(sec.id) : i === 0;
+        const isOn = prev.has(sec.id);
         const n = counts[sec.id] || 0;
         return `
         <label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low border border-outline-variant/20 cursor-pointer">
