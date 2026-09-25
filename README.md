@@ -22,6 +22,17 @@ content-packs/
 
 Do **not** wrap chapters in year folders such as `content-packs/S3/…`. Uni+ will not see them.
 
+## S3–S6 is a label on a Topic, not a folder
+
+The syllabus list is `content/topics/chem-topics.json`. Each Topic has:
+
+- a **Symbol** (short code), e.g. `Earth1`, `MWI1A`, `Metal2`
+- a **Topic Number**, e.g. `01 Fundamentals of chemistry`, `10 Metal extraction`
+- a **Level**, e.g. `(S3)`, `(S4 - S5)`, or `(S6)`
+- **Sub-topics** where the sheet lists them, each with its own Symbol
+
+Form (S3 vs S6) is **not** chosen by folder name. Do not invent Symbols.
+
 ## Chapters
 
 | Folder | Chapter |
@@ -54,7 +65,7 @@ The periodic table, ion engine, and equation balancer are still the hub site on 
 | Notes | one English PDF in `notes/` (`files.en` only) |
 | A lab, game, quiz, or flashcard page | `tools/<slug>/` (keep `index.html`) and the `tools` list |
 | A summary image | `summaries/` and the `summaries` list |
-| Topic codes | the `topicCode` on the note row. Do not invent syllabus Symbols |
+| Topic codes / year | `content/topics/chem-topics.json` |
 
 Cursor follows `.cursor/rules/chem-content-packs.mdc`.
 

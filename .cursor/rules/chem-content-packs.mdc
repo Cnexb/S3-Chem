@@ -31,7 +31,7 @@ Chapters run from `ch1-planet-earth` through `ch15-analytical-chemistry`. Keep e
 
 ## New item inside a chapter
 
-Add `notes[]` with `topicCode` and one English PDF (`files.en` only). Add labs, games, quizzes, and flashcard pages under `tools/<slug>/` with `index.html`, and list them in `tools`. Set `"section": "games"` or `"section": "quizzes"` when the page is not a lab. Do not invent syllabus Symbols.
+Add `notes[]` with `topicCode` and one English PDF (`files.en` only). Add labs, games, quizzes, and flashcard pages under `tools/<slug>/` with `index.html`, and list them in `tools`. Set `"section": "games"` or `"section": "quizzes"` when the page is not a lab. Tag items with a syllabus **Symbol** from `content/topics/chem-topics.json` (`Earth1`, `MWI1A`, `Metal2`). Do not invent Symbols.
 
 ## Quizzes
 

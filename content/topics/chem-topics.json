@@ -1,0 +1,548 @@
+{
+  "source": "Chem topic list Sheet1",
+  "topics": [
+    {
+      "symbol": "Earth1",
+      "topicNumber": "01 Fundamentals of chemistry (化學導論).",
+      "level": "(S3)",
+      "department": "Junior Chemistry",
+      "subTopics": [
+        {
+          "symbol": "Earth1A",
+          "name": "Laboratory apparatus",
+          "nameZh": "常用化學儀器"
+        },
+        {
+          "symbol": "Earth1B",
+          "name": "Laboratory safety",
+          "nameZh": "實驗室安全守則"
+        }
+      ]
+    },
+    {
+      "symbol": "Earth2",
+      "topicNumber": "02 Atmosphere (大氣).",
+      "level": "(S3)",
+      "department": "Junior Chemistry",
+      "subTopics": [
+        {
+          "symbol": "Earth2A",
+          "name": "Matters",
+          "nameZh": "物質"
+        },
+        {
+          "symbol": "Earth2B",
+          "name": "Physical and chemical change",
+          "nameZh": "物理及化學變化"
+        },
+        {
+          "symbol": "Earth2C",
+          "name": "Air",
+          "nameZh": "空氣"
+        }
+      ]
+    },
+    {
+      "symbol": "Earth3",
+      "topicNumber": "03 Ocean (海洋).",
+      "level": "(S3)",
+      "department": "Junior Chemistry",
+      "subTopics": [
+        {
+          "symbol": "Earth3A",
+          "name": "Physical separation",
+          "nameZh": "以物理方法分離物質"
+        },
+        {
+          "symbol": "Earth3B",
+          "name": "Chemical tests and electrolysis",
+          "nameZh": "化學測試及電解"
+        }
+      ]
+    },
+    {
+      "symbol": "Earth4",
+      "topicNumber": "04 Rocks (岩石及礦物).",
+      "level": "(S3)",
+      "department": "Junior Chemistry",
+      "subTopics": [
+        {
+          "symbol": "Earth4A",
+          "name": "Extraction of metals",
+          "nameZh": "從礦物中提取金屬"
+        },
+        {
+          "symbol": "Earth4B",
+          "name": "Limecycle",
+          "nameZh": "涉及碳酸鈣的化學變化"
+        }
+      ]
+    },
+    {
+      "symbol": "MWI1",
+      "topicNumber": "05 Atom (原子).",
+      "level": "(S3)",
+      "department": "Junior Chemistry",
+      "subTopics": [
+        {
+          "symbol": "MWI1A",
+          "name": "Atomic structure",
+          "nameZh": "原子結構"
+        },
+        {
+          "symbol": "MWI1B",
+          "name": "Isotope",
+          "nameZh": "同位素"
+        }
+      ]
+    },
+    {
+      "symbol": "MWI2",
+      "topicNumber": "06 The Periodic Table (元素週期表).",
+      "level": "(S3)",
+      "department": "Junior Chemistry",
+      "subTopics": [
+        {
+          "symbol": "MWI2A",
+          "name": "Metals, semi-metals and non-metals",
+          "nameZh": "金屬、半金屬及非金屬"
+        },
+        {
+          "symbol": "MWI2B",
+          "name": "Periodic table",
+          "nameZh": "週期表"
+        },
+        {
+          "symbol": "MWI2C",
+          "name": "Group I and Group II",
+          "nameZh": "第I族及第II族"
+        },
+        {
+          "symbol": "MWI2D",
+          "name": "Group VII and Group 0",
+          "nameZh": "第IIV族及第0族"
+        }
+      ]
+    },
+    {
+      "symbol": "MWI3",
+      "topicNumber": "07 Ionic bond and metallic bond (離子鍵及金屬鍵).",
+      "level": "(S3)",
+      "department": "Junior Chemistry",
+      "subTopics": [
+        {
+          "symbol": "MWI3A",
+          "name": "Metallic bond",
+          "nameZh": "金屬鍵"
+        },
+        {
+          "symbol": "MWI3B",
+          "name": "Ions formation",
+          "nameZh": "離子的形成"
+        },
+        {
+          "symbol": "MWI3C",
+          "name": "Ionic bond electron diagram",
+          "nameZh": "離子鍵及離子化合物的電子結構圖"
+        },
+        {
+          "symbol": "MWI3D",
+          "name": "Naming of ionic compound",
+          "nameZh": "離子化合物的命名"
+        },
+        {
+          "symbol": "MWI3E",
+          "name": "Color of ions",
+          "nameZh": "離子的顏色"
+        }
+      ]
+    },
+    {
+      "symbol": "MWI4",
+      "topicNumber": "08 Covalent bond (共價鍵).",
+      "level": "(S3)",
+      "department": "Junior Chemistry",
+      "subTopics": [
+        {
+          "symbol": "MWI4A",
+          "name": "Covalent bond electron diagram",
+          "nameZh": "共價鍵及共價化合物的電子結構圖"
+        },
+        {
+          "symbol": "MWI4B",
+          "name": "Dative covalent bond",
+          "nameZh": "配位共價鍵"
+        },
+        {
+          "symbol": "MWI4C",
+          "name": "Naming of covalent substance, formula mass",
+          "nameZh": "共價化合物的命名及式量"
+        }
+      ]
+    },
+    {
+      "symbol": "MWI5",
+      "topicNumber": "09 Structures and properties of substances (物質的結構和性質).",
+      "level": "(S3)",
+      "department": "Junior Chemistry",
+      "subTopics": [
+        {
+          "symbol": "MWI5A",
+          "name": "Giant metallic structure",
+          "nameZh": "巨型金屬結構"
+        },
+        {
+          "symbol": "MWI5B",
+          "name": "Giant ionic structure",
+          "nameZh": "巨型離子結構"
+        },
+        {
+          "symbol": "MWI5C",
+          "name": "Simple molecular structure",
+          "nameZh": "簡單分子結構"
+        },
+        {
+          "symbol": "MWI5D",
+          "name": "Giant covalent structure",
+          "nameZh": "巨型共價結構"
+        }
+      ]
+    },
+    {
+      "symbol": "Metal1",
+      "topicNumber": "10 Metal extraction.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Metal2",
+      "topicNumber": "11 Metal reaction.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Metal3",
+      "topicNumber": "12 Reacting masses.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Metal4",
+      "topicNumber": "13 Metal corrosion.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "AB1",
+      "topicNumber": "14 Acids and alkalis.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "AB2",
+      "topicNumber": "15 Concentration calculation.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "AB3",
+      "topicNumber": "16 Indicators and pH.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "AB4",
+      "topicNumber": "17 Strength of acids and alkalis.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "AB5",
+      "topicNumber": "18 Salt preparation and neutralization.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "AB6",
+      "topicNumber": "19 Volumetric analysis 1.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "OrgI1",
+      "topicNumber": "20 Fossil fuels.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "OrgI2",
+      "topicNumber": "21 Homologous series 1.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "OrgI3",
+      "topicNumber": "22 Alkanes and alkenes.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "OrgI4",
+      "topicNumber": "23 Addition polymers.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "MWII1",
+      "topicNumber": "24 Molecular shape, non-octet molecules.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "MWII2",
+      "topicNumber": "25 Polarity of bond and molecule.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "MWII3",
+      "topicNumber": "26 Intermolecular forces.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "MWII4",
+      "topicNumber": "27 Molecular crystals.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Redox1",
+      "topicNumber": "28 Chemical cells in daily life.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Redox2",
+      "topicNumber": "29 Chemical cell 1.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Redox3",
+      "topicNumber": "30 Redox reactions.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Redox4",
+      "topicNumber": "31 Chemical cell 2.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Redox5",
+      "topicNumber": "32 Electrolysis.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Heat1",
+      "topicNumber": "33 Energy changes in chemical reactions.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Heat2",
+      "topicNumber": "34 Standard enthalpy change of reactions.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Heat3",
+      "topicNumber": "35 Hess's Law.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Rate1",
+      "topicNumber": "36 Rate of chemical reaction.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Rate2",
+      "topicNumber": "37 Factors affecting rate of reaction.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Rate3",
+      "topicNumber": "38 Molar volume of gases.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Eqm1",
+      "topicNumber": "39 Dynamic equilibrium.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Eqm2",
+      "topicNumber": "40 Equilibrium constant.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Eqm3",
+      "topicNumber": "41 Le Châtelier's Principle..",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "OrgII1",
+      "topicNumber": "42 Homologous series 2.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "OrgII2",
+      "topicNumber": "43 Isomerism.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "OrgII3",
+      "topicNumber": "44 Typical reactions of various functional groups.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "OrgII4",
+      "topicNumber": "45 Inter-conversions of carbon compounds.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "OrgII5",
+      "topicNumber": "46 Important organic substances.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Pattern1",
+      "topicNumber": "47 Period 2 and Period 3 elements.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Pattern2",
+      "topicNumber": "48 Oxides of Period 3 elements.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Pattern3",
+      "topicNumber": "49 Transition metals.",
+      "level": "(S4 - S5)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Inchem1",
+      "topicNumber": "50 Importance of industrial processes.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Inchem2",
+      "topicNumber": "51 Rate equation.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Inchem3",
+      "topicNumber": "52 Activation energy.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Inchem4",
+      "topicNumber": "53 Catalysis and industrial processes.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Inchem5",
+      "topicNumber": "54 Industrial processes.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Inchem6",
+      "topicNumber": "55 Green chemistry.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Matchem1",
+      "topicNumber": "56 Natural polymers.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Matchem2",
+      "topicNumber": "57 Synthetic polymers.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Matchem3",
+      "topicNumber": "58 Metals and alloys.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Matchem4",
+      "topicNumber": "59 Synthetic materials.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Matchem5",
+      "topicNumber": "60 Green chemistry.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Anchem1",
+      "topicNumber": "61 Chemical tests.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Anchem2",
+      "topicNumber": "62 Separation and purification.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Anchem3",
+      "topicNumber": "63 Volumetric analysis 2.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Anchem4",
+      "topicNumber": "64 Instrumental analytical methods.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    },
+    {
+      "symbol": "Anchem5",
+      "topicNumber": "65 Analytical chemistry in society.",
+      "level": "(S6)",
+      "department": "Senior Chemistry"
+    }
+  ]
+}

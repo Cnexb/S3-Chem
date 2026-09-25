@@ -52,3 +52,15 @@ assert.equal(scopes.size, 15);
 assert.ok(slugs.has("bunsen"));
 assert.ok(slugs.has("s3-mc"));
 assert.ok(slugs.has("atom-builder"));
+
+const syllabus = JSON.parse(
+  fs.readFileSync(path.join(repoRoot, "content/topics/chem-topics.json"), "utf8"),
+);
+assert.equal(syllabus.topics.length, 65);
+const earth1 = syllabus.topics.find((topic) => topic.symbol === "Earth1");
+assert.equal(earth1.level, "(S3)");
+assert.deepEqual(
+  earth1.subTopics.map((topic) => topic.symbol),
+  ["Earth1A", "Earth1B"],
+);
+assert.equal(syllabus.topics.at(-1).symbol, "Anchem5");
