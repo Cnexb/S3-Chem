@@ -1,9 +1,0 @@
-[
-  { "id": "uses", "label": "Uses of Metals", "labelZh": "金屬用途" },
-  { "id": "extraction", "label": "Extraction (Fe / Al)", "labelZh": "金屬提取（鐵／鋁）" },
-  { "id": "reactivity", "label": "Reactivity Series", "labelZh": "金屬活性序" },
-  { "id": "reactions", "label": "Metal Reactions", "labelZh": "金屬反應" },
-  { "id": "displacement", "label": "Displacement", "labelZh": "置換反應" },
-  { "id": "corrosion", "label": "Corrosion & Rust", "labelZh": "腐蝕與生鏽" },
-  { "id": "mole", "label": "Mole Calculations", "labelZh": "摩爾計算" }
-]

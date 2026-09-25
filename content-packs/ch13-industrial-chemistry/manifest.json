@@ -1,0 +1,28 @@
+{
+  "packId": "chem-ch13-industrial-chemistry-v1",
+  "subject": "CHEM",
+  "chapter": "CH13 Industrial Chemistry",
+  "chapterCode": "CH13",
+  "scope": "industrial",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Industrial Chemistry",
+    "zhHant": "工業化學"
+  },
+  "order": 13,
+  "notes": [
+    {
+      "topicCode": "TOPIC13",
+      "title": {
+        "en": "Industrial Chemistry",
+        "zhHant": "工業化學"
+      },
+      "files": {
+        "en": "content-packs/ch13-industrial-chemistry/notes/topic-13-industrial-chemistry.pdf"
+      }
+    }
+  ],
+  "tools": [],
+  "summaries": []
+}

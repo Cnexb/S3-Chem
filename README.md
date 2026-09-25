@@ -1,243 +1,63 @@
-# 🧪 Uni+
+# Chemistry content packs
 
+This repo is the Chemistry teaching files for **Uni+ (All-In-One)**. Students do not open this site. Uni+ reads the `content-packs/` folder and shows notes, tools, games, quizzes, summaries, and flashcards in Learning Tools.
 
+## How Uni+ finds content
 
-**An Interactive Periodic Table for Chemistry Students**
+Each **textbook chapter** is one folder. Uni+ only looks **one level** under `content-packs/`:
 
-[Made with JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[CSS3](https://www.w3.org/Style/CSS/)
-[HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
+```
+content-packs/
+  ch1-planet-earth/
+    manifest.json          ← required. If this file is valid and published, Uni+ can list the chapter
+    notes/                 ← English PDFs (繁體 UI still opens this file)
+    tools/<slug>/          ← labs, games, quizzes, and flashcard pages (keep index.html here)
+    summaries/
+  ch2-microscopic-world-i/
+  …
+  ch15-analytical-chemistry/
+```
 
-*Master Chemistry. Visually & Instantly.*
+`manifest.json` is the table of contents. **A file that is not listed there is invisible** in Uni+.
 
+Do **not** wrap chapters in year folders such as `content-packs/S3/…`. Uni+ will not see them.
 
+## Chapters
 
----
+| Folder | Chapter |
+| --- | --- |
+| `ch1-planet-earth` | Planet Earth, including laboratory safety |
+| `ch2-microscopic-world-i` | Microscopic World I |
+| `ch3-metals` | Metals |
+| `ch4-acids-and-bases` | Acids and Bases |
+| `ch5-fossil-fuels-and-carbon-compounds` | Fossil Fuels and Carbon Compounds |
+| `ch6-microscopic-world-ii` | Microscopic World II |
+| `ch7-redox-reactions` | Redox Reactions, Chemical Cells and Electrolysis |
+| `ch8-chemical-reactions-and-energy` | Chemical Reactions and Energy |
+| `ch9-rate-of-reaction` | Rate of Reaction |
+| `ch10-chemical-equilibrium` | Chemical Equilibrium |
+| `ch11-chemistry-of-carbon-compounds` | Chemistry of Carbon Compounds |
+| `ch12-patterns-in-the-chemical-world` | Patterns in the Chemical World |
+| `ch13-industrial-chemistry` | Industrial Chemistry |
+| `ch14-materials-chemistry` | Materials Chemistry |
+| `ch15-analytical-chemistry` | Analytical Chemistry |
 
-## ✨ Features
+The S3 multiple-choice bank covers Earth and Microscopic World I. It lives in `ch1-planet-earth` so there is one copy. Flashcard study pages are HTML tools (`*-flashcards-en` and `*-flashcards-zh`), not JSON decks.
 
-### 🔬 Interactive Periodic Table
+The periodic table, ion engine, and equation balancer are still the hub site on `main`. They are not separate lesson folders, so they are not in these packs.
 
-- **118 Elements** with detailed information
-- Click any element to view comprehensive data
-- Smooth 3D atom visualization with electron shells
-- Category-based color coding (Alkali Metal, Noble Gas, etc.)
+## What teachers edit
 
-### ⚡ Ion Engine
+| You want to change | Edit |
+| --- | --- |
+| Which items appear | that chapter’s `manifest.json` |
+| Notes | one English PDF in `notes/` (`files.en` only) |
+| A lab, game, quiz, or flashcard page | `tools/<slug>/` (keep `index.html`) and the `tools` list |
+| A summary image | `summaries/` and the `summaries` list |
+| Topic codes | the `topicCode` on the note row. Do not invent syllabus Symbols |
 
-- **Monatomic & Polyatomic Ions** database
-- Custom animations for each ion's properties
-- Visual hints for flame tests, solubility, and more
-- Real-time charge calculations
-
-### 🛠️ Chemistry Tools
-
-
-| Tool                              | Description                                            | Grade Level |
-| --------------------------------- | ------------------------------------------------------ | ----------- |
-| **Equation Balancer**             | Balance chemical equations with step-by-step solutions | 9-12        |
-| **Molar Mass Calculator**         | Calculate molar mass with element breakdown            | 10-11       |
-| **Empirical & Molecular Formula** | Derive formulas from mass data                         | 10-11       |
-| **Solubility Table**              | Quick reference for ionic compounds                    | 9-12        |
-
-
----
-
-## 🆕 Recent Updates (April 2026)
-
-- Mobile-first landing refreshed with softer background motion text stream.
-- Mobile landing no longer triggers desktop onboarding/welcome flow.
-- Element modal export/download button was removed.
-- Custom mobile assets were organized into the `images/` folder:
-  - `images/mobile-bg-1.png`
-  - `images/mobile-atom-2.png`
-
-### 📝 Worksheet Generator
-
-- Generate balanced equation practice problems
-- Multiple reaction types (Synthesis, Decomposition, Combustion, etc.)
-- Adjustable difficulty levels
-- Print-ready PDF export
-
-### ⌨️ Keyboard Navigation
-
-- **Arrow Keys** (← →) - Navigate between info slides
-- **Space Bar** - Next slide
-- Fully accessible modal navigation
-
----
-
-## 🚀 Quick Start
-
-Contributors: see [CONTRIBUTING.md](CONTRIBUTING.md) for where to edit labs, worksheets, quiz, and the full collaboration workflow.
-
-### Local Development
+Cursor follows `.cursor/rules/chem-content-packs.mdc`.
 
 ```bash
-# Clone the repository
-git clone https://github.com/unipluseducationact-ctrl/S3-Chem.git
-
-# Navigate to project directory
-cd S3-Chem
-
-# Install dependencies
-npm install
-
-# Start dev server (with hot reload)
-npm run dev
+npm test
 ```
-
-### Quality Checks
-
-```bash
-# Lint + syntax check + production build
-npm run check
-```
-
-### Production Build
-
-```bash
-# Build static files to dist/
-npm run build
-
-# Preview production build locally
-npm run preview
-```
-
----
-
-## 📁 Project Structure
-
-```
-S3-Chem/
-├── .github/workflows/ci.yml # CI pipeline
-├── package.json            # Vite scripts and dependencies
-├── index.html              # Main HTML file
-├── script.js               # Main JavaScript logic
-├── public/three.min.js     # Local Three.js copy (lazy-loaded for 3D atoms)
-├── logo.svg                # Project logo
-├── public/                 # Static files copied directly by Vite
-│   ├── tools/              # Interactive labs and games
-│   ├── worksheets/         # Embedded worksheet pages
-│   ├── quiz/               # Standalone MCQ quiz pages
-│   └── flashcards/         # Flashcard study pages
-├── css/
-│   ├── base.css            # Design tokens, layout, navigation
-│   ├── grid.css            # Periodic table grid
-│   ├── modal.css           # Element detail modals
-│   ├── tools.css           # Chemistry tools styles
-│   ├── ions.css            # Ion engine styles
-│   ├── ion-animations.css  # Ion-specific animations
-│   ├── mobile-landing.css  # Mobile landing page
-│   └── worksheet-styles.css
-├── js/
-│   ├── ion-animations.js   # Ion animation logic
-│   ├── worksheet-generator.js   # Worksheet generator (Vite bundle entry)
-│   ├── data/
-│   │   ├── elementsData.js # Element database
-│   │   └── ionsData.js     # Ion database
-│   └── modules/
-│       ├── chemistryTools.js
-│       ├── ionsController.js
-│       ├── threeRenderer.js
-│       └── uiController.js
-├── scripts/
-│   ├── templates/quiz/     # Shared quiz UI templates
-│   ├── worksheets/         # Worksheet build scripts + JSON banks
-│   └── quiz/               # Quiz build scripts + JSON bank
-├── images/                 # Preview screenshots
-├── CONTRIBUTING.md         # Contributor guide
-└── README.md
-```
-
----
-
-## 🎨 Design Philosophy
-
-Uni+ follows modern design principles:
-
-- **Minimal & Clean** - Inspired by Apple's design language
-- **Glassmorphism** - Subtle frosted glass effects
-- **Responsive** - Works on all screen sizes
-- **Dark/Light Friendly** - Neutral color palette
-- **Micro-animations** - Smooth, delightful interactions
-
----
-
-## 🎓 Target Audience
-
-- **Grade 9-12 Chemistry Students**
-- **AP Chemistry / IB Chemistry**
-- **Teachers** looking for classroom tools
-- **Anyone** interested in chemistry visualization
-
----
-
-## 📸 Screenshots
-
-Click to expand screenshots
-
-### Periodic Table View
-
-*The main interactive periodic table with category legends*
-
-Periodic Table
-
-### Element Detail Modal
-
-*Comprehensive element information with 3D atom model*
-
-Element Modal
-
-### Mobile Welcome Stream Style
-
-*Subtle multilingual background stream style used on the mobile-first landing experience*
-
-Mobile Welcome Stream
-
-### Mobile Atom Card Visual
-
-*Custom Atom Models card visual used in the mobile landing feature preview*
-
-Mobile Atom Card
-
-### Equation Balancer
-
-*Balance chemical equations with real-time scale visualization*
-
-Equation Balancer
-
-### Worksheet Generator
-
-*Generate print-ready balanced equation worksheets*
-
-Worksheet Generator
-
-
-
----
-
-## 🛡️ License
-
-
-
-This project is created for educational purposes. Unauthorized copying, modification, or redistribution without explicit permission is prohibited.
-
----
-
-## 🙏 Acknowledgments
-
-- **Three.js** - 3D graphics library
-- **Google Fonts (Inter)** - Typography
-- **The Chemistry Community** - For inspiration
-
----
-
-
-
-**Built with ❤️ and lots of ☕**
-
-*Stop memorizing — start visualizing.*
-
-[Buy Me A Coffee](https://buymeacoffee.com/uniplus)
-

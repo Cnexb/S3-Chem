@@ -1,0 +1,141 @@
+{
+  "packId": "chem-ch9-rate-of-reaction-v1",
+  "subject": "CHEM",
+  "chapter": "CH9 Rate of Reaction",
+  "chapterCode": "CH9",
+  "scope": "rates",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Rate of Reaction",
+    "zhHant": "反應速率"
+  },
+  "order": 9,
+  "notes": [
+    {
+      "topicCode": "TOPIC09",
+      "title": {
+        "en": "Rate of Reaction",
+        "zhHant": "反應速率"
+      },
+      "files": {
+        "en": "content-packs/ch9-rate-of-reaction/notes/topic-09-rates-of-reactions.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "rates-of-reaction",
+      "path": "content-packs/ch9-rate-of-reaction/tools/rates-of-reaction",
+      "title": {
+        "en": "Rate2_Factors affecting rate of reaction_(Rates of Reaction)",
+        "zhHant": "Rate2_Factors affecting rate of reaction_(反應速率)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "rates-flashcards-en",
+      "path": "content-packs/ch9-rate-of-reaction/tools/rates-flashcards-en",
+      "title": {
+        "en": "Rate of Reaction flashcards",
+        "zhHant": "反應速率 閃卡"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "rates-flashcards-zh",
+      "path": "content-packs/ch9-rate-of-reaction/tools/rates-flashcards-zh",
+      "title": {
+        "en": "Rate of Reaction flashcards (繁體)",
+        "zhHant": "反應速率 閃卡"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": [
+    {
+      "summaryId": "rates-1-rate-curve-reaction-rates",
+      "title": {
+        "en": "Rate Curve Reaction Rates",
+        "zhHant": "Rate Curve Reaction Rates"
+      },
+      "images": {
+        "en": "content-packs/ch9-rate-of-reaction/summaries/rates-1-rate-curve-reaction-rates.png",
+        "zhHant": "content-packs/ch9-rate-of-reaction/summaries/rates-1-rate-curve-reaction-rates.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "rates-2-methods-for-following-reaction-progress-part-1",
+      "title": {
+        "en": "Methods for Following Reaction Progress Part 1",
+        "zhHant": "Methods for Following Reaction Progress Part 1"
+      },
+      "images": {
+        "en": "content-packs/ch9-rate-of-reaction/summaries/rates-2-methods-for-following-reaction-progress-part-1.png",
+        "zhHant": "content-packs/ch9-rate-of-reaction/summaries/rates-2-methods-for-following-reaction-progress-part-1.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "rates-3-methods-for-following-reaction-progress-part-2",
+      "title": {
+        "en": "Methods for Following Reaction Progress Part 2",
+        "zhHant": "Methods for Following Reaction Progress Part 2"
+      },
+      "images": {
+        "en": "content-packs/ch9-rate-of-reaction/summaries/rates-3-methods-for-following-reaction-progress-part-2.png",
+        "zhHant": "content-packs/ch9-rate-of-reaction/summaries/rates-3-methods-for-following-reaction-progress-part-2.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "rates-4-molar-volume-of-gases-at-rtp",
+      "title": {
+        "en": "Molar Volume of Gases at RTP",
+        "zhHant": "Molar Volume of Gases at RTP"
+      },
+      "images": {
+        "en": "content-packs/ch9-rate-of-reaction/summaries/rates-4-molar-volume-of-gases-at-rtp.png",
+        "zhHant": "content-packs/ch9-rate-of-reaction/summaries/rates-4-molar-volume-of-gases-at-rtp.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "rates-5-effective-collisions",
+      "title": {
+        "en": "Effective Collisions",
+        "zhHant": "Effective Collisions"
+      },
+      "images": {
+        "en": "content-packs/ch9-rate-of-reaction/summaries/rates-5-effective-collisions.png",
+        "zhHant": "content-packs/ch9-rate-of-reaction/summaries/rates-5-effective-collisions.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "rates-6-factors-affecting-rate-catalyst-concentration",
+      "title": {
+        "en": "Factors Affecting Rate Catalyst & Concentration",
+        "zhHant": "Factors Affecting Rate Catalyst & Concentration"
+      },
+      "images": {
+        "en": "content-packs/ch9-rate-of-reaction/summaries/rates-6-factors-affecting-rate-catalyst-concentration.png",
+        "zhHant": "content-packs/ch9-rate-of-reaction/summaries/rates-6-factors-affecting-rate-catalyst-concentration.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "rates-7-factors-affecting-rate-surface-area-temperature",
+      "title": {
+        "en": "Factors Affecting Rate Surface Area & Temperature",
+        "zhHant": "Factors Affecting Rate Surface Area & Temperature"
+      },
+      "images": {
+        "en": "content-packs/ch9-rate-of-reaction/summaries/rates-7-factors-affecting-rate-surface-area-temperature.png",
+        "zhHant": "content-packs/ch9-rate-of-reaction/summaries/rates-7-factors-affecting-rate-surface-area-temperature.png"
+      },
+      "pdfs": null
+    }
+  ]
+}

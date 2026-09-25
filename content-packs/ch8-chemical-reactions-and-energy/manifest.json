@@ -1,0 +1,144 @@
+{
+  "packId": "chem-ch8-chemical-reactions-and-energy-v1",
+  "subject": "CHEM",
+  "chapter": "CH8 Chemical Reactions and Energy",
+  "chapterCode": "CH8",
+  "scope": "energy",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Chemical Reactions and Energy",
+    "zhHant": "化學反應和能量"
+  },
+  "order": 8,
+  "notes": [
+    {
+      "topicCode": "TOPIC08",
+      "title": {
+        "en": "Chemical Reactions and Energy",
+        "zhHant": "化學反應和能量"
+      },
+      "files": {
+        "en": "content-packs/ch8-chemical-reactions-and-energy/notes/topic-08-chemical-reactions-and-energy.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "energy-flashcards-en",
+      "path": "content-packs/ch8-chemical-reactions-and-energy/tools/energy-flashcards-en",
+      "title": {
+        "en": "Chemical Reactions and Energy flashcards",
+        "zhHant": "化學反應和能量 閃卡"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "energy-flashcards-zh",
+      "path": "content-packs/ch8-chemical-reactions-and-energy/tools/energy-flashcards-zh",
+      "title": {
+        "en": "Chemical Reactions and Energy flashcards (繁體)",
+        "zhHant": "化學反應和能量 閃卡"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": [
+    {
+      "summaryId": "energy-1-enthalpy-change-endothermic-exothermic-reactions",
+      "title": {
+        "en": "Enthalpy Change Endothermic & Exothermic Reactions",
+        "zhHant": "Enthalpy Change Endothermic & Exothermic Reactions"
+      },
+      "images": {
+        "en": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-1-enthalpy-change-endothermic-exothermic-reactions.png",
+        "zhHant": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-1-enthalpy-change-endothermic-exothermic-reactions.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "energy-2-standard-enthalpy-change-of-combustion",
+      "title": {
+        "en": "Standard Enthalpy Change of Combustion",
+        "zhHant": "Standard Enthalpy Change of Combustion"
+      },
+      "images": {
+        "en": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-2-standard-enthalpy-change-of-combustion.png",
+        "zhHant": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-2-standard-enthalpy-change-of-combustion.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "energy-3-standard-enthalpy-change-of-formation-concept",
+      "title": {
+        "en": "Standard Enthalpy Change of Formation Concept",
+        "zhHant": "Standard Enthalpy Change of Formation Concept"
+      },
+      "images": {
+        "en": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-3-standard-enthalpy-change-of-formation-concept.png",
+        "zhHant": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-3-standard-enthalpy-change-of-formation-concept.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "energy-4-standard-enthalpy-change-of-formation-examples",
+      "title": {
+        "en": "Standard Enthalpy Change of Formation Examples",
+        "zhHant": "Standard Enthalpy Change of Formation Examples"
+      },
+      "images": {
+        "en": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-4-standard-enthalpy-change-of-formation-examples.png",
+        "zhHant": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-4-standard-enthalpy-change-of-formation-examples.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "energy-5-standard-enthalpy-change-of-neutralization-concept",
+      "title": {
+        "en": "Standard Enthalpy Change of Neutralization Concept",
+        "zhHant": "Standard Enthalpy Change of Neutralization Concept"
+      },
+      "images": {
+        "en": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-5-standard-enthalpy-change-of-neutralization-concept.png",
+        "zhHant": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-5-standard-enthalpy-change-of-neutralization-concept.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "energy-6-determining-enthalpy-change-of-neutralization-by-calorimetry",
+      "title": {
+        "en": "Determining Enthalpy Change of Neutralization by Calorimetry",
+        "zhHant": "Determining Enthalpy Change of Neutralization by Calorimetry"
+      },
+      "images": {
+        "en": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-6-determining-enthalpy-change-of-neutralization-by-calorimetry.png",
+        "zhHant": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-6-determining-enthalpy-change-of-neutralization-by-calorimetry.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "energy-7-hess-s-law",
+      "title": {
+        "en": "Hess's Law",
+        "zhHant": "Hess's Law"
+      },
+      "images": {
+        "en": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-7-hess-s-law.png",
+        "zhHant": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-7-hess-s-law.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "energy-8-calculation-of-enthalpy-change-by-algebraic-method",
+      "title": {
+        "en": "Calculation of Enthalpy Change by Algebraic Method",
+        "zhHant": "Calculation of Enthalpy Change by Algebraic Method"
+      },
+      "images": {
+        "en": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-8-calculation-of-enthalpy-change-by-algebraic-method.png",
+        "zhHant": "content-packs/ch8-chemical-reactions-and-energy/summaries/energy-8-calculation-of-enthalpy-change-by-algebraic-method.png"
+      },
+      "pdfs": null
+    }
+  ]
+}

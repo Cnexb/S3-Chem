@@ -1,0 +1,222 @@
+{
+  "packId": "chem-ch4-acids-and-bases-v1",
+  "subject": "CHEM",
+  "chapter": "CH4 Acids and Bases",
+  "chapterCode": "CH4",
+  "scope": "acids-and-bases",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Acids and Bases",
+    "zhHant": "酸和鹼"
+  },
+  "order": 4,
+  "notes": [
+    {
+      "topicCode": "TOPIC04",
+      "title": {
+        "en": "Acids and Bases",
+        "zhHant": "酸和鹼"
+      },
+      "files": {
+        "en": "content-packs/ch4-acids-and-bases/notes/topic-04-acids-and-bases.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "acid-ionization",
+      "path": "content-packs/ch4-acids-and-bases/tools/acid-ionization",
+      "title": {
+        "en": "AB4_Strength of acids and alkalis_(Acid Ionization)",
+        "zhHant": "AB4_Strength of acids and alkalis_(酸鹼電離)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "titration",
+      "path": "content-packs/ch4-acids-and-bases/tools/titration",
+      "title": {
+        "en": "AB6_Volumetric analysis 1_(Titration)",
+        "zhHant": "AB6_Volumetric analysis 1_(滴定)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "acids-flashcards-en",
+      "path": "content-packs/ch4-acids-and-bases/tools/acids-flashcards-en",
+      "title": {
+        "en": "Acids and Bases flashcards",
+        "zhHant": "酸和鹼 閃卡"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "acids-flashcards-zh",
+      "path": "content-packs/ch4-acids-and-bases/tools/acids-flashcards-zh",
+      "title": {
+        "en": "Acids and Bases flashcards (繁體)",
+        "zhHant": "酸和鹼 閃卡"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": [
+    {
+      "summaryId": "acids-and-bases-01-common-acids-and-bases",
+      "title": {
+        "en": "Common acids and bases",
+        "zhHant": "Common acids and bases"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-01-common-acids-and-bases.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-01-common-acids-and-bases.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-02-water-acidic-properties-dilution",
+      "title": {
+        "en": "Water acidic properties dilution",
+        "zhHant": "Water acidic properties dilution"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-02-water-acidic-properties-dilution.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-02-water-acidic-properties-dilution.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-03-concentration-indicators-acidity",
+      "title": {
+        "en": "Concentration indicators acidity",
+        "zhHant": "Concentration indicators acidity"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-03-concentration-indicators-acidity.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-03-concentration-indicators-acidity.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-04-comparing-strengths-experiments",
+      "title": {
+        "en": "Comparing strengths experiments",
+        "zhHant": "Comparing strengths experiments"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-04-comparing-strengths-experiments.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-04-comparing-strengths-experiments.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-05-ph-calculation-strength-basicity",
+      "title": {
+        "en": "Ph calculation strength basicity",
+        "zhHant": "Ph calculation strength basicity"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-05-ph-calculation-strength-basicity.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-05-ph-calculation-strength-basicity.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-06-reactions-of-acids-and-bases",
+      "title": {
+        "en": "Reactions of acids and bases",
+        "zhHant": "Reactions of acids and bases"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-06-reactions-of-acids-and-bases.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-06-reactions-of-acids-and-bases.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-07-applications-of-neutralization",
+      "title": {
+        "en": "Applications of neutralization",
+        "zhHant": "Applications of neutralization"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-07-applications-of-neutralization.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-07-applications-of-neutralization.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-08-salt-preparation-methods",
+      "title": {
+        "en": "Salt preparation methods",
+        "zhHant": "Salt preparation methods"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-08-salt-preparation-methods.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-08-salt-preparation-methods.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-09-precipitation-and-drying-gas",
+      "title": {
+        "en": "Precipitation and drying gas",
+        "zhHant": "Precipitation and drying gas"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-09-precipitation-and-drying-gas.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-09-precipitation-and-drying-gas.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-10-titration-setup-standard-solution",
+      "title": {
+        "en": "Titration setup standard solution",
+        "zhHant": "Titration setup standard solution"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-10-titration-setup-standard-solution.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-10-titration-setup-standard-solution.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-11-titration-examples-1-3",
+      "title": {
+        "en": "Titration examples 1 3",
+        "zhHant": "Titration examples 1 3"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-11-titration-examples-1-3.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-11-titration-examples-1-3.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-12-titration-examples-4-6",
+      "title": {
+        "en": "Titration examples 4 6",
+        "zhHant": "Titration examples 4 6"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-12-titration-examples-4-6.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-12-titration-examples-4-6.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "acids-and-bases-13-titration-examples-7-8",
+      "title": {
+        "en": "Titration examples 7 8",
+        "zhHant": "Titration examples 7 8"
+      },
+      "images": {
+        "en": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-13-titration-examples-7-8.webp",
+        "zhHant": "content-packs/ch4-acids-and-bases/summaries/acids-and-bases-13-titration-examples-7-8.webp"
+      },
+      "pdfs": null
+    }
+  ]
+}

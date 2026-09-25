@@ -1,0 +1,153 @@
+{
+  "packId": "chem-ch5-fossil-fuels-and-carbon-compounds-v1",
+  "subject": "CHEM",
+  "chapter": "CH5 Fossil Fuels and Carbon Compounds",
+  "chapterCode": "CH5",
+  "scope": "fossil-fuels",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Fossil Fuels and Carbon Compounds",
+    "zhHant": "化石燃料和碳化合物"
+  },
+  "order": 5,
+  "notes": [
+    {
+      "topicCode": "TOPIC05",
+      "title": {
+        "en": "Fossil Fuels and Carbon Compounds",
+        "zhHant": "化石燃料和碳化合物"
+      },
+      "files": {
+        "en": "content-packs/ch5-fossil-fuels-and-carbon-compounds/notes/topic-05-fossil-fuels-and-carbon-compounds.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "organic-chemistry",
+      "path": "content-packs/ch5-fossil-fuels-and-carbon-compounds/tools/organic-chemistry",
+      "title": {
+        "en": "OrgI3_Alkanes and alkenes_(Organic Chemistry Lab)",
+        "zhHant": "OrgI3_Alkanes and alkenes_(有機化學實驗室)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "fossil-fuels-flashcards-en",
+      "path": "content-packs/ch5-fossil-fuels-and-carbon-compounds/tools/fossil-fuels-flashcards-en",
+      "title": {
+        "en": "Fossil Fuels and Carbon Compounds flashcards",
+        "zhHant": "化石燃料和碳化合物 閃卡"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "fossil-fuels-flashcards-zh",
+      "path": "content-packs/ch5-fossil-fuels-and-carbon-compounds/tools/fossil-fuels-flashcards-zh",
+      "title": {
+        "en": "Fossil Fuels and Carbon Compounds flashcards (繁體)",
+        "zhHant": "化石燃料和碳化合物 閃卡"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": [
+    {
+      "summaryId": "fossil-fuels-01-fossil-fuels-and-petroleum",
+      "title": {
+        "en": "Fossil fuels and petroleum",
+        "zhHant": "Fossil fuels and petroleum"
+      },
+      "images": {
+        "en": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-01-fossil-fuels-and-petroleum.webp",
+        "zhHant": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-01-fossil-fuels-and-petroleum.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "fossil-fuels-02-lab-distillation-and-pollutants",
+      "title": {
+        "en": "Lab distillation and pollutants",
+        "zhHant": "Lab distillation and pollutants"
+      },
+      "images": {
+        "en": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-02-lab-distillation-and-pollutants.webp",
+        "zhHant": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-02-lab-distillation-and-pollutants.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "fossil-fuels-03-systematic-naming-alkanes-alkenes",
+      "title": {
+        "en": "Systematic naming alkanes alkenes",
+        "zhHant": "Systematic naming alkanes alkenes"
+      },
+      "images": {
+        "en": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-03-systematic-naming-alkanes-alkenes.webp",
+        "zhHant": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-03-systematic-naming-alkanes-alkenes.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "fossil-fuels-04-alcohols-acids-and-formulas",
+      "title": {
+        "en": "Alcohols acids and formulas",
+        "zhHant": "Alcohols acids and formulas"
+      },
+      "images": {
+        "en": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-04-alcohols-acids-and-formulas.webp",
+        "zhHant": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-04-alcohols-acids-and-formulas.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "fossil-fuels-05-homologous-series",
+      "title": {
+        "en": "Homologous series",
+        "zhHant": "Homologous series"
+      },
+      "images": {
+        "en": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-05-homologous-series.webp",
+        "zhHant": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-05-homologous-series.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "fossil-fuels-06-addition-reactions-of-alkenes",
+      "title": {
+        "en": "Addition reactions of alkenes",
+        "zhHant": "Addition reactions of alkenes"
+      },
+      "images": {
+        "en": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-06-addition-reactions-of-alkenes.webp",
+        "zhHant": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-06-addition-reactions-of-alkenes.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "fossil-fuels-07-substitution-reactions-of-alkanes",
+      "title": {
+        "en": "Substitution reactions of alkanes",
+        "zhHant": "Substitution reactions of alkanes"
+      },
+      "images": {
+        "en": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-07-substitution-reactions-of-alkanes.webp",
+        "zhHant": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-07-substitution-reactions-of-alkanes.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "fossil-fuels-08-cracking-and-addition-polymers",
+      "title": {
+        "en": "Cracking and addition polymers",
+        "zhHant": "Cracking and addition polymers"
+      },
+      "images": {
+        "en": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-08-cracking-and-addition-polymers.webp",
+        "zhHant": "content-packs/ch5-fossil-fuels-and-carbon-compounds/summaries/fossil-fuels-08-cracking-and-addition-polymers.webp"
+      },
+      "pdfs": null
+    }
+  ]
+}

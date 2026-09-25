@@ -1,0 +1,46 @@
+---
+description: How All-In-One finds Chemistry packs — add content here so it appears automatically
+alwaysApply: true
+---
+
+# Content packs (All-In-One)
+
+Uni+ Learning Tools reads **only** `content-packs/` through content-api. A pack appears when this file exists:
+
+`content-packs/<pack-folder>/manifest.json`
+
+Do **not** nest packs in `S3/` or any year folder. Do **not** add teaching files under `public/`, `dist/`, `js/`, or `index.html` (old hub).
+
+## Folder shape (one textbook chapter = one pack)
+
+```
+content-packs/ch1-planet-earth/
+  manifest.json
+  notes/*.pdf
+  tools/<slug>/index.html
+  summaries/
+```
+
+Chapters run from `ch1-planet-earth` through `ch15-analytical-chemistry`. Keep each textbook chapter as one pack.
+
+## New chapter
+
+1. Copy an existing pack folder. Rename it (`ch16-…`).
+2. In `manifest.json`: `subject` `"CHEM"`, unique lowercase `scope`, `chapterCode`, `published: true`.
+3. List every note, tool, quiz, summary, and flashcard page. Unlisted files are invisible.
+
+## New item inside a chapter
+
+Add `notes[]` with `topicCode` and one English PDF (`files.en` only). Add labs, games, quizzes, and flashcard pages under `tools/<slug>/` with `index.html`, and list them in `tools`. Set `"section": "games"` or `"section": "quizzes"` when the page is not a lab. Do not invent syllabus Symbols.
+
+## Quizzes
+
+Quiz pages are HTML under `tools/<slug>/index.html` with `"section": "quizzes"`. Keep old question ids. Leave quiz runners, `postMessage`, and tracking unchanged.
+
+## HTML to keep
+
+`content-packs/<pack>/tools/<slug>/index.html` (and its JS/CSS) — All-In-One embeds this.
+
+## Stop
+
+Duplicate `scope`, year-folder wrappers, or quiz runner / tracking changes → ask the technical owner. Do not push.

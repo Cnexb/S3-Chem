@@ -1,18 +1,6 @@
+node_modules
 .DS_Store
-node_modules/
-dist/
+*.log
 .eslintcache
-.deploy-gh-pages/
-uniplus-dist.zip
-_extract_chem/
-
-# Python
-**/__pycache__/
-*.pyc
-
-# Local audit / scratch files (repo root)
-/*.txt
-
-# Worksheet build scratch
-scripts/**/_tmp_media/
-scripts/**/_tmp_*/
+__pycache__/
+dist/

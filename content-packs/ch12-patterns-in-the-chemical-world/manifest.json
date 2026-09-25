@@ -1,0 +1,28 @@
+{
+  "packId": "chem-ch12-patterns-in-the-chemical-world-v1",
+  "subject": "CHEM",
+  "chapter": "CH12 Patterns in the Chemical World",
+  "chapterCode": "CH12",
+  "scope": "patterns",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Patterns in the Chemical World",
+    "zhHant": "化學世界的規律"
+  },
+  "order": 12,
+  "notes": [
+    {
+      "topicCode": "TOPIC12",
+      "title": {
+        "en": "Patterns in the Chemical World",
+        "zhHant": "化學世界的規律"
+      },
+      "files": {
+        "en": "content-packs/ch12-patterns-in-the-chemical-world/notes/topic-12-patterns-in-chemical-worlds.pdf"
+      }
+    }
+  ],
+  "tools": [],
+  "summaries": []
+}

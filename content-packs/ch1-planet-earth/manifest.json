@@ -1,0 +1,113 @@
+{
+  "packId": "chem-ch1-planet-earth-v1",
+  "subject": "CHEM",
+  "chapter": "CH1 Planet Earth",
+  "chapterCode": "CH1",
+  "scope": "planet-earth",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Planet Earth",
+    "zhHant": "地球"
+  },
+  "order": 1,
+  "notes": [
+    {
+      "topicCode": "TOPIC01",
+      "title": {
+        "en": "Planet Earth",
+        "zhHant": "地球"
+      },
+      "files": {
+        "en": "content-packs/ch1-planet-earth/notes/topic-01-planet-earth.pdf"
+      }
+    },
+    {
+      "topicCode": "LABSAFETY",
+      "title": {
+        "en": "Laboratory safety",
+        "zhHant": "實驗室安全"
+      },
+      "files": {
+        "en": "content-packs/ch1-planet-earth/notes/laboratory-safety.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "bunsen",
+      "path": "content-packs/ch1-planet-earth/tools/bunsen",
+      "title": {
+        "en": "Earth1B_Laboratory safety_(Lighting a Bunsen burner)",
+        "zhHant": "Earth1B_Laboratory safety_(本生燈點火)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "gas-prep",
+      "path": "content-packs/ch1-planet-earth/tools/gas-prep",
+      "title": {
+        "en": "Earth3B_Chemical tests and electrolysis_(Gas preparation and collection)",
+        "zhHant": "Earth3B_Chemical tests and electrolysis_(氣體製備同收集)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "sucking-back",
+      "path": "content-packs/ch1-planet-earth/tools/sucking-back",
+      "title": {
+        "en": "Earth3B_Chemical tests and electrolysis_(Prevent sucking back)",
+        "zhHant": "Earth3B_Chemical tests and electrolysis_(防止倒吸)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "matter-class",
+      "path": "content-packs/ch1-planet-earth/tools/matter-class",
+      "title": {
+        "en": "Earth2A_Matters_(Microscopic matter classification)",
+        "zhHant": "Earth2A_Matters_(物質微觀分類)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "chem-lab-hq",
+      "path": "content-packs/ch1-planet-earth/tools/chem-lab-hq",
+      "title": {
+        "en": "Earth1A_Laboratory apparatus_(Chem Lab HQ)",
+        "zhHant": "Earth1A_Laboratory apparatus_(Chem Lab HQ)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "liquid-air",
+      "path": "content-packs/ch1-planet-earth/tools/liquid-air",
+      "title": {
+        "en": "Earth2C_Air_(Liquid Air Fractional Distillation)",
+        "zhHant": "Earth2C_Air_(液態空氣分餾)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "lab-hazard-match",
+      "path": "content-packs/ch1-planet-earth/tools/lab-hazard-match",
+      "title": {
+        "en": "Earth1A-B_Laboratory apparatus+Laboratory safety_(Lab & Hazard Match)",
+        "zhHant": "Earth1A-B_Laboratory apparatus+Laboratory safety_(實驗器皿與危險標示配對)"
+      },
+      "query": "embed=1",
+      "section": "games"
+    },
+    {
+      "slug": "s3-mc",
+      "path": "content-packs/ch1-planet-earth/tools/s3-mc",
+      "title": {
+        "en": "S3 multiple choice (Earth and Microscopic World I)",
+        "zhHant": "S3 多項選擇（地球與微觀世界 I）"
+      },
+      "query": "embed=1",
+      "section": "quizzes"
+    }
+  ],
+  "summaries": []
+}

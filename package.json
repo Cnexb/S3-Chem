@@ -1,29 +1,9 @@
 {
-  "name": "uniplus",
+  "name": "s3-chem-content-packs",
   "private": true,
-  "version": "2.0.0",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:lan": "vite --host 0.0.0.0 --port 5173",
-    "lint": "eslint . --ext .js --cache --cache-location .eslintcache --quiet",
-    "check:syntax": "node scripts/check-syntax.cjs",
-    "audit:i18n": "node scripts/audit_translation_fallbacks.mjs",
-    "validate:ions": "python3 scripts/validate_ion_locales.py",
-    "check": "npm run lint && npm run check:syntax && npm run build",
-    "smoke": "playwright test",
-    "build": "node scripts/generate-elements-data.mjs && vite build && node scripts/copy-chapter-assets.mjs",
-    "preview": "vite preview",
-    "generate:elements": "node scripts/generate-elements-data.mjs",
-    "extract:microscopic": "node scripts/extract-microscopic-questions.mjs",
-    "optimize:images": "node scripts/optimize-images.mjs"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.22.0",
-    "@playwright/test": "^1.58.2",
-    "eslint": "^9.22.0",
-    "globals": "^16.0.0",
-    "pdf-parse": "^2.4.5",
-    "sharp": "^0.34.5",
-    "vite": "^7.3.1"
+    "test": "node scripts/test-chapter-assets.mjs"
   }
 }

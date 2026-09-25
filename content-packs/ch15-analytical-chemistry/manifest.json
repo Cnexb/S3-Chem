@@ -1,0 +1,28 @@
+{
+  "packId": "chem-ch15-analytical-chemistry-v1",
+  "subject": "CHEM",
+  "chapter": "CH15 Analytical Chemistry",
+  "chapterCode": "CH15",
+  "scope": "analytical",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Analytical Chemistry",
+    "zhHant": "分析化學"
+  },
+  "order": 15,
+  "notes": [
+    {
+      "topicCode": "TOPIC15",
+      "title": {
+        "en": "Analytical Chemistry",
+        "zhHant": "分析化學"
+      },
+      "files": {
+        "en": "content-packs/ch15-analytical-chemistry/notes/topic-15-analytical-chemistry.pdf"
+      }
+    }
+  ],
+  "tools": [],
+  "summaries": []
+}

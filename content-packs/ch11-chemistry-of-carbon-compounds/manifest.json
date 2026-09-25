@@ -1,0 +1,28 @@
+{
+  "packId": "chem-ch11-chemistry-of-carbon-compounds-v1",
+  "subject": "CHEM",
+  "chapter": "CH11 Chemistry of Carbon Compounds",
+  "chapterCode": "CH11",
+  "scope": "carbon-compounds",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Chemistry of Carbon Compounds",
+    "zhHant": "碳化合物的化學"
+  },
+  "order": 11,
+  "notes": [
+    {
+      "topicCode": "TOPIC11",
+      "title": {
+        "en": "Chemistry of Carbon Compounds",
+        "zhHant": "碳化合物的化學"
+      },
+      "files": {
+        "en": "content-packs/ch11-chemistry-of-carbon-compounds/notes/topic-11-chemistry-of-carbon-compounds.pdf"
+      }
+    }
+  ],
+  "tools": [],
+  "summaries": []
+}

@@ -1,0 +1,254 @@
+{
+  "packId": "chem-ch2-microscopic-world-i-v1",
+  "subject": "CHEM",
+  "chapter": "CH2 Microscopic World I",
+  "chapterCode": "CH2",
+  "scope": "microscopic-world-i",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Microscopic World I",
+    "zhHant": "微觀世界 I"
+  },
+  "order": 2,
+  "notes": [
+    {
+      "topicCode": "TOPIC02",
+      "title": {
+        "en": "Microscopic World I",
+        "zhHant": "微觀世界 I"
+      },
+      "files": {
+        "en": "content-packs/ch2-microscopic-world-i/notes/topic-02-microscopic-world-i.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "atom-builder",
+      "path": "content-packs/ch2-microscopic-world-i/tools/atom-builder",
+      "title": {
+        "en": "MWI1A_Atomic structure_(Atom Builder)",
+        "zhHant": "MWI1A_Atomic structure_(原子建造器)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "ram-calculator",
+      "path": "content-packs/ch2-microscopic-world-i/tools/ram-calculator",
+      "title": {
+        "en": "MWI1B_Isotope_(Relative Atomic Mass Laboratory)",
+        "zhHant": "MWI1B_Isotope_(相對原子質量實驗室)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "ionic-compound",
+      "path": "content-packs/ch2-microscopic-world-i/tools/ionic-compound",
+      "title": {
+        "en": "MWI3C_Ionic bond electron diagram_(Ionic)",
+        "zhHant": "MWI3C_Ionic bond electron diagram_(離子)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "covalent-bond",
+      "path": "content-packs/ch2-microscopic-world-i/tools/covalent-bond",
+      "title": {
+        "en": "MWI4A_Covalent bond electron diagram_(Covalent)",
+        "zhHant": "MWI4A_Covalent bond electron diagram_(共價)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "covalent-sandbox",
+      "path": "content-packs/ch2-microscopic-world-i/tools/covalent-sandbox",
+      "title": {
+        "en": "MWI5C-D_Simple molecular structure+Giant covalent structure_(Sandbox)",
+        "zhHant": "MWI5C-D_Simple molecular structure+Giant covalent structure_(沙盒)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "atom-ninja",
+      "path": "content-packs/ch2-microscopic-world-i/tools/atom-ninja",
+      "title": {
+        "en": "MWI1A_Atomic structure_(Atom Ninja)",
+        "zhHant": "MWI1A_Atomic structure_(原子忍者)"
+      },
+      "query": "embed=1",
+      "section": "games"
+    },
+    {
+      "slug": "chem-catch",
+      "path": "content-packs/ch2-microscopic-world-i/tools/chem-catch",
+      "title": {
+        "en": "MWI3D_Naming of ionic compound_(Chem Catch)",
+        "zhHant": "MWI3D_Naming of ionic compound_(化學捉魚)"
+      },
+      "query": "embed=1",
+      "section": "games"
+    },
+    {
+      "slug": "flame-test",
+      "path": "content-packs/ch2-microscopic-world-i/tools/flame-test",
+      "title": {
+        "en": "MWI3E_Color of ions_(Flame Test Fireworks)",
+        "zhHant": "MWI3E_Color of ions_(焰色試驗煙火)"
+      },
+      "query": "embed=1",
+      "section": "games"
+    },
+    {
+      "slug": "microscopic-world-i",
+      "path": "content-packs/ch2-microscopic-world-i/tools/microscopic-world-i",
+      "title": {
+        "en": "Microscopic World I quiz",
+        "zhHant": "微觀世界 I 測驗"
+      },
+      "query": "embed=1",
+      "section": "quizzes"
+    },
+    {
+      "slug": "mwi-exercise",
+      "path": "content-packs/ch2-microscopic-world-i/tools/mwi-exercise",
+      "title": {
+        "en": "Microscopic World I exercise",
+        "zhHant": "微觀世界 I 練習"
+      },
+      "query": "embed=1",
+      "section": "quizzes"
+    },
+    {
+      "slug": "mwi-worksheet",
+      "path": "content-packs/ch2-microscopic-world-i/tools/mwi-worksheet",
+      "title": {
+        "en": "Microscopic World I worksheet",
+        "zhHant": "微觀世界 I 工作紙"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "atomic-structure-worksheet",
+      "path": "content-packs/ch2-microscopic-world-i/tools/atomic-structure-worksheet",
+      "title": {
+        "en": "Atomic structure worksheet",
+        "zhHant": "原子結構工作紙"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "isotope-ram",
+      "path": "content-packs/ch2-microscopic-world-i/tools/isotope-ram",
+      "title": {
+        "en": "Isotope and relative atomic mass worksheet",
+        "zhHant": "同位素與相對原子質量工作紙"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "mwi-flashcards-en",
+      "path": "content-packs/ch2-microscopic-world-i/tools/mwi-flashcards-en",
+      "title": {
+        "en": "Microscopic World I flashcards",
+        "zhHant": "微觀世界 I 閃卡"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "mwi-flashcards-zh",
+      "path": "content-packs/ch2-microscopic-world-i/tools/mwi-flashcards-zh",
+      "title": {
+        "en": "Microscopic World I flashcards (繁體)",
+        "zhHant": "微觀世界 I 閃卡"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": [
+    {
+      "summaryId": "microscopic-world-i-01-elements-and-isotopes",
+      "title": {
+        "en": "Elements and isotopes",
+        "zhHant": "Elements and isotopes"
+      },
+      "images": {
+        "en": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-01-elements-and-isotopes.webp",
+        "zhHant": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-01-elements-and-isotopes.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-i-02-isotopic-mass-calculations",
+      "title": {
+        "en": "Isotopic mass calculations",
+        "zhHant": "Isotopic mass calculations"
+      },
+      "images": {
+        "en": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-02-isotopic-mass-calculations.webp",
+        "zhHant": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-02-isotopic-mass-calculations.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-i-03-periodic-table-groups",
+      "title": {
+        "en": "Periodic table groups",
+        "zhHant": "Periodic table groups"
+      },
+      "images": {
+        "en": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-03-periodic-table-groups.webp",
+        "zhHant": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-03-periodic-table-groups.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-i-04-common-ions",
+      "title": {
+        "en": "Common ions",
+        "zhHant": "Common ions"
+      },
+      "images": {
+        "en": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-04-common-ions.webp",
+        "zhHant": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-04-common-ions.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-i-05-ion-migration-experiments",
+      "title": {
+        "en": "Ion migration experiments",
+        "zhHant": "Ion migration experiments"
+      },
+      "images": {
+        "en": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-05-ion-migration-experiments.webp",
+        "zhHant": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-05-ion-migration-experiments.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-i-06-chemical-bonds",
+      "title": {
+        "en": "Chemical bonds",
+        "zhHant": "Chemical bonds"
+      },
+      "images": {
+        "en": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-06-chemical-bonds.webp",
+        "zhHant": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-06-chemical-bonds.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-i-07-structure-and-properties",
+      "title": {
+        "en": "Structure and properties",
+        "zhHant": "Structure and properties"
+      },
+      "images": {
+        "en": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-07-structure-and-properties.webp",
+        "zhHant": "content-packs/ch2-microscopic-world-i/summaries/microscopic-world-i-07-structure-and-properties.webp"
+      },
+      "pdfs": null
+    }
+  ]
+}

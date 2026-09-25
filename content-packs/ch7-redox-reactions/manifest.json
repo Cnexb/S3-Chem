@@ -1,0 +1,237 @@
+{
+  "packId": "chem-ch7-redox-reactions-v1",
+  "subject": "CHEM",
+  "chapter": "CH7 Redox Reactions, Chemical Cells and Electrolysis",
+  "chapterCode": "CH7",
+  "scope": "redox",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Redox Reactions, Chemical Cells and Electrolysis",
+    "zhHant": "氧化還原反應、化學電池和電解"
+  },
+  "order": 7,
+  "notes": [
+    {
+      "topicCode": "TOPIC07",
+      "title": {
+        "en": "Redox Reactions, Chemical Cells and Electrolysis",
+        "zhHant": "氧化還原反應、化學電池和電解"
+      },
+      "files": {
+        "en": "content-packs/ch7-redox-reactions/notes/topic-07-redox.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "chemical-cells",
+      "path": "content-packs/ch7-redox-reactions/tools/chemical-cells",
+      "title": {
+        "en": "Redox5_Electrolysis_(Chemical Cells & Electrolysis)",
+        "zhHant": "Redox5_Electrolysis_(化學電池與電解)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "redox-flashcards-en",
+      "path": "content-packs/ch7-redox-reactions/tools/redox-flashcards-en",
+      "title": {
+        "en": "Redox Reactions, Chemical Cells and Electrolysis flashcards",
+        "zhHant": "氧化還原反應、化學電池和電解 閃卡"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "redox-flashcards-zh",
+      "path": "content-packs/ch7-redox-reactions/tools/redox-flashcards-zh",
+      "title": {
+        "en": "Redox Reactions, Chemical Cells and Electrolysis flashcards (繁體)",
+        "zhHant": "氧化還原反應、化學電池和電解 閃卡"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": [
+    {
+      "summaryId": "redox-1-chemical-cells-in-daily-life",
+      "title": {
+        "en": "Chemical Cells in Daily Life",
+        "zhHant": "Chemical Cells in Daily Life"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-1-chemical-cells-in-daily-life.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-1-chemical-cells-in-daily-life.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-10-electrolysis-overview",
+      "title": {
+        "en": "Electrolysis Overview",
+        "zhHant": "Electrolysis Overview"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-10-electrolysis-overview.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-10-electrolysis-overview.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-11-electrolytic-cell-molten-aqueous",
+      "title": {
+        "en": "Electrolytic Cell Molten & Aqueous",
+        "zhHant": "Electrolytic Cell Molten & Aqueous"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-11-electrolytic-cell-molten-aqueous.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-11-electrolytic-cell-molten-aqueous.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-12-electroplating-brine-electrolysis-with-hg-cathode",
+      "title": {
+        "en": "Electroplating & Brine Electrolysis with Hg Cathode",
+        "zhHant": "Electroplating & Brine Electrolysis with Hg Cathode"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-12-electroplating-brine-electrolysis-with-hg-cathode.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-12-electroplating-brine-electrolysis-with-hg-cathode.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-13-electrolytic-solution-with-ph-indicator",
+      "title": {
+        "en": "Electrolytic Solution with pH Indicator",
+        "zhHant": "Electrolytic Solution with pH Indicator"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-13-electrolytic-solution-with-ph-indicator.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-13-electrolytic-solution-with-ph-indicator.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-14-multiple-electrolytic-cells",
+      "title": {
+        "en": "Multiple Electrolytic Cells",
+        "zhHant": "Multiple Electrolytic Cells"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-14-multiple-electrolytic-cells.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-14-multiple-electrolytic-cells.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-15-chemical-cell-vs-electrolysis",
+      "title": {
+        "en": "Chemical Cell vs Electrolysis",
+        "zhHant": "Chemical Cell vs Electrolysis"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-15-chemical-cell-vs-electrolysis.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-15-chemical-cell-vs-electrolysis.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-2-oxidation-number-common-agents-balancing-half-equations",
+      "title": {
+        "en": "Oxidation Number, Common Agents & Balancing Half Equations",
+        "zhHant": "Oxidation Number, Common Agents & Balancing Half Equations"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-2-oxidation-number-common-agents-balancing-half-equations.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-2-oxidation-number-common-agents-balancing-half-equations.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-3-oxidizing-acids-chlorine-reactions",
+      "title": {
+        "en": "Oxidizing Acids & Chlorine Reactions",
+        "zhHant": "Oxidizing Acids & Chlorine Reactions"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-3-oxidizing-acids-chlorine-reactions.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-3-oxidizing-acids-chlorine-reactions.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-4-electrochemical-series",
+      "title": {
+        "en": "Electrochemical Series",
+        "zhHant": "Electrochemical Series"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-4-electrochemical-series.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-4-electrochemical-series.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-5-chemical-cell-two-metal-electrodes",
+      "title": {
+        "en": "Chemical Cell Two Metal Electrodes",
+        "zhHant": "Chemical Cell Two Metal Electrodes"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-5-chemical-cell-two-metal-electrodes.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-5-chemical-cell-two-metal-electrodes.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-6-chemical-cell-inert-electrodes",
+      "title": {
+        "en": "Chemical Cell Inert Electrodes",
+        "zhHant": "Chemical Cell Inert Electrodes"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-6-chemical-cell-inert-electrodes.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-6-chemical-cell-inert-electrodes.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-7-fuel-cell",
+      "title": {
+        "en": "Fuel Cell",
+        "zhHant": "Fuel Cell"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-7-fuel-cell.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-7-fuel-cell.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-8-deducing-half-equations-from-voltage-reading",
+      "title": {
+        "en": "Deducing Half Equations from Voltage Reading",
+        "zhHant": "Deducing Half Equations from Voltage Reading"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-8-deducing-half-equations-from-voltage-reading.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-8-deducing-half-equations-from-voltage-reading.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "redox-9-deducing-half-equations-from-electrochemical-series",
+      "title": {
+        "en": "Deducing Half Equations from Electrochemical Series",
+        "zhHant": "Deducing Half Equations from Electrochemical Series"
+      },
+      "images": {
+        "en": "content-packs/ch7-redox-reactions/summaries/redox-9-deducing-half-equations-from-electrochemical-series.png",
+        "zhHant": "content-packs/ch7-redox-reactions/summaries/redox-9-deducing-half-equations-from-electrochemical-series.png"
+      },
+      "pdfs": null
+    }
+  ]
+}

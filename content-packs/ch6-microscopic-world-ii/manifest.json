@@ -1,0 +1,132 @@
+{
+  "packId": "chem-ch6-microscopic-world-ii-v1",
+  "subject": "CHEM",
+  "chapter": "CH6 Microscopic World II",
+  "chapterCode": "CH6",
+  "scope": "microscopic-world-ii",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Microscopic World II",
+    "zhHant": "微觀世界 II"
+  },
+  "order": 6,
+  "notes": [
+    {
+      "topicCode": "TOPIC06",
+      "title": {
+        "en": "Microscopic World II",
+        "zhHant": "微觀世界 II"
+      },
+      "files": {
+        "en": "content-packs/ch6-microscopic-world-ii/notes/topic-06-microscopic-world-ii.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "mwi-ii-flashcards-en",
+      "path": "content-packs/ch6-microscopic-world-ii/tools/mwi-ii-flashcards-en",
+      "title": {
+        "en": "Microscopic World II flashcards",
+        "zhHant": "微觀世界 II 閃卡"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "mwi-ii-flashcards-zh",
+      "path": "content-packs/ch6-microscopic-world-ii/tools/mwi-ii-flashcards-zh",
+      "title": {
+        "en": "Microscopic World II flashcards (繁體)",
+        "zhHant": "微觀世界 II 閃卡"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": [
+    {
+      "summaryId": "microscopic-world-ii-charged-rod-experiment-summary",
+      "title": {
+        "en": "Charged Rod Experiment Summary",
+        "zhHant": "Charged Rod Experiment Summary"
+      },
+      "images": {
+        "en": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-charged-rod-experiment-summary.png",
+        "zhHant": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-charged-rod-experiment-summary.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-ii-effect-of-h-bonding-on-physical-properties-summary",
+      "title": {
+        "en": "Effect of H Bonding on Physical Properties Summary",
+        "zhHant": "Effect of H Bonding on Physical Properties Summary"
+      },
+      "images": {
+        "en": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-effect-of-h-bonding-on-physical-properties-summary.png",
+        "zhHant": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-effect-of-h-bonding-on-physical-properties-summary.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-ii-electronegativity-polar-bond-polar-molecule-summary",
+      "title": {
+        "en": "Electronegativity, Polar Bond & Polar Molecule Summary",
+        "zhHant": "Electronegativity, Polar Bond & Polar Molecule Summary"
+      },
+      "images": {
+        "en": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-electronegativity-polar-bond-polar-molecule-summary.png",
+        "zhHant": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-electronegativity-polar-bond-polar-molecule-summary.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-ii-factors-affecting-van-der-waals-forces-summary",
+      "title": {
+        "en": "Factors Affecting Van der Waals' Forces Summary",
+        "zhHant": "Factors Affecting Van der Waals' Forces Summary"
+      },
+      "images": {
+        "en": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-factors-affecting-van-der-waals-forces-summary.png",
+        "zhHant": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-factors-affecting-van-der-waals-forces-summary.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-ii-hydrogen-bonds-boiling-points-of-hydrides-summary",
+      "title": {
+        "en": "Hydrogen Bonds & Boiling Points of Hydrides Summary",
+        "zhHant": "Hydrogen Bonds & Boiling Points of Hydrides Summary"
+      },
+      "images": {
+        "en": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-hydrogen-bonds-boiling-points-of-hydrides-summary.png",
+        "zhHant": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-hydrogen-bonds-boiling-points-of-hydrides-summary.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-ii-molecular-shape-summary",
+      "title": {
+        "en": "Molecular Shape Summary",
+        "zhHant": "Molecular Shape Summary"
+      },
+      "images": {
+        "en": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-molecular-shape-summary.png",
+        "zhHant": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-molecular-shape-summary.png"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "microscopic-world-ii-van-der-waals-forces-summary",
+      "title": {
+        "en": "Van der Waals' Forces Summary",
+        "zhHant": "Van der Waals' Forces Summary"
+      },
+      "images": {
+        "en": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-van-der-waals-forces-summary.png",
+        "zhHant": "content-packs/ch6-microscopic-world-ii/summaries/microscopic-world-ii-van-der-waals-forces-summary.png"
+      },
+      "pdfs": null
+    }
+  ]
+}

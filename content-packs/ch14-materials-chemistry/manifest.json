@@ -1,0 +1,28 @@
+{
+  "packId": "chem-ch14-materials-chemistry-v1",
+  "subject": "CHEM",
+  "chapter": "CH14 Materials Chemistry",
+  "chapterCode": "CH14",
+  "scope": "materials",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Materials Chemistry",
+    "zhHant": "物料化學"
+  },
+  "order": 14,
+  "notes": [
+    {
+      "topicCode": "TOPIC14",
+      "title": {
+        "en": "Materials Chemistry",
+        "zhHant": "物料化學"
+      },
+      "files": {
+        "en": "content-packs/ch14-materials-chemistry/notes/topic-14-materials-chemistry.pdf"
+      }
+    }
+  ],
+  "tools": [],
+  "summaries": []
+}

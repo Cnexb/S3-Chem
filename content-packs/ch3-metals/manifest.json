@@ -1,0 +1,244 @@
+{
+  "packId": "chem-ch3-metals-v1",
+  "subject": "CHEM",
+  "chapter": "CH3 Metals",
+  "chapterCode": "CH3",
+  "scope": "metals",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Metals",
+    "zhHant": "金屬"
+  },
+  "order": 3,
+  "notes": [
+    {
+      "topicCode": "TOPIC03",
+      "title": {
+        "en": "Metals",
+        "zhHant": "金屬"
+      },
+      "files": {
+        "en": "content-packs/ch3-metals/notes/topic-03-metals.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "metal-reactions",
+      "path": "content-packs/ch3-metals/tools/metal-reactions",
+      "title": {
+        "en": "Metal2_Metal reaction_(Metal Reactivity)",
+        "zhHant": "Metal2_Metal reaction_(金屬反應)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "rusting",
+      "path": "content-packs/ch3-metals/tools/rusting",
+      "title": {
+        "en": "Metal4_Metal corrosion_(Rusting)",
+        "zhHant": "Metal4_Metal corrosion_(生銹)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "metals-exercise",
+      "path": "content-packs/ch3-metals/tools/metals-exercise",
+      "title": {
+        "en": "Metals exercise",
+        "zhHant": "金屬練習"
+      },
+      "query": "embed=1",
+      "section": "quizzes"
+    },
+    {
+      "slug": "metals-flashcards-en",
+      "path": "content-packs/ch3-metals/tools/metals-flashcards-en",
+      "title": {
+        "en": "Metals flashcards",
+        "zhHant": "金屬 閃卡"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "metals-flashcards-zh",
+      "path": "content-packs/ch3-metals/tools/metals-flashcards-zh",
+      "title": {
+        "en": "Metals flashcards (繁體)",
+        "zhHant": "金屬 閃卡"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": [
+    {
+      "summaryId": "metals-01-uses-of-metals",
+      "title": {
+        "en": "Uses of metals",
+        "zhHant": "Uses of metals"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-01-uses-of-metals.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-01-uses-of-metals.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-02-extraction-of-iron",
+      "title": {
+        "en": "Extraction of iron",
+        "zhHant": "Extraction of iron"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-02-extraction-of-iron.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-02-extraction-of-iron.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-03-extraction-of-aluminium",
+      "title": {
+        "en": "Extraction of aluminium",
+        "zhHant": "Extraction of aluminium"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-03-extraction-of-aluminium.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-03-extraction-of-aluminium.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-04-reactivity-series-extraction-methods",
+      "title": {
+        "en": "Reactivity series extraction methods",
+        "zhHant": "Reactivity series extraction methods"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-04-reactivity-series-extraction-methods.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-04-reactivity-series-extraction-methods.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-05-extraction-reaction-equations",
+      "title": {
+        "en": "Extraction reaction equations",
+        "zhHant": "Extraction reaction equations"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-05-extraction-reaction-equations.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-05-extraction-reaction-equations.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-06-reaction-with-oxygen",
+      "title": {
+        "en": "Reaction with oxygen",
+        "zhHant": "Reaction with oxygen"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-06-reaction-with-oxygen.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-06-reaction-with-oxygen.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-07-reaction-with-water-steam",
+      "title": {
+        "en": "Reaction with water steam",
+        "zhHant": "Reaction with water steam"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-07-reaction-with-water-steam.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-07-reaction-with-water-steam.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-08-reaction-acids-displacement-appearance",
+      "title": {
+        "en": "Reaction acids displacement appearance",
+        "zhHant": "Reaction acids displacement appearance"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-08-reaction-acids-displacement-appearance.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-08-reaction-acids-displacement-appearance.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-09-ionic-equation-steps",
+      "title": {
+        "en": "Ionic equation steps",
+        "zhHant": "Ionic equation steps"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-09-ionic-equation-steps.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-09-ionic-equation-steps.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-10-mole-calculation-empirical-formula",
+      "title": {
+        "en": "Mole calculation empirical formula",
+        "zhHant": "Mole calculation empirical formula"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-10-mole-calculation-empirical-formula.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-10-mole-calculation-empirical-formula.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-11-molecular-formula-percentage-yield",
+      "title": {
+        "en": "Molecular formula percentage yield",
+        "zhHant": "Molecular formula percentage yield"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-11-molecular-formula-percentage-yield.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-11-molecular-formula-percentage-yield.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-12-chemistry-of-rusting",
+      "title": {
+        "en": "Chemistry of rusting",
+        "zhHant": "Chemistry of rusting"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-12-chemistry-of-rusting.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-12-chemistry-of-rusting.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-13-rust-prevention-methods",
+      "title": {
+        "en": "Rust prevention methods",
+        "zhHant": "Rust prevention methods"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-13-rust-prevention-methods.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-13-rust-prevention-methods.webp"
+      },
+      "pdfs": null
+    },
+    {
+      "summaryId": "metals-14-aluminium-corrosion-resistance",
+      "title": {
+        "en": "Aluminium corrosion resistance",
+        "zhHant": "Aluminium corrosion resistance"
+      },
+      "images": {
+        "en": "content-packs/ch3-metals/summaries/metals-14-aluminium-corrosion-resistance.webp",
+        "zhHant": "content-packs/ch3-metals/summaries/metals-14-aluminium-corrosion-resistance.webp"
+      },
+      "pdfs": null
+    }
+  ]
+}

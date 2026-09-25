@@ -1,0 +1,47 @@
+{
+  "packId": "chem-ch10-chemical-equilibrium-v1",
+  "subject": "CHEM",
+  "chapter": "CH10 Chemical Equilibrium",
+  "chapterCode": "CH10",
+  "scope": "equilibrium",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Chemical Equilibrium",
+    "zhHant": "化學平衡"
+  },
+  "order": 10,
+  "notes": [
+    {
+      "topicCode": "TOPIC10",
+      "title": {
+        "en": "Chemical Equilibrium",
+        "zhHant": "化學平衡"
+      },
+      "files": {
+        "en": "content-packs/ch10-chemical-equilibrium/notes/topic-10-chemical-equilibrium.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "chemical-equilibrium",
+      "path": "content-packs/ch10-chemical-equilibrium/tools/chemical-equilibrium",
+      "title": {
+        "en": "Eqm3_Le Châtelier's Principle_(Chemical Equilibrium Lab)",
+        "zhHant": "Eqm3_Le Châtelier's Principle_(化學平衡實驗室)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "equilibrium-flashcards-en",
+      "path": "content-packs/ch10-chemical-equilibrium/tools/equilibrium-flashcards-en",
+      "title": {
+        "en": "Chemical Equilibrium flashcards",
+        "zhHant": "化學平衡 閃卡"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": []
+}
