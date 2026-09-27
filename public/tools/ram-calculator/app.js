@@ -87,6 +87,14 @@
       zoomAnswer: "Answer",
       zoomBar: "Bar",
       zoomSteps: "Steps",
+      toolLaser: "Laser pointer",
+      toolPen: "Pen",
+      toolRed: "Red",
+      toolBlue: "Blue",
+      toolGreen: "Green",
+      toolBlack: "Black",
+      toolErase: "Eraser",
+      toolClear: "Clear writing",
       readQuestion: "Read what is given",
       stepProgress: "Step {n} of 3",
       gapLabel: "Still {n}% short of 100%",
@@ -226,6 +234,14 @@
       zoomAnswer: "答案",
       zoomBar: "百分條",
       zoomSteps: "步驟",
+      toolLaser: "雷射筆",
+      toolPen: "畫筆",
+      toolRed: "紅",
+      toolBlue: "藍",
+      toolGreen: "綠",
+      toolBlack: "黑",
+      toolErase: "橡皮擦",
+      toolClear: "清除筆跡",
       readQuestion: "先讀已知條件",
       stepProgress: "第 {n} 步，共 3 步",
       gapLabel: "還差 {n}% 才到 100%",
@@ -1752,6 +1768,164 @@
     lastFocusedElement?.focus?.();
   }
 
+  function setupTeachTools() {
+    const canvas = $("penCanvas");
+    const penCtx = canvas.getContext("2d");
+    const laserDot = $("laserDot");
+    const laserCanvas = document.createElement("canvas");
+    laserCanvas.className = "laser-canvas";
+    document.body.appendChild(laserCanvas);
+    const lctx = laserCanvas.getContext("2d");
+    let laserOn = false;
+    let penOn = false;
+    let drawing = false;
+    let erasing = false;
+    let penColor = "#e11d48";
+    let lastPt = null;
+    let laserPts = [];
+    let laserRAF = null;
+    const LASER_LIFE = 1600;
+
+    function fitPen() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      if (canvas._w === w && canvas._h === h) return;
+      canvas._w = w;
+      canvas._h = h;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+      penCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      penCtx.lineCap = "round";
+      penCtx.lineJoin = "round";
+    }
+
+    function syncLaserCanvas() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      const cw = Math.round(w * dpr);
+      const ch = Math.round(h * dpr);
+      if (laserCanvas.width === cw && laserCanvas.height === ch) return;
+      laserCanvas.width = cw;
+      laserCanvas.height = ch;
+      laserCanvas.style.width = `${w}px`;
+      laserCanvas.style.height = `${h}px`;
+      lctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      lctx.lineCap = "round";
+      lctx.lineJoin = "round";
+    }
+
+    function drawLaserTrail() {
+      syncLaserCanvas();
+      const now = performance.now();
+      laserPts = laserPts.filter(point => now - point.t < LASER_LIFE);
+      lctx.clearRect(0, 0, laserCanvas.width, laserCanvas.height);
+      for (let i = 1; i < laserPts.length; i += 1) {
+        const a = laserPts[i - 1];
+        const b = laserPts[i];
+        const alpha = Math.max(0, 1 - (now - b.t) / LASER_LIFE);
+        lctx.strokeStyle = `rgba(255,42,42,${(0.6 * alpha).toFixed(3)})`;
+        lctx.lineWidth = 3 + 5 * alpha;
+        lctx.beginPath();
+        lctx.moveTo(a.x, a.y);
+        lctx.lineTo(b.x, b.y);
+        lctx.stroke();
+      }
+      if (laserOn || laserPts.length > 1) laserRAF = requestAnimationFrame(drawLaserTrail);
+      else {
+        lctx.clearRect(0, 0, laserCanvas.width, laserCanvas.height);
+        laserRAF = null;
+      }
+    }
+
+    function setLaser(on) {
+      laserOn = on;
+      if (on) setPen(false);
+      document.body.classList.toggle("laser-on", on);
+      laserDot.classList.toggle("hidden", !on);
+      $("dkLaser").classList.toggle("active", on);
+      if (on) {
+        syncLaserCanvas();
+        if (!laserRAF) laserRAF = requestAnimationFrame(drawLaserTrail);
+      }
+    }
+
+    function setPen(on) {
+      penOn = on;
+      if (on) setLaser(false);
+      document.body.classList.toggle("pen-on", on);
+      canvas.style.pointerEvents = on ? "auto" : "none";
+      $("dkPen").classList.toggle("active", on);
+      $("dkColors").classList.toggle("hidden", !on);
+    }
+
+    document.addEventListener("mousemove", event => {
+      if (!laserOn) return;
+      laserDot.style.left = `${event.clientX}px`;
+      laserDot.style.top = `${event.clientY}px`;
+      laserPts.push({ x: event.clientX, y: event.clientY, t: performance.now() });
+      if (laserPts.length > 600) laserPts.shift();
+    });
+
+    const pointOf = event => {
+      const touch = event.touches ? event.touches[0] : event;
+      return { x: touch.clientX, y: touch.clientY };
+    };
+    function penStart(event) {
+      if (!penOn) return;
+      drawing = true;
+      lastPt = pointOf(event);
+      event.preventDefault();
+    }
+    function penMove(event) {
+      if (!penOn || !drawing) return;
+      const point = pointOf(event);
+      penCtx.globalCompositeOperation = erasing ? "destination-out" : "source-over";
+      penCtx.strokeStyle = penColor;
+      penCtx.lineWidth = erasing ? 26 : 3.6;
+      penCtx.beginPath();
+      penCtx.moveTo(lastPt.x, lastPt.y);
+      penCtx.lineTo(point.x, point.y);
+      penCtx.stroke();
+      lastPt = point;
+      event.preventDefault();
+    }
+    function penEnd() { drawing = false; }
+
+    canvas.addEventListener("mousedown", penStart);
+    canvas.addEventListener("mousemove", penMove);
+    window.addEventListener("mouseup", penEnd);
+    canvas.addEventListener("touchstart", penStart, { passive: false });
+    canvas.addEventListener("touchmove", penMove, { passive: false });
+    window.addEventListener("touchend", penEnd);
+
+    $("dkLaser").addEventListener("click", () => setLaser(!laserOn));
+    $("dkPen").addEventListener("click", () => setPen(!penOn));
+    $("dkClear").addEventListener("click", () => penCtx.clearRect(0, 0, canvas.width, canvas.height));
+    $("dkErase").addEventListener("click", () => {
+      erasing = !erasing;
+      $("dkErase").classList.toggle("active", erasing);
+      if (erasing && !penOn) setPen(true);
+    });
+    document.querySelectorAll(".dcolor").forEach(button => {
+      button.addEventListener("click", () => {
+        penColor = button.dataset.c;
+        erasing = false;
+        $("dkErase").classList.remove("active");
+        document.querySelectorAll(".dcolor").forEach(item => item.classList.toggle("active", item === button));
+        if (!penOn) setPen(true);
+      });
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") { setLaser(false); setPen(false); }
+    });
+    window.addEventListener("resize", fitPen);
+    fitPen();
+  }
+
   function updateTranslations() {
     document.documentElement.lang = state.lang === "zh" ? "zh-Hant" : "en";
     document.querySelectorAll("[data-i18n]").forEach(node => {
@@ -1761,7 +1935,9 @@
       node.placeholder = t(node.dataset.i18nPlaceholder);
     });
     document.querySelectorAll("[data-i18n-aria]").forEach(node => {
-      node.setAttribute("aria-label", t(node.dataset.i18nAria));
+      const label = t(node.dataset.i18nAria);
+      node.setAttribute("aria-label", label);
+      node.title = label;
     });
     document.querySelectorAll("[data-lang]").forEach(button => {
       button.classList.toggle("active", button.dataset.lang === state.lang);
@@ -1953,6 +2129,7 @@
     snMassExample
   });
 
+  setupTeachTools();
   updateTranslations();
   if (window.matchMedia("(max-width: 1100px)").matches) {
     document.querySelector(".lab-body").classList.add("controls-hidden");
