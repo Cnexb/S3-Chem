@@ -52,7 +52,3 @@ The periodic table, ion engine, and equation balancer are still the hub site on 
 | Topic codes / year | `content/topics/chem-topics.json` |
 
 Cursor follows `.cursor/rules/chem-content-packs.mdc`.
-
-```bash
-npm test
-```
