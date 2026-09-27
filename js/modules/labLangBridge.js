@@ -47,6 +47,10 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/covalent-properties-sandbox/index.html?v=20260703sandbox23",
     titleKey: "lab.sandboxName",
   },
+  "migration-of-coloured-ions": {
+    path: "public/tools/migration-of-coloured-ions/index.html",
+    titleKey: "lab.migrationIonsName",
+  },
   "titration-lab": {
     path: "public/tools/titration-lab/index.html",
     titleKey: "lab.titrationName",
