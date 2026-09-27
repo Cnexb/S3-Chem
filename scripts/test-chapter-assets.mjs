@@ -15,7 +15,7 @@ const directories = fs
   .map((entry) => entry.name)
   .toSorted();
 
-assert.equal(directories.length, 15);
+assert.equal(directories.length, 9);
 
 const scopes = new Set();
 const slugs = new Set();
@@ -28,9 +28,11 @@ for (const directory of directories) {
   assert.equal(typeof manifest.scope, "string");
   assert.equal(scopes.has(manifest.scope), false, manifest.scope);
   scopes.add(manifest.scope);
-  assert.ok(Array.isArray(manifest.notes) && manifest.notes.length > 0);
+  const noteCount = manifest.notes?.length ?? 0;
+  const summaryCount = manifest.summaries?.length ?? 0;
+  assert.ok(noteCount > 0 || summaryCount > 0, directory);
 
-  for (const note of manifest.notes) {
+  for (const note of manifest.notes ?? []) {
     assert.equal(fs.existsSync(path.join(repoRoot, note.files.en)), true, note.files.en);
   }
 
@@ -48,7 +50,7 @@ for (const directory of directories) {
   }
 }
 
-assert.equal(scopes.size, 15);
+assert.equal(scopes.size, 9);
 assert.ok(slugs.has("bunsen"));
 assert.ok(slugs.has("s3-mc"));
 assert.ok(slugs.has("atom-builder"));

@@ -1,0 +1,46 @@
+{
+  "packId": "chem-03-ocean-v1",
+  "subject": "CHEM",
+  "chapter": "03 Ocean",
+  "chapterCode": "03",
+  "scope": "03-ocean",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Ocean",
+    "zhHant": "海洋"
+  },
+  "order": 3,
+  "notes": [
+    {
+      "topicCode": "Earth3",
+      "title": {
+        "en": "Ocean",
+        "zhHant": "海洋"
+      },
+      "files": {
+        "en": "content-packs/03-ocean/notes/topic-01-planet-earth.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "gas-prep",
+      "path": "content-packs/03-ocean/tools/gas-prep",
+      "title": {
+        "en": "Earth3B_Chemical tests and electrolysis_(Gas preparation and collection)",
+        "zhHant": "Earth3B_Chemical tests and electrolysis_(氣體製備同收集)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "sucking-back",
+      "path": "content-packs/03-ocean/tools/sucking-back",
+      "title": {
+        "en": "Earth3B_Chemical tests and electrolysis_(Prevent sucking back)",
+        "zhHant": "Earth3B_Chemical tests and electrolysis_(防止倒吸)"
+      },
+      "query": "embed=1"
+    }
+  ]
+}

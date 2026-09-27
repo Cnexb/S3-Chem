@@ -11,21 +11,21 @@ Uni+ Learning Tools reads **only** `content-packs/` through content-api. A pack 
 
 Do **not** nest packs in `S3/` or any year folder. Do **not** add teaching files under `public/`, `dist/`, `js/`, or `index.html` (old hub).
 
-## Folder shape (one textbook chapter = one pack)
+## Folder shape (one topic-list chapter = one pack)
 
 ```
-content-packs/ch1-planet-earth/
+content-packs/01-fundamentals-of-chemistry/
   manifest.json
   notes/*.pdf
   tools/<slug>/index.html
   summaries/
 ```
 
-Chapters run from `ch1-planet-earth` through `ch15-analytical-chemistry`. Keep each textbook chapter as one pack.
+Chapters run from `01-fundamentals-of-chemistry` through `65-analytical-chemistry-in-society`, one folder per Chem topic-list chapter.
 
 ## New chapter
 
-1. Copy an existing pack folder. Rename it (`ch16-…`).
+1. Copy an existing pack folder. Rename it from the topic-list chapter number and name (`66-…`).
 2. In `manifest.json`: `subject` `"CHEM"`, unique lowercase `scope`, `chapterCode`, `published: true`.
 3. List every note, tool, quiz, summary, and flashcard page. Unlisted files are invisible.
 

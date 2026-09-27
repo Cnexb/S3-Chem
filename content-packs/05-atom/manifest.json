@@ -1,0 +1,145 @@
+{
+  "packId": "chem-05-atom-v1",
+  "subject": "CHEM",
+  "chapter": "05 Atom",
+  "chapterCode": "05",
+  "scope": "05-atom",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Atom",
+    "zhHant": "原子"
+  },
+  "order": 5,
+  "notes": [
+    {
+      "topicCode": "TOPIC02",
+      "title": {
+        "en": "Microscopic World I",
+        "zhHant": "微觀世界 I"
+      },
+      "files": {
+        "en": "content-packs/05-atom/notes/topic-02-microscopic-world-i.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "atom-builder",
+      "path": "content-packs/05-atom/tools/atom-builder",
+      "title": {
+        "en": "MWI1A_Atomic structure_(Atom Builder)",
+        "zhHant": "MWI1A_Atomic structure_(原子建造器)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "ram-calculator",
+      "path": "content-packs/05-atom/tools/ram-calculator",
+      "title": {
+        "en": "MWI1B_Isotope_(Relative Atomic Mass Laboratory)",
+        "zhHant": "MWI1B_Isotope_(相對原子質量實驗室)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "atom-ninja",
+      "path": "content-packs/05-atom/tools/atom-ninja",
+      "title": {
+        "en": "MWI1A_Atomic structure_(Atom Ninja)",
+        "zhHant": "MWI1A_Atomic structure_(原子忍者)"
+      },
+      "query": "embed=1",
+      "section": "games"
+    },
+    {
+      "slug": "microscopic-world-i",
+      "path": "content-packs/05-atom/tools/microscopic-world-i",
+      "title": {
+        "en": "Microscopic World I quiz",
+        "zhHant": "微觀世界 I 測驗"
+      },
+      "query": "embed=1",
+      "section": "quizzes"
+    },
+    {
+      "slug": "mwi-exercise",
+      "path": "content-packs/05-atom/tools/mwi-exercise",
+      "title": {
+        "en": "Microscopic World I exercise",
+        "zhHant": "微觀世界 I 練習"
+      },
+      "query": "embed=1",
+      "section": "quizzes"
+    },
+    {
+      "slug": "mwi-worksheet",
+      "path": "content-packs/05-atom/tools/mwi-worksheet",
+      "title": {
+        "en": "Microscopic World I worksheet",
+        "zhHant": "微觀世界 I 工作紙"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "atomic-structure-worksheet",
+      "path": "content-packs/05-atom/tools/atomic-structure-worksheet",
+      "title": {
+        "en": "Atomic structure worksheet",
+        "zhHant": "原子結構工作紙"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "isotope-ram",
+      "path": "content-packs/05-atom/tools/isotope-ram",
+      "title": {
+        "en": "Isotope and relative atomic mass worksheet",
+        "zhHant": "同位素與相對原子質量工作紙"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "mwi-flashcards-en",
+      "path": "content-packs/05-atom/tools/mwi-flashcards-en",
+      "title": {
+        "en": "Microscopic World I flashcards",
+        "zhHant": "微觀世界 I 閃卡"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "mwi-flashcards-zh",
+      "path": "content-packs/05-atom/tools/mwi-flashcards-zh",
+      "title": {
+        "en": "Microscopic World I flashcards (繁體)",
+        "zhHant": "微觀世界 I 閃卡"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": [
+    {
+      "summaryId": "microscopic-world-i-01-elements-and-isotopes",
+      "title": {
+        "en": "Elements and isotopes",
+        "zhHant": "Elements and isotopes"
+      },
+      "images": {
+        "en": "content-packs/05-atom/summaries/microscopic-world-i-01-elements-and-isotopes.webp",
+        "zhHant": "content-packs/05-atom/summaries/microscopic-world-i-01-elements-and-isotopes.webp"
+      }
+    },
+    {
+      "summaryId": "microscopic-world-i-02-isotopic-mass-calculations",
+      "title": {
+        "en": "Isotopic mass calculations",
+        "zhHant": "Isotopic mass calculations"
+      },
+      "images": {
+        "en": "content-packs/05-atom/summaries/microscopic-world-i-02-isotopic-mass-calculations.webp",
+        "zhHant": "content-packs/05-atom/summaries/microscopic-world-i-02-isotopic-mass-calculations.webp"
+      }
+    }
+  ]
+}

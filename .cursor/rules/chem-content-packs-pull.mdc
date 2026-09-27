@@ -1,0 +1,20 @@
+---
+description: Pull feat/content-packs before editing so this machine matches origin
+alwaysApply: true
+---
+
+# Stay on the latest content-pack commit
+
+Content-pack work is the branch `feat/content-packs`. Before reading or editing files in this repo, update the local checkout so it matches origin.
+
+1. Run `git status -sb`. Stay on `feat/content-packs`. Do not switch branches unless asked.
+2. When the working tree is clean, run `git pull`.
+3. When the working tree has local changes, do not discard them. Pull only if those changes will be kept. If the pull would conflict, stop and report it.
+4. Continue the task only after this checkout is the latest `origin/feat/content-packs` commit, or after you have reported why the pull did not finish.
+
+```bash
+git status -sb
+git pull
+```
+
+Do not use `git reset --hard`, `git checkout --`, or a force push to make the folder look up to date.

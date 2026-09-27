@@ -1,0 +1,50 @@
+{
+  "packId": "chem-08-covalent-bond-v1",
+  "subject": "CHEM",
+  "chapter": "08 Covalent bond",
+  "chapterCode": "08",
+  "scope": "08-covalent-bond",
+  "source": "Chapter pack copies of the Chem hub public/ notes, labs, quizzes, summaries, and flashcards.",
+  "published": true,
+  "title": {
+    "en": "Covalent bond",
+    "zhHant": "共價鍵"
+  },
+  "order": 8,
+  "notes": [
+    {
+      "topicCode": "MWI4",
+      "title": {
+        "en": "Covalent bond",
+        "zhHant": "共價鍵"
+      },
+      "files": {
+        "en": "content-packs/08-covalent-bond/notes/topic-02-microscopic-world-i.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "covalent-bond",
+      "path": "content-packs/08-covalent-bond/tools/covalent-bond",
+      "title": {
+        "en": "MWI4A_Covalent bond electron diagram_(Covalent)",
+        "zhHant": "MWI4A_Covalent bond electron diagram_(共價)"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "summaries": [
+    {
+      "summaryId": "microscopic-world-i-06-chemical-bonds",
+      "title": {
+        "en": "Chemical bonds",
+        "zhHant": "Chemical bonds"
+      },
+      "images": {
+        "en": "content-packs/08-covalent-bond/summaries/microscopic-world-i-06-chemical-bonds.webp",
+        "zhHant": "content-packs/08-covalent-bond/summaries/microscopic-world-i-06-chemical-bonds.webp"
+      }
+    }
+  ]
+}
