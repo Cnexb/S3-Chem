@@ -669,7 +669,7 @@ export function initQuiz() {
               attemptNumber: (state.wrong || 0) + 1,
               msTaken: Date.now() - _startTime
             }, '*');
-          } catch (_) {}
+          } catch (_) { /* ignore postMessage errors */ }
           fb.className = "mt-3 text-body-sm p-3 rounded-xl bg-secondary/10 text-secondary font-label-bold";
           fb.textContent = t("correct");
           btn.disabled = true;
@@ -710,7 +710,7 @@ export function initQuiz() {
             attemptNumber: state.wrong,
             msTaken: Date.now() - _startTime
           }, '*');
-        } catch (_) {}
+        } catch (_) { /* ignore postMessage errors */ }
 
         if (fmt !== "fill") {
           const wrongBtn = optionButtons.find((b) => b.dataset.key === state.selected);
