@@ -12,6 +12,7 @@
     "check": "npm run lint && npm run check:syntax && npm run build",
     "smoke": "playwright test",
     "build": "node scripts/generate-elements-data.mjs && vite build && node scripts/copy-chapter-assets.mjs",
+    "build:develop": "node scripts/generate-elements-data.mjs && vite build --mode develop && node scripts/copy-chapter-assets.mjs",
     "preview": "vite preview",
     "generate:elements": "node scripts/generate-elements-data.mjs",
     "extract:microscopic": "node scripts/extract-microscopic-questions.mjs",
