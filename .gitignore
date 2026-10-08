@@ -16,3 +16,8 @@ _extract_chem/
 # Worksheet build scratch
 scripts/**/_tmp_media/
 scripts/**/_tmp_*/
+
+# Env files (keep .env.example tracked)
+.env
+.env.local
+.env.*.local
