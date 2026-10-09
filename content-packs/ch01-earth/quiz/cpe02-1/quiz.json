@@ -1,0 +1,390 @@
+{
+  "quizId": "chem-cpe02-1",
+  "topicCode": "CPE02.1",
+  "symbol": "Earth2A",
+  "title": {
+    "en": "CPE02.1 Matters",
+    "zhHant": "CPE02.1 物質"
+  },
+  "items": [
+    {
+      "id": "CPE02.1-1",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following substances is a mixture?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diamond"
+        },
+        {
+          "key": "B",
+          "text": "Dry ice"
+        },
+        {
+          "key": "C",
+          "text": "Distilled water"
+        },
+        {
+          "key": "D",
+          "text": "Soda water"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE02.1-2",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following substances is a pure substance?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Beer"
+        },
+        {
+          "key": "B",
+          "text": "Brass"
+        },
+        {
+          "key": "C",
+          "text": "Distilled water"
+        },
+        {
+          "key": "D",
+          "text": "Pond water"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE02.1-3",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following is an element?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Air"
+        },
+        {
+          "key": "B",
+          "text": "Distilled water"
+        },
+        {
+          "key": "C",
+          "text": "Sodium"
+        },
+        {
+          "key": "D",
+          "text": "Sodium chloride"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE02.1-4",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following diagrams can represent a compound formed from two elements?\n(In these diagrams ● and ○ represent an oxygen atom and a hydrogen atom respectively.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diagram A"
+        },
+        {
+          "key": "B",
+          "text": "Diagram B"
+        },
+        {
+          "key": "C",
+          "text": "Diagram C"
+        },
+        {
+          "key": "D",
+          "text": "Diagram D"
+        }
+      ],
+      "answer": "D",
+      "image": {
+        "src": "assets/earth2ab-1.png",
+        "alt": "Option diagrams A–D",
+        "caption": "Option diagrams A–D"
+      }
+    },
+    {
+      "id": "CPE02.1-5",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about elements is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "There are thousands of elements on Earth."
+        },
+        {
+          "key": "B",
+          "text": "Compounds can join together chemically to form elements."
+        },
+        {
+          "key": "C",
+          "text": "Elements cannot be broken down into anything simpler by chemical methods."
+        },
+        {
+          "key": "D",
+          "text": "Water is an element."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE02.1-6",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about compounds is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sugar is a compound."
+        },
+        {
+          "key": "B",
+          "text": "All compounds occur naturally in pure state."
+        },
+        {
+          "key": "C",
+          "text": "Compounds have chemical properties similar to those of their constituent elements."
+        },
+        {
+          "key": "D",
+          "text": "Compounds can only be separated into its constituents by physical methods."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE02.1-7",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following diagrams can represent a mixture of two elements?\n(In these diagrams ● and ○ represent a nitrogen atom and an oxygen atom respectively.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diagram A"
+        },
+        {
+          "key": "B",
+          "text": "Diagram B"
+        },
+        {
+          "key": "C",
+          "text": "Diagram C"
+        },
+        {
+          "key": "D",
+          "text": "Diagram D"
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/earth2ab-4.png",
+        "alt": "Option diagrams A–D",
+        "caption": "Option diagrams A–D"
+      }
+    },
+    {
+      "id": "CPE02.1-8",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Applied",
+      "stem": "Upon heating, a mixture of iron and sulphur gives a dark brown substance. Which of the following\nstatements about the substance is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is soluble in water."
+        },
+        {
+          "key": "B",
+          "text": "It is attracted to a magnet."
+        },
+        {
+          "key": "C",
+          "text": "It reacts with dilute hydrochloric acid to give a gas with a bad egg smell."
+        },
+        {
+          "key": "D",
+          "text": "It can be separated into iron and sulphur by simple physical methods."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE02.1-9",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following comparisons between ironII) sulphide and a mixture of iron and sulphur is\ncorrect?\nIron(II) sulphide",
+      "options": [
+        {
+          "key": "A",
+          "text": "mixture of iron and sulphur elements in it have a fixed ratio only iron is attracted to magnet has a sharp melting point constituents can be separated by physical methods"
+        },
+        {
+          "key": "B",
+          "text": "attracted to magnet"
+        },
+        {
+          "key": "C",
+          "text": "does not have a sharp melting point"
+        },
+        {
+          "key": "D",
+          "text": "constituents can be separated by chemical methods"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE02.1-10",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following substances has a sharp boiling point?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Liquid air"
+        },
+        {
+          "key": "B",
+          "text": "Molten copper"
+        },
+        {
+          "key": "C",
+          "text": "Red wine"
+        },
+        {
+          "key": "D",
+          "text": "Soft drink"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE02.1-11",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about pure water are correct?\n(1) It has a sharp boiling point.\n(2) It is formed from elements.\n(3) It can be broken down into something simpler by physical methods.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE02.1-12",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Applied",
+      "stem": "In which of the following substances are the particles furthest apart from each other at room\ntemperature and pressure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Nitrogen"
+        },
+        {
+          "key": "B",
+          "text": "Calcium carbonate"
+        },
+        {
+          "key": "C",
+          "text": "Sodium chloride"
+        },
+        {
+          "key": "D",
+          "text": "Water"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE02.1-13",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Applied",
+      "stem": "In a certain experiment, a student placed a piece of potassium permanganate crystal in a beaker of water\nas shown below.\n• water\n- potassium permanganate\ncrystal\nWhich of the following statements about the experiment is / are correct?\n(1) A yellow colour spread in the beaker.\n(2) The potassium permanganate particles mixed with the water particles.\n(3) A chemical change occurred.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE02.1-14",
+      "topic": "CPE02",
+      "section": "CPE02.1",
+      "difficulty": "Applied",
+      "stem": "In a certain experiment, a student placed a jar of air upside down on top of another jar containing\nbromine vapour as shown below.\nWhich of the following statements about the experiment is / are correct?\n(1) Bromine particles mix with the air particles.\n(2) The jar containing bromine vapour will darken.\n(3) The mixing process is called particle theory.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/earth2ac-7.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    }
+  ]
+}

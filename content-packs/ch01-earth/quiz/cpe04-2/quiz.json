@@ -1,0 +1,286 @@
+{
+  "quizId": "chem-cpe04-2",
+  "topicCode": "CPE04.2",
+  "symbol": "Earth4B",
+  "title": {
+    "en": "CPE04.2 Lime Cycle",
+    "zhHant": "CPE04.2 石灰循環"
+  },
+  "items": [
+    {
+      "id": "CPE04.2-1",
+      "topic": "CPE04",
+      "section": "CPE04.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following combinations is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Substance: limestone; Main compound: calcium carbonate"
+        },
+        {
+          "key": "B",
+          "text": "Substance: quicklime; Main compound: calcium oxide"
+        },
+        {
+          "key": "C",
+          "text": "Substance: slaked lime; Main compound: calcium hydroxide"
+        },
+        {
+          "key": "D",
+          "text": "Substance: limewater; Main compound: calcium hydrogencarbonate"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE04.2-2",
+      "topic": "CPE04",
+      "section": "CPE04.2",
+      "difficulty": "Foundation",
+      "stem": "35. The diagram shows a kiln used to heat limestone.\nWhat is the following combinations about the product and waste gas is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Product: quicklime; Waste gas: carbon monoxide"
+        },
+        {
+          "key": "B",
+          "text": "Product: quicklime; Waste gas: carbon dioxide"
+        },
+        {
+          "key": "C",
+          "text": "Product: slaked lime; Waste gas: carbon dioxide"
+        },
+        {
+          "key": "D",
+          "text": "Product: slaked lime; Waste gas: carbon monoxide"
+        }
+      ],
+      "answer": "B",
+      "image": {
+        "src": "assets/earth4ba-2.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE04.2-3",
+      "topic": "CPE04",
+      "section": "CPE04.2",
+      "difficulty": "Foundation",
+      "stem": "Carbon dioxide turns limewater milky due to the formation of",
+      "options": [
+        {
+          "key": "A",
+          "text": "calcium carbonate"
+        },
+        {
+          "key": "B",
+          "text": "calcium hydrogencarbonate"
+        },
+        {
+          "key": "C",
+          "text": "calcium hydroxide"
+        },
+        {
+          "key": "D",
+          "text": "calcium oxide"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE04.2-4",
+      "topic": "CPE04",
+      "section": "CPE04.2",
+      "difficulty": "Standard",
+      "stem": "What would be observed when water is added to solid calcium oxide?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Effervescence occurs."
+        },
+        {
+          "key": "B",
+          "text": "Solid calcium oxide falls apart."
+        },
+        {
+          "key": "C",
+          "text": "Solid calcium oxide becomes pink in colour."
+        },
+        {
+          "key": "D",
+          "text": "There is no observable change."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE04.2-5",
+      "topic": "CPE04",
+      "section": "CPE04.2",
+      "difficulty": "Standard",
+      "stem": "When calcium carbonate is strongly heated, a solid is obtained. Which of the following statements\nabout the solid is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is black in colour."
+        },
+        {
+          "key": "B",
+          "text": "It reacts with water to give slaked lime."
+        },
+        {
+          "key": "C",
+          "text": "It is calcium hydroxide."
+        },
+        {
+          "key": "D",
+          "text": "It is an element."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE04.2-6",
+      "topic": "CPE04",
+      "section": "CPE04.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements are correct?\n(1) Calcite is composed of calcium carbonate.\n(2) Strong heating of calcium carbonate gives a white solid.\n(3) Saturated calcium hydroxide solution can be used to test for carbon dioxide",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE04.2-7",
+      "topic": "CPE04",
+      "section": "CPE04.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about the products formed from heating limestone are true?\n(1) The gas evolved turns limewater milky.\n(2) Slaked lime is formed.\n(3) The solid product gives a brick-red flame in flame test.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE04.2-8",
+      "topic": "CPE04",
+      "section": "CPE04.2",
+      "difficulty": "Applied",
+      "stem": "What could gas X and solid Y be?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X: carbon dioxide; Y: calcium carbonate"
+        },
+        {
+          "key": "B",
+          "text": "X: oxygen; Y: calcium carbonate"
+        },
+        {
+          "key": "C",
+          "text": "X: carbon dioxide; Y: calcium oxide"
+        },
+        {
+          "key": "D",
+          "text": "X: hydrogen; Y: calcium oxide"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/earth4bc-1.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE04.2-9",
+      "topic": "CPE04",
+      "section": "CPE04.2",
+      "difficulty": "Applied",
+      "stem": "Limestone is heated strongly for about 15 minutes in an experiment.\nWhich of the following statements about the experiment are correct?\n(1) Effervescence occurs.\n(2) A white solid remains in the test tube after heating.\n(3) The limewater turns milky.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/earth4bc-2.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE04.2-10",
+      "topic": "CPE04",
+      "section": "CPE04.2",
+      "difficulty": "Applied",
+      "stem": "Which of the following explain(s) why rainwater can erode limestone?\n(1) Limestone is soluble in water.\n(2) Carbon dioxide in air dissolves in rainwater to form carbonic acid which dissolves\nlimestone.\n(3) Limestone reacts with water to form soluble calcium hydroxide.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    }
+  ]
+}

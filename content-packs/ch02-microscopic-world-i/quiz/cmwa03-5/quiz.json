@@ -1,0 +1,255 @@
+{
+  "quizId": "chem-cmwa03-5",
+  "topicCode": "CMWA03.5",
+  "symbol": "MWI3E",
+  "title": {
+    "en": "CMWA03.5 Color Of Ions",
+    "zhHant": "CMWA03.5 離子的顏色"
+  },
+  "items": [
+    {
+      "id": "CMWA03.5-1",
+      "topic": "CMWA03",
+      "section": "CMWA03.5",
+      "difficulty": "Foundation",
+      "stem": "Which of the following combinations about the colours of ions in aqueous solution is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "lons: copper(II) ion; Colour: reddish brown"
+        },
+        {
+          "key": "B",
+          "text": "lons: cobalt(II) ion; Colour: pink"
+        },
+        {
+          "key": "C",
+          "text": "lons: dichromate ion; Colour: orange"
+        },
+        {
+          "key": "D",
+          "text": "lons: permanganate ion; Colour: purple"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.5-2",
+      "topic": "CMWA03",
+      "section": "CMWA03.5",
+      "difficulty": "Foundation",
+      "stem": "41. coloured crystal moistened filter paper microscope slide 20 V d.c. power supply A colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be A chromium(I) sulphate. B iron(III) chloride. C potassium permanganate. D sodium sulphate.\nA colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be",
+      "options": [
+        {
+          "key": "A",
+          "text": "chromium(III) sulphate."
+        },
+        {
+          "key": "B",
+          "text": "iron(III) chloride."
+        },
+        {
+          "key": "C",
+          "text": "potassium permanganate."
+        },
+        {
+          "key": "D",
+          "text": "sodium sulphate."
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/mw3ea-2.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA03.5-3",
+      "topic": "CMWA03",
+      "section": "CMWA03.5",
+      "difficulty": "Foundation",
+      "stem": "The power supply in the following set-up is connected for about 30 minutes.\nWhich of the following statements about the set-up is / are correct?\n(1) A purple colour develops near electrode X.\n(2) A blue colour develops near electrode Y.\n(3) Sulphate ions move towards electrode Y.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B",
+      "image": {
+        "src": "assets/mw3ea-3.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA03.5-4",
+      "topic": "CMWA03",
+      "section": "CMWA03.5",
+      "difficulty": "Standard",
+      "stem": "The colour of an aqueous solution containing Cu²⁺ is",
+      "options": [
+        {
+          "key": "A",
+          "text": "blue."
+        },
+        {
+          "key": "B",
+          "text": "green."
+        },
+        {
+          "key": "C",
+          "text": "purple."
+        },
+        {
+          "key": "D",
+          "text": "colourless."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.5-5",
+      "topic": "CMWA03",
+      "section": "CMWA03.5",
+      "difficulty": "Standard",
+      "stem": "The colour of an aqueous solution containing Fe³⁺ is",
+      "options": [
+        {
+          "key": "A",
+          "text": "pale green."
+        },
+        {
+          "key": "B",
+          "text": "yellow."
+        },
+        {
+          "key": "C",
+          "text": "purple."
+        },
+        {
+          "key": "D",
+          "text": "blue."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.5-6",
+      "topic": "CMWA03",
+      "section": "CMWA03.5",
+      "difficulty": "Standard",
+      "stem": "In a migration of ions experiment, a blue colour moves towards the negative electrode. The ion responsible is",
+      "options": [
+        {
+          "key": "A",
+          "text": "Cu²⁺."
+        },
+        {
+          "key": "B",
+          "text": "SO₄²⁻."
+        },
+        {
+          "key": "C",
+          "text": "Cl⁻."
+        },
+        {
+          "key": "D",
+          "text": "OH⁻."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.5-7",
+      "topic": "CMWA03",
+      "section": "CMWA03.5",
+      "difficulty": "Applied",
+      "stem": "The table below shows the colour of the aqueous solutions of three ionic compounds.\nWhich of the following combinations about the colour of the ions is most likely to be correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W²⁺(aq): colourless; X²⁻(aq): colourless; Y²⁺(aq): colourless; Z²⁻(aq): colourless"
+        },
+        {
+          "key": "B",
+          "text": "W²⁺(aq): colourless; X²⁻(aq): yellow; Y²⁺(aq): purple; Z²⁻(aq): colourless"
+        },
+        {
+          "key": "C",
+          "text": "W²⁺(aq): yellow; X²⁻(aq): colourless; Y²⁺(aq): colourless; Z²⁻(aq): purple"
+        },
+        {
+          "key": "D",
+          "text": "W²⁺(aq): yellow; X²⁻(aq): yellow; Y²⁺(aq): purple; Z²⁻(aq): purple"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.5-8",
+      "topic": "CMWA03",
+      "section": "CMWA03.5",
+      "difficulty": "Applied",
+      "stem": "A purple aqueous solution of potassium permanganate is used in an ion-migration experiment. The purple colour moves towards the",
+      "options": [
+        {
+          "key": "A",
+          "text": "positive electrode, because MnO₄⁻ is negatively charged."
+        },
+        {
+          "key": "B",
+          "text": "negative electrode, because K⁺ is purple."
+        },
+        {
+          "key": "C",
+          "text": "negative electrode, because MnO₄⁻ is positively charged."
+        },
+        {
+          "key": "D",
+          "text": "neither electrode, because the compound is covalent."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.5-9",
+      "topic": "CMWA03",
+      "section": "CMWA03.5",
+      "difficulty": "Applied",
+      "stem": "Which combination about the colour of the aqueous ion is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Cu²⁺ — blue"
+        },
+        {
+          "key": "B",
+          "text": "Cr₂O₇²⁻ — orange"
+        },
+        {
+          "key": "C",
+          "text": "MnO₄⁻ — purple"
+        },
+        {
+          "key": "D",
+          "text": "Na⁺ — yellow"
+        }
+      ],
+      "answer": "D"
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "packId": "chem-ch01-earth-v1",
+  "subject": "CHEM",
+  "chapter": "CH01 Earth",
+  "chapterCode": "CH01",
+  "scope": "earth",
+  "source": "Chapter pack grouped from the Chem topic list Layer 1 chapters.",
+  "published": true,
+  "title": {
+    "en": "Earth",
+    "zhHant": "地球"
+  },
+  "order": 1,
+  "notes": [
+    {
+      "topicCode": "CPE01",
+      "title": {
+        "en": "Fundamentals of chemistry",
+        "zhHant": "化學基礎"
+      },
+      "files": {
+        "en": "content-packs/ch01-earth/notes/TOPIC01-topic-01-planet-earth.pdf"
+      }
+    },
+    {
+      "topicCode": "LABSAFETY",
+      "title": {
+        "en": "Laboratory safety",
+        "zhHant": "實驗室安全"
+      },
+      "files": {
+        "en": "content-packs/ch01-earth/notes/LABSAFETY-laboratory-safety.pdf"
+      }
+    },
+    {
+      "topicCode": "CPE02",
+      "title": {
+        "en": "Atmosphere",
+        "zhHant": "大氣"
+      },
+      "files": {
+        "en": "content-packs/ch01-earth/notes/Earth2-topic-01-planet-earth.pdf"
+      }
+    },
+    {
+      "topicCode": "CPE03",
+      "title": {
+        "en": "Ocean",
+        "zhHant": "海洋"
+      },
+      "files": {
+        "en": "content-packs/ch01-earth/notes/Earth3-topic-01-planet-earth.pdf"
+      }
+    },
+    {
+      "topicCode": "CPE04",
+      "title": {
+        "en": "Rocks",
+        "zhHant": "岩石和礦物"
+      },
+      "files": {
+        "en": "content-packs/ch01-earth/notes/Earth4-topic-01-planet-earth.pdf"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "bunsen",
+      "path": "content-packs/ch01-earth/tools/bunsen",
+      "title": {
+        "en": "Earth1B_Laboratory safety_(Lighting a Bunsen burner)",
+        "zhHant": "Earth1B_Laboratory safety_(本生燈點火)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "chem-lab-hq",
+      "path": "content-packs/ch01-earth/tools/chem-lab-hq",
+      "title": {
+        "en": "Earth1A_Laboratory apparatus_(Chem Lab HQ)",
+        "zhHant": "Earth1A_Laboratory apparatus_(Chem Lab HQ)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "lab-hazard-match",
+      "path": "content-packs/ch01-earth/tools/lab-hazard-match",
+      "title": {
+        "en": "Earth1A-B_Laboratory apparatus+Laboratory safety_(Lab & Hazard Match)",
+        "zhHant": "Earth1A-B_Laboratory apparatus+Laboratory safety_(實驗器皿與危險標示配對)"
+      },
+      "query": "embed=1",
+      "section": "games"
+    },
+    {
+      "slug": "s3-mc",
+      "path": "content-packs/ch01-earth/tools/s3-mc",
+      "title": {
+        "en": "S3 multiple choice (Earth and Microscopic World I)",
+        "zhHant": "S3 多項選擇（地球與微觀世界 I）"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "matter-class",
+      "path": "content-packs/ch01-earth/tools/matter-class",
+      "title": {
+        "en": "Earth2A_Matters_(Microscopic matter classification)",
+        "zhHant": "Earth2A_Matters_(物質微觀分類)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "liquid-air",
+      "path": "content-packs/ch01-earth/tools/liquid-air",
+      "title": {
+        "en": "Earth2C_Air_(Liquid Air Fractional Distillation)",
+        "zhHant": "Earth2C_Air_(液態空氣分餾)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "gas-prep",
+      "path": "content-packs/ch01-earth/tools/gas-prep",
+      "title": {
+        "en": "Earth3B_Chemical tests and electrolysis_(Gas preparation and collection)",
+        "zhHant": "Earth3B_Chemical tests and electrolysis_(氣體製備同收集)"
+      },
+      "query": "embed=1"
+    },
+    {
+      "slug": "sucking-back",
+      "path": "content-packs/ch01-earth/tools/sucking-back",
+      "title": {
+        "en": "Earth3B_Chemical tests and electrolysis_(Prevent sucking back)",
+        "zhHant": "Earth3B_Chemical tests and electrolysis_(防止倒吸)"
+      },
+      "query": "embed=1"
+    }
+  ],
+  "quiz": [
+    {
+      "slug": "cpe01-1",
+      "path": "content-packs/ch01-earth/quiz/cpe01-1",
+      "file": "content-packs/ch01-earth/quiz/cpe01-1/quiz.json",
+      "quizId": "chem-cpe01-1",
+      "topicCode": "CPE01.1",
+      "title": {
+        "en": "CPE01.1 Laboratory Apparatus",
+        "zhHant": "CPE01.1 實驗室儀器"
+      }
+    },
+    {
+      "slug": "cpe01-2",
+      "path": "content-packs/ch01-earth/quiz/cpe01-2",
+      "file": "content-packs/ch01-earth/quiz/cpe01-2/quiz.json",
+      "quizId": "chem-cpe01-2",
+      "topicCode": "CPE01.2",
+      "title": {
+        "en": "CPE01.2 Laboratory Safety",
+        "zhHant": "CPE01.2 實驗室安全"
+      }
+    },
+    {
+      "slug": "cpe02-1",
+      "path": "content-packs/ch01-earth/quiz/cpe02-1",
+      "file": "content-packs/ch01-earth/quiz/cpe02-1/quiz.json",
+      "quizId": "chem-cpe02-1",
+      "topicCode": "CPE02.1",
+      "title": {
+        "en": "CPE02.1 Matters",
+        "zhHant": "CPE02.1 物質"
+      }
+    },
+    {
+      "slug": "cpe02-2",
+      "path": "content-packs/ch01-earth/quiz/cpe02-2",
+      "file": "content-packs/ch01-earth/quiz/cpe02-2/quiz.json",
+      "quizId": "chem-cpe02-2",
+      "topicCode": "CPE02.2",
+      "title": {
+        "en": "CPE02.2 Physical And Chemical Change",
+        "zhHant": "CPE02.2 物理及化學變化"
+      }
+    },
+    {
+      "slug": "cpe02-3",
+      "path": "content-packs/ch01-earth/quiz/cpe02-3",
+      "file": "content-packs/ch01-earth/quiz/cpe02-3/quiz.json",
+      "quizId": "chem-cpe02-3",
+      "topicCode": "CPE02.3",
+      "title": {
+        "en": "CPE02.3 Air",
+        "zhHant": "CPE02.3 空氣"
+      }
+    },
+    {
+      "slug": "cpe03-1",
+      "path": "content-packs/ch01-earth/quiz/cpe03-1",
+      "file": "content-packs/ch01-earth/quiz/cpe03-1/quiz.json",
+      "quizId": "chem-cpe03-1",
+      "topicCode": "CPE03.1",
+      "title": {
+        "en": "CPE03.1 Physical Separation",
+        "zhHant": "CPE03.1 物理分離"
+      }
+    },
+    {
+      "slug": "cpe03-2",
+      "path": "content-packs/ch01-earth/quiz/cpe03-2",
+      "file": "content-packs/ch01-earth/quiz/cpe03-2/quiz.json",
+      "quizId": "chem-cpe03-2",
+      "topicCode": "CPE03.2",
+      "title": {
+        "en": "CPE03.2 Chemical Tests And Electrolysis",
+        "zhHant": "CPE03.2 化學測試及電解"
+      }
+    },
+    {
+      "slug": "cpe04-1",
+      "path": "content-packs/ch01-earth/quiz/cpe04-1",
+      "file": "content-packs/ch01-earth/quiz/cpe04-1/quiz.json",
+      "quizId": "chem-cpe04-1",
+      "topicCode": "CPE04.1",
+      "title": {
+        "en": "CPE04.1 Extraction Of Metals",
+        "zhHant": "CPE04.1 金屬提取"
+      }
+    },
+    {
+      "slug": "cpe04-2",
+      "path": "content-packs/ch01-earth/quiz/cpe04-2",
+      "file": "content-packs/ch01-earth/quiz/cpe04-2/quiz.json",
+      "quizId": "chem-cpe04-2",
+      "topicCode": "CPE04.2",
+      "title": {
+        "en": "CPE04.2 Lime Cycle",
+        "zhHant": "CPE04.2 石灰循環"
+      }
+    }
+  ]
+}

@@ -1,548 +1,1379 @@
 {
-  "source": "Chem topic list Sheet1",
+  "source": "Chem topic list - Updated.xlsx Sheet1",
   "topics": [
     {
-      "symbol": "Earth1",
-      "topicNumber": "01 Fundamentals of chemistry (化學導論).",
+      "symbol": "CPE01",
+      "topicNumber": "CPE01 Fundamentals of chemistry (化學基礎)",
+      "chapter": "CH01 Earth",
+      "chapterZh": "地球",
       "level": "(S3)",
       "department": "Junior Chemistry",
+      "name": "Fundamentals of chemistry",
+      "nameZh": "化學基礎",
       "subTopics": [
         {
-          "symbol": "Earth1A",
+          "symbol": "CPE01.1",
           "name": "Laboratory apparatus",
-          "nameZh": "常用化學儀器"
+          "nameZh": "實驗儀器"
         },
         {
-          "symbol": "Earth1B",
+          "symbol": "CPE01.2",
           "name": "Laboratory safety",
-          "nameZh": "實驗室安全守則"
+          "nameZh": "實驗室安全"
         }
       ]
     },
     {
-      "symbol": "Earth2",
-      "topicNumber": "02 Atmosphere (大氣).",
+      "symbol": "CPE02",
+      "topicNumber": "CPE02 Atmosphere (大氣)",
+      "chapter": "CH01 Earth",
+      "chapterZh": "地球",
       "level": "(S3)",
       "department": "Junior Chemistry",
+      "name": "Atmosphere",
+      "nameZh": "大氣",
       "subTopics": [
         {
-          "symbol": "Earth2A",
+          "symbol": "CPE02.1",
           "name": "Matters",
           "nameZh": "物質"
         },
         {
-          "symbol": "Earth2B",
+          "symbol": "CPE02.2",
           "name": "Physical and chemical change",
-          "nameZh": "物理及化學變化"
+          "nameZh": "物理變化和化學變化"
         },
         {
-          "symbol": "Earth2C",
+          "symbol": "CPE02.3",
           "name": "Air",
           "nameZh": "空氣"
         }
       ]
     },
     {
-      "symbol": "Earth3",
-      "topicNumber": "03 Ocean (海洋).",
+      "symbol": "CPE03",
+      "topicNumber": "CPE03 Ocean (海洋)",
+      "chapter": "CH01 Earth",
+      "chapterZh": "地球",
       "level": "(S3)",
       "department": "Junior Chemistry",
+      "name": "Ocean",
+      "nameZh": "海洋",
       "subTopics": [
         {
-          "symbol": "Earth3A",
+          "symbol": "CPE03.1",
           "name": "Physical separation",
-          "nameZh": "以物理方法分離物質"
+          "nameZh": "物理分離法"
         },
         {
-          "symbol": "Earth3B",
+          "symbol": "CPE03.2",
           "name": "Chemical tests and electrolysis",
-          "nameZh": "化學測試及電解"
+          "nameZh": "化學試驗和電解"
         }
       ]
     },
     {
-      "symbol": "Earth4",
-      "topicNumber": "04 Rocks (岩石及礦物).",
+      "symbol": "CPE04",
+      "topicNumber": "CPE04 Rocks (岩石和礦物)",
+      "chapter": "CH01 Earth",
+      "chapterZh": "地球",
       "level": "(S3)",
       "department": "Junior Chemistry",
+      "name": "Rocks",
+      "nameZh": "岩石和礦物",
       "subTopics": [
         {
-          "symbol": "Earth4A",
+          "symbol": "CPE04.1",
           "name": "Extraction of metals",
-          "nameZh": "從礦物中提取金屬"
+          "nameZh": "從礦石提取金屬"
         },
         {
-          "symbol": "Earth4B",
+          "symbol": "CPE04.2",
           "name": "Limecycle",
-          "nameZh": "涉及碳酸鈣的化學變化"
+          "nameZh": "石灰循環"
         }
       ]
     },
     {
-      "symbol": "MWI1",
-      "topicNumber": "05 Atom (原子).",
+      "symbol": "CMWA01",
+      "topicNumber": "CMWA01 Atom (原子)",
+      "chapter": "CH02 Microscopic World I",
+      "chapterZh": "微觀世界I",
       "level": "(S3)",
       "department": "Junior Chemistry",
+      "name": "Atom",
+      "nameZh": "原子",
       "subTopics": [
         {
-          "symbol": "MWI1A",
+          "symbol": "CMWA01.1",
           "name": "Atomic structure",
           "nameZh": "原子結構"
         },
         {
-          "symbol": "MWI1B",
+          "symbol": "CMWA01.2",
           "name": "Isotope",
           "nameZh": "同位素"
         }
       ]
     },
     {
-      "symbol": "MWI2",
-      "topicNumber": "06 The Periodic Table (元素週期表).",
+      "symbol": "CMWA02",
+      "topicNumber": "CMWA02 The Periodic Table (週期表)",
+      "chapter": "CH02 Microscopic World I",
+      "chapterZh": "微觀世界I",
       "level": "(S3)",
       "department": "Junior Chemistry",
+      "name": "The Periodic Table",
+      "nameZh": "週期表",
       "subTopics": [
         {
-          "symbol": "MWI2A",
+          "symbol": "CMWA02.1",
           "name": "Metals, semi-metals and non-metals",
-          "nameZh": "金屬、半金屬及非金屬"
+          "nameZh": "金屬、非金屬和類金屬"
         },
         {
-          "symbol": "MWI2B",
+          "symbol": "CMWA02.2",
           "name": "Periodic table",
           "nameZh": "週期表"
         },
         {
-          "symbol": "MWI2C",
+          "symbol": "CMWA02.3",
           "name": "Group I and Group II",
-          "nameZh": "第I族及第II族"
+          "nameZh": "第I族和第II族"
         },
         {
-          "symbol": "MWI2D",
+          "symbol": "CMWA02.4",
           "name": "Group VII and Group 0",
-          "nameZh": "第IIV族及第0族"
+          "nameZh": "第VII族和第0族"
         }
       ]
     },
     {
-      "symbol": "MWI3",
-      "topicNumber": "07 Ionic bond and metallic bond (離子鍵及金屬鍵).",
+      "symbol": "CMWA03",
+      "topicNumber": "CMWA03 Ionic bond and metallic bond (離子鍵和金屬鍵)",
+      "chapter": "CH02 Microscopic World I",
+      "chapterZh": "微觀世界I",
       "level": "(S3)",
       "department": "Junior Chemistry",
+      "name": "Ionic bond and metallic bond",
+      "nameZh": "離子鍵和金屬鍵",
       "subTopics": [
         {
-          "symbol": "MWI3A",
+          "symbol": "CMWA03.1",
           "name": "Metallic bond",
           "nameZh": "金屬鍵"
         },
         {
-          "symbol": "MWI3B",
+          "symbol": "CMWA03.2",
           "name": "Ions formation",
           "nameZh": "離子的形成"
         },
         {
-          "symbol": "MWI3C",
+          "symbol": "CMWA03.3",
           "name": "Ionic bond electron diagram",
-          "nameZh": "離子鍵及離子化合物的電子結構圖"
+          "nameZh": "離子化合物的電子圖"
         },
         {
-          "symbol": "MWI3D",
+          "symbol": "CMWA03.4",
           "name": "Naming of ionic compound",
           "nameZh": "離子化合物的命名"
         },
         {
-          "symbol": "MWI3E",
+          "symbol": "CMWA03.5",
           "name": "Color of ions",
           "nameZh": "離子的顏色"
         }
       ]
     },
     {
-      "symbol": "MWI4",
-      "topicNumber": "08 Covalent bond (共價鍵).",
+      "symbol": "CMWA04",
+      "topicNumber": "CMWA04 Covalent bond (共價鍵)",
+      "chapter": "CH02 Microscopic World I",
+      "chapterZh": "微觀世界I",
       "level": "(S3)",
       "department": "Junior Chemistry",
+      "name": "Covalent bond",
+      "nameZh": "共價鍵",
       "subTopics": [
         {
-          "symbol": "MWI4A",
+          "symbol": "CMWA04.1",
           "name": "Covalent bond electron diagram",
-          "nameZh": "共價鍵及共價化合物的電子結構圖"
+          "nameZh": "共價分子的電子圖"
         },
         {
-          "symbol": "MWI4B",
+          "symbol": "CMWA04.2",
           "name": "Dative covalent bond",
           "nameZh": "配位共價鍵"
         },
         {
-          "symbol": "MWI4C",
+          "symbol": "CMWA04.3",
           "name": "Naming of covalent substance, formula mass",
-          "nameZh": "共價化合物的命名及式量"
+          "nameZh": "共價化合物的命名和式量"
         }
       ]
     },
     {
-      "symbol": "MWI5",
-      "topicNumber": "09 Structures and properties of substances (物質的結構和性質).",
+      "symbol": "CMWA05",
+      "topicNumber": "CMWA05 Structures and properties of substances (物質的結構和性質)",
+      "chapter": "CH02 Microscopic World I",
+      "chapterZh": "微觀世界I",
       "level": "(S3)",
       "department": "Junior Chemistry",
+      "name": "Structures and properties of substances",
+      "nameZh": "物質的結構和性質",
       "subTopics": [
         {
-          "symbol": "MWI5A",
+          "symbol": "CMWA05.1",
           "name": "Giant metallic structure",
           "nameZh": "巨型金屬結構"
         },
         {
-          "symbol": "MWI5B",
+          "symbol": "CMWA05.2",
           "name": "Giant ionic structure",
           "nameZh": "巨型離子結構"
         },
         {
-          "symbol": "MWI5C",
+          "symbol": "CMWA05.3",
           "name": "Simple molecular structure",
           "nameZh": "簡單分子結構"
         },
         {
-          "symbol": "MWI5D",
+          "symbol": "CMWA05.4",
           "name": "Giant covalent structure",
           "nameZh": "巨型共價結構"
         }
       ]
     },
     {
-      "symbol": "Metal1",
-      "topicNumber": "10 Metal extraction.",
+      "symbol": "CM01",
+      "topicNumber": "CM01 Metal extraction (金屬的存在和提取)",
+      "chapter": "CH03 Metal",
+      "chapterZh": "金屬",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Metal extraction",
+      "nameZh": "金屬的存在和提取",
+      "subTopics": [
+        {
+          "symbol": "CM01.1",
+          "name": "Use of metals",
+          "nameZh": "金屬的用途"
+        },
+        {
+          "symbol": "CM01.2",
+          "name": "Extractions of metals",
+          "nameZh": "金屬的提取"
+        }
+      ]
     },
     {
-      "symbol": "Metal2",
-      "topicNumber": "11 Metal reaction.",
+      "symbol": "CM02",
+      "topicNumber": "CM02 Metal reaction (金屬的活性)",
+      "chapter": "CH03 Metal",
+      "chapterZh": "金屬",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Metal reaction",
+      "nameZh": "金屬的活性",
+      "subTopics": [
+        {
+          "symbol": "CM02.1",
+          "name": "Metal reactions with water, oxygen, acids",
+          "nameZh": "金屬與水、氧和酸的反應"
+        },
+        {
+          "symbol": "CM02.2",
+          "name": "Displacement reaction",
+          "nameZh": "置換反應"
+        },
+        {
+          "symbol": "CM02.3",
+          "name": "Metal reactivity series",
+          "nameZh": "金屬活性序"
+        }
+      ]
     },
     {
-      "symbol": "Metal3",
-      "topicNumber": "12 Reacting masses.",
+      "symbol": "CM03",
+      "topicNumber": "CM03 Reacting masses (反應質量)",
+      "chapter": "CH03 Metal",
+      "chapterZh": "金屬",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Reacting masses",
+      "nameZh": "反應質量",
+      "subTopics": [
+        {
+          "symbol": "CM03.1",
+          "name": "Number of particles",
+          "nameZh": "粒子數目"
+        },
+        {
+          "symbol": "CM03.2",
+          "name": "Percentage by mass",
+          "nameZh": "質量百分比"
+        },
+        {
+          "symbol": "CM03.3",
+          "name": "Empirical formula, molecular formula",
+          "nameZh": "實驗式和分子式"
+        },
+        {
+          "symbol": "CM03.4",
+          "name": "Reacting masses",
+          "nameZh": "反應質量"
+        }
+      ]
     },
     {
-      "symbol": "Metal4",
-      "topicNumber": "13 Metal corrosion.",
+      "symbol": "CM04",
+      "topicNumber": "CM04 Metal corrosion (金屬的腐蝕和保護)",
+      "chapter": "CH03 Metal",
+      "chapterZh": "金屬",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Metal corrosion",
+      "nameZh": "金屬的腐蝕和保護",
+      "subTopics": [
+        {
+          "symbol": "CM04.1",
+          "name": "Rusting of iron",
+          "nameZh": "鐵的銹蝕"
+        },
+        {
+          "symbol": "CM04.2",
+          "name": "Prevention of rusting",
+          "nameZh": "預防鐵銹蝕"
+        },
+        {
+          "symbol": "CM04.3",
+          "name": "Corrosion resistance of aluminium",
+          "nameZh": "鋁的抗腐蝕性"
+        }
+      ]
     },
     {
-      "symbol": "AB1",
-      "topicNumber": "14 Acids and alkalis.",
+      "symbol": "CAB01",
+      "topicNumber": "CAB01 Acids and alkalis (酸和鹼)",
+      "chapter": "CH04 Acids and Bases",
+      "chapterZh": "酸和鹽基",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Acids and alkalis",
+      "nameZh": "酸和鹼",
+      "subTopics": [
+        {
+          "symbol": "CAB01.1",
+          "name": "Reactions of acids",
+          "nameZh": "酸的反應"
+        },
+        {
+          "symbol": "CAB01.2",
+          "name": "Reactions of alkalis",
+          "nameZh": "鹼的反應"
+        }
+      ]
     },
     {
-      "symbol": "AB2",
-      "topicNumber": "15 Concentration calculation.",
+      "symbol": "CAB02",
+      "topicNumber": "CAB02 Concentration calculation (溶液的濃度)",
+      "chapter": "CH04 Acids and Bases",
+      "chapterZh": "酸和鹽基",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Concentration calculation",
+      "nameZh": "溶液的濃度",
+      "subTopics": [
+        {
+          "symbol": "CAB02.1",
+          "name": "Molarity calculation",
+          "nameZh": "摩爾濃度的計算"
+        },
+        {
+          "symbol": "CAB02.2",
+          "name": "Dilution and mixing of solutions",
+          "nameZh": "溶液的稀釋和混合"
+        }
+      ]
     },
     {
-      "symbol": "AB3",
-      "topicNumber": "16 Indicators and pH.",
+      "symbol": "CAB03",
+      "topicNumber": "CAB03 Indicators and pH (指示劑和pH)",
+      "chapter": "CH04 Acids and Bases",
+      "chapterZh": "酸和鹽基",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Indicators and pH",
+      "nameZh": "指示劑和pH",
+      "subTopics": [
+        {
+          "symbol": "CAB03.1",
+          "name": "Acid base indicator",
+          "nameZh": "酸鹼指示劑"
+        },
+        {
+          "symbol": "CAB03.2",
+          "name": "pH calculation",
+          "nameZh": "pH值的計算"
+        }
+      ]
     },
     {
-      "symbol": "AB4",
-      "topicNumber": "17 Strength of acids and alkalis.",
+      "symbol": "CAB04",
+      "topicNumber": "CAB04 Strength of acids and alkalis (酸和鹼的強度)",
+      "chapter": "CH04 Acids and Bases",
+      "chapterZh": "酸和鹽基",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Strength of acids and alkalis",
+      "nameZh": "酸和鹼的強度",
+      "subTopics": [
+        {
+          "symbol": "CAB04.1",
+          "name": "Experiments related to strength of acids",
+          "nameZh": "比較酸強度的實驗"
+        },
+        {
+          "symbol": "CAB04.2",
+          "name": "pH calculation related to strength of acids",
+          "nameZh": "與酸強度有關的pH值計算"
+        }
+      ]
     },
     {
-      "symbol": "AB5",
-      "topicNumber": "18 Salt preparation and neutralization.",
+      "symbol": "CAB05",
+      "topicNumber": "CAB05 Salt preparation and neutralization (鹽和中和作用)",
+      "chapter": "CH04 Acids and Bases",
+      "chapterZh": "酸和鹽基",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Salt preparation and neutralization",
+      "nameZh": "鹽和中和作用",
+      "subTopics": [
+        {
+          "symbol": "CAB05.1",
+          "name": "Soluble salt preparation",
+          "nameZh": "可溶鹽的製備"
+        },
+        {
+          "symbol": "CAB05.2",
+          "name": "Insoluble salt preparation",
+          "nameZh": "不溶鹽的製備"
+        }
+      ]
     },
     {
-      "symbol": "AB6",
-      "topicNumber": "19 Volumetric analysis 1.",
+      "symbol": "CAB06",
+      "topicNumber": "CAB06 Volumetric analysis 1 (容量分析)",
+      "chapter": "CH04 Acids and Bases",
+      "chapterZh": "酸和鹽基",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Volumetric analysis 1",
+      "nameZh": "容量分析",
+      "subTopics": [
+        {
+          "symbol": "CAB06.1",
+          "name": "Standard solution preparation",
+          "nameZh": "標準溶液的製備"
+        },
+        {
+          "symbol": "CAB06.2",
+          "name": "Titration",
+          "nameZh": "滴定"
+        },
+        {
+          "symbol": "CAB06.3",
+          "name": "Back titration",
+          "nameZh": "返滴定"
+        }
+      ]
     },
     {
-      "symbol": "OrgI1",
-      "topicNumber": "20 Fossil fuels.",
+      "symbol": "CFF01",
+      "topicNumber": "CFF01 Fossil fuels (化石燃料)",
+      "chapter": "CH05 Fossil Fuels and Carbon Compounds",
+      "chapterZh": "化石燃料和碳化合物",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Fossil fuels",
+      "nameZh": "化石燃料",
+      "subTopics": [
+        {
+          "symbol": "CFF01.1",
+          "name": "Crude oil",
+          "nameZh": "石油"
+        },
+        {
+          "symbol": "CFF01.2",
+          "name": "Pollutions",
+          "nameZh": "污染"
+        }
+      ]
     },
     {
-      "symbol": "OrgI2",
-      "topicNumber": "21 Homologous series 1.",
+      "symbol": "CFF02",
+      "topicNumber": "CFF02 Homologous series 1 (同系列)",
+      "chapter": "CH05 Fossil Fuels and Carbon Compounds",
+      "chapterZh": "化石燃料和碳化合物",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Homologous series 1",
+      "nameZh": "同系列",
+      "subTopics": [
+        {
+          "symbol": "CFF02.1",
+          "name": "Systematic name",
+          "nameZh": "系統命名"
+        },
+        {
+          "symbol": "CFF02.2",
+          "name": "Homologous series",
+          "nameZh": "同系列"
+        }
+      ]
     },
     {
-      "symbol": "OrgI3",
-      "topicNumber": "22 Alkanes and alkenes.",
+      "symbol": "CFF03",
+      "topicNumber": "CFF03 Alkanes and alkenes (烷烴和烯烴)",
+      "chapter": "CH05 Fossil Fuels and Carbon Compounds",
+      "chapterZh": "化石燃料和碳化合物",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Alkanes and alkenes",
+      "nameZh": "烷烴和烯烴",
+      "subTopics": [
+        {
+          "symbol": "CFF03.1",
+          "name": "Substitution reaction",
+          "nameZh": "取代反應"
+        },
+        {
+          "symbol": "CFF03.2",
+          "name": "Cracking",
+          "nameZh": "裂解"
+        },
+        {
+          "symbol": "CFF03.3",
+          "name": "Addition reaction",
+          "nameZh": "加成反應"
+        }
+      ]
     },
     {
-      "symbol": "OrgI4",
-      "topicNumber": "23 Addition polymers.",
+      "symbol": "CFF04",
+      "topicNumber": "CFF04 Addition polymers (加成聚合物)",
+      "chapter": "CH05 Fossil Fuels and Carbon Compounds",
+      "chapterZh": "化石燃料和碳化合物",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Addition polymers",
+      "nameZh": "加成聚合物"
     },
     {
-      "symbol": "MWII1",
-      "topicNumber": "24 Molecular shape, non-octet molecules.",
+      "symbol": "CMWB01",
+      "topicNumber": "CMWB01 Molecular shape, non-octet molecules (分子形狀和非八隅體結構)",
+      "chapter": "CH06 Microscopic World II",
+      "chapterZh": "微觀世界II",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Molecular shape, non-octet molecules",
+      "nameZh": "分子形狀和非八隅體結構"
     },
     {
-      "symbol": "MWII2",
-      "topicNumber": "25 Polarity of bond and molecule.",
+      "symbol": "CMWB02",
+      "topicNumber": "CMWB02 Polarity of bond and molecule (鍵與分子的極性)",
+      "chapter": "CH06 Microscopic World II",
+      "chapterZh": "微觀世界II",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Polarity of bond and molecule",
+      "nameZh": "鍵與分子的極性"
     },
     {
-      "symbol": "MWII3",
-      "topicNumber": "26 Intermolecular forces.",
+      "symbol": "CMWB03",
+      "topicNumber": "CMWB03 Intermolecular forces (分子間引力)",
+      "chapter": "CH06 Microscopic World II",
+      "chapterZh": "微觀世界II",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Intermolecular forces",
+      "nameZh": "分子間引力",
+      "subTopics": [
+        {
+          "symbol": "CMWB03.1",
+          "name": "Factors affecting van der Waals' forces",
+          "nameZh": "影響范德華力的因素"
+        },
+        {
+          "symbol": "CMWB03.2",
+          "name": "Hydrogen bonds",
+          "nameZh": "氫鍵"
+        }
+      ]
     },
     {
-      "symbol": "MWII4",
-      "topicNumber": "27 Molecular crystals.",
+      "symbol": "CMWB04",
+      "topicNumber": "CMWB04 Molecular crystals (分子晶體)",
+      "chapter": "CH06 Microscopic World II",
+      "chapterZh": "微觀世界II",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Molecular crystals",
+      "nameZh": "分子晶體"
     },
     {
-      "symbol": "Redox1",
-      "topicNumber": "28 Chemical cells in daily life.",
+      "symbol": "CRED01",
+      "topicNumber": "CRED01 Chemical cells in daily life (日常生活使用的化學電池)",
+      "chapter": "CH07 Redox Reactions, Chemical Cells and Electrolysis",
+      "chapterZh": "氧化還原反應、化學電池和電解",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Chemical cells in daily life",
+      "nameZh": "日常生活使用的化學電池"
     },
     {
-      "symbol": "Redox2",
-      "topicNumber": "29 Chemical cell 1.",
+      "symbol": "CRED02",
+      "topicNumber": "CRED02 Chemical cell 1 (簡單化學電池中的反應)",
+      "chapter": "CH07 Redox Reactions, Chemical Cells and Electrolysis",
+      "chapterZh": "氧化還原反應、化學電池和電解",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Chemical cell 1",
+      "nameZh": "簡單化學電池中的反應",
+      "subTopics": [
+        {
+          "symbol": "CRED02.1",
+          "name": "Simple chemical cells",
+          "nameZh": "簡單化學電池"
+        },
+        {
+          "symbol": "CRED02.2",
+          "name": "Voltage of chemical cells",
+          "nameZh": "化學電池的電壓"
+        }
+      ]
     },
     {
-      "symbol": "Redox3",
-      "topicNumber": "30 Redox reactions.",
+      "symbol": "CRED03",
+      "topicNumber": "CRED03 Redox reactions (氧化還原反應)",
+      "chapter": "CH07 Redox Reactions, Chemical Cells and Electrolysis",
+      "chapterZh": "氧化還原反應、化學電池和電解",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Redox reactions",
+      "nameZh": "氧化還原反應",
+      "subTopics": [
+        {
+          "symbol": "CRED03.1",
+          "name": "Oxidation number",
+          "nameZh": "氧化數"
+        },
+        {
+          "symbol": "CRED03.2",
+          "name": "Half equations and overall equations",
+          "nameZh": "半反應式和總反應式"
+        },
+        {
+          "symbol": "CRED03.3",
+          "name": "Common oxidizing agents and reducing agents",
+          "nameZh": "常用氧化劑和還原劑"
+        },
+        {
+          "symbol": "CRED03.4",
+          "name": "Oxidizing acids",
+          "nameZh": "氧化性酸"
+        }
+      ]
     },
     {
-      "symbol": "Redox4",
-      "topicNumber": "31 Chemical cell 2.",
+      "symbol": "CRED04",
+      "topicNumber": "CRED04 Chemical cell 2 (化學電池內的氧化還原反應)",
+      "chapter": "CH07 Redox Reactions, Chemical Cells and Electrolysis",
+      "chapterZh": "氧化還原反應、化學電池和電解",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Chemical cell 2",
+      "nameZh": "化學電池內的氧化還原反應",
+      "subTopics": [
+        {
+          "symbol": "CRED04.1",
+          "name": "Chemical cells using common OA and RA",
+          "nameZh": "使用常用氧化劑和還原劑的化學電池"
+        },
+        {
+          "symbol": "CRED04.2",
+          "name": "Fuel cells",
+          "nameZh": "燃料電池"
+        }
+      ]
     },
     {
-      "symbol": "Redox5",
-      "topicNumber": "32 Electrolysis.",
+      "symbol": "CRED05",
+      "topicNumber": "CRED05 Electrolysis (電解)",
+      "chapter": "CH07 Redox Reactions, Chemical Cells and Electrolysis",
+      "chapterZh": "氧化還原反應、化學電池和電解",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Electrolysis",
+      "nameZh": "電解",
+      "subTopics": [
+        {
+          "symbol": "CRED05.1",
+          "name": "Molten electrolyte",
+          "nameZh": "熔融電解質"
+        },
+        {
+          "symbol": "CRED05.2",
+          "name": "Aqueous electrolysis",
+          "nameZh": "水溶液的電解"
+        },
+        {
+          "symbol": "CRED05.3",
+          "name": "Electroplating",
+          "nameZh": "電鍍"
+        },
+        {
+          "symbol": "CRED05.4",
+          "name": "Electrolysis and indicators",
+          "nameZh": "電解和指示劑"
+        }
+      ]
     },
     {
-      "symbol": "Heat1",
-      "topicNumber": "33 Energy changes in chemical reactions.",
+      "symbol": "CE01",
+      "topicNumber": "CE01 Energy changes in chemical reactions (化學反應中的能量變化)",
+      "chapter": "CH08 Chemical Reactions and Energy",
+      "chapterZh": "化學反應和能量",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Energy changes in chemical reactions",
+      "nameZh": "化學反應中的能量變化"
     },
     {
-      "symbol": "Heat2",
-      "topicNumber": "34 Standard enthalpy change of reactions.",
+      "symbol": "CE02",
+      "topicNumber": "CE02 Standard enthalpy change of reactions (標準反應焓變)",
+      "chapter": "CH08 Chemical Reactions and Energy",
+      "chapterZh": "化學反應和能量",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Standard enthalpy change of reactions",
+      "nameZh": "標準反應焓變",
+      "subTopics": [
+        {
+          "symbol": "CE02.1",
+          "name": "Enthalpy change of combustion",
+          "nameZh": "燃燒焓變"
+        },
+        {
+          "symbol": "CE02.2",
+          "name": "Enthalpy change of neutralization",
+          "nameZh": "中和焓變"
+        }
+      ]
     },
     {
-      "symbol": "Heat3",
-      "topicNumber": "35 Hess's Law.",
+      "symbol": "CE03",
+      "topicNumber": "CE03 Hess's Law (赫斯定律)",
+      "chapter": "CH08 Chemical Reactions and Energy",
+      "chapterZh": "化學反應和能量",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Hess's Law",
+      "nameZh": "赫斯定律",
+      "subTopics": [
+        {
+          "symbol": "CE03.1",
+          "name": "Hess's Law",
+          "nameZh": "赫斯定律"
+        },
+        {
+          "symbol": "CE03.2",
+          "name": "Hess's Law (algebraic method)",
+          "nameZh": "赫斯定律（代數法）"
+        },
+        {
+          "symbol": "CE03.3",
+          "name": "Enthalpy change cycle",
+          "nameZh": "焓變循環"
+        }
+      ]
     },
     {
-      "symbol": "Rate1",
-      "topicNumber": "36 Rate of chemical reaction.",
+      "symbol": "CRR01",
+      "topicNumber": "CRR01 Rate of chemical reaction (化學反應的速率)",
+      "chapter": "CH09 Rate of Reaction",
+      "chapterZh": "反應速率",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Rate of chemical reaction",
+      "nameZh": "化學反應的速率",
+      "subTopics": [
+        {
+          "symbol": "CRR01.1",
+          "name": "Rate calculation",
+          "nameZh": "速率的計算"
+        },
+        {
+          "symbol": "CRR01.2",
+          "name": "Methods in following the reaction progress",
+          "nameZh": "跟隨反應進度的方法"
+        }
+      ]
     },
     {
-      "symbol": "Rate2",
-      "topicNumber": "37 Factors affecting rate of reaction.",
+      "symbol": "CRR02",
+      "topicNumber": "CRR02 Factors affecting rate of reaction (影響反應速率的因素)",
+      "chapter": "CH09 Rate of Reaction",
+      "chapterZh": "反應速率",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Factors affecting rate of reaction",
+      "nameZh": "影響反應速率的因素"
     },
     {
-      "symbol": "Rate3",
-      "topicNumber": "38 Molar volume of gases.",
+      "symbol": "CRR03",
+      "topicNumber": "CRR03 Molar volume of gases (氣體的摩爾體積)",
+      "chapter": "CH09 Rate of Reaction",
+      "chapterZh": "反應速率",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Molar volume of gases",
+      "nameZh": "氣體的摩爾體積",
+      "subTopics": [
+        {
+          "symbol": "CRR03.1",
+          "name": "Molar volume calculation",
+          "nameZh": "摩爾體積的計算"
+        },
+        {
+          "symbol": "CRR03.2",
+          "name": "Avogadro's Law",
+          "nameZh": "亞佛加德羅定律"
+        }
+      ]
     },
     {
-      "symbol": "Eqm1",
-      "topicNumber": "39 Dynamic equilibrium.",
+      "symbol": "CCE01",
+      "topicNumber": "CCE01 Dynamic equilibrium (動態平衡)",
+      "chapter": "CH10 Chemical Equilibrium",
+      "chapterZh": "化學平衡",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Dynamic equilibrium",
+      "nameZh": "動態平衡"
     },
     {
-      "symbol": "Eqm2",
-      "topicNumber": "40 Equilibrium constant.",
+      "symbol": "CCE02",
+      "topicNumber": "CCE02 Equilibrium constant (平衡常數)",
+      "chapter": "CH10 Chemical Equilibrium",
+      "chapterZh": "化學平衡",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Equilibrium constant",
+      "nameZh": "平衡常數",
+      "subTopics": [
+        {
+          "symbol": "CCE02.1",
+          "name": "Equilibrium constant calculation",
+          "nameZh": "平衡常數的計算"
+        },
+        {
+          "symbol": "CCE02.2",
+          "name": "Calculation from given equilibrium constant",
+          "nameZh": "由已知平衡常數計算"
+        }
+      ]
     },
     {
-      "symbol": "Eqm3",
-      "topicNumber": "41 Le Châtelier's Principle..",
+      "symbol": "CCE03",
+      "topicNumber": "CCE03 Le Châtelier's Principle (勒沙得利爾原理)",
+      "chapter": "CH10 Chemical Equilibrium",
+      "chapterZh": "化學平衡",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Le Châtelier's Principle",
+      "nameZh": "勒沙得利爾原理",
+      "subTopics": [
+        {
+          "symbol": "CCE03.1",
+          "name": "Effect of chaning concentration",
+          "nameZh": "濃度改變的影響"
+        },
+        {
+          "symbol": "CCE03.2",
+          "name": "Effect of chaning pressure",
+          "nameZh": "壓強改變的影響"
+        },
+        {
+          "symbol": "CCE03.3",
+          "name": "Effect of chaning temperature",
+          "nameZh": "溫度改變的影響"
+        }
+      ]
     },
     {
-      "symbol": "OrgII1",
-      "topicNumber": "42 Homologous series 2.",
+      "symbol": "CO01",
+      "topicNumber": "CO01 Homologous series 2 (特定同系列)",
+      "chapter": "CH11 Chemistry of Carbon Compounds",
+      "chapterZh": "碳化合物的化學",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Homologous series 2",
+      "nameZh": "特定同系列",
+      "subTopics": [
+        {
+          "symbol": "CO01.1",
+          "name": "Boiling points of carbon compounds",
+          "nameZh": "碳化合物的沸點"
+        },
+        {
+          "symbol": "CO01.2",
+          "name": "Solubility of carbon compounds",
+          "nameZh": "碳化合物的溶解度"
+        }
+      ]
     },
     {
-      "symbol": "OrgII2",
-      "topicNumber": "43 Isomerism.",
+      "symbol": "CO02",
+      "topicNumber": "CO02 Isomerism (同分異構)",
+      "chapter": "CH11 Chemistry of Carbon Compounds",
+      "chapterZh": "碳化合物的化學",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Isomerism",
+      "nameZh": "同分異構",
+      "subTopics": [
+        {
+          "symbol": "CO02.1",
+          "name": "Structural isomer",
+          "nameZh": "結構異構"
+        },
+        {
+          "symbol": "CO02.2",
+          "name": "Cis-trans isomer",
+          "nameZh": "順-反異構"
+        },
+        {
+          "symbol": "CO02.3",
+          "name": "Enantiomer",
+          "nameZh": "對映異構"
+        }
+      ]
     },
     {
-      "symbol": "OrgII3",
-      "topicNumber": "44 Typical reactions of various functional groups.",
+      "symbol": "CO03",
+      "topicNumber": "CO03 Typical reactions of various functional groups (各種官能基的典型化學反應)",
+      "chapter": "CH11 Chemistry of Carbon Compounds",
+      "chapterZh": "碳化合物的化學",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Typical reactions of various functional groups",
+      "nameZh": "各種官能基的典型化學反應",
+      "subTopics": [
+        {
+          "symbol": "CO03.1",
+          "name": "Subsitution, addition and dehydration",
+          "nameZh": "取代、加成和脫水"
+        },
+        {
+          "symbol": "CO03.2",
+          "name": "Oxidation and reduction",
+          "nameZh": "氧化和還原"
+        },
+        {
+          "symbol": "CO03.3",
+          "name": "Condensation and hydrolysis",
+          "nameZh": "縮合和水解"
+        }
+      ]
     },
     {
-      "symbol": "OrgII4",
-      "topicNumber": "45 Inter-conversions of carbon compounds.",
+      "symbol": "CO04",
+      "topicNumber": "CO04 Inter-conversions of carbon compounds (碳化合物的互換)",
+      "chapter": "CH11 Chemistry of Carbon Compounds",
+      "chapterZh": "碳化合物的化學",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Inter-conversions of carbon compounds",
+      "nameZh": "碳化合物的互換"
     },
     {
-      "symbol": "OrgII5",
-      "topicNumber": "46 Important organic substances.",
+      "symbol": "CO05",
+      "topicNumber": "CO05 Important organic substances (重要有機物質)",
+      "chapter": "CH11 Chemistry of Carbon Compounds",
+      "chapterZh": "碳化合物的化學",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Important organic substances",
+      "nameZh": "重要有機物質",
+      "subTopics": [
+        {
+          "symbol": "CO05.1",
+          "name": "Aspirin",
+          "nameZh": "阿士匹靈"
+        },
+        {
+          "symbol": "CO05.2",
+          "name": "Fats and detergents",
+          "nameZh": "脂肪和清潔劑"
+        },
+        {
+          "symbol": "CO05.3",
+          "name": "Condensation polymer",
+          "nameZh": "縮合聚合物"
+        }
+      ]
     },
     {
-      "symbol": "Pattern1",
-      "topicNumber": "47 Period 2 and Period 3 elements.",
+      "symbol": "CP01",
+      "topicNumber": "CP01 Period 2 and Period 3 elements (第2週期和第3週期元素)",
+      "chapter": "CH12 Patterns in the Chemical World",
+      "chapterZh": "化學世界中的規律",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Period 2 and Period 3 elements",
+      "nameZh": "第2週期和第3週期元素",
+      "subTopics": [
+        {
+          "symbol": "CP01.1",
+          "name": "Melting point of period 2 and 3 elements",
+          "nameZh": "第2和第3週期元素的熔點"
+        },
+        {
+          "symbol": "CP01.2",
+          "name": "Conductivity of period 2 and 3 elements",
+          "nameZh": "第2和第3週期元素的導電性"
+        }
+      ]
     },
     {
-      "symbol": "Pattern2",
-      "topicNumber": "48 Oxides of Period 3 elements.",
+      "symbol": "CP02",
+      "topicNumber": "CP02 Oxides of Period 3 elements (第3週期元素的氧化物)",
+      "chapter": "CH12 Patterns in the Chemical World",
+      "chapterZh": "化學世界中的規律",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Oxides of Period 3 elements",
+      "nameZh": "第3週期元素的氧化物",
+      "subTopics": [
+        {
+          "symbol": "CP02.1",
+          "name": "Physical properties of oxides of period 3 elements",
+          "nameZh": "第3週期元素氧化物的物理性質"
+        },
+        {
+          "symbol": "CP02.2",
+          "name": "Acid-base properties of oxides of period 3 elements",
+          "nameZh": "第3週期元素氧化物的酸鹼性質"
+        }
+      ]
     },
     {
-      "symbol": "Pattern3",
-      "topicNumber": "49 Transition metals.",
+      "symbol": "CP03",
+      "topicNumber": "CP03 Transition metals (過渡性金屬)",
+      "chapter": "CH12 Patterns in the Chemical World",
+      "chapterZh": "化學世界中的規律",
       "level": "(S4 - S5)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Transition metals",
+      "nameZh": "過渡性金屬"
     },
     {
-      "symbol": "Inchem1",
-      "topicNumber": "50 Importance of industrial processes.",
+      "symbol": "CIC01",
+      "topicNumber": "CIC01 Importance of industrial processes (工業過程的重要性)",
+      "chapter": "CH13 Industrial Chemistry",
+      "chapterZh": "工業化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Importance of industrial processes",
+      "nameZh": "工業過程的重要性"
     },
     {
-      "symbol": "Inchem2",
-      "topicNumber": "51 Rate equation.",
+      "symbol": "CIC02",
+      "topicNumber": "CIC02 Rate equation (速率方程)",
+      "chapter": "CH13 Industrial Chemistry",
+      "chapterZh": "工業化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Rate equation",
+      "nameZh": "速率方程",
+      "subTopics": [
+        {
+          "symbol": "CIC02.1",
+          "name": "Rate law calculation",
+          "nameZh": "速率方程的計算"
+        },
+        {
+          "symbol": "CIC02.2",
+          "name": "Graphs of different reaction orders",
+          "nameZh": "不同反應級數的圖像"
+        },
+        {
+          "symbol": "CIC02.3",
+          "name": "Log(rate) vs log(Conc) graph",
+          "nameZh": "log(速率)對log(濃度)圖像"
+        }
+      ]
     },
     {
-      "symbol": "Inchem3",
-      "topicNumber": "52 Activation energy.",
+      "symbol": "CIC03",
+      "topicNumber": "CIC03 Activation energy (活化能)",
+      "chapter": "CH13 Industrial Chemistry",
+      "chapterZh": "工業化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Activation energy",
+      "nameZh": "活化能",
+      "subTopics": [
+        {
+          "symbol": "CIC03.1",
+          "name": "Arrhenius equation",
+          "nameZh": "阿列紐斯方程"
+        },
+        {
+          "symbol": "CIC03.2",
+          "name": "Log(k) vs 1/T graph",
+          "nameZh": "log k對1/T圖像"
+        }
+      ]
     },
     {
-      "symbol": "Inchem4",
-      "topicNumber": "53 Catalysis and industrial processes.",
+      "symbol": "CIC04",
+      "topicNumber": "CIC04 Catalysis and industrial processes (催化作用和工業過程)",
+      "chapter": "CH13 Industrial Chemistry",
+      "chapterZh": "工業化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Catalysis and industrial processes",
+      "nameZh": "催化作用和工業過程",
+      "subTopics": [
+        {
+          "symbol": "CIC04.1",
+          "name": "Energy profile",
+          "nameZh": "能線圖"
+        },
+        {
+          "symbol": "CIC04.2",
+          "name": "Maxwell-Boltzmann distribution",
+          "nameZh": "麥克斯韋－波爾茲曼分佈"
+        },
+        {
+          "symbol": "CIC04.3",
+          "name": "Characteristics of catalyst",
+          "nameZh": "催化劑的特性"
+        }
+      ]
     },
     {
-      "symbol": "Inchem5",
-      "topicNumber": "54 Industrial processes.",
+      "symbol": "CIC05",
+      "topicNumber": "CIC05 Industrial processes (工業過程)",
+      "chapter": "CH13 Industrial Chemistry",
+      "chapterZh": "工業化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Industrial processes",
+      "nameZh": "工業過程",
+      "subTopics": [
+        {
+          "symbol": "CIC05.1",
+          "name": "Haber process",
+          "nameZh": "哈柏法"
+        },
+        {
+          "symbol": "CIC05.2",
+          "name": "Chloroalkali industry",
+          "nameZh": "氯鹼工業"
+        },
+        {
+          "symbol": "CIC05.3",
+          "name": "Methanol production",
+          "nameZh": "甲醇的生產"
+        }
+      ]
     },
     {
-      "symbol": "Inchem6",
-      "topicNumber": "55 Green chemistry.",
+      "symbol": "CIC06",
+      "topicNumber": "CIC06 Green chemistry (綠色化學)",
+      "chapter": "CH13 Industrial Chemistry",
+      "chapterZh": "工業化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Green chemistry",
+      "nameZh": "綠色化學"
     },
     {
-      "symbol": "Matchem1",
-      "topicNumber": "56 Natural polymers.",
+      "symbol": "CMC01",
+      "topicNumber": "CMC01 Natural polymers (天然聚合物)",
+      "chapter": "CH14 Materials Chemistry",
+      "chapterZh": "物料化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Natural polymers",
+      "nameZh": "天然聚合物"
     },
     {
-      "symbol": "Matchem2",
-      "topicNumber": "57 Synthetic polymers.",
+      "symbol": "CMC02",
+      "topicNumber": "CMC02 Synthetic polymers (合成聚合物)",
+      "chapter": "CH14 Materials Chemistry",
+      "chapterZh": "物料化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Synthetic polymers",
+      "nameZh": "合成聚合物"
     },
     {
-      "symbol": "Matchem3",
-      "topicNumber": "58 Metals and alloys.",
+      "symbol": "CMC03",
+      "topicNumber": "CMC03 Metals and alloys (金屬和合金)",
+      "chapter": "CH14 Materials Chemistry",
+      "chapterZh": "物料化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Metals and alloys",
+      "nameZh": "金屬和合金"
     },
     {
-      "symbol": "Matchem4",
-      "topicNumber": "59 Synthetic materials.",
+      "symbol": "CMC04",
+      "topicNumber": "CMC04 Synthetic materials (現代生活中的合成物料)",
+      "chapter": "CH14 Materials Chemistry",
+      "chapterZh": "物料化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Synthetic materials",
+      "nameZh": "現代生活中的合成物料"
     },
     {
-      "symbol": "Matchem5",
-      "topicNumber": "60 Green chemistry.",
+      "symbol": "CMC05",
+      "topicNumber": "CMC05 Green chemistry (綠色化學)",
+      "chapter": "CH14 Materials Chemistry",
+      "chapterZh": "物料化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Green chemistry",
+      "nameZh": "綠色化學"
     },
     {
-      "symbol": "Anchem1",
-      "topicNumber": "61 Chemical tests.",
+      "symbol": "CAC01",
+      "topicNumber": "CAC01 Chemical tests (檢測化學物種)",
+      "chapter": "CH15 Analytical Chemistry",
+      "chapterZh": "分析化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Chemical tests",
+      "nameZh": "檢測化學物種",
+      "subTopics": [
+        {
+          "symbol": "CAC01.1",
+          "name": "Tests for cation, anion and gases",
+          "nameZh": "陽離子、陰離子和氣體的測試"
+        },
+        {
+          "symbol": "CAC01.2",
+          "name": "Tests for functional groups",
+          "nameZh": "官能基的測試"
+        }
+      ]
     },
     {
-      "symbol": "Anchem2",
-      "topicNumber": "62 Separation and purification.",
+      "symbol": "CAC02",
+      "topicNumber": "CAC02 Separation and purification (分離和提純)",
+      "chapter": "CH15 Analytical Chemistry",
+      "chapterZh": "分析化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Separation and purification",
+      "nameZh": "分離和提純",
+      "subTopics": [
+        {
+          "symbol": "CAC02.1",
+          "name": "Fractional distillation and crystallization",
+          "nameZh": "分餾和結晶"
+        },
+        {
+          "symbol": "CAC02.2",
+          "name": "Liquid-liquid extraction",
+          "nameZh": "液液萃取"
+        },
+        {
+          "symbol": "CAC02.3",
+          "name": "Chromatography",
+          "nameZh": "色層法"
+        }
+      ]
     },
     {
-      "symbol": "Anchem3",
-      "topicNumber": "63 Volumetric analysis 2.",
+      "symbol": "CAC03",
+      "topicNumber": "CAC03 Volumetric analysis 2 (容量分析2)",
+      "chapter": "CH15 Analytical Chemistry",
+      "chapterZh": "分析化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Volumetric analysis 2",
+      "nameZh": "容量分析2",
+      "subTopics": [
+        {
+          "symbol": "CAC03.1",
+          "name": "Mohr's method",
+          "nameZh": "莫爾法"
+        },
+        {
+          "symbol": "CAC03.2",
+          "name": "Iron-permanganate titration",
+          "nameZh": "鐵與高錳酸鹽滴定"
+        },
+        {
+          "symbol": "CAC03.3",
+          "name": "Determining bleach concentration",
+          "nameZh": "測定漂白水的濃度"
+        },
+        {
+          "symbol": "CAC03.4",
+          "name": "Determining vitamin C content",
+          "nameZh": "測定維生素C的含量"
+        },
+        {
+          "symbol": "CAC03.5",
+          "name": "Other titrations",
+          "nameZh": "其他滴定"
+        }
+      ]
     },
     {
-      "symbol": "Anchem4",
-      "topicNumber": "64 Instrumental analytical methods.",
+      "symbol": "CAC04",
+      "topicNumber": "CAC04 Instrumental analytical methods (儀器分析方法)",
+      "chapter": "CH15 Analytical Chemistry",
+      "chapterZh": "分析化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Instrumental analytical methods",
+      "nameZh": "儀器分析方法",
+      "subTopics": [
+        {
+          "symbol": "CAC04.1",
+          "name": "Colorimetry",
+          "nameZh": "比色法"
+        },
+        {
+          "symbol": "CAC04.2",
+          "name": "Infra-red spectroscopy",
+          "nameZh": "紅外光譜法"
+        },
+        {
+          "symbol": "CAC04.3",
+          "name": "Mass spectrometry",
+          "nameZh": "質譜法"
+        }
+      ]
     },
     {
-      "symbol": "Anchem5",
-      "topicNumber": "65 Analytical chemistry in society.",
+      "symbol": "CAC05",
+      "topicNumber": "CAC05 Analytical chemistry in society (分析化學對社會的貢獻)",
+      "chapter": "CH15 Analytical Chemistry",
+      "chapterZh": "分析化學",
       "level": "(S6)",
-      "department": "Senior Chemistry"
+      "department": "Senior Chemistry",
+      "name": "Analytical chemistry in society",
+      "nameZh": "分析化學對社會的貢獻"
     }
   ]
 }

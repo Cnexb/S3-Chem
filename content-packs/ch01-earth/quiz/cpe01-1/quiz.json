@@ -1,0 +1,415 @@
+{
+  "quizId": "chem-cpe01-1",
+  "topicCode": "CPE01.1",
+  "symbol": "Earth1A",
+  "title": {
+    "en": "CPE01.1 Laboratory Apparatus",
+    "zhHant": "CPE01.1 實驗室儀器"
+  },
+  "items": [
+    {
+      "id": "CPE01.1-1",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Foundation",
+      "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X, Y and Z is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X: triple beam balance; Y: glass rod; Z: crucible"
+        },
+        {
+          "key": "B",
+          "text": "X: electronic balance; Y: spatula; Z: crucible"
+        },
+        {
+          "key": "C",
+          "text": "X: triple beam balance; Y: glass rod; Z: mortar"
+        },
+        {
+          "key": "D",
+          "text": "X: electronic balance; Y: spatula; Z: mortar"
+        }
+      ],
+      "answer": "D",
+      "image": {
+        "src": "assets/earth1aa-1.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE01.1-2",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following apparatus is used to transfer a small amount of solution?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Spatula"
+        },
+        {
+          "key": "B",
+          "text": "Glass rod"
+        },
+        {
+          "key": "C",
+          "text": "Dropper"
+        },
+        {
+          "key": "D",
+          "text": "Tongs"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE01.1-3",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following apparatus is used to transfer solid chemicals?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dropper"
+        },
+        {
+          "key": "B",
+          "text": "Mortar and pestle"
+        },
+        {
+          "key": "C",
+          "text": "Spatula"
+        },
+        {
+          "key": "D",
+          "text": "Wire gauze"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE01.1-4",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following apparatus is used to make rough measurements of volumes of liquids?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dropper"
+        },
+        {
+          "key": "B",
+          "text": "Measuring cylinder"
+        },
+        {
+          "key": "C",
+          "text": "Mortar and pestle"
+        },
+        {
+          "key": "D",
+          "text": "Reagent bottle"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE01.1-5",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Foundation",
+      "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X and Y is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X: evaporating dish; Y: rack"
+        },
+        {
+          "key": "B",
+          "text": "X: petri dish; Y: tripod"
+        },
+        {
+          "key": "C",
+          "text": "X: petri dish; Y: rack"
+        },
+        {
+          "key": "D",
+          "text": "X: evaporating dish; Y: tripod"
+        }
+      ],
+      "answer": "D",
+      "image": {
+        "src": "assets/earth1aa-5.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE01.1-6",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Foundation",
+      "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X, Y and Z is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X: glass rod; Y: stand; Z: filter funnel"
+        },
+        {
+          "key": "B",
+          "text": "X: thermometer; Y: stand; Z: separating funnel"
+        },
+        {
+          "key": "C",
+          "text": "X: glass rod; Y: tripod; Z: filter funnel"
+        },
+        {
+          "key": "D",
+          "text": "X: thermometer; Y: tripod; Z: separating funnel"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/earth1aa-6.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE01.1-7",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Foundation",
+      "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X and Y is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X: crucible; Y: pipe-clay triangle"
+        },
+        {
+          "key": "B",
+          "text": "X: crucible; Y: wire gauze"
+        },
+        {
+          "key": "C",
+          "text": "X: mortar; Y: pipe-clay triangle"
+        },
+        {
+          "key": "D",
+          "text": "X: mortar; Y: wire gauze"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/earth1aa-7.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE01.1-8",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following gas(es) can be collected by the set-up shown?\n(1) Hydrogen\n(2) Chlorine\n(3) Carbon dioxide",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "D",
+      "image": {
+        "src": "assets/earth1ab-1.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE01.1-9",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following set-ups can be used to collect nitrogen prepared in an experiment?",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "image": {
+        "src": "assets/earth1ab-2.png",
+        "alt": "Question diagrams",
+        "caption": "Question diagrams"
+      }
+    },
+    {
+      "id": "CPE01.1-10",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following set-ups can be used to dry a moist gas?",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/earth1ab-3.png",
+        "alt": "Question diagrams",
+        "caption": "Question diagrams"
+      }
+    },
+    {
+      "id": "CPE01.1-11",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following sequence of steps is correct for obtaining a non-luminous flame?\n(1) Fully open the air hole.\n(2) Put the burning match just above the top of the chimney.\n(3) Close the air hole.\n(4) Turn on the gas tap.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) → (2) → (4) → (3)"
+        },
+        {
+          "key": "B",
+          "text": "(2) → (3) → (4) → (1)"
+        },
+        {
+          "key": "C",
+          "text": "(3) → (2) → (4) → (1)"
+        },
+        {
+          "key": "D",
+          "text": "(4) → (2) → (1) → (3)"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE01.1-12",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following may lead to ‘striking back’ of a Bunsen flame?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Supply of gas: insufficient; Air hole: half open"
+        },
+        {
+          "key": "B",
+          "text": "Supply of gas: insufficient; Air hole: fully open"
+        },
+        {
+          "key": "C",
+          "text": "Supply of gas: sufficient; Air hole: closed"
+        },
+        {
+          "key": "D",
+          "text": "Supply of gas: sufficient; Air hole: fully open"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE01.1-13",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following might occur when a Bunsen flame 'strikes back'?\n(1) Obvious sound occurred.\n(2) The chimney becomes hot.\n(3) The supply of gas is too much.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE01.1-14",
+      "topic": "CPE01",
+      "section": "CPE01.1",
+      "difficulty": "Applied",
+      "stem": "The following diagram shows an experimental set-up for collecting a gas produced in a certain reaction.\nWhich of the following actions can prevent 'sucking back' of water?\n(1) Take the delivery tube away from water before removing the flame.\n(2) Remove the flame before taking the delivery tube away from water.\n(3) Decrease the amount of water in the trough.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/earth1ac-4.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    }
+  ]
+}

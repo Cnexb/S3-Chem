@@ -1,0 +1,588 @@
+{
+  "quizId": "chem-cmwa03-2",
+  "topicCode": "CMWA03.2",
+  "symbol": "MWI3B",
+  "title": {
+    "en": "CMWA03.2 Ions Formation",
+    "zhHant": "CMWA03.2 離子的形成"
+  },
+  "items": [
+    {
+      "id": "CMWA03.2-1",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following ions contains the same number of electrons as an argon atom?",
+      "options": [
+        {
+          "key": "A",
+          "text": "K⁺"
+        },
+        {
+          "key": "B",
+          "text": "Mg²⁺"
+        },
+        {
+          "key": "C",
+          "text": "O²⁻"
+        },
+        {
+          "key": "D",
+          "text": "N³⁻"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.2-2",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Foundation",
+      "stem": "Rubidium is an alkali metal. When a rubidium atom changes to a rubidium ion, the rubidium atom",
+      "options": [
+        {
+          "key": "A",
+          "text": "loses one proton."
+        },
+        {
+          "key": "B",
+          "text": "gains one proton."
+        },
+        {
+          "key": "C",
+          "text": "loses one electron."
+        },
+        {
+          "key": "D",
+          "text": "gains one electron."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.2-3",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Foundation",
+      "stem": "The ions Ca * and K* have same electronic arrangement as that of an atom of",
+      "options": [
+        {
+          "key": "A",
+          "text": "neon."
+        },
+        {
+          "key": "B",
+          "text": "argon."
+        },
+        {
+          "key": "C",
+          "text": "krypton."
+        },
+        {
+          "key": "D",
+          "text": "xenon."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.2-4",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Foundation",
+      "stem": "In which of the following species has / have an octet in the outermost shells)?\n(1) He\n(2) N3-\n(3) K*",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA03.2-5",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Foundation",
+      "stem": "Consider the following atoms:\nWhich atom is likely to lose electron(s) during reactions?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W"
+        },
+        {
+          "key": "B",
+          "text": "X"
+        },
+        {
+          "key": "C",
+          "text": "Y"
+        },
+        {
+          "key": "D",
+          "text": "Z"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.2-6",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Standard",
+      "stem": "Species X contains the following subatomic particles:\nNumber of protons = 38\nNumber of electrons = 36\nNumber of neutrons = 52\nWhich of the following statements about species X is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is a cation."
+        },
+        {
+          "key": "B",
+          "text": "It is an anion."
+        },
+        {
+          "key": "C",
+          "text": "It is a neutral atom."
+        },
+        {
+          "key": "D",
+          "text": "Its mass number is 88."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.2-7",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Standard",
+      "stem": "The atomic number and mass number of an element X is 7 and 14 respectively. How many electrons does the anion X³⁻ have?",
+      "options": [
+        {
+          "key": "A",
+          "text": "4"
+        },
+        {
+          "key": "B",
+          "text": "10"
+        },
+        {
+          "key": "C",
+          "text": "11"
+        },
+        {
+          "key": "D",
+          "text": "17"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.2-8",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Standard",
+      "stem": "Arsenic (⁷⁵₃₃As) forms an As³⁺ ion. Which of the following correctly describes the number of subatomic particles in the ion?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Number of electrons: 30; Number of neutrons: 33"
+        },
+        {
+          "key": "B",
+          "text": "Number of electrons: 30; Number of neutrons: 42"
+        },
+        {
+          "key": "C",
+          "text": "Number of electrons: 60; Number of neutrons: 33"
+        },
+        {
+          "key": "D",
+          "text": "Number of electrons: 60; Number of neutrons: 42"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.2-9",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Standard",
+      "stem": "Atom X forms an anion X . Atom X and anion X- have the same",
+      "options": [
+        {
+          "key": "A",
+          "text": "number of protons."
+        },
+        {
+          "key": "B",
+          "text": "number of electrons."
+        },
+        {
+          "key": "C",
+          "text": "chemical properties."
+        },
+        {
+          "key": "D",
+          "text": "electronic arrangement."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.2-10",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about the phosphide ion 15p3- and sulphide ion 1252- are\ncorrect?\n(1) They have the same number of neutrons.\n(2) They have the same number of protons.\n(3) They have the same number of electrons.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.2-11",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following pairs of species have the same number of outermost shell electrons?\n(1) Chlorine atom and sulphide ion\n(2) Calcium atom and magnesium atom\n(3) Nitride ion and argon atom",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.2-12",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about sulphur atom and sulphide ion (S?) is / are correct?\n(1) They have the same number of protons.\n(2) They have the same number of electrons.\n(3) They have the same number of occupied electron shells.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.2-13",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Standard",
+      "stem": "X is an element. It can form a stable ion X* with an electronic arrangement of 2,8,8. Which of the\nfollowing statements is / are correct?\n(1) X is a Period 4 element.\n(2) X is an alkali metal.\n(3) The ion X2* contains 18 protons.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.2-14",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Standard",
+      "stem": "When lithium combines with nitrogen to form lithium nitride,",
+      "options": [
+        {
+          "key": "A",
+          "text": "each lithium atom loses two electrons while each nitrogen atom gains one electron."
+        },
+        {
+          "key": "B",
+          "text": "each lithium atom loses one electron while each nitrogen atom gains three"
+        },
+        {
+          "key": "C",
+          "text": "each lithium atom gains two electrons while each nitrogen atom loses one electron."
+        },
+        {
+          "key": "D",
+          "text": "each lithium atom gains one electron while each nitrogen atom loses three electron. electrons."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.2-15",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Applied",
+      "stem": "In which species are the numbers of electrons and neutrons equal?",
+      "options": [
+        {
+          "key": "A",
+          "text": "⁹₄Be"
+        },
+        {
+          "key": "B",
+          "text": "¹⁹₉F"
+        },
+        {
+          "key": "C",
+          "text": "²³₁₁Na⁺"
+        },
+        {
+          "key": "D",
+          "text": "¹⁸₈O²⁻"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA03.2-16",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Applied",
+      "stem": "Atom X forms an anion X²⁻ with 36 electrons and 45 neutrons. What is the mass number of atom X?",
+      "options": [
+        {
+          "key": "A",
+          "text": "45"
+        },
+        {
+          "key": "B",
+          "text": "77"
+        },
+        {
+          "key": "C",
+          "text": "79"
+        },
+        {
+          "key": "D",
+          "text": "81"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.2-17",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Applied",
+      "stem": "Consider the following species\nWhich of the following statements is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X is an anion of Y."
+        },
+        {
+          "key": "B",
+          "text": "Y is a cation of X."
+        },
+        {
+          "key": "C",
+          "text": "X and Y are isotopes."
+        },
+        {
+          "key": "D",
+          "text": "X and Y are atoms of different elements."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.2-18",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Applied",
+      "stem": "X, Y and Z are three consecutive elements in the periodic table. X forms a stable anion X, while Z\nforms a stable cation Z*. Which of the following statements about X, Y and Z is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X, Y and Z are elements in the same period of the periodic table."
+        },
+        {
+          "key": "B",
+          "text": "Anion X- and atom of Y have the same electronic arrangement."
+        },
+        {
+          "key": "C",
+          "text": "Atom of Y and cation Z* have the same number of protons."
+        },
+        {
+          "key": "D",
+          "text": "X and Z are both electrical conductors at room temperature and pressure."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.2-19",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Applied",
+      "stem": "Consider the following species.\nWhich of the following statements about the species is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W and Y have the same mass."
+        },
+        {
+          "key": "B",
+          "text": "X and Y have the same charge."
+        },
+        {
+          "key": "C",
+          "text": "W and Z have the same electronic arrangement."
+        },
+        {
+          "key": "D",
+          "text": "X is a cation of Y."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.2-20",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Applied",
+      "stem": "Electricity is passed through molten lead(II) bromide as shown below. A reddish brown gas is formed at the positive electrode while a white shiny solid is formed at the negative electrode.\nWhich of the following can be deduced from the experimental results?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Solid lead(II) bromide can conduct electricity."
+        },
+        {
+          "key": "B",
+          "text": "Molten lead(II) bromide contains mobile electrons."
+        },
+        {
+          "key": "C",
+          "text": "Molten lead(II) bromide can be decomposed by electricity."
+        },
+        {
+          "key": "D",
+          "text": "Lead(II) bromide has covalent bonds."
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/mw3bc-6.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA03.2-21",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Applied",
+      "stem": "Four elements W, X, Y, Z have atomic numbers .x-1, x, x+1 and x+2 respectively. It is known that x = 9.\nWhich of the following pairs of elements will form an ionic compound upon combination?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W and X"
+        },
+        {
+          "key": "B",
+          "text": "X and Y"
+        },
+        {
+          "key": "C",
+          "text": "X and Z"
+        },
+        {
+          "key": "D",
+          "text": "Y and Z"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.2-22",
+      "topic": "CMWA03",
+      "section": "CMWA03.2",
+      "difficulty": "Applied",
+      "stem": "Which of the following ions has the same number of protons as an ammonium ion, NH₄⁺?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O²⁻"
+        },
+        {
+          "key": "B",
+          "text": "F⁻"
+        },
+        {
+          "key": "C",
+          "text": "Na⁺"
+        },
+        {
+          "key": "D",
+          "text": "Mg²⁺"
+        }
+      ],
+      "answer": "C"
+    }
+  ]
+}

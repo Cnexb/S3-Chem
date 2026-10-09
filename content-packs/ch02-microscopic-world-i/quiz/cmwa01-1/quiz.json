@@ -1,0 +1,510 @@
+{
+  "quizId": "chem-cmwa01-1",
+  "topicCode": "CMWA01.1",
+  "symbol": "MWI1A",
+  "title": {
+    "en": "CMWA01.1 Atomic Structure",
+    "zhHant": "CMWA01.1 原子結構"
+  },
+  "items": [
+    {
+      "id": "CMWA01.1-1",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following combinations about the atomic structure of a sulphur atom is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Number of neutrons: 15; Number of protons: 15; Number of electrons: 17"
+        },
+        {
+          "key": "B",
+          "text": "Number of neutrons: 15; Number of protons: 15; Number of electrons: 16"
+        },
+        {
+          "key": "C",
+          "text": "Number of neutrons: 16; Number of protons: 16; Number of electrons: 16"
+        },
+        {
+          "key": "D",
+          "text": "Number of neutrons: 18; Number of protons: 17; Number of electrons: 17"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA01.1-2",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following combinations about the charges on neutron, proton and electron is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Neutron: positive; Proton: positive; Electron: negative"
+        },
+        {
+          "key": "B",
+          "text": "Neutron: positive; Proton: neutral; Electron: positive"
+        },
+        {
+          "key": "C",
+          "text": "Neutron: neutral; Proton: neutral; Electron: positive"
+        },
+        {
+          "key": "D",
+          "text": "Neutron: neutral; Proton: positive; Electron: negative"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA01.1-3",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Foundation",
+      "stem": "Atoms of the same element must have",
+      "options": [
+        {
+          "key": "A",
+          "text": "the same number of neutrons."
+        },
+        {
+          "key": "B",
+          "text": "the same number of electrons."
+        },
+        {
+          "key": "C",
+          "text": "the same number of protons and neutrons."
+        },
+        {
+          "key": "D",
+          "text": "different number of neutrons."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.1-4",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Foundation",
+      "stem": "The atomic number and mass number of an atom of an element is 9 and 19 respectively. The atom\ncontains",
+      "options": [
+        {
+          "key": "A",
+          "text": "9 electrons and 10 neutrons."
+        },
+        {
+          "key": "B",
+          "text": "9 neutrons and 10 electrons."
+        },
+        {
+          "key": "C",
+          "text": "9 protons and 10 electrons."
+        },
+        {
+          "key": "D",
+          "text": "9 protons and 19 neutrons."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA01.1-5",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Foundation",
+      "stem": "An atom has 23 electrons and 28 neutrons. Which of the following combinations about the atom is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Atomic number: 23; Mass number: 28"
+        },
+        {
+          "key": "B",
+          "text": "Atomic number: 23; Mass number: 51"
+        },
+        {
+          "key": "C",
+          "text": "Atomic number: 28; Mass number: 51"
+        },
+        {
+          "key": "D",
+          "text": "Atomic number: 28; Mass number: 56"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.1-6",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Foundation",
+      "stem": "The number of electrons in the first two shells of a chlorine atom adds up to",
+      "options": [
+        {
+          "key": "A",
+          "text": "8"
+        },
+        {
+          "key": "B",
+          "text": "10"
+        },
+        {
+          "key": "C",
+          "text": "15"
+        },
+        {
+          "key": "D",
+          "text": "17"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.1-7",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following pairs of atoms have the same number of occupied electron shells?\n(1) Aluminium atom and argon atom\n(2) Carbon atom and neon atom\n(3) Silicon atom and potassium atom",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA01.1-8",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following combinations is INCORRECT?\nElement\nIts atom has",
+      "options": [
+        {
+          "key": "A",
+          "text": "Element: bromine; Its atom has: 7 outermost shell electrons"
+        },
+        {
+          "key": "B",
+          "text": "Element: chlorine; Its atom has: 4 occupied electron shells"
+        },
+        {
+          "key": "C",
+          "text": "Element: carbon; Its atom has: 4 outermost shell electrons"
+        },
+        {
+          "key": "D",
+          "text": "Element: oxygen; Its atom has: 2 occupied electron shells"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.1-9",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following atoms has the SMALLEST number of neutrons?",
+      "options": [
+        {
+          "key": "A",
+          "text": "⁵⁰Ti"
+        },
+        {
+          "key": "B",
+          "text": "⁵⁰V"
+        },
+        {
+          "key": "C",
+          "text": "⁶⁴Ni"
+        },
+        {
+          "key": "D",
+          "text": "⁶⁴Zn"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.1-10",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Standard",
+      "stem": "Atoms are electrically neutral because",
+      "options": [
+        {
+          "key": "A",
+          "text": "neutrons are neutral."
+        },
+        {
+          "key": "B",
+          "text": "they have the same number of neutrons and protons."
+        },
+        {
+          "key": "C",
+          "text": "they have the same number of protons and electrons."
+        },
+        {
+          "key": "D",
+          "text": "all subatomic particles are neutral."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA01.1-11",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Standard",
+      "stem": "An atom of element X contains 57 protons and 139 neutrons. This atom can be represented as",
+      "options": [
+        {
+          "key": "A",
+          "text": "¹³⁹₅₇X"
+        },
+        {
+          "key": "B",
+          "text": "¹⁹⁶₁₃₉X"
+        },
+        {
+          "key": "C",
+          "text": "¹⁹⁶₅₇X"
+        },
+        {
+          "key": "D",
+          "text": "⁵⁷₁₃₉X"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA01.1-12",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about the zinc atom 3ôZn is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It has 30 protons."
+        },
+        {
+          "key": "B",
+          "text": "Its mass number is 34."
+        },
+        {
+          "key": "C",
+          "text": "It has 64 neutrons."
+        },
+        {
+          "key": "D",
+          "text": "Its atomic number is 94."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA01.1-13",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about subatomic particles are correct?\n(1) Atoms of all elements must contain protons and electrons.\n(2) Atoms of the same element must contain the same number of protons.\n(3) Protons and neutrons have almost the same mass.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA01.1-14",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Standard",
+      "stem": "The following is an electron diagram of an atom of element Y:\n(Only electrons in the outermost shell are shown.)\nThe atomic number of Y could be",
+      "options": [
+        {
+          "key": "A",
+          "text": "5"
+        },
+        {
+          "key": "B",
+          "text": "7"
+        },
+        {
+          "key": "C",
+          "text": "11"
+        },
+        {
+          "key": "D",
+          "text": "13"
+        }
+      ],
+      "answer": "B",
+      "image": {
+        "src": "assets/mw1ab-6.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA01.1-15",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following represents the electronic arrangement of an atom of a non-metal?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2,1"
+        },
+        {
+          "key": "B",
+          "text": "2,2"
+        },
+        {
+          "key": "C",
+          "text": "2,3"
+        },
+        {
+          "key": "D",
+          "text": "2,4"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA01.1-16",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about the structure of an atom is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The nucleus is composed of electrons and neutrons."
+        },
+        {
+          "key": "B",
+          "text": "Most of an atom is empty space."
+        },
+        {
+          "key": "C",
+          "text": "Protons move outside the nucleus at a high speed."
+        },
+        {
+          "key": "D",
+          "text": "Neutrons and protons are much lighter than electrons."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.1-17",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about an atom is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The number of protons must equal the number of electrons."
+        },
+        {
+          "key": "B",
+          "text": "The number of electrons must equal the number of neutrons."
+        },
+        {
+          "key": "C",
+          "text": "The atomic number must equal the number of protons."
+        },
+        {
+          "key": "D",
+          "text": "The mass number must equal the number of electrons plus the number of neutrons."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.1-18",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following combinations represents an atom with a mass number of 40?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Number of protons: 18; Number of neutrons: 22; Number of electrons: 18"
+        },
+        {
+          "key": "B",
+          "text": "Number of protons: 19; Number of neutrons: 21; Number of electrons: 18"
+        },
+        {
+          "key": "C",
+          "text": "Number of protons: 20; Number of neutrons: 20; Number of electrons: 18"
+        },
+        {
+          "key": "D",
+          "text": "Number of protons: 20; Number of neutrons: 21; Number of electrons: 20"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA01.1-19",
+      "topic": "CMWA01",
+      "section": "CMWA01.1",
+      "difficulty": "Applied",
+      "stem": "The atom of an element X contains 35 neutrons. The electronic arrangement of the atom is 2, 8, 18, 2. Which of the following combinations about the atom is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Atomic number: 30; Mass number: 35"
+        },
+        {
+          "key": "B",
+          "text": "Atomic number: 30; Mass number: 65"
+        },
+        {
+          "key": "C",
+          "text": "Atomic number: 35; Mass number: 30"
+        },
+        {
+          "key": "D",
+          "text": "Atomic number: 35; Mass number: 65"
+        }
+      ],
+      "answer": "B"
+    }
+  ]
+}

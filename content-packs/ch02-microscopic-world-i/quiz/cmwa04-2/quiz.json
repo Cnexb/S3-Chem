@@ -1,0 +1,250 @@
+{
+  "quizId": "chem-cmwa04-2",
+  "topicCode": "CMWA04.2",
+  "symbol": "MWI4B",
+  "title": {
+    "en": "CMWA04.2 Dative Covalent Bond",
+    "zhHant": "CMWA04.2 配位共價鍵"
+  },
+  "items": [
+    {
+      "id": "CMWA04.2-1",
+      "topic": "CMWA04",
+      "section": "CMWA04.2",
+      "difficulty": "Foundation",
+      "stem": "A dative covalent bond is formed when",
+      "options": [
+        {
+          "key": "A",
+          "text": "each bonded atom contributes one electron to the shared pair."
+        },
+        {
+          "key": "B",
+          "text": "one atom provides both electrons of the shared pair."
+        },
+        {
+          "key": "C",
+          "text": "electrons are transferred from a metal to a non-metal."
+        },
+        {
+          "key": "D",
+          "text": "metal ions attract a sea of delocalized electrons."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA04.2-2",
+      "topic": "CMWA04",
+      "section": "CMWA04.2",
+      "difficulty": "Foundation",
+      "stem": "When NH₃ reacts with H⁺ to form NH₄⁺, the extra bond to hydrogen is",
+      "options": [
+        {
+          "key": "A",
+          "text": "ionic."
+        },
+        {
+          "key": "B",
+          "text": "metallic."
+        },
+        {
+          "key": "C",
+          "text": "a dative covalent bond."
+        },
+        {
+          "key": "D",
+          "text": "a hydrogen bond."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA04.2-3",
+      "topic": "CMWA04",
+      "section": "CMWA04.2",
+      "difficulty": "Foundation",
+      "stem": "Which species contains a dative covalent bond?",
+      "options": [
+        {
+          "key": "A",
+          "text": "H₂"
+        },
+        {
+          "key": "B",
+          "text": "Cl₂"
+        },
+        {
+          "key": "C",
+          "text": "H₃O⁺"
+        },
+        {
+          "key": "D",
+          "text": "NaCl"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA04.2-4",
+      "topic": "CMWA04",
+      "section": "CMWA04.2",
+      "difficulty": "Standard",
+      "stem": "When gaseous NH₃ and gaseous XY₃ react together, a solid is formed. The electron diagram of the solid is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements are correct?\n(1) There are 6 electrons in the outermost shell of an atom of X.\n(2) There are 7 electrons in the outermost shell of an atom of Y.\n(3) Dative covalent bond exists in the solid.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/mw4bb-1.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA04.2-5",
+      "topic": "CMWA04",
+      "section": "CMWA04.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following reactions involves the formation of a dative covalent bond?",
+      "options": [
+        {
+          "key": "A",
+          "text": "NH₃ + H⁺ → NH₄⁺"
+        },
+        {
+          "key": "B",
+          "text": "Na + Cl₂ → 2NaCl"
+        },
+        {
+          "key": "C",
+          "text": "C + O₂ → CO₂ (equal sharing of electrons only)"
+        },
+        {
+          "key": "D",
+          "text": "CaCO₃ → CaO + CO₂"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA04.2-6",
+      "topic": "CMWA04",
+      "section": "CMWA04.2",
+      "difficulty": "Standard",
+      "stem": "In the formation of H₃O⁺ from H₂O and H⁺,",
+      "options": [
+        {
+          "key": "A",
+          "text": "oxygen in water provides a lone pair to H⁺."
+        },
+        {
+          "key": "B",
+          "text": "hydrogen provides a lone pair to oxygen."
+        },
+        {
+          "key": "C",
+          "text": "electrons are transferred to form O²⁻."
+        },
+        {
+          "key": "D",
+          "text": "a metallic bond is formed."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA04.2-7",
+      "topic": "CMWA04",
+      "section": "CMWA04.2",
+      "difficulty": "Applied",
+      "stem": "Which description of the formation of H₃O⁺ is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "H₂O has lone pairs on oxygen; H⁺ accepts a pair of electrons from oxygen to form a dative covalent bond."
+        },
+        {
+          "key": "B",
+          "text": "H⁺ provides a pair of electrons to oxygen."
+        },
+        {
+          "key": "C",
+          "text": "Electrons are transferred from H to O to form an ionic bond only."
+        },
+        {
+          "key": "D",
+          "text": "A metallic bond is formed between H and O."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA04.2-8",
+      "topic": "CMWA04",
+      "section": "CMWA04.2",
+      "difficulty": "Applied",
+      "stem": "BF₃ accepts a lone pair from NH₃ to form F₃B←NH₃. In this adduct,",
+      "options": [
+        {
+          "key": "A",
+          "text": "boron provides both electrons of the B–N bond."
+        },
+        {
+          "key": "B",
+          "text": "nitrogen provides both electrons of the B–N bond."
+        },
+        {
+          "key": "C",
+          "text": "the B–N link is an ionic bond between B³⁺ and N³⁻."
+        },
+        {
+          "key": "D",
+          "text": "no covalent bond is formed."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA04.2-9",
+      "topic": "CMWA04",
+      "section": "CMWA04.2",
+      "difficulty": "Applied",
+      "stem": "Which of the following contain dative covalent bonds?\n(1) NH₄⁺\n(2) H₃O⁺\n(3) CH₄",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    }
+  ]
+}

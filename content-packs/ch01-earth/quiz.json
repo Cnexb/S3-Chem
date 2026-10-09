@@ -1,0 +1,103 @@
+{
+  "quizzes": [
+    {
+      "slug": "cpe01-1",
+      "quizId": "chem-cpe01-1",
+      "topicCode": "CPE01.1",
+      "path": "content-packs/ch01-earth/quiz/cpe01-1",
+      "file": "content-packs/ch01-earth/quiz/cpe01-1/quiz.json",
+      "title": {
+        "en": "CPE01.1 Laboratory Apparatus",
+        "zhHant": "CPE01.1 實驗室儀器"
+      }
+    },
+    {
+      "slug": "cpe01-2",
+      "quizId": "chem-cpe01-2",
+      "topicCode": "CPE01.2",
+      "path": "content-packs/ch01-earth/quiz/cpe01-2",
+      "file": "content-packs/ch01-earth/quiz/cpe01-2/quiz.json",
+      "title": {
+        "en": "CPE01.2 Laboratory Safety",
+        "zhHant": "CPE01.2 實驗室安全"
+      }
+    },
+    {
+      "slug": "cpe02-1",
+      "quizId": "chem-cpe02-1",
+      "topicCode": "CPE02.1",
+      "path": "content-packs/ch01-earth/quiz/cpe02-1",
+      "file": "content-packs/ch01-earth/quiz/cpe02-1/quiz.json",
+      "title": {
+        "en": "CPE02.1 Matters",
+        "zhHant": "CPE02.1 物質"
+      }
+    },
+    {
+      "slug": "cpe02-2",
+      "quizId": "chem-cpe02-2",
+      "topicCode": "CPE02.2",
+      "path": "content-packs/ch01-earth/quiz/cpe02-2",
+      "file": "content-packs/ch01-earth/quiz/cpe02-2/quiz.json",
+      "title": {
+        "en": "CPE02.2 Physical And Chemical Change",
+        "zhHant": "CPE02.2 物理及化學變化"
+      }
+    },
+    {
+      "slug": "cpe02-3",
+      "quizId": "chem-cpe02-3",
+      "topicCode": "CPE02.3",
+      "path": "content-packs/ch01-earth/quiz/cpe02-3",
+      "file": "content-packs/ch01-earth/quiz/cpe02-3/quiz.json",
+      "title": {
+        "en": "CPE02.3 Air",
+        "zhHant": "CPE02.3 空氣"
+      }
+    },
+    {
+      "slug": "cpe03-1",
+      "quizId": "chem-cpe03-1",
+      "topicCode": "CPE03.1",
+      "path": "content-packs/ch01-earth/quiz/cpe03-1",
+      "file": "content-packs/ch01-earth/quiz/cpe03-1/quiz.json",
+      "title": {
+        "en": "CPE03.1 Physical Separation",
+        "zhHant": "CPE03.1 物理分離"
+      }
+    },
+    {
+      "slug": "cpe03-2",
+      "quizId": "chem-cpe03-2",
+      "topicCode": "CPE03.2",
+      "path": "content-packs/ch01-earth/quiz/cpe03-2",
+      "file": "content-packs/ch01-earth/quiz/cpe03-2/quiz.json",
+      "title": {
+        "en": "CPE03.2 Chemical Tests And Electrolysis",
+        "zhHant": "CPE03.2 化學測試及電解"
+      }
+    },
+    {
+      "slug": "cpe04-1",
+      "quizId": "chem-cpe04-1",
+      "topicCode": "CPE04.1",
+      "path": "content-packs/ch01-earth/quiz/cpe04-1",
+      "file": "content-packs/ch01-earth/quiz/cpe04-1/quiz.json",
+      "title": {
+        "en": "CPE04.1 Extraction Of Metals",
+        "zhHant": "CPE04.1 金屬提取"
+      }
+    },
+    {
+      "slug": "cpe04-2",
+      "quizId": "chem-cpe04-2",
+      "topicCode": "CPE04.2",
+      "path": "content-packs/ch01-earth/quiz/cpe04-2",
+      "file": "content-packs/ch01-earth/quiz/cpe04-2/quiz.json",
+      "title": {
+        "en": "CPE04.2 Lime Cycle",
+        "zhHant": "CPE04.2 石灰循環"
+      }
+    }
+  ]
+}

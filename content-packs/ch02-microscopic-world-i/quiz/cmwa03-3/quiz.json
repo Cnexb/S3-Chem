@@ -1,0 +1,286 @@
+{
+  "quizId": "chem-cmwa03-3",
+  "topicCode": "CMWA03.3",
+  "symbol": "MWI3C",
+  "title": {
+    "en": "CMWA03.3 Ionic Bond Electron Diagram",
+    "zhHant": "CMWA03.3 離子鍵電子圖"
+  },
+  "items": [
+    {
+      "id": "CMWA03.3-1",
+      "topic": "CMWA03",
+      "section": "CMWA03.3",
+      "difficulty": "Foundation",
+      "stem": "Which of the following is NOT an ionic compound?",
+      "options": [
+        {
+          "key": "A",
+          "text": "KMnO₄"
+        },
+        {
+          "key": "B",
+          "text": "NaH"
+        },
+        {
+          "key": "C",
+          "text": "Li₂O"
+        },
+        {
+          "key": "D",
+          "text": "BF₃"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA03.3-2",
+      "topic": "CMWA03",
+      "section": "CMWA03.3",
+      "difficulty": "Foundation",
+      "stem": "Which of the following is an electron diagram of calcium iodide (showing electrons in the outermost shells)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diagram A"
+        },
+        {
+          "key": "B",
+          "text": "Diagram B"
+        },
+        {
+          "key": "C",
+          "text": "Diagram C"
+        },
+        {
+          "key": "D",
+          "text": "Diagram D"
+        }
+      ],
+      "answer": "D",
+      "image": {
+        "src": "assets/mw3ca-2.png",
+        "alt": "Option diagrams A–D",
+        "caption": "Option diagrams A–D"
+      }
+    },
+    {
+      "id": "CMWA03.3-3",
+      "topic": "CMWA03",
+      "section": "CMWA03.3",
+      "difficulty": "Foundation",
+      "stem": "Which of the following statements about sodium sulphide are correct?\n(1) Electrostatic forces of attraction hold the ions in the compound together.\n(2) The compound contains Nations.\n(3) The compound contains S ions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(I) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.3-4",
+      "topic": "CMWA03",
+      "section": "CMWA03.3",
+      "difficulty": "Standard",
+      "stem": "The compound formed between two elements X and Y has the following electronic structure:\nHow many electrons are there in the outermost shell of an atom of X and that of Y?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X: 1; Y: 6"
+        },
+        {
+          "key": "B",
+          "text": "X: 1; Y: 8"
+        },
+        {
+          "key": "C",
+          "text": "X: 3; Y: 6"
+        },
+        {
+          "key": "D",
+          "text": "X: 3; Y: 8"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/mw3cb-1.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA03.3-5",
+      "topic": "CMWA03",
+      "section": "CMWA03.3",
+      "difficulty": "Standard",
+      "stem": "The following table lists the atomic numbers of four elements.\nWhich pair of elements would combine to form an ionic compound?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W and X"
+        },
+        {
+          "key": "B",
+          "text": "W and Y"
+        },
+        {
+          "key": "C",
+          "text": "X and Z"
+        },
+        {
+          "key": "D",
+          "text": "Y and Z"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.3-6",
+      "topic": "CMWA03",
+      "section": "CMWA03.3",
+      "difficulty": "Standard",
+      "stem": "The element with atomic number 9 will form ionic bonds readily with an element whose atomic\nnumber is",
+      "options": [
+        {
+          "key": "A",
+          "text": "7."
+        },
+        {
+          "key": "B",
+          "text": "12."
+        },
+        {
+          "key": "C",
+          "text": "15."
+        },
+        {
+          "key": "D",
+          "text": "17."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.3-7",
+      "topic": "CMWA03",
+      "section": "CMWA03.3",
+      "difficulty": "Standard",
+      "stem": "In which of the following compounds do both ions have the same electronic arrangement as an argon\natom?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Calcium sulphide"
+        },
+        {
+          "key": "B",
+          "text": "Magnesium iodide"
+        },
+        {
+          "key": "C",
+          "text": "Potassium fluoride"
+        },
+        {
+          "key": "D",
+          "text": "Sodium chloride"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.3-8",
+      "topic": "CMWA03",
+      "section": "CMWA03.3",
+      "difficulty": "Applied",
+      "stem": "The positions of five elements in the periodic table are shown by the letters V, W, X, Y and Z.\nWhich of the following statements about these elements is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "V reacts more vigorously with water than Y does."
+        },
+        {
+          "key": "B",
+          "text": "V, Y and Z are all metals."
+        },
+        {
+          "key": "C",
+          "text": "W exists as diatomic molecules."
+        },
+        {
+          "key": "D",
+          "text": "X is used to fill electric light bulbs."
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/mw3cc-1.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA03.3-9",
+      "topic": "CMWA03",
+      "section": "CMWA03.3",
+      "difficulty": "Applied",
+      "stem": "In the formation of aluminium oxide, each aluminium atom and each oxygen atom",
+      "options": [
+        {
+          "key": "A",
+          "text": "Al loses 3 electrons; O gains 2 electrons."
+        },
+        {
+          "key": "B",
+          "text": "Al loses 2 electrons; O gains 3 electrons."
+        },
+        {
+          "key": "C",
+          "text": "share 3 electrons to form covalent bonds."
+        },
+        {
+          "key": "D",
+          "text": "Al gains 3 electrons; O loses 2 electrons."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.3-10",
+      "topic": "CMWA03",
+      "section": "CMWA03.3",
+      "difficulty": "Applied",
+      "stem": "Which description of the electron diagram of magnesium chloride (outermost shells only) is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Mg loses 2 electrons and each Cl gains 1 electron; the formula is MgCl₂."
+        },
+        {
+          "key": "B",
+          "text": "Mg loses 1 electron and each Cl gains 2 electrons; the formula is MgCl."
+        },
+        {
+          "key": "C",
+          "text": "Electrons are shared between Mg and Cl to give MgCl₂ molecules."
+        },
+        {
+          "key": "D",
+          "text": "The compound contains Mg²⁺ and Cl₂⁻ ions."
+        }
+      ],
+      "answer": "A"
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "quizId": "chem-cmwa03-1",
+  "topicCode": "CMWA03.1",
+  "symbol": "MWI3A",
+  "title": {
+    "en": "CMWA03.1 Metallic Bond",
+    "zhHant": "CMWA03.1 金屬鍵"
+  },
+  "items": [
+    {
+      "id": "CMWA03.1-1",
+      "topic": "CMWA03",
+      "section": "CMWA03.1",
+      "difficulty": "Foundation",
+      "stem": "Metallic bonding is the electrostatic attraction between",
+      "options": [
+        {
+          "key": "A",
+          "text": "metal cations and a sea of delocalized electrons."
+        },
+        {
+          "key": "B",
+          "text": "metal atoms and non-metal atoms."
+        },
+        {
+          "key": "C",
+          "text": "oppositely charged ions only."
+        },
+        {
+          "key": "D",
+          "text": "shared pairs of electrons between two atoms."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.1-2",
+      "topic": "CMWA03",
+      "section": "CMWA03.1",
+      "difficulty": "Foundation",
+      "stem": "Metals can conduct electricity in the solid state because they contain",
+      "options": [
+        {
+          "key": "A",
+          "text": "mobile ions."
+        },
+        {
+          "key": "B",
+          "text": "delocalized electrons."
+        },
+        {
+          "key": "C",
+          "text": "water of crystallization."
+        },
+        {
+          "key": "D",
+          "text": "covalent bonds between atoms."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.1-3",
+      "topic": "CMWA03",
+      "section": "CMWA03.1",
+      "difficulty": "Foundation",
+      "stem": "Metals are malleable because",
+      "options": [
+        {
+          "key": "A",
+          "text": "layers of metal ions can slide over one another."
+        },
+        {
+          "key": "B",
+          "text": "metallic bonds are very weak."
+        },
+        {
+          "key": "C",
+          "text": "metals have low melting points."
+        },
+        {
+          "key": "D",
+          "text": "metals exist as simple molecules."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.1-4",
+      "topic": "CMWA03",
+      "section": "CMWA03.1",
+      "difficulty": "Standard",
+      "stem": "Metals have high melting points because",
+      "options": [
+        {
+          "key": "A",
+          "text": "metal ions are held by weak van der Waals’ forces."
+        },
+        {
+          "key": "B",
+          "text": "metal ions and delocalized electrons are held by strong metallic bonds."
+        },
+        {
+          "key": "C",
+          "text": "metals have a simple molecular structure."
+        },
+        {
+          "key": "D",
+          "text": "metals contain water of crystallization."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.1-5",
+      "topic": "CMWA03",
+      "section": "CMWA03.1",
+      "difficulty": "Standard",
+      "stem": "When a force is applied, layers of metal ions can slide, but the piece of metal does not fall apart. This is because",
+      "options": [
+        {
+          "key": "A",
+          "text": "the metallic bonds are non-directional and still hold the metal ions together."
+        },
+        {
+          "key": "B",
+          "text": "ionic bonds form between the layers."
+        },
+        {
+          "key": "C",
+          "text": "van der Waals’ forces between molecules are strong."
+        },
+        {
+          "key": "D",
+          "text": "each metal atom shares a pair of electrons with one neighbouring atom only."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.1-6",
+      "topic": "CMWA03",
+      "section": "CMWA03.1",
+      "difficulty": "Standard",
+      "stem": "Which statement about metallic bonding is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is non-directional."
+        },
+        {
+          "key": "B",
+          "text": "It is formed by sharing a pair of electrons between two non-metal atoms."
+        },
+        {
+          "key": "C",
+          "text": "It helps to explain why metals conduct heat."
+        },
+        {
+          "key": "D",
+          "text": "The strength of the metallic bond affects the melting point."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.1-7",
+      "topic": "CMWA03",
+      "section": "CMWA03.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about metallic bonding is / are correct?\n(1) This type of bonding involves metal atoms sharing their outermost shell electrons.\n(2) This type of bonding involves metallic ions attracted by mobile electrons.\n(3) This type of bonding exists in tungsten.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA03.1-8",
+      "topic": "CMWA03",
+      "section": "CMWA03.1",
+      "difficulty": "Applied",
+      "stem": "Calcium has a higher melting point than potassium because\n(1) potassium ion is smaller than calcium ion.\n(2) calcium has a stronger metallic bond.\n(3) the relative atomic mass of calcium is higher than that of potassium.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.1-9",
+      "topic": "CMWA03",
+      "section": "CMWA03.1",
+      "difficulty": "Applied",
+      "stem": "Why is there no chemical change when a metal conducts electricity?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The number of electrons in the metal remains unchanged: electrons leave at one end and an equal number enter at the other end."
+        },
+        {
+          "key": "B",
+          "text": "Metal ions move through the lattice and are replaced by new atoms."
+        },
+        {
+          "key": "C",
+          "text": "The metal melts and then solidifies again."
+        },
+        {
+          "key": "D",
+          "text": "Covalent bonds between metal atoms are broken and reformed."
+        }
+      ],
+      "answer": "A"
+    }
+  ]
+}

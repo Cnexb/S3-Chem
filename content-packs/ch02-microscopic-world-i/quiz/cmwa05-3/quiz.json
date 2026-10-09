@@ -1,0 +1,520 @@
+{
+  "quizId": "chem-cmwa05-3",
+  "topicCode": "CMWA05.3",
+  "symbol": "MWI5C",
+  "title": {
+    "en": "CMWA05.3 Simple Molecular Structure",
+    "zhHant": "CMWA05.3 簡單分子結構"
+  },
+  "items": [
+    {
+      "id": "CMWA05.3-1",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Foundation",
+      "stem": "Why does argon exist as a gas at room temperature and pressure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Argon is unreactive."
+        },
+        {
+          "key": "B",
+          "text": "The forces between argon atoms are weak."
+        },
+        {
+          "key": "C",
+          "text": "Argon has a simple molecular structure."
+        },
+        {
+          "key": "D",
+          "text": "Argon is a Group 0 element."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.3-2",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Foundation",
+      "stem": "Which of the following chlorides is most likely to be soluble in tetrachloromethane (CCl₄)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "BaCl₂"
+        },
+        {
+          "key": "B",
+          "text": "NCl₃"
+        },
+        {
+          "key": "C",
+          "text": "NaCl"
+        },
+        {
+          "key": "D",
+          "text": "ZnCl₂"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.3-3",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Foundation",
+      "stem": "Silicon tetrachloride is a liquid of low boiling point. Which of the following types of forces exist in it?\n(1) Covalent bonding\n(2) Dative covalent bonding\n(3) Van der Waals' forces",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.3-4",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Foundation",
+      "stem": "70. A substance melts at 17 °C and boils at 43 °C. The substance (1) has weak van der Waals' forces between molecules. (2) has a simple molecular structure. (3) is a liquid at room temperature and pressure. A (1) and (2) only B (1) and (3) only C (2) and (3) only D (1), (2) and (",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.3-5",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Standard",
+      "stem": "Which of the following substances is a nonconductor of electricity?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Graphite"
+        },
+        {
+          "key": "B",
+          "text": "Magnesium"
+        },
+        {
+          "key": "C",
+          "text": "Molten calcium chloride"
+        },
+        {
+          "key": "D",
+          "text": "Molten sulphur"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.3-6",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Standard",
+      "stem": "Which of the following compounds has the LOWEST melting point?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Carbon dioxide"
+        },
+        {
+          "key": "B",
+          "text": "Quartz"
+        },
+        {
+          "key": "C",
+          "text": "Sodium iodide"
+        },
+        {
+          "key": "D",
+          "text": "Tetrachloromethane"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.3-7",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Standard",
+      "stem": "Sodium chloride is a solid while hydrogen chloride is a gas at room temperature because",
+      "options": [
+        {
+          "key": "A",
+          "text": "the ionic bonds in sodium chloride are stronger than the covalent bonds in hydrogen chloride molecules."
+        },
+        {
+          "key": "B",
+          "text": "ionic substances are usually solids while covalent substances are usually gases."
+        },
+        {
+          "key": "C",
+          "text": "the ionic bonds in sodium chloride are stronger than the attractive forces among hydrogen chloride molecules."
+        },
+        {
+          "key": "D",
+          "text": "the attractive forces among molecules in sodium chloride are stronger than those in hydrogen chloride."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.3-8",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Standard",
+      "stem": "Consider the following table which gives some information about the solubilities of four substances in water and heptane (a non-aqueous solvent):\nWhich of the above substances could be iodine?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W"
+        },
+        {
+          "key": "B",
+          "text": "X"
+        },
+        {
+          "key": "C",
+          "text": "Y"
+        },
+        {
+          "key": "D",
+          "text": "Z"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.3-9",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Standard",
+      "stem": "The table below lists the information about the electrical conductivities of four substances, W, X, Y and Z:\nWhich of the substances is likely to be copper?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W"
+        },
+        {
+          "key": "B",
+          "text": "X"
+        },
+        {
+          "key": "C",
+          "text": "Y"
+        },
+        {
+          "key": "D",
+          "text": "Z"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.3-10",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about simple molecular substances are correct?\n(1) They usually have low melting points.\n(2) They are usually soluble in non-aqueous solvents.\n(3) They all conduct electricity in aqueous solution.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.3-11",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Standard",
+      "stem": "84. A substance X is soluble in hexane (a non-aqueous solvent) but insoluble in water. X probably has a A giant ionic structure. B simple molecular structure. giant covalent structure. giant metallic structure.",
+      "options": [
+        {
+          "key": "A",
+          "text": "giant ionic structure."
+        },
+        {
+          "key": "B",
+          "text": "simple molecular structure."
+        },
+        {
+          "key": "C",
+          "text": "giant covalent structure."
+        },
+        {
+          "key": "D",
+          "text": "giant metallic structure."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.3-12",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Applied",
+      "stem": "Which of the following diagrams best represents the arrangement of particles in a sample of argon at\nroom temperature and pressure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diagram A"
+        },
+        {
+          "key": "B",
+          "text": "Diagram B"
+        },
+        {
+          "key": "C",
+          "text": "Diagram C"
+        },
+        {
+          "key": "D",
+          "text": "Diagram D"
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/mw5cc-1.png",
+        "alt": "Option diagrams A–D",
+        "caption": "Option diagrams A–D"
+      }
+    },
+    {
+      "id": "CMWA05.3-13",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Applied",
+      "stem": "Hydrogen and sulphur react to give hydrogen sulphide. Which of the following diagrams can represent\nthe particles in a sample of hydrogen sulphide at room temperature and pressure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diagram A"
+        },
+        {
+          "key": "B",
+          "text": "Diagram B"
+        },
+        {
+          "key": "C",
+          "text": "Diagram C"
+        },
+        {
+          "key": "D",
+          "text": "Diagram D"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/mw5cc-2.png",
+        "alt": "Option diagrams A–D",
+        "caption": "Option diagrams A–D"
+      }
+    },
+    {
+      "id": "CMWA05.3-14",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Applied",
+      "stem": "Which of the following combinations about the strength of the bonds between chlorine atoms and that of the forces between chlorine molecules is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Strength of bonds between chlorine atoms: strong; Strength of forces between chlorine molecules: weak"
+        },
+        {
+          "key": "B",
+          "text": "Strength of bonds between chlorine atoms: strong; Strength of forces between chlorine molecules: strong"
+        },
+        {
+          "key": "C",
+          "text": "Strength of bonds between chlorine atoms: weak; Strength of forces between chlorine molecules: strong"
+        },
+        {
+          "key": "D",
+          "text": "Strength of bonds between chlorine atoms: weak; Strength of forces between chlorine molecules: weak"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.3-15",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Applied",
+      "stem": "The diagram below shows the structure of dry ice:\nWhich of the following statements about dry ice is correct?\nB It has a giant covalent structure.\nC The atoms in its molecules are held together by van der Waals' forces.\nIts molecules are held together by covalent bonds.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It can sublime."
+        },
+        {
+          "key": "B",
+          "text": "It has a giant covalent structure."
+        },
+        {
+          "key": "C",
+          "text": "The atoms in its molecules are held together by van der Waals' forces."
+        },
+        {
+          "key": "D",
+          "text": "Its molecules are held together by covalent bonds."
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/mw5cc-4.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA05.3-16",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Applied",
+      "stem": "Which of the following combinations about substances and attractions between particles is / are correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.3-17",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Applied",
+      "stem": "62. Melting Boiling Substance point (°C) point (°C) Neon (Ne) -249 -246 Chlorine (Clz) -101 -34 Phosphine (PH3) -134 -87 Sulphur dioxide (SOz) -75 -10 Which of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure? (1) Van der Waals' forces (2) \nWhich of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure?\n(1) Van der Waals’ forces\n(2) Metallic bond\n(3) Covalent bond",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.3-18",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Applied",
+      "stem": "The atomic numbers of elements X and Y are 14 and 17 respectively. They combine to form compound\nZ. Which of the following statements about compound Z is / are correct?\n(1) Z has a giant covalent structure.\n(2) The chemical formula of Z is XY4.\n(3) Z does not carry any charge.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.3-19",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Applied",
+      "stem": "Elements X and Y combine to form a compound with a chemical formula of XY2. If Y is a Group VII\nelement and XYz does not conduct electricity in liquid state, then X is a",
+      "options": [
+        {
+          "key": "A",
+          "text": "Group I element."
+        },
+        {
+          "key": "B",
+          "text": "Group Il element."
+        },
+        {
+          "key": "C",
+          "text": "Group I element."
+        },
+        {
+          "key": "D",
+          "text": "Group VI element."
+        }
+      ],
+      "answer": "D"
+    }
+  ]
+}

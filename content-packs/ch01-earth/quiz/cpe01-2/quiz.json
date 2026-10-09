@@ -1,0 +1,291 @@
+{
+  "quizId": "chem-cpe01-2",
+  "topicCode": "CPE01.2",
+  "symbol": "Earth1B",
+  "title": {
+    "en": "CPE01.2 Laboratory Safety",
+    "zhHant": "CPE01.2 實驗室安全"
+  },
+  "items": [
+    {
+      "id": "CPE01.2-1",
+      "topic": "CPE01",
+      "section": "CPE01.2",
+      "difficulty": "Foundation",
+      "stem": "What is the meaning of the following hazard warning label?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Carcinogenic"
+        },
+        {
+          "key": "B",
+          "text": "Flammable"
+        },
+        {
+          "key": "C",
+          "text": "Corrosive"
+        },
+        {
+          "key": "D",
+          "text": "Oxidizing"
+        }
+      ],
+      "answer": "D",
+      "image": {
+        "src": "assets/earth1ba-1.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE01.2-2",
+      "topic": "CPE01",
+      "section": "CPE01.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following should NOT be done when heating a chemical in a test tube?\n(1) Look down at the test tube directly.\n(2) Keep swirling the test tube.\n(3) Point the mouth of the test tube towards others.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE01.2-3",
+      "topic": "CPE01",
+      "section": "CPE01.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following precautions should be taken when working with a toxic reagent?\n(1) Avoid friction.\n(2) Wear protective gloves.\n(3) Avoid breathing in its vapours.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE01.2-4",
+      "topic": "CPE01",
+      "section": "CPE01.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following hazard warning labels should be displayed on a bottle of aqueous chlorine?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diagram A"
+        },
+        {
+          "key": "B",
+          "text": "Diagram B"
+        },
+        {
+          "key": "C",
+          "text": "Diagram C"
+        },
+        {
+          "key": "D",
+          "text": "Diagram D"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/earth1bb-1.png",
+        "alt": "Option diagrams A–D",
+        "caption": "Option diagrams A–D"
+      }
+    },
+    {
+      "id": "CPE01.2-5",
+      "topic": "CPE01",
+      "section": "CPE01.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following hazard warning labels should be displayed on a metal cylinder containing liquefied petroleum gas?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diagram A"
+        },
+        {
+          "key": "B",
+          "text": "Diagram B"
+        },
+        {
+          "key": "C",
+          "text": "Diagram C"
+        },
+        {
+          "key": "D",
+          "text": "Diagram D"
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/earth1bb-2.png",
+        "alt": "Option diagrams A–D",
+        "caption": "Option diagrams A–D"
+      }
+    },
+    {
+      "id": "CPE01.2-6",
+      "topic": "CPE01",
+      "section": "CPE01.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following should NOT be done in a laboratory?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Wash hands after experiments."
+        },
+        {
+          "key": "B",
+          "text": "Keep flammable chemicals away from naked flames."
+        },
+        {
+          "key": "C",
+          "text": "Close all windows when doing experiments."
+        },
+        {
+          "key": "D",
+          "text": "Put the Bunsen burner on a fireproof mat when using it."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE01.2-7",
+      "topic": "CPE01",
+      "section": "CPE01.2",
+      "difficulty": "Standard",
+      "stem": "4. A student conducts an experiment using concentrated hydrochloric acid. concentrated hydrochloric acid Which of the following precautions the student should take when working with the acid? (1) Wear safety glasses. (2) Wear protective gloves. (3) Do not warm the acid. A (1) and",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE01.2-8",
+      "topic": "CPE01",
+      "section": "CPE01.2",
+      "difficulty": "Applied",
+      "stem": "Which of the following hazard warning labels should be displayed on a metal cylinder containing carbon monoxide gas?",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/earth1bc-1.png",
+        "alt": "Question diagrams",
+        "caption": "Question diagrams"
+      }
+    },
+    {
+      "id": "CPE01.2-9",
+      "topic": "CPE01",
+      "section": "CPE01.2",
+      "difficulty": "Applied",
+      "stem": "A reagent bottle carries both the corrosive and toxic hazard labels. Which precautions must be taken?\n(1) Wear protective gloves.\n(2) Avoid breathing in the vapours.\n(3) Point the mouth of a heated test tube towards yourself.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE01.2-10",
+      "topic": "CPE01",
+      "section": "CPE01.2",
+      "difficulty": "Applied",
+      "stem": "Which sequence of steps is correct when lighting a Bunsen burner?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Open the air hole → turn on the gas tap → put a lighted match at the top of the barrel."
+        },
+        {
+          "key": "B",
+          "text": "Close the air hole → put a lighted match near the top of the barrel → turn on the gas tap → open the air hole slowly."
+        },
+        {
+          "key": "C",
+          "text": "Turn on the gas tap with the air hole fully open, then light with a match."
+        },
+        {
+          "key": "D",
+          "text": "Open the air hole fully, then put a lighted match inside the barrel."
+        }
+      ],
+      "answer": "B"
+    }
+  ]
+}

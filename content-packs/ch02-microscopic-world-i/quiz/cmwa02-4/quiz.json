@@ -1,0 +1,349 @@
+{
+  "quizId": "chem-cmwa02-4",
+  "topicCode": "CMWA02.4",
+  "symbol": "MWI2D",
+  "title": {
+    "en": "CMWA02.4 Group Vii And Group 0",
+    "zhHant": "CMWA02.4 第VII族及第0族"
+  },
+  "items": [
+    {
+      "id": "CMWA02.4-1",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Foundation",
+      "stem": "Which halogen is a reddish-brown liquid at room temperature and pressure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Fluorine"
+        },
+        {
+          "key": "B",
+          "text": "Chlorine"
+        },
+        {
+          "key": "C",
+          "text": "Bromine"
+        },
+        {
+          "key": "D",
+          "text": "Iodine"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.4-2",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Foundation",
+      "stem": "Noble gases are unreactive because their atoms",
+      "options": [
+        {
+          "key": "A",
+          "text": "have a stable electronic arrangement in the outermost shell."
+        },
+        {
+          "key": "B",
+          "text": "have no electrons."
+        },
+        {
+          "key": "C",
+          "text": "are metals."
+        },
+        {
+          "key": "D",
+          "text": "have a half-filled outermost shell."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.4-3",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Foundation",
+      "stem": "Which statement about the reaction of Group VII elements with hydrogen is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Fluorine reacts explosively even in the dark."
+        },
+        {
+          "key": "B",
+          "text": "Iodine reacts explosively even in the dark."
+        },
+        {
+          "key": "C",
+          "text": "Chlorine has almost no reaction with hydrogen even on strong heating."
+        },
+        {
+          "key": "D",
+          "text": "Bromine is unreactive towards hydrogen under all conditions."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.4-4",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Standard",
+      "stem": "The atomic number of element X is 35. Which of the following elements has chemical properties\nsimilar to those of element X?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Oxygen"
+        },
+        {
+          "key": "B",
+          "text": "Calcium"
+        },
+        {
+          "key": "C",
+          "text": "Fluorine"
+        },
+        {
+          "key": "D",
+          "text": "Nitrogen"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.4-5",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about halogens is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "All of them have the same colour."
+        },
+        {
+          "key": "B",
+          "text": "They have the same number of occupied electron shells in their atoms."
+        },
+        {
+          "key": "C",
+          "text": "Their reactivity decreases down the group."
+        },
+        {
+          "key": "D",
+          "text": "Bromine is the only liquid element at room temperature and pressure."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.4-6",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Standard",
+      "stem": "A and B are halogens. If the atomic number of A is x, then the atomic number of B could be",
+      "options": [
+        {
+          "key": "A",
+          "text": "x + 9"
+        },
+        {
+          "key": "B",
+          "text": "x − 10"
+        },
+        {
+          "key": "C",
+          "text": "x + 18"
+        },
+        {
+          "key": "D",
+          "text": "x + 20"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.4-7",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about Group 0 is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They are unreactive."
+        },
+        {
+          "key": "B",
+          "text": "They are found in the air."
+        },
+        {
+          "key": "C",
+          "text": "All of their atoms have an octet structure in the outermost shells."
+        },
+        {
+          "key": "D",
+          "text": "They are colourless gases at room temperature and pressure."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.4-8",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about iodine are correct?\n(1) It is a black solid at room conditions.\n(2) It is in Period 4 of the periodic table.\n(3) It can react with metals to form salts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.4-9",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about Group 0 elements are correct?\n(1) They are all colourless gases at room temperature and pressure.\n(2) They have 8 outermost shell electrons in their atoms.\n(3) Their atomic sizes increase down the group.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.4-10",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Standard",
+      "stem": "The atomic number of the element astatine (At) is 85. Which of the following statements about astatine\nis / are correct?\n(1) It is a gas at room temperature and pressure.\n(2) It is soluble in non-aqueous solvents.\n(3) It has a giant covalent structure.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(I) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.4-11",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Applied",
+      "stem": "The element astatine is below iodine in Group VII of the periodic table. Which of the following\nstatements about astatine is / are correct?\n(1) It is a coloured solid at room conditions.\n(2) It is more reactive than chlorine.\n(3) It is a Period 5 element.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.4-12",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Applied",
+      "stem": "The element krypton (Kr) is below argon in Group 0 of the periodic table. Which of the following\nstatements about krypton are correct?\n(1) Its atom has an octet structure in the outermost shell.\n(2) It is in Period 4 of the periodic table.\n(3) Its density is higher than that of argon.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.4-13",
+      "topic": "CMWA02",
+      "section": "CMWA02.4",
+      "difficulty": "Applied",
+      "stem": "Astatine is below iodine in Group VII. Which statement is most likely to be correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Astatine is a colourless gas at room temperature."
+        },
+        {
+          "key": "B",
+          "text": "Astatine is more reactive than iodine."
+        },
+        {
+          "key": "C",
+          "text": "Astatine is less reactive than iodine and is darker in colour."
+        },
+        {
+          "key": "D",
+          "text": "Astatine is a noble gas."
+        }
+      ],
+      "answer": "C"
+    }
+  ]
+}

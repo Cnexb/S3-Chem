@@ -1,0 +1,505 @@
+{
+  "quizId": "chem-cpe03-2",
+  "topicCode": "CPE03.2",
+  "symbol": "Earth3B",
+  "title": {
+    "en": "CPE03.2 Chemical Tests And Electrolysis",
+    "zhHant": "CPE03.2 化學測試及電解"
+  },
+  "items": [
+    {
+      "id": "CPE03.2-1",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following is the correct sequence of steps for flame test?\n(1) Put the end of the nichrome wire in the Bunsen flame.\n(2) Dip the nichrome wire into the solid sample.\n(3) Observe the colour of the flame.\n(4) Dip a clean nichrome wire into concentrated hydrochloric acid.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) → (4) → (2) → (3)"
+        },
+        {
+          "key": "B",
+          "text": "(2) → (1) → (3)→ (4)"
+        },
+        {
+          "key": "C",
+          "text": "(4) → (1) → (3) → (2)"
+        },
+        {
+          "key": "D",
+          "text": "(4) → (2) → (1) → (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE03.2-2",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following combinations is INCORRECT?\nCompound of\nFlame colour",
+      "options": [
+        {
+          "key": "A",
+          "text": "Compound of: sodium; Flame colour: golden yellow"
+        },
+        {
+          "key": "B",
+          "text": "Compound of: potassium; Flame colour: lilac"
+        },
+        {
+          "key": "C",
+          "text": "Compound of: calcium; Flame colour: bluish white"
+        },
+        {
+          "key": "D",
+          "text": "Compound of: copper; Flame colour: bluish green"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE03.2-3",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Foundation",
+      "stem": "What would be observed if a sodium chloride solution is added to a solution containing dilute nitric\nacid and silver nitrate solution?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Effervescence occurs."
+        },
+        {
+          "key": "B",
+          "text": "There is no observable change."
+        },
+        {
+          "key": "C",
+          "text": "The solution becomes blue in colour."
+        },
+        {
+          "key": "D",
+          "text": "A white precipitate forms."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE03.2-4",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following substances CANNOT be obtained in the electrolysis of sea water?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Argon"
+        },
+        {
+          "key": "B",
+          "text": "Hydrogen"
+        },
+        {
+          "key": "C",
+          "text": "Chlorine"
+        },
+        {
+          "key": "D",
+          "text": "Sodium hydroxide"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE03.2-5",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following is NOT a major use of hydrogen?",
+      "options": [
+        {
+          "key": "A",
+          "text": "As rocket fuel"
+        },
+        {
+          "key": "B",
+          "text": "Manufacture of ammonia"
+        },
+        {
+          "key": "C",
+          "text": "Manufacture of hydrochloric acid"
+        },
+        {
+          "key": "D",
+          "text": "Manufacture of plastics"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE03.2-6",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following substances is / are used to manufacture bleach?\n(1) Sodium hydroxide\n(2) Hydrogen\n(3) Chlorine",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE03.2-7",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Foundation",
+      "stem": "30.|\nWhich of the following are major uses of chlorine?\n(1) Sterilizing swimming pool water\n(2) Manufacture of soap\n(3) Manufacture of hydrochloric acid",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE03.2-8",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Foundation",
+      "stem": "31.|\nWhich of the following is / are major use(s) of sodium hydroxide?\n(1) Manufacture of bleach\n(2) As a fuel\n(3) Manufacture of soap",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE03.2-9",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following methods can be used to distinguish between copper(Il) sulphate crystals and\nsodium chloride crystals?\n(1) Perform a flame test.\n(2) Add dilute nitric acid followed by silver nitrate solution to their solutions.\n(3) Observe their colours.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE03.2-10",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following methods can be used to distinguish between solid calcium chloride and solid\npotassium chloride?\n(1) Add dilute hydrochloric acid.\n(2) Perform a flame test.\n(3) Dissolve the solids in water.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE03.2-11",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following combinations is correct?\nTest method",
+      "options": [
+        {
+          "key": "A",
+          "text": "Test method: a burning splint; Species: oxygen"
+        },
+        {
+          "key": "B",
+          "text": "Test method: a glowing splint; Species: nitrogen"
+        },
+        {
+          "key": "C",
+          "text": "Test method: C blue cobalt(II) chloride paper; Species: water vapour"
+        },
+        {
+          "key": "D",
+          "text": "Test method: limewater; Species: Ammonia"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE03.2-12",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about water are correct?\n(1) It is a compound.\n(2) It turns dry cobaltII) chloride paper pink.\n(3) It turns anhydrous copperII) sulphate blue.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE03.2-13",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about the electrolysis of sea water is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It involves a chemical change."
+        },
+        {
+          "key": "B",
+          "text": "It produces oxygen."
+        },
+        {
+          "key": "C",
+          "text": "It gives pure sodium chloride."
+        },
+        {
+          "key": "D",
+          "text": "It gives elements only."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE03.2-14",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following items require the use of products obtained from the electrolysis of sea water?\n(1) Manufacture of hydrochloric acid\n(2) Manufacture of PVC\n(3) Manufacture of soaps",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE03.2-15",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Applied",
+      "stem": "23. A solid X gives a lilac flame in flame test. X reacts with dilute hydrochloric acid to give a gas. X could be A potassium carbonate. B potassium chloride. C sodium carbonate. D sodium chloride.",
+      "options": [
+        {
+          "key": "A",
+          "text": "potassium carbonate."
+        },
+        {
+          "key": "B",
+          "text": "potassium chloride."
+        },
+        {
+          "key": "C",
+          "text": "sodium carbonate."
+        },
+        {
+          "key": "D",
+          "text": "sodium chloride."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE03.2-16",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Applied",
+      "stem": "When dilute nitric acid and silver nitrate solution are added to a beaker containing an unknown\nsolution, a white precipitate forms. The unknown solution could be\n(1) sodium nitrate solution.\n(2) potassium chloride solution.\n(3) sea water.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE03.2-17",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Applied",
+      "stem": "Which of the following combinations about the gases obtained by electrolysis of water is correct?\nPositive electrode\nNegative electrode",
+      "options": [
+        {
+          "key": "A",
+          "text": "Positive electrode: oxygen; Negative electrode: hydrogen"
+        },
+        {
+          "key": "B",
+          "text": "Positive electrode: chlorine; Negative electrode: hydrogen"
+        },
+        {
+          "key": "C",
+          "text": "Positive electrode: hydrogen; Negative electrode: chlorine"
+        },
+        {
+          "key": "D",
+          "text": "Positive electrode: nitrogen; Negative electrode: oxygen"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE03.2-18",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Applied",
+      "stem": "To identify an unknown powder, a student heated the powder in a Bunsen flame. A brick-red flame was\nobserved. When the powder was added to dilute hydrochloric acid, it dissolved without any observable\nchanges. What might the powder be?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Calcium carbonate"
+        },
+        {
+          "key": "B",
+          "text": "Sodium carbonate"
+        },
+        {
+          "key": "C",
+          "text": "Calcium chloride"
+        },
+        {
+          "key": "D",
+          "text": "Sodium chloride"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE03.2-19",
+      "topic": "CPE03",
+      "section": "CPE03.2",
+      "difficulty": "Applied",
+      "stem": "Which of the following methods can be used to distinguish between solid sodium chloride and solid\ncalcium carbonate?\n(1) Testing the solubility of the solids in water\n(2) Observing the colour of the solids\n(3) Adding dilute nitric acid followed by silver nitrate solution",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C"
+    }
+  ]
+}

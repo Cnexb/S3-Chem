@@ -11,31 +11,43 @@ Uni+ Learning Tools reads **only** `content-packs/` through content-api. A pack 
 
 Do **not** nest packs in `S3/` or any year folder. Do **not** add teaching files under `public/`, `dist/`, `js/`, or `index.html` (old hub).
 
-## Folder shape (one topic-list chapter = one pack)
+## Folder shape (one Layer 1 chapter = one pack)
+
+Same naming as Physics (`ch1-heat-and-gases`): `ch` + chapter number + slug.
 
 ```
-content-packs/01-fundamentals-of-chemistry/
+content-packs/ch01-earth/
   manifest.json
+  quiz.json                 ← chapter quiz index
   notes/*.pdf
   tools/<slug>/index.html
+  quiz/<topic-slug>/quiz.json
   summaries/
 ```
 
-Chapters run from `01-fundamentals-of-chemistry` through `65-analytical-chemistry-in-society`, one folder per Chem topic-list chapter.
+Published S3 packs are `ch01-earth` (CPE01–CPE04) and `ch02-microscopic-world-i` (CMWA01–CMWA05). Later Excel chapters are `ch03-metal` through `ch15-analytical-chemistry`.
+
+Do **not** create one pack per Layer 2 topic (`01-fundamentals-of-chemistry`).
 
 ## New chapter
 
-1. Copy an existing pack folder. Rename it from the topic-list chapter number and name (`66-…`).
-2. In `manifest.json`: `subject` `"CHEM"`, unique lowercase `scope`, `chapterCode`, `published: true`.
-3. List every note, tool, quiz, summary, and flashcard page. Unlisted files are invisible.
+1. Copy an existing pack folder. Rename it from the Excel Layer 1 chapter (`ch03-metal`).
+2. In `manifest.json`: `subject` `"CHEM"`, unique lowercase `scope` (`earth`, `metal`), `chapterCode` (`CH01`), `published: true`.
+3. Set `title.en` to the chapter name without the code (`Earth`) so Learning Tools shows **CH01 Earth**.
+4. List every note, tool, quiz, summary, and flashcard. Unlisted files are invisible.
 
 ## New item inside a chapter
 
-Add `notes[]` with `topicCode` and one English PDF (`files.en` only). Add labs, games, quizzes, and flashcard pages under `tools/<slug>/` with `index.html`, and list them in `tools`. Set `"section": "games"` or `"section": "quizzes"` when the page is not a lab. Tag items with a syllabus **Symbol** from `content/topics/chem-topics.json` (`Earth1`, `MWI1A`, `Metal2`). Do not invent Symbols.
+Add `notes[]` with `topicCode` from the Excel Layer 2 code (`CPE01`, `CMWA02`) and one English PDF (`files.en` only). Add labs, games, and flashcard pages under `tools/<slug>/` with `index.html`, and list them in `tools`. Set `"section": "games"` when the page is a game. Tag items with a **Topic Code** from `content/topics/chem-topics.json`. Do not invent codes.
 
 ## Quizzes
 
-Quiz pages are HTML under `tools/<slug>/index.html` with `"section": "quizzes"`. Keep old question ids. Leave quiz runners, `postMessage`, and tracking unchanged.
+List quiz info in two places, same as S3 Physics:
+
+1. Chapter `quiz.json` — index of every topic quiz in that pack.
+2. `quiz/<topic-slug>/quiz.json` — the items for that topic (`quizId`, `topicCode`, `items`).
+
+Also list each topic in `manifest.json` `quiz[]` with `slug`, `quizId`, `topicCode`, `path`, and `file` pointing at that topic `quiz.json`. Keep old question ids. Leave HTML quiz runners, `postMessage`, and tracking unchanged. The combined S3 MCQ picker stays at `ch01-earth/tools/s3-mc`.
 
 ## HTML to keep
 
@@ -43,4 +55,4 @@ Quiz pages are HTML under `tools/<slug>/index.html` with `"section": "quizzes"`.
 
 ## Stop
 
-Duplicate `scope`, year-folder wrappers, or quiz runner / tracking changes → ask the technical owner. Do not push.
+Duplicate `scope`, year-folder wrappers, topic-level pack splits, or quiz runner / tracking changes → ask the technical owner. Do not push.

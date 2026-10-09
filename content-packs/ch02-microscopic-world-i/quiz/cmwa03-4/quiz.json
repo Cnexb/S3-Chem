@@ -1,0 +1,458 @@
+{
+  "quizId": "chem-cmwa03-4",
+  "topicCode": "CMWA03.4",
+  "symbol": "MWI3D",
+  "title": {
+    "en": "CMWA03.4 Naming Of Ionic Compound",
+    "zhHant": "CMWA03.4 離子化合物的命名"
+  },
+  "items": [
+    {
+      "id": "CMWA03.4-1",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Foundation",
+      "stem": "How many elements does potassium dichromate consist of?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2"
+        },
+        {
+          "key": "B",
+          "text": "3"
+        },
+        {
+          "key": "C",
+          "text": "4"
+        },
+        {
+          "key": "D",
+          "text": "5"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.4-2",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Foundation",
+      "stem": "The atomic numbers of X and Y are 3 and 7 respectively. What is the chemical formula of the\ncompound formed between X and Y?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X₂Y"
+        },
+        {
+          "key": "B",
+          "text": "XY₂"
+        },
+        {
+          "key": "C",
+          "text": "XY₃"
+        },
+        {
+          "key": "D",
+          "text": "X₃Y"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA03.4-3",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Foundation",
+      "stem": "Consider the following compounds. Which of the underlined particles does NOT have an octet structure in the outermost shell?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Li₂O"
+        },
+        {
+          "key": "B",
+          "text": "CaF₂"
+        },
+        {
+          "key": "C",
+          "text": "Mg₃N₂"
+        },
+        {
+          "key": "D",
+          "text": "Na₂S"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.4-4",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Standard",
+      "stem": "Elements X and Y react to form an ionic compound with a chemical formula of X2Y. If X belongs to\nGroup I of the periodic table, to which group would Y belong?",
+      "options": [
+        {
+          "key": "A",
+          "text": "II"
+        },
+        {
+          "key": "B",
+          "text": "III"
+        },
+        {
+          "key": "C",
+          "text": "VI"
+        },
+        {
+          "key": "D",
+          "text": "VII"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.4-5",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Standard",
+      "stem": "Consider the following information about three elements X, Y and Z.\nWhich of the following statements about X, Y and Z are correct?\n(1) X and Y react to form an ionic compound.\n(2) Y and Z belong to the same period of the periodic table.\n(3) Z forms an ion carrying two negative charges.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA03.4-6",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Standard",
+      "stem": "The chemical formula of an ionic compound is XY3. The compound could be",
+      "options": [
+        {
+          "key": "A",
+          "text": "calcium nitride."
+        },
+        {
+          "key": "B",
+          "text": "copperII) sulphide."
+        },
+        {
+          "key": "C",
+          "text": "iron(III) chloride."
+        },
+        {
+          "key": "D",
+          "text": "sodium hydride."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.4-7",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Standard",
+      "stem": "The chemical formula of the oxide of indium (In) is In₂O₃. What is the chemical formula of indium nitrate?",
+      "options": [
+        {
+          "key": "A",
+          "text": "InNO₃"
+        },
+        {
+          "key": "B",
+          "text": "In₂(NO₃)₂"
+        },
+        {
+          "key": "C",
+          "text": "In(NO₃)₂"
+        },
+        {
+          "key": "D",
+          "text": "In(NO₃)₃"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA03.4-8",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Standard",
+      "stem": "X is an element. It can form of an ion X2* which has an electronic arrangement of 2,8,8. Which of the\nfollowing statements about X is / are correct?\n(1) X is a Period 3 element.\n(2) The chloride of X is colourless.\n(3) The chemical formula of the oxide of X is X20.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.4-9",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Standard",
+      "stem": "Element X (atomic number 12) combines with element Y (atomic number 7) to form compound Z.\nnich of the following statements is / are correct?\n(1) & forms a stable ion carrying two positive charges.\n(2) Y forms a stable ion carrying one negative charge.\n(3) The chemical formula of Z is X3Y2.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.4-10",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Standard",
+      "stem": "Element X reacts with chlorine to form a compound with the chemical formula of XCl. The electronic\narrangement of an atom of X may be",
+      "options": [
+        {
+          "key": "A",
+          "text": "2,5."
+        },
+        {
+          "key": "B",
+          "text": "2,6."
+        },
+        {
+          "key": "C",
+          "text": "2,8,8,1."
+        },
+        {
+          "key": "D",
+          "text": "2,8,8,6."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA03.4-11",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Standard",
+      "stem": "X is an element in the second period of the periodic table. The chemical formula of the compound\nformed between magnesium and X is Mg3X2. Which of the following electron diagrams best represents\nthe compound formed between X and hydrogen?\n(Only electrons in the outermost shells are shown.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diagram A"
+        },
+        {
+          "key": "B",
+          "text": "Diagram B"
+        },
+        {
+          "key": "C",
+          "text": "Diagram C"
+        },
+        {
+          "key": "D",
+          "text": "Diagram D"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/mw3db-8.png",
+        "alt": "Option diagrams A–D",
+        "caption": "Option diagrams A–D"
+      }
+    },
+    {
+      "id": "CMWA03.4-12",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Standard",
+      "stem": "Elements X and Y have 1 and 6 outermost shell electrons in their atoms respectively. Which of the following combinations about the compound they form is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Chemical formula: XY₂; Type of bond: covalent"
+        },
+        {
+          "key": "B",
+          "text": "Chemical formula: X₂Y; Type of bond: covalent"
+        },
+        {
+          "key": "C",
+          "text": "Chemical formula: X₂Y; Type of bond: ionic"
+        },
+        {
+          "key": "D",
+          "text": "Chemical formula: XY₂; Type of bond: ionic"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.4-13",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Standard",
+      "stem": "Caesium (Cs) is a Group I element. Which of the following statements about caesium oxide are correct?\n(1) It chemical formula is Cs2O.\n(2) It is a brittle solid.\n(3) It is soluble in water.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA03.4-14",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Applied",
+      "stem": "Scandium (Sc) is a metal. The chemical formula of scandium hydroxide is Sc(OH)3. Which of the\nfollowing is the chemical formula of scandium carbonate?",
+      "options": [
+        {
+          "key": "A",
+          "text": "ScCO3"
+        },
+        {
+          "key": "B",
+          "text": "Sc(CO3)2"
+        },
+        {
+          "key": "C",
+          "text": "Sc2(CОз)з"
+        },
+        {
+          "key": "D",
+          "text": "Sc3(CO3)2"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA03.4-15",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Applied",
+      "stem": "An atom of element X has 12 protons while an atom of element Y has 7 electrons. What is the chemical\nformula of the compound formed between X and Y?",
+      "options": [
+        {
+          "key": "A",
+          "text": "XY"
+        },
+        {
+          "key": "B",
+          "text": "X₂Y"
+        },
+        {
+          "key": "C",
+          "text": "X₂Y₃"
+        },
+        {
+          "key": "D",
+          "text": "X₃Y₂"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA03.4-16",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Applied",
+      "stem": "An ionic compound has a chemical formula of XY. All ions in the compound have the electronic arrangement as a neon atom. What are elements X and Y?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X: sodium; Y: chlorine"
+        },
+        {
+          "key": "B",
+          "text": "X: magnesium; Y: oxygen"
+        },
+        {
+          "key": "C",
+          "text": "X: calcium; Y: bromine"
+        },
+        {
+          "key": "D",
+          "text": "X: lithium; Y: fluorine"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA03.4-17",
+      "topic": "CMWA03",
+      "section": "CMWA03.4",
+      "difficulty": "Applied",
+      "stem": "W, X, Y and Z are four consecutive elements of the periodic table. X is a noble gas. Which of the\nfollowing chemical formulae is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Y₂W"
+        },
+        {
+          "key": "B",
+          "text": "YW₂"
+        },
+        {
+          "key": "C",
+          "text": "ZW₂"
+        },
+        {
+          "key": "D",
+          "text": "Z₂W"
+        }
+      ],
+      "answer": "C"
+    }
+  ]
+}

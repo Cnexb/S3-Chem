@@ -1,0 +1,245 @@
+{
+  "quizId": "chem-cpe04-1",
+  "topicCode": "CPE04.1",
+  "symbol": "Earth4A",
+  "title": {
+    "en": "CPE04.1 Extraction Of Metals",
+    "zhHant": "CPE04.1 金屬提取"
+  },
+  "items": [
+    {
+      "id": "CPE04.1-1",
+      "topic": "CPE04",
+      "section": "CPE04.1",
+      "difficulty": "Foundation",
+      "stem": "Potassium can be obtained from potassium chloride by",
+      "options": [
+        {
+          "key": "A",
+          "text": "electrolysis of molten potassium chloride."
+        },
+        {
+          "key": "B",
+          "text": "heating the chloride strongly."
+        },
+        {
+          "key": "C",
+          "text": "heating the chloride with carbon."
+        },
+        {
+          "key": "D",
+          "text": "heating the chloride with iron powder."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE04.1-2",
+      "topic": "CPE04",
+      "section": "CPE04.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following is / are source(s) of metals?\n(1) Earth's crust\n(2) Atmosphere\n(3) Ocean",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE04.1-3",
+      "topic": "CPE04",
+      "section": "CPE04.1",
+      "difficulty": "Foundation",
+      "stem": "Which metal is extracted by electrolysis of its molten ore?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Iron"
+        },
+        {
+          "key": "B",
+          "text": "Zinc"
+        },
+        {
+          "key": "C",
+          "text": "Aluminium"
+        },
+        {
+          "key": "D",
+          "text": "Copper"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE04.1-4",
+      "topic": "CPE04",
+      "section": "CPE04.1",
+      "difficulty": "Standard",
+      "stem": "Arrange procedures for the extraction of a metal from its ore in order.\n(1) Extraction of metal from ore\n(2) Mining of the ore\n(3) Separation of useful ore from waste materials\n(4) Refining of impure metal",
+      "options": [
+        {
+          "key": "A",
+          "text": "(2) → (3) → (4) → (1)"
+        },
+        {
+          "key": "B",
+          "text": "(3) → (4) → (2) → (1)"
+        },
+        {
+          "key": "C",
+          "text": "(3) → (1) → (2) → (4)"
+        },
+        {
+          "key": "D",
+          "text": "(2) → (3) → (1) → (4)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE04.1-5",
+      "topic": "CPE04",
+      "section": "CPE04.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following combinations about the extraction of metals from their ores is / are correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE04.1-6",
+      "topic": "CPE04",
+      "section": "CPE04.1",
+      "difficulty": "Standard",
+      "stem": "According to the methods of extraction of metals from ores, aluminium is obtained by",
+      "options": [
+        {
+          "key": "A",
+          "text": "panning (mechanical separation)."
+        },
+        {
+          "key": "B",
+          "text": "heating the ore alone."
+        },
+        {
+          "key": "C",
+          "text": "electrolysis of the molten ore."
+        },
+        {
+          "key": "D",
+          "text": "heating the ore with carbon."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE04.1-7",
+      "topic": "CPE04",
+      "section": "CPE04.1",
+      "difficulty": "Applied",
+      "stem": "In which of the following processes would a metal be produced?\n(1) Electrolyzing a molten ore of magnesium\n(2) Heating aluminium with carbon\n(3) Heating sulphide of mercury in air",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE04.1-8",
+      "topic": "CPE04",
+      "section": "CPE04.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following metals CANNOT be extracted by heating the metal oxide with carbon?\n(1) Sodium\n(2) Iron\n(3) Potassium",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE04.1-9",
+      "topic": "CPE04",
+      "section": "CPE04.1",
+      "difficulty": "Applied",
+      "stem": "Which combination of metal and extraction method is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "sodium — electrolysis of molten ore; gold — occurs native"
+        },
+        {
+          "key": "B",
+          "text": "sodium — heating oxide with carbon; gold — electrolysis of molten ore"
+        },
+        {
+          "key": "C",
+          "text": "iron — occurs native; gold — heating oxide with carbon"
+        },
+        {
+          "key": "D",
+          "text": "potassium — heating oxide with carbon; iron — occurs native"
+        }
+      ],
+      "answer": "A"
+    }
+  ]
+}

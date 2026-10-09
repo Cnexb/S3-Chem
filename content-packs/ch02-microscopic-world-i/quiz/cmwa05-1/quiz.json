@@ -1,0 +1,245 @@
+{
+  "quizId": "chem-cmwa05-1",
+  "topicCode": "CMWA05.1",
+  "symbol": "MWI5A",
+  "title": {
+    "en": "CMWA05.1 Giant Metallic Structure",
+    "zhHant": "CMWA05.1 巨型金屬結構"
+  },
+  "items": [
+    {
+      "id": "CMWA05.1-1",
+      "topic": "CMWA05",
+      "section": "CMWA05.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following substances conducts electricity in both solid and molten states?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Copper"
+        },
+        {
+          "key": "B",
+          "text": "Quartz"
+        },
+        {
+          "key": "C",
+          "text": "Sodium oxide"
+        },
+        {
+          "key": "D",
+          "text": "Phosphorus"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.1-2",
+      "topic": "CMWA05",
+      "section": "CMWA05.1",
+      "difficulty": "Foundation",
+      "stem": "Metals usually have high densities because",
+      "options": [
+        {
+          "key": "A",
+          "text": "most metals are solids."
+        },
+        {
+          "key": "B",
+          "text": "metal ions are closely packed together."
+        },
+        {
+          "key": "C",
+          "text": "metals are ductile."
+        },
+        {
+          "key": "D",
+          "text": "most metals are hard."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.1-3",
+      "topic": "CMWA05",
+      "section": "CMWA05.1",
+      "difficulty": "Foundation",
+      "stem": "Which description of giant metallic structure matches the notes?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Neutral metal atoms are held together by sharing electron pairs between two atoms."
+        },
+        {
+          "key": "B",
+          "text": "A giant lattice of positive metal ions is surrounded by a sea of delocalized electrons."
+        },
+        {
+          "key": "C",
+          "text": "The lattice is made of molecules held by van der Waals’ forces."
+        },
+        {
+          "key": "D",
+          "text": "The lattice points are anions only."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.1-4",
+      "topic": "CMWA05",
+      "section": "CMWA05.1",
+      "difficulty": "Standard",
+      "stem": "Consider the information listed below:\nWhich of the following combinations is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.1-5",
+      "topic": "CMWA05",
+      "section": "CMWA05.1",
+      "difficulty": "Standard",
+      "stem": "Metals usually have high densities because",
+      "options": [
+        {
+          "key": "A",
+          "text": "the metal cations are closely packed."
+        },
+        {
+          "key": "B",
+          "text": "metallic bonds are weak."
+        },
+        {
+          "key": "C",
+          "text": "there are large empty spaces in the lattice."
+        },
+        {
+          "key": "D",
+          "text": "metals exist as gases at room temperature."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.1-6",
+      "topic": "CMWA05",
+      "section": "CMWA05.1",
+      "difficulty": "Standard",
+      "stem": "A metal conducts electricity in both the solid and molten states because",
+      "options": [
+        {
+          "key": "A",
+          "text": "delocalized electrons are present in both states."
+        },
+        {
+          "key": "B",
+          "text": "ions become mobile only when the metal melts."
+        },
+        {
+          "key": "C",
+          "text": "water must be present."
+        },
+        {
+          "key": "D",
+          "text": "metals have a simple molecular structure."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.1-7",
+      "topic": "CMWA05",
+      "section": "CMWA05.1",
+      "difficulty": "Applied",
+      "stem": "Metals are ductile because\n(1) strong electrostatic forces exist between metal ions.\n(2) layers of metal ions can slip over one another.\n(3) the delocalized electrons hold the layers of metal ions together.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.1-8",
+      "topic": "CMWA05",
+      "section": "CMWA05.1",
+      "difficulty": "Applied",
+      "stem": "How do metals conduct electricity when connected to a battery?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Delocalized electrons move towards the positive pole of the battery."
+        },
+        {
+          "key": "B",
+          "text": "Metal cations move towards the positive pole."
+        },
+        {
+          "key": "C",
+          "text": "Molecules of the metal move through the wire."
+        },
+        {
+          "key": "D",
+          "text": "Electrons are transferred from metal atoms to form anions."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.1-9",
+      "topic": "CMWA05",
+      "section": "CMWA05.1",
+      "difficulty": "Applied",
+      "stem": "Which property is NOT explained by the giant metallic structure of a typical metal?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Malleability"
+        },
+        {
+          "key": "B",
+          "text": "Electrical conductivity in the solid state"
+        },
+        {
+          "key": "C",
+          "text": "High melting point of most metals"
+        },
+        {
+          "key": "D",
+          "text": "High solubility in water"
+        }
+      ],
+      "answer": "D"
+    }
+  ]
+}

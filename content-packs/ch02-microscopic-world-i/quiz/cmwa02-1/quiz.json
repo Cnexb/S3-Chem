@@ -1,0 +1,583 @@
+{
+  "quizId": "chem-cmwa02-1",
+  "topicCode": "CMWA02.1",
+  "symbol": "MWI2A",
+  "title": {
+    "en": "CMWA02.1 Metals, Semi-Metals And Non-Metals",
+    "zhHant": "CMWA02.1 金屬、半金屬及非金屬"
+  },
+  "items": [
+    {
+      "id": "CMWA02.1-1",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following elements is a metalloid?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Boron"
+        },
+        {
+          "key": "B",
+          "text": "Beryllium"
+        },
+        {
+          "key": "C",
+          "text": "Chlorine"
+        },
+        {
+          "key": "D",
+          "text": "Argon"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.1-2",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following substances is NOT an element?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diamond"
+        },
+        {
+          "key": "B",
+          "text": "Glucose"
+        },
+        {
+          "key": "C",
+          "text": "Oxygen"
+        },
+        {
+          "key": "D",
+          "text": "Sodium"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.1-3",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following are metals?\n(1) Ag\n(2) K\n(3) Na",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.1-4",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following elements is a transition metal?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aluminium"
+        },
+        {
+          "key": "B",
+          "text": "Calcium"
+        },
+        {
+          "key": "C",
+          "text": "Copper"
+        },
+        {
+          "key": "D",
+          "text": "Phosphorus"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.1-5",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Foundation",
+      "stem": "Which of the following are liquid elements?\n(1) Mercury\n(2) Water\n(3) Bromine",
+      "options": [
+        {
+          "key": "A",
+          "text": "(L) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.1-6",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following substances is NOT an element?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diamond"
+        },
+        {
+          "key": "B",
+          "text": "Glucose"
+        },
+        {
+          "key": "C",
+          "text": "Oxygen"
+        },
+        {
+          "key": "D",
+          "text": "Sodium"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.1-7",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about copper is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is a poor conductor of heat."
+        },
+        {
+          "key": "B",
+          "text": "It has a shiny appearance."
+        },
+        {
+          "key": "C",
+          "text": "It is brittle."
+        },
+        {
+          "key": "D",
+          "text": "It has a low boiling point."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.1-8",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Standard",
+      "stem": "An element with the chemical symbol Fe",
+      "options": [
+        {
+          "key": "A",
+          "text": "is a non-metal."
+        },
+        {
+          "key": "B",
+          "text": "is a solid at room temperature and pressure."
+        },
+        {
+          "key": "C",
+          "text": "has a low melting point."
+        },
+        {
+          "key": "D",
+          "text": "is a metalloid."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.1-9",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about elements are correct?\n(1) Elements can be classified as metals, non-metals and metalloids.\n(2) An element is a substance which cannot be broken down into anything simpler by chemical\nmethods.\n(3) Ammonia is an element.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.1-10",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Standard",
+      "stem": "The symbol of an element is Al. Which of the following statements about the element are correct?\n(1) It is a good conductor of electricity.\n(2) It can be hammered into shape.\n(3) It has a shiny appearance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.1-11",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following pairs of atomic numbers corresponds to a pair of metals?",
+      "options": [
+        {
+          "key": "A",
+          "text": "4, 10"
+        },
+        {
+          "key": "B",
+          "text": "12, 15"
+        },
+        {
+          "key": "C",
+          "text": "5, 19"
+        },
+        {
+          "key": "D",
+          "text": "3, 20"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.1-12",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Standard",
+      "stem": "20. Element W X Y Melting point (°C) 760 -58 -189 45 Boiling point (°C) 1 210 37 -186 96 Which element is a gas at room temperature and pressure? A W B C D Y Z\nWhich element is a gas at room temperature and pressure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W"
+        },
+        {
+          "key": "B",
+          "text": "X"
+        },
+        {
+          "key": "C",
+          "text": "Y"
+        },
+        {
+          "key": "D",
+          "text": "Z"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.1-13",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about bromine and mercury are correct?\n(1) Both are liquids at room temperature and pressure.\n(2) They are good conductors of heat.\n(3) Mercury is a metal while bromine is a non-metal.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.1-14",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Standard",
+      "stem": "Element X is a Period 4 metalloid. It forms a fluoride with the chemical formula of XF4. Which of the\nfollowing statements about X are correct?\n(1) X belongs to Group IV of the periodic table.\n(2) The chemical formula of its oxide is XO2.\n(3) Its fluoride has a simple molecular structure.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.1-15",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about metals and non-metals at room temperature and pressure is\ncorrect?",
+      "options": [
+        {
+          "key": "A",
+          "text": "All metals are solids."
+        },
+        {
+          "key": "B",
+          "text": "All non-metals are non-conductors of electricity."
+        },
+        {
+          "key": "C",
+          "text": "Non-metals are either gases or solids."
+        },
+        {
+          "key": "D",
+          "text": "All metals are conductors of electricity."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.1-16",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about silicon is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Its properties are in between metals and non-metals."
+        },
+        {
+          "key": "B",
+          "text": "It is brittle."
+        },
+        {
+          "key": "C",
+          "text": "Its crystalline form can conduct electricity."
+        },
+        {
+          "key": "D",
+          "text": "Its melting point is quite low."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.1-17",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about metals are correct?\n(1) Metals are usually shiny.\n(2) Metals are good conductors of electricity.\n(3) All metals have high melting points.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.1-18",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following substances are good conductors of electricity?\n(1) Solid aluminium\n(2) Graphite\n(3) Molten sodium",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.1-19",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about oxygen are correct?\n(1) It is a colourless gas.\n(2) It is a non-metal.\n(3) The following hazard warning symbol should be displayed on a metal cylinder containing it.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.1-20",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Applied",
+      "stem": "The table shows the melting points and boiling points of four substances at 1 atm pressure.\nWhich substance exists as a liquid at −50 °C and 1 atm pressure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W"
+        },
+        {
+          "key": "B",
+          "text": "X"
+        },
+        {
+          "key": "C",
+          "text": "Y"
+        },
+        {
+          "key": "D",
+          "text": "Z"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.1-21",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Applied",
+      "stem": "Consider the following properties of four elements, W, X, Y and Z.\nWhich of the following elements could be sulphur?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W"
+        },
+        {
+          "key": "B",
+          "text": "X"
+        },
+        {
+          "key": "C",
+          "text": "Y"
+        },
+        {
+          "key": "D",
+          "text": "Z"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.1-22",
+      "topic": "CMWA02",
+      "section": "CMWA02.1",
+      "difficulty": "Applied",
+      "stem": "Some physical properties of three elements, X, Y and Z, are given below:\nTo which groups do the elements belong?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X: I; Y: II; Z: 0"
+        },
+        {
+          "key": "B",
+          "text": "X: II; Y: 0; Z: VII"
+        },
+        {
+          "key": "C",
+          "text": "X: VII; Y: I; Z: 0"
+        },
+        {
+          "key": "D",
+          "text": "X: 0; Y: II; Z: I"
+        }
+      ],
+      "answer": "C"
+    }
+  ]
+}

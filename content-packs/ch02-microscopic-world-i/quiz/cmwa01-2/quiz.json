@@ -1,0 +1,453 @@
+{
+  "quizId": "chem-cmwa01-2",
+  "topicCode": "CMWA01.2",
+  "symbol": "MWI1B",
+  "title": {
+    "en": "CMWA01.2 Isotope",
+    "zhHant": "CMWA01.2 同位素"
+  },
+  "items": [
+    {
+      "id": "CMWA01.2-1",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Foundation",
+      "stem": "Different isotopes of an element have",
+      "options": [
+        {
+          "key": "A",
+          "text": "similar chemical properties."
+        },
+        {
+          "key": "B",
+          "text": "the same mass number."
+        },
+        {
+          "key": "C",
+          "text": "the same physical properties."
+        },
+        {
+          "key": "D",
+          "text": "the same number of electrons."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA01.2-2",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Foundation",
+      "stem": "The species 232U and 232U",
+      "options": [
+        {
+          "key": "A",
+          "text": "have different chemical properties."
+        },
+        {
+          "key": "B",
+          "text": "have the same physical properties."
+        },
+        {
+          "key": "C",
+          "text": "have different number of protons."
+        },
+        {
+          "key": "D",
+          "text": "have different number of neutrons."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA01.2-3",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following is most likely to represent an isotope of ⁵²₂₄X?",
+      "options": [
+        {
+          "key": "A",
+          "text": "⁵²₂₃X"
+        },
+        {
+          "key": "B",
+          "text": "⁵²₂₄X"
+        },
+        {
+          "key": "C",
+          "text": "⁵³₂₄X"
+        },
+        {
+          "key": "D",
+          "text": "⁷²₂₅X"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA01.2-4",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Foundation",
+      "stem": "The following table shows the relative abundance of the isotopes of strontium (Sr):\nThe relative atomic mass of strontium is",
+      "options": [
+        {
+          "key": "A",
+          "text": "87.2."
+        },
+        {
+          "key": "B",
+          "text": "87.6."
+        },
+        {
+          "key": "C",
+          "text": "87.2 g."
+        },
+        {
+          "key": "D",
+          "text": "87.6 g."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.2-5",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following statements about 147Ag and 14%Ag are correct?\n(1) They are isotopes.\n(2) They have the same chemical properties.\n(3) They have the same number of electrons.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA01.2-6",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Foundation",
+      "stem": "Oxygen has three isotopes. Their mass numbers are 16, 17 and 18 respectively. Which of the following\nstatements about the three isotopes is / are correct?\n(1) The isotope O-16 contains 16 electrons.\n(2) The isotope O-17 contains 9 neutrons\n(3) The isotope O-18 contains 10 protons.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.2-7",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about 19X and igY is / are correct?\n(1) They are the same element.\n(2) They have the same physical properties.\n(3) They have the same chemical properties.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA01.2-8",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Standard",
+      "stem": "The atomic number and mass number of an atom of element X are 17 and 35 respectively. Which of the\nfollowing statements about X is / are correct?\n(1) An atom of X contains 17 neutrons.\n(2) X is a gas at room temperature and pressure.\n(3) X is used as a sterilizing agent.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA01.2-9",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Standard",
+      "stem": "Element X occurs in nature as two isotopes, ⁶X and ⁷X. If the relative atomic mass of X is 6.93, what is the relative abundance of the ⁷X isotope?",
+      "options": [
+        {
+          "key": "A",
+          "text": "25%"
+        },
+        {
+          "key": "B",
+          "text": "69%"
+        },
+        {
+          "key": "C",
+          "text": "75%"
+        },
+        {
+          "key": "D",
+          "text": "93%"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA01.2-10",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Standard",
+      "stem": "Consider the following atoms:\nWhich of the following pairs are isotopes?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W and X"
+        },
+        {
+          "key": "B",
+          "text": "W and Z"
+        },
+        {
+          "key": "C",
+          "text": "X and Y"
+        },
+        {
+          "key": "D",
+          "text": "Y and Z"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA01.2-11",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Standard",
+      "stem": "Different isotopes of an element have the same\n(1) atomic number.\n(2) electronic arrangement.\n(3) chemical properties",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA01.2-12",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Applied",
+      "stem": "Consider the information of three atoms given in the table below:\nWhich of the following statements about the atoms is / are correct?\n(1) X and Y have the same atomic number.\n(2) Y and Z are atoms of the same element.\n(3) X and Z have the same mass.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA01.2-13",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Applied",
+      "stem": "Why are the relative atomic masses of elements seldom whole numbers?\nThe reason is that different atoms of the same element have",
+      "options": [
+        {
+          "key": "A",
+          "text": "the same mass number."
+        },
+        {
+          "key": "B",
+          "text": "different masses."
+        },
+        {
+          "key": "C",
+          "text": "different numbers of electrons."
+        },
+        {
+          "key": "D",
+          "text": "the same atomic number."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.2-14",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Applied",
+      "stem": "The atomic mass of element X is 114.8. X has two isotopes, ¹¹³X and ᵃX, and the relative abundance of ¹¹³X is 10.0%. What is the value of a?",
+      "options": [
+        {
+          "key": "A",
+          "text": "112"
+        },
+        {
+          "key": "B",
+          "text": "114"
+        },
+        {
+          "key": "C",
+          "text": "115"
+        },
+        {
+          "key": "D",
+          "text": "116"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA01.2-15",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Applied",
+      "stem": "Consider the information of four atoms given in the table below.\nWhich of the following statements about the atoms is / are correct?\n(1) W and X have the same mass.\n(2) W and Y are isotopes.\n(3) Y and Z have the same atomic number.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA01.2-16",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Applied",
+      "stem": "Element X has two isotopes: 39X and 4'X. Which of the following statements is / are correct?\n(1) The isotopes have the same physical properties.\n(2) The isotopes have the same electronic arrangement.\n(3) The relative atomic mass of X is between 39 and 41.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA01.2-17",
+      "topic": "CMWA01",
+      "section": "CMWA01.2",
+      "difficulty": "Applied",
+      "stem": "Consider the following atoms:\nWhich of the following statements about the atoms is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W and X belong to the same period."
+        },
+        {
+          "key": "B",
+          "text": "W and Y have two occupied electron shells."
+        },
+        {
+          "key": "C",
+          "text": "X and Y have the same chemical properties."
+        },
+        {
+          "key": "D",
+          "text": "Y and Z are isotopes."
+        }
+      ],
+      "answer": "D"
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "quizId": "chem-cmwa02-3",
+  "topicCode": "CMWA02.3",
+  "symbol": "MWI2C",
+  "title": {
+    "en": "CMWA02.3 Group I And Group Ii",
+    "zhHant": "CMWA02.3 第I族及第II族"
+  },
+  "items": [
+    {
+      "id": "CMWA02.3-1",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Foundation",
+      "stem": "Group I metals are stored under paraffin oil because they",
+      "options": [
+        {
+          "key": "A",
+          "text": "are radioactive."
+        },
+        {
+          "key": "B",
+          "text": "react readily with air and water."
+        },
+        {
+          "key": "C",
+          "text": "are too hard to cut."
+        },
+        {
+          "key": "D",
+          "text": "dissolve in oil."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.3-2",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Foundation",
+      "stem": "When a small piece of sodium is added to water,",
+      "options": [
+        {
+          "key": "A",
+          "text": "hydrogen is given off and an alkaline solution is formed."
+        },
+        {
+          "key": "B",
+          "text": "oxygen is given off and an acidic solution is formed."
+        },
+        {
+          "key": "C",
+          "text": "no gas is given off."
+        },
+        {
+          "key": "D",
+          "text": "a white precipitate forms and no gas is given off."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.3-3",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Foundation",
+      "stem": "Atoms of Group II elements have",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 outermost shell electron."
+        },
+        {
+          "key": "B",
+          "text": "2 outermost shell electrons."
+        },
+        {
+          "key": "C",
+          "text": "7 outermost shell electrons."
+        },
+        {
+          "key": "D",
+          "text": "8 outermost shell electrons."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.3-4",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about alkali metals is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They react with water to give an alkaline solution."
+        },
+        {
+          "key": "B",
+          "text": "They are hard."
+        },
+        {
+          "key": "C",
+          "text": "They have high melting points."
+        },
+        {
+          "key": "D",
+          "text": "They exist as free elements in nature."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.3-5",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Standard",
+      "stem": "Calcium and magnesium have similar chemical properties because",
+      "options": [
+        {
+          "key": "A",
+          "text": "they are metals."
+        },
+        {
+          "key": "B",
+          "text": "they have the same number of outermost shell electrons in their atoms."
+        },
+        {
+          "key": "C",
+          "text": "they have the same number of occupied electron shells in their atoms."
+        },
+        {
+          "key": "D",
+          "text": "their atoms have the same electronic arrangement."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.3-6",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Standard",
+      "stem": "Barium is an alkaline earth metal below calcium in the periodic table. Which of the following\nstatements about barium are correct?\n(1) Its atom has 2 outermost shell electrons.\n(2) It is less reactive than calcium.\n(3) It reacts with non-metals to form salts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.3-7",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Standard",
+      "stem": "Which of the following pairs of elements in Groups I and VII of the periodic table would react with\neach other most vigorously?\nGroup I\nGroup VII\nsodium\nchlorine",
+      "options": [
+        {
+          "key": "A",
+          "text": "Group I | Group VII"
+        },
+        {
+          "key": "B",
+          "text": "sodium | chlorine"
+        },
+        {
+          "key": "C",
+          "text": "sodium | fluorine"
+        },
+        {
+          "key": "D",
+          "text": "potassium | fluorine"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.3-8",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about potassium and calcium is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The reactivity of calcium is higher than that of potassium."
+        },
+        {
+          "key": "B",
+          "text": "The melting point of calcium is higher than that of potassium."
+        },
+        {
+          "key": "C",
+          "text": "They are less dense than water."
+        },
+        {
+          "key": "D",
+          "text": "They are stored in paraffin oil."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.3-9",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Applied",
+      "stem": "Metallic elements X and Y are in the same group of the periodic table. Element X has a greater atomic\nnumber. Which of the following statements is / are correct?\n(1) The atomic size of X is larger than that of Y.\n(2) X is less reactive than Y.\n(3) The relative atomic mass of X is smaller than that of Y.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(I) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.3-10",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Applied",
+      "stem": "Caesium is a Group I element. Which of the following statements about caesium are correct?\n(1) It reacts explosively with water.\n(2) It gives a characteristic flame colour in flame test.\n(3) It is a soft metal.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.3-11",
+      "topic": "CMWA02",
+      "section": "CMWA02.3",
+      "difficulty": "Applied",
+      "stem": "Strontium is below calcium in Group Il of the periodic table. Which of the following statements about\nstrontium is / are correct?\n(2) combine wil to prom a one compound.\n(3) It forms an ion carrying two negative charges.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    }
+  ]
+}

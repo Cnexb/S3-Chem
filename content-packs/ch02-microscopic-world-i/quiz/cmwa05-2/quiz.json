@@ -1,0 +1,588 @@
+{
+  "quizId": "chem-cmwa05-2",
+  "topicCode": "CMWA05.2",
+  "symbol": "MWI5B",
+  "title": {
+    "en": "CMWA05.2 Giant Ionic Structure",
+    "zhHant": "CMWA05.2 巨型離子結構"
+  },
+  "items": [
+    {
+      "id": "CMWA05.2-1",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Foundation",
+      "stem": "Why does molten lead(II) bromide conduct electricity?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It contains metallic lead."
+        },
+        {
+          "key": "B",
+          "text": "It contains mobile ions."
+        },
+        {
+          "key": "C",
+          "text": "It contains free bromine."
+        },
+        {
+          "key": "D",
+          "text": "It contains free electrons."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.2-2",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following substances does NOT have a giant ionic structure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Calcium hydride"
+        },
+        {
+          "key": "B",
+          "text": "Ammonium bromide"
+        },
+        {
+          "key": "C",
+          "text": "Magnesium oxide"
+        },
+        {
+          "key": "D",
+          "text": "Hydrogen chloride"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.2-3",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following diagrams best represents the giant structure of a caesium chloride crystal? (In\nthese diagrams, • represents a Cs* ion and ° represents a Cl ion.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diagram A"
+        },
+        {
+          "key": "B",
+          "text": "Diagram B"
+        },
+        {
+          "key": "C",
+          "text": "Diagram C"
+        },
+        {
+          "key": "D",
+          "text": "Diagram D"
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/mw5ba-3.png",
+        "alt": "Option diagrams A–D",
+        "caption": "Option diagrams A–D"
+      }
+    },
+    {
+      "id": "CMWA05.2-4",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Foundation",
+      "stem": "Magnesium chloride conducts electricity in aqueous solution because",
+      "options": [
+        {
+          "key": "A",
+          "text": "magnesium chloride forms ions when dissolved in water."
+        },
+        {
+          "key": "B",
+          "text": "ions are free to move in the aqueous solution."
+        },
+        {
+          "key": "C",
+          "text": "electrons are free to move in the aqueous solution."
+        },
+        {
+          "key": "D",
+          "text": "magnesium chloride is electrically neutral."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.2-5",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Foundation",
+      "stem": "Solid sodium chloride does NOT conduct electricity because",
+      "options": [
+        {
+          "key": "A",
+          "text": "it is a non-electrolyte."
+        },
+        {
+          "key": "B",
+          "text": "it is a covalent compound."
+        },
+        {
+          "key": "C",
+          "text": "its ions are not mobile."
+        },
+        {
+          "key": "D",
+          "text": "sodium conducts electricity but chlorine does not."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.2-6",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Foundation",
+      "stem": "Ionic compounds have high melting points because",
+      "options": [
+        {
+          "key": "A",
+          "text": "the attractions between electrons and ions are strong."
+        },
+        {
+          "key": "B",
+          "text": "the attractions between ions are strong."
+        },
+        {
+          "key": "C",
+          "text": "ions are packed regularly in crystals."
+        },
+        {
+          "key": "D",
+          "text": "ionic compounds are made of metals which have high melting points."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.2-7",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following chloride(s) conduct(s) electricity when molten?\n(1) Calcium chloride\n(2) Nitrogen trichloride\n(3) Silicon tetrachloride",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.2-8",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Foundation",
+      "stem": "Substance X has a high melting point and does not conduct electricity when in solid state. Substance X\nmay be\n(l) copper.\n(2) zinc oxide.\n(3) diamond.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.2-9",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following substances can conduct electricity in molten state but NOT in solid state?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Silver"
+        },
+        {
+          "key": "B",
+          "text": "Lead(II) bromide"
+        },
+        {
+          "key": "C",
+          "text": "Sugar"
+        },
+        {
+          "key": "D",
+          "text": "Quartz"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.2-10",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about zinc chloride is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is soluble in water."
+        },
+        {
+          "key": "B",
+          "text": "It conducts electricity in molten state."
+        },
+        {
+          "key": "C",
+          "text": "It is a solid at room temperature and pressure."
+        },
+        {
+          "key": "D",
+          "text": "Its melting point is below 100 °C."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.2-11",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Standard",
+      "stem": "The table below lists the ability of four substances W, X, Y and Z to conduct electricity.\n(In the table, ✓ and ✗ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.)\nWhich of the substances is likely to be calcium chloride?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W"
+        },
+        {
+          "key": "B",
+          "text": "X"
+        },
+        {
+          "key": "C",
+          "text": "Y"
+        },
+        {
+          "key": "D",
+          "text": "Z"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.2-12",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Standard",
+      "stem": "Substance Y has high melting and boiling points. It can conduct electricity when molten or in aqueous\nsolution and at the same time decomposed by electricity. Substance Y may be",
+      "options": [
+        {
+          "key": "A",
+          "text": "carbon dioxide"
+        },
+        {
+          "key": "B",
+          "text": "silicon dioxide"
+        },
+        {
+          "key": "C",
+          "text": "graphite"
+        },
+        {
+          "key": "D",
+          "text": "magnesium bromide"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.2-13",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Standard",
+      "stem": "The atomic number of elements X and Y are 3 and 8 respectively. Which of the following properties\ndoes the compound formed from X and Y have?\n(1) The compound has a simple molecular structure.\n(2) The compound is a solid at room temperature.\n(3) The compound can conduct electricity when molten.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.2-14",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about the structure of sodium chloride are correct?\n(1) Sodium ions are smaller than chloride ions.\n(2) Each sodium ion is surrounded by six chloride ions.\n(3) The structure consists of separate ion pairs.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.2-15",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Applied",
+      "stem": "The table lists the electrical conductivities of three substances.\nWhich of the following combinations is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X: HCl; Y: NaCl; Z: P"
+        },
+        {
+          "key": "B",
+          "text": "X: NaBr; Y: P; Z: H₂SO₄"
+        },
+        {
+          "key": "C",
+          "text": "X: H₂SO₄; Y: NaBr; Z: Pb"
+        },
+        {
+          "key": "D",
+          "text": "X: NaBr; Y: Pb; Z: PCl₃"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.2-16",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Applied",
+      "stem": "67. A substance melts at 1 074 °C and boils at 1 740 °C. Passing an electric current through the molten substance results in electrolysis. What type of structure is present in the substance? A Ionic B Metallic C Covalent molecular D Covalent network",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ionic"
+        },
+        {
+          "key": "B",
+          "text": "Metallic"
+        },
+        {
+          "key": "C",
+          "text": "Covalent molecular"
+        },
+        {
+          "key": "D",
+          "text": "Covalent network"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.2-17",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Applied",
+      "stem": "68. Substance Melting point (°C) W 1 565 Electrical conductivity solid state molten state non- conductor conductor x 1610 non- conductor non- conductor Y 40 Z 1 670 non- conductor conductor non- conductor conductor Which of the following statements is correct? A W is malleable. B\nWhich of the following statements is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W is malleable."
+        },
+        {
+          "key": "B",
+          "text": "X is soluble in heptane (a non-aqueous solvent)."
+        },
+        {
+          "key": "C",
+          "text": "Y is a liquid at room temperature and pressure."
+        },
+        {
+          "key": "D",
+          "text": "The compound formed between Z and chlorine conducts electricity in molten state."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.2-18",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Applied",
+      "stem": "The atomic numbers of two elements A and B are 13 and 8 respectively. The compound formed\nbetween A and B",
+      "options": [
+        {
+          "key": "A",
+          "text": "is very soluble in non-aqueous solvents."
+        },
+        {
+          "key": "B",
+          "text": "is a liquid at room temperature and pressure."
+        },
+        {
+          "key": "C",
+          "text": "contains giant molecules."
+        },
+        {
+          "key": "D",
+          "text": "conducts electricity in its molten state."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.2-19",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Applied",
+      "stem": "The table lists some properties of four solids, W, X, Y and Z.\nWhat is the correct classification of the solids?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Metallic: W; Covalent network: X; Ionic: Y; Simple molecular: Z"
+        },
+        {
+          "key": "B",
+          "text": "Metallic: X; Covalent network: Y; Ionic: Z; Simple molecular: W"
+        },
+        {
+          "key": "C",
+          "text": "Metallic: Y; Covalent network: Z; Ionic: W; Simple molecular: X"
+        },
+        {
+          "key": "D",
+          "text": "Metallic: Z; Covalent network: W; Ionic: X; Simple molecular: Y"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.2-20",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Applied",
+      "stem": "Consider the following information about four substances, W, X, Y and Z:\nWhich substance has a simple molecular structure and is a solid at room temperature?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W"
+        },
+        {
+          "key": "B",
+          "text": "X"
+        },
+        {
+          "key": "C",
+          "text": "Y"
+        },
+        {
+          "key": "D",
+          "text": "Z"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.2-21",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Applied",
+      "stem": "X and Y are two different elements. The melting points of their bromides are given below:\nWhich of the following statements are correct?\n(1) The bromide of X is soluble in non-aqueous solvents.\n(2) The bromide of Y has a giant ionic structure.\n(3) The bromide of X is a solid at room temperature and pressure.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.2-22",
+      "topic": "CMWA05",
+      "section": "CMWA05.2",
+      "difficulty": "Applied",
+      "stem": "X and Y are two different elements. The melting points and boiling points of their oxides are given below.\nWhich of the following statements is / are correct?\n(1) X is a non-metal.\n(2) The oxide of Y is a liquid at room temperature.\n(3) The oxide of X is an ionic crystal.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "D"
+    }
+  ]
+}

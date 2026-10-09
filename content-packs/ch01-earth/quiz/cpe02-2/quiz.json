@@ -1,0 +1,250 @@
+{
+  "quizId": "chem-cpe02-2",
+  "topicCode": "CPE02.2",
+  "symbol": "Earth2B",
+  "title": {
+    "en": "CPE02.2 Physical And Chemical Change",
+    "zhHant": "CPE02.2 物理及化學變化"
+  },
+  "items": [
+    {
+      "id": "CPE02.2-1",
+      "topic": "CPE02",
+      "section": "CPE02.2",
+      "difficulty": "Foundation",
+      "stem": "Consider the following diagram of changes of states of a substance.\nWhich of the following combinations is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X: deposition; Y: condensation; Z: freezing"
+        },
+        {
+          "key": "B",
+          "text": "X: sublimation; Y: condensation; Z: melting"
+        },
+        {
+          "key": "C",
+          "text": "X: deposition; Y: boiling; Z: freezing"
+        },
+        {
+          "key": "D",
+          "text": "X: sublimation; Y: boiling; Z: melting"
+        }
+      ],
+      "answer": "D",
+      "image": {
+        "src": "assets/earth2ba-1.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE02.2-2",
+      "topic": "CPE02",
+      "section": "CPE02.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following is NOT an example of physical properties?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sodium chloride dissolves in water to form a solution."
+        },
+        {
+          "key": "B",
+          "text": "Ice melts into water at 0 °C."
+        },
+        {
+          "key": "C",
+          "text": "Pure copper wire can conduct electricity."
+        },
+        {
+          "key": "D",
+          "text": "Adding dilute hydrochloric acid into iron(II) sulphide produces a gas with a bad egg smell."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE02.2-3",
+      "topic": "CPE02",
+      "section": "CPE02.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following statements describes a chemical property of iron?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It can be bent into different shapes."
+        },
+        {
+          "key": "B",
+          "text": "It may rust."
+        },
+        {
+          "key": "C",
+          "text": "It sinks in water."
+        },
+        {
+          "key": "D",
+          "text": "It has a shiny surface."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE02.2-4",
+      "topic": "CPE02",
+      "section": "CPE02.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following processes is a chemical change?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Passing electricity through a copper wire"
+        },
+        {
+          "key": "B",
+          "text": "Dissolving sugar in water"
+        },
+        {
+          "key": "C",
+          "text": "Bleaching the hair"
+        },
+        {
+          "key": "D",
+          "text": "Melting butter"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE02.2-5",
+      "topic": "CPE02",
+      "section": "CPE02.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following processes involve physical changes?\n(1) Spoiling food\n(2) Hammering wood together to build a playhouse\n(3) Squeezing oranges to prepare orange juice",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE02.2-6",
+      "topic": "CPE02",
+      "section": "CPE02.2",
+      "difficulty": "Standard",
+      "stem": "18. Substance W Melting point (°C) - 200 10 50 - 100 Boiling point (°C) 54 120 320 13 Which of the above substances is / are liquid(s) at room temperature? A X only B Y only C W and X only D Y and Z only\nWhich of the above substances is / are liquid(s) at room temperature?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X only"
+        },
+        {
+          "key": "B",
+          "text": "Y only"
+        },
+        {
+          "key": "C",
+          "text": "W and X only"
+        },
+        {
+          "key": "D",
+          "text": "Y and Z only"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE02.2-7",
+      "topic": "CPE02",
+      "section": "CPE02.2",
+      "difficulty": "Applied",
+      "stem": "In a certain experiment, a mixture of iron and sulphur was heated to give solid X. Which of the\nfollowing statements about the process are correct?\n(1) The process involves a chemical change.\n(2) Solid X is a compound.\n(3) Solid X gives hydrogen when mixed with dilute hydrochloric acid.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE02.2-8",
+      "topic": "CPE02",
+      "section": "CPE02.2",
+      "difficulty": "Applied",
+      "stem": "Which of the following substances can undergo sublimation at normal pressure?\n(1) Iodine\n(2) Nitrogen\n(3) Carbon dioxide",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE02.2-9",
+      "topic": "CPE02",
+      "section": "CPE02.2",
+      "difficulty": "Applied",
+      "stem": "Which of the following processes involve a chemical change?\n(1) Electrolysis of molten sodium chloride\n(2) Dissolving sugar in water\n(3) Strong heating of limestone to give calcium oxide",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B"
+    }
+  ]
+}

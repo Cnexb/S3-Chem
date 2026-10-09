@@ -1,0 +1,245 @@
+{
+  "quizId": "chem-cmwa04-3",
+  "topicCode": "CMWA04.3",
+  "symbol": "MWI4C",
+  "title": {
+    "en": "CMWA04.3 Formula Masses",
+    "zhHant": "CMWA04.3 式量"
+  },
+  "items": [
+    {
+      "id": "CMWA04.3-1",
+      "topic": "CMWA04",
+      "section": "CMWA04.3",
+      "difficulty": "Foundation",
+      "stem": "What is the formula mass of magnesium nitrate?\n(Relative atomic masses: N = 14.0, O = 16.0, Mg = 24.3)",
+      "options": [
+        {
+          "key": "A",
+          "text": "232.3"
+        },
+        {
+          "key": "B",
+          "text": "148.3"
+        },
+        {
+          "key": "C",
+          "text": "120.2"
+        },
+        {
+          "key": "D",
+          "text": "88.2"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA04.3-2",
+      "topic": "CMWA04",
+      "section": "CMWA04.3",
+      "difficulty": "Foundation",
+      "stem": "What is the formula mass of CO₂?\n(Relative atomic masses: C = 12.0, O = 16.0)",
+      "options": [
+        {
+          "key": "A",
+          "text": "28.0"
+        },
+        {
+          "key": "B",
+          "text": "32.0"
+        },
+        {
+          "key": "C",
+          "text": "44.0"
+        },
+        {
+          "key": "D",
+          "text": "48.0"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA04.3-3",
+      "topic": "CMWA04",
+      "section": "CMWA04.3",
+      "difficulty": "Foundation",
+      "stem": "What is the formula mass of NaCl?\n(Relative atomic masses: Na = 23.0, Cl = 35.5)",
+      "options": [
+        {
+          "key": "A",
+          "text": "23.0"
+        },
+        {
+          "key": "B",
+          "text": "35.5"
+        },
+        {
+          "key": "C",
+          "text": "58.5"
+        },
+        {
+          "key": "D",
+          "text": "71.0"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA04.3-4",
+      "topic": "CMWA04",
+      "section": "CMWA04.3",
+      "difficulty": "Standard",
+      "stem": "Consider the following information:\nThe formula mass of the compound formed between X and Y is",
+      "options": [
+        {
+          "key": "A",
+          "text": "52.3."
+        },
+        {
+          "key": "B",
+          "text": "76.6."
+        },
+        {
+          "key": "C",
+          "text": "100.9."
+        },
+        {
+          "key": "D",
+          "text": "114.9."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA04.3-5",
+      "topic": "CMWA04",
+      "section": "CMWA04.3",
+      "difficulty": "Standard",
+      "stem": "Consider the following two elements:\nElements P and Q combine to form a compound. Which of the following statements about the compound is / are correct?\n(1) It is formed by electron sharing.\n(2) It contains giant molecules.\n(3) Its relative molecular mass is 85.0.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA04.3-6",
+      "topic": "CMWA04",
+      "section": "CMWA04.3",
+      "difficulty": "Standard",
+      "stem": "What is the formula mass of Ca(OH)₂?\n(Relative atomic masses: H = 1.0, O = 16.0, Ca = 40.1)",
+      "options": [
+        {
+          "key": "A",
+          "text": "57.1"
+        },
+        {
+          "key": "B",
+          "text": "74.1"
+        },
+        {
+          "key": "C",
+          "text": "96.1"
+        },
+        {
+          "key": "D",
+          "text": "114.2"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA04.3-7",
+      "topic": "CMWA04",
+      "section": "CMWA04.3",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements is / are correct?\n(1) The relative molecular mass of a molecule is the relative mass of the molecule based on the\n12C = 12.00 scale.\n(2) The formula mass of a compound is always a whole number.\n(3) The formula mass of magnesium oxide is 40.3 g.\n(Relative atomic masses: 0 = 16.0, Mg = 24.3)",
+      "options": [
+        {
+          "key": "A",
+          "text": "(I) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA04.3-8",
+      "topic": "CMWA04",
+      "section": "CMWA04.3",
+      "difficulty": "Applied",
+      "stem": "The formula mass of a compound X₂O is 62.0. If the relative atomic mass of O is 16.0, the relative atomic mass of X is",
+      "options": [
+        {
+          "key": "A",
+          "text": "23.0"
+        },
+        {
+          "key": "B",
+          "text": "31.0"
+        },
+        {
+          "key": "C",
+          "text": "46.0"
+        },
+        {
+          "key": "D",
+          "text": "14.0"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA04.3-9",
+      "topic": "CMWA04",
+      "section": "CMWA04.3",
+      "difficulty": "Applied",
+      "stem": "What is the formula mass of aluminium oxide, Al₂O₃?\n(Relative atomic masses: O = 16.0, Al = 27.0)",
+      "options": [
+        {
+          "key": "A",
+          "text": "43.0"
+        },
+        {
+          "key": "B",
+          "text": "102.0"
+        },
+        {
+          "key": "C",
+          "text": "70.0"
+        },
+        {
+          "key": "D",
+          "text": "86.0"
+        }
+      ],
+      "answer": "B"
+    }
+  ]
+}

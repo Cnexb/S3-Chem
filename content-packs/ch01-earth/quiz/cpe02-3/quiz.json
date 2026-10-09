@@ -1,0 +1,333 @@
+{
+  "quizId": "chem-cpe02-3",
+  "topicCode": "CPE02.3",
+  "symbol": "Earth2C",
+  "title": {
+    "en": "CPE02.3 Air",
+    "zhHant": "CPE02.3 空氣"
+  },
+  "items": [
+    {
+      "id": "CPE02.3-1",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Foundation",
+      "stem": "Which of the following gases is LEAST likely to be found in air?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Argon"
+        },
+        {
+          "key": "B",
+          "text": "Hydrogen"
+        },
+        {
+          "key": "C",
+          "text": "Nitrogen"
+        },
+        {
+          "key": "D",
+          "text": "Carbon dioxide"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE02.3-2",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Foundation",
+      "stem": "Which of the following statements about nitrogen are correct?\n(1) It is an odourless gas.\n(2) It is used to fill the packets of potato chips.\n(3) It is an element.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE02.3-3",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Foundation",
+      "stem": "Why can gases in air be separated by the fractional distillation of liquid air?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The gases have different boiling points."
+        },
+        {
+          "key": "B",
+          "text": "The gases have different melting points."
+        },
+        {
+          "key": "C",
+          "text": "The gases have different percentages by volume in air."
+        },
+        {
+          "key": "D",
+          "text": "The gases have different chemical properties."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE02.3-4",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Foundation",
+      "stem": "Which of the following is / are use(s) of oxygen?\n(1) As a fuel for large rockets\n(2) Aiding the respiration of premature babies\n(3) Filling electric light bulbs",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE02.3-5",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Foundation",
+      "stem": "Which of the following shows the presence of oxygen in a gas jar?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It gives a 'pop' sound with a burning splint."
+        },
+        {
+          "key": "B",
+          "text": "It turns limewater milky."
+        },
+        {
+          "key": "C",
+          "text": "It relights a glowing splint."
+        },
+        {
+          "key": "D",
+          "text": "It extinguishes a burning splint."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CPE02.3-6",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about air are correct?\n(1) Nitrogen has the highest composition by volume in air.\n(2) Air contains elements and compounds.\n(3) The amount of water vapour in air varies according to different weathers.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE02.3-7",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Standard",
+      "stem": "The following table gives some information of the components in a sample of liquefied gases:\nIn what order would the components separate out when the sample undergoes fractional distillation?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X, Y, Z"
+        },
+        {
+          "key": "B",
+          "text": "X, Z, Y"
+        },
+        {
+          "key": "C",
+          "text": "Z, X, Y"
+        },
+        {
+          "key": "D",
+          "text": "Z, Y, X"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE02.3-8",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about fractional distillation is / are correct?\n(1) In fractionating column, the upper part has lower temperature.\n(2) Before distilling the liquid air, carbon dioxide and argon vapour should be removed.\n(3) Oxygen would be collected in the upper part of a fractionating column than that of nitrogen",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CPE02.3-9",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about oxygen is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Oxygen relights a glowing splint."
+        },
+        {
+          "key": "B",
+          "text": "Oxygen is a constituent element of sugar."
+        },
+        {
+          "key": "C",
+          "text": "Oxygen is colourless."
+        },
+        {
+          "key": "D",
+          "text": "Air contains 78% of oxygen by volume."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CPE02.3-10",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Applied",
+      "stem": "Why must carbon dioxide and water vapour be removed from air before the fractional distillation of\nliquid air?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They share a rather high volume percentage in air."
+        },
+        {
+          "key": "B",
+          "text": "They will freeze when the air is cooled, and will block the pipes."
+        },
+        {
+          "key": "C",
+          "text": "They have different melting points."
+        },
+        {
+          "key": "D",
+          "text": "They will react during the fractional distillation of liquid air."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CPE02.3-11",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about A and B are correct?\n(1) Gas A takes the greatest percentage of air by volume.\n(2) Gas A gives a 'pop' sound when tested with a burning splint.\n(3) The boiling point of B is higher than that of A.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "image": {
+        "src": "assets/earth2cc-2.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CPE02.3-12",
+      "topic": "CPE02",
+      "section": "CPE02.3",
+      "difficulty": "Applied",
+      "stem": "Which of the following statements about oxygen are correct?\n(1) Oxygen is colourless.\n(2) Oxygen is produced in the photosynthesis process.\n(3) A metal cylinder of oxygen should bear the hazard warning label shown below.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/earth2cc-3.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    }
+  ]
+}

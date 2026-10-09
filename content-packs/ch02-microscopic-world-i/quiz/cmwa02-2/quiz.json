@@ -1,0 +1,437 @@
+{
+  "quizId": "chem-cmwa02-2",
+  "topicCode": "CMWA02.2",
+  "symbol": "MWI2B",
+  "title": {
+    "en": "CMWA02.2 Periodic Table",
+    "zhHant": "CMWA02.2 週期表"
+  },
+  "items": [
+    {
+      "id": "CMWA02.2-1",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Foundation",
+      "stem": "The atomic number of element X is 26. To which period does X belong?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Period 1"
+        },
+        {
+          "key": "B",
+          "text": "Period 2"
+        },
+        {
+          "key": "C",
+          "text": "Period 3"
+        },
+        {
+          "key": "D",
+          "text": "Period 4"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.2-2",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Foundation",
+      "stem": "Elements in the same group of the periodic table have",
+      "options": [
+        {
+          "key": "A",
+          "text": "similar chemical properties."
+        },
+        {
+          "key": "B",
+          "text": "the same physical properties."
+        },
+        {
+          "key": "C",
+          "text": "the same number of occupied electron shells in their atoms."
+        },
+        {
+          "key": "D",
+          "text": "the same number of electrons in their atoms."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.2-3",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Foundation",
+      "stem": "The elements in the periodic table are arranged according to",
+      "options": [
+        {
+          "key": "A",
+          "text": "atomic numbers."
+        },
+        {
+          "key": "B",
+          "text": "atomic masses."
+        },
+        {
+          "key": "C",
+          "text": "neutron number."
+        },
+        {
+          "key": "D",
+          "text": "mass numbers."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.2-4",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following combinations is INCORRECT?\nElement\nSpecial name\niron\ntransition metal",
+      "options": [
+        {
+          "key": "A",
+          "text": "Element: iron; Special name: transition metal"
+        },
+        {
+          "key": "B",
+          "text": "Element: argon; Special name: noble gas"
+        },
+        {
+          "key": "C",
+          "text": "Element: fluorine; Special name: halogen"
+        },
+        {
+          "key": "D",
+          "text": "Element: aluminium; Special name: alkali metal"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.2-5",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Foundation",
+      "stem": "Elements in the same group of the periodic table",
+      "options": [
+        {
+          "key": "A",
+          "text": "have the same electronic arrangement in their atoms."
+        },
+        {
+          "key": "B",
+          "text": "have similar chemical properties."
+        },
+        {
+          "key": "C",
+          "text": "have the same physical properties."
+        },
+        {
+          "key": "D",
+          "text": "have the same number of occupied electron shells in their atoms."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.2-6",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Foundation",
+      "stem": "The chemical properties of an element depend on",
+      "options": [
+        {
+          "key": "A",
+          "text": "the number of isotopes."
+        },
+        {
+          "key": "B",
+          "text": "its relative atomic mass."
+        },
+        {
+          "key": "C",
+          "text": "the number of occupied electron shells in its atom."
+        },
+        {
+          "key": "D",
+          "text": "the number of outermost shell electrons in its atom."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.2-7",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Foundation",
+      "stem": "Which of the following pairs of atomic numbers corresponds to elements with similar chemical\nproperties?",
+      "options": [
+        {
+          "key": "A",
+          "text": "10, 16"
+        },
+        {
+          "key": "B",
+          "text": "12, 22"
+        },
+        {
+          "key": "C",
+          "text": "17, 25"
+        },
+        {
+          "key": "D",
+          "text": "20, 38"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.2-8",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Foundation",
+      "stem": "A part of the periodic table is shown below.\nWhich of the following statements are correct?\n(1) a is an alkali metal.\n(2) b can be found in the air.\n(3) c is a metalloid.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/mw2ba-8.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA02.2-9",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Standard",
+      "stem": "The atomic number of element X is 18. Element Y is the next element in the periodic table.\nWhich of the following statements about X and Y is / are correct?\n(1) An atom of Y has one more outermost shell electron than an atom of X.\n(2) An atom of Y has one more occupied electron shell than an atom of X.\n(3) X and Y are in the same period of the periodic table.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA02.2-10",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Standard",
+      "stem": "Which of the following statements about the periodic table is / are correct?\n(1) Chromium is an example of transition metals.\n(2) Across a period, from left to right, the melting point of elements increases.\n(3) The lower the element located in each group, the more reactive the element is.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.2-11",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Standard",
+      "stem": "An atom of element X has electronic arrangement 2,8,6. Which statement is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X is in Group VI and Period 3."
+        },
+        {
+          "key": "B",
+          "text": "X is in Group VI and Period 2."
+        },
+        {
+          "key": "C",
+          "text": "X is in Group III and Period 3."
+        },
+        {
+          "key": "D",
+          "text": "X is in Group 0 and Period 3."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA02.2-12",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Applied",
+      "stem": "In the periodic table, the most reactive metals are in",
+      "options": [
+        {
+          "key": "A",
+          "text": "the upper left corner."
+        },
+        {
+          "key": "B",
+          "text": "the upper right corner."
+        },
+        {
+          "key": "C",
+          "text": "the lower left corner."
+        },
+        {
+          "key": "D",
+          "text": "the lower right corner."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.2-13",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Applied",
+      "stem": "The atomic number of an element X is 15. Which of the following statements about X is\nINCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X is a non-metal."
+        },
+        {
+          "key": "B",
+          "text": "X belongs to Period 3 of the periodic table."
+        },
+        {
+          "key": "C",
+          "text": "X is a gas at room temperature and pressure."
+        },
+        {
+          "key": "D",
+          "text": "X belongs to Group V of the periodic table."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA02.2-14",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Applied",
+      "stem": "Consider the elements in the second period of the periodic table, from lithium to fluorine. Which of the\nfollowing statements is correct?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They show a gradual increase in atomic size."
+        },
+        {
+          "key": "B",
+          "text": "They show a gradual decrease in melting point."
+        },
+        {
+          "key": "C",
+          "text": "They show a gradual increase in the number of occupied electron shells in their atoms."
+        },
+        {
+          "key": "D",
+          "text": "They show a gradual change from having metallic property to having non-metallic property."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA02.2-15",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Applied",
+      "stem": "A part of the periodic table is shown below.\nWhich of the following atoms has the SMALLEST number of electrons?\n(1) The outermost electron shell of an atom of a has an octet structure.\n(2) Atoms of b and e have the same number of outermost shell electrons.\n(3) c and d are metalloids.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B",
+      "image": {
+        "src": "assets/mw2bc-4.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA02.2-16",
+      "topic": "CMWA02",
+      "section": "CMWA02.2",
+      "difficulty": "Applied",
+      "stem": "Consider the following properties of three elements, X, Y and Z.\nWhich of the following statements are correct?\n(1) Element X is a metal.\n(2) Element Y is a non-metal.\n(3) Element Z is a gas at room temperature and pressure.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    }
+  ]
+}

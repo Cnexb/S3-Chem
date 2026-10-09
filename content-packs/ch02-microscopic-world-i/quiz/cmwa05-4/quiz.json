@@ -1,0 +1,364 @@
+{
+  "quizId": "chem-cmwa05-4",
+  "topicCode": "CMWA05.4",
+  "symbol": "MWI5D",
+  "title": {
+    "en": "CMWA05.4 Giant Covalent Structure",
+    "zhHant": "CMWA05.4 巨型共價結構"
+  },
+  "items": [
+    {
+      "id": "CMWA05.4-1",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Foundation",
+      "stem": "Which of the following pairs of species react to give a compound with a giant covalent structure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Silicon and oxygen"
+        },
+        {
+          "key": "B",
+          "text": "Calcium and silicon"
+        },
+        {
+          "key": "C",
+          "text": "Sodium and bromine"
+        },
+        {
+          "key": "D",
+          "text": "Iron and steel"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.4-2",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Foundation",
+      "stem": "Diamond has a high melting point because",
+      "options": [
+        {
+          "key": "A",
+          "text": "it is the hardest element in the world."
+        },
+        {
+          "key": "B",
+          "text": "it does not conduct electricity."
+        },
+        {
+          "key": "C",
+          "text": "the atoms in it are bonded by strong covalent bonds."
+        },
+        {
+          "key": "D",
+          "text": "the atoms in it are held together by van der Waals' forces."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.4-3",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Foundation",
+      "stem": "Diamond has a very high melting point because",
+      "options": [
+        {
+          "key": "A",
+          "text": "it has a giant covalent structure with strong C–C covalent bonds throughout the lattice."
+        },
+        {
+          "key": "B",
+          "text": "it is held by weak van der Waals’ forces."
+        },
+        {
+          "key": "C",
+          "text": "it contains delocalized electrons like a metal."
+        },
+        {
+          "key": "D",
+          "text": "it is an ionic compound."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.4-4",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Standard",
+      "stem": "Silicon and carbon react to form silicon carbide. The structure of silicon carbide is shown below:\nWhich of the following statements about silicon carbide is INCORRECT?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It can be used as an abrasive."
+        },
+        {
+          "key": "B",
+          "text": "It has a high melting point."
+        },
+        {
+          "key": "C",
+          "text": "It is chemically inert."
+        },
+        {
+          "key": "D",
+          "text": "It is quite soluble in water."
+        }
+      ],
+      "answer": "D",
+      "image": {
+        "src": "assets/mw5db-1.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA05.4-5",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Standard",
+      "stem": "Which of the following properties of magnesium chloride is / are evidence(s) to support that ionic\nbonds are strong?\n(1) It is an electrolyte.\n(2) It has a high melting point.\n(3) It is soluble in water.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.4-6",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Standard",
+      "stem": "Silicon dioxide has a high melting point while carbon dioxide has a low melting point because",
+      "options": [
+        {
+          "key": "A",
+          "text": "silicon dioxide has a giant covalent structure while carbon dioxide has a simple molecular structure."
+        },
+        {
+          "key": "B",
+          "text": "there are strong covalent bonds between silicon and oxygen atoms while there are weak van der Waals' forces between carbon and oxygen atoms."
+        },
+        {
+          "key": "C",
+          "text": "silicon dioxide is an ionic compound while carbon dioxide is a covalent compound."
+        },
+        {
+          "key": "D",
+          "text": "the relative atomic mass of silicon is greater than that of carbon."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.4-7",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Standard",
+      "stem": "Consider the information below:\nWhich of the following solids is likely to be graphite?",
+      "options": [
+        {
+          "key": "A",
+          "text": "W"
+        },
+        {
+          "key": "B",
+          "text": "X"
+        },
+        {
+          "key": "C",
+          "text": "Y"
+        },
+        {
+          "key": "D",
+          "text": "Z"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.4-8",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Standard",
+      "stem": "85. A substance W melts at 3 550 °C and it does NOT conduct electricity in solid state and molten state. W probably has a A giant ionic structure. B giant covalent structure. C simple molecular structure. D giant metallic structure.",
+      "options": [
+        {
+          "key": "A",
+          "text": "giant ionic structure."
+        },
+        {
+          "key": "B",
+          "text": "giant covalent structure."
+        },
+        {
+          "key": "C",
+          "text": "simple molecular structure."
+        },
+        {
+          "key": "D",
+          "text": "giant metallic structure."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "CMWA05.4-9",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Standard",
+      "stem": "Which of the following shows the correct descending order of the melting points of diamond, zinc\nbromide and sulphur dioxide?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diamond > zinc bromide > sulphur dioxide"
+        },
+        {
+          "key": "B",
+          "text": "Zinc bromide > diamond > sulphur dioxide"
+        },
+        {
+          "key": "C",
+          "text": "Diamond > sulphur dioxide > zinc bromide"
+        },
+        {
+          "key": "D",
+          "text": "Zinc bromide > sulphur dioxide > diamond"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "CMWA05.4-10",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Applied",
+      "stem": "Scientists have recently developed a method to produce large sheets of a substance called graphene.\nGraphene is made from carbon and is a single layer of graphite just one atom thick.\nThe diagram below shows the structure of graphene.\nWhich of the following statements about graphene is / are correct?\n(1) It is a good conductor of electricity.\n(2) It has a low melting point.\n(3) It is strong.\n(2) only\n(1) and\n(3) only",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "C",
+      "image": {
+        "src": "assets/mw5dc-1.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    },
+    {
+      "id": "CMWA05.4-11",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Applied",
+      "stem": "Which of the following substances have giant structures?\n(1) Calcium\n(2) Magnesium oxide\n(3) Graphite",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "CMWA05.4-12",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Applied",
+      "stem": "The atomic number of elements X and Y are 14 and 8 respectively. Which of the following statements\nabout the compound formed between X and Y are correct?\n(1) It has a low melting point.\n(2) It has a giant covalent structure.\n(3) It is insoluble in water.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "CMWA05.4-13",
+      "topic": "CMWA05",
+      "section": "CMWA05.4",
+      "difficulty": "Applied",
+      "stem": "77. The diagram below shows the structure of a form of boron nitride which is similar to that of graphite.\nWhich of the following statements about this compound are correct?\n(1) It has a high melting point.\n(2) It is slippery.\n(3) It is very hard.",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) and (2) only"
+        },
+        {
+          "key": "B",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "C",
+          "text": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A",
+      "image": {
+        "src": "assets/mw5dc-4.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
+    }
+  ]
+}
