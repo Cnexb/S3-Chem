@@ -16,6 +16,7 @@ import {
   getFillLines,
   buildQuizBankStats,
   filterQuizPool,
+  itemSetId,
 } from "./quizUtils.js?v=20260904s3mc2";
 import {
   animateSplitText,
@@ -337,7 +338,7 @@ export function initQuiz() {
   function sectionCounts() {
     const counts = Object.create(null);
     for (const q of QUIZ_ITEMS) {
-      counts[q.section] = (counts[q.section] || 0) + 1;
+      counts[itemSetId(q)] = (counts[itemSetId(q)] || 0) + 1;
     }
     return counts;
   }
@@ -405,7 +406,7 @@ export function initQuiz() {
     const pool = [];
     for (const sid of sectionOrder) {
       for (const q of QUIZ_ITEMS) {
-        if (q.section === sid && formats.includes(questionFormat(q))) pool.push(q);
+        if (itemSetId(q) === sid && formats.includes(questionFormat(q))) pool.push(q);
       }
     }
     if (!pool.length) {
@@ -656,7 +657,7 @@ export function initQuiz() {
             window.postMessage({
               type: 'uniplus:quizAnswer',
               subject: 'CHEM',
-              quizId: 'chem-microscopic-world-i',
+              quizId: q.quizId || 'chem-s3-mc',
               questionId: q.id,
               section: q.section,
               difficulty: q.difficulty,
@@ -697,7 +698,7 @@ export function initQuiz() {
           window.postMessage({
             type: 'uniplus:quizAnswer',
             subject: 'CHEM',
-            quizId: 'chem-microscopic-world-i',
+            quizId: q.quizId || 'chem-s3-mc',
             questionId: q.id,
             section: q.section,
             difficulty: q.difficulty,

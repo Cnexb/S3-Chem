@@ -40,7 +40,22 @@ def load_figure_map():
     return json.loads(FIGURE_MAP.read_text(encoding="utf-8"))
 
 
-def item_id(q: dict) -> str:
+def stamp_item_ids(questions, sections):
+    """Physics-style ids: Excel section + sequence, no difficulty letter."""
+    by_ch = {s["ch"]: s for s in sections}
+    n = {}
+    for q in questions:
+        excel = by_ch[q["ch"]].get("excel") or q["code"]
+        n[excel] = n.get(excel, 0) + 1
+        q["itemId"] = f"{excel}-{n[excel]}"
+
+
+def item_id(q: dict, sec: dict | None = None) -> str:
+    if q.get("itemId"):
+        return q["itemId"]
+    excel = (sec or {}).get("excel")
+    if excel:
+        return f"{excel}-{q['n']}"
     return f"{q['code']}-{q['n']}"
 
 
@@ -155,10 +170,11 @@ def write_reviews(questions, sections):
         "|---|-----|---------|------|--------|--------|------|",
     ]
     for i, q in enumerate(questions, 1):
-        sec = by_ch[q["ch"]]["id"]
+        meta = by_ch[q["ch"]]
+        sec = meta.get("excel") or meta["id"]
         stem = q["stem"].replace("\n", " ")[:55]
         lines.append(
-            f"| {i} | {item_id(q)} | {sec} | {q.get('difficulty','')} | {q['answer']} | {q.get('image','—')} | {stem} |"
+            f"| {i} | {item_id(q, meta)} | {sec} | {q.get('difficulty','')} | {q['answer']} | {q.get('image','—')} | {stem} |"
         )
     lines.append("")
     (ROOT / "draft" / "quiz-review.md").write_text("\n".join(lines), encoding="utf-8")
@@ -168,8 +184,11 @@ def to_quiz_item(q, image_map, sections_by_ch):
     sec = sections_by_ch[q["ch"]]
     options = [{"key": letter, "text": text} for letter, text in zip("ABCD", q["options"])]
     item = {
-        "id": item_id(q),
-        "section": sec["id"],
+        "id": item_id(q, sec),
+        "setId": sec["id"],
+        "section": sec.get("excel") or sec["id"],
+        "topic": sec.get("topic"),
+        "quizId": sec.get("quizId"),
         "difficulty": q.get("difficulty") or "Standard",
         "stem": q["stem"],
         "options": options,
@@ -192,7 +211,11 @@ def to_quiz_item(q, image_map, sections_by_ch):
 def write_quiz_data(questions, image_map, sections):
     sections_by_ch = {s["ch"]: s for s in sections}
     sections_js = [
-        {"id": s["id"], "label": f"{s['code']} · {s['label']}", "labelZh": f"{s['code']} · {s['labelZh']}"}
+        {
+            "id": s["id"],
+            "label": f"{s.get('excel', s['code'])} · {s['label']}",
+            "labelZh": f"{s.get('excel', s['code'])} · {s['labelZh']}",
+        }
         for s in sections
     ]
     items = [to_quiz_item(q, image_map, sections_by_ch) for q in questions]
@@ -211,6 +234,7 @@ def main():
     ensure_dirs()
     sections = load_sections()
     questions = load_questions()
+    stamp_item_ids(questions, sections)
     figure_map = load_figure_map()
     copy_ui()
     image_map = copy_figures(questions, figure_map)

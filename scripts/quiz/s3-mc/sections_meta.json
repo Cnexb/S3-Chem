@@ -7,7 +7,10 @@
     "prefix": "earth1aa",
     "code": "Earth1Aa",
     "diff": "easy",
-    "count": 7
+    "count": 7,
+    "topic": "CPE01",
+    "excel": "CPE01.1",
+    "quizId": "chem-cpe01"
   },
   {
     "ch": 2,
@@ -17,7 +20,10 @@
     "prefix": "earth1ab",
     "code": "Earth1Ab",
     "diff": "medium",
-    "count": 3
+    "count": 3,
+    "topic": "CPE01",
+    "excel": "CPE01.1",
+    "quizId": "chem-cpe01"
   },
   {
     "ch": 3,
@@ -27,7 +33,10 @@
     "prefix": "earth1ac",
     "code": "Earth1Ac",
     "diff": "difficult",
-    "count": 4
+    "count": 4,
+    "topic": "CPE01",
+    "excel": "CPE01.1",
+    "quizId": "chem-cpe01"
   },
   {
     "ch": 4,
@@ -37,7 +46,10 @@
     "prefix": "earth1ba",
     "code": "Earth1Ba",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CPE01",
+    "excel": "CPE01.2",
+    "quizId": "chem-cpe01"
   },
   {
     "ch": 5,
@@ -47,7 +59,10 @@
     "prefix": "earth1bb",
     "code": "Earth1Bb",
     "diff": "medium",
-    "count": 4
+    "count": 4,
+    "topic": "CPE01",
+    "excel": "CPE01.2",
+    "quizId": "chem-cpe01"
   },
   {
     "ch": 6,
@@ -57,7 +72,10 @@
     "prefix": "earth1bc",
     "code": "Earth1Bc",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CPE01",
+    "excel": "CPE01.2",
+    "quizId": "chem-cpe01"
   },
   {
     "ch": 7,
@@ -67,7 +85,10 @@
     "prefix": "earth2aa",
     "code": "Earth2Aa",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CPE02",
+    "excel": "CPE02.1",
+    "quizId": "chem-cpe02"
   },
   {
     "ch": 8,
@@ -77,7 +98,10 @@
     "prefix": "earth2ab",
     "code": "Earth2Ab",
     "diff": "medium",
-    "count": 4
+    "count": 4,
+    "topic": "CPE02",
+    "excel": "CPE02.1",
+    "quizId": "chem-cpe02"
   },
   {
     "ch": 9,
@@ -87,7 +111,10 @@
     "prefix": "earth2ac",
     "code": "Earth2Ac",
     "diff": "difficult",
-    "count": 7
+    "count": 7,
+    "topic": "CPE02",
+    "excel": "CPE02.1",
+    "quizId": "chem-cpe02"
   },
   {
     "ch": 10,
@@ -97,7 +124,10 @@
     "prefix": "earth2ba",
     "code": "Earth2Ba",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CPE02",
+    "excel": "CPE02.2",
+    "quizId": "chem-cpe02"
   },
   {
     "ch": 11,
@@ -107,7 +137,10 @@
     "prefix": "earth2bb",
     "code": "Earth2Bb",
     "diff": "medium",
-    "count": 3
+    "count": 3,
+    "topic": "CPE02",
+    "excel": "CPE02.2",
+    "quizId": "chem-cpe02"
   },
   {
     "ch": 12,
@@ -117,7 +150,10 @@
     "prefix": "earth2bc",
     "code": "Earth2Bc",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CPE02",
+    "excel": "CPE02.2",
+    "quizId": "chem-cpe02"
   },
   {
     "ch": 13,
@@ -127,7 +163,10 @@
     "prefix": "earth2ca",
     "code": "Earth2Ca",
     "diff": "easy",
-    "count": 5
+    "count": 5,
+    "topic": "CPE02",
+    "excel": "CPE02.3",
+    "quizId": "chem-cpe02"
   },
   {
     "ch": 14,
@@ -137,7 +176,10 @@
     "prefix": "earth2cb",
     "code": "Earth2Cb",
     "diff": "medium",
-    "count": 4
+    "count": 4,
+    "topic": "CPE02",
+    "excel": "CPE02.3",
+    "quizId": "chem-cpe02"
   },
   {
     "ch": 15,
@@ -147,7 +189,10 @@
     "prefix": "earth2cc",
     "code": "Earth2Cc",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CPE02",
+    "excel": "CPE02.3",
+    "quizId": "chem-cpe02"
   },
   {
     "ch": 16,
@@ -157,7 +202,10 @@
     "prefix": "earth3aa",
     "code": "Earth3Aa",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CPE03",
+    "excel": "CPE03.1",
+    "quizId": "chem-cpe03"
   },
   {
     "ch": 17,
@@ -167,7 +215,10 @@
     "prefix": "earth3ab",
     "code": "Earth3Ab",
     "diff": "medium",
-    "count": 4
+    "count": 4,
+    "topic": "CPE03",
+    "excel": "CPE03.1",
+    "quizId": "chem-cpe03"
   },
   {
     "ch": 18,
@@ -177,7 +228,10 @@
     "prefix": "earth3ac",
     "code": "Earth3Ac",
     "diff": "difficult",
-    "count": 6
+    "count": 6,
+    "topic": "CPE03",
+    "excel": "CPE03.1",
+    "quizId": "chem-cpe03"
   },
   {
     "ch": 19,
@@ -187,7 +241,10 @@
     "prefix": "earth3ba",
     "code": "Earth3Ba",
     "diff": "easy",
-    "count": 8
+    "count": 8,
+    "topic": "CPE03",
+    "excel": "CPE03.2",
+    "quizId": "chem-cpe03"
   },
   {
     "ch": 20,
@@ -197,7 +254,10 @@
     "prefix": "earth3bb",
     "code": "Earth3Bb",
     "diff": "medium",
-    "count": 6
+    "count": 6,
+    "topic": "CPE03",
+    "excel": "CPE03.2",
+    "quizId": "chem-cpe03"
   },
   {
     "ch": 21,
@@ -207,7 +267,10 @@
     "prefix": "earth3bc",
     "code": "Earth3Bc",
     "diff": "difficult",
-    "count": 5
+    "count": 5,
+    "topic": "CPE03",
+    "excel": "CPE03.2",
+    "quizId": "chem-cpe03"
   },
   {
     "ch": 22,
@@ -217,7 +280,10 @@
     "prefix": "earth4aa",
     "code": "Earth4Aa",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CPE04",
+    "excel": "CPE04.1",
+    "quizId": "chem-cpe04"
   },
   {
     "ch": 23,
@@ -227,7 +293,10 @@
     "prefix": "earth4ab",
     "code": "Earth4Ab",
     "diff": "medium",
-    "count": 3
+    "count": 3,
+    "topic": "CPE04",
+    "excel": "CPE04.1",
+    "quizId": "chem-cpe04"
   },
   {
     "ch": 24,
@@ -237,7 +306,10 @@
     "prefix": "earth4ac",
     "code": "Earth4Ac",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CPE04",
+    "excel": "CPE04.1",
+    "quizId": "chem-cpe04"
   },
   {
     "ch": 25,
@@ -247,7 +319,10 @@
     "prefix": "earth4ba",
     "code": "Earth4Ba",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CPE04",
+    "excel": "CPE04.2",
+    "quizId": "chem-cpe04"
   },
   {
     "ch": 26,
@@ -257,7 +332,10 @@
     "prefix": "earth4bb",
     "code": "Earth4Bb",
     "diff": "medium",
-    "count": 4
+    "count": 4,
+    "topic": "CPE04",
+    "excel": "CPE04.2",
+    "quizId": "chem-cpe04"
   },
   {
     "ch": 27,
@@ -267,7 +345,10 @@
     "prefix": "earth4bc",
     "code": "Earth4Bc",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CPE04",
+    "excel": "CPE04.2",
+    "quizId": "chem-cpe04"
   },
   {
     "ch": 28,
@@ -277,7 +358,10 @@
     "prefix": "mw1aa",
     "code": "MW1Aa",
     "diff": "easy",
-    "count": 8
+    "count": 8,
+    "topic": "CMWA01",
+    "excel": "CMWA01.1",
+    "quizId": "chem-cmwa01"
   },
   {
     "ch": 29,
@@ -287,7 +371,10 @@
     "prefix": "mw1ab",
     "code": "MW1Ab",
     "diff": "medium",
-    "count": 7
+    "count": 7,
+    "topic": "CMWA01",
+    "excel": "CMWA01.1",
+    "quizId": "chem-cmwa01"
   },
   {
     "ch": 30,
@@ -297,7 +384,10 @@
     "prefix": "mw1ac",
     "code": "MW1Ac",
     "diff": "difficult",
-    "count": 4
+    "count": 4,
+    "topic": "CMWA01",
+    "excel": "CMWA01.1",
+    "quizId": "chem-cmwa01"
   },
   {
     "ch": 31,
@@ -307,7 +397,10 @@
     "prefix": "mw1ba",
     "code": "MW1Ba",
     "diff": "easy",
-    "count": 6
+    "count": 6,
+    "topic": "CMWA01",
+    "excel": "CMWA01.2",
+    "quizId": "chem-cmwa01"
   },
   {
     "ch": 32,
@@ -317,7 +410,10 @@
     "prefix": "mw1bb",
     "code": "MW1Bb",
     "diff": "medium",
-    "count": 5
+    "count": 5,
+    "topic": "CMWA01",
+    "excel": "CMWA01.2",
+    "quizId": "chem-cmwa01"
   },
   {
     "ch": 33,
@@ -327,7 +423,10 @@
     "prefix": "mw1bc",
     "code": "MW1Bc",
     "diff": "difficult",
-    "count": 6
+    "count": 6,
+    "topic": "CMWA01",
+    "excel": "CMWA01.2",
+    "quizId": "chem-cmwa01"
   },
   {
     "ch": 34,
@@ -337,7 +436,10 @@
     "prefix": "mw2aa",
     "code": "MW2Aa",
     "diff": "easy",
-    "count": 5
+    "count": 5,
+    "topic": "CMWA02",
+    "excel": "CMWA02.1",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 35,
@@ -347,7 +449,10 @@
     "prefix": "mw2ab",
     "code": "MW2Ab",
     "diff": "medium",
-    "count": 9
+    "count": 9,
+    "topic": "CMWA02",
+    "excel": "CMWA02.1",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 36,
@@ -357,7 +462,10 @@
     "prefix": "mw2ac",
     "code": "MW2Ac",
     "diff": "difficult",
-    "count": 8
+    "count": 8,
+    "topic": "CMWA02",
+    "excel": "CMWA02.1",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 37,
@@ -367,7 +475,10 @@
     "prefix": "mw2ba",
     "code": "MW2Ba",
     "diff": "easy",
-    "count": 8
+    "count": 8,
+    "topic": "CMWA02",
+    "excel": "CMWA02.2",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 38,
@@ -377,7 +488,10 @@
     "prefix": "mw2bb",
     "code": "MW2Bb",
     "diff": "medium",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA02",
+    "excel": "CMWA02.2",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 39,
@@ -387,7 +501,10 @@
     "prefix": "mw2bc",
     "code": "MW2Bc",
     "diff": "difficult",
-    "count": 5
+    "count": 5,
+    "topic": "CMWA02",
+    "excel": "CMWA02.2",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 40,
@@ -397,7 +514,10 @@
     "prefix": "mw2ca",
     "code": "MW2Ca",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA02",
+    "excel": "CMWA02.3",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 41,
@@ -407,7 +527,10 @@
     "prefix": "mw2cb",
     "code": "MW2Cb",
     "diff": "medium",
-    "count": 4
+    "count": 4,
+    "topic": "CMWA02",
+    "excel": "CMWA02.3",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 42,
@@ -417,7 +540,10 @@
     "prefix": "mw2cc",
     "code": "MW2Cc",
     "diff": "difficult",
-    "count": 4
+    "count": 4,
+    "topic": "CMWA02",
+    "excel": "CMWA02.3",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 43,
@@ -427,7 +553,10 @@
     "prefix": "mw2da",
     "code": "MW2Da",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA02",
+    "excel": "CMWA02.4",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 44,
@@ -437,7 +566,10 @@
     "prefix": "mw2db",
     "code": "MW2Db",
     "diff": "medium",
-    "count": 7
+    "count": 7,
+    "topic": "CMWA02",
+    "excel": "CMWA02.4",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 45,
@@ -447,7 +579,10 @@
     "prefix": "mw2dc",
     "code": "MW2Dc",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA02",
+    "excel": "CMWA02.4",
+    "quizId": "chem-cmwa02"
   },
   {
     "ch": 46,
@@ -457,7 +592,10 @@
     "prefix": "mw3aa",
     "code": "MW3Aa",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA03",
+    "excel": "CMWA03.1",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 47,
@@ -467,7 +605,10 @@
     "prefix": "mw3ab",
     "code": "MW3Ab",
     "diff": "medium",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA03",
+    "excel": "CMWA03.1",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 48,
@@ -477,7 +618,10 @@
     "prefix": "mw3ac",
     "code": "MW3Ac",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA03",
+    "excel": "CMWA03.1",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 49,
@@ -487,7 +631,10 @@
     "prefix": "mw3ba",
     "code": "MW3Ba",
     "diff": "easy",
-    "count": 5
+    "count": 5,
+    "topic": "CMWA03",
+    "excel": "CMWA03.2",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 50,
@@ -497,7 +644,10 @@
     "prefix": "mw3bb",
     "code": "MW3Bb",
     "diff": "medium",
-    "count": 9
+    "count": 9,
+    "topic": "CMWA03",
+    "excel": "CMWA03.2",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 51,
@@ -507,7 +657,10 @@
     "prefix": "mw3bc",
     "code": "MW3Bc",
     "diff": "difficult",
-    "count": 8
+    "count": 8,
+    "topic": "CMWA03",
+    "excel": "CMWA03.2",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 52,
@@ -517,7 +670,10 @@
     "prefix": "mw3ca",
     "code": "MW3Ca",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA03",
+    "excel": "CMWA03.3",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 53,
@@ -527,7 +683,10 @@
     "prefix": "mw3cb",
     "code": "MW3Cb",
     "diff": "medium",
-    "count": 4
+    "count": 4,
+    "topic": "CMWA03",
+    "excel": "CMWA03.3",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 54,
@@ -537,7 +696,10 @@
     "prefix": "mw3cc",
     "code": "MW3Cc",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA03",
+    "excel": "CMWA03.3",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 55,
@@ -547,7 +709,10 @@
     "prefix": "mw3da",
     "code": "MW3Da",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA03",
+    "excel": "CMWA03.4",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 56,
@@ -557,7 +722,10 @@
     "prefix": "mw3db",
     "code": "MW3Db",
     "diff": "medium",
-    "count": 10
+    "count": 10,
+    "topic": "CMWA03",
+    "excel": "CMWA03.4",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 57,
@@ -567,7 +735,10 @@
     "prefix": "mw3dc",
     "code": "MW3Dc",
     "diff": "difficult",
-    "count": 4
+    "count": 4,
+    "topic": "CMWA03",
+    "excel": "CMWA03.4",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 58,
@@ -577,7 +748,10 @@
     "prefix": "mw3ea",
     "code": "MW3Ea",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA03",
+    "excel": "CMWA03.5",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 59,
@@ -587,7 +761,10 @@
     "prefix": "mw3eb",
     "code": "MW3Eb",
     "diff": "medium",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA03",
+    "excel": "CMWA03.5",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 60,
@@ -597,7 +774,10 @@
     "prefix": "mw3ec",
     "code": "MW3Ec",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA03",
+    "excel": "CMWA03.5",
+    "quizId": "chem-cmwa03"
   },
   {
     "ch": 61,
@@ -607,7 +787,10 @@
     "prefix": "mw4aa",
     "code": "MW4Aa",
     "diff": "easy",
-    "count": 12
+    "count": 12,
+    "topic": "CMWA04",
+    "excel": "CMWA04.1",
+    "quizId": "chem-cmwa04"
   },
   {
     "ch": 62,
@@ -617,7 +800,10 @@
     "prefix": "mw4ab",
     "code": "MW4Ab",
     "diff": "medium",
-    "count": 12
+    "count": 12,
+    "topic": "CMWA04",
+    "excel": "CMWA04.1",
+    "quizId": "chem-cmwa04"
   },
   {
     "ch": 63,
@@ -627,7 +813,10 @@
     "prefix": "mw4ac",
     "code": "MW4Ac",
     "diff": "difficult",
-    "count": 9
+    "count": 9,
+    "topic": "CMWA04",
+    "excel": "CMWA04.1",
+    "quizId": "chem-cmwa04"
   },
   {
     "ch": 64,
@@ -637,7 +826,10 @@
     "prefix": "mw4ba",
     "code": "MW4Ba",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA04",
+    "excel": "CMWA04.2",
+    "quizId": "chem-cmwa04"
   },
   {
     "ch": 65,
@@ -647,7 +839,10 @@
     "prefix": "mw4bb",
     "code": "MW4Bb",
     "diff": "medium",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA04",
+    "excel": "CMWA04.2",
+    "quizId": "chem-cmwa04"
   },
   {
     "ch": 66,
@@ -657,7 +852,10 @@
     "prefix": "mw4bc",
     "code": "MW4Bc",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA04",
+    "excel": "CMWA04.2",
+    "quizId": "chem-cmwa04"
   },
   {
     "ch": 67,
@@ -667,7 +865,10 @@
     "prefix": "mw4ca",
     "code": "MW4Ca",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA04",
+    "excel": "CMWA04.3",
+    "quizId": "chem-cmwa04"
   },
   {
     "ch": 68,
@@ -677,7 +878,10 @@
     "prefix": "mw4cb",
     "code": "MW4Cb",
     "diff": "medium",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA04",
+    "excel": "CMWA04.3",
+    "quizId": "chem-cmwa04"
   },
   {
     "ch": 69,
@@ -687,7 +891,10 @@
     "prefix": "mw4cc",
     "code": "MW4Cc",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA04",
+    "excel": "CMWA04.3",
+    "quizId": "chem-cmwa04"
   },
   {
     "ch": 70,
@@ -697,7 +904,10 @@
     "prefix": "mw5aa",
     "code": "MW5Aa",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA05",
+    "excel": "CMWA05.1",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 71,
@@ -707,7 +917,10 @@
     "prefix": "mw5ab",
     "code": "MW5Ab",
     "diff": "medium",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA05",
+    "excel": "CMWA05.1",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 72,
@@ -717,7 +930,10 @@
     "prefix": "mw5ac",
     "code": "MW5Ac",
     "diff": "difficult",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA05",
+    "excel": "CMWA05.1",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 73,
@@ -727,7 +943,10 @@
     "prefix": "mw5ba",
     "code": "MW5Ba",
     "diff": "easy",
-    "count": 8
+    "count": 8,
+    "topic": "CMWA05",
+    "excel": "CMWA05.2",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 74,
@@ -737,7 +956,10 @@
     "prefix": "mw5bb",
     "code": "MW5Bb",
     "diff": "medium",
-    "count": 5
+    "count": 5,
+    "topic": "CMWA05",
+    "excel": "CMWA05.2",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 75,
@@ -747,7 +969,10 @@
     "prefix": "mw5bc",
     "code": "MW5Bc",
     "diff": "difficult",
-    "count": 9
+    "count": 9,
+    "topic": "CMWA05",
+    "excel": "CMWA05.2",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 76,
@@ -757,7 +982,10 @@
     "prefix": "mw5ca",
     "code": "MW5Ca",
     "diff": "easy",
-    "count": 4
+    "count": 4,
+    "topic": "CMWA05",
+    "excel": "CMWA05.3",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 77,
@@ -767,7 +995,10 @@
     "prefix": "mw5cb",
     "code": "MW5Cb",
     "diff": "medium",
-    "count": 7
+    "count": 7,
+    "topic": "CMWA05",
+    "excel": "CMWA05.3",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 78,
@@ -777,7 +1008,10 @@
     "prefix": "mw5cc",
     "code": "MW5Cc",
     "diff": "difficult",
-    "count": 8
+    "count": 8,
+    "topic": "CMWA05",
+    "excel": "CMWA05.3",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 79,
@@ -787,7 +1021,10 @@
     "prefix": "mw5da",
     "code": "MW5Da",
     "diff": "easy",
-    "count": 3
+    "count": 3,
+    "topic": "CMWA05",
+    "excel": "CMWA05.4",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 80,
@@ -797,7 +1034,10 @@
     "prefix": "mw5db",
     "code": "MW5Db",
     "diff": "medium",
-    "count": 6
+    "count": 6,
+    "topic": "CMWA05",
+    "excel": "CMWA05.4",
+    "quizId": "chem-cmwa05"
   },
   {
     "ch": 81,
@@ -807,6 +1047,9 @@
     "prefix": "mw5dc",
     "code": "MW5Dc",
     "diff": "difficult",
-    "count": 4
+    "count": 4,
+    "topic": "CMWA05",
+    "excel": "CMWA05.4",
+    "quizId": "chem-cmwa05"
   }
 ]

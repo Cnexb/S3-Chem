@@ -11,7 +11,7 @@ import {
   buildFiguresExportHtml,
   waitForExportImages,
   EXPORT_TABLE_STYLE,
-} from "./quizUtils.js?v=20260904s3mc2";
+} from "./quizUtils.js?v=20260904s3mc3";
 
 const EXPORT_Q_STYLE = "page-break-inside:avoid;break-inside:avoid;margin-bottom:1rem";
 const EXPORT_HEAD_STYLE =
