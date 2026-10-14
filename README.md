@@ -46,7 +46,7 @@ Form (S3 vs S6) is **not** chosen by folder name. Do not invent Topic Codes.
 
 Later chapters (`CH03`–`CH15`) use the same `chNN-…` folder names when those packs are added.
 
-The S3 multiple-choice bank covers Earth and Microscopic World I. The combined HTML picker stays in `ch01-earth/tools/s3-mc`. Each topic’s questions are also listed under that chapter’s `quiz/<topic-slug>/quiz.json`, and the chapter `quiz.json` indexes them. Flashcard study pages are HTML tools (`*-flashcards-en` and `*-flashcards-zh`), not JSON decks.
+The S3 multiple-choice bank covers Earth and Microscopic World I. The combined HTML picker stays in `ch01-earth/worksheets/s3-mc`. Each topic’s questions are also listed under that chapter’s `quiz/<topic-slug>/quiz.json`, and the chapter `quiz.json` indexes them. Flashcard study pages are HTML tools (`*-flashcards-en` and `*-flashcards-zh`), not JSON decks.
 
 ## What teachers edit
 
@@ -55,6 +55,7 @@ The S3 multiple-choice bank covers Earth and Microscopic World I. The combined H
 | Which items appear | that chapter’s `manifest.json` |
 | Notes | one English PDF in `notes/` (`files.en` only) |
 | A lab, game, or flashcard page | `tools/<slug>/` (keep `index.html`) and the `tools` list |
+| A worksheet | `worksheets/<slug>/` (keep `index.html`), not inside `tools/`, and the `tools` list with `"section": "worksheets"` |
 | A topic quiz | that chapter’s `quiz.json`, `quiz/<topic-slug>/quiz.json`, and the `quiz` list |
 | A summary image | `summaries/` and the `summaries` list |
 | Topic codes / year | `content/topics/chem-topics.json` |

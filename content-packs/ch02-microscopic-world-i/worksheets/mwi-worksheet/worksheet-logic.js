@@ -561,9 +561,9 @@
             window.postMessage({
               type: 'uniplus:quizAnswer',
               subject: 'CHEM',
-              quizId: 'chem-ch2-microscopic-world-1',
+              quizId: q.qtype === 'covalent-bond' ? 'chem-cmwa04' : 'chem-cmwa03',
               questionId: q.id,
-              section: q.qtype || null,
+              section: q.qtype === 'covalent-bond' ? 'CMWA04' : 'CMWA03',
               difficulty: q.difficulty || null,
               stem: q.stem_en || null,
               selectedAnswer: _selAns,
@@ -596,9 +596,9 @@
             window.postMessage({
               type: 'uniplus:quizAnswer',
               subject: 'CHEM',
-              quizId: 'chem-ch2-microscopic-world-1',
+              quizId: q.qtype === 'covalent-bond' ? 'chem-cmwa04' : 'chem-cmwa03',
               questionId: q.id,
-              section: q.qtype || null,
+              section: q.qtype === 'covalent-bond' ? 'CMWA04' : 'CMWA03',
               difficulty: q.difficulty || null,
               stem: q.stem_en || null,
               selectedAnswer: _selAns,

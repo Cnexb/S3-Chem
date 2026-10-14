@@ -1,4 +1,4 @@
-import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260904s3mc3";
+import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20261014s3mc1";
 import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260904s3mc3";
 import { downloadWord, printSheet } from "./quizExport.js?v=20260904s3mc3";
 import {
@@ -38,7 +38,7 @@ const UI = {
     bankNone: "Select at least one quiz set.",
     lblCount: "Full sets (fixed order)",
     btnGenerate: "Show selected sets",
-    txtGenHint: "Select one or more codes (e.g. Earth1Aa). All questions in those sets appear in fixed bank order.",
+    txtGenHint: "Select one or more codes (e.g. CPE01.1a). All questions in those sets appear in fixed bank order.",
     lblFormats: "Question type",
     bankSummaryTitle: "Question bank",
     bankAvailable: "Available",
@@ -107,7 +107,7 @@ const UI = {
     bankNone: "请至少选择一个题组。",
     lblCount: "整组（固定次序）",
     btnGenerate: "显示所选题组",
-    txtGenHint: "可多选代号（如 Earth1Aa）。所选题组的全部题目会按题库固定次序显示。",
+    txtGenHint: "可多选代号（如 CPE01.1a）。所选题组的全部题目会按题库固定次序显示。",
     hExport: "导出",
     txtExportHint: "Word：下载 .doc 以 Word 打开。PDF 请用「打印」→「另存 PDF」。",
     btnDocQ: "Word — 试题",
@@ -168,7 +168,7 @@ const UI = {
     bankNone: "請至少選擇一個題組。",
     lblCount: "整組（固定次序）",
     btnGenerate: "顯示所選題組",
-    txtGenHint: "可多選代號（如 Earth1Aa）。所選題組的全部題目會按題庫固定次序顯示。",
+    txtGenHint: "可多選代號（如 CPE01.1a）。所選題組的全部題目會按題庫固定次序顯示。",
     hExport: "匯出",
     txtExportHint: "Word：下載 .doc 以 Word 開啟。PDF 請用「列印」→「另存 PDF」。",
     btnDocQ: "Word — 試題",
@@ -657,7 +657,7 @@ export function initQuiz() {
             window.postMessage({
               type: 'uniplus:quizAnswer',
               subject: 'CHEM',
-              quizId: q.quizId || 'chem-s3-mc',
+              quizId: q.quizId || 'chem-cpe01',
               questionId: q.id,
               section: q.section,
               difficulty: q.difficulty,
@@ -698,7 +698,7 @@ export function initQuiz() {
           window.postMessage({
             type: 'uniplus:quizAnswer',
             subject: 'CHEM',
-            quizId: q.quizId || 'chem-s3-mc',
+            quizId: q.quizId || 'chem-cpe01',
             questionId: q.id,
             section: q.section,
             difficulty: q.difficulty,

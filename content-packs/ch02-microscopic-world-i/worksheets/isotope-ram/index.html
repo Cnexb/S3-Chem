@@ -570,8 +570,8 @@
             ht.style.display = 'none'; data.solved = true;
             try {
                 window.postMessage({
-                    type: 'uniplus:quizAnswer', subject: 'CHEM', quizId: 'chem-ch5-isotope-ram',
-                    questionId: 'q' + (index + 1), section: 'isotope-ram-type' + data.type,
+                    type: 'uniplus:quizAnswer', subject: 'CHEM', quizId: 'chem-cmwa01-2',
+                    questionId: 'cmwa01-' + (index + 1), section: 'CMWA01.2',
                     difficulty: data.diff || 'standard', stem: data.qText || null,
                     selectedAnswer: String(userVal), selectedAnswerText: String(userVal),
                     correctAnswer: String(data.ans), correctAnswerText: String(data.ans),
@@ -591,8 +591,8 @@
                 fb.innerText = i18n[l].finalWrong + data.ans; fb.style.color = "#c0392b";
                 try {
                     window.postMessage({
-                        type: 'uniplus:quizAnswer', subject: 'CHEM', quizId: 'chem-ch5-isotope-ram',
-                        questionId: 'q' + (index + 1), section: 'isotope-ram-type' + data.type,
+                        type: 'uniplus:quizAnswer', subject: 'CHEM', quizId: 'chem-cmwa01-2',
+                        questionId: 'cmwa01-' + (index + 1), section: 'CMWA01.2',
                         difficulty: data.diff || 'standard', stem: data.qText || null,
                         selectedAnswer: String(userVal), selectedAnswerText: String(userVal),
                         correctAnswer: String(data.ans), correctAnswerText: String(data.ans),

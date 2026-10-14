@@ -21,6 +21,7 @@ content-packs/ch01-earth/
   quiz.json                 ← chapter quiz index
   notes/*.pdf
   tools/<slug>/index.html
+  worksheets/<slug>/index.html
   quiz/<topic-slug>/quiz.json
   summaries/
 ```
@@ -34,11 +35,11 @@ Do **not** create one pack per Layer 2 topic (`01-fundamentals-of-chemistry`).
 1. Copy an existing pack folder. Rename it from the Excel Layer 1 chapter (`ch03-metal`).
 2. In `manifest.json`: `subject` `"CHEM"`, unique lowercase `scope` (`earth`, `metal`), `chapterCode` (`CH01`), `published: true`.
 3. Set `title.en` to the chapter name without the code (`Earth`) so Learning Tools shows **CH01 Earth**.
-4. List every note, tool, quiz, summary, and flashcard. Unlisted files are invisible.
+4. Keep `packId`, `subject`, `scope`, `title`, and `published` in `manifest.json`. Learning Tools also scans the chapter folder: `notes/*.pdf` and `*/<slug>/index.html`. Manifest entries still win for titles and topic codes.
 
 ## New item inside a chapter
 
-Add `notes[]` with `topicCode` from the Excel Layer 2 code (`CPE01`, `CMWA02`) and one English PDF (`files.en` only). Add labs, games, and flashcard pages under `tools/<slug>/` with `index.html`, and list them in `tools`. Set `"section": "games"` when the page is a game. Tag items with a **Topic Code** from `content/topics/chem-topics.json`. Do not invent codes.
+Add a note PDF under `notes/` (`CPE01-….pdf`). Add labs and flashcard pages under `tools/<slug>/index.html`. Put worksheets under `worksheets/<slug>/` (not inside `tools/`). Put a game under `games/<slug>/` or keep it in `tools/` with `"section": "games"`. A new kebab-case folder of HTML tools (for example `lab-sheets/<slug>/index.html`) becomes its own Learning Tools tab. List items in `tools` when you need a title or topic code; unlisted HTML still publishes. Tag listed items with a **Topic Code** from `content/topics/chem-topics.json`. Do not invent codes.
 
 ## Quizzes
 
@@ -47,11 +48,11 @@ List quiz info in two places, same as S3 Physics:
 1. Chapter `quiz.json` — index of every topic quiz in that pack.
 2. `quiz/<topic-slug>/quiz.json` — the items for that topic (`quizId`, `topicCode`, `items`).
 
-Also list each topic in `manifest.json` `quiz[]` with `slug`, `quizId`, `topicCode`, `path`, and `file` pointing at that topic `quiz.json`. Keep old question ids. Leave HTML quiz runners, `postMessage`, and tracking unchanged. The combined S3 MCQ picker stays at `ch01-earth/tools/s3-mc`.
+Also list each topic in `manifest.json` `quiz[]` with `slug`, `quizId`, `topicCode`, `path`, and `file` pointing at that topic `quiz.json`. Keep old question ids. Leave HTML quiz runners, `postMessage`, and tracking unchanged. The combined S3 MCQ picker stays at `ch01-earth/worksheets/s3-mc`.
 
 ## HTML to keep
 
-`content-packs/<pack>/tools/<slug>/index.html` (and its JS/CSS) — All-In-One embeds this.
+`content-packs/<pack>/tools/<slug>/index.html` and `content-packs/<pack>/worksheets/<slug>/index.html` (and their JS/CSS) — All-In-One embeds these.
 
 ## Stop
 

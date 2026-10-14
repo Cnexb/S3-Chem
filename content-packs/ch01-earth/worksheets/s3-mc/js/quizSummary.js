@@ -1,4 +1,4 @@
-import { QUIZ_SECTIONS } from "./quizData.js?v=20260904s3mc3";
+import { QUIZ_SECTIONS } from "./quizData.js?v=20261014s3mc1";
 import { escHtml, isChineseUI } from "./quizUtils.js?v=20260904s3mc3";
 
 export function sectionLabel(id, lang) {
