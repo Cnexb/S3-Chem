@@ -8,7 +8,7 @@
   "published": true,
   "title": {
     "en": "Microscopic World I",
-    "zhHant": "微觀世界I"
+    "zhHant": "\u5fae\u89c0\u4e16\u754cI"
   },
   "order": 2,
   "notes": [
@@ -16,7 +16,7 @@
       "topicCode": "CMWA01",
       "title": {
         "en": "Atom",
-        "zhHant": "原子"
+        "zhHant": "\u539f\u5b50"
       },
       "files": {
         "en": "content-packs/ch02-microscopic-world-i/notes/CMWA01-topic-02-microscopic-world-i.pdf"
@@ -26,7 +26,7 @@
       "topicCode": "CMWA02",
       "title": {
         "en": "The Periodic Table",
-        "zhHant": "週期表"
+        "zhHant": "\u9031\u671f\u8868"
       },
       "files": {
         "en": "content-packs/ch02-microscopic-world-i/notes/CMWA02-topic-02-microscopic-world-i.pdf"
@@ -36,7 +36,7 @@
       "topicCode": "CMWA03",
       "title": {
         "en": "Ionic bond and metallic bond",
-        "zhHant": "離子鍵和金屬鍵"
+        "zhHant": "\u96e2\u5b50\u9375\u548c\u91d1\u5c6c\u9375"
       },
       "files": {
         "en": "content-packs/ch02-microscopic-world-i/notes/CMWA03-topic-02-microscopic-world-i.pdf"
@@ -46,7 +46,7 @@
       "topicCode": "CMWA04",
       "title": {
         "en": "Covalent bond",
-        "zhHant": "共價鍵"
+        "zhHant": "\u5171\u50f9\u9375"
       },
       "files": {
         "en": "content-packs/ch02-microscopic-world-i/notes/CMWA04-topic-02-microscopic-world-i.pdf"
@@ -56,7 +56,7 @@
       "topicCode": "CMWA05",
       "title": {
         "en": "Structures and properties of substances",
-        "zhHant": "物質的結構和性質"
+        "zhHant": "\u7269\u8cea\u7684\u7d50\u69cb\u548c\u6027\u8cea"
       },
       "files": {
         "en": "content-packs/ch02-microscopic-world-i/notes/CMWA05-topic-02-microscopic-world-i.pdf"
@@ -69,7 +69,7 @@
       "toolId": "periodicTable",
       "title": {
         "en": "CMWA02.2 The Periodic Table (Periodic table)",
-        "zhHant": "週期表（週期表）"
+        "zhHant": "\u9031\u671f\u8868\uff08\u9031\u671f\u8868\uff09"
       },
       "query": "embed=1",
       "topicCode": "CMWA02.2"
@@ -79,7 +79,7 @@
       "path": "content-packs/ch02-microscopic-world-i/tools/atom-builder",
       "title": {
         "en": "CMWA01.1 Atomic Structure (Atom Builder)",
-        "zhHant": "原子結構（原子建造器）"
+        "zhHant": "\u539f\u5b50\u7d50\u69cb\uff08\u539f\u5b50\u5efa\u9020\u5668\uff09"
       },
       "query": "embed=1",
       "topicCode": "CMWA01.1"
@@ -89,7 +89,7 @@
       "path": "content-packs/ch02-microscopic-world-i/tools/ram-calculator",
       "title": {
         "en": "CMWA01.2 Isotope (Relative Atomic Mass Laboratory)",
-        "zhHant": "同位素（相對原子質量實驗室）"
+        "zhHant": "\u540c\u4f4d\u7d20\uff08\u76f8\u5c0d\u539f\u5b50\u8cea\u91cf\u5be6\u9a57\u5ba4\uff09"
       },
       "query": "embed=1",
       "topicCode": "CMWA01.2"
@@ -99,7 +99,7 @@
       "path": "content-packs/ch02-microscopic-world-i/tools/atom-ninja",
       "title": {
         "en": "CMWA01.1 Atomic Structure (Atom Ninja)",
-        "zhHant": "原子結構（原子忍者）"
+        "zhHant": "\u539f\u5b50\u7d50\u69cb\uff08\u539f\u5b50\u5fcd\u8005\uff09"
       },
       "query": "embed=1",
       "section": "games",
@@ -110,7 +110,7 @@
       "path": "content-packs/ch02-microscopic-world-i/tools/microscopic-world-i",
       "title": {
         "en": "Microscopic World I quiz",
-        "zhHant": "微觀世界 I 測驗"
+        "zhHant": "\u5fae\u89c0\u4e16\u754c I \u6e2c\u9a57"
       },
       "query": "embed=1",
       "section": "quizzes"
@@ -120,7 +120,7 @@
       "path": "content-packs/ch02-microscopic-world-i/tools/mwi-exercise",
       "title": {
         "en": "Microscopic World I exercise",
-        "zhHant": "微觀世界 I 練習"
+        "zhHant": "\u5fae\u89c0\u4e16\u754c I \u7df4\u7fd2"
       },
       "query": "embed=1",
       "section": "quizzes"
@@ -130,7 +130,7 @@
       "path": "content-packs/ch02-microscopic-world-i/worksheets/mwi-worksheet",
       "title": {
         "en": "Microscopic World I worksheet",
-        "zhHant": "微觀世界 I 工作紙"
+        "zhHant": "\u5fae\u89c0\u4e16\u754c I \u5de5\u4f5c\u7d19"
       },
       "query": "embed=1",
       "section": "worksheets"
@@ -140,7 +140,7 @@
       "path": "content-packs/ch02-microscopic-world-i/worksheets/atomic-structure-worksheet",
       "title": {
         "en": "Atomic structure worksheet",
-        "zhHant": "原子結構工作紙"
+        "zhHant": "\u539f\u5b50\u7d50\u69cb\u5de5\u4f5c\u7d19"
       },
       "query": "embed=1",
       "section": "worksheets",
@@ -151,36 +151,18 @@
       "path": "content-packs/ch02-microscopic-world-i/worksheets/isotope-ram",
       "title": {
         "en": "Isotope and relative atomic mass worksheet",
-        "zhHant": "同位素與相對原子質量工作紙"
+        "zhHant": "\u540c\u4f4d\u7d20\u8207\u76f8\u5c0d\u539f\u5b50\u8cea\u91cf\u5de5\u4f5c\u7d19"
       },
       "query": "embed=1",
       "section": "worksheets",
       "topicCode": "CMWA01.2"
     },
     {
-      "slug": "mwi-flashcards-en",
-      "path": "content-packs/ch02-microscopic-world-i/tools/mwi-flashcards-en",
-      "title": {
-        "en": "Microscopic World I flashcards",
-        "zhHant": "微觀世界 I 閃卡"
-      },
-      "query": "embed=1"
-    },
-    {
-      "slug": "mwi-flashcards-zh",
-      "path": "content-packs/ch02-microscopic-world-i/tools/mwi-flashcards-zh",
-      "title": {
-        "en": "Microscopic World I flashcards (繁體)",
-        "zhHant": "微觀世界 I 閃卡"
-      },
-      "query": "embed=1"
-    },
-    {
       "slug": "ionic-compound",
       "path": "content-packs/ch02-microscopic-world-i/tools/ionic-compound",
       "title": {
         "en": "CMWA03.3 Ionic Bond Electron Diagram (Ionic)",
-        "zhHant": "離子鍵電子圖（離子）"
+        "zhHant": "\u96e2\u5b50\u9375\u96fb\u5b50\u5716\uff08\u96e2\u5b50\uff09"
       },
       "query": "embed=1",
       "topicCode": "CMWA03.3"
@@ -190,7 +172,7 @@
       "path": "content-packs/ch02-microscopic-world-i/tools/chem-catch",
       "title": {
         "en": "CMWA03.4 Naming of Ionic Compound (Chem Catch)",
-        "zhHant": "離子化合物的命名（化學捉魚）"
+        "zhHant": "\u96e2\u5b50\u5316\u5408\u7269\u7684\u547d\u540d\uff08\u5316\u5b78\u6349\u9b5a\uff09"
       },
       "query": "embed=1",
       "section": "games",
@@ -201,7 +183,7 @@
       "path": "content-packs/ch02-microscopic-world-i/tools/flame-test",
       "title": {
         "en": "CMWA03.5 Color of Ions (Flame Test Fireworks)",
-        "zhHant": "離子的顏色（焰色試驗煙火）"
+        "zhHant": "\u96e2\u5b50\u7684\u984f\u8272\uff08\u7130\u8272\u8a66\u9a57\u7159\u706b\uff09"
       },
       "query": "embed=1",
       "section": "games",
@@ -212,7 +194,7 @@
       "path": "content-packs/ch02-microscopic-world-i/tools/covalent-bond",
       "title": {
         "en": "CMWA04.1 Covalent Bond Electron Diagram (Covalent)",
-        "zhHant": "共價鍵電子圖（共價）"
+        "zhHant": "\u5171\u50f9\u9375\u96fb\u5b50\u5716\uff08\u5171\u50f9\uff09"
       },
       "query": "embed=1",
       "topicCode": "CMWA04.1"
@@ -222,7 +204,7 @@
       "path": "content-packs/ch02-microscopic-world-i/tools/covalent-sandbox",
       "title": {
         "en": "CMWA05.3 Simple Molecular Structure (Sandbox)",
-        "zhHant": "簡單分子結構（沙盒）"
+        "zhHant": "\u7c21\u55ae\u5206\u5b50\u7d50\u69cb\uff08\u6c99\u76d2\uff09"
       },
       "query": "embed=1",
       "topicCode": "CMWA05.3"
@@ -316,7 +298,7 @@
       "topicCode": "CMWA01.1",
       "title": {
         "en": "CMWA01.1 Atomic Structure",
-        "zhHant": "原子結構"
+        "zhHant": "\u539f\u5b50\u7d50\u69cb"
       }
     },
     {
@@ -327,7 +309,7 @@
       "topicCode": "CMWA01.2",
       "title": {
         "en": "CMWA01.2 Isotope",
-        "zhHant": "同位素"
+        "zhHant": "\u540c\u4f4d\u7d20"
       }
     },
     {
@@ -338,7 +320,7 @@
       "topicCode": "CMWA02.1",
       "title": {
         "en": "CMWA02.1 Metals, Semi-Metals And Non-Metals",
-        "zhHant": "金屬、半金屬及非金屬"
+        "zhHant": "\u91d1\u5c6c\u3001\u534a\u91d1\u5c6c\u53ca\u975e\u91d1\u5c6c"
       }
     },
     {
@@ -349,7 +331,7 @@
       "topicCode": "CMWA02.2",
       "title": {
         "en": "CMWA02.2 Periodic Table",
-        "zhHant": "週期表"
+        "zhHant": "\u9031\u671f\u8868"
       }
     },
     {
@@ -360,7 +342,7 @@
       "topicCode": "CMWA02.3",
       "title": {
         "en": "CMWA02.3 Group I And Group Ii",
-        "zhHant": "第I族及第II族"
+        "zhHant": "\u7b2cI\u65cf\u53ca\u7b2cII\u65cf"
       }
     },
     {
@@ -371,7 +353,7 @@
       "topicCode": "CMWA02.4",
       "title": {
         "en": "CMWA02.4 Group Vii And Group 0",
-        "zhHant": "第VII族及第0族"
+        "zhHant": "\u7b2cVII\u65cf\u53ca\u7b2c0\u65cf"
       }
     },
     {
@@ -382,7 +364,7 @@
       "topicCode": "CMWA03.1",
       "title": {
         "en": "CMWA03.1 Metallic Bond",
-        "zhHant": "金屬鍵"
+        "zhHant": "\u91d1\u5c6c\u9375"
       }
     },
     {
@@ -393,7 +375,7 @@
       "topicCode": "CMWA03.2",
       "title": {
         "en": "CMWA03.2 Ions Formation",
-        "zhHant": "離子的形成"
+        "zhHant": "\u96e2\u5b50\u7684\u5f62\u6210"
       }
     },
     {
@@ -404,7 +386,7 @@
       "topicCode": "CMWA03.3",
       "title": {
         "en": "CMWA03.3 Ionic Bond Electron Diagram",
-        "zhHant": "離子鍵電子圖"
+        "zhHant": "\u96e2\u5b50\u9375\u96fb\u5b50\u5716"
       }
     },
     {
@@ -415,7 +397,7 @@
       "topicCode": "CMWA03.4",
       "title": {
         "en": "CMWA03.4 Naming Of Ionic Compound",
-        "zhHant": "離子化合物的命名"
+        "zhHant": "\u96e2\u5b50\u5316\u5408\u7269\u7684\u547d\u540d"
       }
     },
     {
@@ -426,7 +408,7 @@
       "topicCode": "CMWA03.5",
       "title": {
         "en": "CMWA03.5 Color Of Ions",
-        "zhHant": "離子的顏色"
+        "zhHant": "\u96e2\u5b50\u7684\u984f\u8272"
       }
     },
     {
@@ -437,7 +419,7 @@
       "topicCode": "CMWA04.1",
       "title": {
         "en": "CMWA04.1 Covalent Bond Electron Diagram",
-        "zhHant": "共價鍵電子圖"
+        "zhHant": "\u5171\u50f9\u9375\u96fb\u5b50\u5716"
       }
     },
     {
@@ -448,7 +430,7 @@
       "topicCode": "CMWA04.2",
       "title": {
         "en": "CMWA04.2 Dative Covalent Bond",
-        "zhHant": "配位共價鍵"
+        "zhHant": "\u914d\u4f4d\u5171\u50f9\u9375"
       }
     },
     {
@@ -459,7 +441,7 @@
       "topicCode": "CMWA04.3",
       "title": {
         "en": "CMWA04.3 Formula Masses",
-        "zhHant": "式量"
+        "zhHant": "\u5f0f\u91cf"
       }
     },
     {
@@ -470,7 +452,7 @@
       "topicCode": "CMWA05.1",
       "title": {
         "en": "CMWA05.1 Giant Metallic Structure",
-        "zhHant": "巨型金屬結構"
+        "zhHant": "\u5de8\u578b\u91d1\u5c6c\u7d50\u69cb"
       }
     },
     {
@@ -481,7 +463,7 @@
       "topicCode": "CMWA05.2",
       "title": {
         "en": "CMWA05.2 Giant Ionic Structure",
-        "zhHant": "巨型離子結構"
+        "zhHant": "\u5de8\u578b\u96e2\u5b50\u7d50\u69cb"
       }
     },
     {
@@ -492,7 +474,7 @@
       "topicCode": "CMWA05.3",
       "title": {
         "en": "CMWA05.3 Simple Molecular Structure",
-        "zhHant": "簡單分子結構"
+        "zhHant": "\u7c21\u55ae\u5206\u5b50\u7d50\u69cb"
       }
     },
     {
@@ -503,8 +485,112 @@
       "topicCode": "CMWA05.4",
       "title": {
         "en": "CMWA05.4 Giant Covalent Structure",
-        "zhHant": "巨型共價結構"
+        "zhHant": "\u5de8\u578b\u5171\u50f9\u7d50\u69cb"
       }
+    }
+  ],
+  "flashcards": [
+    {
+      "deckId": "all",
+      "title": {
+        "en": "All topics",
+        "zhHant": "\u5168\u90e8\u8ab2\u984c"
+      },
+      "sources": [
+        {
+          "file": "flashcards-microscopic-world-i.json"
+        }
+      ]
+    },
+    {
+      "deckId": "atomicStructure",
+      "title": {
+        "en": "Atomic Structure",
+        "zhHant": "\u539f\u5b50\u7d50\u69cb"
+      },
+      "sources": [
+        {
+          "file": "flashcards-microscopic-world-i.json",
+          "topics": [
+            "atomicStructure"
+          ]
+        }
+      ]
+    },
+    {
+      "deckId": "periodicTable",
+      "title": {
+        "en": "Periodic Table",
+        "zhHant": "\u9031\u671f\u8868"
+      },
+      "sources": [
+        {
+          "file": "flashcards-microscopic-world-i.json",
+          "topics": [
+            "periodicTable"
+          ]
+        }
+      ]
+    },
+    {
+      "deckId": "ionicBond",
+      "title": {
+        "en": "Ionic Bond",
+        "zhHant": "\u96e2\u5b50\u9375"
+      },
+      "sources": [
+        {
+          "file": "flashcards-microscopic-world-i.json",
+          "topics": [
+            "ionicBond"
+          ]
+        }
+      ]
+    },
+    {
+      "deckId": "covalentBond",
+      "title": {
+        "en": "Covalent Bond",
+        "zhHant": "\u5171\u50f9\u9375"
+      },
+      "sources": [
+        {
+          "file": "flashcards-microscopic-world-i.json",
+          "topics": [
+            "covalentBond"
+          ]
+        }
+      ]
+    },
+    {
+      "deckId": "structureAndProperties",
+      "title": {
+        "en": "Structure and properties of substances",
+        "zhHant": "\u7269\u8cea\u7684\u7d50\u69cb\u8207\u6027\u8cea"
+      },
+      "sources": [
+        {
+          "file": "flashcards-microscopic-world-i.json",
+          "topics": [
+            "structureAndProperties"
+          ]
+        }
+      ]
+    },
+    {
+      "deckId": "first20",
+      "title": {
+        "en": "First 20",
+        "zhHant": "\u9996 20 \u500b\u5143\u7d20"
+      },
+      "sources": [
+        {
+          "file": "flashcards-microscopic-world-i.json",
+          "topics": [
+            "first20"
+          ]
+        }
+      ]
     }
   ]
 }
