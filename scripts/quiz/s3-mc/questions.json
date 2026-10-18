@@ -603,7 +603,8 @@
     ],
     "answer": "B",
     "hint": "",
-    "difficulty": "Applied"
+    "difficulty": "Applied",
+    "image": "earth2ac-6"
   },
   {
     "ch": 9,
@@ -707,7 +708,7 @@
     "ch": 11,
     "n": 3,
     "code": "Earth2Bb",
-    "stem": "18. Substance W Melting point (°C) - 200 10 50 - 100 Boiling point (°C) 54 120 320 13 Which of the above substances is / are liquid(s) at room temperature? A X only B Y only C W and X only D Y and Z only\nWhich of the above substances is / are liquid(s) at room temperature?",
+    "stem": "| Substance | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| W | −200 | 54 |\n| X | 10 | 120 |\n| Y | 50 | 320 |\n| Z | −100 | 13 |\nWhich of the above substances is / are liquid(s) at room temperature?",
     "stemZh": "",
     "options": [
       "X only",
@@ -867,7 +868,7 @@
     "ch": 14,
     "n": 2,
     "code": "Earth2Cb",
-    "stem": "The following table gives some information of the components in a sample of liquefied gases:\nIn what order would the components separate out when the sample undergoes fractional distillation?",
+    "stem": "The following table gives some information of the components in a sample of liquefied gases:\n| Gas | Boiling point (°C) |\n| --- | --- |\n| X | −183 |\n| Y | −186 |\n| Z | −196 |\nIn what order would the components separate out when the sample undergoes fractional distillation?",
     "stemZh": "",
     "options": [
       "X, Y, Z",
@@ -1013,7 +1014,7 @@
     "ch": 17,
     "n": 1,
     "code": "Earth3Ab",
-    "stem": "The diagram below shows a piece of apparatus containing two immiscible liquids P and Q.\nWhich of the following statements is / are correct?\n(1) The apparatus shown is a tap funnel.\n(2) P is less dense than Q.\n(3) The apparatus can be used to separate a mixture of oil and water.\n(2) only",
+    "stem": "The diagram below shows a piece of apparatus containing two immiscible liquids P and Q.\nWhich of the following statements is / are correct?\n(1) The apparatus shown is a tap funnel.\n(2) P is less dense than Q.\n(3) The apparatus can be used to separate a mixture of oil and water.",
     "stemZh": "",
     "options": [
       "(I) only",
@@ -1271,7 +1272,7 @@
     "ch": 19,
     "n": 7,
     "code": "Earth3Ba",
-    "stem": "30.|\nWhich of the following are major uses of chlorine?\n(1) Sterilizing swimming pool water\n(2) Manufacture of soap\n(3) Manufacture of hydrochloric acid",
+    "stem": "Which of the following are major uses of chlorine?\n(1) Sterilizing swimming pool water\n(2) Manufacture of soap\n(3) Manufacture of hydrochloric acid",
     "stemZh": "",
     "options": [
       "(1) and (2) only",
@@ -1287,7 +1288,7 @@
     "ch": 19,
     "n": 8,
     "code": "Earth3Ba",
-    "stem": "31.|\nWhich of the following is / are major use(s) of sodium hydroxide?\n(1) Manufacture of bleach\n(2) As a fuel\n(3) Manufacture of soap",
+    "stem": "Which of the following is / are major use(s) of sodium hydroxide?\n(1) Manufacture of bleach\n(2) As a fuel\n(3) Manufacture of soap",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -1543,7 +1544,7 @@
     "ch": 23,
     "n": 2,
     "code": "Earth4Ab",
-    "stem": "Which of the following combinations about the extraction of metals from their ores is / are correct?",
+    "stem": "Which of the following combinations about the extraction of metals from their ores is / are correct?\n|  | Metal | Method of extraction |\n| --- | --- | --- |\n| (1) | aluminium | electrolysis of molten ore |\n| (2) | copper | physical separation |\n| (3) | lead | heating the ore alone |",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -2139,7 +2140,7 @@
     "ch": 31,
     "n": 4,
     "code": "MW1Ba",
-    "stem": "The following table shows the relative abundance of the isotopes of strontium (Sr):\nThe relative atomic mass of strontium is",
+    "stem": "The following table shows the relative abundance of the isotopes of strontium (Sr):\n| Isotope | Relative abundance (%) |\n| --- | --- |\n| ⁸⁶Sr | 16.5 |\n| ⁸⁷Sr | 7 |\n| ⁸⁸Sr | 76.5 |\nThe relative atomic mass of strontium is",
     "stemZh": "",
     "options": [
       "87.2.",
@@ -2235,7 +2236,7 @@
     "ch": 32,
     "n": 4,
     "code": "MW1Bb",
-    "stem": "Consider the following atoms:\nWhich of the following pairs are isotopes?",
+    "stem": "Consider the following atoms:\n| Atom | Atomic number | Mass number | Number of electrons |\n| --- | --- | --- | --- |\n| W | 20 | 46 |  |\n| X | 22 | 46 |  |\n| Y |  | 48 | 22 |\n| Z |  | 94 | 42 |\nWhich of the following pairs are isotopes?",
     "stemZh": "",
     "options": [
       "W and X",
@@ -2267,7 +2268,7 @@
     "ch": 33,
     "n": 1,
     "code": "MW1Bc",
-    "stem": "Consider the information of three atoms given in the table below:\nWhich of the following statements about the atoms is / are correct?\n(1) X and Y have the same atomic number.\n(2) Y and Z are atoms of the same element.\n(3) X and Z have the same mass.",
+    "stem": "Consider the information of three atoms given in the table below:\n|  | X | Y | Z |\n| --- | --- | --- | --- |\n| Number of protons | 6 | 6 | 7 |\n| Number of electrons | 6 | 6 | 7 |\n| Number of neutrons | 7 | 8 | 7 |\nWhich of the following statements about the atoms is / are correct?\n(1) X and Y have the same atomic number.\n(2) Y and Z are atoms of the same element.\n(3) X and Z have the same mass.",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -2315,7 +2316,7 @@
     "ch": 33,
     "n": 4,
     "code": "MW1Bc",
-    "stem": "Consider the information of four atoms given in the table below.\nWhich of the following statements about the atoms is / are correct?\n(1) W and X have the same mass.\n(2) W and Y are isotopes.\n(3) Y and Z have the same atomic number.",
+    "stem": "Consider the information of four atoms given in the table below.\n|  | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Number of protons | 12 | 14 | 12 | 13 |\n| Number of electrons | 12 | 14 | 12 | 13 |\n| Number of neutrons | 13 | 14 | 14 | 14 |\nWhich of the following statements about the atoms is / are correct?\n(1) W and X have the same mass.\n(2) W and Y are isotopes.\n(3) Y and Z have the same atomic number.",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -2539,7 +2540,7 @@
     "ch": 35,
     "n": 7,
     "code": "MW2Ab",
-    "stem": "20. Element W X Y Melting point (°C) 760 -58 -189 45 Boiling point (°C) 1 210 37 -186 96 Which element is a gas at room temperature and pressure? A W B C D Y Z\nWhich element is a gas at room temperature and pressure?",
+    "stem": "| Element | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| W | 760 | 1210 |\n| X | −58 | 37 |\n| Y | −189 | −186 |\n| Z | 45 | 96 |\nWhich element is a gas at room temperature and pressure?",
     "stemZh": "",
     "options": [
       "W",
@@ -2667,7 +2668,7 @@
     "ch": 36,
     "n": 6,
     "code": "MW2Ac",
-    "stem": "The table shows the melting points and boiling points of four substances at 1 atm pressure.\nWhich substance exists as a liquid at −50 °C and 1 atm pressure?",
+    "stem": "The table shows the melting points and boiling points of four substances at 1 atm pressure.\n| Substance | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| W | −60 | −5 |\n| X | −189 | −55 |\n| Y | 40 | 60 |\n| Z | 5 | 58 |\nWhich substance exists as a liquid at −50 °C and 1 atm pressure?",
     "stemZh": "",
     "options": [
       "W",
@@ -3069,7 +3070,7 @@
     "ch": 41,
     "n": 4,
     "code": "MW2Cb",
-    "stem": "Which of the following pairs of elements in Groups I and VII of the periodic table would react with\neach other most vigorously?\nGroup I\nGroup VII\nsodium\nchlorine",
+    "stem": "Which of the following pairs of elements in Groups I and VII of the periodic table would react with\neach other most vigorously?\nGroup I\nGroup VII\nsodium\nchlorine\n|  | each other most vigorously? |  |\n| --- | --- | --- |\n| A. | Group I | Group VII |\n| B. | sodium | chlorine |\n| C. | sodium | fluorine |\n| D. | potassium | fluorine |",
     "stemZh": "",
     "options": [
       "Group I | Group VII",
@@ -3133,7 +3134,7 @@
     "ch": 42,
     "n": 4,
     "code": "MW2Cc",
-    "stem": "Strontium is below calcium in Group Il of the periodic table. Which of the following statements about\nstrontium is / are correct?\n(2) combine wil to prom a one compound.\n(3) It forms an ion carrying two negative charges.",
+    "stem": "Strontium is below calcium in Group II of the periodic table. Which of the following statements about strontium is / are correct?\n(1) It combines with chlorine to form an ionic compound.\n(2) It is in Period 4 of the periodic table.\n(3) It forms an ion carrying two negative charges.",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -3565,7 +3566,7 @@
     "ch": 49,
     "n": 5,
     "code": "MW3Ba",
-    "stem": "Consider the following atoms:\nWhich atom is likely to lose electron(s) during reactions?",
+    "stem": "Consider the following atoms:\n| Atom | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Atomic number | 3 | 10 | 14 | 15 |\nWhich atom is likely to lose electron(s) during reactions?",
     "stemZh": "",
     "options": [
       "W",
@@ -3757,7 +3758,7 @@
     "ch": 51,
     "n": 3,
     "code": "MW3Bc",
-    "stem": "Consider the following species\nWhich of the following statements is correct?",
+    "stem": "Consider the following species\n| Species | Number of protons | Number of electrons | Number of neutrons |\n| --- | --- | --- | --- |\n| X | 19 | 19 | 20 |\n| Y | 19 | 18 | 20 |\nWhich of the following statements is correct?",
     "stemZh": "",
     "options": [
       "X is an anion of Y.",
@@ -3789,7 +3790,7 @@
     "ch": 51,
     "n": 5,
     "code": "MW3Bc",
-    "stem": "Consider the following species.\nWhich of the following statements about the species is correct?",
+    "stem": "Consider the following species.\n|  | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Number of protons | 10 | 12 | 12 | 12 |\n| Number of electrons | 10 | 12 | 10 | 10 |\n| Number of neutrons | 10 | 12 | 13 | 14 |\nWhich of the following statements about the species is correct?",
     "stemZh": "",
     "options": [
       "W and Y have the same mass.",
@@ -3920,7 +3921,7 @@
     "ch": 53,
     "n": 2,
     "code": "MW3Cb",
-    "stem": "The following table lists the atomic numbers of four elements.\nWhich pair of elements would combine to form an ionic compound?",
+    "stem": "The following table lists the atomic numbers of four elements.\n| Element | Atomic number |\n| --- | --- |\n| W | 2 |\n| X | 12 |\n| Y | 15 |\n| Z | 17 |\nWhich pair of elements would combine to form an ionic compound?",
     "stemZh": "",
     "options": [
       "W and X",
@@ -4011,7 +4012,8 @@
     ],
     "answer": "A",
     "hint": "",
-    "difficulty": "Applied"
+    "difficulty": "Applied",
+    "image": "mw3cc-3"
   },
   {
     "ch": 55,
@@ -4081,7 +4083,7 @@
     "ch": 56,
     "n": 2,
     "code": "MW3Db",
-    "stem": "Consider the following information about three elements X, Y and Z.\nWhich of the following statements about X, Y and Z are correct?\n(1) X and Y react to form an ionic compound.\n(2) Y and Z belong to the same period of the periodic table.\n(3) Z forms an ion carrying two negative charges.",
+    "stem": "Consider the following information about three elements X, Y and Z.\n| Element | X | Y | Z |\n| --- | --- | --- | --- |\n| Atomic number | 8 | 11 | 16 |\nWhich of the following statements about X, Y and Z are correct?\n(1) X and Y react to form an ionic compound.\n(2) Y and Z belong to the same period of the periodic table.\n(3) Z forms an ion carrying two negative charges.",
     "stemZh": "",
     "options": [
       "(1) and (2) only",
@@ -4306,7 +4308,7 @@
     "ch": 58,
     "n": 2,
     "code": "MW3Ea",
-    "stem": "41. coloured crystal moistened filter paper microscope slide 20 V d.c. power supply A colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be A chromium(I) sulphate. B iron(III) chloride. C potassium permanganate. D sodium sulphate.\nA colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be",
+    "stem": "A colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be",
     "stemZh": "",
     "options": [
       "chromium(III) sulphate.",
@@ -4600,7 +4602,7 @@
     "ch": 61,
     "n": 11,
     "code": "MW4Aa",
-    "stem": "Which of the following statements about an ammonia molecule is / are correct?\n(l) The number of bonding electrons contributed by the nitrogen atom in the molecule is s.\n(2) The number of bonding electron contributed by each hydrogen atom in the\nmolecule is 1.\n(3) The molecule can form a dative covalent bond with a hydrogen ion.",
+    "stem": "Which of the following statements about an ammonia molecule is / are correct?\n(1) The number of bonding electrons contributed by the nitrogen atom in the molecule is 5.\n(2) The number of bonding electron contributed by each hydrogen atom in the molecule is 1.\n(3) The molecule can form a dative covalent bond with a hydrogen ion.",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -4648,7 +4650,7 @@
     "ch": 62,
     "n": 2,
     "code": "MW4Ab",
-    "stem": "The table below lists the electronic arrangements of the atoms of three elements.\nWhich of the following elements exist(s) as separate molecules?",
+    "stem": "The table below lists the electronic arrangements of the atoms of three elements.\n| Element | Electronic arrangement of atom |\n| --- | --- |\n| X | 2,1 |\n| Y | 2,5 |\n| Z | 2,6 |\nWhich of the following elements exist(s) as separate molecules?",
     "stemZh": "",
     "options": [
       "X only",
@@ -4814,7 +4816,7 @@
     "ch": 62,
     "n": 12,
     "code": "MW4Ab",
-    "stem": "Consider the following three elements:\nWhich of the following statements about X, Y and Z is / are correct?\n(1) X and Y combine to form a covalent compound.\n(2) X and Z form a compound by electron transfer.\n(3) Y and Z belong to the same period of the periodic table.",
+    "stem": "Consider the following three elements:\n| Element | X | Y | Z |\n| --- | --- | --- | --- |\n| Atomic number | 7 | 10 | 12 |\nWhich of the following statements about X, Y and Z is / are correct?\n(1) X and Y combine to form a covalent compound.\n(2) X and Z form a compound by electron transfer.\n(3) Y and Z belong to the same period of the periodic table.",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -4846,7 +4848,7 @@
     "ch": 63,
     "n": 2,
     "code": "MW4Ac",
-    "stem": "Consider the following elements.\nWhich of the elements exists as diatomic molecules with triple covalent bonds?",
+    "stem": "Consider the following elements.\n| Element | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Atomic number | 4 | 6 | 7 | 9 |\nWhich of the elements exists as diatomic molecules with triple covalent bonds?",
     "stemZh": "",
     "options": [
       "W",
@@ -4926,7 +4928,7 @@
     "ch": 63,
     "n": 7,
     "code": "MW4Ac",
-    "stem": "Which of the following combinations about substance and the type of bonding are correct?",
+    "stem": "Which of the following combinations about substance and the type of bonding are correct?\n|  | Substance | Type of bond |\n| --- | --- | --- |\n| (1) | neon | covalent |\n| (2) | potassium bromide | ionic |\n| (3) | sodium | metallic |",
     "stemZh": "",
     "options": [
       "(1) and (2) only",
@@ -4942,7 +4944,7 @@
     "ch": 63,
     "n": 8,
     "code": "MW4Ac",
-    "stem": "Two elements X and Y form a compound with a chemical formula of XY₂. Which of the following electronic arrangements for atoms of X and Y are correct?",
+    "stem": "Two elements X and Y form a compound with a chemical formula of XY₂. Which of the following electronic arrangements for atoms of X and Y are correct?\n|  | Atom of X | Atom of Y |\n| --- | --- | --- |\n| (1) | 2,2 | 2,8,7 |\n| (2) | 2,8,1 | 2,7 |\n| (3) | 2,4 | 2,6 |",
     "stemZh": "",
     "options": [
       "(1) and (2) only",
@@ -5168,7 +5170,7 @@
     "ch": 68,
     "n": 1,
     "code": "MW4Cb",
-    "stem": "Consider the following information:\nThe formula mass of the compound formed between X and Y is",
+    "stem": "Consider the following information:\n| Element | Atomic number | Relative atomic mass |\n| --- | --- | --- |\n| X | 7 | 14 |\n| Y | 12 | 24.3 |\nThe formula mass of the compound formed between X and Y is",
     "stemZh": "",
     "options": [
       "52.3.",
@@ -5184,7 +5186,7 @@
     "ch": 68,
     "n": 2,
     "code": "MW4Cb",
-    "stem": "Consider the following two elements:\nElements P and Q combine to form a compound. Which of the following statements about the compound is / are correct?\n(1) It is formed by electron sharing.\n(2) It contains giant molecules.\n(3) Its relative molecular mass is 85.0.",
+    "stem": "Consider the following two elements:\n| Element | Atomic number | Relative atomic mass |\n| --- | --- | --- |\n| P | 7 | 14 |\n| Q | 17 | 35.5 |\nElements P and Q combine to form a compound. Which of the following statements about the compound is / are correct?\n(1) It is formed by electron sharing.\n(2) It contains giant molecules.\n(3) Its relative molecular mass is 85.0.",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -5216,7 +5218,7 @@
     "ch": 69,
     "n": 1,
     "code": "MW4Cc",
-    "stem": "Which of the following statements is / are correct?\n(1) The relative molecular mass of a molecule is the relative mass of the molecule based on the\n12C = 12.00 scale.\n(2) The formula mass of a compound is always a whole number.\n(3) The formula mass of magnesium oxide is 40.3 g.\n(Relative atomic masses: 0 = 16.0, Mg = 24.3)",
+    "stem": "Which of the following statements is / are correct?\n(1) The relative molecular mass of a molecule is the relative mass of the molecule based on the\n12C = 12.00 scale.\n(2) The formula mass of a compound is always a whole number.\n(3) The formula mass of magnesium oxide is 40.3 g.\n(Relative atomic masses: O = 16.0, Mg = 24.3)",
     "stemZh": "",
     "options": [
       "(I) only",
@@ -5521,7 +5523,7 @@
     "ch": 73,
     "n": 8,
     "code": "MW5Ba",
-    "stem": "Substance X has a high melting point and does not conduct electricity when in solid state. Substance X\nmay be\n(l) copper.\n(2) zinc oxide.\n(3) diamond.",
+    "stem": "Substance X has a high melting point and does not conduct electricity when in solid state. Substance X\nmay be\n(1) copper.\n(2) zinc oxide.\n(3) diamond.",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -5569,7 +5571,7 @@
     "ch": 74,
     "n": 3,
     "code": "MW5Bb",
-    "stem": "The table below lists the ability of four substances W, X, Y and Z to conduct electricity.\n(In the table, ✓ and ✗ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.)\nWhich of the substances is likely to be calcium chloride?",
+    "stem": "The table below lists the ability of four substances W, X, Y and Z to conduct electricity.\n| Substance | Solid state | Molten state | Aqueous solution |\n| --- | --- | --- | --- |\n| W | ✗ | ✗ | ✗ |\n| X | ✗ | ✗ | ✓ |\n| Y | ✗ | ✓ | ✓ |\n| Z | ✓ | ✓ | insoluble in water |\n(In the table, ✓ and ✗ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.)\nWhich of the substances is likely to be calcium chloride?",
     "stemZh": "",
     "options": [
       "W",
@@ -5665,7 +5667,7 @@
     "ch": 75,
     "n": 4,
     "code": "MW5Bc",
-    "stem": "68. Substance Melting point (°C) W 1 565 Electrical conductivity solid state molten state non- conductor conductor x 1610 non- conductor non- conductor Y 40 Z 1 670 non- conductor conductor non- conductor conductor Which of the following statements is correct? A W is malleable. B\nWhich of the following statements is correct?",
+    "stem": "| Substance | Melting point (°C) | Conductivity (solid) | Conductivity (molten) |\n| --- | --- | --- | --- |\n| W | 1 565 | non-conductor | conductor |\n| X | 1 610 | non-conductor | non-conductor |\n| Y | 40 | non-conductor | non-conductor |\n| Z | 1 670 | conductor | conductor |\nWhich of the following statements is correct?",
     "stemZh": "",
     "options": [
       "W is malleable.",
@@ -5713,7 +5715,7 @@
     "ch": 75,
     "n": 7,
     "code": "MW5Bc",
-    "stem": "Consider the following information about four substances, W, X, Y and Z:\nWhich substance has a simple molecular structure and is a solid at room temperature?",
+    "stem": "Consider the following information about four substances, W, X, Y and Z:\n| Substance | Melting point (°C) | Electrical conductivity at room temperature |\n| --- | --- | --- |\n| W | −130 | poor |\n| X | −39 | good |\n| Y | 71 | poor |\n| Z | 750 | poor |\nWhich substance has a simple molecular structure and is a solid at room temperature?",
     "stemZh": "",
     "options": [
       "W",
@@ -5729,7 +5731,7 @@
     "ch": 75,
     "n": 8,
     "code": "MW5Bc",
-    "stem": "X and Y are two different elements. The melting points of their bromides are given below:\nWhich of the following statements are correct?\n(1) The bromide of X is soluble in non-aqueous solvents.\n(2) The bromide of Y has a giant ionic structure.\n(3) The bromide of X is a solid at room temperature and pressure.",
+    "stem": "X and Y are two different elements. The melting points of their bromides are given below:\n|  | Melting point (°C) |\n| --- | --- |\n| Bromide of X | 12 |\n| Bromide of Y | 730 |\nWhich of the following statements are correct?\n(1) The bromide of X is soluble in non-aqueous solvents.\n(2) The bromide of Y has a giant ionic structure.\n(3) The bromide of X is a solid at room temperature and pressure.",
     "stemZh": "",
     "options": [
       "(1) and (2) only",
@@ -5873,7 +5875,7 @@
     "ch": 77,
     "n": 4,
     "code": "MW5Cb",
-    "stem": "Consider the following table which gives some information about the solubilities of four substances in water and heptane (a non-aqueous solvent):\nWhich of the above substances could be iodine?",
+    "stem": "Consider the following table which gives some information about the solubilities of four substances in water and heptane (a non-aqueous solvent):\n| Substance | Solubility in water | Solubility in heptane |\n| --- | --- | --- |\n| W | very soluble | slightly soluble |\n| X | slightly soluble | slightly soluble |\n| Y | slightly soluble | very soluble |\n| Z | very soluble | very soluble |\nWhich of the above substances could be iodine?",
     "stemZh": "",
     "options": [
       "W",
@@ -5889,7 +5891,7 @@
     "ch": 77,
     "n": 5,
     "code": "MW5Cb",
-    "stem": "The table below lists the information about the electrical conductivities of four substances, W, X, Y and Z:\nWhich of the substances is likely to be copper?",
+    "stem": "The table below lists the information about the electrical conductivities of four substances, W, X, Y and Z:\n| Substance | Solid state | Liquid state | Aqueous solution |\n| --- | --- | --- | --- |\n| W | conducts | conducts | conducts |\n| X | does not conduct | does not conduct | does not conduct |\n| Y | conducts | conducts | insoluble in water |\n| Z | does not conduct | does not conduct | conducts |\nWhich of the substances is likely to be copper?",
     "stemZh": "",
     "options": [
       "W",
@@ -5971,7 +5973,7 @@
     "ch": 78,
     "n": 3,
     "code": "MW5Cc",
-    "stem": "Which of the following combinations about the strength of the bonds between chlorine atoms and that of the forces between chlorine molecules is correct?",
+    "stem": "Which of the following combinations about the strength of the bonds between chlorine atoms and that of the forces between chlorine molecules is correct?\n|  | Strength of bonds between chlorine atoms | Strength of forces between chlorine molecules |\n| --- | --- | --- |\n| A. | strong | weak |\n| B. | strong | strong |\n| C. | weak | strong |\n| D. | weak | weak |",
     "stemZh": "",
     "options": [
       "Strength of bonds between chlorine atoms: strong; Strength of forces between chlorine molecules: weak",
@@ -5987,7 +5989,7 @@
     "ch": 78,
     "n": 4,
     "code": "MW5Cc",
-    "stem": "The diagram below shows the structure of dry ice:\nWhich of the following statements about dry ice is correct?\nB It has a giant covalent structure.\nC The atoms in its molecules are held together by van der Waals' forces.\nIts molecules are held together by covalent bonds.",
+    "stem": "The diagram below shows the structure of dry ice:\nWhich of the following statements about dry ice is correct?\nB It has a giant covalent structure.\nC The atoms in its molecules are held together by van der Waals' forces.",
     "stemZh": "",
     "options": [
       "It can sublime.",
@@ -6004,7 +6006,7 @@
     "ch": 78,
     "n": 5,
     "code": "MW5Cc",
-    "stem": "Which of the following combinations about substances and attractions between particles is / are correct?",
+    "stem": "Which of the following combinations about substances and attractions between particles is / are correct?\n| Substance | Attraction between particles in the substance |\n| --- | --- |\n| (1) sulphur | van der Waals' forces |\n| (2) silicon dioxide | dative covalent bond |\n| (3) calcium hydride | ionic bond |",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -6020,7 +6022,7 @@
     "ch": 78,
     "n": 6,
     "code": "MW5Cc",
-    "stem": "62. Melting Boiling Substance point (°C) point (°C) Neon (Ne) -249 -246 Chlorine (Clz) -101 -34 Phosphine (PH3) -134 -87 Sulphur dioxide (SOz) -75 -10 Which of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure? (1) Van der Waals' forces (2) \nWhich of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure?\n(1) Van der Waals’ forces\n(2) Metallic bond\n(3) Covalent bond",
+    "stem": "| Substance | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| Neon (Ne) | −249 | −246 |\n| Chlorine (Cl₂) | −101 | −34 |\n| Phosphine (PH₃) | −134 | −87 |\n| Sulphur dioxide (SO₂) | −75 | −10 |\nWhich of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure?\n(1) Van der Waals’ forces\n(2) Metallic bond\n(3) Covalent bond",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -6165,7 +6167,7 @@
     "ch": 80,
     "n": 4,
     "code": "MW5Db",
-    "stem": "Consider the information below:\nWhich of the following solids is likely to be graphite?",
+    "stem": "Consider the information below:\n| Solid | Melting point | Electrical conductivity | Solubility in water |\n| --- | --- | --- | --- |\n| W | low | non-conducting | insoluble |\n| X | low | good | insoluble |\n| Y | high | non-conducting | soluble |\n| Z | very high | good | insoluble |\nWhich of the following solids is likely to be graphite?",
     "stemZh": "",
     "options": [
       "W",
@@ -6213,7 +6215,7 @@
     "ch": 81,
     "n": 1,
     "code": "MW5Dc",
-    "stem": "Scientists have recently developed a method to produce large sheets of a substance called graphene.\nGraphene is made from carbon and is a single layer of graphite just one atom thick.\nThe diagram below shows the structure of graphene.\nWhich of the following statements about graphene is / are correct?\n(1) It is a good conductor of electricity.\n(2) It has a low melting point.\n(3) It is strong.\n(2) only\n(1) and\n(3) only",
+    "stem": "Scientists have recently developed a method to produce large sheets of a substance called graphene.\nGraphene is made from carbon and is a single layer of graphite just one atom thick.\nThe diagram below shows the structure of graphene.\nWhich of the following statements about graphene is / are correct?\n(1) It is a good conductor of electricity.\n(2) It has a low melting point.\n(3) It is strong.",
     "stemZh": "",
     "options": [
       "(1) only",

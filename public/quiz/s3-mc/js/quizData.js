@@ -3,406 +3,715 @@
 export const QUIZ_SECTIONS = [
   {
     "id": "earth1aa",
-    "label": "CPE01.1 · Laboratory Apparatus (Easy)",
-    "labelZh": "CPE01.1 · 實驗室儀器（容易）"
+    "part": 1,
+    "label": "CPE01.1 · Laboratory Apparatus (Easy) (1)",
+    "labelZh": "CPE01.1 · 實驗室儀器（容易）（1）"
+  },
+  {
+    "id": "earth1aa",
+    "part": 2,
+    "label": "CPE01.1 · Laboratory Apparatus (Easy) (2)",
+    "labelZh": "CPE01.1 · 實驗室儀器（容易）（2）"
   },
   {
     "id": "earth1ab",
+    "part": 1,
     "label": "CPE01.1 · Laboratory Apparatus (Medium)",
     "labelZh": "CPE01.1 · 實驗室儀器（中等）"
   },
   {
     "id": "earth1ac",
+    "part": 1,
     "label": "CPE01.1 · Laboratory Apparatus (Difficult)",
     "labelZh": "CPE01.1 · 實驗室儀器（困難）"
   },
   {
     "id": "earth1ba",
+    "part": 1,
     "label": "CPE01.2 · Laboratory Safety (Easy)",
     "labelZh": "CPE01.2 · 實驗室安全（容易）"
   },
   {
     "id": "earth1bb",
+    "part": 1,
     "label": "CPE01.2 · Laboratory Safety (Medium)",
     "labelZh": "CPE01.2 · 實驗室安全（中等）"
   },
   {
     "id": "earth1bc",
+    "part": 1,
     "label": "CPE01.2 · Laboratory Safety (Difficult)",
     "labelZh": "CPE01.2 · 實驗室安全（困難）"
   },
   {
     "id": "earth2aa",
+    "part": 1,
     "label": "CPE02.1 · Matters (Easy)",
     "labelZh": "CPE02.1 · 物質（容易）"
   },
   {
     "id": "earth2ab",
+    "part": 1,
     "label": "CPE02.1 · Matters (Medium)",
     "labelZh": "CPE02.1 · 物質（中等）"
   },
   {
     "id": "earth2ac",
-    "label": "CPE02.1 · Matters (Difficult)",
-    "labelZh": "CPE02.1 · 物質（困難）"
+    "part": 1,
+    "label": "CPE02.1 · Matters (Difficult) (1)",
+    "labelZh": "CPE02.1 · 物質（困難）（1）"
+  },
+  {
+    "id": "earth2ac",
+    "part": 2,
+    "label": "CPE02.1 · Matters (Difficult) (2)",
+    "labelZh": "CPE02.1 · 物質（困難）（2）"
   },
   {
     "id": "earth2ba",
+    "part": 1,
     "label": "CPE02.2 · Physical And Chemical Change (Easy)",
     "labelZh": "CPE02.2 · 物理及化學變化（容易）"
   },
   {
     "id": "earth2bb",
+    "part": 1,
     "label": "CPE02.2 · Physical And Chemical Change (Medium)",
     "labelZh": "CPE02.2 · 物理及化學變化（中等）"
   },
   {
     "id": "earth2bc",
+    "part": 1,
     "label": "CPE02.2 · Physical And Chemical Change (Difficult)",
     "labelZh": "CPE02.2 · 物理及化學變化（困難）"
   },
   {
     "id": "earth2ca",
-    "label": "CPE02.3 · Air (Easy)",
-    "labelZh": "CPE02.3 · 空氣（容易）"
+    "part": 1,
+    "label": "CPE02.3 · Air (Easy) (1)",
+    "labelZh": "CPE02.3 · 空氣（容易）（1）"
+  },
+  {
+    "id": "earth2ca",
+    "part": 2,
+    "label": "CPE02.3 · Air (Easy) (2)",
+    "labelZh": "CPE02.3 · 空氣（容易）（2）"
   },
   {
     "id": "earth2cb",
+    "part": 1,
     "label": "CPE02.3 · Air (Medium)",
     "labelZh": "CPE02.3 · 空氣（中等）"
   },
   {
     "id": "earth2cc",
+    "part": 1,
     "label": "CPE02.3 · Air (Difficult)",
     "labelZh": "CPE02.3 · 空氣（困難）"
   },
   {
     "id": "earth3aa",
+    "part": 1,
     "label": "CPE03.1 · Physical Separation (Easy)",
     "labelZh": "CPE03.1 · 物理分離（容易）"
   },
   {
     "id": "earth3ab",
+    "part": 1,
     "label": "CPE03.1 · Physical Separation (Medium)",
     "labelZh": "CPE03.1 · 物理分離（中等）"
   },
   {
     "id": "earth3ac",
-    "label": "CPE03.1 · Physical Separation (Difficult)",
-    "labelZh": "CPE03.1 · 物理分離（困難）"
+    "part": 1,
+    "label": "CPE03.1 · Physical Separation (Difficult) (1)",
+    "labelZh": "CPE03.1 · 物理分離（困難）（1）"
+  },
+  {
+    "id": "earth3ac",
+    "part": 2,
+    "label": "CPE03.1 · Physical Separation (Difficult) (2)",
+    "labelZh": "CPE03.1 · 物理分離（困難）（2）"
   },
   {
     "id": "earth3ba",
-    "label": "CPE03.2 · Chemical Tests And Electrolysis (Easy)",
-    "labelZh": "CPE03.2 · 化學測試及電解（容易）"
+    "part": 1,
+    "label": "CPE03.2 · Chemical Tests And Electrolysis (Easy) (1)",
+    "labelZh": "CPE03.2 · 化學測試及電解（容易）（1）"
+  },
+  {
+    "id": "earth3ba",
+    "part": 2,
+    "label": "CPE03.2 · Chemical Tests And Electrolysis (Easy) (2)",
+    "labelZh": "CPE03.2 · 化學測試及電解（容易）（2）"
   },
   {
     "id": "earth3bb",
-    "label": "CPE03.2 · Chemical Tests And Electrolysis (Medium)",
-    "labelZh": "CPE03.2 · 化學測試及電解（中等）"
+    "part": 1,
+    "label": "CPE03.2 · Chemical Tests And Electrolysis (Medium) (1)",
+    "labelZh": "CPE03.2 · 化學測試及電解（中等）（1）"
+  },
+  {
+    "id": "earth3bb",
+    "part": 2,
+    "label": "CPE03.2 · Chemical Tests And Electrolysis (Medium) (2)",
+    "labelZh": "CPE03.2 · 化學測試及電解（中等）（2）"
   },
   {
     "id": "earth3bc",
-    "label": "CPE03.2 · Chemical Tests And Electrolysis (Difficult)",
-    "labelZh": "CPE03.2 · 化學測試及電解（困難）"
+    "part": 1,
+    "label": "CPE03.2 · Chemical Tests And Electrolysis (Difficult) (1)",
+    "labelZh": "CPE03.2 · 化學測試及電解（困難）（1）"
+  },
+  {
+    "id": "earth3bc",
+    "part": 2,
+    "label": "CPE03.2 · Chemical Tests And Electrolysis (Difficult) (2)",
+    "labelZh": "CPE03.2 · 化學測試及電解（困難）（2）"
   },
   {
     "id": "earth4aa",
+    "part": 1,
     "label": "CPE04.1 · Extraction Of Metals (Easy)",
     "labelZh": "CPE04.1 · 金屬提取（容易）"
   },
   {
     "id": "earth4ab",
+    "part": 1,
     "label": "CPE04.1 · Extraction Of Metals (Medium)",
     "labelZh": "CPE04.1 · 金屬提取（中等）"
   },
   {
     "id": "earth4ac",
+    "part": 1,
     "label": "CPE04.1 · Extraction Of Metals (Difficult)",
     "labelZh": "CPE04.1 · 金屬提取（困難）"
   },
   {
     "id": "earth4ba",
+    "part": 1,
     "label": "CPE04.2 · Lime Cycle (Easy)",
     "labelZh": "CPE04.2 · 石灰循環（容易）"
   },
   {
     "id": "earth4bb",
+    "part": 1,
     "label": "CPE04.2 · Lime Cycle (Medium)",
     "labelZh": "CPE04.2 · 石灰循環（中等）"
   },
   {
     "id": "earth4bc",
+    "part": 1,
     "label": "CPE04.2 · Lime Cycle (Difficult)",
     "labelZh": "CPE04.2 · 石灰循環（困難）"
   },
   {
     "id": "mw1aa",
-    "label": "CMWA01.1 · Atomic Structure (Easy)",
-    "labelZh": "CMWA01.1 · 原子結構（容易）"
+    "part": 1,
+    "label": "CMWA01.1 · Atomic Structure (Easy) (1)",
+    "labelZh": "CMWA01.1 · 原子結構（容易）（1）"
+  },
+  {
+    "id": "mw1aa",
+    "part": 2,
+    "label": "CMWA01.1 · Atomic Structure (Easy) (2)",
+    "labelZh": "CMWA01.1 · 原子結構（容易）（2）"
   },
   {
     "id": "mw1ab",
-    "label": "CMWA01.1 · Atomic Structure (Medium)",
-    "labelZh": "CMWA01.1 · 原子結構（中等）"
+    "part": 1,
+    "label": "CMWA01.1 · Atomic Structure (Medium) (1)",
+    "labelZh": "CMWA01.1 · 原子結構（中等）（1）"
+  },
+  {
+    "id": "mw1ab",
+    "part": 2,
+    "label": "CMWA01.1 · Atomic Structure (Medium) (2)",
+    "labelZh": "CMWA01.1 · 原子結構（中等）（2）"
   },
   {
     "id": "mw1ac",
+    "part": 1,
     "label": "CMWA01.1 · Atomic Structure (Difficult)",
     "labelZh": "CMWA01.1 · 原子結構（困難）"
   },
   {
     "id": "mw1ba",
-    "label": "CMWA01.2 · Isotope (Easy)",
-    "labelZh": "CMWA01.2 · 同位素（容易）"
+    "part": 1,
+    "label": "CMWA01.2 · Isotope (Easy) (1)",
+    "labelZh": "CMWA01.2 · 同位素（容易）（1）"
+  },
+  {
+    "id": "mw1ba",
+    "part": 2,
+    "label": "CMWA01.2 · Isotope (Easy) (2)",
+    "labelZh": "CMWA01.2 · 同位素（容易）（2）"
   },
   {
     "id": "mw1bb",
-    "label": "CMWA01.2 · Isotope (Medium)",
-    "labelZh": "CMWA01.2 · 同位素（中等）"
+    "part": 1,
+    "label": "CMWA01.2 · Isotope (Medium) (1)",
+    "labelZh": "CMWA01.2 · 同位素（中等）（1）"
+  },
+  {
+    "id": "mw1bb",
+    "part": 2,
+    "label": "CMWA01.2 · Isotope (Medium) (2)",
+    "labelZh": "CMWA01.2 · 同位素（中等）（2）"
   },
   {
     "id": "mw1bc",
-    "label": "CMWA01.2 · Isotope (Difficult)",
-    "labelZh": "CMWA01.2 · 同位素（困難）"
+    "part": 1,
+    "label": "CMWA01.2 · Isotope (Difficult) (1)",
+    "labelZh": "CMWA01.2 · 同位素（困難）（1）"
+  },
+  {
+    "id": "mw1bc",
+    "part": 2,
+    "label": "CMWA01.2 · Isotope (Difficult) (2)",
+    "labelZh": "CMWA01.2 · 同位素（困難）（2）"
   },
   {
     "id": "mw2aa",
-    "label": "CMWA02.1 · Metals, Semi-Metals And Non-Metals (Easy)",
-    "labelZh": "CMWA02.1 · 金屬、半金屬及非金屬（容易）"
+    "part": 1,
+    "label": "CMWA02.1 · Metals, Semi-Metals And Non-Metals (Easy) (1)",
+    "labelZh": "CMWA02.1 · 金屬、半金屬及非金屬（容易）（1）"
+  },
+  {
+    "id": "mw2aa",
+    "part": 2,
+    "label": "CMWA02.1 · Metals, Semi-Metals And Non-Metals (Easy) (2)",
+    "labelZh": "CMWA02.1 · 金屬、半金屬及非金屬（容易）（2）"
   },
   {
     "id": "mw2ab",
-    "label": "CMWA02.1 · Metals, Semi-Metals And Non-Metals (Medium)",
-    "labelZh": "CMWA02.1 · 金屬、半金屬及非金屬（中等）"
+    "part": 1,
+    "label": "CMWA02.1 · Metals, Semi-Metals And Non-Metals (Medium) (1)",
+    "labelZh": "CMWA02.1 · 金屬、半金屬及非金屬（中等）（1）"
+  },
+  {
+    "id": "mw2ab",
+    "part": 2,
+    "label": "CMWA02.1 · Metals, Semi-Metals And Non-Metals (Medium) (2)",
+    "labelZh": "CMWA02.1 · 金屬、半金屬及非金屬（中等）（2）"
+  },
+  {
+    "id": "mw2ab",
+    "part": 3,
+    "label": "CMWA02.1 · Metals, Semi-Metals And Non-Metals (Medium) (3)",
+    "labelZh": "CMWA02.1 · 金屬、半金屬及非金屬（中等）（3）"
   },
   {
     "id": "mw2ac",
-    "label": "CMWA02.1 · Metals, Semi-Metals And Non-Metals (Difficult)",
-    "labelZh": "CMWA02.1 · 金屬、半金屬及非金屬（困難）"
+    "part": 1,
+    "label": "CMWA02.1 · Metals, Semi-Metals And Non-Metals (Difficult) (1)",
+    "labelZh": "CMWA02.1 · 金屬、半金屬及非金屬（困難）（1）"
+  },
+  {
+    "id": "mw2ac",
+    "part": 2,
+    "label": "CMWA02.1 · Metals, Semi-Metals And Non-Metals (Difficult) (2)",
+    "labelZh": "CMWA02.1 · 金屬、半金屬及非金屬（困難）（2）"
   },
   {
     "id": "mw2ba",
-    "label": "CMWA02.2 · Periodic Table (Easy)",
-    "labelZh": "CMWA02.2 · 週期表（容易）"
+    "part": 1,
+    "label": "CMWA02.2 · Periodic Table (Easy) (1)",
+    "labelZh": "CMWA02.2 · 週期表（容易）（1）"
+  },
+  {
+    "id": "mw2ba",
+    "part": 2,
+    "label": "CMWA02.2 · Periodic Table (Easy) (2)",
+    "labelZh": "CMWA02.2 · 週期表（容易）（2）"
   },
   {
     "id": "mw2bb",
+    "part": 1,
     "label": "CMWA02.2 · Periodic Table (Medium)",
     "labelZh": "CMWA02.2 · 週期表（中等）"
   },
   {
     "id": "mw2bc",
-    "label": "CMWA02.2 · Periodic Table (Difficult)",
-    "labelZh": "CMWA02.2 · 週期表（困難）"
+    "part": 1,
+    "label": "CMWA02.2 · Periodic Table (Difficult) (1)",
+    "labelZh": "CMWA02.2 · 週期表（困難）（1）"
+  },
+  {
+    "id": "mw2bc",
+    "part": 2,
+    "label": "CMWA02.2 · Periodic Table (Difficult) (2)",
+    "labelZh": "CMWA02.2 · 週期表（困難）（2）"
   },
   {
     "id": "mw2ca",
+    "part": 1,
     "label": "CMWA02.3 · Group I And Group Ii (Easy)",
     "labelZh": "CMWA02.3 · 第I族及第II族（容易）"
   },
   {
     "id": "mw2cb",
+    "part": 1,
     "label": "CMWA02.3 · Group I And Group Ii (Medium)",
     "labelZh": "CMWA02.3 · 第I族及第II族（中等）"
   },
   {
     "id": "mw2cc",
+    "part": 1,
     "label": "CMWA02.3 · Group I And Group Ii (Difficult)",
     "labelZh": "CMWA02.3 · 第I族及第II族（困難）"
   },
   {
     "id": "mw2da",
+    "part": 1,
     "label": "CMWA02.4 · Group Vii And Group 0 (Easy)",
     "labelZh": "CMWA02.4 · 第VII族及第0族（容易）"
   },
   {
     "id": "mw2db",
-    "label": "CMWA02.4 · Group Vii And Group 0 (Medium)",
-    "labelZh": "CMWA02.4 · 第VII族及第0族（中等）"
+    "part": 1,
+    "label": "CMWA02.4 · Group Vii And Group 0 (Medium) (1)",
+    "labelZh": "CMWA02.4 · 第VII族及第0族（中等）（1）"
+  },
+  {
+    "id": "mw2db",
+    "part": 2,
+    "label": "CMWA02.4 · Group Vii And Group 0 (Medium) (2)",
+    "labelZh": "CMWA02.4 · 第VII族及第0族（中等）（2）"
   },
   {
     "id": "mw2dc",
+    "part": 1,
     "label": "CMWA02.4 · Group Vii And Group 0 (Difficult)",
     "labelZh": "CMWA02.4 · 第VII族及第0族（困難）"
   },
   {
     "id": "mw3aa",
+    "part": 1,
     "label": "CMWA03.1 · Metallic Bond (Easy)",
     "labelZh": "CMWA03.1 · 金屬鍵（容易）"
   },
   {
     "id": "mw3ab",
+    "part": 1,
     "label": "CMWA03.1 · Metallic Bond (Medium)",
     "labelZh": "CMWA03.1 · 金屬鍵（中等）"
   },
   {
     "id": "mw3ac",
+    "part": 1,
     "label": "CMWA03.1 · Metallic Bond (Difficult)",
     "labelZh": "CMWA03.1 · 金屬鍵（困難）"
   },
   {
     "id": "mw3ba",
-    "label": "CMWA03.2 · Ions Formation (Easy)",
-    "labelZh": "CMWA03.2 · 離子的形成（容易）"
+    "part": 1,
+    "label": "CMWA03.2 · Ions Formation (Easy) (1)",
+    "labelZh": "CMWA03.2 · 離子的形成（容易）（1）"
+  },
+  {
+    "id": "mw3ba",
+    "part": 2,
+    "label": "CMWA03.2 · Ions Formation (Easy) (2)",
+    "labelZh": "CMWA03.2 · 離子的形成（容易）（2）"
   },
   {
     "id": "mw3bb",
-    "label": "CMWA03.2 · Ions Formation (Medium)",
-    "labelZh": "CMWA03.2 · 離子的形成（中等）"
+    "part": 1,
+    "label": "CMWA03.2 · Ions Formation (Medium) (1)",
+    "labelZh": "CMWA03.2 · 離子的形成（中等）（1）"
+  },
+  {
+    "id": "mw3bb",
+    "part": 2,
+    "label": "CMWA03.2 · Ions Formation (Medium) (2)",
+    "labelZh": "CMWA03.2 · 離子的形成（中等）（2）"
+  },
+  {
+    "id": "mw3bb",
+    "part": 3,
+    "label": "CMWA03.2 · Ions Formation (Medium) (3)",
+    "labelZh": "CMWA03.2 · 離子的形成（中等）（3）"
   },
   {
     "id": "mw3bc",
-    "label": "CMWA03.2 · Ions Formation (Difficult)",
-    "labelZh": "CMWA03.2 · 離子的形成（困難）"
+    "part": 1,
+    "label": "CMWA03.2 · Ions Formation (Difficult) (1)",
+    "labelZh": "CMWA03.2 · 離子的形成（困難）（1）"
+  },
+  {
+    "id": "mw3bc",
+    "part": 2,
+    "label": "CMWA03.2 · Ions Formation (Difficult) (2)",
+    "labelZh": "CMWA03.2 · 離子的形成（困難）（2）"
   },
   {
     "id": "mw3ca",
+    "part": 1,
     "label": "CMWA03.3 · Ionic Bond Electron Diagram (Easy)",
     "labelZh": "CMWA03.3 · 離子鍵電子圖（容易）"
   },
   {
     "id": "mw3cb",
+    "part": 1,
     "label": "CMWA03.3 · Ionic Bond Electron Diagram (Medium)",
     "labelZh": "CMWA03.3 · 離子鍵電子圖（中等）"
   },
   {
     "id": "mw3cc",
+    "part": 1,
     "label": "CMWA03.3 · Ionic Bond Electron Diagram (Difficult)",
     "labelZh": "CMWA03.3 · 離子鍵電子圖（困難）"
   },
   {
     "id": "mw3da",
+    "part": 1,
     "label": "CMWA03.4 · Naming Of Ionic Compound (Easy)",
     "labelZh": "CMWA03.4 · 離子化合物的命名（容易）"
   },
   {
     "id": "mw3db",
-    "label": "CMWA03.4 · Naming Of Ionic Compound (Medium)",
-    "labelZh": "CMWA03.4 · 離子化合物的命名（中等）"
+    "part": 1,
+    "label": "CMWA03.4 · Naming Of Ionic Compound (Medium) (1)",
+    "labelZh": "CMWA03.4 · 離子化合物的命名（中等）（1）"
+  },
+  {
+    "id": "mw3db",
+    "part": 2,
+    "label": "CMWA03.4 · Naming Of Ionic Compound (Medium) (2)",
+    "labelZh": "CMWA03.4 · 離子化合物的命名（中等）（2）"
+  },
+  {
+    "id": "mw3db",
+    "part": 3,
+    "label": "CMWA03.4 · Naming Of Ionic Compound (Medium) (3)",
+    "labelZh": "CMWA03.4 · 離子化合物的命名（中等）（3）"
   },
   {
     "id": "mw3dc",
+    "part": 1,
     "label": "CMWA03.4 · Naming Of Ionic Compound (Difficult)",
     "labelZh": "CMWA03.4 · 離子化合物的命名（困難）"
   },
   {
     "id": "mw3ea",
+    "part": 1,
     "label": "CMWA03.5 · Color Of Ions (Easy)",
     "labelZh": "CMWA03.5 · 離子的顏色（容易）"
   },
   {
     "id": "mw3eb",
+    "part": 1,
     "label": "CMWA03.5 · Color Of Ions (Medium)",
     "labelZh": "CMWA03.5 · 離子的顏色（中等）"
   },
   {
     "id": "mw3ec",
+    "part": 1,
     "label": "CMWA03.5 · Color Of Ions (Difficult)",
     "labelZh": "CMWA03.5 · 離子的顏色（困難）"
   },
   {
     "id": "mw4aa",
-    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Easy)",
-    "labelZh": "CMWA04.1 · 共價鍵電子圖（容易）"
+    "part": 1,
+    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Easy) (1)",
+    "labelZh": "CMWA04.1 · 共價鍵電子圖（容易）（1）"
+  },
+  {
+    "id": "mw4aa",
+    "part": 2,
+    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Easy) (2)",
+    "labelZh": "CMWA04.1 · 共價鍵電子圖（容易）（2）"
+  },
+  {
+    "id": "mw4aa",
+    "part": 3,
+    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Easy) (3)",
+    "labelZh": "CMWA04.1 · 共價鍵電子圖（容易）（3）"
   },
   {
     "id": "mw4ab",
-    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Medium)",
-    "labelZh": "CMWA04.1 · 共價鍵電子圖（中等）"
+    "part": 1,
+    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Medium) (1)",
+    "labelZh": "CMWA04.1 · 共價鍵電子圖（中等）（1）"
+  },
+  {
+    "id": "mw4ab",
+    "part": 2,
+    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Medium) (2)",
+    "labelZh": "CMWA04.1 · 共價鍵電子圖（中等）（2）"
+  },
+  {
+    "id": "mw4ab",
+    "part": 3,
+    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Medium) (3)",
+    "labelZh": "CMWA04.1 · 共價鍵電子圖（中等）（3）"
   },
   {
     "id": "mw4ac",
-    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Difficult)",
-    "labelZh": "CMWA04.1 · 共價鍵電子圖（困難）"
+    "part": 1,
+    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Difficult) (1)",
+    "labelZh": "CMWA04.1 · 共價鍵電子圖（困難）（1）"
+  },
+  {
+    "id": "mw4ac",
+    "part": 2,
+    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Difficult) (2)",
+    "labelZh": "CMWA04.1 · 共價鍵電子圖（困難）（2）"
+  },
+  {
+    "id": "mw4ac",
+    "part": 3,
+    "label": "CMWA04.1 · Covalent Bond Electron Diagram (Difficult) (3)",
+    "labelZh": "CMWA04.1 · 共價鍵電子圖（困難）（3）"
   },
   {
     "id": "mw4ba",
+    "part": 1,
     "label": "CMWA04.2 · Dative Covalent Bond (Easy)",
     "labelZh": "CMWA04.2 · 配位共價鍵（容易）"
   },
   {
     "id": "mw4bb",
+    "part": 1,
     "label": "CMWA04.2 · Dative Covalent Bond (Medium)",
     "labelZh": "CMWA04.2 · 配位共價鍵（中等）"
   },
   {
     "id": "mw4bc",
+    "part": 1,
     "label": "CMWA04.2 · Dative Covalent Bond (Difficult)",
     "labelZh": "CMWA04.2 · 配位共價鍵（困難）"
   },
   {
     "id": "mw4ca",
+    "part": 1,
     "label": "CMWA04.3 · Formula Masses (Easy)",
     "labelZh": "CMWA04.3 · 式量（容易）"
   },
   {
     "id": "mw4cb",
+    "part": 1,
     "label": "CMWA04.3 · Formula Masses (Medium)",
     "labelZh": "CMWA04.3 · 式量（中等）"
   },
   {
     "id": "mw4cc",
+    "part": 1,
     "label": "CMWA04.3 · Formula Masses (Difficult)",
     "labelZh": "CMWA04.3 · 式量（困難）"
   },
   {
     "id": "mw5aa",
+    "part": 1,
     "label": "CMWA05.1 · Giant Metallic Structure (Easy)",
     "labelZh": "CMWA05.1 · 巨型金屬結構（容易）"
   },
   {
     "id": "mw5ab",
+    "part": 1,
     "label": "CMWA05.1 · Giant Metallic Structure (Medium)",
     "labelZh": "CMWA05.1 · 巨型金屬結構（中等）"
   },
   {
     "id": "mw5ac",
+    "part": 1,
     "label": "CMWA05.1 · Giant Metallic Structure (Difficult)",
     "labelZh": "CMWA05.1 · 巨型金屬結構（困難）"
   },
   {
     "id": "mw5ba",
-    "label": "CMWA05.2 · Giant Ionic Structure (Easy)",
-    "labelZh": "CMWA05.2 · 巨型離子結構（容易）"
+    "part": 1,
+    "label": "CMWA05.2 · Giant Ionic Structure (Easy) (1)",
+    "labelZh": "CMWA05.2 · 巨型離子結構（容易）（1）"
+  },
+  {
+    "id": "mw5ba",
+    "part": 2,
+    "label": "CMWA05.2 · Giant Ionic Structure (Easy) (2)",
+    "labelZh": "CMWA05.2 · 巨型離子結構（容易）（2）"
   },
   {
     "id": "mw5bb",
-    "label": "CMWA05.2 · Giant Ionic Structure (Medium)",
-    "labelZh": "CMWA05.2 · 巨型離子結構（中等）"
+    "part": 1,
+    "label": "CMWA05.2 · Giant Ionic Structure (Medium) (1)",
+    "labelZh": "CMWA05.2 · 巨型離子結構（中等）（1）"
+  },
+  {
+    "id": "mw5bb",
+    "part": 2,
+    "label": "CMWA05.2 · Giant Ionic Structure (Medium) (2)",
+    "labelZh": "CMWA05.2 · 巨型離子結構（中等）（2）"
   },
   {
     "id": "mw5bc",
-    "label": "CMWA05.2 · Giant Ionic Structure (Difficult)",
-    "labelZh": "CMWA05.2 · 巨型離子結構（困難）"
+    "part": 1,
+    "label": "CMWA05.2 · Giant Ionic Structure (Difficult) (1)",
+    "labelZh": "CMWA05.2 · 巨型離子結構（困難）（1）"
+  },
+  {
+    "id": "mw5bc",
+    "part": 2,
+    "label": "CMWA05.2 · Giant Ionic Structure (Difficult) (2)",
+    "labelZh": "CMWA05.2 · 巨型離子結構（困難）（2）"
+  },
+  {
+    "id": "mw5bc",
+    "part": 3,
+    "label": "CMWA05.2 · Giant Ionic Structure (Difficult) (3)",
+    "labelZh": "CMWA05.2 · 巨型離子結構（困難）（3）"
   },
   {
     "id": "mw5ca",
+    "part": 1,
     "label": "CMWA05.3 · Simple Molecular Structure (Easy)",
     "labelZh": "CMWA05.3 · 簡單分子結構（容易）"
   },
   {
     "id": "mw5cb",
-    "label": "CMWA05.3 · Simple Molecular Structure (Medium)",
-    "labelZh": "CMWA05.3 · 簡單分子結構（中等）"
+    "part": 1,
+    "label": "CMWA05.3 · Simple Molecular Structure (Medium) (1)",
+    "labelZh": "CMWA05.3 · 簡單分子結構（中等）（1）"
+  },
+  {
+    "id": "mw5cb",
+    "part": 2,
+    "label": "CMWA05.3 · Simple Molecular Structure (Medium) (2)",
+    "labelZh": "CMWA05.3 · 簡單分子結構（中等）（2）"
   },
   {
     "id": "mw5cc",
-    "label": "CMWA05.3 · Simple Molecular Structure (Difficult)",
-    "labelZh": "CMWA05.3 · 簡單分子結構（困難）"
+    "part": 1,
+    "label": "CMWA05.3 · Simple Molecular Structure (Difficult) (1)",
+    "labelZh": "CMWA05.3 · 簡單分子結構（困難）（1）"
+  },
+  {
+    "id": "mw5cc",
+    "part": 2,
+    "label": "CMWA05.3 · Simple Molecular Structure (Difficult) (2)",
+    "labelZh": "CMWA05.3 · 簡單分子結構（困難）（2）"
   },
   {
     "id": "mw5da",
+    "part": 1,
     "label": "CMWA05.4 · Giant Covalent Structure (Easy)",
     "labelZh": "CMWA05.4 · 巨型共價結構（容易）"
   },
   {
     "id": "mw5db",
-    "label": "CMWA05.4 · Giant Covalent Structure (Medium)",
-    "labelZh": "CMWA05.4 · 巨型共價結構（中等）"
+    "part": 1,
+    "label": "CMWA05.4 · Giant Covalent Structure (Medium) (1)",
+    "labelZh": "CMWA05.4 · 巨型共價結構（中等）（1）"
+  },
+  {
+    "id": "mw5db",
+    "part": 2,
+    "label": "CMWA05.4 · Giant Covalent Structure (Medium) (2)",
+    "labelZh": "CMWA05.4 · 巨型共價結構（中等）（2）"
   },
   {
     "id": "mw5dc",
+    "part": 1,
     "label": "CMWA05.4 · Giant Covalent Structure (Difficult)",
     "labelZh": "CMWA05.4 · 巨型共價結構（困難）"
   }
@@ -416,6 +725,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X, Y and Z is correct?",
     "options": [
       {
@@ -450,6 +760,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following apparatus is used to transfer a small amount of solution?",
     "options": [
       {
@@ -479,6 +790,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following apparatus is used to transfer solid chemicals?",
     "options": [
       {
@@ -508,6 +820,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following apparatus is used to make rough measurements of volumes of liquids?",
     "options": [
       {
@@ -537,6 +850,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X and Y is correct?",
     "options": [
       {
@@ -571,6 +885,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X, Y and Z is correct?",
     "options": [
       {
@@ -605,6 +920,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Consider the experimental set-up shown below:\nWhich of the following combinations about apparatus X and Y is correct?",
     "options": [
       {
@@ -639,6 +955,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following gas(es) can be collected by the set-up shown?\n(1) Hydrogen\n(2) Chlorine\n(3) Carbon dioxide",
     "options": [
       {
@@ -673,6 +990,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following set-ups can be used to collect nitrogen prepared in an experiment?",
     "options": [
       {
@@ -707,6 +1025,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following set-ups can be used to dry a moist gas?",
     "options": [
       {
@@ -741,6 +1060,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following sequence of steps is correct for obtaining a non-luminous flame?\n(1) Fully open the air hole.\n(2) Put the burning match just above the top of the chimney.\n(3) Close the air hole.\n(4) Turn on the gas tap.",
     "options": [
       {
@@ -770,6 +1090,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following may lead to ‘striking back’ of a Bunsen flame?",
     "options": [
       {
@@ -799,6 +1120,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following might occur when a Bunsen flame 'strikes back'?\n(1) Obvious sound occurred.\n(2) The chimney becomes hot.\n(3) The supply of gas is too much.",
     "options": [
       {
@@ -828,6 +1150,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The following diagram shows an experimental set-up for collecting a gas produced in a certain reaction.\nWhich of the following actions can prevent 'sucking back' of water?\n(1) Take the delivery tube away from water before removing the flame.\n(2) Remove the flame before taking the delivery tube away from water.\n(3) Decrease the amount of water in the trough.",
     "options": [
       {
@@ -862,6 +1185,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "What is the meaning of the following hazard warning label?",
     "options": [
       {
@@ -896,6 +1220,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following should NOT be done when heating a chemical in a test tube?\n(1) Look down at the test tube directly.\n(2) Keep swirling the test tube.\n(3) Point the mouth of the test tube towards others.",
     "options": [
       {
@@ -925,6 +1250,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following precautions should be taken when working with a toxic reagent?\n(1) Avoid friction.\n(2) Wear protective gloves.\n(3) Avoid breathing in its vapours.",
     "options": [
       {
@@ -954,6 +1280,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following hazard warning labels should be displayed on a bottle of aqueous chlorine?",
     "options": [
       {
@@ -988,6 +1315,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following hazard warning labels should be displayed on a metal cylinder containing liquefied petroleum gas?",
     "options": [
       {
@@ -1022,6 +1350,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following should NOT be done in a laboratory?",
     "options": [
       {
@@ -1051,6 +1380,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "4. A student conducts an experiment using concentrated hydrochloric acid. concentrated hydrochloric acid Which of the following precautions the student should take when working with the acid? (1) Wear safety glasses. (2) Wear protective gloves. (3) Do not warm the acid. A (1) and",
     "options": [
       {
@@ -1080,6 +1410,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following hazard warning labels should be displayed on a metal cylinder containing carbon monoxide gas?",
     "options": [
       {
@@ -1114,6 +1445,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "A reagent bottle carries both the corrosive and toxic hazard labels. Which precautions must be taken?\n(1) Wear protective gloves.\n(2) Avoid breathing in the vapours.\n(3) Point the mouth of a heated test tube towards yourself.",
     "options": [
       {
@@ -1143,6 +1475,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE01",
     "quizId": "chem-cpe01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which sequence of steps is correct when lighting a Bunsen burner?",
     "options": [
       {
@@ -1172,6 +1505,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following substances is a mixture?",
     "options": [
       {
@@ -1201,6 +1535,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following substances is a pure substance?",
     "options": [
       {
@@ -1230,6 +1565,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following is an element?",
     "options": [
       {
@@ -1259,6 +1595,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following diagrams can represent a compound formed from two elements?\n(In these diagrams ● and ○ represent an oxygen atom and a hydrogen atom respectively.)",
     "options": [
       {
@@ -1293,6 +1630,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about elements is correct?",
     "options": [
       {
@@ -1322,6 +1660,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about compounds is correct?",
     "options": [
       {
@@ -1351,6 +1690,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following diagrams can represent a mixture of two elements?\n(In these diagrams ● and ○ represent a nitrogen atom and an oxygen atom respectively.)",
     "options": [
       {
@@ -1385,6 +1725,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Upon heating, a mixture of iron and sulphur gives a dark brown substance. Which of the following\nstatements about the substance is correct?",
     "options": [
       {
@@ -1414,6 +1755,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following comparisons between ironII) sulphide and a mixture of iron and sulphur is\ncorrect?\nIron(II) sulphide",
     "options": [
       {
@@ -1443,6 +1785,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following substances has a sharp boiling point?",
     "options": [
       {
@@ -1472,6 +1815,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about pure water are correct?\n(1) It has a sharp boiling point.\n(2) It is formed from elements.\n(3) It can be broken down into something simpler by physical methods.",
     "options": [
       {
@@ -1501,6 +1845,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "In which of the following substances are the particles furthest apart from each other at room\ntemperature and pressure?",
     "options": [
       {
@@ -1530,6 +1875,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "In a certain experiment, a student placed a piece of potassium permanganate crystal in a beaker of water\nas shown below.\n• water\n- potassium permanganate\ncrystal\nWhich of the following statements about the experiment is / are correct?\n(1) A yellow colour spread in the beaker.\n(2) The potassium permanganate particles mixed with the water particles.\n(3) A chemical change occurred.",
     "options": [
       {
@@ -1550,7 +1896,12 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "B",
-    "hint": ""
+    "hint": "",
+    "image": {
+      "src": "./assets/earth2ac-6.png",
+      "alt": "Beaker of water with a potassium permanganate crystal",
+      "caption": "Beaker of water with a potassium permanganate crystal"
+    }
   },
   {
     "id": "CPE02.1-14",
@@ -1559,6 +1910,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "In a certain experiment, a student placed a jar of air upside down on top of another jar containing\nbromine vapour as shown below.\nWhich of the following statements about the experiment is / are correct?\n(1) Bromine particles mix with the air particles.\n(2) The jar containing bromine vapour will darken.\n(3) The mixing process is called particle theory.",
     "options": [
       {
@@ -1593,6 +1945,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Consider the following diagram of changes of states of a substance.\nWhich of the following combinations is correct?",
     "options": [
       {
@@ -1627,6 +1980,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following is NOT an example of physical properties?",
     "options": [
       {
@@ -1656,6 +2010,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following statements describes a chemical property of iron?",
     "options": [
       {
@@ -1685,6 +2040,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following processes is a chemical change?",
     "options": [
       {
@@ -1714,6 +2070,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following processes involve physical changes?\n(1) Spoiling food\n(2) Hammering wood together to build a playhouse\n(3) Squeezing oranges to prepare orange juice",
     "options": [
       {
@@ -1743,7 +2100,8 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
-    "stem": "18. Substance W Melting point (°C) - 200 10 50 - 100 Boiling point (°C) 54 120 320 13 Which of the above substances is / are liquid(s) at room temperature? A X only B Y only C W and X only D Y and Z only\nWhich of the above substances is / are liquid(s) at room temperature?",
+    "part": 1,
+    "stem": "| Substance | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| W | −200 | 54 |\n| X | 10 | 120 |\n| Y | 50 | 320 |\n| Z | −100 | 13 |\nWhich of the above substances is / are liquid(s) at room temperature?",
     "options": [
       {
         "key": "A",
@@ -1772,6 +2130,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "In a certain experiment, a mixture of iron and sulphur was heated to give solid X. Which of the\nfollowing statements about the process are correct?\n(1) The process involves a chemical change.\n(2) Solid X is a compound.\n(3) Solid X gives hydrogen when mixed with dilute hydrochloric acid.",
     "options": [
       {
@@ -1801,6 +2160,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following substances can undergo sublimation at normal pressure?\n(1) Iodine\n(2) Nitrogen\n(3) Carbon dioxide",
     "options": [
       {
@@ -1830,6 +2190,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following processes involve a chemical change?\n(1) Electrolysis of molten sodium chloride\n(2) Dissolving sugar in water\n(3) Strong heating of limestone to give calcium oxide",
     "options": [
       {
@@ -1859,6 +2220,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following gases is LEAST likely to be found in air?",
     "options": [
       {
@@ -1888,6 +2250,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following statements about nitrogen are correct?\n(1) It is an odourless gas.\n(2) It is used to fill the packets of potato chips.\n(3) It is an element.",
     "options": [
       {
@@ -1917,6 +2280,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Why can gases in air be separated by the fractional distillation of liquid air?",
     "options": [
       {
@@ -1946,6 +2310,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following is / are use(s) of oxygen?\n(1) As a fuel for large rockets\n(2) Aiding the respiration of premature babies\n(3) Filling electric light bulbs",
     "options": [
       {
@@ -1975,6 +2340,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following shows the presence of oxygen in a gas jar?",
     "options": [
       {
@@ -2004,6 +2370,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about air are correct?\n(1) Nitrogen has the highest composition by volume in air.\n(2) Air contains elements and compounds.\n(3) The amount of water vapour in air varies according to different weathers.",
     "options": [
       {
@@ -2033,7 +2400,8 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
-    "stem": "The following table gives some information of the components in a sample of liquefied gases:\nIn what order would the components separate out when the sample undergoes fractional distillation?",
+    "part": 1,
+    "stem": "The following table gives some information of the components in a sample of liquefied gases:\n| Gas | Boiling point (°C) |\n| --- | --- |\n| X | −183 |\n| Y | −186 |\n| Z | −196 |\nIn what order would the components separate out when the sample undergoes fractional distillation?",
     "options": [
       {
         "key": "A",
@@ -2062,6 +2430,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about fractional distillation is / are correct?\n(1) In fractionating column, the upper part has lower temperature.\n(2) Before distilling the liquid air, carbon dioxide and argon vapour should be removed.\n(3) Oxygen would be collected in the upper part of a fractionating column than that of nitrogen",
     "options": [
       {
@@ -2091,6 +2460,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about oxygen is INCORRECT?",
     "options": [
       {
@@ -2120,6 +2490,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Why must carbon dioxide and water vapour be removed from air before the fractional distillation of\nliquid air?",
     "options": [
       {
@@ -2149,6 +2520,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about A and B are correct?\n(1) Gas A takes the greatest percentage of air by volume.\n(2) Gas A gives a 'pop' sound when tested with a burning splint.\n(3) The boiling point of B is higher than that of A.",
     "options": [
       {
@@ -2183,6 +2555,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE02",
     "quizId": "chem-cpe02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about oxygen are correct?\n(1) Oxygen is colourless.\n(2) Oxygen is produced in the photosynthesis process.\n(3) A metal cylinder of oxygen should bear the hazard warning label shown below.",
     "options": [
       {
@@ -2217,6 +2590,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following salts has the HIGHEST percentage by mass in sea water?",
     "options": [
       {
@@ -2246,6 +2620,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following processes can be used to obtain pure water from muddy sea water?",
     "options": [
       {
@@ -2275,6 +2650,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following is NOT a major element found in sea water?",
     "options": [
       {
@@ -2304,7 +2680,8 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Standard",
-    "stem": "The diagram below shows a piece of apparatus containing two immiscible liquids P and Q.\nWhich of the following statements is / are correct?\n(1) The apparatus shown is a tap funnel.\n(2) P is less dense than Q.\n(3) The apparatus can be used to separate a mixture of oil and water.\n(2) only",
+    "part": 1,
+    "stem": "The diagram below shows a piece of apparatus containing two immiscible liquids P and Q.\nWhich of the following statements is / are correct?\n(1) The apparatus shown is a tap funnel.\n(2) P is less dense than Q.\n(3) The apparatus can be used to separate a mixture of oil and water.",
     "options": [
       {
         "key": "A",
@@ -2338,6 +2715,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following substances has the HIGHEST percentage in the ocean?",
     "options": [
       {
@@ -2367,6 +2745,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about sea water is / are correct?\n(1) Sea water is a mixture.\n(2) Sodium chloride in it is a solvent.\n(3) It has a sharp boiling point.",
     "options": [
       {
@@ -2396,6 +2775,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following processes occur in distillation?",
     "options": [
       {
@@ -2425,6 +2805,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following are major salts found in sea water?\n(1) Calcium sulphate\n(2) Magnesium chloride\n(3) Sodium chloride",
     "options": [
       {
@@ -2454,6 +2835,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following techniques of crystallization can obtain large crystals?",
     "options": [
       {
@@ -2483,6 +2865,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Some physical properties of a compound X are listed below:\nMelting point: 90 °C\nBoiling point: 230 °C\nSolubility in water: soluble\nWhich of the following methods is the most suitable for obtaining X from a solution of X in water?",
     "options": [
       {
@@ -2512,6 +2895,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about the evaporation of sea water is / are correct?\n(1) Evaporation is a heat absorbing process.\n(2) Pure water can be obtained.\n(3) Pure sodium chloride can be obtained.",
     "options": [
       {
@@ -2541,6 +2925,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Consider the following pieces of apparatus:\nWhich of the following processes can be performed by using some or all of the above apparatus?\n(1) Obtaining pure water from sea water\n(2) Separating oil and water\n(3) Obtaining hydrogen from water",
     "options": [
       {
@@ -2575,6 +2960,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Which of the following mixtures can be separated by adding water, stirring and filtering?",
     "options": [
       {
@@ -2604,6 +2990,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following is the correct sequence of steps for flame test?\n(1) Put the end of the nichrome wire in the Bunsen flame.\n(2) Dip the nichrome wire into the solid sample.\n(3) Observe the colour of the flame.\n(4) Dip a clean nichrome wire into concentrated hydrochloric acid.",
     "options": [
       {
@@ -2633,6 +3020,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following combinations is INCORRECT?\nCompound of\nFlame colour",
     "options": [
       {
@@ -2662,6 +3050,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "What would be observed if a sodium chloride solution is added to a solution containing dilute nitric\nacid and silver nitrate solution?",
     "options": [
       {
@@ -2691,6 +3080,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following substances CANNOT be obtained in the electrolysis of sea water?",
     "options": [
       {
@@ -2720,6 +3110,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following is NOT a major use of hydrogen?",
     "options": [
       {
@@ -2749,6 +3140,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following substances is / are used to manufacture bleach?\n(1) Sodium hydroxide\n(2) Hydrogen\n(3) Chlorine",
     "options": [
       {
@@ -2778,7 +3170,8 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
-    "stem": "30.|\nWhich of the following are major uses of chlorine?\n(1) Sterilizing swimming pool water\n(2) Manufacture of soap\n(3) Manufacture of hydrochloric acid",
+    "part": 2,
+    "stem": "Which of the following are major uses of chlorine?\n(1) Sterilizing swimming pool water\n(2) Manufacture of soap\n(3) Manufacture of hydrochloric acid",
     "options": [
       {
         "key": "A",
@@ -2807,7 +3200,8 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Foundation",
-    "stem": "31.|\nWhich of the following is / are major use(s) of sodium hydroxide?\n(1) Manufacture of bleach\n(2) As a fuel\n(3) Manufacture of soap",
+    "part": 2,
+    "stem": "Which of the following is / are major use(s) of sodium hydroxide?\n(1) Manufacture of bleach\n(2) As a fuel\n(3) Manufacture of soap",
     "options": [
       {
         "key": "A",
@@ -2836,6 +3230,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following methods can be used to distinguish between copper(Il) sulphate crystals and\nsodium chloride crystals?\n(1) Perform a flame test.\n(2) Add dilute nitric acid followed by silver nitrate solution to their solutions.\n(3) Observe their colours.",
     "options": [
       {
@@ -2865,6 +3260,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following methods can be used to distinguish between solid calcium chloride and solid\npotassium chloride?\n(1) Add dilute hydrochloric acid.\n(2) Perform a flame test.\n(3) Dissolve the solids in water.",
     "options": [
       {
@@ -2894,6 +3290,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following combinations is correct?\nTest method",
     "options": [
       {
@@ -2923,6 +3320,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about water are correct?\n(1) It is a compound.\n(2) It turns dry cobaltII) chloride paper pink.\n(3) It turns anhydrous copperII) sulphate blue.",
     "options": [
       {
@@ -2952,6 +3350,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following statements about the electrolysis of sea water is correct?",
     "options": [
       {
@@ -2981,6 +3380,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following items require the use of products obtained from the electrolysis of sea water?\n(1) Manufacture of hydrochloric acid\n(2) Manufacture of PVC\n(3) Manufacture of soaps",
     "options": [
       {
@@ -3010,6 +3410,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "23. A solid X gives a lilac flame in flame test. X reacts with dilute hydrochloric acid to give a gas. X could be A potassium carbonate. B potassium chloride. C sodium carbonate. D sodium chloride.",
     "options": [
       {
@@ -3039,6 +3440,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "When dilute nitric acid and silver nitrate solution are added to a beaker containing an unknown\nsolution, a white precipitate forms. The unknown solution could be\n(1) sodium nitrate solution.\n(2) potassium chloride solution.\n(3) sea water.",
     "options": [
       {
@@ -3068,6 +3470,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following combinations about the gases obtained by electrolysis of water is correct?\nPositive electrode\nNegative electrode",
     "options": [
       {
@@ -3097,6 +3500,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "To identify an unknown powder, a student heated the powder in a Bunsen flame. A brick-red flame was\nobserved. When the powder was added to dilute hydrochloric acid, it dissolved without any observable\nchanges. What might the powder be?",
     "options": [
       {
@@ -3126,6 +3530,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE03",
     "quizId": "chem-cpe03",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Which of the following methods can be used to distinguish between solid sodium chloride and solid\ncalcium carbonate?\n(1) Testing the solubility of the solids in water\n(2) Observing the colour of the solids\n(3) Adding dilute nitric acid followed by silver nitrate solution",
     "options": [
       {
@@ -3155,6 +3560,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Potassium can be obtained from potassium chloride by",
     "options": [
       {
@@ -3184,6 +3590,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following is / are source(s) of metals?\n(1) Earth's crust\n(2) Atmosphere\n(3) Ocean",
     "options": [
       {
@@ -3213,6 +3620,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which metal is extracted by electrolysis of its molten ore?",
     "options": [
       {
@@ -3242,6 +3650,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Arrange procedures for the extraction of a metal from its ore in order.\n(1) Extraction of metal from ore\n(2) Mining of the ore\n(3) Separation of useful ore from waste materials\n(4) Refining of impure metal",
     "options": [
       {
@@ -3271,7 +3680,8 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Standard",
-    "stem": "Which of the following combinations about the extraction of metals from their ores is / are correct?",
+    "part": 1,
+    "stem": "Which of the following combinations about the extraction of metals from their ores is / are correct?\n|  | Metal | Method of extraction |\n| --- | --- | --- |\n| (1) | aluminium | electrolysis of molten ore |\n| (2) | copper | physical separation |\n| (3) | lead | heating the ore alone |",
     "options": [
       {
         "key": "A",
@@ -3300,6 +3710,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "According to the methods of extraction of metals from ores, aluminium is obtained by",
     "options": [
       {
@@ -3329,6 +3740,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "In which of the following processes would a metal be produced?\n(1) Electrolyzing a molten ore of magnesium\n(2) Heating aluminium with carbon\n(3) Heating sulphide of mercury in air",
     "options": [
       {
@@ -3358,6 +3770,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following metals CANNOT be extracted by heating the metal oxide with carbon?\n(1) Sodium\n(2) Iron\n(3) Potassium",
     "options": [
       {
@@ -3387,6 +3800,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which combination of metal and extraction method is correct?",
     "options": [
       {
@@ -3416,6 +3830,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following combinations is INCORRECT?",
     "options": [
       {
@@ -3445,6 +3860,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "35. The diagram shows a kiln used to heat limestone.\nWhat is the following combinations about the product and waste gas is correct?",
     "options": [
       {
@@ -3479,6 +3895,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Carbon dioxide turns limewater milky due to the formation of",
     "options": [
       {
@@ -3508,6 +3925,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "What would be observed when water is added to solid calcium oxide?",
     "options": [
       {
@@ -3537,6 +3955,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "When calcium carbonate is strongly heated, a solid is obtained. Which of the following statements\nabout the solid is correct?",
     "options": [
       {
@@ -3566,6 +3985,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements are correct?\n(1) Calcite is composed of calcium carbonate.\n(2) Strong heating of calcium carbonate gives a white solid.\n(3) Saturated calcium hydroxide solution can be used to test for carbon dioxide",
     "options": [
       {
@@ -3595,6 +4015,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about the products formed from heating limestone are true?\n(1) The gas evolved turns limewater milky.\n(2) Slaked lime is formed.\n(3) The solid product gives a brick-red flame in flame test.",
     "options": [
       {
@@ -3624,6 +4045,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "What could gas X and solid Y be?",
     "options": [
       {
@@ -3658,6 +4080,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Limestone is heated strongly for about 15 minutes in an experiment.\nWhich of the following statements about the experiment are correct?\n(1) Effervescence occurs.\n(2) A white solid remains in the test tube after heating.\n(3) The limewater turns milky.",
     "options": [
       {
@@ -3692,6 +4115,7 @@ export const QUIZ_ITEMS = [
     "topic": "CPE04",
     "quizId": "chem-cpe04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following explain(s) why rainwater can erode limestone?\n(1) Limestone is soluble in water.\n(2) Carbon dioxide in air dissolves in rainwater to form carbonic acid which dissolves\nlimestone.\n(3) Limestone reacts with water to form soluble calcium hydroxide.",
     "options": [
       {
@@ -3721,6 +4145,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following combinations about the atomic structure of a sulphur atom is correct?",
     "options": [
       {
@@ -3750,6 +4175,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following combinations about the charges on neutron, proton and electron is correct?",
     "options": [
       {
@@ -3779,6 +4205,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Atoms of the same element must have",
     "options": [
       {
@@ -3808,6 +4235,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "The atomic number and mass number of an atom of an element is 9 and 19 respectively. The atom\ncontains",
     "options": [
       {
@@ -3837,6 +4265,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "An atom has 23 electrons and 28 neutrons. Which of the following combinations about the atom is correct?",
     "options": [
       {
@@ -3866,6 +4295,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "The number of electrons in the first two shells of a chlorine atom adds up to",
     "options": [
       {
@@ -3895,6 +4325,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following pairs of atoms have the same number of occupied electron shells?\n(1) Aluminium atom and argon atom\n(2) Carbon atom and neon atom\n(3) Silicon atom and potassium atom",
     "options": [
       {
@@ -3924,6 +4355,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following combinations is INCORRECT?\nElement\nIts atom has",
     "options": [
       {
@@ -3953,6 +4385,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following atoms has the SMALLEST number of neutrons?",
     "options": [
       {
@@ -3982,6 +4415,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Atoms are electrically neutral because",
     "options": [
       {
@@ -4011,6 +4445,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "An atom of element X contains 57 protons and 139 neutrons. This atom can be represented as",
     "options": [
       {
@@ -4040,6 +4475,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about the zinc atom 3ôZn is correct?",
     "options": [
       {
@@ -4069,6 +4505,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following statements about subatomic particles are correct?\n(1) Atoms of all elements must contain protons and electrons.\n(2) Atoms of the same element must contain the same number of protons.\n(3) Protons and neutrons have almost the same mass.",
     "options": [
       {
@@ -4098,6 +4535,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "The following is an electron diagram of an atom of element Y:\n(Only electrons in the outermost shell are shown.)\nThe atomic number of Y could be",
     "options": [
       {
@@ -4132,6 +4570,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following represents the electronic arrangement of an atom of a non-metal?",
     "options": [
       {
@@ -4161,6 +4600,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about the structure of an atom is correct?",
     "options": [
       {
@@ -4190,6 +4630,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about an atom is INCORRECT?",
     "options": [
       {
@@ -4219,6 +4660,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following combinations represents an atom with a mass number of 40?",
     "options": [
       {
@@ -4248,6 +4690,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The atom of an element X contains 35 neutrons. The electronic arrangement of the atom is 2, 8, 18, 2. Which of the following combinations about the atom is correct?",
     "options": [
       {
@@ -4277,6 +4720,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Different isotopes of an element have",
     "options": [
       {
@@ -4306,6 +4750,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "The species 232U and 232U",
     "options": [
       {
@@ -4335,6 +4780,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following is most likely to represent an isotope of ⁵²₂₄X?",
     "options": [
       {
@@ -4364,7 +4810,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
-    "stem": "The following table shows the relative abundance of the isotopes of strontium (Sr):\nThe relative atomic mass of strontium is",
+    "part": 1,
+    "stem": "The following table shows the relative abundance of the isotopes of strontium (Sr):\n| Isotope | Relative abundance (%) |\n| --- | --- |\n| ⁸⁶Sr | 16.5 |\n| ⁸⁷Sr | 7 |\n| ⁸⁸Sr | 76.5 |\nThe relative atomic mass of strontium is",
     "options": [
       {
         "key": "A",
@@ -4393,6 +4840,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following statements about 147Ag and 14%Ag are correct?\n(1) They are isotopes.\n(2) They have the same chemical properties.\n(3) They have the same number of electrons.",
     "options": [
       {
@@ -4422,6 +4870,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Oxygen has three isotopes. Their mass numbers are 16, 17 and 18 respectively. Which of the following\nstatements about the three isotopes is / are correct?\n(1) The isotope O-16 contains 16 electrons.\n(2) The isotope O-17 contains 9 neutrons\n(3) The isotope O-18 contains 10 protons.",
     "options": [
       {
@@ -4451,6 +4900,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about 19X and igY is / are correct?\n(1) They are the same element.\n(2) They have the same physical properties.\n(3) They have the same chemical properties.",
     "options": [
       {
@@ -4480,6 +4930,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The atomic number and mass number of an atom of element X are 17 and 35 respectively. Which of the\nfollowing statements about X is / are correct?\n(1) An atom of X contains 17 neutrons.\n(2) X is a gas at room temperature and pressure.\n(3) X is used as a sterilizing agent.",
     "options": [
       {
@@ -4509,6 +4960,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Element X occurs in nature as two isotopes, ⁶X and ⁷X. If the relative atomic mass of X is 6.93, what is the relative abundance of the ⁷X isotope?",
     "options": [
       {
@@ -4538,7 +4990,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
-    "stem": "Consider the following atoms:\nWhich of the following pairs are isotopes?",
+    "part": 1,
+    "stem": "Consider the following atoms:\n| Atom | Atomic number | Mass number | Number of electrons |\n| --- | --- | --- | --- |\n| W | 20 | 46 |  |\n| X | 22 | 46 |  |\n| Y |  | 48 | 22 |\n| Z |  | 94 | 42 |\nWhich of the following pairs are isotopes?",
     "options": [
       {
         "key": "A",
@@ -4567,6 +5020,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Different isotopes of an element have the same\n(1) atomic number.\n(2) electronic arrangement.\n(3) chemical properties",
     "options": [
       {
@@ -4596,7 +5050,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Applied",
-    "stem": "Consider the information of three atoms given in the table below:\nWhich of the following statements about the atoms is / are correct?\n(1) X and Y have the same atomic number.\n(2) Y and Z are atoms of the same element.\n(3) X and Z have the same mass.",
+    "part": 1,
+    "stem": "Consider the information of three atoms given in the table below:\n|  | X | Y | Z |\n| --- | --- | --- | --- |\n| Number of protons | 6 | 6 | 7 |\n| Number of electrons | 6 | 6 | 7 |\n| Number of neutrons | 7 | 8 | 7 |\nWhich of the following statements about the atoms is / are correct?\n(1) X and Y have the same atomic number.\n(2) Y and Z are atoms of the same element.\n(3) X and Z have the same mass.",
     "options": [
       {
         "key": "A",
@@ -4625,6 +5080,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Why are the relative atomic masses of elements seldom whole numbers?\nThe reason is that different atoms of the same element have",
     "options": [
       {
@@ -4654,6 +5110,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The atomic mass of element X is 114.8. X has two isotopes, ¹¹³X and ᵃX, and the relative abundance of ¹¹³X is 10.0%. What is the value of a?",
     "options": [
       {
@@ -4683,7 +5140,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Applied",
-    "stem": "Consider the information of four atoms given in the table below.\nWhich of the following statements about the atoms is / are correct?\n(1) W and X have the same mass.\n(2) W and Y are isotopes.\n(3) Y and Z have the same atomic number.",
+    "part": 1,
+    "stem": "Consider the information of four atoms given in the table below.\n|  | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Number of protons | 12 | 14 | 12 | 13 |\n| Number of electrons | 12 | 14 | 12 | 13 |\n| Number of neutrons | 13 | 14 | 14 | 14 |\nWhich of the following statements about the atoms is / are correct?\n(1) W and X have the same mass.\n(2) W and Y are isotopes.\n(3) Y and Z have the same atomic number.",
     "options": [
       {
         "key": "A",
@@ -4712,6 +5170,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Element X has two isotopes: 39X and 4'X. Which of the following statements is / are correct?\n(1) The isotopes have the same physical properties.\n(2) The isotopes have the same electronic arrangement.\n(3) The relative atomic mass of X is between 39 and 41.",
     "options": [
       {
@@ -4741,6 +5200,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA01",
     "quizId": "chem-cmwa01",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Consider the following atoms:\nWhich of the following statements about the atoms is INCORRECT?",
     "options": [
       {
@@ -4770,6 +5230,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following elements is a metalloid?",
     "options": [
       {
@@ -4799,6 +5260,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following substances is NOT an element?",
     "options": [
       {
@@ -4828,6 +5290,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following are metals?\n(1) Ag\n(2) K\n(3) Na",
     "options": [
       {
@@ -4857,6 +5320,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following elements is a transition metal?",
     "options": [
       {
@@ -4886,6 +5350,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following are liquid elements?\n(1) Mercury\n(2) Water\n(3) Bromine",
     "options": [
       {
@@ -4915,6 +5380,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following substances is NOT an element?",
     "options": [
       {
@@ -4944,6 +5410,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about copper is correct?",
     "options": [
       {
@@ -4973,6 +5440,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "An element with the chemical symbol Fe",
     "options": [
       {
@@ -5002,6 +5470,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about elements are correct?\n(1) Elements can be classified as metals, non-metals and metalloids.\n(2) An element is a substance which cannot be broken down into anything simpler by chemical\nmethods.\n(3) Ammonia is an element.",
     "options": [
       {
@@ -5031,6 +5500,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "The symbol of an element is Al. Which of the following statements about the element are correct?\n(1) It is a good conductor of electricity.\n(2) It can be hammered into shape.\n(3) It has a shiny appearance.",
     "options": [
       {
@@ -5060,6 +5530,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following pairs of atomic numbers corresponds to a pair of metals?",
     "options": [
       {
@@ -5089,7 +5560,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
-    "stem": "20. Element W X Y Melting point (°C) 760 -58 -189 45 Boiling point (°C) 1 210 37 -186 96 Which element is a gas at room temperature and pressure? A W B C D Y Z\nWhich element is a gas at room temperature and pressure?",
+    "part": 2,
+    "stem": "| Element | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| W | 760 | 1210 |\n| X | −58 | 37 |\n| Y | −189 | −186 |\n| Z | 45 | 96 |\nWhich element is a gas at room temperature and pressure?",
     "options": [
       {
         "key": "A",
@@ -5118,6 +5590,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following statements about bromine and mercury are correct?\n(1) Both are liquids at room temperature and pressure.\n(2) They are good conductors of heat.\n(3) Mercury is a metal while bromine is a non-metal.",
     "options": [
       {
@@ -5147,6 +5620,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 3,
     "stem": "Element X is a Period 4 metalloid. It forms a fluoride with the chemical formula of XF4. Which of the\nfollowing statements about X are correct?\n(1) X belongs to Group IV of the periodic table.\n(2) The chemical formula of its oxide is XO2.\n(3) Its fluoride has a simple molecular structure.",
     "options": [
       {
@@ -5176,6 +5650,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about metals and non-metals at room temperature and pressure is\ncorrect?",
     "options": [
       {
@@ -5205,6 +5680,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about silicon is INCORRECT?",
     "options": [
       {
@@ -5234,6 +5710,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about metals are correct?\n(1) Metals are usually shiny.\n(2) Metals are good conductors of electricity.\n(3) All metals have high melting points.",
     "options": [
       {
@@ -5263,6 +5740,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following substances are good conductors of electricity?\n(1) Solid aluminium\n(2) Graphite\n(3) Molten sodium",
     "options": [
       {
@@ -5292,6 +5770,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Which of the following statements about oxygen are correct?\n(1) It is a colourless gas.\n(2) It is a non-metal.\n(3) The following hazard warning symbol should be displayed on a metal cylinder containing it.",
     "options": [
       {
@@ -5321,7 +5800,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
-    "stem": "The table shows the melting points and boiling points of four substances at 1 atm pressure.\nWhich substance exists as a liquid at −50 °C and 1 atm pressure?",
+    "part": 2,
+    "stem": "The table shows the melting points and boiling points of four substances at 1 atm pressure.\n| Substance | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| W | −60 | −5 |\n| X | −189 | −55 |\n| Y | 40 | 60 |\n| Z | 5 | 58 |\nWhich substance exists as a liquid at −50 °C and 1 atm pressure?",
     "options": [
       {
         "key": "A",
@@ -5350,6 +5830,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Consider the following properties of four elements, W, X, Y and Z.\nWhich of the following elements could be sulphur?",
     "options": [
       {
@@ -5379,6 +5860,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Some physical properties of three elements, X, Y and Z, are given below:\nTo which groups do the elements belong?",
     "options": [
       {
@@ -5408,6 +5890,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "The atomic number of element X is 26. To which period does X belong?",
     "options": [
       {
@@ -5437,6 +5920,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Elements in the same group of the periodic table have",
     "options": [
       {
@@ -5466,6 +5950,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "The elements in the periodic table are arranged according to",
     "options": [
       {
@@ -5495,6 +5980,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following combinations is INCORRECT?\nElement\nSpecial name\niron\ntransition metal",
     "options": [
       {
@@ -5524,6 +6010,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Elements in the same group of the periodic table",
     "options": [
       {
@@ -5553,6 +6040,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "The chemical properties of an element depend on",
     "options": [
       {
@@ -5582,6 +6070,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following pairs of atomic numbers corresponds to elements with similar chemical\nproperties?",
     "options": [
       {
@@ -5611,6 +6100,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "A part of the periodic table is shown below.\nWhich of the following statements are correct?\n(1) a is an alkali metal.\n(2) b can be found in the air.\n(3) c is a metalloid.",
     "options": [
       {
@@ -5645,6 +6135,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The atomic number of element X is 18. Element Y is the next element in the periodic table.\nWhich of the following statements about X and Y is / are correct?\n(1) An atom of Y has one more outermost shell electron than an atom of X.\n(2) An atom of Y has one more occupied electron shell than an atom of X.\n(3) X and Y are in the same period of the periodic table.",
     "options": [
       {
@@ -5674,6 +6165,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about the periodic table is / are correct?\n(1) Chromium is an example of transition metals.\n(2) Across a period, from left to right, the melting point of elements increases.\n(3) The lower the element located in each group, the more reactive the element is.",
     "options": [
       {
@@ -5703,6 +6195,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "An atom of element X has electronic arrangement 2,8,6. Which statement is correct?",
     "options": [
       {
@@ -5732,6 +6225,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "In the periodic table, the most reactive metals are in",
     "options": [
       {
@@ -5761,6 +6255,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The atomic number of an element X is 15. Which of the following statements about X is\nINCORRECT?",
     "options": [
       {
@@ -5790,6 +6285,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Consider the elements in the second period of the periodic table, from lithium to fluorine. Which of the\nfollowing statements is correct?",
     "options": [
       {
@@ -5819,6 +6315,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "A part of the periodic table is shown below.\nWhich of the following atoms has the SMALLEST number of electrons?\n(1) The outermost electron shell of an atom of a has an octet structure.\n(2) Atoms of b and e have the same number of outermost shell electrons.\n(3) c and d are metalloids.",
     "options": [
       {
@@ -5853,6 +6350,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Consider the following properties of three elements, X, Y and Z.\nWhich of the following statements are correct?\n(1) Element X is a metal.\n(2) Element Y is a non-metal.\n(3) Element Z is a gas at room temperature and pressure.",
     "options": [
       {
@@ -5882,6 +6380,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Group I metals are stored under paraffin oil because they",
     "options": [
       {
@@ -5911,6 +6410,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "When a small piece of sodium is added to water,",
     "options": [
       {
@@ -5940,6 +6440,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Atoms of Group II elements have",
     "options": [
       {
@@ -5969,6 +6470,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about alkali metals is correct?",
     "options": [
       {
@@ -5998,6 +6500,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Calcium and magnesium have similar chemical properties because",
     "options": [
       {
@@ -6027,6 +6530,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Barium is an alkaline earth metal below calcium in the periodic table. Which of the following\nstatements about barium are correct?\n(1) Its atom has 2 outermost shell electrons.\n(2) It is less reactive than calcium.\n(3) It reacts with non-metals to form salts.",
     "options": [
       {
@@ -6056,7 +6560,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
-    "stem": "Which of the following pairs of elements in Groups I and VII of the periodic table would react with\neach other most vigorously?\nGroup I\nGroup VII\nsodium\nchlorine",
+    "part": 1,
+    "stem": "Which of the following pairs of elements in Groups I and VII of the periodic table would react with\neach other most vigorously?\nGroup I\nGroup VII\nsodium\nchlorine\n|  | each other most vigorously? |  |\n| --- | --- | --- |\n| A. | Group I | Group VII |\n| B. | sodium | chlorine |\n| C. | sodium | fluorine |\n| D. | potassium | fluorine |",
     "options": [
       {
         "key": "A",
@@ -6085,6 +6590,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about potassium and calcium is correct?",
     "options": [
       {
@@ -6114,6 +6620,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Metallic elements X and Y are in the same group of the periodic table. Element X has a greater atomic\nnumber. Which of the following statements is / are correct?\n(1) The atomic size of X is larger than that of Y.\n(2) X is less reactive than Y.\n(3) The relative atomic mass of X is smaller than that of Y.",
     "options": [
       {
@@ -6143,6 +6650,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Caesium is a Group I element. Which of the following statements about caesium are correct?\n(1) It reacts explosively with water.\n(2) It gives a characteristic flame colour in flame test.\n(3) It is a soft metal.",
     "options": [
       {
@@ -6172,7 +6680,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
-    "stem": "Strontium is below calcium in Group Il of the periodic table. Which of the following statements about\nstrontium is / are correct?\n(2) combine wil to prom a one compound.\n(3) It forms an ion carrying two negative charges.",
+    "part": 1,
+    "stem": "Strontium is below calcium in Group II of the periodic table. Which of the following statements about strontium is / are correct?\n(1) It combines with chlorine to form an ionic compound.\n(2) It is in Period 4 of the periodic table.\n(3) It forms an ion carrying two negative charges.",
     "options": [
       {
         "key": "A",
@@ -6201,6 +6710,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which halogen is a reddish-brown liquid at room temperature and pressure?",
     "options": [
       {
@@ -6230,6 +6740,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Noble gases are unreactive because their atoms",
     "options": [
       {
@@ -6259,6 +6770,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which statement about the reaction of Group VII elements with hydrogen is correct?",
     "options": [
       {
@@ -6288,6 +6800,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The atomic number of element X is 35. Which of the following elements has chemical properties\nsimilar to those of element X?",
     "options": [
       {
@@ -6317,6 +6830,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about halogens is correct?",
     "options": [
       {
@@ -6346,6 +6860,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "A and B are halogens. If the atomic number of A is x, then the atomic number of B could be",
     "options": [
       {
@@ -6375,6 +6890,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about Group 0 is INCORRECT?",
     "options": [
       {
@@ -6404,6 +6920,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following statements about iodine are correct?\n(1) It is a black solid at room conditions.\n(2) It is in Period 4 of the periodic table.\n(3) It can react with metals to form salts.",
     "options": [
       {
@@ -6433,6 +6950,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following statements about Group 0 elements are correct?\n(1) They are all colourless gases at room temperature and pressure.\n(2) They have 8 outermost shell electrons in their atoms.\n(3) Their atomic sizes increase down the group.",
     "options": [
       {
@@ -6462,6 +6980,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "The atomic number of the element astatine (At) is 85. Which of the following statements about astatine\nis / are correct?\n(1) It is a gas at room temperature and pressure.\n(2) It is soluble in non-aqueous solvents.\n(3) It has a giant covalent structure.",
     "options": [
       {
@@ -6491,6 +7010,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The element astatine is below iodine in Group VII of the periodic table. Which of the following\nstatements about astatine is / are correct?\n(1) It is a coloured solid at room conditions.\n(2) It is more reactive than chlorine.\n(3) It is a Period 5 element.",
     "options": [
       {
@@ -6520,6 +7040,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The element krypton (Kr) is below argon in Group 0 of the periodic table. Which of the following\nstatements about krypton are correct?\n(1) Its atom has an octet structure in the outermost shell.\n(2) It is in Period 4 of the periodic table.\n(3) Its density is higher than that of argon.",
     "options": [
       {
@@ -6549,6 +7070,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA02",
     "quizId": "chem-cmwa02",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Astatine is below iodine in Group VII. Which statement is most likely to be correct?",
     "options": [
       {
@@ -6578,6 +7100,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Metallic bonding is the electrostatic attraction between",
     "options": [
       {
@@ -6607,6 +7130,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Metals can conduct electricity in the solid state because they contain",
     "options": [
       {
@@ -6636,6 +7160,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Metals are malleable because",
     "options": [
       {
@@ -6665,6 +7190,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Metals have high melting points because",
     "options": [
       {
@@ -6694,6 +7220,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "When a force is applied, layers of metal ions can slide, but the piece of metal does not fall apart. This is because",
     "options": [
       {
@@ -6723,6 +7250,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which statement about metallic bonding is INCORRECT?",
     "options": [
       {
@@ -6752,6 +7280,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about metallic bonding is / are correct?\n(1) This type of bonding involves metal atoms sharing their outermost shell electrons.\n(2) This type of bonding involves metallic ions attracted by mobile electrons.\n(3) This type of bonding exists in tungsten.",
     "options": [
       {
@@ -6781,6 +7310,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Calcium has a higher melting point than potassium because\n(1) potassium ion is smaller than calcium ion.\n(2) calcium has a stronger metallic bond.\n(3) the relative atomic mass of calcium is higher than that of potassium.",
     "options": [
       {
@@ -6810,6 +7340,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Why is there no chemical change when a metal conducts electricity?",
     "options": [
       {
@@ -6839,6 +7370,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following ions contains the same number of electrons as an argon atom?",
     "options": [
       {
@@ -6868,6 +7400,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Rubidium is an alkali metal. When a rubidium atom changes to a rubidium ion, the rubidium atom",
     "options": [
       {
@@ -6897,6 +7430,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "The ions Ca * and K* have same electronic arrangement as that of an atom of",
     "options": [
       {
@@ -6926,6 +7460,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "In which of the following species has / have an octet in the outermost shells)?\n(1) He\n(2) N3-\n(3) K*",
     "options": [
       {
@@ -6955,7 +7490,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
-    "stem": "Consider the following atoms:\nWhich atom is likely to lose electron(s) during reactions?",
+    "part": 2,
+    "stem": "Consider the following atoms:\n| Atom | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Atomic number | 3 | 10 | 14 | 15 |\nWhich atom is likely to lose electron(s) during reactions?",
     "options": [
       {
         "key": "A",
@@ -6984,6 +7520,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Species X contains the following subatomic particles:\nNumber of protons = 38\nNumber of electrons = 36\nNumber of neutrons = 52\nWhich of the following statements about species X is correct?",
     "options": [
       {
@@ -7013,6 +7550,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The atomic number and mass number of an element X is 7 and 14 respectively. How many electrons does the anion X³⁻ have?",
     "options": [
       {
@@ -7042,6 +7580,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Arsenic (⁷⁵₃₃As) forms an As³⁺ ion. Which of the following correctly describes the number of subatomic particles in the ion?",
     "options": [
       {
@@ -7071,6 +7610,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Atom X forms an anion X . Atom X and anion X- have the same",
     "options": [
       {
@@ -7100,6 +7640,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following statements about the phosphide ion 15p3- and sulphide ion 1252- are\ncorrect?\n(1) They have the same number of neutrons.\n(2) They have the same number of protons.\n(3) They have the same number of electrons.",
     "options": [
       {
@@ -7129,6 +7670,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following pairs of species have the same number of outermost shell electrons?\n(1) Chlorine atom and sulphide ion\n(2) Calcium atom and magnesium atom\n(3) Nitride ion and argon atom",
     "options": [
       {
@@ -7158,6 +7700,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following statements about sulphur atom and sulphide ion (S?) is / are correct?\n(1) They have the same number of protons.\n(2) They have the same number of electrons.\n(3) They have the same number of occupied electron shells.",
     "options": [
       {
@@ -7187,6 +7730,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "X is an element. It can form a stable ion X* with an electronic arrangement of 2,8,8. Which of the\nfollowing statements is / are correct?\n(1) X is a Period 4 element.\n(2) X is an alkali metal.\n(3) The ion X2* contains 18 protons.",
     "options": [
       {
@@ -7216,6 +7760,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 3,
     "stem": "When lithium combines with nitrogen to form lithium nitride,",
     "options": [
       {
@@ -7245,6 +7790,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "In which species are the numbers of electrons and neutrons equal?",
     "options": [
       {
@@ -7274,6 +7820,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Atom X forms an anion X²⁻ with 36 electrons and 45 neutrons. What is the mass number of atom X?",
     "options": [
       {
@@ -7303,7 +7850,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
-    "stem": "Consider the following species\nWhich of the following statements is correct?",
+    "part": 1,
+    "stem": "Consider the following species\n| Species | Number of protons | Number of electrons | Number of neutrons |\n| --- | --- | --- | --- |\n| X | 19 | 19 | 20 |\n| Y | 19 | 18 | 20 |\nWhich of the following statements is correct?",
     "options": [
       {
         "key": "A",
@@ -7332,6 +7880,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "X, Y and Z are three consecutive elements in the periodic table. X forms a stable anion X, while Z\nforms a stable cation Z*. Which of the following statements about X, Y and Z is correct?",
     "options": [
       {
@@ -7361,7 +7910,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
-    "stem": "Consider the following species.\nWhich of the following statements about the species is correct?",
+    "part": 2,
+    "stem": "Consider the following species.\n|  | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Number of protons | 10 | 12 | 12 | 12 |\n| Number of electrons | 10 | 12 | 10 | 10 |\n| Number of neutrons | 10 | 12 | 13 | 14 |\nWhich of the following statements about the species is correct?",
     "options": [
       {
         "key": "A",
@@ -7390,6 +7940,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Electricity is passed through molten lead(II) bromide as shown below. A reddish brown gas is formed at the positive electrode while a white shiny solid is formed at the negative electrode.\nWhich of the following can be deduced from the experimental results?",
     "options": [
       {
@@ -7424,6 +7975,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Four elements W, X, Y, Z have atomic numbers .x-1, x, x+1 and x+2 respectively. It is known that x = 9.\nWhich of the following pairs of elements will form an ionic compound upon combination?",
     "options": [
       {
@@ -7453,6 +8005,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Which of the following ions has the same number of protons as an ammonium ion, NH₄⁺?",
     "options": [
       {
@@ -7482,6 +8035,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following is NOT an ionic compound?",
     "options": [
       {
@@ -7511,6 +8065,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following is an electron diagram of calcium iodide (showing electrons in the outermost shells)?",
     "options": [
       {
@@ -7545,6 +8100,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following statements about sodium sulphide are correct?\n(1) Electrostatic forces of attraction hold the ions in the compound together.\n(2) The compound contains Nations.\n(3) The compound contains S ions.",
     "options": [
       {
@@ -7574,6 +8130,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The compound formed between two elements X and Y has the following electronic structure:\nHow many electrons are there in the outermost shell of an atom of X and that of Y?",
     "options": [
       {
@@ -7608,7 +8165,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
-    "stem": "The following table lists the atomic numbers of four elements.\nWhich pair of elements would combine to form an ionic compound?",
+    "part": 1,
+    "stem": "The following table lists the atomic numbers of four elements.\n| Element | Atomic number |\n| --- | --- |\n| W | 2 |\n| X | 12 |\n| Y | 15 |\n| Z | 17 |\nWhich pair of elements would combine to form an ionic compound?",
     "options": [
       {
         "key": "A",
@@ -7637,6 +8195,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The element with atomic number 9 will form ionic bonds readily with an element whose atomic\nnumber is",
     "options": [
       {
@@ -7666,6 +8225,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "In which of the following compounds do both ions have the same electronic arrangement as an argon\natom?",
     "options": [
       {
@@ -7695,6 +8255,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The positions of five elements in the periodic table are shown by the letters V, W, X, Y and Z.\nWhich of the following statements about these elements is INCORRECT?",
     "options": [
       {
@@ -7729,6 +8290,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "In the formation of aluminium oxide, each aluminium atom and each oxygen atom",
     "options": [
       {
@@ -7758,6 +8320,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which description of the electron diagram of magnesium chloride (outermost shells only) is correct?",
     "options": [
       {
@@ -7778,7 +8341,12 @@ export const QUIZ_ITEMS = [
       }
     ],
     "answer": "A",
-    "hint": ""
+    "hint": "",
+    "image": {
+      "src": "./assets/mw3cc-3.png",
+      "alt": "Electron diagram of magnesium chloride, outermost shells only",
+      "caption": "Electron diagram of magnesium chloride, outermost shells only"
+    }
   },
   {
     "id": "CMWA03.4-1",
@@ -7787,6 +8355,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "How many elements does potassium dichromate consist of?",
     "options": [
       {
@@ -7816,6 +8385,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "The atomic numbers of X and Y are 3 and 7 respectively. What is the chemical formula of the\ncompound formed between X and Y?",
     "options": [
       {
@@ -7845,6 +8415,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Consider the following compounds. Which of the underlined particles does NOT have an octet structure in the outermost shell?",
     "options": [
       {
@@ -7874,6 +8445,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Elements X and Y react to form an ionic compound with a chemical formula of X2Y. If X belongs to\nGroup I of the periodic table, to which group would Y belong?",
     "options": [
       {
@@ -7903,7 +8475,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
-    "stem": "Consider the following information about three elements X, Y and Z.\nWhich of the following statements about X, Y and Z are correct?\n(1) X and Y react to form an ionic compound.\n(2) Y and Z belong to the same period of the periodic table.\n(3) Z forms an ion carrying two negative charges.",
+    "part": 1,
+    "stem": "Consider the following information about three elements X, Y and Z.\n| Element | X | Y | Z |\n| --- | --- | --- | --- |\n| Atomic number | 8 | 11 | 16 |\nWhich of the following statements about X, Y and Z are correct?\n(1) X and Y react to form an ionic compound.\n(2) Y and Z belong to the same period of the periodic table.\n(3) Z forms an ion carrying two negative charges.",
     "options": [
       {
         "key": "A",
@@ -7932,6 +8505,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The chemical formula of an ionic compound is XY3. The compound could be",
     "options": [
       {
@@ -7961,6 +8535,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The chemical formula of the oxide of indium (In) is In₂O₃. What is the chemical formula of indium nitrate?",
     "options": [
       {
@@ -7990,6 +8565,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "X is an element. It can form of an ion X2* which has an electronic arrangement of 2,8,8. Which of the\nfollowing statements about X is / are correct?\n(1) X is a Period 3 element.\n(2) The chloride of X is colourless.\n(3) The chemical formula of the oxide of X is X20.",
     "options": [
       {
@@ -8019,6 +8595,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Element X (atomic number 12) combines with element Y (atomic number 7) to form compound Z.\nnich of the following statements is / are correct?\n(1) & forms a stable ion carrying two positive charges.\n(2) Y forms a stable ion carrying one negative charge.\n(3) The chemical formula of Z is X3Y2.",
     "options": [
       {
@@ -8048,6 +8625,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Element X reacts with chlorine to form a compound with the chemical formula of XCl. The electronic\narrangement of an atom of X may be",
     "options": [
       {
@@ -8077,6 +8655,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "X is an element in the second period of the periodic table. The chemical formula of the compound\nformed between magnesium and X is Mg3X2. Which of the following electron diagrams best represents\nthe compound formed between X and hydrogen?\n(Only electrons in the outermost shells are shown.)",
     "options": [
       {
@@ -8111,6 +8690,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 3,
     "stem": "Elements X and Y have 1 and 6 outermost shell electrons in their atoms respectively. Which of the following combinations about the compound they form is correct?",
     "options": [
       {
@@ -8140,6 +8720,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 3,
     "stem": "Caesium (Cs) is a Group I element. Which of the following statements about caesium oxide are correct?\n(1) It chemical formula is Cs2O.\n(2) It is a brittle solid.\n(3) It is soluble in water.",
     "options": [
       {
@@ -8169,6 +8750,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Scandium (Sc) is a metal. The chemical formula of scandium hydroxide is Sc(OH)3. Which of the\nfollowing is the chemical formula of scandium carbonate?",
     "options": [
       {
@@ -8198,6 +8780,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "An atom of element X has 12 protons while an atom of element Y has 7 electrons. What is the chemical\nformula of the compound formed between X and Y?",
     "options": [
       {
@@ -8227,6 +8810,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "An ionic compound has a chemical formula of XY. All ions in the compound have the electronic arrangement as a neon atom. What are elements X and Y?",
     "options": [
       {
@@ -8256,6 +8840,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "W, X, Y and Z are four consecutive elements of the periodic table. X is a noble gas. Which of the\nfollowing chemical formulae is correct?",
     "options": [
       {
@@ -8285,6 +8870,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following combinations about the colours of ions in aqueous solution is INCORRECT?",
     "options": [
       {
@@ -8314,7 +8900,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
-    "stem": "41. coloured crystal moistened filter paper microscope slide 20 V d.c. power supply A colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be A chromium(I) sulphate. B iron(III) chloride. C potassium permanganate. D sodium sulphate.\nA colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be",
+    "part": 1,
+    "stem": "A colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be",
     "options": [
       {
         "key": "A",
@@ -8348,6 +8935,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "The power supply in the following set-up is connected for about 30 minutes.\nWhich of the following statements about the set-up is / are correct?\n(1) A purple colour develops near electrode X.\n(2) A blue colour develops near electrode Y.\n(3) Sulphate ions move towards electrode Y.",
     "options": [
       {
@@ -8382,6 +8970,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The colour of an aqueous solution containing Cu²⁺ is",
     "options": [
       {
@@ -8411,6 +9000,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The colour of an aqueous solution containing Fe³⁺ is",
     "options": [
       {
@@ -8440,6 +9030,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "In a migration of ions experiment, a blue colour moves towards the negative electrode. The ion responsible is",
     "options": [
       {
@@ -8469,6 +9060,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The table below shows the colour of the aqueous solutions of three ionic compounds.\nWhich of the following combinations about the colour of the ions is most likely to be correct?",
     "options": [
       {
@@ -8498,6 +9090,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "A purple aqueous solution of potassium permanganate is used in an ion-migration experiment. The purple colour moves towards the",
     "options": [
       {
@@ -8527,6 +9120,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA03",
     "quizId": "chem-cmwa03",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which combination about the colour of the aqueous ion is INCORRECT?",
     "options": [
       {
@@ -8556,6 +9150,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "What is the number of electrons in a molecule of methane (CH4)?",
     "options": [
       {
@@ -8585,6 +9180,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "An element X exists as molecules and it has an atomic number of 8. Which of the following is the electron diagram of a molecule of X?\n(Only electrons in the outermost shells are shown.)",
     "options": [
       {
@@ -8619,6 +9215,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Nitrogen and fluorine form a compound by",
     "options": [
       {
@@ -8648,6 +9245,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following pairs of elements will form a covalent compound?",
     "options": [
       {
@@ -8677,6 +9275,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "The atomic number of elements X and Y are 7 and 17 respectively. Which of the following electron\ndiagrams best represents the compound formed between X and Y?\n(Only electrons in the outermost shells are shown.)",
     "options": [
       {
@@ -8711,6 +9310,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "The atomic number of an element X is 9. The chemical formula of the compound formed between X\nand oxygen is",
     "options": [
       {
@@ -8740,6 +9340,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following statements about covalent bond are correct?\n(1) It is formed by the sharing of electrons between the bonded atoms.\n(2) It must contain ions.\n(3) It is a type of electrostatic forces of attraction.",
     "options": [
       {
@@ -8769,6 +9370,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following electron diagrams is correct?\n(Only electrons in the outermost shells are shown.)",
     "options": [
       {
@@ -8803,6 +9405,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 3,
     "stem": "Which of the following electron diagrams are correct?\n(Only electrons in the outermost shells are shown.)",
     "options": [
       {
@@ -8837,6 +9440,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 3,
     "stem": "In which of the following groups do the substances have the same bonding type?\n(1) Aluminium, mercury, sodium\n(2) Fluorine, iodine, oxygen\n(3) Calcium chloride, magnesium chloride, silver chloride",
     "options": [
       {
@@ -8866,7 +9470,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
-    "stem": "Which of the following statements about an ammonia molecule is / are correct?\n(l) The number of bonding electrons contributed by the nitrogen atom in the molecule is s.\n(2) The number of bonding electron contributed by each hydrogen atom in the\nmolecule is 1.\n(3) The molecule can form a dative covalent bond with a hydrogen ion.",
+    "part": 3,
+    "stem": "Which of the following statements about an ammonia molecule is / are correct?\n(1) The number of bonding electrons contributed by the nitrogen atom in the molecule is 5.\n(2) The number of bonding electron contributed by each hydrogen atom in the molecule is 1.\n(3) The molecule can form a dative covalent bond with a hydrogen ion.",
     "options": [
       {
         "key": "A",
@@ -8895,6 +9500,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 3,
     "stem": "Which of the following is NOT a covalent substance?",
     "options": [
       {
@@ -8924,6 +9530,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following molecules has the GREATEST number of lone pairs of electrons?",
     "options": [
       {
@@ -8953,7 +9560,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
-    "stem": "The table below lists the electronic arrangements of the atoms of three elements.\nWhich of the following elements exist(s) as separate molecules?",
+    "part": 1,
+    "stem": "The table below lists the electronic arrangements of the atoms of three elements.\n| Element | Electronic arrangement of atom |\n| --- | --- |\n| X | 2,1 |\n| Y | 2,5 |\n| Z | 2,6 |\nWhich of the following elements exist(s) as separate molecules?",
     "options": [
       {
         "key": "A",
@@ -8982,6 +9590,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following molecules contains a triple bond?",
     "options": [
       {
@@ -9011,6 +9620,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "The electron diagram of a compound formed between element X and element Y is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following combinations is correct?",
     "options": [
       {
@@ -9045,6 +9655,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following molecules does NOT contain a single covalent bond?",
     "options": [
       {
@@ -9074,6 +9685,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "The following is an electron diagram of the compound formed between element X and hydrogen.\n(Only electrons in the outermost shells are shown.)\nHow many electrons are there in the outermost shell of an atom of X?",
     "options": [
       {
@@ -9108,6 +9720,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "The electron diagram of a compound formed between element X and fluorine is shown below:\n(Only electrons in the outermost shells are shown.)\nWhat would be the chemical formula of the compound formed between calcium and X?",
     "options": [
       {
@@ -9142,6 +9755,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following statements about a carbon dioxide molecule is / are correct?\n(1) The number of bonding electrons contributed by the carbon atom in the molecule is 2.\n(2) The number of bonding electrons contributed by each oxygen atom in the molecule is 2.\n(3) The total number of electrons in the molecule is 16.",
     "options": [
       {
@@ -9171,6 +9785,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 3,
     "stem": "X and Y are two different elements. The electron diagram of a compound formed between X and Y is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements are correct?\n(1) There are 6 electrons in the outermost shell of an atom of X.\n(2) There are 7 electrons in the outermost shell of an atom of Y.\n(3) Each atom of Y in the above compound has three lone pairs of electrons.",
     "options": [
       {
@@ -9205,6 +9820,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 3,
     "stem": "X, Y and Z are three different elements. The electron diagram of a compound formed by X, Y and Z is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements is / are correct?\n(1) There are 4 electrons in the outermost shell of an atom of X.\n(2) There are 8 electrons in the outermost shell of an atom of Y.\n(3) There are 6 electrons in the outermost shell of an atom of Z.",
     "options": [
       {
@@ -9239,6 +9855,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 3,
     "stem": "X, Y and Z are three different elements. The electron diagram of a compound containing X, Y and Z is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements are correct?\n(1) There are 4 electrons in the outermost shell of an atom of Y.\n(2) There are 7 electrons in the outermost shell of an atom of Z.\n(3) Dative covalent bond exists in the above compound.",
     "options": [
       {
@@ -9273,7 +9890,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
-    "stem": "Consider the following three elements:\nWhich of the following statements about X, Y and Z is / are correct?\n(1) X and Y combine to form a covalent compound.\n(2) X and Z form a compound by electron transfer.\n(3) Y and Z belong to the same period of the periodic table.",
+    "part": 3,
+    "stem": "Consider the following three elements:\n| Element | X | Y | Z |\n| --- | --- | --- | --- |\n| Atomic number | 7 | 10 | 12 |\nWhich of the following statements about X, Y and Z is / are correct?\n(1) X and Y combine to form a covalent compound.\n(2) X and Z form a compound by electron transfer.\n(3) Y and Z belong to the same period of the periodic table.",
     "options": [
       {
         "key": "A",
@@ -9302,6 +9920,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about oxygen is INCORRECT?",
     "options": [
       {
@@ -9331,7 +9950,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
-    "stem": "Consider the following elements.\nWhich of the elements exists as diatomic molecules with triple covalent bonds?",
+    "part": 1,
+    "stem": "Consider the following elements.\n| Element | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Atomic number | 4 | 6 | 7 | 9 |\nWhich of the elements exists as diatomic molecules with triple covalent bonds?",
     "options": [
       {
         "key": "A",
@@ -9360,6 +9980,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following molecules contains a triple covalent bond?",
     "options": [
       {
@@ -9389,6 +10010,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following pairs of molecules have the same number of lone pairs of electrons?",
     "options": [
       {
@@ -9418,6 +10040,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Which of the following bonds exist in potassium nitrate?\n(1) Covalent bond\n(2) Ionic bond\n(3) Metallic bond",
     "options": [
       {
@@ -9447,6 +10070,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "M is a Group VI element while N is a Group VII element. They combine to form a compound MₓNᵧ.\nWhich of the following combinations is correct?",
     "options": [
       {
@@ -9476,7 +10100,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
-    "stem": "Which of the following combinations about substance and the type of bonding are correct?",
+    "part": 2,
+    "stem": "Which of the following combinations about substance and the type of bonding are correct?\n|  | Substance | Type of bond |\n| --- | --- | --- |\n| (1) | neon | covalent |\n| (2) | potassium bromide | ionic |\n| (3) | sodium | metallic |",
     "options": [
       {
         "key": "A",
@@ -9505,7 +10130,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
-    "stem": "Two elements X and Y form a compound with a chemical formula of XY₂. Which of the following electronic arrangements for atoms of X and Y are correct?",
+    "part": 2,
+    "stem": "Two elements X and Y form a compound with a chemical formula of XY₂. Which of the following electronic arrangements for atoms of X and Y are correct?\n|  | Atom of X | Atom of Y |\n| --- | --- | --- |\n| (1) | 2,2 | 2,8,7 |\n| (2) | 2,8,1 | 2,7 |\n| (3) | 2,4 | 2,6 |",
     "options": [
       {
         "key": "A",
@@ -9534,6 +10160,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 3,
     "stem": "Element X is in Period 2 of the periodic table. The electron diagram of an ion containing carbon and X is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements is correct?",
     "options": [
       {
@@ -9568,6 +10195,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "A dative covalent bond is formed when",
     "options": [
       {
@@ -9597,6 +10225,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "When NH₃ reacts with H⁺ to form NH₄⁺, the extra bond to hydrogen is",
     "options": [
       {
@@ -9626,6 +10255,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which species contains a dative covalent bond?",
     "options": [
       {
@@ -9655,6 +10285,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "When gaseous NH₃ and gaseous XY₃ react together, a solid is formed. The electron diagram of the solid is shown below:\n(Only electrons in the outermost shells are shown.)\nWhich of the following statements are correct?\n(1) There are 6 electrons in the outermost shell of an atom of X.\n(2) There are 7 electrons in the outermost shell of an atom of Y.\n(3) Dative covalent bond exists in the solid.",
     "options": [
       {
@@ -9689,6 +10320,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following reactions involves the formation of a dative covalent bond?",
     "options": [
       {
@@ -9718,6 +10350,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "In the formation of H₃O⁺ from H₂O and H⁺,",
     "options": [
       {
@@ -9747,6 +10380,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which description of the formation of H₃O⁺ is correct?",
     "options": [
       {
@@ -9776,6 +10410,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "BF₃ accepts a lone pair from NH₃ to form F₃B←NH₃. In this adduct,",
     "options": [
       {
@@ -9805,6 +10440,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following contain dative covalent bonds?\n(1) NH₄⁺\n(2) H₃O⁺\n(3) CH₄",
     "options": [
       {
@@ -9834,6 +10470,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "What is the formula mass of magnesium nitrate?\n(Relative atomic masses: N = 14.0, O = 16.0, Mg = 24.3)",
     "options": [
       {
@@ -9863,6 +10500,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "What is the formula mass of CO₂?\n(Relative atomic masses: C = 12.0, O = 16.0)",
     "options": [
       {
@@ -9892,6 +10530,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "What is the formula mass of NaCl?\n(Relative atomic masses: Na = 23.0, Cl = 35.5)",
     "options": [
       {
@@ -9921,7 +10560,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
-    "stem": "Consider the following information:\nThe formula mass of the compound formed between X and Y is",
+    "part": 1,
+    "stem": "Consider the following information:\n| Element | Atomic number | Relative atomic mass |\n| --- | --- | --- |\n| X | 7 | 14 |\n| Y | 12 | 24.3 |\nThe formula mass of the compound formed between X and Y is",
     "options": [
       {
         "key": "A",
@@ -9950,7 +10590,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
-    "stem": "Consider the following two elements:\nElements P and Q combine to form a compound. Which of the following statements about the compound is / are correct?\n(1) It is formed by electron sharing.\n(2) It contains giant molecules.\n(3) Its relative molecular mass is 85.0.",
+    "part": 1,
+    "stem": "Consider the following two elements:\n| Element | Atomic number | Relative atomic mass |\n| --- | --- | --- |\n| P | 7 | 14 |\n| Q | 17 | 35.5 |\nElements P and Q combine to form a compound. Which of the following statements about the compound is / are correct?\n(1) It is formed by electron sharing.\n(2) It contains giant molecules.\n(3) Its relative molecular mass is 85.0.",
     "options": [
       {
         "key": "A",
@@ -9979,6 +10620,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "What is the formula mass of Ca(OH)₂?\n(Relative atomic masses: H = 1.0, O = 16.0, Ca = 40.1)",
     "options": [
       {
@@ -10008,7 +10650,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
-    "stem": "Which of the following statements is / are correct?\n(1) The relative molecular mass of a molecule is the relative mass of the molecule based on the\n12C = 12.00 scale.\n(2) The formula mass of a compound is always a whole number.\n(3) The formula mass of magnesium oxide is 40.3 g.\n(Relative atomic masses: 0 = 16.0, Mg = 24.3)",
+    "part": 1,
+    "stem": "Which of the following statements is / are correct?\n(1) The relative molecular mass of a molecule is the relative mass of the molecule based on the\n12C = 12.00 scale.\n(2) The formula mass of a compound is always a whole number.\n(3) The formula mass of magnesium oxide is 40.3 g.\n(Relative atomic masses: O = 16.0, Mg = 24.3)",
     "options": [
       {
         "key": "A",
@@ -10037,6 +10680,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The formula mass of a compound X₂O is 62.0. If the relative atomic mass of O is 16.0, the relative atomic mass of X is",
     "options": [
       {
@@ -10066,6 +10710,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA04",
     "quizId": "chem-cmwa04",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "What is the formula mass of aluminium oxide, Al₂O₃?\n(Relative atomic masses: O = 16.0, Al = 27.0)",
     "options": [
       {
@@ -10095,6 +10740,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following substances conducts electricity in both solid and molten states?",
     "options": [
       {
@@ -10124,6 +10770,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Metals usually have high densities because",
     "options": [
       {
@@ -10153,6 +10800,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which description of giant metallic structure matches the notes?",
     "options": [
       {
@@ -10182,6 +10830,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Consider the information listed below:\nWhich of the following combinations is correct?",
     "options": [
       {
@@ -10211,6 +10860,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Metals usually have high densities because",
     "options": [
       {
@@ -10240,6 +10890,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "A metal conducts electricity in both the solid and molten states because",
     "options": [
       {
@@ -10269,6 +10920,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Metals are ductile because\n(1) strong electrostatic forces exist between metal ions.\n(2) layers of metal ions can slip over one another.\n(3) the delocalized electrons hold the layers of metal ions together.",
     "options": [
       {
@@ -10298,6 +10950,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "How do metals conduct electricity when connected to a battery?",
     "options": [
       {
@@ -10327,6 +10980,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which property is NOT explained by the giant metallic structure of a typical metal?",
     "options": [
       {
@@ -10356,6 +11010,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Why does molten lead(II) bromide conduct electricity?",
     "options": [
       {
@@ -10385,6 +11040,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following substances does NOT have a giant ionic structure?",
     "options": [
       {
@@ -10414,6 +11070,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following diagrams best represents the giant structure of a caesium chloride crystal? (In\nthese diagrams, • represents a Cs* ion and ° represents a Cl ion.)",
     "options": [
       {
@@ -10448,6 +11105,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Magnesium chloride conducts electricity in aqueous solution because",
     "options": [
       {
@@ -10477,6 +11135,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Solid sodium chloride does NOT conduct electricity because",
     "options": [
       {
@@ -10506,6 +11165,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Ionic compounds have high melting points because",
     "options": [
       {
@@ -10535,6 +11195,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 2,
     "stem": "Which of the following chloride(s) conduct(s) electricity when molten?\n(1) Calcium chloride\n(2) Nitrogen trichloride\n(3) Silicon tetrachloride",
     "options": [
       {
@@ -10564,7 +11225,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
-    "stem": "Substance X has a high melting point and does not conduct electricity when in solid state. Substance X\nmay be\n(l) copper.\n(2) zinc oxide.\n(3) diamond.",
+    "part": 2,
+    "stem": "Substance X has a high melting point and does not conduct electricity when in solid state. Substance X\nmay be\n(1) copper.\n(2) zinc oxide.\n(3) diamond.",
     "options": [
       {
         "key": "A",
@@ -10593,6 +11255,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following substances can conduct electricity in molten state but NOT in solid state?",
     "options": [
       {
@@ -10622,6 +11285,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following statements about zinc chloride is INCORRECT?",
     "options": [
       {
@@ -10651,7 +11315,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
-    "stem": "The table below lists the ability of four substances W, X, Y and Z to conduct electricity.\n(In the table, ✓ and ✗ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.)\nWhich of the substances is likely to be calcium chloride?",
+    "part": 1,
+    "stem": "The table below lists the ability of four substances W, X, Y and Z to conduct electricity.\n| Substance | Solid state | Molten state | Aqueous solution |\n| --- | --- | --- | --- |\n| W | ✗ | ✗ | ✗ |\n| X | ✗ | ✗ | ✓ |\n| Y | ✗ | ✓ | ✓ |\n| Z | ✓ | ✓ | insoluble in water |\n(In the table, ✓ and ✗ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.)\nWhich of the substances is likely to be calcium chloride?",
     "options": [
       {
         "key": "A",
@@ -10680,6 +11345,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Substance Y has high melting and boiling points. It can conduct electricity when molten or in aqueous\nsolution and at the same time decomposed by electricity. Substance Y may be",
     "options": [
       {
@@ -10709,6 +11375,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "The atomic number of elements X and Y are 3 and 8 respectively. Which of the following properties\ndoes the compound formed from X and Y have?\n(1) The compound has a simple molecular structure.\n(2) The compound is a solid at room temperature.\n(3) The compound can conduct electricity when molten.",
     "options": [
       {
@@ -10738,6 +11405,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following statements about the structure of sodium chloride are correct?\n(1) Sodium ions are smaller than chloride ions.\n(2) Each sodium ion is surrounded by six chloride ions.\n(3) The structure consists of separate ion pairs.",
     "options": [
       {
@@ -10767,6 +11435,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The table lists the electrical conductivities of three substances.\nWhich of the following combinations is correct?",
     "options": [
       {
@@ -10796,6 +11465,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "67. A substance melts at 1 074 °C and boils at 1 740 °C. Passing an electric current through the molten substance results in electrolysis. What type of structure is present in the substance? A Ionic B Metallic C Covalent molecular D Covalent network",
     "options": [
       {
@@ -10825,7 +11495,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
-    "stem": "68. Substance Melting point (°C) W 1 565 Electrical conductivity solid state molten state non- conductor conductor x 1610 non- conductor non- conductor Y 40 Z 1 670 non- conductor conductor non- conductor conductor Which of the following statements is correct? A W is malleable. B\nWhich of the following statements is correct?",
+    "part": 1,
+    "stem": "| Substance | Melting point (°C) | Conductivity (solid) | Conductivity (molten) |\n| --- | --- | --- | --- |\n| W | 1 565 | non-conductor | conductor |\n| X | 1 610 | non-conductor | non-conductor |\n| Y | 40 | non-conductor | non-conductor |\n| Z | 1 670 | conductor | conductor |\nWhich of the following statements is correct?",
     "options": [
       {
         "key": "A",
@@ -10854,6 +11525,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "The atomic numbers of two elements A and B are 13 and 8 respectively. The compound formed\nbetween A and B",
     "options": [
       {
@@ -10883,6 +11555,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "The table lists some properties of four solids, W, X, Y and Z.\nWhat is the correct classification of the solids?",
     "options": [
       {
@@ -10912,7 +11585,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
-    "stem": "Consider the following information about four substances, W, X, Y and Z:\nWhich substance has a simple molecular structure and is a solid at room temperature?",
+    "part": 2,
+    "stem": "Consider the following information about four substances, W, X, Y and Z:\n| Substance | Melting point (°C) | Electrical conductivity at room temperature |\n| --- | --- | --- |\n| W | −130 | poor |\n| X | −39 | good |\n| Y | 71 | poor |\n| Z | 750 | poor |\nWhich substance has a simple molecular structure and is a solid at room temperature?",
     "options": [
       {
         "key": "A",
@@ -10941,7 +11615,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
-    "stem": "X and Y are two different elements. The melting points of their bromides are given below:\nWhich of the following statements are correct?\n(1) The bromide of X is soluble in non-aqueous solvents.\n(2) The bromide of Y has a giant ionic structure.\n(3) The bromide of X is a solid at room temperature and pressure.",
+    "part": 2,
+    "stem": "X and Y are two different elements. The melting points of their bromides are given below:\n|  | Melting point (°C) |\n| --- | --- |\n| Bromide of X | 12 |\n| Bromide of Y | 730 |\nWhich of the following statements are correct?\n(1) The bromide of X is soluble in non-aqueous solvents.\n(2) The bromide of Y has a giant ionic structure.\n(3) The bromide of X is a solid at room temperature and pressure.",
     "options": [
       {
         "key": "A",
@@ -10970,6 +11645,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 3,
     "stem": "X and Y are two different elements. The melting points and boiling points of their oxides are given below.\nWhich of the following statements is / are correct?\n(1) X is a non-metal.\n(2) The oxide of Y is a liquid at room temperature.\n(3) The oxide of X is an ionic crystal.",
     "options": [
       {
@@ -10999,6 +11675,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Why does argon exist as a gas at room temperature and pressure?",
     "options": [
       {
@@ -11028,6 +11705,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following chlorides is most likely to be soluble in tetrachloromethane (CCl₄)?",
     "options": [
       {
@@ -11057,6 +11735,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Silicon tetrachloride is a liquid of low boiling point. Which of the following types of forces exist in it?\n(1) Covalent bonding\n(2) Dative covalent bonding\n(3) Van der Waals' forces",
     "options": [
       {
@@ -11086,6 +11765,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "70. A substance melts at 17 °C and boils at 43 °C. The substance (1) has weak van der Waals' forces between molecules. (2) has a simple molecular structure. (3) is a liquid at room temperature and pressure. A (1) and (2) only B (1) and (3) only C (2) and (3) only D (1), (2) and (",
     "options": [
       {
@@ -11115,6 +11795,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following substances is a nonconductor of electricity?",
     "options": [
       {
@@ -11144,6 +11825,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following compounds has the LOWEST melting point?",
     "options": [
       {
@@ -11173,6 +11855,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Sodium chloride is a solid while hydrogen chloride is a gas at room temperature because",
     "options": [
       {
@@ -11202,7 +11885,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
-    "stem": "Consider the following table which gives some information about the solubilities of four substances in water and heptane (a non-aqueous solvent):\nWhich of the above substances could be iodine?",
+    "part": 1,
+    "stem": "Consider the following table which gives some information about the solubilities of four substances in water and heptane (a non-aqueous solvent):\n| Substance | Solubility in water | Solubility in heptane |\n| --- | --- | --- |\n| W | very soluble | slightly soluble |\n| X | slightly soluble | slightly soluble |\n| Y | slightly soluble | very soluble |\n| Z | very soluble | very soluble |\nWhich of the above substances could be iodine?",
     "options": [
       {
         "key": "A",
@@ -11231,7 +11915,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
-    "stem": "The table below lists the information about the electrical conductivities of four substances, W, X, Y and Z:\nWhich of the substances is likely to be copper?",
+    "part": 2,
+    "stem": "The table below lists the information about the electrical conductivities of four substances, W, X, Y and Z:\n| Substance | Solid state | Liquid state | Aqueous solution |\n| --- | --- | --- | --- |\n| W | conducts | conducts | conducts |\n| X | does not conduct | does not conduct | does not conduct |\n| Y | conducts | conducts | insoluble in water |\n| Z | does not conduct | does not conduct | conducts |\nWhich of the substances is likely to be copper?",
     "options": [
       {
         "key": "A",
@@ -11260,6 +11945,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following statements about simple molecular substances are correct?\n(1) They usually have low melting points.\n(2) They are usually soluble in non-aqueous solvents.\n(3) They all conduct electricity in aqueous solution.",
     "options": [
       {
@@ -11289,6 +11975,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "84. A substance X is soluble in hexane (a non-aqueous solvent) but insoluble in water. X probably has a A giant ionic structure. B simple molecular structure. giant covalent structure. giant metallic structure.",
     "options": [
       {
@@ -11318,6 +12005,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following diagrams best represents the arrangement of particles in a sample of argon at\nroom temperature and pressure?",
     "options": [
       {
@@ -11352,6 +12040,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Hydrogen and sulphur react to give hydrogen sulphide. Which of the following diagrams can represent\nthe particles in a sample of hydrogen sulphide at room temperature and pressure?",
     "options": [
       {
@@ -11386,7 +12075,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
-    "stem": "Which of the following combinations about the strength of the bonds between chlorine atoms and that of the forces between chlorine molecules is correct?",
+    "part": 1,
+    "stem": "Which of the following combinations about the strength of the bonds between chlorine atoms and that of the forces between chlorine molecules is correct?\n|  | Strength of bonds between chlorine atoms | Strength of forces between chlorine molecules |\n| --- | --- | --- |\n| A. | strong | weak |\n| B. | strong | strong |\n| C. | weak | strong |\n| D. | weak | weak |",
     "options": [
       {
         "key": "A",
@@ -11415,7 +12105,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
-    "stem": "The diagram below shows the structure of dry ice:\nWhich of the following statements about dry ice is correct?\nB It has a giant covalent structure.\nC The atoms in its molecules are held together by van der Waals' forces.\nIts molecules are held together by covalent bonds.",
+    "part": 1,
+    "stem": "The diagram below shows the structure of dry ice:\nWhich of the following statements about dry ice is correct?\nB It has a giant covalent structure.\nC The atoms in its molecules are held together by van der Waals' forces.",
     "options": [
       {
         "key": "A",
@@ -11449,7 +12140,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
-    "stem": "Which of the following combinations about substances and attractions between particles is / are correct?",
+    "part": 2,
+    "stem": "Which of the following combinations about substances and attractions between particles is / are correct?\n| Substance | Attraction between particles in the substance |\n| --- | --- |\n| (1) sulphur | van der Waals' forces |\n| (2) silicon dioxide | dative covalent bond |\n| (3) calcium hydride | ionic bond |",
     "options": [
       {
         "key": "A",
@@ -11478,7 +12170,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
-    "stem": "62. Melting Boiling Substance point (°C) point (°C) Neon (Ne) -249 -246 Chlorine (Clz) -101 -34 Phosphine (PH3) -134 -87 Sulphur dioxide (SOz) -75 -10 Which of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure? (1) Van der Waals' forces (2) \nWhich of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure?\n(1) Van der Waals’ forces\n(2) Metallic bond\n(3) Covalent bond",
+    "part": 2,
+    "stem": "| Substance | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| Neon (Ne) | −249 | −246 |\n| Chlorine (Cl₂) | −101 | −34 |\n| Phosphine (PH₃) | −134 | −87 |\n| Sulphur dioxide (SO₂) | −75 | −10 |\nWhich of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure?\n(1) Van der Waals’ forces\n(2) Metallic bond\n(3) Covalent bond",
     "options": [
       {
         "key": "A",
@@ -11507,6 +12200,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "The atomic numbers of elements X and Y are 14 and 17 respectively. They combine to form compound\nZ. Which of the following statements about compound Z is / are correct?\n(1) Z has a giant covalent structure.\n(2) The chemical formula of Z is XY4.\n(3) Z does not carry any charge.",
     "options": [
       {
@@ -11536,6 +12230,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 2,
     "stem": "Elements X and Y combine to form a compound with a chemical formula of XY2. If Y is a Group VII\nelement and XYz does not conduct electricity in liquid state, then X is a",
     "options": [
       {
@@ -11565,6 +12260,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Which of the following pairs of species react to give a compound with a giant covalent structure?",
     "options": [
       {
@@ -11594,6 +12290,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Diamond has a high melting point because",
     "options": [
       {
@@ -11623,6 +12320,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Foundation",
+    "part": 1,
     "stem": "Diamond has a very high melting point because",
     "options": [
       {
@@ -11652,6 +12350,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Silicon and carbon react to form silicon carbide. The structure of silicon carbide is shown below:\nWhich of the following statements about silicon carbide is INCORRECT?",
     "options": [
       {
@@ -11686,6 +12385,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Which of the following properties of magnesium chloride is / are evidence(s) to support that ionic\nbonds are strong?\n(1) It is an electrolyte.\n(2) It has a high melting point.\n(3) It is soluble in water.",
     "options": [
       {
@@ -11715,6 +12415,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 1,
     "stem": "Silicon dioxide has a high melting point while carbon dioxide has a low melting point because",
     "options": [
       {
@@ -11744,7 +12445,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
-    "stem": "Consider the information below:\nWhich of the following solids is likely to be graphite?",
+    "part": 1,
+    "stem": "Consider the information below:\n| Solid | Melting point | Electrical conductivity | Solubility in water |\n| --- | --- | --- | --- |\n| W | low | non-conducting | insoluble |\n| X | low | good | insoluble |\n| Y | high | non-conducting | soluble |\n| Z | very high | good | insoluble |\nWhich of the following solids is likely to be graphite?",
     "options": [
       {
         "key": "A",
@@ -11773,6 +12475,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "85. A substance W melts at 3 550 °C and it does NOT conduct electricity in solid state and molten state. W probably has a A giant ionic structure. B giant covalent structure. C simple molecular structure. D giant metallic structure.",
     "options": [
       {
@@ -11802,6 +12505,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Standard",
+    "part": 2,
     "stem": "Which of the following shows the correct descending order of the melting points of diamond, zinc\nbromide and sulphur dioxide?",
     "options": [
       {
@@ -11831,7 +12535,8 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
-    "stem": "Scientists have recently developed a method to produce large sheets of a substance called graphene.\nGraphene is made from carbon and is a single layer of graphite just one atom thick.\nThe diagram below shows the structure of graphene.\nWhich of the following statements about graphene is / are correct?\n(1) It is a good conductor of electricity.\n(2) It has a low melting point.\n(3) It is strong.\n(2) only\n(1) and\n(3) only",
+    "part": 1,
+    "stem": "Scientists have recently developed a method to produce large sheets of a substance called graphene.\nGraphene is made from carbon and is a single layer of graphite just one atom thick.\nThe diagram below shows the structure of graphene.\nWhich of the following statements about graphene is / are correct?\n(1) It is a good conductor of electricity.\n(2) It has a low melting point.\n(3) It is strong.",
     "options": [
       {
         "key": "A",
@@ -11865,6 +12570,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "Which of the following substances have giant structures?\n(1) Calcium\n(2) Magnesium oxide\n(3) Graphite",
     "options": [
       {
@@ -11894,6 +12600,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "The atomic number of elements X and Y are 14 and 8 respectively. Which of the following statements\nabout the compound formed between X and Y are correct?\n(1) It has a low melting point.\n(2) It has a giant covalent structure.\n(3) It is insoluble in water.",
     "options": [
       {
@@ -11923,6 +12630,7 @@ export const QUIZ_ITEMS = [
     "topic": "CMWA05",
     "quizId": "chem-cmwa05",
     "difficulty": "Applied",
+    "part": 1,
     "stem": "77. The diagram below shows the structure of a form of boron nitride which is similar to that of graphite.\nWhich of the following statements about this compound are correct?\n(1) It has a high melting point.\n(2) It is slippery.\n(3) It is very hard.",
     "options": [
       {

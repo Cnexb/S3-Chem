@@ -51,7 +51,9 @@
     "mw5cc-4": "mw5cc-4.png",
     "mw5db-1": "mw5db-1.png",
     "mw5dc-1": "mw5dc-1.png",
-    "mw5dc-4": "mw5dc-4.png"
+    "mw5dc-4": "mw5dc-4.png",
+    "earth2ac-6": "earth2ac-6.png",
+    "mw3cc-3": "mw3cc-3.png"
   },
   "image_captions": {
     "earth1aa-1": "Question diagram",
@@ -105,6 +107,8 @@
     "mw5cc-4": "Question diagram",
     "mw5db-1": "Question diagram",
     "mw5dc-1": "Question diagram",
-    "mw5dc-4": "Question diagram"
+    "mw5dc-4": "Question diagram",
+    "earth2ac-6": "Beaker of water with a potassium permanganate crystal",
+    "mw3cc-3": "Electron diagram of magnesium chloride, outermost shells only"
   }
 }
