@@ -4,13 +4,13 @@
     "earth1aa-5": "earth1aa-5.png",
     "earth1aa-6": "earth1aa-6.png",
     "earth1aa-7": "earth1aa-7.png",
-    "earth1ab-1": "earth1ab-1.png",
-    "earth1ab-2": "earth1ab-2.png",
-    "earth1ab-3": "earth1ab-3.png",
-    "earth1ac-4": "earth1ac-4.png",
-    "earth1ba-1": "earth1ba-1.png",
+    "earth1ab-1": "CPE01.1-8.png",
+    "earth1ab-2": "CPE01.1-9.png",
+    "earth1ab-3": "CPE01.1-10.png",
+    "earth1ac-4": "CPE01.1-14.png",
+    "earth1ba-1": "cpe01-2-1.png",
     "earth1bb-1": "earth1bb-1.png",
-    "earth1bb-2": "earth1bb-2.png",
+    "earth1bb-2": "cpe01-2-5.png",
     "earth1bc-1": "earth1bc-1.png",
     "earth2ab-1": "earth2ab-1.png",
     "earth2ab-4": "earth2ab-4.png",
@@ -53,7 +53,9 @@
     "mw5dc-1": "mw5dc-1.png",
     "mw5dc-4": "mw5dc-4.png",
     "earth2ac-6": "earth2ac-6.png",
-    "mw3cc-3": "mw3cc-3.png"
+    "mw3cc-3": "mw3cc-3.png",
+    "cpe01-2-7": "cpe01-2-7.png",
+    "mw2ac-5": "mw2ac-5.png"
   },
   "image_captions": {
     "earth1aa-1": "Question diagram",
@@ -109,6 +111,8 @@
     "mw5dc-1": "Question diagram",
     "mw5dc-4": "Question diagram",
     "earth2ac-6": "Beaker of water with a potassium permanganate crystal",
-    "mw3cc-3": "Electron diagram of magnesium chloride, outermost shells only"
+    "mw3cc-3": "Electron diagram of magnesium chloride, outermost shells only",
+    "cpe01-2-7": "Question diagram",
+    "mw2ac-5": "Question diagram"
   }
 }
