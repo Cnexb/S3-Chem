@@ -38,6 +38,8 @@ const UI = {
     bankNone: "Select at least one quiz set.",
     lblCount: "Full sets (fixed order)",
     btnGenerate: "Show selected sets",
+    btnSelectAll: "Select all",
+    btnClear: "Clear",
     txtGenHint: "Select one or more parts. Each part has at most 4 questions, in the original order.",
     lblFormats: "Question type",
     bankSummaryTitle: "Question bank",
@@ -107,6 +109,8 @@ const UI = {
     bankNone: "请至少选择一个题组。",
     lblCount: "整组（固定次序）",
     btnGenerate: "显示所选题组",
+    btnSelectAll: "全选",
+    btnClear: "清除",
     txtGenHint: "可多选分部。每一分部最多 4 题，顺序与原来相同。",
     hExport: "导出",
     txtExportHint: "Word：下载 .doc 以 Word 打开。PDF 请用「打印」→「另存 PDF」。",
@@ -168,6 +172,8 @@ const UI = {
     bankNone: "請至少選擇一個題組。",
     lblCount: "整組（固定次序）",
     btnGenerate: "顯示所選題組",
+    btnSelectAll: "全選",
+    btnClear: "清除",
     txtGenHint: "可多選分部。每一分部最多 4 題，順序與原來相同。",
     hExport: "匯出",
     txtExportHint: "Word：下載 .doc 以 Word 開啟。PDF 請用「列印」→「另存 PDF」。",
@@ -351,23 +357,54 @@ export function initQuiz() {
     return counts;
   }
 
+  function applyPartSelection() {
+    updateBankSummary();
+    // Selecting sets loads all questions from those sets in fixed bank order.
+    if (selectedSections().length) generate();
+    else {
+      lastQuestions = [];
+      attemptMap.clear();
+      updateProgress();
+      renderQuiz();
+    }
+  }
+
+  function partMatchesCode(sec, code) {
+    const starts = (text) => String(text || "").startsWith(code);
+    if (starts(sec.label) || starts(sec.labelZh)) return true;
+    const key = startKey(sec);
+    return QUIZ_ITEMS.some((q) => questionStartKey(q) === key && starts(q.section));
+  }
+
+  function setPartChecks(mode) {
+    if (!els.typeChecks) return;
+    els.typeChecks.querySelectorAll("input[type='checkbox']").forEach((box) => {
+      if (mode === "all") {
+        box.checked = true;
+        return;
+      }
+      if (mode === "none") {
+        box.checked = false;
+        return;
+      }
+      const sec = QUIZ_SECTIONS.find((s) => startKey(s) === box.value);
+      box.checked = !!(sec && partMatchesCode(sec, mode));
+    });
+    applyPartSelection();
+  }
+
   function bindFilterListeners() {
     const panel = document.getElementById("settings-panel");
     if (!panel || panel.dataset.bankListeners === "1") return;
     panel.dataset.bankListeners = "1";
     panel.addEventListener("change", (e) => {
       const t = e.target;
-      if (t?.matches?.("#quiz-type-checks input")) {
-        updateBankSummary();
-        // Selecting sets loads all questions from those sets in fixed bank order.
-        if (selectedSections().length) generate();
-        else {
-          lastQuestions = [];
-          attemptMap.clear();
-          updateProgress();
-          renderQuiz();
-        }
-      }
+      if (t?.matches?.("#quiz-type-checks input")) applyPartSelection();
+    });
+    document.getElementById("quiz-part-picks")?.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-pick]");
+      if (!btn) return;
+      setPartChecks(btn.getAttribute("data-pick"));
     });
   }
 

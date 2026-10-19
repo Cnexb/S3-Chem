@@ -3200,7 +3200,7 @@
     "ch": 44,
     "n": 1,
     "code": "MW2Db",
-    "stem": "The atomic number of element X is 35. Which of the following elements has chemical properties\nsimilar to those of element X?",
+    "stem": "The atomic number of element X is 35. Which of the following elements has chemical properties similar to those of element X?",
     "stemZh": "",
     "options": [
       "Oxygen",
@@ -3296,7 +3296,7 @@
     "ch": 44,
     "n": 7,
     "code": "MW2Db",
-    "stem": "The atomic number of the element astatine (At) is 85. Which of the following statements about astatine\nis / are correct?\n(1) It is a gas at room temperature and pressure.\n(2) It is soluble in non-aqueous solvents.\n(3) It has a giant covalent structure.",
+    "stem": "The atomic number of the element astatine (At) is 85. Which of the following statements about astatine is / are correct?\n(1) It is a gas at room temperature and pressure.\n(2) It is soluble in non-aqueous solvents.\n(3) It has a giant covalent structure.",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -3312,7 +3312,7 @@
     "ch": 45,
     "n": 1,
     "code": "MW2Dc",
-    "stem": "The element astatine is below iodine in Group VII of the periodic table. Which of the following\nstatements about astatine is / are correct?\n(1) It is a coloured solid at room conditions.\n(2) It is more reactive than chlorine.\n(3) It is a Period 5 element.",
+    "stem": "The element astatine is below iodine in Group VII of the periodic table. Which of the following statements about astatine is / are correct?\n(1) It is a coloured solid at room conditions.\n(2) It is more reactive than chlorine.\n(3) It is a Period 5 element.",
     "stemZh": "",
     "options": [
       "(1) only",
@@ -3328,7 +3328,7 @@
     "ch": 45,
     "n": 2,
     "code": "MW2Dc",
-    "stem": "The element krypton (Kr) is below argon in Group 0 of the periodic table. Which of the following\nstatements about krypton are correct?\n(1) Its atom has an octet structure in the outermost shell.\n(2) It is in Period 4 of the periodic table.\n(3) Its density is higher than that of argon.",
+    "stem": "The element krypton (Kr) is below argon in Group 0 of the periodic table. Which of the following statements about krypton are correct?\n(1) Its atom has an octet structure in the outermost shell.\n(2) It is in Period 4 of the periodic table.\n(3) Its density is higher than that of argon.",
     "stemZh": "",
     "options": [
       "(1) and (2) only",
