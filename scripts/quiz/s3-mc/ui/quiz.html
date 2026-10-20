@@ -75,9 +75,64 @@ tailwind.config = {
 .quiz-stem-table th, .quiz-stem-table td { border: 1px solid rgba(193, 198, 213, 0.6); padding: 0.4rem 0.6rem; text-align: left; }
 .quiz-stem-table th { background: rgba(242, 244, 246, 0.9); font-weight: 600; }
 .summary-panel[hidden] { display: none !important; }
-#settings-panel { transition: opacity 0.35s ease, transform 0.35s ease; }
+html, body {
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+}
+body { display: flex; flex-direction: column; }
+#quiz-layout {
+  flex: 1 1 0%;
+  min-height: 0;
+  width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  align-items: stretch;
+  grid-template-rows: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+#settings-panel {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+#quiz-column {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  order: -1;
+}
+#quiz-column > :first-child { flex-shrink: 0; }
+#quiz-container {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#quiz-container > .relative {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+@media (min-width: 1024px) {
+  #quiz-layout { grid-template-rows: minmax(0, 1fr); }
+  #quiz-column { order: 0; }
+}
 #quiz-layout.settings-collapsed #settings-panel { display: none; }
-#quiz-layout.settings-collapsed { grid-template-columns: 1fr !important; }
+#quiz-layout.settings-collapsed {
+  grid-template-columns: 1fr !important;
+  grid-template-rows: minmax(0, 1fr) !important;
+}
 .settings-toggle-btn { transition: transform 0.2s, border-color 0.2s; }
 .settings-toggle-btn:hover { transform: scale(1.02); }
 #quiz-pdf-sheet { display: none; }
@@ -110,10 +165,12 @@ tailwind.config = {
   html, body {
     height: auto !important;
     min-height: 0 !important;
+    max-height: none !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
     background: #fff !important;
+    display: block !important;
   }
   body > *:not(#quiz-pdf-sheet) { display: none !important; }
   #quiz-pdf-sheet {
@@ -131,7 +188,7 @@ tailwind.config = {
 </style>
 <script src="https://uni-education-elearning.pages.dev/tracker/uni-tracker.js?v=20261013-topic-columns" defer></script>
 </head>
-<body class="bg-background font-body-md text-on-background min-h-screen selection:bg-primary-fixed">
+<body class="bg-background font-body-md text-on-background selection:bg-primary-fixed">
 
 <div class="hidden max-w-container-max mx-auto px-4 md:px-6 pt-4" id="file-protocol-banner">
 <div class="p-4 rounded-2xl bg-tertiary/10 border border-tertiary/30 text-body-sm text-on-surface">
@@ -144,13 +201,26 @@ if (location.protocol === "file:") {
 }
 </script>
 
-<main class="max-w-container-max mx-auto px-4 md:px-6 py-4 md:py-6 pb-12 grid grid-cols-1 lg:grid-cols-[minmax(280px,360px)_1fr] gap-6 items-start" id="quiz-layout">
+<main class="max-w-container-max mx-auto px-4 md:px-6 py-4 md:py-6 grid grid-cols-1 lg:grid-cols-[minmax(280px,360px)_minmax(0,1fr)] gap-6" id="quiz-layout">
 
-<aside class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-lg lg:sticky lg:top-2" id="settings-panel">
+<aside class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-lg" id="settings-panel">
 <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4" data-i18n="hSettings">Worksheet settings</h2>
 <div class="quiz-bank-summary mb-5 p-4 rounded-2xl bg-surface-container-low border border-outline-variant/25 text-body-sm" id="quiz-bank-summary" aria-live="polite"></div>
 <label class="block text-body-sm font-label-bold text-on-surface-variant mb-2" data-i18n="lblTypes">Quiz set</label>
-<div class="space-y-2 mb-3 max-h-[50vh] overflow-y-auto pr-1" id="quiz-type-checks"></div>
+<div class="flex flex-wrap gap-2 mb-3" id="quiz-part-picks">
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="all" data-i18n="btnSelectAll">Select all</button>
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="none" data-i18n="btnClear">Clear</button>
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="CPE01">CPE01</button>
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="CPE02">CPE02</button>
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="CPE03">CPE03</button>
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="CPE04">CPE04</button>
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="CMWA01">CMWA01</button>
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="CMWA02">CMWA02</button>
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="CMWA03">CMWA03</button>
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="CMWA04">CMWA04</button>
+<button class="py-1.5 px-3 rounded-xl border border-outline-variant/40 bg-surface font-label-bold text-body-sm hover:bg-surface-container-low" type="button" data-pick="CMWA05">CMWA05</button>
+</div>
+<div class="space-y-2 mb-3 pr-1" id="quiz-type-checks"></div>
 <p class="text-body-sm text-on-surface-variant mb-4" data-i18n="txtGenHint">Select one or more codes (e.g. Earth1Aa). All questions in those sets appear in fixed bank order.</p>
 <label class="hidden text-body-sm font-label-bold text-on-surface-variant mb-1" for="quiz-num-count" data-i18n="lblCount">Full sets (fixed order)</label>
 <input class="hidden w-full mb-4 rounded-xl border-outline-variant bg-surface-container-low focus:ring-primary focus:border-primary" id="quiz-num-count" max="500" min="1" type="number" value="500"/>
@@ -164,7 +234,7 @@ if (location.protocol === "file:") {
 </div>
 </aside>
 
-<div class="min-w-0 space-y-4">
+<div class="min-w-0 space-y-4" id="quiz-column">
 <div class="flex flex-wrap items-center justify-between gap-3 focus-dim">
 <div class="min-w-0 flex-1">
 <p class="font-label-bold text-primary text-body-sm mb-1">S3 Chem · Earth / MW codes · full set, fixed order</p>
@@ -183,7 +253,7 @@ if (location.protocol === "file:") {
 </button>
 </div>
 
-<section class="bg-surface-container-lowest p-6 md:p-10 rounded-[2rem] shadow-lg border border-outline-variant/30 min-h-[480px] focus-target transition-all duration-500 relative overflow-hidden" id="quiz-container">
+<section class="bg-surface-container-lowest p-6 md:p-10 rounded-[2rem] shadow-lg border border-outline-variant/30 focus-target transition-all duration-500 relative" id="quiz-container">
 <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-primary-fixed/20 blur-[100px] rounded-full pointer-events-none"></div>
 <div class="absolute -top-20 -left-20 w-48 h-48 bg-secondary-fixed-dim/10 blur-[80px] rounded-full pointer-events-none"></div>
 <div class="relative z-[1]">
@@ -202,6 +272,6 @@ if (location.protocol === "file:") {
 </main>
 
 <div aria-hidden="true" id="quiz-pdf-sheet"></div>
-<script type="module" src="./js/quizApp.js?v=20260904s3mc3"></script>
+<script type="module" src="./js/quizApp.js?v=20261019s3mc5"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
-import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20260904s3mc2";
-import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20260904s3mc2";
-import { downloadWord, printSheet } from "./quizExport.js?v=20260904s3mc2";
+import { QUIZ_ITEMS, QUIZ_SECTIONS } from "./quizData.js?v=20261018s3mc4";
+import { sectionLabel, renderSessionSummary } from "./quizSummary.js?v=20261018s3mc4";
+import { downloadWord, printSheet } from "./quizExport.js?v=20261018s3mc4";
 import {
   seededShuffle,
   escHtml,
@@ -17,14 +17,14 @@ import {
   buildQuizBankStats,
   filterQuizPool,
   itemSetId,
-} from "./quizUtils.js?v=20260904s3mc2";
+} from "./quizUtils.js?v=20261018s3mc4";
 import {
   animateSplitText,
   bindMagnets,
   bindTrueFocus,
   revealQuestionBlocks,
   initSettingsToggle,
-} from "./quizEffects.js?v=20260904s3mc2";
+} from "./quizEffects.js?v=20261018s3mc4";
 
 function normalizeLang(l) {
   return l === "zh-Hant" || l === "zh" ? "zh-Hant" : "en";
@@ -38,7 +38,9 @@ const UI = {
     bankNone: "Select at least one quiz set.",
     lblCount: "Full sets (fixed order)",
     btnGenerate: "Show selected sets",
-    txtGenHint: "Select one or more codes (e.g. Earth1Aa). All questions in those sets appear in fixed bank order.",
+    btnSelectAll: "Select all",
+    btnClear: "Clear",
+    txtGenHint: "Select one or more parts. Each part has at most 4 questions, in the original order.",
     lblFormats: "Question type",
     bankSummaryTitle: "Question bank",
     bankAvailable: "Available",
@@ -107,7 +109,9 @@ const UI = {
     bankNone: "请至少选择一个题组。",
     lblCount: "整组（固定次序）",
     btnGenerate: "显示所选题组",
-    txtGenHint: "可多选代号（如 Earth1Aa）。所选题组的全部题目会按题库固定次序显示。",
+    btnSelectAll: "全选",
+    btnClear: "清除",
+    txtGenHint: "可多选分部。每一分部最多 4 题，顺序与原来相同。",
     hExport: "导出",
     txtExportHint: "Word：下载 .doc 以 Word 打开。PDF 请用「打印」→「另存 PDF」。",
     btnDocQ: "Word — 试题",
@@ -168,7 +172,9 @@ const UI = {
     bankNone: "請至少選擇一個題組。",
     lblCount: "整組（固定次序）",
     btnGenerate: "顯示所選題組",
-    txtGenHint: "可多選代號（如 Earth1Aa）。所選題組的全部題目會按題庫固定次序顯示。",
+    btnSelectAll: "全選",
+    btnClear: "清除",
+    txtGenHint: "可多選分部。每一分部最多 4 題，順序與原來相同。",
     hExport: "匯出",
     txtExportHint: "Word：下載 .doc 以 Word 開啟。PDF 請用「列印」→「另存 PDF」。",
     btnDocQ: "Word — 試題",
@@ -304,23 +310,30 @@ export function initQuiz() {
     };
   }
 
+  function startKey(sec) {
+    return `${sec.id}#${sec.part || 1}`;
+  }
+
+  function questionStartKey(q) {
+    return `${itemSetId(q)}#${q.part || 1}`;
+  }
+
   function updateBankSummary() {
     if (!els.bankSummary) return;
-    const { sections, formats, difficulty } = getFilterState();
+    const { sections } = getFilterState();
 
     if (!sections.length) {
       els.bankSummary.innerHTML = `<p class="font-label-bold text-on-surface mb-1">${escHtml(t("bankSummaryTitle"))}</p><p class="text-on-surface-variant">${escHtml(t("bankNone"))}</p>`;
       return;
     }
 
-    const pool = filterQuizPool(QUIZ_ITEMS, { sections, formats, difficulty });
-    const stats = buildQuizBankStats(pool, sections, formats);
+    const pool = QUIZ_ITEMS.filter((q) => sections.includes(questionStartKey(q)));
 
     const topicRows = sections
       .map((sid) => {
-        const sec = QUIZ_SECTIONS.find((s) => s.id === sid);
+        const sec = QUIZ_SECTIONS.find((s) => startKey(s) === sid);
         const label = sec ? (isChineseUI(lang) ? sec.labelZh : sec.label) : sid;
-        const n = stats.bySection[sid] || 0;
+        const n = pool.filter((q) => questionStartKey(q) === sid).length;
         return `<li class="flex justify-between gap-2"><span>${escHtml(label)}</span><span class="font-label-bold tabular-nums">${n}</span></li>`;
       })
       .join("");
@@ -328,7 +341,7 @@ export function initQuiz() {
     els.bankSummary.innerHTML = `
       <p class="font-label-bold text-on-surface mb-2">${escHtml(t("bankSummaryTitle"))}</p>
       <p class="text-on-surface-variant text-[11px] uppercase tracking-wide mb-0.5">${escHtml(t("bankAvailable"))}</p>
-      <p class="bank-available tabular-nums mb-4">${stats.total}</p>
+      <p class="bank-available tabular-nums mb-4">${pool.length}</p>
       <div>
         <p class="font-label-bold text-on-surface-variant text-[11px] uppercase tracking-wide mb-2">${escHtml(t("bankByTopic"))}</p>
         <ul class="space-y-1 text-on-surface">${topicRows}</ul>
@@ -338,9 +351,46 @@ export function initQuiz() {
   function sectionCounts() {
     const counts = Object.create(null);
     for (const q of QUIZ_ITEMS) {
-      counts[itemSetId(q)] = (counts[itemSetId(q)] || 0) + 1;
+      const key = questionStartKey(q);
+      counts[key] = (counts[key] || 0) + 1;
     }
     return counts;
+  }
+
+  function applyPartSelection() {
+    updateBankSummary();
+    // Selecting sets loads all questions from those sets in fixed bank order.
+    if (selectedSections().length) generate();
+    else {
+      lastQuestions = [];
+      attemptMap.clear();
+      updateProgress();
+      renderQuiz();
+    }
+  }
+
+  function partMatchesCode(sec, code) {
+    const starts = (text) => String(text || "").startsWith(code);
+    if (starts(sec.label) || starts(sec.labelZh)) return true;
+    const key = startKey(sec);
+    return QUIZ_ITEMS.some((q) => questionStartKey(q) === key && starts(q.section));
+  }
+
+  function setPartChecks(mode) {
+    if (!els.typeChecks) return;
+    els.typeChecks.querySelectorAll("input[type='checkbox']").forEach((box) => {
+      if (mode === "all") {
+        box.checked = true;
+        return;
+      }
+      if (mode === "none") {
+        box.checked = false;
+        return;
+      }
+      const sec = QUIZ_SECTIONS.find((s) => startKey(s) === box.value);
+      box.checked = !!(sec && partMatchesCode(sec, mode));
+    });
+    applyPartSelection();
   }
 
   function bindFilterListeners() {
@@ -349,17 +399,12 @@ export function initQuiz() {
     panel.dataset.bankListeners = "1";
     panel.addEventListener("change", (e) => {
       const t = e.target;
-      if (t?.matches?.("#quiz-type-checks input")) {
-        updateBankSummary();
-        // Selecting sets loads all questions from those sets in fixed bank order.
-        if (selectedSections().length) generate();
-        else {
-          lastQuestions = [];
-          attemptMap.clear();
-          updateProgress();
-          renderQuiz();
-        }
-      }
+      if (t?.matches?.("#quiz-type-checks input")) applyPartSelection();
+    });
+    document.getElementById("quiz-part-picks")?.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-pick]");
+      if (!btn) return;
+      setPartChecks(btn.getAttribute("data-pick"));
     });
   }
 
@@ -371,11 +416,12 @@ export function initQuiz() {
     if (els.typeChecks) {
       els.typeChecks.innerHTML = QUIZ_SECTIONS.map((sec) => {
         const label = isChineseUI(lang) ? sec.labelZh : sec.label;
-        const isOn = prev.has(sec.id);
-        const n = counts[sec.id] || 0;
+        const key = startKey(sec);
+        const isOn = prev.has(key);
+        const n = counts[key] || 0;
         return `
         <label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low border border-outline-variant/20 cursor-pointer">
-          <input type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary" value="${sec.id}" ${isOn ? "checked" : ""} />
+          <input type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary" value="${key}" ${isOn ? "checked" : ""} />
           <span class="text-body-sm text-on-surface flex-1">${escHtml(label)}</span>
           <span class="text-body-sm font-label-bold tabular-nums text-on-surface-variant shrink-0">${n}</span>
         </label>`;
@@ -401,12 +447,12 @@ export function initQuiz() {
     }
     const formats = selectedFormats();
 
-    // Fixed bank order: every question in the chosen set(s), no shuffle / no count cap.
-    const sectionOrder = QUIZ_SECTIONS.map((s) => s.id).filter((id) => sections.includes(id));
+    // Fixed bank order: the chosen part only, no shuffle and no extra questions.
+    const sectionOrder = QUIZ_SECTIONS.map((s) => startKey(s)).filter((id) => sections.includes(id));
     const pool = [];
     for (const sid of sectionOrder) {
       for (const q of QUIZ_ITEMS) {
-        if (itemSetId(q) === sid && formats.includes(questionFormat(q))) pool.push(q);
+        if (questionStartKey(q) === sid && formats.includes(questionFormat(q))) pool.push(q);
       }
     }
     if (!pool.length) {
@@ -485,11 +531,12 @@ export function initQuiz() {
         q.difficulty.toUpperCase();
       wrap.appendChild(head);
 
-      if (q.image?.src) {
+      const figs = q.images?.length ? q.images.filter((img) => img?.src) : q.image?.src ? [q.image] : [];
+      for (const image of figs) {
         const fig = document.createElement("figure");
         fig.className = "quiz-fig mb-4";
-        fig.innerHTML = `<img src="${escHtml(q.image.src)}" alt="${escHtml(q.image.alt || "")}" loading="lazy" />
-          <figcaption class="text-body-sm text-on-surface-variant mt-2">${escHtml(q.image.caption || "")}</figcaption>`;
+        fig.innerHTML = `<img src="${escHtml(image.src)}" alt="${escHtml(image.alt || "")}" loading="lazy" />
+          ${image.caption ? `<figcaption class="text-body-sm text-on-surface-variant mt-2">${escHtml(image.caption)}</figcaption>` : ""}`;
         wrap.appendChild(fig);
       }
 
