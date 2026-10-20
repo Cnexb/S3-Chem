@@ -230,23 +230,23 @@
       "topic": "CPE02",
       "section": "CPE02.1",
       "difficulty": "Applied",
-      "stem": "Which of the following comparisons between ironII) sulphide and a mixture of iron and sulphur is\ncorrect?\nIron(II) sulphide",
+      "stem": "Which of the following comparisons between iron(II) sulphide and a mixture of iron and sulphur is correct?",
       "options": [
         {
           "key": "A",
-          "text": "mixture of iron and sulphur elements in it have a fixed ratio only iron is attracted to magnet has a sharp melting point constituents can be separated by physical methods"
+          "text": "Iron(II) sulphide: elements in it does not have a fixed ratio. A mixture of iron and sulphur: elements in it have a fixed ratio."
         },
         {
           "key": "B",
-          "text": "attracted to magnet"
+          "text": "Iron(II) sulphide: attracted to magnet. A mixture of iron and sulphur: only iron is attracted to magnet."
         },
         {
           "key": "C",
-          "text": "does not have a sharp melting point"
+          "text": "Iron(II) sulphide: does not have a sharp melting point. A mixture of iron and sulphur: has a sharp melting point."
         },
         {
           "key": "D",
-          "text": "constituents can be separated by chemical methods"
+          "text": "Iron(II) sulphide: constituents can be separated by chemical methods. A mixture of iron and sulphur: constituents can be separated by physical methods."
         }
       ],
       "answer": "D"
@@ -334,7 +334,7 @@
       "topic": "CPE02",
       "section": "CPE02.1",
       "difficulty": "Applied",
-      "stem": "In a certain experiment, a student placed a piece of potassium permanganate crystal in a beaker of water\nas shown below.\n• water\n- potassium permanganate\ncrystal\nWhich of the following statements about the experiment is / are correct?\n(1) A yellow colour spread in the beaker.\n(2) The potassium permanganate particles mixed with the water particles.\n(3) A chemical change occurred.",
+      "stem": "In a certain experiment, a student placed a piece of potassium permanganate crystal in a beaker of water as shown below.\nWhich of the following statements about the experiment is / are correct?\n(1) A yellow colour spread in the beaker.\n(2) The potassium permanganate particles mixed with the water particles.\n(3) A chemical change occurred.",
       "options": [
         {
           "key": "A",
@@ -353,7 +353,12 @@
           "text": "(2) and (3) only"
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "image": {
+        "src": "assets/earth2ac-6.png",
+        "alt": "Beaker of water with a potassium permanganate crystal",
+        "caption": "Beaker of water with a potassium permanganate crystal"
+      }
     },
     {
       "id": "CPE02.1-14",

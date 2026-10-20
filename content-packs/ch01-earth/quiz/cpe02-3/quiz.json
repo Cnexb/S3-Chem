@@ -168,7 +168,7 @@
       "topic": "CPE02",
       "section": "CPE02.3",
       "difficulty": "Standard",
-      "stem": "The following table gives some information of the components in a sample of liquefied gases:\nIn what order would the components separate out when the sample undergoes fractional distillation?",
+      "stem": "The following table gives some information of the components in a sample of liquefied gases:\n| Gas | Boiling point (°C) |\n| --- | --- |\n| X | −183 |\n| Y | −186 |\n| Z | −196 |\nIn what order would the components separate out when the sample undergoes fractional distillation?",
       "options": [
         {
           "key": "A",

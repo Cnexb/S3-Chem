@@ -90,7 +90,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.1",
       "difficulty": "Standard",
-      "stem": "Consider the information listed below:\nWhich of the following combinations is correct?",
+      "stem": "Consider the information listed below:\n|  | Substance | Attraction between particles in substance |\n| --- | --- | --- |\n| (1) | argon | van der Waals’ forces |\n| (2) | quartz | covalent bond |\n| (3) | silver | metallic bond |\nWhich of the following combinations is correct?",
       "options": [
         {
           "key": "A",

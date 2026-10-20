@@ -16,19 +16,19 @@
       "options": [
         {
           "key": "A",
-          "text": "lons: copper(II) ion; Colour: reddish brown"
+          "text": "Ions: copper(II) ion; Colour: reddish brown"
         },
         {
           "key": "B",
-          "text": "lons: cobalt(II) ion; Colour: pink"
+          "text": "Ions: cobalt(II) ion; Colour: pink"
         },
         {
           "key": "C",
-          "text": "lons: dichromate ion; Colour: orange"
+          "text": "Ions: dichromate ion; Colour: orange"
         },
         {
           "key": "D",
-          "text": "lons: permanganate ion; Colour: purple"
+          "text": "Ions: permanganate ion; Colour: purple"
         }
       ],
       "answer": "A"
@@ -38,7 +38,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.5",
       "difficulty": "Foundation",
-      "stem": "41. coloured crystal moistened filter paper microscope slide 20 V d.c. power supply A colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be A chromium(I) sulphate. B iron(III) chloride. C potassium permanganate. D sodium sulphate.\nA colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be",
+      "stem": "A colour moves towards the left in the above set-up. The coloured crystal on the filter paper could be",
       "options": [
         {
           "key": "A",
@@ -178,7 +178,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.5",
       "difficulty": "Applied",
-      "stem": "The table below shows the colour of the aqueous solutions of three ionic compounds.\nWhich of the following combinations about the colour of the ions is most likely to be correct?",
+      "stem": "The table below shows the colour of the aqueous solutions of three ionic compounds.\n| Compound | Colour of aqueous solution |\n| --- | --- |\n| WX | yellow |\n| YX | colourless |\n| YZ | purple |\nWhich of the following combinations about the colour of the ions is most likely to be correct?",
       "options": [
         {
           "key": "A",

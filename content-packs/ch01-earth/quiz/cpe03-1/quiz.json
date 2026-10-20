@@ -90,11 +90,11 @@
       "topic": "CPE03",
       "section": "CPE03.1",
       "difficulty": "Standard",
-      "stem": "The diagram below shows a piece of apparatus containing two immiscible liquids P and Q.\nWhich of the following statements is / are correct?\n(1) The apparatus shown is a tap funnel.\n(2) P is less dense than Q.\n(3) The apparatus can be used to separate a mixture of oil and water.\n(2) only",
+      "stem": "The diagram below shows a piece of apparatus containing two immiscible liquids P and Q.\nWhich of the following statements is / are correct?\n(1) The apparatus shown is a tap funnel.\n(2) P is less dense than Q.\n(3) The apparatus can be used to separate a mixture of oil and water.",
       "options": [
         {
           "key": "A",
-          "text": "(I) only"
+          "text": "(1) only"
         },
         {
           "key": "B",

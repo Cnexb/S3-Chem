@@ -120,7 +120,7 @@
       "options": [
         {
           "key": "A",
-          "text": "(L) and (2) only"
+          "text": "(1) and (2) only"
         },
         {
           "key": "B",
@@ -220,7 +220,7 @@
       "topic": "CMWA02",
       "section": "CMWA02.1",
       "difficulty": "Standard",
-      "stem": "Which of the following statements about elements are correct?\n(1) Elements can be classified as metals, non-metals and metalloids.\n(2) An element is a substance which cannot be broken down into anything simpler by chemical\nmethods.\n(3) Ammonia is an element.",
+      "stem": "Which of the following statements about elements are correct?\n(1) Elements can be classified as metals, non-metals and metalloids.\n(2) An element is a substance which cannot be broken down into anything simpler by chemical methods.\n(3) Ammonia is an element.",
       "options": [
         {
           "key": "A",
@@ -298,7 +298,7 @@
       "topic": "CMWA02",
       "section": "CMWA02.1",
       "difficulty": "Standard",
-      "stem": "20. Element W X Y Melting point (°C) 760 -58 -189 45 Boiling point (°C) 1 210 37 -186 96 Which element is a gas at room temperature and pressure? A W B C D Y Z\nWhich element is a gas at room temperature and pressure?",
+      "stem": "| Element | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| W | 760 | 1210 |\n| X | −58 | 37 |\n| Y | −189 | −186 |\n| Z | 45 | 96 |\nWhich element is a gas at room temperature and pressure?",
       "options": [
         {
           "key": "A",
@@ -499,14 +499,19 @@
           "text": "(1), (2) and (3)"
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "image": {
+        "src": "assets/mw2ac-5.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
     },
     {
       "id": "CMWA02.1-20",
       "topic": "CMWA02",
       "section": "CMWA02.1",
       "difficulty": "Applied",
-      "stem": "The table shows the melting points and boiling points of four substances at 1 atm pressure.\nWhich substance exists as a liquid at −50 °C and 1 atm pressure?",
+      "stem": "The table shows the melting points and boiling points of four substances at 1 atm pressure.\n| Substance | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| W | −60 | −5 |\n| X | −189 | −55 |\n| Y | 40 | 60 |\n| Z | 5 | 58 |\nWhich substance exists as a liquid at −50 °C and 1 atm pressure?",
       "options": [
         {
           "key": "A",
@@ -532,7 +537,7 @@
       "topic": "CMWA02",
       "section": "CMWA02.1",
       "difficulty": "Applied",
-      "stem": "Consider the following properties of four elements, W, X, Y and Z.\nWhich of the following elements could be sulphur?",
+      "stem": "Consider the following properties of four elements, W, X, Y and Z.\n| Property | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Melting point (°C) | −189 | 972 | 119 | 98 |\n| Boiling point (°C) | −186 | 2212 | 445 | 883 |\n| Electrical conductivity | non-conductor | good conductor | non-conductor | good conductor |\nWhich of the following elements could be sulphur?",
       "options": [
         {
           "key": "A",
@@ -558,7 +563,7 @@
       "topic": "CMWA02",
       "section": "CMWA02.1",
       "difficulty": "Applied",
-      "stem": "Some physical properties of three elements, X, Y and Z, are given below:\nTo which groups do the elements belong?",
+      "stem": "Some physical properties of three elements, X, Y and Z, are given below:\n| Physical property | X | Y | Z |\n| --- | --- | --- | --- |\n| Melting point (°C) | −7 | 64 | −189 |\n| Boiling point (°C) | 58 | 760 | −186 |\n| Colour | reddish brown | silvery | colourless |\n| Density (g cm⁻³) | 3.1 | 0.86 | 0.00178 |\nTo which groups do the elements belong?",
       "options": [
         {
           "key": "A",
