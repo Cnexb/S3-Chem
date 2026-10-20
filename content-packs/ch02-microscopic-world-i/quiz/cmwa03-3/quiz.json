@@ -4,7 +4,7 @@
   "symbol": "MWI3C",
   "title": {
     "en": "CMWA03.3 Ionic Bond Electron Diagram",
-    "zhHant": "CMWA03.3 離子鍵電子圖"
+    "zhHant": "離子鍵電子圖"
   },
   "items": [
     {
@@ -59,7 +59,7 @@
       ],
       "answer": "D",
       "image": {
-        "src": "assets/mw3ca-2.png",
+        "src": "assets/cmwa03-3a-2.png",
         "alt": "Option diagrams A–D",
         "caption": "Option diagrams A–D"
       }
@@ -116,7 +116,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/mw3cb-1.png",
+        "src": "assets/cmwa03-3b-1.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -225,7 +225,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/mw3cc-1.png",
+        "src": "assets/cmwa03-3c-1.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

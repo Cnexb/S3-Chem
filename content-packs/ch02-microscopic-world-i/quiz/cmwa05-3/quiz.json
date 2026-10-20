@@ -4,7 +4,7 @@
   "symbol": "MWI5C",
   "title": {
     "en": "CMWA05.3 Simple Molecular Structure",
-    "zhHant": "CMWA05.3 簡單分子結構"
+    "zhHant": "簡單分子結構"
   },
   "items": [
     {
@@ -319,7 +319,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/mw5cc-1.png",
+        "src": "assets/cmwa05-3c-1.png",
         "alt": "Option diagrams A–D",
         "caption": "Option diagrams A–D"
       }
@@ -350,7 +350,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/mw5cc-2.png",
+        "src": "assets/cmwa05-3c-2.png",
         "alt": "Option diagrams A–D",
         "caption": "Option diagrams A–D"
       }
@@ -407,7 +407,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/mw5cc-4.png",
+        "src": "assets/cmwa05-3c-4.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

@@ -4,7 +4,7 @@
   "symbol": "Earth1B",
   "title": {
     "en": "CPE01.2 Laboratory Safety",
-    "zhHant": "CPE01.2 實驗室安全"
+    "zhHant": "實驗室安全"
   },
   "items": [
     {
@@ -33,7 +33,7 @@
       ],
       "answer": "D",
       "image": {
-        "src": "assets/earth1ba-1.png",
+        "src": "assets/cpe01-2a-1.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -116,7 +116,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/earth1bb-1.png",
+        "src": "assets/cpe01-2b-1.png",
         "alt": "Option diagrams A–D",
         "caption": "Option diagrams A–D"
       }
@@ -147,7 +147,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/earth1bb-2.png",
+        "src": "assets/cpe01-2b-2.png",
         "alt": "Option diagrams A–D",
         "caption": "Option diagrams A–D"
       }
@@ -230,7 +230,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/earth1bc-1.png",
+        "src": "assets/cpe01-2c-1.png",
         "alt": "Question diagrams",
         "caption": "Question diagrams"
       }

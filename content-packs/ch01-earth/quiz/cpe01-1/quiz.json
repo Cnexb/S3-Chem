@@ -4,7 +4,7 @@
   "symbol": "Earth1A",
   "title": {
     "en": "CPE01.1 Laboratory Apparatus",
-    "zhHant": "CPE01.1 實驗室儀器"
+    "zhHant": "實驗室儀器"
   },
   "items": [
     {
@@ -33,7 +33,7 @@
       ],
       "answer": "D",
       "image": {
-        "src": "assets/earth1aa-1.png",
+        "src": "assets/cpe01-1a-1.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -142,7 +142,7 @@
       ],
       "answer": "D",
       "image": {
-        "src": "assets/earth1aa-5.png",
+        "src": "assets/cpe01-1a-5.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -173,7 +173,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/earth1aa-6.png",
+        "src": "assets/cpe01-1a-6.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -204,7 +204,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/earth1aa-7.png",
+        "src": "assets/cpe01-1a-7.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -235,7 +235,7 @@
       ],
       "answer": "D",
       "image": {
-        "src": "assets/earth1ab-1.png",
+        "src": "assets/cpe01-1b-1.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -266,7 +266,7 @@
       ],
       "answer": "B",
       "image": {
-        "src": "assets/earth1ab-2.png",
+        "src": "assets/cpe01-1b-2.png",
         "alt": "Question diagrams",
         "caption": "Question diagrams"
       }
@@ -297,7 +297,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/earth1ab-3.png",
+        "src": "assets/cpe01-1b-3.png",
         "alt": "Question diagrams",
         "caption": "Question diagrams"
       }
@@ -406,7 +406,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/earth1ac-4.png",
+        "src": "assets/cpe01-1c-4.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

@@ -4,7 +4,7 @@
   "symbol": "MWI1A",
   "title": {
     "en": "CMWA01.1 Atomic Structure",
-    "zhHant": "CMWA01.1 原子結構"
+    "zhHant": "原子結構"
   },
   "items": [
     {
@@ -371,7 +371,7 @@
       ],
       "answer": "B",
       "image": {
-        "src": "assets/mw1ab-6.png",
+        "src": "assets/cmwa01-1b-6.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

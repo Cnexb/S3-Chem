@@ -4,7 +4,7 @@
   "symbol": "Earth4B",
   "title": {
     "en": "CPE04.2 Lime Cycle",
-    "zhHant": "CPE04.2 石灰循環"
+    "zhHant": "石灰循環"
   },
   "items": [
     {
@@ -59,7 +59,7 @@
       ],
       "answer": "B",
       "image": {
-        "src": "assets/earth4ba-2.png",
+        "src": "assets/cpe04-2a-2.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -220,7 +220,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/earth4bc-1.png",
+        "src": "assets/cpe04-2c-1.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -251,7 +251,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/earth4bc-2.png",
+        "src": "assets/cpe04-2c-2.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

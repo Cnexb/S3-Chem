@@ -4,7 +4,7 @@
   "symbol": "MWI2B",
   "title": {
     "en": "CMWA02.2 Periodic Table",
-    "zhHant": "CMWA02.2 週期表"
+    "zhHant": "週期表"
   },
   "items": [
     {
@@ -215,7 +215,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/mw2ba-8.png",
+        "src": "assets/cmwa02-2a-8.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -402,7 +402,7 @@
       ],
       "answer": "B",
       "image": {
-        "src": "assets/mw2bc-4.png",
+        "src": "assets/cmwa02-2c-4.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

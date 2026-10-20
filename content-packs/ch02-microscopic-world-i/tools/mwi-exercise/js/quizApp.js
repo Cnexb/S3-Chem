@@ -30,6 +30,18 @@ import {
   initSettingsToggle,
 } from "./quizEffects.js";
 
+const SECTION_TRACK = {
+  "atomic-structure": { quizId: "chem-cmwa01", section: "CMWA01" },
+  "periodic-table": { quizId: "chem-cmwa02", section: "CMWA02" },
+  "ionic-bond": { quizId: "chem-cmwa03", section: "CMWA03" },
+  "covalent-bond": { quizId: "chem-cmwa04", section: "CMWA04" },
+  "structure-properties": { quizId: "chem-cmwa05", section: "CMWA05" },
+};
+
+function trackMeta(q) {
+  return SECTION_TRACK[q.section] || { quizId: "chem-cmwa01", section: q.section };
+}
+
 const UI = {
   en: {
     appSubtitle: "HKDSE worksheet practice · English / 繁體中文 UI",
@@ -766,9 +778,9 @@ export function initQuiz() {
             window.postMessage({
               type: 'uniplus:quizAnswer',
               subject: 'CHEM',
-              quizId: 'chem-microscopic-world-i-exercise',
+              quizId: trackMeta(q).quizId,
               questionId: q.id,
-              section: q.section,
+              section: trackMeta(q).section,
               difficulty: q.difficulty,
               stem: q.stem || null,
               selectedAnswer: fmt === 'fill' ? fillInputs.map(i => i.value).join('|') : (state.selected || null),
@@ -820,9 +832,9 @@ export function initQuiz() {
             window.postMessage({
               type: 'uniplus:quizAnswer',
               subject: 'CHEM',
-              quizId: 'chem-microscopic-world-i-exercise',
+              quizId: trackMeta(q).quizId,
               questionId: q.id,
-              section: q.section,
+              section: trackMeta(q).section,
               difficulty: q.difficulty,
               stem: q.stem || null,
               selectedAnswer: fmt === 'fill' ? fillInputs.map(i => i.value).join('|') : (state.selected || null),

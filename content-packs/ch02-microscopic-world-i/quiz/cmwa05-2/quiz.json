@@ -4,7 +4,7 @@
   "symbol": "MWI5B",
   "title": {
     "en": "CMWA05.2 Giant Ionic Structure",
-    "zhHant": "CMWA05.2 巨型離子結構"
+    "zhHant": "巨型離子結構"
   },
   "items": [
     {
@@ -85,7 +85,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/mw5ba-3.png",
+        "src": "assets/cmwa05-2a-3.png",
         "alt": "Option diagrams A–D",
         "caption": "Option diagrams A–D"
       }

@@ -4,7 +4,7 @@
   "symbol": "Earth2B",
   "title": {
     "en": "CPE02.2 Physical And Chemical Change",
-    "zhHant": "CPE02.2 物理及化學變化"
+    "zhHant": "物理及化學變化"
   },
   "items": [
     {
@@ -33,7 +33,7 @@
       ],
       "answer": "D",
       "image": {
-        "src": "assets/earth2ba-1.png",
+        "src": "assets/cpe02-2a-1.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

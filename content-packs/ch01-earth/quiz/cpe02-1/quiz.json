@@ -4,7 +4,7 @@
   "symbol": "Earth2A",
   "title": {
     "en": "CPE02.1 Matters",
-    "zhHant": "CPE02.1 物質"
+    "zhHant": "物質"
   },
   "items": [
     {
@@ -111,7 +111,7 @@
       ],
       "answer": "D",
       "image": {
-        "src": "assets/earth2ab-1.png",
+        "src": "assets/cpe02-1b-1.png",
         "alt": "Option diagrams A–D",
         "caption": "Option diagrams A–D"
       }
@@ -194,7 +194,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/earth2ab-4.png",
+        "src": "assets/cpe02-1b-4.png",
         "alt": "Option diagrams A–D",
         "caption": "Option diagrams A–D"
       }
@@ -381,7 +381,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/earth2ac-7.png",
+        "src": "assets/cpe02-1c-7.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

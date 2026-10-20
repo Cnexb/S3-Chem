@@ -4,7 +4,7 @@
   "symbol": "MWI3D",
   "title": {
     "en": "CMWA03.4 Naming Of Ionic Compound",
-    "zhHant": "CMWA03.4 離子化合物的命名"
+    "zhHant": "離子化合物的命名"
   },
   "items": [
     {
@@ -293,7 +293,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/mw3db-8.png",
+        "src": "assets/cmwa03-4b-8.png",
         "alt": "Option diagrams A–D",
         "caption": "Option diagrams A–D"
       }

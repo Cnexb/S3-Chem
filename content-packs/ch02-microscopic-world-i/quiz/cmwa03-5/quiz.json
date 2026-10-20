@@ -4,7 +4,7 @@
   "symbol": "MWI3E",
   "title": {
     "en": "CMWA03.5 Color Of Ions",
-    "zhHant": "CMWA03.5 離子的顏色"
+    "zhHant": "離子的顏色"
   },
   "items": [
     {
@@ -59,7 +59,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/mw3ea-2.png",
+        "src": "assets/cmwa03-5a-2.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -90,7 +90,7 @@
       ],
       "answer": "B",
       "image": {
-        "src": "assets/mw3ea-3.png",
+        "src": "assets/cmwa03-5a-3.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

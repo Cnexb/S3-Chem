@@ -25,6 +25,17 @@ import {
   initSettingsToggle,
 } from "./quizEffects.js?v=20260713v1";
 
+const SECTION_TRACK = {
+  "atom-isotopes": { quizId: "chem-cmwa01", section: "CMWA01" },
+  "periodic-table": { quizId: "chem-cmwa02", section: "CMWA02" },
+  "ionic-bond": { quizId: "chem-cmwa03", section: "CMWA03" },
+  "covalent-bond": { quizId: "chem-cmwa04", section: "CMWA04" },
+};
+
+function trackMeta(q) {
+  return SECTION_TRACK[q.section] || { quizId: "chem-cmwa01", section: q.section };
+}
+
 function normalizeLang(l) {
   return l === "zh-Hant" || l === "zh" ? "zh-Hant" : "en";
 }
@@ -633,9 +644,9 @@ export function initQuiz() {
             window.postMessage({
               type: 'uniplus:quizAnswer',
               subject: 'CHEM',
-              quizId: 'chem-microscopic-world-i',
+              quizId: trackMeta(q).quizId,
               questionId: q.id,
-              section: q.section,
+              section: trackMeta(q).section,
               difficulty: q.difficulty,
               stem: q.stem || null,
               selectedAnswer: fmt === 'fill' ? fillInputs.map(i => i.value).join('|') : (state.selected || null),
@@ -674,9 +685,9 @@ export function initQuiz() {
           window.postMessage({
             type: 'uniplus:quizAnswer',
             subject: 'CHEM',
-            quizId: 'chem-microscopic-world-i',
+            quizId: trackMeta(q).quizId,
             questionId: q.id,
-            section: q.section,
+            section: trackMeta(q).section,
             difficulty: q.difficulty,
             stem: q.stem || null,
             selectedAnswer: fmt === 'fill' ? fillInputs.map(i => i.value).join('|') : (state.selected || null),

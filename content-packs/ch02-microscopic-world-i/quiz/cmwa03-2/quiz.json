@@ -4,7 +4,7 @@
   "symbol": "MWI3B",
   "title": {
     "en": "CMWA03.2 Ions Formation",
-    "zhHant": "CMWA03.2 離子的形成"
+    "zhHant": "離子的形成"
   },
   "items": [
     {
@@ -527,7 +527,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/mw3bc-6.png",
+        "src": "assets/cmwa03-2c-6.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

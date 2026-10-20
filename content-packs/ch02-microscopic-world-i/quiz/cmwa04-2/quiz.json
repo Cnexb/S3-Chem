@@ -4,7 +4,7 @@
   "symbol": "MWI4B",
   "title": {
     "en": "CMWA04.2 Dative Covalent Bond",
-    "zhHant": "CMWA04.2 配位共價鍵"
+    "zhHant": "配位共價鍵"
   },
   "items": [
     {
@@ -111,7 +111,7 @@
       ],
       "answer": "C",
       "image": {
-        "src": "assets/mw4bb-1.png",
+        "src": "assets/cmwa04-2b-1.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }

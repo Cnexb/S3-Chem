@@ -4,7 +4,7 @@
   "symbol": "Earth3A",
   "title": {
     "en": "CPE03.1 Physical Separation",
-    "zhHant": "CPE03.1 物理分離"
+    "zhHant": "物理分離"
   },
   "items": [
     {
@@ -111,7 +111,7 @@
       ],
       "answer": "D",
       "image": {
-        "src": "assets/earth3ab-1.png",
+        "src": "assets/cpe03-1b-1.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
@@ -324,7 +324,7 @@
       ],
       "answer": "A",
       "image": {
-        "src": "assets/earth3ac-5.png",
+        "src": "assets/cpe03-1c-5.png",
         "alt": "Question diagram",
         "caption": "Question diagram"
       }
