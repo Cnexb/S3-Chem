@@ -417,7 +417,18 @@ export const zhHantUI = {
     "labMatchName": "Earth1A-B_Laboratory apparatus+Laboratory safety_(實驗器皿與危險標示配對)",
     "labMatchDesc": "配對遊戲：中英實驗器皿名稱與圖片，以及職安處化學品危險標籤。",
     "flameFireworksName": "MWI3E_Color of ions_(焰色試驗煙火)",
-    "flameFireworksDesc": "以金屬離子設計圓形煙火圖案，在夜景背景發射，並可下載合成圖片。"
+    "flameFireworksDesc": "以金屬離子設計圓形煙火圖案，在夜景背景發射，並可下載合成圖片。",
+    "catMoreGames": "更多遊戲",
+    "calcariusName": "Earth4B_Limecycle_(Calcarius 石頭之王)",
+    "calcariusDesc": "回合制石灰循環對戰。選擇招式，擊敗石頭之王 Calcarius。",
+    "structureBreachName": "MWI5_Structures and properties of substances_(結構突破)",
+    "structureBreachDesc": "切換武器，對應金屬、離子、巨型共價和簡單分子結構。",
+    "metalExtractionArcadeName": "Earth4A_Extraction of metals_(金屬提取街機)",
+    "metalExtractionArcadeDesc": "三條街機路線：礦石搜尋、高爐衝刺、電解衝刺（砌鋁電解池、半反應式與產物選擇題）。",
+    "chemLabHqScrambleName": "Earth1A-B_Laboratory apparatus+Laboratory safety_(化學實驗室總部限時混合挑戰)",
+    "chemLabHqScrambleDesc": "限時混合：十題，來自儀器站和實驗室安全。15 分鐘，按鍵 1-4，只保留最佳成績。",
+    "classificationShooterName": "Earth2A_Matters_(物質分類)",
+    "classificationShooterDesc": "射擊遊戲：選擇類別和難度，射擊屬於該類別的化學式。WASD 移動，滑鼠瞄準；手機模式有搖桿。"
   },
   "lab": {
     "pageTitle": "互動實驗室",
@@ -468,7 +479,22 @@ export const zhHantUI = {
     "chemicalEquilibriumName": "Eqm3_Le Châtelier's Principle_(化學平衡實驗室)",
     "chemicalEquilibriumDesc": "干擾 Fe³⁺/SCN⁻ 與 NO₂/N₂O₄ 平衡，即時觀察顏色、圖表與微觀粒子移動。",
     "organicChemistryName": "OrgI3_Alkanes and alkenes_(有機化學實驗室)",
-    "organicChemistryDesc": "建構碳化合物、練習 IUPAC 命名與結構繪圖（中四／文憑試）。"
+    "organicChemistryDesc": "建構碳化合物、練習 IUPAC 命名與結構繪圖（中四／文憑試）。",
+    "catEarth4": "Earth4 · Extraction of metals, Limecycle",
+    "wordEquationWorksheetName": "Earth4A-B_Extraction of metals+Limecycle_(文字方程式工作紙)",
+    "wordEquationWorksheetDesc": "三個level的文字方程式練習（拖放填空、砌方程式或鍵入）：石灰循環、酸雨、金屬提取、硝酸銀測試。",
+    "flameTestSimulatorName": "MWI3E_Color of ions_(焰色試驗模擬器)",
+    "flameTestSimulatorDesc": "練習和測試模式：清潔鉑絲，再按火焰顏色辨認 K+、Na+、Ca2+、Cu2+（或無）。包含紅熱鉑絲的安全檢查。",
+    "colouredIonMigrationName": "MWI3E_Color of ions_(有色離子遷移)",
+    "colouredIonMigrationDesc": "濾紙實驗和 U 型管，顯示有色離子如何向電極遷移。",
+    "distillationFiltrationEvaporationName": "Earth3A_Physical separation_(蒸餾、過濾、蒸發)",
+    "distillationFiltrationEvaporationDesc": "以 3D 或 2D 裝配分餾、過濾或蒸發裝置，然後檢查裝置。",
+    "slowCrystallisationName": "Earth3A_Physical separation_(緩慢結晶)",
+    "slowCrystallisationDesc": "在一頁內觀看氯化鈉緩慢結晶，附隱藏、縮放和畫筆工具。",
+    "gasChemicalTestsName": "Earth3B_Chemical tests and electrolysis_(化學測試)",
+    "gasChemicalTestsDesc": "氧氣、氫氣和二氧化碳的測試。按鍵 1-3，空白鍵播放，H 隱藏說明，P 為畫筆。",
+    "physicalChemicalSeparationName": "Earth2B_Physical and chemical change_(物理與化學分離)",
+    "physicalChemicalSeparationDesc": "以物理方法分離混合物；化合物只有輸入能量才會改變。含鐵 + 硫、沙 + 水、熔融狀態，以及自選配對的週期表。"
   },
   "worksheet": {
     "title": "練習單生成器",

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Physical vs Chemical Separation · 物理與化學分離</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="engine.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body data-sample="ironSulphur" data-phase="mixed" data-kind="mixture" data-demo="">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">HKDSE CHEMISTRY LAB</p>
+      <h1 data-i18n="title">Physical vs Chemical Separation</h1>
+      <p class="subtitle" data-i18n="subtitle">A state engine that separates mixtures physically and changes compounds only with energy input</p>
+    </div>
+    <div class="header-tools">
+      <button id="descToggle" class="desc-toggle" type="button" aria-pressed="false" data-i18n="hideText">Hide description</button>
+      <div class="language-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="zh">中文</button>
+        <button type="button" data-lang="en" class="active">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card overview-card">
+      <div class="overview-main">
+        <div>
+          <p class="section-kicker" data-i18n="labTitle">Interactive separation laboratory</p>
+          <h2 id="labHeading" data-i18n="labHeading">Choose a sample</h2>
+        </div>
+        <div class="sample-controls">
+          <div class="stage-tabs" role="tablist" aria-label="Samples">
+            <button type="button" class="stage-tab active" data-sample="ironSulphur" role="tab" aria-selected="true">
+              <span class="stage-num">1</span>
+              <span data-i18n="sampleIron">Iron + sulphur</span>
+            </button>
+            <button type="button" class="stage-tab" data-sample="sandWater" role="tab" aria-selected="false">
+              <span class="stage-num">2</span>
+              <span data-i18n="sampleSand">Sand + water</span>
+            </button>
+            <button type="button" class="stage-tab" data-sample="custom" role="tab" aria-selected="false">
+              <span class="stage-num">3</span>
+              <span data-i18n="sampleCustom">Custom pair</span>
+            </button>
+          </div>
+          <button type="button" class="stage-tab table-launch" id="openTableBtn">
+            <span data-i18n="chooseElements">Choose elements</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="summary-chips" aria-live="polite">
+        <span class="chip"><span data-i18n="chipKind">Kind</span><strong id="chipKindValue">Mixture</strong></span>
+        <span class="chip"><span data-i18n="chipBonded">Bonded</span><strong id="chipBondedValue">No</strong></span>
+        <span class="chip"><span data-i18n="chipEnergy">Energy</span><strong id="chipEnergyValue">—</strong></span>
+        <span class="chip"><span data-i18n="chipResult">Last result</span><strong id="chipResultValue">Ready</strong></span>
+      </div>
+    </section>
+
+    <div class="app-grid">
+      <section class="card stage-card">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker" data-i18n="workspace">Workspace</p>
+            <h2 id="stageTitle">Iron + sulphur mixture</h2>
+          </div>
+          <p class="temp-badge" id="formulaBadge">Fe + S</p>
+        </div>
+
+        <div id="warningBanner" class="warning-banner" hidden role="alert">
+          <div class="warning-icon" aria-hidden="true">!</div>
+          <div>
+            <strong id="warningTitle"></strong>
+            <p id="warningBody"></p>
+          </div>
+        </div>
+
+        <div class="canvas-wrap bench-wrap" aria-label="Laboratory bench">
+          <p class="demo-chip" id="demoStepChip" data-i18n="demoIdle">Idle</p>
+          <p class="temp-readout" id="tempReadout" hidden>25 °C</p>
+          <div class="particle-legend" id="particleLegend" hidden></div>
+
+          <div class="bench bench-fe" data-sample="ironSulphur">
+            <div class="watch-glass" aria-hidden="true">
+              <div class="particles" id="feParticles"></div>
+              <div class="molten-pools" id="dishPools" aria-hidden="true">
+                <div class="molten-pool" data-pool="0"></div>
+                <div class="molten-pool" data-pool="1"></div>
+              </div>
+              <div class="fes-lump"><span>FeS</span></div>
+            </div>
+            <div class="magnet" id="magnetArm" aria-hidden="true">
+              <div class="magnet-wrap">
+                <span class="wrap-film" data-i18n="clingFilm">cling film</span>
+                <div class="magnet-bar">
+                  <span class="pole north">N</span>
+                  <span class="pole south">S</span>
+                </div>
+              </div>
+              <div class="magnet-cling" id="magnetCling"></div>
+            </div>
+            <div class="burner" aria-hidden="true">
+              <div class="flame"></div>
+              <div class="burner-neck"></div>
+              <div class="burner-base"></div>
+            </div>
+          </div>
+
+          <div class="bench bench-sand" data-sample="sandWater" hidden>
+            <div class="beaker source-beaker" id="sourceBeaker" aria-hidden="true">
+              <div class="beaker-inner">
+                <div class="level-contents" id="levelContents">
+                  <div class="liquid-layer" id="liquidLayer">
+                    <div class="liquid sand-water"></div>
+                  </div>
+                  <div class="sediment-layer" id="sedimentLayer">
+                    <div class="sand-grains" id="sandGrains"></div>
+                    <div class="sand-bed"></div>
+                    <div class="molten-sand" id="moltenSand"></div>
+                  </div>
+                </div>
+              </div>
+              <span class="lip-mark" id="sourceLip"></span>
+              <span class="beaker-label" data-i18n="sourceBeaker">Mixture</span>
+            </div>
+            <div class="station station-decant" id="decantStation">
+              <div class="beaker poured-beaker" id="pouredBeaker" aria-hidden="true">
+                <div class="liquid poured-water"></div>
+                <span class="mouth-mark" id="receiverMouth"></span>
+                <span class="beaker-label" data-i18n="pouredBeaker">Decanted liquid</span>
+              </div>
+            </div>
+            <div class="station station-filter" id="filterStation">
+              <div class="filter-stand" aria-hidden="true">
+                <div class="glass-rod filter-rod"></div>
+                <span class="mouth-mark" id="funnelMouth"></span>
+                <div class="funnel">
+                  <div class="filter-paper"></div>
+                  <div class="residue-pile"></div>
+                  <span class="callout residue-callout" data-i18n="residue">Residue</span>
+                </div>
+                <div class="drip-stack">
+                  <span class="drip"></span>
+                  <span class="drip"></span>
+                  <span class="drip"></span>
+                </div>
+                <div class="beaker filtrate-beaker">
+                  <div class="liquid filtrate-water"></div>
+                </div>
+                <span class="callout filtrate-callout" data-i18n="filtrate">Filtrate</span>
+                <span class="beaker-label" data-i18n="filterLabel">Filtration</span>
+              </div>
+            </div>
+            <div class="glass-rod receiver-rod" id="decantRod" aria-hidden="true"></div>
+            <div class="lip-stream" id="lipStream" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="method-groups">
+          <div class="method-group">
+            <p class="method-label" data-i18n="physicalMethods">Physical methods</p>
+            <div class="method-buttons">
+              <button type="button" class="secondary-button" data-action="magnet" data-i18n="magnet">Magnet</button>
+              <button type="button" class="secondary-button" data-action="decant" data-i18n="decant">Decant</button>
+              <button type="button" class="secondary-button" data-action="filter" data-i18n="filter">Filter</button>
+            </div>
+          </div>
+          <div class="method-group energy-group">
+            <p class="method-label" data-i18n="chemicalMethods">Chemical / energy</p>
+            <div class="method-buttons">
+              <button type="button" class="secondary-button" data-action="melt" data-i18n="melt">Molten state</button>
+              <button type="button" class="primary-button" data-action="heat" data-i18n="heat">Strong heat</button>
+            </div>
+          </div>
+          <button id="resetButton" class="secondary-button reset-button" type="button" data-i18n="reset">Reset</button>
+        </div>
+
+        <p class="live-caption" id="liveCaption"></p>
+        <p class="equation-line" id="equationLine" hidden></p>
+      </section>
+    </div>
+  </main>
+
+  <dialog id="periodicDialog" class="periodic-dialog">
+    <form method="dialog" class="periodic-form">
+      <div class="periodic-head">
+        <div>
+          <p class="section-kicker" data-i18n="tableKicker">Periodic table</p>
+          <h2 data-i18n="tableTitle">Choose two elements</h2>
+          <p class="periodic-hint" data-i18n="tableHint">Select a pair to mix on the watch glass. Iron + sulphur still forms FeS with strong heat.</p>
+        </div>
+        <button type="submit" value="cancel" class="secondary-button" data-i18n="tableCancel">Cancel</button>
+      </div>
+      <div class="picked-row" aria-live="polite">
+        <span class="picked-chip" id="pickedA"><span data-i18n="tableSlotA">Element A</span><strong>—</strong></span>
+        <span class="picked-chip" id="pickedB"><span data-i18n="tableSlotB">Element B</span><strong>—</strong></span>
+        <button type="button" class="secondary-button" id="clearPicks" data-i18n="tableClear">Clear</button>
+        <button type="submit" value="apply" class="primary-button" id="applyPair" data-i18n="tableApply" disabled>Apply pair</button>
+      </div>
+      <div class="periodic-grid" id="periodicGrid" role="grid" aria-label="Periodic table"></div>
+    </form>
+  </dialog>
+</body>
+</html>

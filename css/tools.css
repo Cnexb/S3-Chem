@@ -106,6 +106,43 @@ html.dark-theme .chemistry-tools-page::before {
   }
 }
 
+/* Games page: more game cards (icon style) sit below the four preview cards, so the page scrolls */
+#page-tools .chem-tools-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#page-tools .chem-tools-grid--four-games {
+  flex: 0 0 auto;
+  max-height: none;
+}
+
+#page-tools .lab-hub-grid.chem-tools-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+  grid-template-rows: auto;
+  flex: 0 0 auto;
+  max-height: none;
+}
+
+#page-tools .lab-hub-category {
+  width: 100%;
+  margin: clamp(1.25rem, 3dvh, 2rem) 0 0;
+}
+
+#page-tools .lab-hub-category-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+}
+
+#page-tools .lab-tool-card.chem-tool-card {
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+}
+
 .chemistry-tools-page .chem-tools-title {
   margin-top: clamp(4px, 1vh, 12px);
   margin-bottom: clamp(8px, 1.5vh, 16px);

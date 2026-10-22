@@ -418,7 +418,18 @@ export const zhUI = {
     "labMatchName": "Earth1A-B_Laboratory apparatus+Laboratory safety_(实验器皿与危险标示配对)",
     "labMatchDesc": "配对游戏：中英实验器皿名称与图片，以及职安处化学品危险标签。",
     "flameFireworksName": "MWI3E_Color of ions_(焰色试验烟火)",
-    "flameFireworksDesc": "用金属离子设计圆形烟火图案，在夜景背景发射，并可下载合成图片。"
+    "flameFireworksDesc": "用金属离子设计圆形烟火图案，在夜景背景发射，并可下载合成图片。",
+    "catMoreGames": "更多游戏",
+    "calcariusName": "Earth4B_Limecycle_(Calcarius 石头之王)",
+    "calcariusDesc": "回合制石灰循环对战。选择招式，击败石头之王 Calcarius。",
+    "structureBreachName": "MWI5_Structures and properties of substances_(结构突破)",
+    "structureBreachDesc": "切换武器，对应金属、离子、巨型共价和简单分子结构。",
+    "metalExtractionArcadeName": "Earth4A_Extraction of metals_(金属提取街机)",
+    "metalExtractionArcadeDesc": "三条街机路线：矿石搜寻、高炉冲刺、电解冲刺（砌铝电解池、半反应式与产物选择题）。",
+    "chemLabHqScrambleName": "Earth1A-B_Laboratory apparatus+Laboratory safety_(化学实验室总部限时混合挑战)",
+    "chemLabHqScrambleDesc": "限时混合：十题，来自仪器站和实验室安全。15 分钟，按键 1-4，只保留最佳成绩。",
+    "classificationShooterName": "Earth2A_Matters_(物质分类)",
+    "classificationShooterDesc": "射击游戏：选择类别和难度，射击属于该类别的化学式。WASD 移动，鼠标瞄准；手机模式有摇杆。"
   },
   "lab": {
     "pageTitle": "互动实验室",
@@ -469,7 +480,22 @@ export const zhUI = {
     "chemicalEquilibriumName": "Eqm3_Le Châtelier's Principle_(化学平衡实验室)",
     "chemicalEquilibriumDesc": "干扰 Fe³⁺/SCN⁻ 与 NO₂/N₂O₄ 平衡，即时观察颜色、图表与微观粒子移动。",
     "organicChemistryName": "OrgI3_Alkanes and alkenes_(有机化学实验室)",
-    "organicChemistryDesc": "建构碳化合物、练习 IUPAC 命名与结构绘图（中四／文凭试）。"
+    "organicChemistryDesc": "建构碳化合物、练习 IUPAC 命名与结构绘图（中四／文凭试）。",
+    "catEarth4": "Earth4 · Extraction of metals, Limecycle",
+    "wordEquationWorksheetName": "Earth4A-B_Extraction of metals+Limecycle_(文字方程式工作纸)",
+    "wordEquationWorksheetDesc": "三个level的文字方程式练习（拖放填空、砌方程式或键入）：石灰循环、酸雨、金属提取、硝酸银测试。",
+    "flameTestSimulatorName": "MWI3E_Color of ions_(焰色试验模拟器)",
+    "flameTestSimulatorDesc": "练习和测试模式：清洁铂丝，再按火焰颜色辨认 K+、Na+、Ca2+、Cu2+（或无）。包含红热铂丝的安全检查。",
+    "colouredIonMigrationName": "MWI3E_Color of ions_(有色离子迁移)",
+    "colouredIonMigrationDesc": "滤纸实验和 U 型管，显示有色离子如何向电极迁移。",
+    "distillationFiltrationEvaporationName": "Earth3A_Physical separation_(蒸馏、过滤、蒸发)",
+    "distillationFiltrationEvaporationDesc": "以 3D 或 2D 装配分馏、过滤或蒸发装置，然后检查装置。",
+    "slowCrystallisationName": "Earth3A_Physical separation_(缓慢结晶)",
+    "slowCrystallisationDesc": "在一页内观看氯化钠缓慢结晶，附隐藏、缩放和画笔工具。",
+    "gasChemicalTestsName": "Earth3B_Chemical tests and electrolysis_(化学测试)",
+    "gasChemicalTestsDesc": "氧气、氢气和二氧化碳的测试。按键 1-3，空白键播放，H 隐藏说明，P 为画笔。",
+    "physicalChemicalSeparationName": "Earth2B_Physical and chemical change_(物理与化学分离)",
+    "physicalChemicalSeparationDesc": "以物理方法分离混合物；化合物只有输入能量才会改变。含铁 + 硫、沙 + 水、熔融状态，以及自选配对的周期表。"
   },
   "worksheet": {
     "title": "练习单生成器",

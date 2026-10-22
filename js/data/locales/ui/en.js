@@ -418,7 +418,18 @@ export const enUI = {
     "labMatchName": "Earth1A-B_Laboratory apparatus+Laboratory safety_(Lab & Hazard Match)",
     "labMatchDesc": "Memory game: match bilingual lab apparatus names to pictures and OSHC chemical hazard labels.",
     "flameFireworksName": "MWI3E_Color of ions_(Flame Test Fireworks)",
-    "flameFireworksDesc": "Design metal-ion burst patterns, launch them over night-sky scenes, and download your flame-test firework display."
+    "flameFireworksDesc": "Design metal-ion burst patterns, launch them over night-sky scenes, and download your flame-test firework display.",
+    "catMoreGames": "More games",
+    "calcariusName": "Earth4B_Limecycle_(Calcarius)",
+    "calcariusDesc": "Turn-based lime-cycle battle. Pick moves to defeat Calcarius, the Stone King.",
+    "structureBreachName": "MWI5_Structures and properties of substances_(Structure Breach)",
+    "structureBreachDesc": "Switch weapons to match metallic, ionic, giant covalent and simple molecular structures.",
+    "metalExtractionArcadeName": "Earth4A_Extraction of metals_(Metal Extraction Arcade)",
+    "metalExtractionArcadeDesc": "Three arcade paths: Ore Hunt, Blast Furnace Run, and Electrolysis Sprint (build the aluminium cell, half-equation and product MCQs).",
+    "chemLabHqScrambleName": "Earth1A-B_Laboratory apparatus+Laboratory safety_(Chem Lab HQ Scramble)",
+    "chemLabHqScrambleDesc": "Timed mix: ten questions from the apparatus stations and Lab Safety. 15 minutes. Keys 1-4. Only the best score is kept.",
+    "classificationShooterName": "Earth2A_Matters_(Classification of matter)",
+    "classificationShooterDesc": "Shooter game: choose a class and difficulty, then shoot the formulas of that class. WASD to move, mouse to aim. Phone mode has a joystick."
   },
   "lab": {
     "pageTitle": "Interactive Lab",
@@ -469,7 +480,22 @@ export const enUI = {
     "chemicalEquilibriumName": "Eqm3_Le Châtelier's Principle_(Chemical Equilibrium Lab)",
     "chemicalEquilibriumDesc": "Disturb Fe³⁺/SCN⁻ and NO₂/N₂O₄ equilibria — watch colour, graphs, and microscopic shifts in real time.",
     "organicChemistryName": "OrgI3_Alkanes and alkenes_(Organic Chemistry Lab)",
-    "organicChemistryDesc": "Build carbon compounds, practise IUPAC naming, and draw structures (F4 / DSE)."
+    "organicChemistryDesc": "Build carbon compounds, practise IUPAC naming, and draw structures (F4 / DSE).",
+    "catEarth4": "Earth4 · Extraction of metals, Limecycle",
+    "wordEquationWorksheetName": "Earth4A-B_Extraction of metals+Limecycle_(Word equation worksheet)",
+    "wordEquationWorksheetDesc": "Word-equation practice in three levels (drag blanks, build equations, or type): lime cycle, acid rain, metal extraction, silver nitrate tests.",
+    "flameTestSimulatorName": "MWI3E_Color of ions_(Flame Test Simulator)",
+    "flameTestSimulatorDesc": "Practice and Test modes: clean a platinum wire, then identify K+, Na+, Ca2+, Cu2+ (or none) by flame colour. Red-hot wire safety checks.",
+    "colouredIonMigrationName": "MWI3E_Color of ions_(Migration of coloured ions)",
+    "colouredIonMigrationDesc": "Filter-paper experiment and U-tube showing how coloured ions move toward the electrodes.",
+    "distillationFiltrationEvaporationName": "Earth3A_Physical separation_(Distillation, filtration, evaporation)",
+    "distillationFiltrationEvaporationDesc": "Build fractional distillation, filtration or evaporation set-ups in 3D or 2D, then check the set-up.",
+    "slowCrystallisationName": "Earth3A_Physical separation_(Slow crystallisation)",
+    "slowCrystallisationDesc": "Slow crystallisation of sodium chloride on one page. Hide, zoom and pen tools.",
+    "gasChemicalTestsName": "Earth3B_Chemical tests and electrolysis_(Chemical tests)",
+    "gasChemicalTestsDesc": "Tests for oxygen, hydrogen and carbon dioxide. Keys 1-3, Space to play, H hides the description, P is the pen.",
+    "physicalChemicalSeparationName": "Earth2B_Physical and chemical change_(Physical and chemical separation)",
+    "physicalChemicalSeparationDesc": "Separate mixtures physically; change compounds only with energy input. Iron + sulphur, sand + water, molten state, and a periodic table for custom pairs."
   },
   "worksheet": {
     "title": "Worksheet Generator",

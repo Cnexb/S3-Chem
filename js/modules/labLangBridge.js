@@ -79,6 +79,54 @@ export const INTERACTIVE_LAB_TOOLS = {
     path: "public/tools/organic-chemistry-lab/index.html",
     titleKey: "lab.organicChemistryName",
   },
+  "calcarius-game": {
+    path: "public/tools/calcarius-limecycle/index.html",
+    titleKey: "tools.calcariusName",
+  },
+  "structure-breach-game": {
+    path: "public/tools/structure-breach/index.html",
+    titleKey: "tools.structureBreachName",
+  },
+  "metal-extraction-arcade": {
+    path: "public/tools/metal-extraction-arcade/index.html",
+    titleKey: "tools.metalExtractionArcadeName",
+  },
+  "chem-lab-hq-scramble": {
+    path: "public/tools/chem-lab-hq-scramble/index.html",
+    titleKey: "tools.chemLabHqScrambleName",
+  },
+  "classification-shooter": {
+    path: "public/tools/classification-of-matter-shooter/index.html",
+    titleKey: "tools.classificationShooterName",
+  },
+  "word-equation-lab": {
+    path: "public/tools/word-equation-worksheet/index.html",
+    titleKey: "lab.wordEquationWorksheetName",
+  },
+  "flame-test-simulator": {
+    path: "public/tools/flame-test-simulator/index.html",
+    titleKey: "lab.flameTestSimulatorName",
+  },
+  "coloured-ion-migration-lab": {
+    path: "public/tools/migration-of-coloured-ions/index.html",
+    titleKey: "lab.colouredIonMigrationName",
+  },
+  "distillation-lab": {
+    path: "public/tools/distillation-filtration-evaporation/index.html",
+    titleKey: "lab.distillationFiltrationEvaporationName",
+  },
+  "slow-crystallisation-lab": {
+    path: "public/tools/slow-crystallisation/index.html",
+    titleKey: "lab.slowCrystallisationName",
+  },
+  "gas-chemical-tests-lab": {
+    path: "public/tools/gas-chemical-tests/index.html",
+    titleKey: "lab.gasChemicalTestsName",
+  },
+  "physical-chemical-separation-lab": {
+    path: "public/tools/physical-chemical-separation/index.html",
+    titleKey: "lab.physicalChemicalSeparationName",
+  },
 };
 
 export const LAB_TOOL_TYPES = new Set(Object.keys(INTERACTIVE_LAB_TOOLS));

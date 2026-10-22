@@ -3,6 +3,18 @@
 const CACHE_BUST = "v=20260704b";
 
 const DECKS = {
+  "earth1a-b-lab-safety": {
+    en: "./public/flashcards/earth1a-b-lab-safety/flashcards-study.html",
+    zh: "./public/flashcards/earth1a-b-lab-safety/flashcards-study.html",
+  },
+  "earth2a-matters": {
+    en: "./public/flashcards/earth2a-matters/flashcards-study.html",
+    zh: "./public/flashcards/earth2a-matters/flashcards-study.html",
+  },
+  "earth1a-b-lab-safety-interactive": {
+    en: "./public/flashcards/earth1a-b-lab-safety-interactive/index.html",
+    zh: "./public/flashcards/earth1a-b-lab-safety-interactive/index.html",
+  },
   "microscopic-world-i": {
     en: "./public/flashcards/microscopic-world-i/en/flashcards-study.html",
     zh: "./public/flashcards/microscopic-world-i/zh-hk/flashcards-study.html",
@@ -42,6 +54,9 @@ const DECKS = {
 };
 
 const TITLES = {
+  "earth1a-b-lab-safety": "Earth1A-B_Laboratory apparatus+Laboratory safety_(Lab safety flashcards)",
+  "earth2a-matters": "Earth2A_Matters_(Matter flashcards)",
+  "earth1a-b-lab-safety-interactive": "Earth1A-B_Laboratory apparatus+Laboratory safety_(Interactive flashcards)",
   "microscopic-world-i": "Microscopic World I Flashcards",
   "topic-3-metals": "Topic 3: Metals Flashcards",
   "topic-4-acids-and-bases": "Topic 4: Acids and Bases Flashcards",
