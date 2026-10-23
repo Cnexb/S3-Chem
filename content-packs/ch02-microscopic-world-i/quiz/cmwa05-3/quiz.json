@@ -90,7 +90,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.3",
       "difficulty": "Foundation",
-      "stem": "70. A substance melts at 17 °C and boils at 43 °C. The substance (1) has weak van der Waals' forces between molecules. (2) has a simple molecular structure. (3) is a liquid at room temperature and pressure. A (1) and (2) only B (1) and (3) only C (2) and (3) only D (1), (2) and (",
+      "stem": "A substance melts at 17 °C and boils at 43 °C. The substance\n(1) has weak van der Waals' forces between molecules.\n(2) has a simple molecular structure.\n(3) is a liquid at room temperature and pressure.",
       "options": [
         {
           "key": "A",
@@ -194,7 +194,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.3",
       "difficulty": "Standard",
-      "stem": "Consider the following table which gives some information about the solubilities of four substances in water and heptane (a non-aqueous solvent):\nWhich of the above substances could be iodine?",
+      "stem": "Consider the following table which gives some information about the solubilities of four substances in water and heptane (a non-aqueous solvent):\n| Substance | Solubility in water | Solubility in heptane |\n| --- | --- | --- |\n| W | very soluble | slightly soluble |\n| X | slightly soluble | slightly soluble |\n| Y | slightly soluble | very soluble |\n| Z | very soluble | very soluble |\nWhich of the above substances could be iodine?",
       "options": [
         {
           "key": "A",
@@ -220,7 +220,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.3",
       "difficulty": "Standard",
-      "stem": "The table below lists the information about the electrical conductivities of four substances, W, X, Y and Z:\nWhich of the substances is likely to be copper?",
+      "stem": "The table below lists the information about the electrical conductivities of four substances, W, X, Y and Z:\n| Substance | Solid state | Liquid state | Aqueous solution |\n| --- | --- | --- | --- |\n| W | conducts | conducts | conducts |\n| X | does not conduct | does not conduct | does not conduct |\n| Y | conducts | conducts | insoluble in water |\n| Z | does not conduct | does not conduct | conducts |\nWhich of the substances is likely to be copper?",
       "options": [
         {
           "key": "A",
@@ -272,7 +272,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.3",
       "difficulty": "Standard",
-      "stem": "84. A substance X is soluble in hexane (a non-aqueous solvent) but insoluble in water. X probably has a A giant ionic structure. B simple molecular structure. giant covalent structure. giant metallic structure.",
+      "stem": "A substance X is soluble in hexane (a non-aqueous solvent) but insoluble in water. X probably has a",
       "options": [
         {
           "key": "A",
@@ -360,7 +360,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.3",
       "difficulty": "Applied",
-      "stem": "Which of the following combinations about the strength of the bonds between chlorine atoms and that of the forces between chlorine molecules is correct?",
+      "stem": "Which of the following combinations about the strength of the bonds between chlorine atoms and that of the forces between chlorine molecules is correct?\n|  | Strength of bonds between chlorine atoms | Strength of forces between chlorine molecules |\n| --- | --- | --- |\n| A. | strong | weak |\n| B. | strong | strong |\n| C. | weak | strong |\n| D. | weak | weak |",
       "options": [
         {
           "key": "A",
@@ -386,7 +386,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.3",
       "difficulty": "Applied",
-      "stem": "The diagram below shows the structure of dry ice:\nWhich of the following statements about dry ice is correct?\nB It has a giant covalent structure.\nC The atoms in its molecules are held together by van der Waals' forces.\nIts molecules are held together by covalent bonds.",
+      "stem": "The diagram below shows the structure of dry ice:\nWhich of the following statements about dry ice is correct?",
       "options": [
         {
           "key": "A",
@@ -417,33 +417,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.3",
       "difficulty": "Applied",
-      "stem": "Which of the following combinations about substances and attractions between particles is / are correct?",
-      "options": [
-        {
-          "key": "A",
-          "text": "(1) only"
-        },
-        {
-          "key": "B",
-          "text": "(2) only"
-        },
-        {
-          "key": "C",
-          "text": "(1) and (3) only"
-        },
-        {
-          "key": "D",
-          "text": "(2) and (3) only"
-        }
-      ],
-      "answer": "A"
-    },
-    {
-      "id": "CMWA05.3-17",
-      "topic": "CMWA05",
-      "section": "CMWA05.3",
-      "difficulty": "Applied",
-      "stem": "62. Melting Boiling Substance point (°C) point (°C) Neon (Ne) -249 -246 Chlorine (Clz) -101 -34 Phosphine (PH3) -134 -87 Sulphur dioxide (SOz) -75 -10 Which of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure? (1) Van der Waals' forces (2) \nWhich of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure?\n(1) Van der Waals’ forces\n(2) Metallic bond\n(3) Covalent bond",
+      "stem": "Which of the following combinations about substances and attractions between particles is / are correct?\n| Substance | Attraction between particles in the substance |\n| --- | --- |\n| (1) sulphur | van der Waals' forces |\n| (2) silicon dioxide | dative covalent bond |\n| (3) calcium hydride | ionic bond |",
       "options": [
         {
           "key": "A",
@@ -463,6 +437,32 @@
         }
       ],
       "answer": "C"
+    },
+    {
+      "id": "CMWA05.3-17",
+      "topic": "CMWA05",
+      "section": "CMWA05.3",
+      "difficulty": "Applied",
+      "stem": "| Substance | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| Neon (Ne) | −249 | −246 |\n| Chlorine (Cl₂) | −101 | −34 |\n| Phosphine (PH₃) | −134 | −87 |\n| Sulphur dioxide (SO₂) | −75 | −10 |\nWhich of the following attractive forces exist in all four substances at 25 °C and 1 atm pressure?\n(1) Van der Waals’ forces\n(2) Metallic bond\n(3) Covalent bond",
+      "options": [
+        {
+          "key": "A",
+          "text": "(1) only"
+        },
+        {
+          "key": "B",
+          "text": "(2) only"
+        },
+        {
+          "key": "C",
+          "text": "(1) and (3) only"
+        },
+        {
+          "key": "D",
+          "text": "(2) and (3) only"
+        }
+      ],
+      "answer": "A"
     },
     {
       "id": "CMWA05.3-18",
@@ -495,7 +495,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.3",
       "difficulty": "Applied",
-      "stem": "Elements X and Y combine to form a compound with a chemical formula of XY2. If Y is a Group VII\nelement and XYz does not conduct electricity in liquid state, then X is a",
+      "stem": "Elements X and Y combine to form a compound with a chemical formula of XY₂. If Y is a Group VII element and XY₂ does not conduct electricity in liquid state, then X is a",
       "options": [
         {
           "key": "A",
@@ -503,11 +503,11 @@
         },
         {
           "key": "B",
-          "text": "Group Il element."
+          "text": "Group II element."
         },
         {
           "key": "C",
-          "text": "Group I element."
+          "text": "Group IV element."
         },
         {
           "key": "D",

@@ -64,7 +64,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.2",
       "difficulty": "Foundation",
-      "stem": "Which of the following diagrams best represents the giant structure of a caesium chloride crystal? (In\nthese diagrams, • represents a Cs* ion and ° represents a Cl ion.)",
+      "stem": "Which of the following diagrams best represents the giant structure of a caesium chloride crystal? (In these diagrams, • represents a Cs⁺ ion and ° represents a Cl⁻ ion.)",
       "options": [
         {
           "key": "A",
@@ -199,7 +199,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.2",
       "difficulty": "Foundation",
-      "stem": "Substance X has a high melting point and does not conduct electricity when in solid state. Substance X\nmay be\n(l) copper.\n(2) zinc oxide.\n(3) diamond.",
+      "stem": "Substance X has a high melting point and does not conduct electricity when in solid state. Substance X\nmay be\n(1) copper.\n(2) zinc oxide.\n(3) diamond.",
       "options": [
         {
           "key": "A",
@@ -277,7 +277,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.2",
       "difficulty": "Standard",
-      "stem": "The table below lists the ability of four substances W, X, Y and Z to conduct electricity.\n(In the table, ✓ and ✗ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.)\nWhich of the substances is likely to be calcium chloride?",
+      "stem": "The table below lists the ability of four substances W, X, Y and Z to conduct electricity.\n| Substance | Solid state | Molten state | Aqueous solution |\n| --- | --- | --- | --- |\n| W | ✗ | ✗ | ✗ |\n| X | ✗ | ✗ | ✓ |\n| Y | ✗ | ✓ | ✓ |\n| Z | ✓ | ✓ | insoluble in water |\n(In the table, ✓ and ✗ represent ‘can conduct electricity’ and ‘cannot conduct electricity’ respectively.)\nWhich of the substances is likely to be calcium chloride?",
       "options": [
         {
           "key": "A",
@@ -381,7 +381,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.2",
       "difficulty": "Applied",
-      "stem": "The table lists the electrical conductivities of three substances.\nWhich of the following combinations is correct?",
+      "stem": "The table lists the electrical conductivities of three substances.\n| Substance | Electrical conductivity |\n| --- | --- |\n| X | Conducts electricity only when dissolved in water. |\n| Y | Conducts electricity when molten or dissolved in water. |\n| Z | Conducts electricity when molten or in solid state. |\nWhich of the following combinations is correct?",
       "options": [
         {
           "key": "A",
@@ -407,7 +407,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.2",
       "difficulty": "Applied",
-      "stem": "67. A substance melts at 1 074 °C and boils at 1 740 °C. Passing an electric current through the molten substance results in electrolysis. What type of structure is present in the substance? A Ionic B Metallic C Covalent molecular D Covalent network",
+      "stem": "A substance melts at 1 074 °C and boils at 1 740 °C. Passing an electric current through the molten substance results in electrolysis. What type of structure is present in the substance?",
       "options": [
         {
           "key": "A",
@@ -433,7 +433,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.2",
       "difficulty": "Applied",
-      "stem": "68. Substance Melting point (°C) W 1 565 Electrical conductivity solid state molten state non- conductor conductor x 1610 non- conductor non- conductor Y 40 Z 1 670 non- conductor conductor non- conductor conductor Which of the following statements is correct? A W is malleable. B\nWhich of the following statements is correct?",
+      "stem": "| Substance | Melting point (°C) | Conductivity (solid) | Conductivity (molten) |\n| --- | --- | --- | --- |\n| W | 1 565 | non-conductor | conductor |\n| X | 1 610 | non-conductor | non-conductor |\n| Y | 40 | non-conductor | non-conductor |\n| Z | 1 670 | conductor | conductor |\nWhich of the following statements is correct?",
       "options": [
         {
           "key": "A",
@@ -485,7 +485,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.2",
       "difficulty": "Applied",
-      "stem": "The table lists some properties of four solids, W, X, Y and Z.\nWhat is the correct classification of the solids?",
+      "stem": "The table lists some properties of four solids, W, X, Y and Z.\n| Properties | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Melting point (°C) | 2 300 | 800 | 80 | 1 200 |\n| Soluble in water | no | yes | no | no |\n| Solid state conducts electricity? | no | no | no | yes |\n| Molten state conducts electricity? | no | yes | no | yes |\nWhat is the correct classification of the solids?",
       "options": [
         {
           "key": "A",
@@ -511,7 +511,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.2",
       "difficulty": "Applied",
-      "stem": "Consider the following information about four substances, W, X, Y and Z:\nWhich substance has a simple molecular structure and is a solid at room temperature?",
+      "stem": "Consider the following information about four substances, W, X, Y and Z:\n| Substance | Melting point (°C) | Electrical conductivity at room temperature |\n| --- | --- | --- |\n| W | −130 | poor |\n| X | −39 | good |\n| Y | 71 | poor |\n| Z | 750 | poor |\nWhich substance has a simple molecular structure and is a solid at room temperature?",
       "options": [
         {
           "key": "A",
@@ -537,7 +537,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.2",
       "difficulty": "Applied",
-      "stem": "X and Y are two different elements. The melting points of their bromides are given below:\nWhich of the following statements are correct?\n(1) The bromide of X is soluble in non-aqueous solvents.\n(2) The bromide of Y has a giant ionic structure.\n(3) The bromide of X is a solid at room temperature and pressure.",
+      "stem": "X and Y are two different elements. The melting points of their bromides are given below:\n|  | Melting point (°C) |\n| --- | --- |\n| Bromide of X | 12 |\n| Bromide of Y | 730 |\nWhich of the following statements are correct?\n(1) The bromide of X is soluble in non-aqueous solvents.\n(2) The bromide of Y has a giant ionic structure.\n(3) The bromide of X is a solid at room temperature and pressure.",
       "options": [
         {
           "key": "A",
@@ -563,7 +563,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.2",
       "difficulty": "Applied",
-      "stem": "X and Y are two different elements. The melting points and boiling points of their oxides are given below.\nWhich of the following statements is / are correct?\n(1) X is a non-metal.\n(2) The oxide of Y is a liquid at room temperature.\n(3) The oxide of X is an ionic crystal.",
+      "stem": "X and Y are two different elements. The melting points and boiling points of their oxides are given below.\n|  | Melting point (°C) | Boiling point (°C) | Electrical conductivity in liquid state |\n| --- | --- | --- | --- |\n| Oxide of X | 886 | 1 472 | conductor |\n| Oxide of Y | 17 | 45 | non-conductor |\nWhich of the following statements is / are correct?\n(1) X is a non-metal.\n(2) The oxide of Y is a liquid at room temperature.\n(3) The oxide of X is an ionic crystal.",
       "options": [
         {
           "key": "A",

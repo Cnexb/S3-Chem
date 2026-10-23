@@ -147,7 +147,7 @@
       "topic": "CPE02",
       "section": "CPE02.2",
       "difficulty": "Standard",
-      "stem": "18. Substance W Melting point (°C) - 200 10 50 - 100 Boiling point (°C) 54 120 320 13 Which of the above substances is / are liquid(s) at room temperature? A X only B Y only C W and X only D Y and Z only\nWhich of the above substances is / are liquid(s) at room temperature?",
+      "stem": "| Substance | Melting point (°C) | Boiling point (°C) |\n| --- | --- | --- |\n| W | −200 | 54 |\n| X | 10 | 120 |\n| Y | 50 | 320 |\n| Z | −100 | 13 |\nWhich of the above substances is / are liquid(s) at room temperature?",
       "options": [
         {
           "key": "A",

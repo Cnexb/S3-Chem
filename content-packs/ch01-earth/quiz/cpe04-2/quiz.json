@@ -38,7 +38,7 @@
       "topic": "CPE04",
       "section": "CPE04.2",
       "difficulty": "Foundation",
-      "stem": "35. The diagram shows a kiln used to heat limestone.\nWhat is the following combinations about the product and waste gas is correct?",
+      "stem": "The diagram shows a kiln used to heat limestone.\nWhich of the following combinations about the product and waste gas is correct?",
       "options": [
         {
           "key": "A",
@@ -121,7 +121,7 @@
       "topic": "CPE04",
       "section": "CPE04.2",
       "difficulty": "Standard",
-      "stem": "When calcium carbonate is strongly heated, a solid is obtained. Which of the following statements\nabout the solid is correct?",
+      "stem": "When calcium carbonate is strongly heated, a solid is obtained. Which of the following statements about the solid is correct?",
       "options": [
         {
           "key": "A",
@@ -147,7 +147,7 @@
       "topic": "CPE04",
       "section": "CPE04.2",
       "difficulty": "Standard",
-      "stem": "Which of the following statements are correct?\n(1) Calcite is composed of calcium carbonate.\n(2) Strong heating of calcium carbonate gives a white solid.\n(3) Saturated calcium hydroxide solution can be used to test for carbon dioxide",
+      "stem": "Which of the following statements are correct?\n(1) Calcite is composed of calcium carbonate.\n(2) Strong heating of calcium carbonate gives a white solid.\n(3) Saturated calcium hydroxide solution can be used to test for carbon dioxide gas.",
       "options": [
         {
           "key": "A",
@@ -261,7 +261,7 @@
       "topic": "CPE04",
       "section": "CPE04.2",
       "difficulty": "Applied",
-      "stem": "Which of the following explain(s) why rainwater can erode limestone?\n(1) Limestone is soluble in water.\n(2) Carbon dioxide in air dissolves in rainwater to form carbonic acid which dissolves\nlimestone.\n(3) Limestone reacts with water to form soluble calcium hydroxide.",
+      "stem": "Which of the following explain(s) why rainwater can erode limestone?\n(1) Limestone is soluble in water.\n(2) Carbon dioxide in air dissolves in rainwater to form carbonic acid which dissolves limestone.\n(3) Limestone reacts with water to form soluble calcium hydroxide.",
       "options": [
         {
           "key": "A",

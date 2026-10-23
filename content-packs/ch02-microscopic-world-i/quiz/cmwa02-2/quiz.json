@@ -90,7 +90,7 @@
       "topic": "CMWA02",
       "section": "CMWA02.2",
       "difficulty": "Foundation",
-      "stem": "Which of the following combinations is INCORRECT?\nElement\nSpecial name\niron\ntransition metal",
+      "stem": "Which of the following combinations is INCORRECT?",
       "options": [
         {
           "key": "A",
@@ -381,7 +381,7 @@
       "topic": "CMWA02",
       "section": "CMWA02.2",
       "difficulty": "Applied",
-      "stem": "A part of the periodic table is shown below.\nWhich of the following atoms has the SMALLEST number of electrons?\n(1) The outermost electron shell of an atom of a has an octet structure.\n(2) Atoms of b and e have the same number of outermost shell electrons.\n(3) c and d are metalloids.",
+      "stem": "A part of the periodic table is shown below.\nWhich of the following statements are correct?\n(1) The outermost electron shell of an atom of a has an octet structure.\n(2) Atoms of b and e have the same number of outermost shell electrons.\n(3) c and d are metalloids.",
       "options": [
         {
           "key": "A",
@@ -412,7 +412,7 @@
       "topic": "CMWA02",
       "section": "CMWA02.2",
       "difficulty": "Applied",
-      "stem": "Consider the following properties of three elements, X, Y and Z.\nWhich of the following statements are correct?\n(1) Element X is a metal.\n(2) Element Y is a non-metal.\n(3) Element Z is a gas at room temperature and pressure.",
+      "stem": "Consider the following properties of three elements, X, Y and Z.\n| Element | Melting point (°C) | Boiling point (°C) | Electrical conductivity |\n| --- | --- | --- | --- |\n| X | 959 | 2 850 | good conductor |\n| Y | −7 | 58 | non-conductor |\n| Z | −210 | −196 | non-conductor |\nWhich of the following statements are correct?\n(1) Element X is a metal.\n(2) Element Y is a non-metal.\n(3) Element Z is a gas at room temperature and pressure.",
       "options": [
         {
           "key": "A",

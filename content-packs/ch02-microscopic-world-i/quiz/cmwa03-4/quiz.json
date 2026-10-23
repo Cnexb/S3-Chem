@@ -38,7 +38,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Foundation",
-      "stem": "The atomic numbers of X and Y are 3 and 7 respectively. What is the chemical formula of the\ncompound formed between X and Y?",
+      "stem": "The atomic numbers of X and Y are 3 and 7 respectively. What is the chemical formula of the compound formed between X and Y?",
       "options": [
         {
           "key": "A",
@@ -68,19 +68,19 @@
       "options": [
         {
           "key": "A",
-          "text": "Li₂O"
+          "text": "L̲i̲₂O"
         },
         {
           "key": "B",
-          "text": "CaF₂"
+          "text": "C̲a̲F₂"
         },
         {
           "key": "C",
-          "text": "Mg₃N₂"
+          "text": "M̲g̲₃N₂"
         },
         {
           "key": "D",
-          "text": "Na₂S"
+          "text": "N̲a̲₂S"
         }
       ],
       "answer": "A"
@@ -90,7 +90,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Standard",
-      "stem": "Elements X and Y react to form an ionic compound with a chemical formula of X2Y. If X belongs to\nGroup I of the periodic table, to which group would Y belong?",
+      "stem": "Elements X and Y react to form an ionic compound with a chemical formula of X₂Y. If X belongs to Group I of the periodic table, to which group would Y belong?",
       "options": [
         {
           "key": "A",
@@ -116,7 +116,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Standard",
-      "stem": "Consider the following information about three elements X, Y and Z.\nWhich of the following statements about X, Y and Z are correct?\n(1) X and Y react to form an ionic compound.\n(2) Y and Z belong to the same period of the periodic table.\n(3) Z forms an ion carrying two negative charges.",
+      "stem": "Consider the following information about three elements X, Y and Z.\n| Element | X | Y | Z |\n| --- | --- | --- | --- |\n| Atomic number | 8 | 11 | 16 |\nWhich of the following statements about X, Y and Z are correct?\n(1) X and Y react to form an ionic compound.\n(2) Y and Z belong to the same period of the periodic table.\n(3) Z forms an ion carrying two negative charges.",
       "options": [
         {
           "key": "A",
@@ -142,7 +142,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Standard",
-      "stem": "The chemical formula of an ionic compound is XY3. The compound could be",
+      "stem": "The chemical formula of an ionic compound is XY₃. The compound could be",
       "options": [
         {
           "key": "A",
@@ -150,7 +150,7 @@
         },
         {
           "key": "B",
-          "text": "copperII) sulphide."
+          "text": "copper(II) sulphide."
         },
         {
           "key": "C",
@@ -194,7 +194,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Standard",
-      "stem": "X is an element. It can form of an ion X2* which has an electronic arrangement of 2,8,8. Which of the\nfollowing statements about X is / are correct?\n(1) X is a Period 3 element.\n(2) The chloride of X is colourless.\n(3) The chemical formula of the oxide of X is X20.",
+      "stem": "X is an element. It can form an ion X²⁺ which has an electronic arrangement of 2,8,8. Which of the following statements about X is / are correct?\n(1) X is a Period 3 element.\n(2) The chloride of X is colourless.\n(3) The chemical formula of the oxide of X is X₂O.",
       "options": [
         {
           "key": "A",
@@ -220,7 +220,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Standard",
-      "stem": "Element X (atomic number 12) combines with element Y (atomic number 7) to form compound Z.\nnich of the following statements is / are correct?\n(1) & forms a stable ion carrying two positive charges.\n(2) Y forms a stable ion carrying one negative charge.\n(3) The chemical formula of Z is X3Y2.",
+      "stem": "Element X (atomic number 12) combines with element Y (atomic number 7) to form compound Z. Which of the following statements is / are correct?\n(1) X forms a stable ion carrying two positive charges.\n(2) Y forms a stable ion carrying one negative charge.\n(3) The chemical formula of Z is X₃Y₂.",
       "options": [
         {
           "key": "A",
@@ -246,7 +246,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Standard",
-      "stem": "Element X reacts with chlorine to form a compound with the chemical formula of XCl. The electronic\narrangement of an atom of X may be",
+      "stem": "Element X reacts with chlorine to form a compound with the chemical formula of XCl₃. The electronic arrangement of an atom of X may be",
       "options": [
         {
           "key": "A",
@@ -272,7 +272,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Standard",
-      "stem": "X is an element in the second period of the periodic table. The chemical formula of the compound\nformed between magnesium and X is Mg3X2. Which of the following electron diagrams best represents\nthe compound formed between X and hydrogen?\n(Only electrons in the outermost shells are shown.)",
+      "stem": "X is an element in the second period of the periodic table. The chemical formula of the compound formed between magnesium and X is Mg₃X₂. Which of the following electron diagrams best represents the compound formed between X and hydrogen?\n(Only electrons in the outermost shells are shown.)",
       "options": [
         {
           "key": "A",
@@ -329,7 +329,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Standard",
-      "stem": "Caesium (Cs) is a Group I element. Which of the following statements about caesium oxide are correct?\n(1) It chemical formula is Cs2O.\n(2) It is a brittle solid.\n(3) It is soluble in water.",
+      "stem": "Caesium (Cs) is a Group I element. Which of the following statements about caesium oxide are correct?\n(1) Its chemical formula is Cs₂O.\n(2) It is a brittle solid.\n(3) It is soluble in water.",
       "options": [
         {
           "key": "A",
@@ -355,23 +355,23 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Applied",
-      "stem": "Scandium (Sc) is a metal. The chemical formula of scandium hydroxide is Sc(OH)3. Which of the\nfollowing is the chemical formula of scandium carbonate?",
+      "stem": "Scandium (Sc) is a metal. The chemical formula of scandium hydroxide is Sc(OH)₃. Which of the following is the chemical formula of scandium carbonate?",
       "options": [
         {
           "key": "A",
-          "text": "ScCO3"
+          "text": "ScCO₃"
         },
         {
           "key": "B",
-          "text": "Sc(CO3)2"
+          "text": "Sc(CO₃)₂"
         },
         {
           "key": "C",
-          "text": "Sc2(CОз)з"
+          "text": "Sc₂(CO₃)₃"
         },
         {
           "key": "D",
-          "text": "Sc3(CO3)2"
+          "text": "Sc₃(CO₃)₂"
         }
       ],
       "answer": "C"
@@ -381,7 +381,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Applied",
-      "stem": "An atom of element X has 12 protons while an atom of element Y has 7 electrons. What is the chemical\nformula of the compound formed between X and Y?",
+      "stem": "An atom of element X has 12 protons while an atom of element Y has 7 electrons. What is the chemical formula of the compound formed between X and Y?",
       "options": [
         {
           "key": "A",
@@ -433,7 +433,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.4",
       "difficulty": "Applied",
-      "stem": "W, X, Y and Z are four consecutive elements of the periodic table. X is a noble gas. Which of the\nfollowing chemical formulae is correct?",
+      "stem": "W, X, Y and Z are four consecutive elements of the periodic table. X is a noble gas. Which of the following chemical formulae is correct?",
       "options": [
         {
           "key": "A",

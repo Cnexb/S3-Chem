@@ -116,7 +116,7 @@
       "topic": "CPE04",
       "section": "CPE04.1",
       "difficulty": "Standard",
-      "stem": "Which of the following combinations about the extraction of metals from their ores is / are correct?",
+      "stem": "Which of the following combinations about the extraction of metals from their ores is / are correct?\n|  | Metal | Method of extraction |\n| --- | --- | --- |\n| (1) | aluminium | electrolysis of molten ore |\n| (2) | copper | physical separation |\n| (3) | lead | heating the ore alone |",
       "options": [
         {
           "key": "A",

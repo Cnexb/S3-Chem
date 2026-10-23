@@ -38,7 +38,7 @@
       "topic": "CPE03",
       "section": "CPE03.2",
       "difficulty": "Foundation",
-      "stem": "Which of the following combinations is INCORRECT?\nCompound of\nFlame colour",
+      "stem": "Which of the following combinations is INCORRECT?\n|  | Compound of | Flame colour |\n| --- | --- | --- |\n| A. | sodium | golden yellow |\n| B. | potassium | lilac |\n| C. | calcium | bluish white |\n| D. | copper | bluish green |",
       "options": [
         {
           "key": "A",
@@ -168,7 +168,7 @@
       "topic": "CPE03",
       "section": "CPE03.2",
       "difficulty": "Foundation",
-      "stem": "30.|\nWhich of the following are major uses of chlorine?\n(1) Sterilizing swimming pool water\n(2) Manufacture of soap\n(3) Manufacture of hydrochloric acid",
+      "stem": "Which of the following are major uses of chlorine?\n(1) Sterilizing swimming pool water\n(2) Manufacture of soap\n(3) Manufacture of hydrochloric acid",
       "options": [
         {
           "key": "A",
@@ -194,7 +194,7 @@
       "topic": "CPE03",
       "section": "CPE03.2",
       "difficulty": "Foundation",
-      "stem": "31.|\nWhich of the following is / are major use(s) of sodium hydroxide?\n(1) Manufacture of bleach\n(2) As a fuel\n(3) Manufacture of soap",
+      "stem": "Which of the following is / are major use(s) of sodium hydroxide?\n(1) Manufacture of bleach\n(2) As a fuel\n(3) Manufacture of soap",
       "options": [
         {
           "key": "A",
@@ -220,7 +220,7 @@
       "topic": "CPE03",
       "section": "CPE03.2",
       "difficulty": "Standard",
-      "stem": "Which of the following methods can be used to distinguish between copper(Il) sulphate crystals and\nsodium chloride crystals?\n(1) Perform a flame test.\n(2) Add dilute nitric acid followed by silver nitrate solution to their solutions.\n(3) Observe their colours.",
+      "stem": "Which of the following methods can be used to distinguish between copper(II) sulphate crystals and sodium chloride crystals?\n(1) Perform a flame test.\n(2) Add dilute nitric acid followed by silver nitrate solution to their solutions.\n(3) Observe their colours.",
       "options": [
         {
           "key": "A",
@@ -272,7 +272,7 @@
       "topic": "CPE03",
       "section": "CPE03.2",
       "difficulty": "Standard",
-      "stem": "Which of the following combinations is correct?\nTest method",
+      "stem": "Which of the following combinations is correct?\n|  | Test method | Species |\n| --- | --- | --- |\n| A. | a burning splint | oxygen |\n| B. | a glowing splint | nitrogen |\n| C. | blue cobalt(II) chloride paper | water vapour |\n| D. | limewater | Ammonia |",
       "options": [
         {
           "key": "A",
@@ -284,7 +284,7 @@
         },
         {
           "key": "C",
-          "text": "Test method: C blue cobalt(II) chloride paper; Species: water vapour"
+          "text": "Test method: blue cobalt(II) chloride paper; Species: water vapour"
         },
         {
           "key": "D",
@@ -298,7 +298,7 @@
       "topic": "CPE03",
       "section": "CPE03.2",
       "difficulty": "Standard",
-      "stem": "Which of the following statements about water are correct?\n(1) It is a compound.\n(2) It turns dry cobaltII) chloride paper pink.\n(3) It turns anhydrous copperII) sulphate blue.",
+      "stem": "Which of the following statements about water are correct?\n(1) It is a compound.\n(2) It turns dry cobalt(II) chloride paper pink.\n(3) It turns anhydrous copper(II) sulphate blue.",
       "options": [
         {
           "key": "A",
@@ -376,7 +376,7 @@
       "topic": "CPE03",
       "section": "CPE03.2",
       "difficulty": "Applied",
-      "stem": "23. A solid X gives a lilac flame in flame test. X reacts with dilute hydrochloric acid to give a gas. X could be A potassium carbonate. B potassium chloride. C sodium carbonate. D sodium chloride.",
+      "stem": "A solid X gives a lilac flame in flame test. X reacts with dilute hydrochloric acid to give a gas. X could be",
       "options": [
         {
           "key": "A",
@@ -428,7 +428,7 @@
       "topic": "CPE03",
       "section": "CPE03.2",
       "difficulty": "Applied",
-      "stem": "Which of the following combinations about the gases obtained by electrolysis of water is correct?\nPositive electrode\nNegative electrode",
+      "stem": "Which of the following combinations about the gases obtained by electrolysis of water is correct?\n|  | Positive electrode | Negative electrode |\n| --- | --- | --- |\n| A. | oxygen | hydrogen |\n| B. | chlorine | hydrogen |\n| C. | hydrogen | chlorine |\n| D. | nitrogen | oxygen |",
       "options": [
         {
           "key": "A",
