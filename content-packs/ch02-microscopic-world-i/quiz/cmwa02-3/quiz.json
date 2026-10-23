@@ -168,23 +168,23 @@
       "topic": "CMWA02",
       "section": "CMWA02.3",
       "difficulty": "Standard",
-      "stem": "Which of the following pairs of elements in Groups I and VII of the periodic table would react with\neach other most vigorously?\nGroup I\nGroup VII\nsodium\nchlorine",
+      "stem": "Which of the following pairs of elements in Groups I and VII of the periodic table would react with each other most vigorously?",
       "options": [
         {
           "key": "A",
-          "text": "Group I | Group VII"
+          "text": "Group I: sodium; Group VII: chlorine"
         },
         {
           "key": "B",
-          "text": "sodium | chlorine"
+          "text": "Group I: sodium; Group VII: fluorine"
         },
         {
           "key": "C",
-          "text": "sodium | fluorine"
+          "text": "Group I: potassium; Group VII: fluorine"
         },
         {
           "key": "D",
-          "text": "potassium | fluorine"
+          "text": "Group I: potassium; Group VII: chlorine"
         }
       ],
       "answer": "C"
@@ -224,7 +224,7 @@
       "options": [
         {
           "key": "A",
-          "text": "(I) only"
+          "text": "(1) only"
         },
         {
           "key": "B",
@@ -272,7 +272,7 @@
       "topic": "CMWA02",
       "section": "CMWA02.3",
       "difficulty": "Applied",
-      "stem": "Strontium is below calcium in Group Il of the periodic table. Which of the following statements about\nstrontium is / are correct?\n(2) combine wil to prom a one compound.\n(3) It forms an ion carrying two negative charges.",
+      "stem": "Strontium is below calcium in Group II of the periodic table. Which of the following statements about strontium is / are correct?\n(1) It combines with chlorine to form an ionic compound.\n(2) It is in Period 4 of the periodic table.\n(3) It forms an ion carrying two negative charges.",
       "options": [
         {
           "key": "A",

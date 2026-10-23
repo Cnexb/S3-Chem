@@ -183,7 +183,7 @@
       "topic": "CPE01",
       "section": "CPE01.2",
       "difficulty": "Standard",
-      "stem": "4. A student conducts an experiment using concentrated hydrochloric acid. concentrated hydrochloric acid Which of the following precautions the student should take when working with the acid? (1) Wear safety glasses. (2) Wear protective gloves. (3) Do not warm the acid. A (1) and",
+      "stem": "A student conducts an experiment using concentrated hydrochloric acid.\nWhich of the following precautions the student should take when working with the acid?\n(1) Wear safety glasses.\n(2) Wear protective gloves.\n(3) Do not warm the acid.",
       "options": [
         {
           "key": "A",
@@ -202,7 +202,12 @@
           "text": "(1), (2) and (3)"
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "image": {
+        "src": "assets/cpe01-2b-7.png",
+        "alt": "Question diagram",
+        "caption": "Question diagram"
+      }
     },
     {
       "id": "CPE01.2-8",

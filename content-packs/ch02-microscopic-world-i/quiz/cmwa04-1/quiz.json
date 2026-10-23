@@ -24,7 +24,7 @@
         },
         {
           "key": "C",
-          "text": "•10"
+          "text": "10"
         },
         {
           "key": "D",
@@ -156,19 +156,19 @@
       "options": [
         {
           "key": "A",
-          "text": "X2O."
+          "text": "X₂O."
         },
         {
           "key": "B",
-          "text": "в хо."
+          "text": "XO."
         },
         {
           "key": "C",
-          "text": "X02."
+          "text": "XO₂."
         },
         {
           "key": "D",
-          "text": "X203."
+          "text": "X₂O₃."
         }
       ],
       "answer": "A"
@@ -292,7 +292,7 @@
       "topic": "CMWA04",
       "section": "CMWA04.1",
       "difficulty": "Foundation",
-      "stem": "Which of the following statements about an ammonia molecule is / are correct?\n(l) The number of bonding electrons contributed by the nitrogen atom in the molecule is s.\n(2) The number of bonding electron contributed by each hydrogen atom in the\nmolecule is 1.\n(3) The molecule can form a dative covalent bond with a hydrogen ion.",
+      "stem": "Which of the following statements about an ammonia molecule is / are correct?\n(1) The number of bonding electrons contributed by the nitrogen atom in the molecule is 5.\n(2) The number of bonding electron contributed by each hydrogen atom in the molecule is 1.\n(3) The molecule can form a dative covalent bond with a hydrogen ion.",
       "options": [
         {
           "key": "A",
@@ -370,7 +370,7 @@
       "topic": "CMWA04",
       "section": "CMWA04.1",
       "difficulty": "Standard",
-      "stem": "The table below lists the electronic arrangements of the atoms of three elements.\nWhich of the following elements exist(s) as separate molecules?",
+      "stem": "The table below lists the electronic arrangements of the atoms of three elements.\n| Element | Electronic arrangement of atom |\n| --- | --- |\n| X | 2,1 |\n| Y | 2,5 |\n| Z | 2,6 |\nWhich of the following elements exist(s) as separate molecules?",
       "options": [
         {
           "key": "A",
@@ -660,7 +660,7 @@
       "topic": "CMWA04",
       "section": "CMWA04.1",
       "difficulty": "Standard",
-      "stem": "Consider the following three elements:\nWhich of the following statements about X, Y and Z is / are correct?\n(1) X and Y combine to form a covalent compound.\n(2) X and Z form a compound by electron transfer.\n(3) Y and Z belong to the same period of the periodic table.",
+      "stem": "Consider the following three elements:\n| Element | X | Y | Z |\n| --- | --- | --- | --- |\n| Atomic number | 7 | 10 | 12 |\nWhich of the following statements about X, Y and Z is / are correct?\n(1) X and Y combine to form a covalent compound.\n(2) X and Z form a compound by electron transfer.\n(3) Y and Z belong to the same period of the periodic table.",
       "options": [
         {
           "key": "A",
@@ -712,7 +712,7 @@
       "topic": "CMWA04",
       "section": "CMWA04.1",
       "difficulty": "Applied",
-      "stem": "Consider the following elements.\nWhich of the elements exists as diatomic molecules with triple covalent bonds?",
+      "stem": "Consider the following elements.\n| Element | W | X | Y | Z |\n| --- | --- | --- | --- | --- |\n| Atomic number | 4 | 6 | 7 | 9 |\nWhich of the elements exists as diatomic molecules with triple covalent bonds?",
       "options": [
         {
           "key": "A",
@@ -842,7 +842,7 @@
       "topic": "CMWA04",
       "section": "CMWA04.1",
       "difficulty": "Applied",
-      "stem": "Which of the following combinations about substance and the type of bonding are correct?",
+      "stem": "Which of the following combinations about substance and the type of bonding are correct?\n|  | Substance | Type of bond |\n| --- | --- | --- |\n| (1) | neon | covalent |\n| (2) | potassium bromide | ionic |\n| (3) | sodium | metallic |",
       "options": [
         {
           "key": "A",
@@ -868,7 +868,7 @@
       "topic": "CMWA04",
       "section": "CMWA04.1",
       "difficulty": "Applied",
-      "stem": "Two elements X and Y form a compound with a chemical formula of XY₂. Which of the following electronic arrangements for atoms of X and Y are correct?",
+      "stem": "Two elements X and Y form a compound with a chemical formula of XY₂. Which of the following electronic arrangements for atoms of X and Y are correct?\n|  | Atom of X | Atom of Y |\n| --- | --- | --- |\n| (1) | 2,2 | 2,8,7 |\n| (2) | 2,8,1 | 2,7 |\n| (3) | 2,4 | 2,6 |",
       "options": [
         {
           "key": "A",

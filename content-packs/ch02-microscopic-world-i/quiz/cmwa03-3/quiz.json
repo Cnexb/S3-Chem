@@ -69,11 +69,11 @@
       "topic": "CMWA03",
       "section": "CMWA03.3",
       "difficulty": "Foundation",
-      "stem": "Which of the following statements about sodium sulphide are correct?\n(1) Electrostatic forces of attraction hold the ions in the compound together.\n(2) The compound contains Nations.\n(3) The compound contains S ions.",
+      "stem": "Which of the following statements about sodium sulphide are correct?\n(1) Electrostatic forces of attraction hold the ions in the compound together.\n(2) The compound contains Na⁺ ions.\n(3) The compound contains S⁻ ions.",
       "options": [
         {
           "key": "A",
-          "text": "(I) and (2) only"
+          "text": "(1) and (2) only"
         },
         {
           "key": "B",
@@ -126,7 +126,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.3",
       "difficulty": "Standard",
-      "stem": "The following table lists the atomic numbers of four elements.\nWhich pair of elements would combine to form an ionic compound?",
+      "stem": "The following table lists the atomic numbers of four elements.\n| Element | Atomic number |\n| --- | --- |\n| W | 2 |\n| X | 12 |\n| Y | 15 |\n| Z | 17 |\nWhich pair of elements would combine to form an ionic compound?",
       "options": [
         {
           "key": "A",
@@ -152,7 +152,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.3",
       "difficulty": "Standard",
-      "stem": "The element with atomic number 9 will form ionic bonds readily with an element whose atomic\nnumber is",
+      "stem": "The element with atomic number 9 will form ionic bonds readily with an element whose atomic number is",
       "options": [
         {
           "key": "A",
@@ -178,7 +178,7 @@
       "topic": "CMWA03",
       "section": "CMWA03.3",
       "difficulty": "Standard",
-      "stem": "In which of the following compounds do both ions have the same electronic arrangement as an argon\natom?",
+      "stem": "In which of the following compounds do both ions have the same electronic arrangement as an argon atom?",
       "options": [
         {
           "key": "A",
@@ -280,7 +280,12 @@
           "text": "The compound contains Mg²⁺ and Cl₂⁻ ions."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "image": {
+        "src": "assets/cmwa03-3c-3.png",
+        "alt": "Electron diagram of magnesium chloride, outermost shells only",
+        "caption": "Electron diagram of magnesium chloride, outermost shells only"
+      }
     }
   ]
 }

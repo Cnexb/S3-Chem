@@ -173,7 +173,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.4",
       "difficulty": "Standard",
-      "stem": "Consider the information below:\nWhich of the following solids is likely to be graphite?",
+      "stem": "Consider the information below:\n| Solid | Melting point | Electrical conductivity | Solubility in water |\n| --- | --- | --- | --- |\n| W | low | non-conducting | insoluble |\n| X | low | good | insoluble |\n| Y | high | non-conducting | soluble |\n| Z | very high | good | insoluble |\nWhich of the following solids is likely to be graphite?",
       "options": [
         {
           "key": "A",
@@ -199,7 +199,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.4",
       "difficulty": "Standard",
-      "stem": "85. A substance W melts at 3 550 °C and it does NOT conduct electricity in solid state and molten state. W probably has a A giant ionic structure. B giant covalent structure. C simple molecular structure. D giant metallic structure.",
+      "stem": "A substance W melts at 3 550 °C and it does NOT conduct electricity in solid state and molten state. W probably has a",
       "options": [
         {
           "key": "A",
@@ -251,7 +251,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.4",
       "difficulty": "Applied",
-      "stem": "Scientists have recently developed a method to produce large sheets of a substance called graphene.\nGraphene is made from carbon and is a single layer of graphite just one atom thick.\nThe diagram below shows the structure of graphene.\nWhich of the following statements about graphene is / are correct?\n(1) It is a good conductor of electricity.\n(2) It has a low melting point.\n(3) It is strong.\n(2) only\n(1) and\n(3) only",
+      "stem": "Scientists have recently developed a method to produce large sheets of a substance called graphene.\nGraphene is made from carbon and is a single layer of graphite just one atom thick.\nThe diagram below shows the structure of graphene.\nWhich of the following statements about graphene is / are correct?\n(1) It is a good conductor of electricity.\n(2) It has a low melting point.\n(3) It is strong.",
       "options": [
         {
           "key": "A",
@@ -334,7 +334,7 @@
       "topic": "CMWA05",
       "section": "CMWA05.4",
       "difficulty": "Applied",
-      "stem": "77. The diagram below shows the structure of a form of boron nitride which is similar to that of graphite.\nWhich of the following statements about this compound are correct?\n(1) It has a high melting point.\n(2) It is slippery.\n(3) It is very hard.",
+      "stem": "The diagram below shows the structure of a form of boron nitride which is similar to that of graphite.\nWhich of the following statements about this compound are correct?\n(1) It has a high melting point.\n(2) It is slippery.\n(3) It is very hard.",
       "options": [
         {
           "key": "A",
