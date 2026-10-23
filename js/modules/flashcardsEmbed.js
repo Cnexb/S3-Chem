@@ -3,6 +3,18 @@
 const CACHE_BUST = "v=20260704b";
 
 const DECKS = {
+  "earth1a-b-lab-safety": {
+    en: "./public/flashcards/earth1a-b-lab-safety/flashcards-study.html",
+    zh: "./public/flashcards/earth1a-b-lab-safety/flashcards-study.html",
+  },
+  "earth2a-matters": {
+    en: "./public/flashcards/earth2a-matters/flashcards-study.html",
+    zh: "./public/flashcards/earth2a-matters/flashcards-study.html",
+  },
+  "earth1a-b-lab-safety-interactive": {
+    en: "./public/flashcards/earth1a-b-lab-safety-interactive/index.html",
+    zh: "./public/flashcards/earth1a-b-lab-safety-interactive/index.html",
+  },
   "microscopic-world-i": {
     en: "./public/flashcards/microscopic-world-i/en/flashcards-study.html",
     zh: "./public/flashcards/microscopic-world-i/zh-hk/flashcards-study.html",
@@ -42,15 +54,18 @@ const DECKS = {
 };
 
 const TITLES = {
-  "microscopic-world-i": "Microscopic World I Flashcards",
-  "topic-3-metals": "Topic 3: Metals Flashcards",
-  "topic-4-acids-and-bases": "Topic 4: Acids and Bases Flashcards",
-  "topic-5-fossil-fuels-and-carbon-compounds": "Topic 5: Fossil Fuels and Carbon Compounds Flashcards",
-  "topic-6-microscopic-world-ii": "Topic 6: Microscopic World II Flashcards",
-  "topic-7-redox-reactions-chemical-cells-and-electrolysis": "Topic 7: Redox Reactions, Chemical Cells and Electrolysis Flashcards",
-  "topic-8-chemical-reactions-and-energy": "Topic 8: Chemical Reactions and Energy Flashcards",
-  "topic-9-rates-of-reactions": "Topic 9: Rates of Reactions Flashcards",
-  "topic-10-chemical-equilibrium": "Topic 10: Chemical Equilibrium Flashcards",
+  "earth1a-b-lab-safety": "Earth1A-B_Laboratory apparatus+Laboratory safety_(Flashcards)",
+  "earth2a-matters": "Earth2A_Matters_(Flashcards)",
+  "earth1a-b-lab-safety-interactive": "Earth1A-B_Laboratory apparatus+Laboratory safety_(Interactive flashcards)",
+  "microscopic-world-i": "MWI1-5_Microscopic world 1_(Flashcards)",
+  "topic-3-metals": "Metal1-4_Metals_(Flashcards)",
+  "topic-4-acids-and-bases": "AB1-6_Acids and bases_(Flashcards)",
+  "topic-5-fossil-fuels-and-carbon-compounds": "OrgI1-4_Fossil fuels and carbon compounds_(Flashcards)",
+  "topic-6-microscopic-world-ii": "MWII1-4_Microscopic world 2_(Flashcards)",
+  "topic-7-redox-reactions-chemical-cells-and-electrolysis": "Redox1-5_Redox reactions, chemical cells and electrolysis_(Flashcards)",
+  "topic-8-chemical-reactions-and-energy": "Heat1-3_Chemical reactions and energy_(Flashcards)",
+  "topic-9-rates-of-reactions": "Rate1-3_Rates of reactions_(Flashcards)",
+  "topic-10-chemical-equilibrium": "Eqm1-3_Chemical equilibrium_(Flashcards)",
 };
 
 export function initFlashcardsEmbed() {
